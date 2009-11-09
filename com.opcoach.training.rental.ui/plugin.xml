@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="ColorProvider" name="Color Provider" schema="schema/ColorProvider.exsd"/>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Rental"
+            id="com.opcoach.rental.ui">
+      </category>
+      <view
+            name="Rental Property view"
+            icon="icons/sample.gif"
+            category="com.opcoach.rental.ui"
+            class="com.opcoach.training.rental.ui.views.RentalPropertyView"
+            id="com.opcoach.rental.ui.views.SampleView">
+      </view>
+      <view
+            category="com.opcoach.rental.ui"
+            class="com.opcoach.training.rental.ui.views.RentalAgencyView"
+            id="com.opcoach.rental.ui.rentalagencyview"
+            name="Rental Agency View"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="com.opcoach.test.preferences.preferences.SamplePreferencePage"
+            class="com.opcoach.training.rental.ui.pref.RentalColorPreferences"
+            id="com.opcoach.rental.ui.page1"
+            name="ColorPreferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.opcoach.training.rental.ui.pref.RentalPrefInit">
+      </initializer>
+   </extension>
+
+</plugin>
