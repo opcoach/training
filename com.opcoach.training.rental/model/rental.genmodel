@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="OPCoach @ 2009"
+    modelDirectory="/com.opcoach.training.rental/src" modelPluginID="com.opcoach.training.rental"
+    modelName="Rental" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0">
+  <foreignModel>rental.ecore</foreignModel>
+  <genPackages prefix="Rental" basePackage="com.opcoach.training" disposableProviderFactory="true"
+      ecorePackage="rental.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rental.ecore#//StreetType">
+      <genEnumLiterals ecoreEnumLiteral="rental.ecore#//StreetType/Street"/>
+      <genEnumLiterals ecoreEnumLiteral="rental.ecore#//StreetType/Road"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="rental.ecore#//Image"/>
+    <genClasses ecoreClass="rental.ecore#//Customer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Customer/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Customer/lastName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/licenses"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//Customer/parentAgency"/>
+      <genOperations ecoreOperation="rental.ecore#//Customer/getDisplayName"/>
+    </genClasses>
+    <genClasses ecoreClass="rental.ecore#//RentalAgency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalAgency/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/objectsToRent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/customers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/rentals"/>
+      <genOperations ecoreOperation="rental.ecore#//RentalAgency/book">
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/customer"/>
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/rentedObject"/>
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/from"/>
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/to"/>
+      </genOperations>
+      <genOperations ecoreOperation="rental.ecore#//RentalAgency/addCustomer">
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/addCustomer/customer"/>
+      </genOperations>
+      <genOperations ecoreOperation="rental.ecore#//RentalAgency/addObject">
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/addObject/object"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="rental.ecore#//Address">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Address/streetType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Address/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Address/zipCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Address/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Address/streetName"/>
+    </genClasses>
+    <genClasses ecoreClass="rental.ecore#//RentalObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalObject/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalObject/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalObject/picture"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//RentalObject/parentAgency"/>
+      <genOperations ecoreOperation="rental.ecore#//RentalObject/rent">
+        <genParameters ecoreParameter="rental.ecore#//RentalObject/rent/customer"/>
+      </genOperations>
+      <genOperations ecoreOperation="rental.ecore#//RentalObject/isAvailable"/>
+    </genClasses>
+    <genClasses ecoreClass="rental.ecore#//License">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//License/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//License/validityDate"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//License/owner"/>
+    </genClasses>
+    <genClasses ecoreClass="rental.ecore#//Rental">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rental.ecore#//Rental/customer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rental.ecore#//Rental/rentedObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Rental/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Rental/endDate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rental.ecore#//Rental/parentAgency"/>
+      <genOperations ecoreOperation="rental.ecore#//Rental/nbDaysBooked"/>
+      <genOperations ecoreOperation="rental.ecore#//Rental/end"/>
+      <genOperations ecoreOperation="rental.ecore#//Rental/start"/>
+      <genOperations ecoreOperation="rental.ecore#//Rental/nbDaysRented"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

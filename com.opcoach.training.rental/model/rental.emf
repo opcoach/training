@@ -1,0 +1,65 @@
+@namespace(uri="http://com.opcoach.training/rental/1.0", prefix="rental")
+package rental;
+
+class Customer {
+  op String getDisplayName();
+  attr String firstName;
+  attr String lastName;
+  val Address[1] address;
+  val License[*]#owner licenses;
+  ref RentalAgency[1]#customers parentAgency;
+}
+
+class RentalAgency {
+  op Rental book(Customer customer, RentalObject rentedObject, EDate from, EDate to);
+  op void addCustomer(Customer customer);
+  op void addObject(RentalObject object);
+  attr String name;
+  val Address[1] address;
+  val RentalObject[*]#parentAgency objectsToRent;
+  val Customer[*]#parentAgency customers;
+  val Rental[*] rentals;
+}
+
+class Address {
+  attr StreetType streetType = "0";
+  attr int number;
+  attr String zipCode;
+  attr String city;
+  attr String streetName;
+}
+
+enum StreetType {
+  Street = 0;
+  Road = 1;
+}
+
+class RentalObject {
+  op Rental rent(Customer customer);
+  op boolean isAvailable();
+  id attr long ID;
+  attr String name;
+  attr Image picture;
+  ref RentalAgency[1]#objectsToRent parentAgency;
+}
+
+datatype Image : org.eclipse.swt.graphics.Image;
+
+class License {
+  attr int number;
+  attr EDate validityDate;
+  ref Customer#licenses owner;
+}
+
+class Rental {
+  op int nbDaysBooked();
+  op int end();
+  op int start();
+  op int nbDaysRented();
+  ref Customer[1] customer;
+  ref RentalObject rentedObject;
+  attr EDate startDate;
+  attr EDate endDate;
+  ref RentalAgency[1] parentAgency;
+}
+
