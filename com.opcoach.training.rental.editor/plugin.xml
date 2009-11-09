@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ OPCoach @ 2009
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.opcoach.training.rental.presentation.RentalModelWizardID"
+            name="%_UI_RentalModelWizard_label"
+            class="com.opcoach.training.rental.presentation.RentalModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RentalModelFile.gif">
+         <description>%_UI_RentalModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="com.opcoach.training.rental.presentation.RentalEditorID"
+            name="%_UI_RentalEditor_label"
+            icon="icons/full/obj16/RentalModelFile.gif"
+            extensions="rental"
+            class="com.opcoach.training.rental.presentation.RentalEditor"
+            contributorClass="com.opcoach.training.rental.presentation.RentalActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

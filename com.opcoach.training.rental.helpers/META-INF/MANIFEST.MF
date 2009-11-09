@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Helpers for Rental
+Bundle-SymbolicName: com.opcoach.training.rental.helpers
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.opcoach.training.rental.helpers.Activator
+Bundle-Vendor: OPCOACH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.5.0",
+ com.opcoach.training.rental;bundle-version="1.0.0";visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.opcoach.training.rental.helpers
