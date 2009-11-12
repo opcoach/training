@@ -15,6 +15,7 @@ import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 import com.opcoach.training.rental.StreetType;
 
+import com.opcoach.training.rental.util.RentalValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.swt.graphics.Image;
@@ -151,6 +153,17 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 
 		// Initialize created meta-data
 		theRentalPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theRentalPackage, 
+			 new EValidator.Descriptor()
+			 {
+				 public EValidator getEValidator()
+				 {
+					 return RentalValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theRentalPackage.freeze();
@@ -710,11 +723,11 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	{
 		String source = "http://www.eclipse.org/emf/2002/Ecore";		
 		addAnnotation
-		  (getCustomer_LastName(), 
+		  (customerEClass, 
 		   source, 
 		   new String[] 
 		   {
-			 "constraints", "lastNameMustNotBeNull\n"
+			 "constraints", "lastNameMustNotBeNull toto\n\n"
 		   });
 	}
 

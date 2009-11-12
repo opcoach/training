@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see com.opcoach.training.rental.RentalPackage#getCustomer()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='lastNameMustNotBeNull toto\n\n'"
  * @generated
  */
 public interface Customer extends EObject
@@ -75,7 +75,7 @@ public interface Customer extends EObject
 	 * @return the value of the '<em>Last Name</em>' attribute.
 	 * @see #setLastName(String)
 	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_LastName()
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='lastNameMustNotBeNull\n'"
+	 * @model
 	 * @generated
 	 */
 	String getLastName();
