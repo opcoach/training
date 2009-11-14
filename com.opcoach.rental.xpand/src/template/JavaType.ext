@@ -1,0 +1,18 @@
+import ecore;
+
+String getJavaType(ecore::EAttribute this) :
+   if  (eAttributeType.name == "EString")  then "String"
+   else if (eAttributeType.name == "EInt") then "int"
+   else if (eAttributeType.name == "EDate") then "java.util.Date"
+   else if (eAttributeType.name == "ELong") then "long"
+   else if (eAttributeType.eClass().name == "EEnum") then eAttributeType.name
+   else  eAttributeType.instanceTypeName;
+      
+      
+String getterName(ecore::EAttribute this) :
+   "get"+name.toFirstUpper();
+   
+String setterName(ecore::EAttribute this) :
+   "set"+name.toFirstUpper();
+   
+  

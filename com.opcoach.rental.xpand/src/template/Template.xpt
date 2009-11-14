@@ -1,0 +1,42 @@
+
+
+«IMPORT ecore»
+
+«EXTENSION template::JavaType»
+
+«DEFINE main FOR ecore::EPackage»
+«EXPAND javaClass FOREACH eClassifiers.typeSelect(ecore::EClass)»
+«EXPAND enumClass FOREACH eClassifiers.typeSelect(ecore::EEnum)»
+«ENDDEFINE»
+
+
+«DEFINE javaClass FOR ecore::EClass»
+	«FILE name+".java"»
+		public class «name» {
+		
+		«FOREACH eAttributes AS att»
+		  private «att.getJavaType()» «att.name»;
+		«ENDFOREACH»
+				
+		«FOREACH eAttributes AS att»
+		  «att.getJavaType()» «att.getterName()»()
+		  {
+		     return «att.name»;
+		  }
+		  
+		  public void «att.setterName()»(«att.getJavaType()» p«att.name»)
+		   {
+				«att.name» = p«att.name»;
+		   }
+		«ENDFOREACH»
+		}
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE enumClass FOR ecore::EEnum»
+	«FILE name+".java"»
+		public enum «name» {
+		}
+		«ENDFILE»
+		«ENDDEFINE»
+
