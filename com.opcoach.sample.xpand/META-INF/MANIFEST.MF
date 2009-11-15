@@ -5,13 +5,13 @@ Bundle-SymbolicName: com.opcoach.sample.xpand;singleton:=true
 Bundle-Version: 1.0.0
 Require-Bundle: org.eclipse.xpand,
  org.eclipse.xtend,
- org.antlr.runtime;bundle-version="3.0.0",
- com.ibm.icu;bundle-version="4.0.1",
- org.eclipse.emf.mwe.utils;bundle-version="0.8.0",
- org.eclipse.emf.ecore.xmi;bundle-version="2.5.0",
- org.eclipse.core.runtime;bundle-version="3.5.0",
- org.eclipse.jdt.core;bundle-version="3.5.1",
- org.eclipse.jface.text;bundle-version="3.5.1",
- org.apache.commons.logging;bundle-version="1.1.1",
- org.eclipse.xtend.typesystem.emf;bundle-version="0.8.0"
+ org.antlr.runtime,
+ com.ibm.icu,
+ org.eclipse.emf.mwe.utils,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.core,
+ org.eclipse.jface.text,
+ org.apache.commons.logging,
+ org.eclipse.xtend.typesystem.emf
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
