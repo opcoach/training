@@ -5,8 +5,8 @@
 «EXTENSION template::JavaType»
 
 «DEFINE main FOR ecore::EPackage»
-«EXPAND javaClass FOREACH eClassifiers.typeSelect(ecore::EClass)»
-«EXPAND enumClass FOREACH eClassifiers.typeSelect(ecore::EEnum)»
+   «EXPAND javaClass FOREACH eClassifiers.typeSelect(ecore::EClass)»
+   «EXPAND enumClass FOREACH eClassifiers.typeSelect(ecore::EEnum)»
 «ENDDEFINE»
 
 
@@ -37,6 +37,6 @@
 	«FILE name+".java"»
 		public enum «name» {
 		}
-		«ENDFILE»
-		«ENDDEFINE»
+	«ENDFILE»
+«ENDDEFINE»
 
