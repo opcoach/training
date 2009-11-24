@@ -138,16 +138,46 @@ public class RentalValidator extends EObjectValidator
 		if (result || diagnostics != null) result &= validate_UniqueID(customer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(customer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(customer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCustomer_lastNameMustNotBeNull(customer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCustomer_toto(customer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCustomer_consistentName(customer, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the consistentName constraint of '<em>Customer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCustomer_consistentName(Customer customer, DiagnosticChain diagnostics, Map<Object, Object> context)
+	{
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false)
+		{
+			if (diagnostics != null)
+			{
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "consistentName", getObjectLabel(customer, context) },
+						 new Object[] { customer },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
 	 * Validates the lastNameMustNotBeNull constraint of '<em>Customer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateCustomer_lastNameMustNotBeNull(Customer customer, DiagnosticChain diagnostics, Map<Object, Object> context)
 	{
@@ -155,7 +185,7 @@ public class RentalValidator extends EObjectValidator
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false)
+		if (customer.getLastName().length() <= 2)
 		{
 			if (diagnostics != null)
 			{
@@ -166,37 +196,6 @@ public class RentalValidator extends EObjectValidator
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
 						 new Object[] { "lastNameMustNotBeNull", getObjectLabel(customer, context) },
-						 new Object[] { customer },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the toto constraint of '<em>Customer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCustomer_toto(Customer customer, DiagnosticChain diagnostics, Map<Object, Object> context)
-	{
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false)
-		{
-			if (diagnostics != null)
-			{
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "toto", getObjectLabel(customer, context) },
 						 new Object[] { customer },
 						 context));
 			}
@@ -252,7 +251,46 @@ public class RentalValidator extends EObjectValidator
 	 */
 	public boolean validateRental(Rental rental, DiagnosticChain diagnostics, Map<Object, Object> context)
 	{
-		return validate_EveryDefaultConstraint(rental, diagnostics, context);
+		boolean result = validate_EveryMultiplicityConforms(rental, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(rental, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(rental, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(rental, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(rental, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rental, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(rental, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRental_startDateBeforeEndDate(rental, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the startDateBeforeEndDate constraint of '<em>Rental</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRental_startDateBeforeEndDate(Rental rental, DiagnosticChain diagnostics, Map<Object, Object> context)
+	{
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false)
+		{
+			if (diagnostics != null)
+			{
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "startDateBeforeEndDate", getObjectLabel(rental, context) },
+						 new Object[] { rental },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

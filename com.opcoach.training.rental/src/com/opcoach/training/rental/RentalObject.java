@@ -151,12 +151,4 @@ public interface RentalObject extends EObject
 	 */
 	Rental rent(Customer customer);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	boolean isAvailable();
-
 } // RentalObject

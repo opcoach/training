@@ -20,6 +20,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/licenses"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//Customer/parentAgency"/>
       <genOperations ecoreOperation="rental.ecore#//Customer/getDisplayName"/>
+      <genOperations ecoreOperation="rental.ecore#//Customer/addLicense">
+        <genParameters ecoreParameter="rental.ecore#//Customer/addLicense/license"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="rental.ecore#//RentalAgency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalAgency/name"/>
@@ -30,14 +33,23 @@
       <genOperations ecoreOperation="rental.ecore#//RentalAgency/book">
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/customer"/>
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/rentedObject"/>
-        <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/from"/>
-        <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/to"/>
       </genOperations>
       <genOperations ecoreOperation="rental.ecore#//RentalAgency/addCustomer">
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/addCustomer/customer"/>
       </genOperations>
       <genOperations ecoreOperation="rental.ecore#//RentalAgency/addObject">
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/addObject/object"/>
+      </genOperations>
+      <genOperations ecoreOperation="rental.ecore#//RentalAgency/removeCustomer">
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/removeCustomer/customer"/>
+      </genOperations>
+      <genOperations ecoreOperation="rental.ecore#//RentalAgency/removeObject">
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/removeObject/object"/>
+      </genOperations>
+      <genOperations ecoreOperation="rental.ecore#//RentalAgency/isAvailable">
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/isAvailable/rentedObject"/>
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/isAvailable/from"/>
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/isAvailable/to"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="rental.ecore#//Address">
@@ -55,12 +67,12 @@
       <genOperations ecoreOperation="rental.ecore#//RentalObject/rent">
         <genParameters ecoreParameter="rental.ecore#//RentalObject/rent/customer"/>
       </genOperations>
-      <genOperations ecoreOperation="rental.ecore#//RentalObject/isAvailable"/>
     </genClasses>
     <genClasses ecoreClass="rental.ecore#//License">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//License/number"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//License/validityDate"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//License/owner"/>
+      <genOperations ecoreOperation="rental.ecore#//License/isValid"/>
     </genClasses>
     <genClasses ecoreClass="rental.ecore#//Rental">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rental.ecore#//Rental/customer"/>
@@ -69,9 +81,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Rental/endDate"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rental.ecore#//Rental/parentAgency"/>
       <genOperations ecoreOperation="rental.ecore#//Rental/nbDaysBooked"/>
-      <genOperations ecoreOperation="rental.ecore#//Rental/end"/>
-      <genOperations ecoreOperation="rental.ecore#//Rental/start"/>
-      <genOperations ecoreOperation="rental.ecore#//Rental/nbDaysRented"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

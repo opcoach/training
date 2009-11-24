@@ -116,4 +116,12 @@ public interface License extends EObject
 	 */
 	void setOwner(Customer value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	boolean isValid();
+
 } // License

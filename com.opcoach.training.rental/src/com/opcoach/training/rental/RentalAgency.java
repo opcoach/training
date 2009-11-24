@@ -150,7 +150,7 @@ public interface RentalAgency extends EObject
 	 * @model
 	 * @generated
 	 */
-	Rental book(Customer customer, RentalObject rentedObject, Date from, Date to);
+	Rental book(Customer customer, RentalObject rentedObject);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,5 +167,29 @@ public interface RentalAgency extends EObject
 	 * @generated
 	 */
 	void addObject(RentalObject object);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void removeCustomer(Customer customer);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void removeObject(RentalObject object);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean isAvailable(RentalObject rentedObject, Date from, Date to);
 
 } // RentalAgency

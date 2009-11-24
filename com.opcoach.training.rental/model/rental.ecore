@@ -8,6 +8,9 @@
       <details key="constraints" value="consistentName"/>
     </eAnnotations>
     <eOperations name="getDisplayName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="addLicense">
+      <eParameters name="license" eType="#//License"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
@@ -21,14 +24,23 @@
     <eOperations name="book" eType="#//Rental">
       <eParameters name="customer" eType="#//Customer"/>
       <eParameters name="rentedObject" eType="#//RentalObject"/>
-      <eParameters name="from" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-      <eParameters name="to" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     </eOperations>
     <eOperations name="addCustomer">
       <eParameters name="customer" eType="#//Customer"/>
     </eOperations>
     <eOperations name="addObject">
       <eParameters name="object" eType="#//RentalObject"/>
+    </eOperations>
+    <eOperations name="removeCustomer">
+      <eParameters name="customer" eType="#//Customer"/>
+    </eOperations>
+    <eOperations name="removeObject">
+      <eParameters name="object" eType="#//RentalObject"/>
+    </eOperations>
+    <eOperations name="isAvailable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="rentedObject" eType="#//RentalObject"/>
+      <eParameters name="from" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      <eParameters name="to" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
@@ -56,7 +68,6 @@
     <eOperations name="rent" eType="#//Rental">
       <eParameters name="customer" eType="#//Customer"/>
     </eOperations>
-    <eOperations name="isAvailable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -66,6 +77,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Image" instanceClassName="org.eclipse.swt.graphics.Image"/>
   <eClassifiers xsi:type="ecore:EClass" name="License">
+    <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validityDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Customer"
@@ -76,9 +88,6 @@
       <details key="constraints" value="startDateBeforeEndDate"/>
     </eAnnotations>
     <eOperations name="nbDaysBooked" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eOperations name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eOperations name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eOperations name="nbDaysRented" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="customer" lowerBound="1"
         eType="#//Customer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rentedObject" eType="#//RentalObject"/>

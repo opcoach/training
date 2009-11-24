@@ -291,13 +291,22 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getDisplayName()
 	{
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return getFirstName() + " " + getLastName();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void addLicense(License license)
+	{
+		getLicenses().add(license);
+		license.setOwner(this);
 	}
 
 	/**

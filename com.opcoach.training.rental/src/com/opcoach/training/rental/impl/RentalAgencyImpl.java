@@ -1,7 +1,5 @@
 /**
- * OPCoach @ 2009
- *
- * $Id$
+ * OPCoach @ 2009 $Id$
  */
 package com.opcoach.training.rental.impl;
 
@@ -9,6 +7,7 @@ import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 
@@ -31,9 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Agency</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Agency</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -50,16 +47,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "OPCoach @ 2009";
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -68,8 +63,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -78,8 +72,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 
 	/**
 	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAddress()
 	 * @generated
 	 * @ordered
@@ -88,8 +81,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 
 	/**
 	 * The cached value of the '{@link #getObjectsToRent() <em>Objects To Rent</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getObjectsToRent()
 	 * @generated
 	 * @ordered
@@ -98,8 +90,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 
 	/**
 	 * The cached value of the '{@link #getCustomers() <em>Customers</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCustomers()
 	 * @generated
 	 * @ordered
@@ -108,8 +99,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 
 	/**
 	 * The cached value of the '{@link #getRentals() <em>Rentals</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getRentals()
 	 * @generated
 	 * @ordered
@@ -117,8 +107,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	protected EList<Rental> rentals;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected RentalAgencyImpl()
@@ -127,8 +116,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -138,8 +126,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getName()
@@ -148,8 +135,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setName(String newName)
@@ -161,8 +147,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Address getAddress()
@@ -171,8 +156,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetAddress(Address newAddress, NotificationChain msgs)
@@ -188,8 +172,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setAddress(Address newAddress)
@@ -209,8 +192,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<RentalObject> getObjectsToRent()
@@ -223,8 +205,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<Customer> getCustomers()
@@ -237,8 +218,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<Rental> getRentals()
@@ -255,40 +235,113 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Rental book(Customer customer, RentalObject rentedObject)
+	{
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
 	public Rental book(Customer customer, RentalObject rentedObject, Date from, Date to)
 	{
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Rental r = RentalFactory.eINSTANCE.createRental();
+		r.setStartDate(from);
+		r.setEndDate(to);
+		r.setCustomer(customer);
+		r.setRentedObject(rentedObject);
+		getRentals().add(r);
+		return r;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	public void addCustomer(Customer customer)
+
 	{
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		getCustomers().add(customer);
+		customer.setParentAgency(this);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	public void addObject(RentalObject object)
 	{
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		getObjectsToRent().add(object);
+		object.setParentAgency(this);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void removeCustomer(Customer customer)
+	{
+		customer.setParentAgency(null);
+		getCustomers().remove(customer);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void removeObject(RentalObject object)
+	{
+		object.setParentAgency(null);
+		getObjectsToRent().remove(object);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isAvailable(RentalObject rentedObject, Date startDate, Date endDate)
+	{
+		if (rentedObject == null)
+			return false;
+		
+		if (endDate.before(startDate))
+			throw new IllegalArgumentException("isAvailable : endDate before startDate");
+		
+		boolean result = true;
+		for (Rental r : getRentals())
+		{
+		   if (rentedObject.equals(r.getRentedObject()))
+		   {
+			   Date sd = r.getStartDate();
+			   Date ed = r.getEndDate();
+			   if  (! (isOutside(startDate,sd,ed)) && (isOutside(endDate,sd,ed)) )
+				   return false;
+			   
+		   }
+		}
+		return result;
+	}
+	
+	/** Check if a date is outside bounds
+	 * @return true if the date is outside the [start,end] bounds
+	 * @generated NOT
+	 */
+	private static boolean isOutside(Date d, Date start, Date end)
+	{
+		return d.before(start) && d.after(end);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -306,8 +359,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -328,8 +380,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -352,8 +403,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -385,8 +435,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -414,8 +463,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -438,8 +486,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -454,4 +501,4 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 		return result.toString();
 	}
 
-} //RentalAgencyImpl
+} // RentalAgencyImpl

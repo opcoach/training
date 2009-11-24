@@ -640,6 +640,9 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 
 		addEOperation(customerEClass, ecorePackage.getEString(), "getDisplayName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		EOperation op = addEOperation(customerEClass, null, "addLicense", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getLicense(), "license", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(rentalAgencyEClass, RentalAgency.class, "RentalAgency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRentalAgency_Name(), ecorePackage.getEString(), "name", null, 0, 1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRentalAgency_Address(), this.getAddress(), null, "address", null, 1, 1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -647,17 +650,26 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		initEReference(getRentalAgency_Customers(), this.getCustomer(), this.getCustomer_ParentAgency(), "customers", null, 0, -1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRentalAgency_Rentals(), this.getRental(), null, "rentals", null, 0, -1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(rentalAgencyEClass, this.getRental(), "book", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(rentalAgencyEClass, this.getRental(), "book", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCustomer(), "customer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRentalObject(), "rentedObject", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "from", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "to", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(rentalAgencyEClass, null, "addCustomer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCustomer(), "customer", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(rentalAgencyEClass, null, "addObject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRentalObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(rentalAgencyEClass, null, "removeCustomer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCustomer(), "customer", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(rentalAgencyEClass, null, "removeObject", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getRentalObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(rentalAgencyEClass, ecorePackage.getEBoolean(), "isAvailable", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getRentalObject(), "rentedObject", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "from", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "to", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddress_StreetType(), this.getStreetType(), "streetType", "0", 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -675,12 +687,12 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		op = addEOperation(rentalObjectEClass, this.getRental(), "rent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCustomer(), "customer", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(rentalObjectEClass, ecorePackage.getEBoolean(), "isAvailable", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(licenseEClass, License.class, "License", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLicense_Number(), ecorePackage.getEInt(), "number", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLicense_ValidityDate(), ecorePackage.getEDate(), "validityDate", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLicense_Owner(), this.getCustomer(), this.getCustomer_Licenses(), "owner", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(licenseEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(rentalEClass, Rental.class, "Rental", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRental_Customer(), this.getCustomer(), null, "customer", null, 1, 1, Rental.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -727,7 +739,14 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		   source, 
 		   new String[] 
 		   {
-			 "constraints", "lastNameMustNotBeNull toto\n\n"
+			 "constraints", "consistentName"
+		   });		
+		addAnnotation
+		  (rentalEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "constraints", "startDateBeforeEndDate"
 		   });
 	}
 

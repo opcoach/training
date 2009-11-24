@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see com.opcoach.training.rental.RentalPackage#getRental()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='startDateBeforeEndDate'"
  * @generated
  */
 public interface Rental extends EObject
@@ -176,28 +176,6 @@ public interface Rental extends EObject
 	 */
 	int nbDaysBooked();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	int end();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	int start();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	int nbDaysRented();
 
 } // Rental

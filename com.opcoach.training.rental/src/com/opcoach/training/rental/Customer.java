@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see com.opcoach.training.rental.RentalPackage#getCustomer()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='lastNameMustNotBeNull toto\n\n'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='consistentName'"
  * @generated
  */
 public interface Customer extends EObject
@@ -169,5 +169,13 @@ public interface Customer extends EObject
 	 * @generated
 	 */
 	String getDisplayName();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void addLicense(License license);
 
 } // Customer
