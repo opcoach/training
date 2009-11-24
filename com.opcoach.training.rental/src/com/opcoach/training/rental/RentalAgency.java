@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see com.opcoach.training.rental.RentalPackage#getRentalAgency()
- * @model
+ * @model annotation="gmf.diagram foo='bar'"
  * @generated
  */
 public interface RentalAgency extends EObject
@@ -78,6 +78,7 @@ public interface RentalAgency extends EObject
 	 * @see #setAddress(Address)
 	 * @see com.opcoach.training.rental.RentalPackage#getRentalAgency_Address()
 	 * @model containment="true" required="true"
+	 *        annotation="gmf.compartment foo='bar'"
 	 * @generated
 	 */
 	Address getAddress();

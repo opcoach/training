@@ -27,6 +27,9 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see com.opcoach.training.rental.RentalPackage#getCustomer()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='consistentName'"
+ *        annotation="gmf.node label='firstName,lastName'"
+ *        annotation="gmf.node label.pattern='{0}:{1}'"
+ *        annotation="gmf.node figure='com.opcoach.training.rental.gef.figures'"
  * @generated
  */
 public interface Customer extends EObject
@@ -102,6 +105,7 @@ public interface Customer extends EObject
 	 * @see #setAddress(Address)
 	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_Address()
 	 * @model containment="true" required="true"
+	 *        annotation="gmf.compartment foo='bar'"
 	 * @generated
 	 */
 	Address getAddress();
@@ -130,6 +134,7 @@ public interface Customer extends EObject
 	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_Licenses()
 	 * @see com.opcoach.training.rental.License#getOwner
 	 * @model opposite="owner" containment="true"
+	 *        annotation="gmf.compartment foo='bar'"
 	 * @generated
 	 */
 	EList<License> getLicenses();

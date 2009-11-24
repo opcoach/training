@@ -25,7 +25,7 @@ import org.eclipse.swt.graphics.Image;
  * </p>
  *
  * @see com.opcoach.training.rental.RentalPackage#getRentalObject()
- * @model
+ * @model annotation="gmf.node label='name'"
  * @generated
  */
 public interface RentalObject extends EObject

@@ -44,8 +44,8 @@ public class RentalTests extends TestSuite
 	public static Test suite()
 	{
 		TestSuite suite = new RentalTests("rental Tests");
-		suite.addTestSuite(CustomerTest.class);
 		suite.addTestSuite(RentalAgencyTest.class);
+		suite.addTestSuite(CustomerTest.class);
 		suite.addTestSuite(RentalObjectTest.class);
 		suite.addTestSuite(LicenseTest.class);
 		suite.addTestSuite(RentalTest.class);

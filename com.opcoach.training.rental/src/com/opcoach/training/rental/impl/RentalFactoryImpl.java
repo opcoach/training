@@ -77,8 +77,8 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	{
 		switch (eClass.getClassifierID())
 		{
-			case RentalPackage.CUSTOMER: return createCustomer();
 			case RentalPackage.RENTAL_AGENCY: return createRentalAgency();
+			case RentalPackage.CUSTOMER: return createCustomer();
 			case RentalPackage.ADDRESS: return createAddress();
 			case RentalPackage.RENTAL_OBJECT: return createRentalObject();
 			case RentalPackage.LICENSE: return createLicense();

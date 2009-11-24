@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see com.opcoach.training.rental.RentalPackage#getAddress()
- * @model
+ * @model annotation="gmf.node label='city'"
  * @generated
  */
 public interface Address extends EObject

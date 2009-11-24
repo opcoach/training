@@ -102,17 +102,17 @@ public class RentalSwitch<T>
 	{
 		switch (classifierID)
 		{
-			case RentalPackage.CUSTOMER:
-			{
-				Customer customer = (Customer)theEObject;
-				T result = caseCustomer(customer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RentalPackage.RENTAL_AGENCY:
 			{
 				RentalAgency rentalAgency = (RentalAgency)theEObject;
 				T result = caseRentalAgency(rentalAgency);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RentalPackage.CUSTOMER:
+			{
+				Customer customer = (Customer)theEObject;
+				T result = caseCustomer(customer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

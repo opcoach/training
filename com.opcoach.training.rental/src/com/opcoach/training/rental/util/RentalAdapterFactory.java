@@ -85,14 +85,14 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 		new RentalSwitch<Adapter>()
 		{
 			@Override
-			public Adapter caseCustomer(Customer object)
-			{
-				return createCustomerAdapter();
-			}
-			@Override
 			public Adapter caseRentalAgency(RentalAgency object)
 			{
 				return createRentalAgencyAdapter();
+			}
+			@Override
+			public Adapter caseCustomer(Customer object)
+			{
+				return createCustomerAdapter();
 			}
 			@Override
 			public Adapter caseAddress(Address object)

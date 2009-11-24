@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see com.opcoach.training.rental.RentalFactory
  * @model kind="package"
+ *        annotation="gmf foo='bar'"
  * @generated
  */
 public interface RentalPackage extends EPackage
@@ -76,61 +77,7 @@ public interface RentalPackage extends EPackage
 	 * @see com.opcoach.training.rental.impl.RentalPackageImpl#getCustomer()
 	 * @generated
 	 */
-	int CUSTOMER = 0;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__FIRST_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__LAST_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Address</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__ADDRESS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Licenses</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__LICENSES = 3;
-
-	/**
-	 * The feature id for the '<em><b>Parent Agency</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__PARENT_AGENCY = 4;
-
-	/**
-	 * The number of structural features of the '<em>Customer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER_FEATURE_COUNT = 5;
+	int CUSTOMER = 1;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.training.rental.impl.RentalAgencyImpl <em>Agency</em>}' class.
@@ -140,7 +87,7 @@ public interface RentalPackage extends EPackage
 	 * @see com.opcoach.training.rental.impl.RentalPackageImpl#getRentalAgency()
 	 * @generated
 	 */
-	int RENTAL_AGENCY = 1;
+	int RENTAL_AGENCY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -195,6 +142,60 @@ public interface RentalPackage extends EPackage
 	 * @ordered
 	 */
 	int RENTAL_AGENCY_FEATURE_COUNT = 5;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__FIRST_NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__LAST_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__ADDRESS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Licenses</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__LICENSES = 3;
+
+	/**
+	 * The feature id for the '<em><b>Parent Agency</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__PARENT_AGENCY = 4;
+
+	/**
+	 * The number of structural features of the '<em>Customer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.training.rental.impl.AddressImpl <em>Address</em>}' class.

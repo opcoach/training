@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see com.opcoach.training.rental.RentalPackage#getLicense()
- * @model
+ * @model annotation="gmf.node label='number'"
  * @generated
  */
 public interface License extends EObject

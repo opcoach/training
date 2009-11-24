@@ -554,19 +554,19 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		isCreated = true;
 
 		// Create classes and their features
-		customerEClass = createEClass(CUSTOMER);
-		createEAttribute(customerEClass, CUSTOMER__FIRST_NAME);
-		createEAttribute(customerEClass, CUSTOMER__LAST_NAME);
-		createEReference(customerEClass, CUSTOMER__ADDRESS);
-		createEReference(customerEClass, CUSTOMER__LICENSES);
-		createEReference(customerEClass, CUSTOMER__PARENT_AGENCY);
-
 		rentalAgencyEClass = createEClass(RENTAL_AGENCY);
 		createEAttribute(rentalAgencyEClass, RENTAL_AGENCY__NAME);
 		createEReference(rentalAgencyEClass, RENTAL_AGENCY__ADDRESS);
 		createEReference(rentalAgencyEClass, RENTAL_AGENCY__OBJECTS_TO_RENT);
 		createEReference(rentalAgencyEClass, RENTAL_AGENCY__CUSTOMERS);
 		createEReference(rentalAgencyEClass, RENTAL_AGENCY__RENTALS);
+
+		customerEClass = createEClass(CUSTOMER);
+		createEAttribute(customerEClass, CUSTOMER__FIRST_NAME);
+		createEAttribute(customerEClass, CUSTOMER__LAST_NAME);
+		createEReference(customerEClass, CUSTOMER__ADDRESS);
+		createEReference(customerEClass, CUSTOMER__LICENSES);
+		createEReference(customerEClass, CUSTOMER__PARENT_AGENCY);
 
 		addressEClass = createEClass(ADDRESS);
 		createEAttribute(addressEClass, ADDRESS__STREET_TYPE);
@@ -631,18 +631,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustomer_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomer_LastName(), ecorePackage.getEString(), "lastName", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCustomer_Address(), this.getAddress(), null, "address", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCustomer_Licenses(), this.getLicense(), this.getLicense_Owner(), "licenses", null, 0, -1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCustomer_ParentAgency(), this.getRentalAgency(), this.getRentalAgency_Customers(), "parentAgency", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(customerEClass, ecorePackage.getEString(), "getDisplayName", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		EOperation op = addEOperation(customerEClass, null, "addLicense", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getLicense(), "license", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(rentalAgencyEClass, RentalAgency.class, "RentalAgency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRentalAgency_Name(), ecorePackage.getEString(), "name", null, 0, 1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRentalAgency_Address(), this.getAddress(), null, "address", null, 1, 1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -650,7 +638,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		initEReference(getRentalAgency_Customers(), this.getCustomer(), this.getCustomer_ParentAgency(), "customers", null, 0, -1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRentalAgency_Rentals(), this.getRental(), null, "rentals", null, 0, -1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(rentalAgencyEClass, this.getRental(), "book", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(rentalAgencyEClass, this.getRental(), "book", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCustomer(), "customer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRentalObject(), "rentedObject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -672,6 +660,18 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addEParameter(op, this.getRentalObject(), "rentedObject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "from", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "to", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCustomer_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomer_LastName(), ecorePackage.getEString(), "lastName", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomer_Address(), this.getAddress(), null, "address", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomer_Licenses(), this.getLicense(), this.getLicense_Owner(), "licenses", null, 0, -1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomer_ParentAgency(), this.getRentalAgency(), this.getRentalAgency_Customers(), "parentAgency", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(customerEClass, ecorePackage.getEString(), "getDisplayName", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(customerEClass, null, "addLicense", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getLicense(), "license", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddress_StreetType(), this.getStreetType(), "streetType", "0", 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -717,8 +717,86 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		createResource(eNS_URI);
 
 		// Create annotations
+		// gmf
+		createGmfAnnotations();
+		// gmf.diagram
+		createGmf_1Annotations();
+		// gmf.compartment
+		createGmf_2Annotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// gmf.node
+		createGmf_3Annotations();
+		// gmf.link
+		createGmf_4Annotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmfAnnotations()
+	{
+		String source = "gmf";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] 
+		   {
+			 "foo", "bar"
+		   });															
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.diagram</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_1Annotations()
+	{
+		String source = "gmf.diagram";			
+		addAnnotation
+		  (rentalAgencyEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "foo", "bar"
+		   });														
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.compartment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_2Annotations()
+	{
+		String source = "gmf.compartment";				
+		addAnnotation
+		  (getRentalAgency_Address(), 
+		   source, 
+		   new String[] 
+		   {
+			 "foo", "bar"
+		   });						
+		addAnnotation
+		  (getCustomer_Address(), 
+		   source, 
+		   new String[] 
+		   {
+			 "foo", "bar"
+		   });		
+		addAnnotation
+		  (getCustomer_Licenses(), 
+		   source, 
+		   new String[] 
+		   {
+			 "foo", "bar"
+		   });							
 	}
 
 	/**
@@ -729,20 +807,107 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	 */
 	protected void createEcoreAnnotations()
 	{
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";					
 		addAnnotation
 		  (customerEClass, 
 		   source, 
 		   new String[] 
 		   {
 			 "constraints", "consistentName"
-		   });		
+		   });										
 		addAnnotation
 		  (rentalEClass, 
 		   source, 
 		   new String[] 
 		   {
 			 "constraints", "startDateBeforeEndDate"
+		   });			
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.node</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_3Annotations()
+	{
+		String source = "gmf.node";						
+		addAnnotation
+		  (customerEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "label", "firstName,lastName"
+		   });		
+		addAnnotation
+		  (customerEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "label.pattern", "{0}:{1}"
+		   });		
+		addAnnotation
+		  (customerEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "figure", "com.opcoach.training.rental.gef.figures"
+		   });				
+		addAnnotation
+		  (addressEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "label", "city"
+		   });		
+		addAnnotation
+		  (rentalObjectEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "label", "name"
+		   });		
+		addAnnotation
+		  (licenseEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "label", "number"
+		   });			
+		addAnnotation
+		  (rentalEClass, 
+		   source, 
+		   new String[] 
+		   {
+			 "label", "startDate"
+		   });		
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.link</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_4Annotations()
+	{
+		String source = "gmf.link";																
+		addAnnotation
+		  (getRental_Customer(), 
+		   source, 
+		   new String[] 
+		   {
+			 "target.decoration", "arrow",
+			 "style", "dash"
+		   });		
+		addAnnotation
+		  (getRental_RentedObject(), 
+		   source, 
+		   new String[] 
+		   {
+			 "target.decoration", "arrow",
+			 "style", "solid"
 		   });
 	}
 

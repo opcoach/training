@@ -103,10 +103,10 @@ public class RentalValidator extends EObjectValidator
 	{
 		switch (classifierID)
 		{
-			case RentalPackage.CUSTOMER:
-				return validateCustomer((Customer)value, diagnostics, context);
 			case RentalPackage.RENTAL_AGENCY:
 				return validateRentalAgency((RentalAgency)value, diagnostics, context);
+			case RentalPackage.CUSTOMER:
+				return validateCustomer((Customer)value, diagnostics, context);
 			case RentalPackage.ADDRESS:
 				return validateAddress((Address)value, diagnostics, context);
 			case RentalPackage.RENTAL_OBJECT:

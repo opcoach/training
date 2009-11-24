@@ -344,8 +344,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	 */
 	public void dispose()
 	{
-		if (customerItemProvider != null) customerItemProvider.dispose();
 		if (rentalAgencyItemProvider != null) rentalAgencyItemProvider.dispose();
+		if (customerItemProvider != null) customerItemProvider.dispose();
 		if (addressItemProvider != null) addressItemProvider.dispose();
 		if (rentalObjectItemProvider != null) rentalObjectItemProvider.dispose();
 		if (licenseItemProvider != null) licenseItemProvider.dispose();

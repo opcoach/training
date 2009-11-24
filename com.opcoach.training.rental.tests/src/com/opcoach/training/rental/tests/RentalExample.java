@@ -5,6 +5,7 @@
  */
 package com.opcoach.training.rental.tests;
 
+import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalPackage;
@@ -74,7 +75,7 @@ public class RentalExample
 			try
 			{
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.rental"));
-				Customer root = RentalFactory.eINSTANCE.createCustomer();
+				RentalAgency root = RentalFactory.eINSTANCE.createRentalAgency();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

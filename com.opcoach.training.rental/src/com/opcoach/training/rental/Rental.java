@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see com.opcoach.training.rental.RentalPackage#getRental()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='startDateBeforeEndDate'"
+ *        annotation="gmf.node label='startDate'"
  * @generated
  */
 public interface Rental extends EObject
@@ -50,6 +51,7 @@ public interface Rental extends EObject
 	 * @see #setCustomer(Customer)
 	 * @see com.opcoach.training.rental.RentalPackage#getRental_Customer()
 	 * @model required="true"
+	 *        annotation="gmf.link target.decoration='arrow' style='dash'"
 	 * @generated
 	 */
 	Customer getCustomer();
@@ -75,7 +77,7 @@ public interface Rental extends EObject
 	 * @return the value of the '<em>Rented Object</em>' reference.
 	 * @see #setRentedObject(RentalObject)
 	 * @see com.opcoach.training.rental.RentalPackage#getRental_RentedObject()
-	 * @model
+	 * @model annotation="gmf.link target.decoration='arrow' style='solid'"
 	 * @generated
 	 */
 	RentalObject getRentedObject();
