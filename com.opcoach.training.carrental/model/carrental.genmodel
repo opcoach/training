@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.opcoach.training.carrental/src"
+    modelPluginID="com.opcoach.training.carrental" modelName="Carrental" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../com.opcoach.training.rental/model/rental.genmodel#//rental">
+  <foreignModel>carrental.ecore</foreignModel>
+  <genPackages prefix="Carrental" basePackage="com.opcoach.training" disposableProviderFactory="true"
+      ecorePackage="carrental.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="carrental.ecore#//CarBrand">
+      <genEnumLiterals ecoreEnumLiteral="carrental.ecore#//CarBrand/Audi"/>
+      <genEnumLiterals ecoreEnumLiteral="carrental.ecore#//CarBrand/AlphaRomeo"/>
+      <genEnumLiterals ecoreEnumLiteral="carrental.ecore#//CarBrand/Bmw"/>
+      <genEnumLiterals ecoreEnumLiteral="carrental.ecore#//CarBrand/Peugeot"/>
+      <genEnumLiterals ecoreEnumLiteral="carrental.ecore#//CarBrand/Renault"/>
+    </genEnums>
+    <genClasses ecoreClass="carrental.ecore#//Car">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//Car/registration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//Car/brand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//Car/airConditionning"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//Car/radioCD"/>
+    </genClasses>
+    <genClasses ecoreClass="carrental.ecore#//CarRentalAgency">
+      <genOperations ecoreOperation="carrental.ecore#//CarRentalAgency/disable">
+        <genParameters ecoreParameter="carrental.ecore#//CarRentalAgency/disable/car"/>
+      </genOperations>
+      <genOperations ecoreOperation="carrental.ecore#//CarRentalAgency/enable">
+        <genParameters ecoreParameter="carrental.ecore#//CarRentalAgency/enable/car"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="carrental.ecore#//Bike">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//Bike/frontTireSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//Bike/backTireSize"/>
+    </genClasses>
+    <genClasses ecoreClass="carrental.ecore#//DrivingLicense">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//DrivingLicense/deliveryDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//DrivingLicense/deliveryLocation"/>
+    </genClasses>
+    <genClasses ecoreClass="carrental.ecore#//Vehicle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//Vehicle/plateNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute carrental.ecore#//Vehicle/horsePower"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
