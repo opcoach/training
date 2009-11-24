@@ -127,6 +127,12 @@ public static void navigateInModel()
 	System.out.println("  Low bound : " + startOfRental.getLowerBound());
 }
 
+public static void main(String[] arg)
+{
+	RentalAgency agency = createSampleAgency();
+	System.out.println("agence crée... Nb de clients : " + agency.getCustomers().size());
+}
+
 
 
 

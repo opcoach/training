@@ -22,6 +22,9 @@ import junit.textui.TestRunner;
  *   <li>{@link com.opcoach.training.rental.RentalAgency#book(com.opcoach.training.rental.Customer, com.opcoach.training.rental.RentalObject, java.util.Date, java.util.Date) <em>Book</em>}</li>
  *   <li>{@link com.opcoach.training.rental.RentalAgency#addCustomer(com.opcoach.training.rental.Customer) <em>Add Customer</em>}</li>
  *   <li>{@link com.opcoach.training.rental.RentalAgency#addObject(com.opcoach.training.rental.RentalObject) <em>Add Object</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.RentalAgency#removeCustomer(com.opcoach.training.rental.Customer) <em>Remove Customer</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.RentalAgency#removeObject(com.opcoach.training.rental.RentalObject) <em>Remove Object</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.RentalAgency#isAvailable(com.opcoach.training.rental.RentalObject, java.util.Date, java.util.Date) <em>Is Available</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -147,6 +150,48 @@ public class RentalAgencyTest extends TestCase
 	 * @generated
 	 */
 	public void testAddObject__RentalObject()
+	{
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link com.opcoach.training.rental.RentalAgency#removeCustomer(com.opcoach.training.rental.Customer) <em>Remove Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.training.rental.RentalAgency#removeCustomer(com.opcoach.training.rental.Customer)
+	 * @generated
+	 */
+	public void testRemoveCustomer__Customer()
+	{
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link com.opcoach.training.rental.RentalAgency#removeObject(com.opcoach.training.rental.RentalObject) <em>Remove Object</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.training.rental.RentalAgency#removeObject(com.opcoach.training.rental.RentalObject)
+	 * @generated
+	 */
+	public void testRemoveObject__RentalObject()
+	{
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link com.opcoach.training.rental.RentalAgency#isAvailable(com.opcoach.training.rental.RentalObject, java.util.Date, java.util.Date) <em>Is Available</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.training.rental.RentalAgency#isAvailable(com.opcoach.training.rental.RentalObject, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	public void testIsAvailable__RentalObject_Date_Date()
 	{
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT

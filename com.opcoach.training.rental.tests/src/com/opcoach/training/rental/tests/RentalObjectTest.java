@@ -20,7 +20,6 @@ import junit.textui.TestRunner;
  * The following operations are tested:
  * <ul>
  *   <li>{@link com.opcoach.training.rental.RentalObject#rent(com.opcoach.training.rental.Customer) <em>Rent</em>}</li>
- *   <li>{@link com.opcoach.training.rental.RentalObject#isAvailable() <em>Is Available</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -118,20 +117,6 @@ public class RentalObjectTest extends TestCase
 	 * @generated
 	 */
 	public void testRent__Customer()
-	{
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link com.opcoach.training.rental.RentalObject#isAvailable() <em>Is Available</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.opcoach.training.rental.RentalObject#isAvailable()
-	 * @generated
-	 */
-	public void testIsAvailable()
 	{
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT

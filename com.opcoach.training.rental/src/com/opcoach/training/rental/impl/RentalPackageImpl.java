@@ -653,6 +653,8 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		op = addEOperation(rentalAgencyEClass, this.getRental(), "book", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCustomer(), "customer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRentalObject(), "rentedObject", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "from", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "to", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(rentalAgencyEClass, null, "addCustomer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCustomer(), "customer", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -702,12 +704,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		initEReference(getRental_ParentAgency(), this.getRentalAgency(), null, "parentAgency", null, 1, 1, Rental.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(rentalEClass, ecorePackage.getEInt(), "nbDaysBooked", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(rentalEClass, ecorePackage.getEInt(), "end", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(rentalEClass, ecorePackage.getEInt(), "start", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(rentalEClass, ecorePackage.getEInt(), "nbDaysRented", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(streetTypeEEnum, StreetType.class, "StreetType");

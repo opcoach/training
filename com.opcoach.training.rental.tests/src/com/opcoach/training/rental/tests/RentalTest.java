@@ -20,9 +20,6 @@ import junit.textui.TestRunner;
  * The following operations are tested:
  * <ul>
  *   <li>{@link com.opcoach.training.rental.Rental#nbDaysBooked() <em>Nb Days Booked</em>}</li>
- *   <li>{@link com.opcoach.training.rental.Rental#end() <em>End</em>}</li>
- *   <li>{@link com.opcoach.training.rental.Rental#start() <em>Start</em>}</li>
- *   <li>{@link com.opcoach.training.rental.Rental#nbDaysRented() <em>Nb Days Rented</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -120,48 +117,6 @@ public class RentalTest extends TestCase
 	 * @generated
 	 */
 	public void testNbDaysBooked()
-	{
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link com.opcoach.training.rental.Rental#end() <em>End</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.opcoach.training.rental.Rental#end()
-	 * @generated
-	 */
-	public void testEnd()
-	{
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link com.opcoach.training.rental.Rental#start() <em>Start</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.opcoach.training.rental.Rental#start()
-	 * @generated
-	 */
-	public void testStart()
-	{
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link com.opcoach.training.rental.Rental#nbDaysRented() <em>Nb Days Rented</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.opcoach.training.rental.Rental#nbDaysRented()
-	 * @generated
-	 */
-	public void testNbDaysRented()
 	{
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT

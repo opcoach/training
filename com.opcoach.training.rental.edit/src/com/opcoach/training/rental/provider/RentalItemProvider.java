@@ -6,18 +6,13 @@
 package com.opcoach.training.rental.provider;
 
 
-import com.opcoach.training.rental.Rental;
-import com.opcoach.training.rental.RentalPackage;
-
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -28,6 +23,11 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.RentalObject;
+import com.opcoach.training.rental.RentalPackage;
 
 /**
  * This is the item provider adapter for a {@link com.opcoach.training.rental.Rental} object.
@@ -111,12 +111,12 @@ public class RentalItemProvider
 	 * This adds a property descriptor for the Rented Object feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addRentedObjectPropertyDescriptor(Object object)
 	{
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Rental_rentedObject_feature"),
@@ -127,7 +127,30 @@ public class RentalItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null)
+			{
+
+				@Override
+				public Collection<?> getChoiceOfValues(Object object)
+				{
+					// TODO Auto-generated method stub
+					Collection<RentalObject> result = (Collection<RentalObject>) super.getChoiceOfValues(object);
+					
+					Rental r = (Rental) object;
+					RentalAgency agency = r.getParentAgency();
+					for (RentalObject ro : agency.getObjectsToRent())
+					{
+					   //if (agency.isAvailable(ro, r.getStartDate(), r.getEndDate())	
+					   {
+						   
+					    }
+					}
+					return result;
+						
+				}
+				
+			}
+			);
 	}
 
 	/**

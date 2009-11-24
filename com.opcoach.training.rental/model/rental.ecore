@@ -24,6 +24,8 @@
     <eOperations name="book" eType="#//Rental">
       <eParameters name="customer" eType="#//Customer"/>
       <eParameters name="rentedObject" eType="#//RentalObject"/>
+      <eParameters name="from" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      <eParameters name="to" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     </eOperations>
     <eOperations name="addCustomer">
       <eParameters name="customer" eType="#//Customer"/>

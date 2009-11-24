@@ -150,7 +150,7 @@ public interface RentalAgency extends EObject
 	 * @model
 	 * @generated
 	 */
-	Rental book(Customer customer, RentalObject rentedObject);
+	Rental book(Customer customer, RentalObject rentedObject, Date from, Date to);
 
 	/**
 	 * <!-- begin-user-doc -->

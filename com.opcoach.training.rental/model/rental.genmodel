@@ -33,6 +33,8 @@
       <genOperations ecoreOperation="rental.ecore#//RentalAgency/book">
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/customer"/>
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/rentedObject"/>
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/from"/>
+        <genParameters ecoreParameter="rental.ecore#//RentalAgency/book/to"/>
       </genOperations>
       <genOperations ecoreOperation="rental.ecore#//RentalAgency/addCustomer">
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/addCustomer/customer"/>

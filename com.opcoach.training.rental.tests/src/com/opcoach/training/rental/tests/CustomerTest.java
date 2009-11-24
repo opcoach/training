@@ -20,6 +20,7 @@ import junit.textui.TestRunner;
  * The following operations are tested:
  * <ul>
  *   <li>{@link com.opcoach.training.rental.Customer#getDisplayName() <em>Get Display Name</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.Customer#addLicense(com.opcoach.training.rental.License) <em>Add License</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -117,6 +118,20 @@ public class CustomerTest extends TestCase
 	 * @generated
 	 */
 	public void testGetDisplayName()
+	{
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link com.opcoach.training.rental.Customer#addLicense(com.opcoach.training.rental.License) <em>Add License</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.training.rental.Customer#addLicense(com.opcoach.training.rental.License)
+	 * @generated
+	 */
+	public void testAddLicense__License()
 	{
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT

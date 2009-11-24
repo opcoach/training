@@ -16,6 +16,12 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>License</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link com.opcoach.training.rental.License#isValid() <em>Is Valid</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class LicenseTest extends TestCase
@@ -101,6 +107,20 @@ public class LicenseTest extends TestCase
 	protected void tearDown() throws Exception
 	{
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link com.opcoach.training.rental.License#isValid() <em>Is Valid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.training.rental.License#isValid()
+	 * @generated
+	 */
+	public void testIsValid()
+	{
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //LicenseTest
