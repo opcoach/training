@@ -1,26 +1,42 @@
 @namespace(uri="http://com.opcoach.training/rental/1.0", prefix="rental")
+@gmf(foo="bar")
 package rental;
 
-class Customer {
-  op String getDisplayName();
-  attr String firstName;
-  attr String lastName;
-  val Address[1] address;
-  val License[*]#owner licenses;
-  ref RentalAgency[1]#customers parentAgency;
-}
-
+@gmf.diagram(foo="bar")
 class RentalAgency {
   op Rental book(Customer customer, RentalObject rentedObject, EDate from, EDate to);
   op void addCustomer(Customer customer);
   op void addObject(RentalObject object);
+  op void removeCustomer(Customer customer);
+  op void removeObject(RentalObject object);
+  op boolean isAvailable(RentalObject rentedObject, EDate from, EDate to);
   attr String name;
+   @gmf.compartment(foo="bar")
   val Address[1] address;
   val RentalObject[*]#parentAgency objectsToRent;
   val Customer[*]#parentAgency customers;
   val Rental[*] rentals;
 }
 
+@Ecore(constraints="consistentName")
+@gmf.node(label="firstName,lastName")
+@gmf.node(label.pattern="{0}:{1}")
+@gmf.node(figure="com.opcoach.training.rental.gef.figures")
+class Customer {
+  op String getDisplayName();
+  op void addLicense(License license);
+  attr String firstName;
+  attr String lastName;
+  @gmf.compartment(foo="bar")
+  val Address[1] address;
+   @gmf.compartment(foo="bar")
+  val License[*]#owner licenses;
+  ref RentalAgency[1]#customers parentAgency;
+}
+
+
+
+@gmf.node(label="city")
 class Address {
   attr StreetType streetType = "0";
   attr int number;
@@ -34,9 +50,9 @@ enum StreetType {
   Road = 1;
 }
 
+@gmf.node(label="name")
 class RentalObject {
   op Rental rent(Customer customer);
-  op boolean isAvailable();
   id attr long ID;
   attr String name;
   attr Image picture;
@@ -45,18 +61,21 @@ class RentalObject {
 
 datatype Image : org.eclipse.swt.graphics.Image;
 
+@gmf.node(label="number")
 class License {
+  op boolean isValid();
   attr int number;
   attr EDate validityDate;
   ref Customer#licenses owner;
 }
 
+@Ecore(constraints="startDateBeforeEndDate")
+@gmf.node(label="startDate")
 class Rental {
   op int nbDaysBooked();
-  op int end();
-  op int start();
-  op int nbDaysRented();
+  @gmf.link(target.decoration="arrow", style="dash")
   ref Customer[1] customer;
+  @gmf.link(target.decoration="arrow", style="solid")
   ref RentalObject rentedObject;
   attr EDate startDate;
   attr EDate endDate;

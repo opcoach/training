@@ -13,17 +13,6 @@
       <genEnumLiterals ecoreEnumLiteral="rental.ecore#//StreetType/Road"/>
     </genEnums>
     <genDataTypes ecoreDataType="rental.ecore#//Image"/>
-    <genClasses ecoreClass="rental.ecore#//Customer">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Customer/firstName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Customer/lastName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/address"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/licenses"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//Customer/parentAgency"/>
-      <genOperations ecoreOperation="rental.ecore#//Customer/getDisplayName"/>
-      <genOperations ecoreOperation="rental.ecore#//Customer/addLicense">
-        <genParameters ecoreParameter="rental.ecore#//Customer/addLicense/license"/>
-      </genOperations>
-    </genClasses>
     <genClasses ecoreClass="rental.ecore#//RentalAgency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalAgency/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/address"/>
@@ -52,6 +41,17 @@
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/isAvailable/rentedObject"/>
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/isAvailable/from"/>
         <genParameters ecoreParameter="rental.ecore#//RentalAgency/isAvailable/to"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="rental.ecore#//Customer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Customer/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Customer/lastName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/licenses"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//Customer/parentAgency"/>
+      <genOperations ecoreOperation="rental.ecore#//Customer/getDisplayName"/>
+      <genOperations ecoreOperation="rental.ecore#//Customer/addLicense">
+        <genParameters ecoreParameter="rental.ecore#//Customer/addLicense/license"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="rental.ecore#//Address">
