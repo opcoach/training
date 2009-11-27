@@ -19,7 +19,7 @@
 
 
 	<!--  generate code -->
-	<component class="org.eclipse.xpand2.Generator">
+	<component class="org.eclipse.xpand2.Generator" id="genereBean">
 		<metaModel idRef="mm_emf"/>
 		<fileEncoding value="ISO-8859-1"/>
 		<expand
@@ -28,5 +28,10 @@
 			<postprocessor class="org.eclipse.xpand2.output.JavaBeautifier" />
 		</outlet>
 	</component>
+	
+	<component adviceTarget="genereBean" class="org.eclipse.xpand2.GeneratorAdvice">
+         <!-- rem : on peut mettre plusieurs aspects ici en les separant par une virgule --> 
+         <advices value="template::Aspect1,template::Aspect2"/>
+    </component>
 	
 </workflow>

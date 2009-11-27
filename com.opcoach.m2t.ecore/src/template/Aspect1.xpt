@@ -1,0 +1,13 @@
+
+
+«IMPORT ecore»
+
+«AROUND *genGetter FOR ecore::EAttribute»
+    // Generation du getter pour l'attribut «name»
+    «targetDef.proceed()»
+    // Fin du getter «name»
+«ENDAROUND»
+
+
+
+

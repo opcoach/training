@@ -1,0 +1,13 @@
+
+
+«IMPORT ecore»
+
+
+«AROUND *genAttr FOR ecore::EAttribute»
+    // Attribut «name»
+    «targetDef.proceed()»
+«ENDAROUND»
+
+
+
+

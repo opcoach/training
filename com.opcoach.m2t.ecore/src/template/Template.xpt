@@ -14,24 +14,37 @@
 	«FILE name+".java"»
 		public class «name» {
 		
+		«EXPAND genAttr FOREACH eAttributes»
 		«FOREACH eAttributes AS att»
-		  private «att.getJavaType()» «att.name»;
+				«EXPAND genGetter FOR att»
+				«EXPAND genSetter FOR att»
 		«ENDFOREACH»
-				
-		«FOREACH eAttributes AS att»
-		  «att.getJavaType()» «att.getterName()»()
-		  {
-		     return «att.name»;
-		  }
-		  
-		  public void «att.setterName()»(«att.getJavaType()» p«att.name»)
-		   {
-				«att.name» = p«att.name»;
-		   }
-		«ENDFOREACH»
+		
 		}
 	«ENDFILE»
 «ENDDEFINE»
+
+«DEFINE genGetter FOR ecore::EAttribute»
+		  «getJavaType()» «getterName()»()
+		  {
+		     return «name»;
+		  }
+«ENDDEFINE»
+
+«DEFINE genAttr FOR ecore::EAttribute»
+	  private «getJavaType()» «name»;
+«ENDDEFINE»
+
+
+
+«DEFINE genSetter FOR ecore::EAttribute»
+     public void «setterName()»(«getJavaType()» p«name»)
+     {
+		«name» = p«name»;
+     }
+«ENDDEFINE»
+
+
 
 «DEFINE enumClass FOR ecore::EEnum»
 	«FILE name+".java"»
