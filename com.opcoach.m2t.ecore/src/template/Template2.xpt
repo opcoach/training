@@ -1,0 +1,30 @@
+
+
+«IMPORT ecore»
+
+«EXTENSION template::JavaType»
+
+«DEFINE main FOR ecore::EPackage»
+   «EXPAND javaClass FOREACH eClassifiers.typeSelect(ecore::EClass)»
+   «EXPAND enumClass FOREACH eClassifiers.typeSelect(ecore::EEnum)»
+«ENDDEFINE»
+
+
+«DEFINE javaClass FOR ecore::EClass»
+	«FILE name+".java"»
+	    package com.opcoach.myproject.mypackage;
+	    import java.util.*;
+		public class «name» extends MyClass
+	    {
+		   // Code de génération (expand...)
+		}
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE enumClass FOR ecore::EEnum»
+	«FILE name+".java"»
+		public enum «name» {
+		}
+	«ENDFILE»
+«ENDDEFINE»
+

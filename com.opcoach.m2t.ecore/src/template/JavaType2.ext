@@ -1,0 +1,15 @@
+import ecore;
+import com::myproject::mypackage::GenHelper;
+
+String getJavaType(String typeName) :
+   if  (typeName == "EString")  then "String"
+   else  typeName;
+      
+      
+String getterName(ecore::EAttribute this) :
+   "get"+name.toFirstUpper();
+   
+String encodeName(String name) :
+   JAVA com.myproject.mypackage.GenHelper.encode(name)
+   
+  
