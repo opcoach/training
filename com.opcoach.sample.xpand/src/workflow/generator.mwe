@@ -18,6 +18,8 @@
 	<component class="org.eclipse.xtend.check.CheckComponent">
 		<metaModel id="mm"
 			class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel"/>
+			
+	
 		<checkFile value="metamodel::Checks" />
 		<emfAllChildrenSlot value="model" />
 	</component>
@@ -25,9 +27,11 @@
 	<!--  generate code -->
 	<component class="org.eclipse.xpand2.Generator">
 	    
-		<metaModel idRef="mm"/>
-		<fileEncoding value="ISO-8859-1"/>
-		
+		<!-- metaModel id="rentalMetaModel" class="org.eclipse.xtend.typesystem.emf.EmfMetaModel">
+           <metaModelFile value="rental.ecore"/> 
+         </metaModel>  -->
+	
+		<fileEncoding value="ISO-8859-1"/>		
 		<expand
 			value="template::Template::main FOR model" />
 		<outlet path="${src-gen}" >
