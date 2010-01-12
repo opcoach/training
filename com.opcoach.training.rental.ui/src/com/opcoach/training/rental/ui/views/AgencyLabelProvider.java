@@ -23,12 +23,12 @@ import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.ui.RentalUIActivator;
-import com.opcoach.training.rental.ui.pref.PrefRentalConstants;
+import com.opcoach.training.rental.ui.RentalUIConstants;
 
 /**
  * @author olivier
  */
-public class AgencyLabelProvider extends LabelProvider implements IColorProvider, PrefRentalConstants
+public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
 {
 	private SimpleDateFormat df = new SimpleDateFormat("dd/MM");
 
@@ -73,8 +73,9 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	@Override
 	public Color getBackground(Object element)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		IColorProvider cp = RentalUIActivator.getDefault().getColorProvider();
+		return (cp == null) ? null : cp.getBackground(element);
+		
 	}
 
 	/*
@@ -84,7 +85,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	@Override
 	public Color getForeground(Object element)
 	{
-		IColorProvider cp = RentalUIActivator.getDefault().getOverridenColorProvider();
+		IColorProvider cp = RentalUIActivator.getDefault().getColorProvider();
 		if (cp != null)
 			return cp.getForeground(element);
 		else

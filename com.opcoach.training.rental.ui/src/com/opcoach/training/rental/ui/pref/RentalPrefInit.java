@@ -5,8 +5,9 @@ import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.swt.graphics.RGB;
 
 import com.opcoach.training.rental.ui.RentalUIActivator;
+import com.opcoach.training.rental.ui.RentalUIConstants;
 
-public class RentalPrefInit extends AbstractPreferenceInitializer implements PrefRentalConstants
+public class RentalPrefInit extends AbstractPreferenceInitializer implements RentalUIConstants
 {
 
 	public RentalPrefInit()
