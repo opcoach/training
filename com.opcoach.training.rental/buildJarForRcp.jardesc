@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="MacRoman" standalone="no"?>
+<jardesc>
+    <jar path="com.opcoach.training.rental.core/lib/rental.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/com.opcoach.training.rental/buildJarForRcp.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/com.opcoach.training.rental/model/rental.ecore"/>
+        <javaElement handleIdentifier="=com.opcoach.training.rental/src"/>
+        <file path="/com.opcoach.training.rental/model/rental.genmodel"/>
+    </selectedElements>
+</jardesc>

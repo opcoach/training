@@ -54,6 +54,8 @@
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
+      <tools
+          xsi:type="gmftool:StandardTool"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
