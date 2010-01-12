@@ -26,7 +26,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		agencyViewer.setContentProvider(new AgencyContentProvider(RentalUIActivator.getAgency()));
 		agencyViewer.setLabelProvider(new AgencyLabelProvider());
 		agencyViewer.setInput(AgencyContentProvider.ROOT_AGENCY_NODE);
-		
+		getSite().setSelectionProvider(agencyViewer);		
 		
 		//  On s'enregistre en tant que pref listener sur le preference store...
 		RentalUIActivator.getDefault().getPreferenceStore().addPropertyChangeListener(this);

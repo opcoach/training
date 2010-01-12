@@ -47,7 +47,7 @@ public class RentalUIActivator extends AbstractUIPlugin
 	public void readColorProviderExtensions()
 	{
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
-		IExtensionPoint extp = reg.getExtensionPoint("com.opcoach.rental.ui.ColorProvider");
+		IExtensionPoint extp = reg.getExtensionPoint("com.opcoach.training.rental.ui.ColorProvider");
 		IExtension[] extensions = extp.getExtensions();
 		
 		for (IExtension ext : extensions)

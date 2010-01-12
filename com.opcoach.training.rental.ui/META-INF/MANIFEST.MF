@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Rental UI
 Bundle-SymbolicName: com.opcoach.training.rental.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.opcoach.rental.ui.RentalUIActivator
+Bundle-Activator: com.opcoach.training.rental.ui.RentalUIActivator
 Bundle-Vendor: OPCoach
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
