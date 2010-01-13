@@ -3,7 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Colorprovider
 Bundle-SymbolicName: com.opcoach.training.rental.ui.colorprovider;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.opcoach.training.rental.ui.colorprovider.Activator
 Bundle-Vendor: OPCOACH
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,

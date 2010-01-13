@@ -21,7 +21,7 @@ public class PastelColorProvider implements IColorProvider
 	public Color getBackground(Object element)
 	{
 		// TODO Auto-generated method stub
-		return Display.getCurrent().getSystemColor(SWT.COLOR_YELLOW);
+		return Display.getCurrent().getSystemColor(SWT.COLOR_GRAY);
 	}
 
 		public Color getForeground(Object element)
