@@ -10,6 +10,8 @@ public interface RentalUIConstants {
 
 	public static final String CUSTOMER_KEY = "customerKey";
 
+	public static final String DISPLAY_COUNT_PREF = "displayCounterPref";
+
 	public static final String RENTAL_KEY  = "rentalKey";
 	
 	public static final String RENTAL_OBJECT_KEY  = "rentalObjectKey";

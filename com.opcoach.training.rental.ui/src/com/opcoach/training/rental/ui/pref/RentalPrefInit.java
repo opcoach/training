@@ -21,6 +21,8 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 		RentalUIActivator.getDefault().getPreferenceStore().setDefault(CUSTOMER_KEY, StringConverter.asString(new RGB(0,0,255)));
 		RentalUIActivator.getDefault().getPreferenceStore().setDefault(RENTAL_KEY, StringConverter.asString(new RGB(255,0,0)));
 		RentalUIActivator.getDefault().getPreferenceStore().setDefault(RENTAL_OBJECT_KEY, StringConverter.asString(new RGB(0,255,0)));
+		RentalUIActivator.getDefault().getPreferenceStore().setDefault(DISPLAY_COUNT_PREF, StringConverter.asString(false));
+		
 		
 	}
 

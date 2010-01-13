@@ -1,5 +1,6 @@
 package com.opcoach.training.rental.ui.pref;
 
+import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -19,7 +20,7 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 	{
 		super(GRID);
 		setPreferenceStore(RentalUIActivator.getDefault().getPreferenceStore());
-		noDefaultAndApplyButton();
+		// noDefaultAndApplyButton();
 	}
 
 	
@@ -39,7 +40,7 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 	@Override
 	protected void createFieldEditors()
 	{
-		// TODO Auto-generated method stub
+		addField(new BooleanFieldEditor(DISPLAY_COUNT_PREF, "Affiche les totaux par groupes d'objets", getFieldEditorParent()));
 		
 	}
 
@@ -49,7 +50,7 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 	protected Control createContents(Composite parent)
 	{
 		Label lab = new Label(parent, SWT.NONE);
-		lab.setText("Pages de préférences de rental. Vous pouvez saisir les couleurs de l'arbre d'agence.");
+		lab.setText("Pages de préférences de rental.");
 		
 		// TODO Auto-generated method stub
 		return super.createContents(parent);
