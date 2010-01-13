@@ -10,6 +10,7 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.IColorProvider;
@@ -151,4 +152,15 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 		}
 
 	}
+
+	@Override
+	protected void initializeImageRegistry(ImageRegistry reg)
+	{
+		reg.put(CUSTOMER_KEY, getImageDescriptor("icons/Customers.png"));
+		reg.put(RENTAL_KEY, getImageDescriptor("icons/Rentals.png"));
+		reg.put(RENTAL_OBJECT_KEY, getImageDescriptor("icons/RentalObjects.png"));
+		reg.put(AGENCY_KEY, getImageDescriptor("icons/Agency.png"));
+	}
+	
+	
 }

@@ -27,10 +27,15 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            category="com.opcoach.test.preferences.preferences.SamplePreferencePage"
+            category="com.opcoach.training.rental.preferences"
             class="com.opcoach.training.rental.ui.pref.RentalColorPreferences"
             id="com.opcoach.rental.ui.page1"
-            name="ColorPreferences">
+            name="Colors">
+      </page>
+      <page
+            class="com.opcoach.training.rental.ui.pref.RentalPrefHomePage"
+            id="com.opcoach.training.rental.preferences"
+            name="Rental">
       </page>
    </extension>
    <extension

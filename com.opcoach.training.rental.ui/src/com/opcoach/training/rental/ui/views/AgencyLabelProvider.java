@@ -10,12 +10,14 @@ import java.util.Date;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ColorRegistry;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import com.opcoach.training.rental.Customer;
@@ -77,6 +79,36 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 		return (cp == null) ? null : cp.getBackground(element);
 		
 	}
+	
+	
+
+	@Override
+	public Image getImage(Object element)
+	{
+		// TODO Auto-generated method stub
+		Image result =  null;
+		ImageRegistry reg = RentalUIActivator.getDefault().getImageRegistry();
+		
+		if (element instanceof RentalAgency)
+		{
+			result = reg.get(AGENCY_KEY);
+		}
+		else if (AgencyContentProvider.RENTALS_NODE.equals(element))
+		{
+			result = reg.get(RENTAL_KEY);
+		}
+		else if (AgencyContentProvider.CUSTOMERS_NODE.equals(element))
+		{
+			result = reg.get(CUSTOMER_KEY);
+		}
+		else if (AgencyContentProvider.OBJECTS_NODE.equals(element))
+		{
+			result = reg.get(RENTAL_OBJECT_KEY);
+		}
+		
+		return result;
+		
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -91,9 +123,9 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 		else
 		{
 			if (element instanceof Customer)
-				return getPrefColor(CUSTOMER_COLOR);
+				return getPrefColor(CUSTOMER_KEY);
 			else if (element instanceof Rental)
-				return getPrefColor(RENTAL_COLOR);
+				return getPrefColor(RENTAL_KEY);
 			return Display.getCurrent().getSystemColor(SWT.COLOR_BLACK);
 		}
 	}

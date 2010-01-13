@@ -44,8 +44,8 @@ public class RentalColorPreferences extends FieldEditorPreferencePage implements
 		   
 		}
 		
-		addField(new ColorFieldEditor(CUSTOMER_COLOR, "Customer : ", getFieldEditorParent()));
-		addField(new ColorFieldEditor(RENTAL_COLOR, "Rental : ", getFieldEditorParent()));
+		addField(new ColorFieldEditor(CUSTOMER_KEY, "Customer : ", getFieldEditorParent()));
+		addField(new ColorFieldEditor(RENTAL_KEY, "Rental : ", getFieldEditorParent()));
 
 	}
 

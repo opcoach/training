@@ -18,8 +18,8 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 	@Override
 	public void initializeDefaultPreferences()
 	{
-		RentalUIActivator.getDefault().getPreferenceStore().setDefault(CUSTOMER_COLOR, StringConverter.asString(new RGB(0,0,255)));
-		RentalUIActivator.getDefault().getPreferenceStore().setDefault(RENTAL_COLOR, StringConverter.asString(new RGB(255,0,0)));
+		RentalUIActivator.getDefault().getPreferenceStore().setDefault(CUSTOMER_KEY, StringConverter.asString(new RGB(0,0,255)));
+		RentalUIActivator.getDefault().getPreferenceStore().setDefault(RENTAL_KEY, StringConverter.asString(new RGB(255,0,0)));
 		
 	}
 
