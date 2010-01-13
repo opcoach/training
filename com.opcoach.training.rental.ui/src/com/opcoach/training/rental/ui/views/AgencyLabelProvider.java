@@ -126,6 +126,8 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 				return getPrefColor(CUSTOMER_KEY);
 			else if (element instanceof Rental)
 				return getPrefColor(RENTAL_KEY);
+			else if (element instanceof RentalObject)
+				return getPrefColor(RENTAL_OBJECT_KEY);
 			return Display.getCurrent().getSystemColor(SWT.COLOR_BLACK);
 		}
 	}
