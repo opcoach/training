@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core
+Bundle-SymbolicName: com.opcoach.training.rental.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.opcoach.training.rental.core.RentalCoreActivator
+Bundle-Vendor: OPCOACH
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;bundle-version="2.5.0";visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/rental.jar,
+ .
+Export-Package: com.opcoach.training.rental
