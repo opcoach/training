@@ -13,3 +13,6 @@ Require-Bundle: com.opcoach.training.rental.core;bundle-version="1.0.0";visibili
  org.eclipse.core.databinding;bundle-version="1.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
+Export-Package: com.opcoach.training.rental.ui,
+ com.opcoach.training.rental.ui.pref,
+ com.opcoach.training.rental.ui.views

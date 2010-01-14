@@ -22,6 +22,8 @@ import com.opcoach.training.rental.ui.RentalUIActivator;
 
 public class RentalPropertyView extends ViewPart implements ISelectionListener
 {
+	public static final String VIEW_ID = "com.opcoach.rental.ui.views.rentalView";
+
 	private Label rentedObjectLabel;
 	private Label customerNameLabel;
 	private Label startDateLabel;

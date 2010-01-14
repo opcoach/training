@@ -14,7 +14,7 @@
             icon="icons/sample.gif"
             category="com.opcoach.rental.ui"
             class="com.opcoach.training.rental.ui.views.RentalPropertyView"
-            id="com.opcoach.rental.ui.views.SampleView">
+            id="com.opcoach.rental.ui.views.rentalView">
       </view>
       <view
             category="com.opcoach.rental.ui"

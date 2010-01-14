@@ -10,7 +10,7 @@ import com.opcoach.training.rental.ui.RentalUIActivator;
 
 public class RentalAgencyView extends ViewPart implements IPropertyChangeListener
 {
-	
+	public static final String VIEW_ID = "com.opcoach.rental.ui.rentalagencyview";
 
 	TreeViewer agencyViewer;
 
