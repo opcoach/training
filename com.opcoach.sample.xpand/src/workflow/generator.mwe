@@ -30,7 +30,7 @@
 		<!-- metaModel id="rentalMetaModel" class="org.eclipse.xtend.typesystem.emf.EmfMetaModel">
            <metaModelFile value="rental.ecore"/> 
          </metaModel>  -->
-	
+	     <metaModel idRef="mm"/>
 		<fileEncoding value="ISO-8859-1"/>		
 		<expand
 			value="template::Template::main FOR model" />

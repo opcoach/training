@@ -8,8 +8,10 @@
 «ENDDEFINE»
 
 
+
 «DEFINE javaClass FOR Entity»
 	«FILE name+".java"»
+	
 		public class «name» {
 			«FOREACH features AS f»
 				private «f.type.name» «f.name»;
