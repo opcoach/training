@@ -8,5 +8,12 @@
             name="Pastel">
       </colorProvider>
    </extension>
+   <extension
+         point="com.opcoach.training.rental.ui.ColorProvider">
+      <colorProvider
+            colorProviderClass="com.opcoach.training.rental.ui.colorprovider.PastelColorProvider"
+            name="Couleurs Vives">
+      </colorProvider>
+   </extension>
 
 </plugin>
