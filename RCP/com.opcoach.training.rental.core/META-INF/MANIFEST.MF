@@ -10,5 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: lib/rental.jar,
+ lib/rentalHelper.jar,
  .
-Export-Package: com.opcoach.training.rental
+Export-Package: com.opcoach.training.rental,
+ com.opcoach.training.rental.core

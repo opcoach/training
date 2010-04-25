@@ -3,6 +3,9 @@ package com.opcoach.training.rental.core;
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
+import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
+
 /**
  * The activator class controls the plug-in life cycle
  */
@@ -45,6 +48,17 @@ public class RentalCoreActivator extends Plugin {
 	 */
 	public static RentalCoreActivator getDefault() {
 		return plugin;
+	}
+	
+	private static RentalAgency agency = null;
+	
+	public static RentalAgency getAgency()
+	{
+		if (agency == null)
+		{
+			agency = RentalAgencyGenerator.createSampleAgency();
+		}
+		return agency;
 	}
 
 }
