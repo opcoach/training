@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.opcoach.training.rental_feature_1.0.0.201001141644.jar" id="com.opcoach.training.rental_feature" version="1.0.0.201001141644">
+   <feature url="features/com.opcoach.training.rental_feature_1.0.0.201004221444.jar" id="com.opcoach.training.rental_feature" version="1.0.0.201004221444">
       <category name="com.opcoach.category.rental"/>
    </feature>
    <category-def name="com.opcoach.category.rental" label="Rental"/>
