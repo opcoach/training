@@ -32,17 +32,39 @@ import com.opcoach.training.rental.ui.RentalUIConstants;
  */
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
 {
+	private RentalAgency agency;
+	
+	   public AgencyLabelProvider(RentalAgency ag)
+	   {
+		   agency = ag;
+	   }
 	private SimpleDateFormat df = new SimpleDateFormat("dd/MM");
 
 	@Override
 	public String getText(Object element)
 	{
 		String result = null;
+		boolean displayCount = RentalUIActivator.getDefault().getPreferenceStore().getBoolean(DISPLAY_COUNT_PREF);
+
 
 		if (element instanceof RentalAgency)
 		{
 			result = ((RentalAgency) element).getName();
 		}
+		if (CUSTOMERS_NODE == element)
+		{
+			result = CUSTOMERS_NODE + (displayCount ? "(" + agency.getCustomers().size() + ")" : "");
+		}
+		else if (RENTALS_NODE == element)
+		{
+			result = RENTALS_NODE + (displayCount ? "(" + agency.getRentals().size() + ")" : "");
+		}
+		else if (OBJECTS_NODE == element)
+		{
+			result = OBJECTS_NODE + (displayCount ? "(" + agency.getObjectsToRent().size() + ")" : "");
+		}
+		
+		
 		else if (element instanceof String)
 		{
 			result = (String) element;

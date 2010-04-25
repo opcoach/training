@@ -12,26 +12,22 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
+import com.opcoach.training.rental.ui.RentalUIConstants;
 
 /**
  * @author olivier
  */
-public class AgencyContentProvider implements ITreeContentProvider
+public class AgencyContentProvider implements ITreeContentProvider, RentalUIConstants
 {
 
 	/**
 	 * 
 	 */
-	public static final String ROOT_AGENCY_NODE = "Agences";
-	public static final String CUSTOMERS_NODE = "Customers";
-	public static final String RENTALS_NODE = "Locations";
-	public static final String OBJECTS_NODE = "Objets ˆ louer";
 
 	private RentalAgency agency = null;
 
 	
 	public AgencyContentProvider(RentalAgency pagency)
-	
 	{
 		agency = pagency;
 		
@@ -72,16 +68,17 @@ public class AgencyContentProvider implements ITreeContentProvider
 
 		if (parentElement instanceof String)
 		{
-			// This is one of the logical nodes
-			if (CUSTOMERS_NODE.equals(parentElement))
+			// This is one of the logical nodes  : 
+			// Use == because constants and avoid of string with same values
+			if (CUSTOMERS_NODE == parentElement)
 			{
 				result = agency.getCustomers().toArray();
 			}
-			else if (RENTALS_NODE.equals(parentElement))
+			else if (RENTALS_NODE == parentElement)
 			{
 				result = agency.getRentals().toArray();
 			}
-			else if (OBJECTS_NODE.equals(parentElement))
+			else if (OBJECTS_NODE == parentElement)
 			{
 				result = agency.getObjectsToRent().toArray();
 			}
