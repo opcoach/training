@@ -2,6 +2,8 @@ package com.opcoach.training.rental.ui.views;
 
 import java.text.SimpleDateFormat;
 
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
@@ -18,7 +20,7 @@ import org.eclipse.ui.part.ViewPart;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.ui.RentalUIActivator;
+import com.opcoach.training.rental.core.RentalCoreActivator;
 
 public class RentalPropertyView extends ViewPart implements ISelectionListener
 {
@@ -57,7 +59,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		endDateLabel = new Label(parent, SWT.NONE);
 
 		// Try with sample
-		RentalAgency agency = RentalUIActivator.getAgency();
+		RentalAgency agency = RentalCoreActivator.getAgency();
 		setRental(agency.getRentals().get(0));
 
 	}
@@ -100,10 +102,34 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		if (selection instanceof IStructuredSelection)
 		{
 			Object sel = ((IStructuredSelection) selection).getFirstElement();
+			
+			if (sel == null)
+				return;
+			
+			// Est ce une rental directement ? 
 			if (sel instanceof Rental)
 			{
 				setRental((Rental) sel);
 			}
+			
+			// Existe t il un adapter en rental ? 
+			Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel, Rental.class);
+			if (r != null)
+			{
+				setRental(r);
+			}
+			else if (sel instanceof IAdaptable)
+			{
+				// Sinon l'objet est il finalement adaptable ? 
+				IAdaptable selAd = (IAdaptable) sel;
+				r = (Rental) selAd.getAdapter(Rental.class);
+				if (r != null)
+				{
+					setRental(r);
+				}
+			}
+			
+			
 		}
 		
 	}
