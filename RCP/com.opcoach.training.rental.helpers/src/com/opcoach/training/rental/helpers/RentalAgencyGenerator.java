@@ -7,6 +7,7 @@ package com.opcoach.training.rental.helpers;
 
 import java.util.Date;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 
