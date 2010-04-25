@@ -131,10 +131,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
 	}
 
-	public static RentalAgency getAgency()
-	{
-		return RentalAgencyGenerator.createSampleAgency();
-	}
+
 
 	/*
 	 * (non-Javadoc)
