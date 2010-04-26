@@ -17,9 +17,6 @@ import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
-
 /**
  * The activator class controls the plug-in life cycle
  */
