@@ -4,7 +4,7 @@ import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
+import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 
 /**
  * The activator class controls the plug-in life cycle
