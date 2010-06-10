@@ -11,9 +11,11 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.IColorProvider;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -154,6 +156,25 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 		reg.put(RENTAL_KEY, getImageDescriptor("icons/Rentals.png"));
 		reg.put(RENTAL_OBJECT_KEY, getImageDescriptor("icons/RentalObjects.png"));
 		reg.put(AGENCY_KEY, getImageDescriptor("icons/Agency.png"));
+	}
+	
+	public Image getMyImage(String path)
+	{
+		// Utilise le Registry global de JfaceResources
+		ImageRegistry reg = JFaceResources.getImageRegistry();
+		// Essai de récuperer l'image peut être déjà présente
+		Image img = reg.get(path);
+		if (img == null)
+		{
+			// L'image n'est pas encore stockée dans le registry, on l'ajoute
+			ImageDescriptor desc = ImageDescriptor.createFromFile(this.getClass(), path);
+			// Le path sert de clé
+			reg.put(path, desc);
+			img = reg.get(path);
+		}
+		
+		return img;
+			
 	}
 	
 	

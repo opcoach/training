@@ -115,15 +115,15 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 		{
 			result = reg.get(AGENCY_KEY);
 		}
-		else if (AgencyContentProvider.RENTALS_NODE.equals(element))
+		else if (element == RENTALS_NODE)
 		{
 			result = reg.get(RENTAL_KEY);
 		}
-		else if (AgencyContentProvider.CUSTOMERS_NODE.equals(element))
+		else if (element == CUSTOMERS_NODE)
 		{
 			result = reg.get(CUSTOMER_KEY);
 		}
-		else if (AgencyContentProvider.OBJECTS_NODE.equals(element))
+		else if (element == OBJECTS_NODE)
 		{
 			result = reg.get(RENTAL_OBJECT_KEY);
 		}

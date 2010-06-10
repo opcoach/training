@@ -11,7 +11,7 @@
       </category>
       <view
             name="Rental Property view"
-            icon="icons/sample.gif"
+            icon="icons/Rentals.png"
             category="com.opcoach.rental.ui"
             class="com.opcoach.training.rental.ui.views.RentalPropertyView"
             id="com.opcoach.rental.ui.views.rentalView">
@@ -19,6 +19,7 @@
       <view
             category="com.opcoach.rental.ui"
             class="com.opcoach.training.rental.ui.views.RentalAgencyView"
+            icon="icons/Agency.png"
             id="com.opcoach.rental.ui.rentalagencyview"
             name="Rental Agency View"
             restorable="true">
@@ -54,6 +55,51 @@
                type="com.opcoach.training.rental.Rental">
          </adapter>
       </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="com.opcoach.training.rental.property.RentalProperty"
+            id="com.opcoach.training.rental.ui.rentalproperty"
+            name="Rental"
+            nameFilter="*.rental"
+            objectClass="org.eclipse.core.resources.IFile">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               id="com.opcoach.rental.ui.rentalagencyview"
+               minimized="false"
+               relationship="left"
+               visible="true">
+         </view>
+         <view
+               id="com.opcoach.rental.ui.views.rentalView"
+               minimized="false"
+               relationship="left">
+         </view>
+         <perspectiveShortcut
+               id="com.opcoach.training.rental.ui.rentalperspective">
+         </perspectiveShortcut>
+         <viewShortcut
+               id="com.opcoach.rental.ui.rentalagencyview">
+         </viewShortcut>
+         <viewShortcut
+               id="com.opcoach.rental.ui.views.rentalView">
+         </viewShortcut>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.opcoach.training.rental.ui.views.RentalPerspective"
+            icon="icons/Agency.png"
+            id="com.opcoach.training.rental.ui.rentalperspective"
+            name="Rental">
+      </perspective>
    </extension>
 
 </plugin>

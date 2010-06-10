@@ -14,6 +14,7 @@ import com.opcoach.training.rental.core.RentalCoreActivator;
 public class RentalAdapterFactory implements IAdapterFactory
 {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Object getAdapter(Object adaptableObject, Class adapterType)
 	{
@@ -35,6 +36,7 @@ public class RentalAdapterFactory implements IAdapterFactory
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Class[] getAdapterList()
 	{

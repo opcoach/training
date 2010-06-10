@@ -1,0 +1,2 @@
+# Specific rental ui debug flag
+com.opcoach.training.rental.ui/rentaldebug=false

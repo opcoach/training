@@ -10,6 +10,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
@@ -38,25 +39,33 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	@Override
 	public void createPartControl(Composite parent)
 	{
-		parent.setLayout(new GridLayout(2, false));
+		parent.setLayout(new GridLayout(1, false));
+		
+		Group infoGroup = new Group(parent, SWT.NONE);
+		infoGroup.setText("Informations");
+		infoGroup.setLayout(new GridLayout(2,false));
 
-		rentedObjectLabel = new Label(parent, SWT.BORDER);
+		rentedObjectLabel = new Label(infoGroup, SWT.BORDER);
 		GridData gd = new GridData();
 		gd.horizontalSpan = 2;
 		gd.horizontalAlignment = SWT.FILL;
 		rentedObjectLabel.setLayoutData(gd);
 
-		Label customerTitle = new Label(parent, SWT.NONE);
+		Label customerTitle = new Label(infoGroup, SWT.NONE);
 		customerTitle.setText("Loué à : ");
-		customerNameLabel = new Label(parent, SWT.NONE);
+		customerNameLabel = new Label(infoGroup, SWT.NONE);
 
-		Label startDateTitle = new Label(parent, SWT.NONE);
+		Group dateGroup = new Group(parent, SWT.NONE);
+		dateGroup.setText("Dates de location");
+		dateGroup.setLayout(new GridLayout(2,false));
+
+		Label startDateTitle = new Label(dateGroup, SWT.NONE);
 		startDateTitle.setText("du : ");
-		startDateLabel = new Label(parent, SWT.NONE);
+		startDateLabel = new Label(dateGroup, SWT.NONE);
 
-		Label endDateTitle = new Label(parent, SWT.NONE);
+		Label endDateTitle = new Label(dateGroup, SWT.NONE);
 		endDateTitle.setText("au : ");
-		endDateLabel = new Label(parent, SWT.NONE);
+		endDateLabel = new Label(dateGroup, SWT.NONE);
 
 		// Try with sample
 		RentalAgency agency = RentalCoreActivator.getAgency();
