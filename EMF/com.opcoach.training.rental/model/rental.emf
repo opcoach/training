@@ -1,5 +1,5 @@
-@namespace(uri="http://com.opcoach.training/rental/1.0", prefix="rental")
 @gmf(foo="bar")
+@namespace(uri="http://com.opcoach.training/rental/1.0", prefix="rental")
 package rental;
 
 @gmf.diagram(foo="bar")
@@ -11,11 +11,12 @@ class RentalAgency {
   op void removeObject(RentalObject object);
   op boolean isAvailable(RentalObject rentedObject, EDate from, EDate to);
   attr String name;
-   @gmf.compartment(foo="bar")
+
+  @gmf.compartment(foo="bar")
   val Address[1] address;
   val RentalObject[*]#parentAgency objectsToRent;
   val Customer[*]#parentAgency customers;
-  val Rental[*] rentals;
+  val Rental[*]#parentAgency rentals;
 }
 
 @Ecore(constraints="consistentName")
@@ -27,14 +28,14 @@ class Customer {
   op void addLicense(License license);
   attr String firstName;
   attr String lastName;
+
   @gmf.compartment(foo="bar")
   val Address[1] address;
-   @gmf.compartment(foo="bar")
+
+  @gmf.compartment(foo="bar")
   val License[*]#owner licenses;
   ref RentalAgency[1]#customers parentAgency;
 }
-
-
 
 @gmf.node(label="city")
 class Address {
@@ -73,12 +74,14 @@ class License {
 @gmf.node(label="startDate")
 class Rental {
   op int nbDaysBooked();
+
   @gmf.link(target.decoration="arrow", style="dash")
   ref Customer[1] customer;
+
   @gmf.link(target.decoration="arrow", style="solid")
   ref RentalObject rentedObject;
   attr EDate startDate;
   attr EDate endDate;
-  ref RentalAgency[1] parentAgency;
+  ref RentalAgency[1]#rentals parentAgency;
 }
 
