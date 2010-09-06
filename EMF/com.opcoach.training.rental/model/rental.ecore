@@ -45,7 +45,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="customers" upperBound="-1"
         eType="#//Customer" containment="true" eOpposite="#//Customer/parentAgency"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rentals" upperBound="-1"
-        eType="#//Rental" containment="true"/>
+        eType="#//Rental" containment="true" eOpposite="#//Rental/parentAgency"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Customer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -145,6 +145,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentAgency" lowerBound="1"
-        eType="#//RentalAgency"/>
+        eType="#//RentalAgency" eOpposite="#//RentalAgency/rentals"/>
   </eClassifiers>
 </ecore:EPackage>
