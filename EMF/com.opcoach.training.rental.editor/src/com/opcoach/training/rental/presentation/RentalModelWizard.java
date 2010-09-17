@@ -201,16 +201,12 @@ public class RentalModelWizard extends Wizard implements INewWizard
 	 */
 	protected Collection<String> getInitialObjectNames()
 	{
-		if (initialObjectNames == null)
-		{
+		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : rentalPackage.getEClassifiers())
-			{
-				if (eClassifier instanceof EClass)
-				{
+			for (EClassifier eClassifier : rentalPackage.getEClassifiers()) {
+				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass)eClassifier;
-					if (!eClass.isAbstract())
-					{
+					if (!eClass.isAbstract()) {
 						initialObjectNames.add(eClass.getName());
 					}
 				}
@@ -242,8 +238,7 @@ public class RentalModelWizard extends Wizard implements INewWizard
 	@Override
 	public boolean performFinish()
 	{
-		try
-		{
+		try {
 			// Remember the file.
 			//
 			final IFile modelFile = getModelFile();
@@ -251,13 +246,10 @@ public class RentalModelWizard extends Wizard implements INewWizard
 			// Do the work within an operation.
 			//
 			WorkspaceModifyOperation operation =
-				new WorkspaceModifyOperation()
-				{
+				new WorkspaceModifyOperation() {
 					@Override
-					protected void execute(IProgressMonitor progressMonitor)
-					{
-						try
-						{
+					protected void execute(IProgressMonitor progressMonitor) {
+						try {
 							// Create a resource set
 							//
 							ResourceSet resourceSet = new ResourceSetImpl();
@@ -273,8 +265,7 @@ public class RentalModelWizard extends Wizard implements INewWizard
 							// Add the initial model object to the contents.
 							//
 							EObject rootObject = createInitialModel();
-							if (rootObject != null)
-							{
+							if (rootObject != null) {
 								resource.getContents().add(rootObject);
 							}
 
@@ -284,12 +275,10 @@ public class RentalModelWizard extends Wizard implements INewWizard
 							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
 							resource.save(options);
 						}
-						catch (Exception exception)
-						{
+						catch (Exception exception) {
 							RentalEditorPlugin.INSTANCE.log(exception);
 						}
-						finally
-						{
+						finally {
 							progressMonitor.done();
 						}
 					}
@@ -302,14 +291,11 @@ public class RentalModelWizard extends Wizard implements INewWizard
 			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 			IWorkbenchPage page = workbenchWindow.getActivePage();
 			final IWorkbenchPart activePart = page.getActivePart();
-			if (activePart instanceof ISetSelectionTarget)
-			{
+			if (activePart instanceof ISetSelectionTarget) {
 				final ISelection targetSelection = new StructuredSelection(modelFile);
 				getShell().getDisplay().asyncExec
-					(new Runnable()
-					 {
-						 public void run()
-						 {
+					(new Runnable() {
+						 public void run() {
 							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
 						 }
 					 });
@@ -317,22 +303,19 @@ public class RentalModelWizard extends Wizard implements INewWizard
 
 			// Open an editor on the new file.
 			//
-			try
-			{
+			try {
 				page.openEditor
 					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
 			}
-			catch (PartInitException exception)
-			{
+			catch (PartInitException exception) {
 				MessageDialog.openError(workbenchWindow.getShell(), RentalEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
 		}
-		catch (Exception exception)
-		{
+		catch (Exception exception) {
 			RentalEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
@@ -366,11 +349,9 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		@Override
 		protected boolean validatePage()
 		{
-			if (super.validatePage())
-			{
+			if (super.validatePage()) {
 				String extension = new Path(getFileName()).getFileExtension();
-				if (extension == null || !FILE_EXTENSIONS.contains(extension))
-				{
+				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
 					setErrorMessage(RentalEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
@@ -530,10 +511,8 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		 * @generated
 		 */
 		protected ModifyListener validator =
-			new ModifyListener()
-			{
-				public void modifyText(ModifyEvent e)
-				{
+			new ModifyListener() {
+				public void modifyText(ModifyEvent e) {
 					setPageComplete(validatePage());
 				}
 			};
@@ -557,15 +536,12 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		public void setVisible(boolean visible)
 		{
 			super.setVisible(visible);
-			if (visible)
-			{
-				if (initialObjectField.getItemCount() == 1)
-				{
+			if (visible) {
+				if (initialObjectField.getItemCount() == 1) {
 					initialObjectField.clearSelection();
 					encodingField.setFocus();
 				}
-				else
-				{
+				else {
 					encodingField.clearSelection();
 					initialObjectField.setFocus();
 				}
@@ -581,10 +557,8 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		{
 			String label = initialObjectField.getText();
 
-			for (String name : getInitialObjectNames())
-			{
-				if (getLabel(name).equals(label))
-				{
+			for (String name : getInitialObjectNames()) {
+				if (getLabel(name).equals(label)) {
 					return name;
 				}
 			}
@@ -609,12 +583,10 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		 */
 		protected String getLabel(String typeName)
 		{
-			try
-			{
+			try {
 				return RentalEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
-			catch(MissingResourceException mre)
-			{
+			catch(MissingResourceException mre) {
 				RentalEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
@@ -627,11 +599,9 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		 */
 		protected Collection<String> getEncodings()
 		{
-			if (encodings == null)
-			{
+			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(RentalEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); )
-				{
+				for (StringTokenizer stringTokenizer = new StringTokenizer(RentalEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -658,25 +628,21 @@ public class RentalModelWizard extends Wizard implements INewWizard
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
-		if (selection != null && !selection.isEmpty())
-		{
+		if (selection != null && !selection.isEmpty()) {
 			// Get the resource...
 			//
 			Object selectedElement = selection.iterator().next();
-			if (selectedElement instanceof IResource)
-			{
+			if (selectedElement instanceof IResource) {
 				// Get the resource parent, if its a file.
 				//
 				IResource selectedResource = (IResource)selectedElement;
-				if (selectedResource.getType() == IResource.FILE)
-				{
+				if (selectedResource.getType() == IResource.FILE) {
 					selectedResource = selectedResource.getParent();
 				}
 
 				// This gives us a directory...
 				//
-				if (selectedResource instanceof IFolder || selectedResource instanceof IProject)
-				{
+				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
 					// Set this for the container.
 					//
 					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
@@ -686,8 +652,7 @@ public class RentalModelWizard extends Wizard implements INewWizard
 					String defaultModelBaseFilename = RentalEditorPlugin.INSTANCE.getString("_UI_RentalEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i)
-					{
+					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
 						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
 					}
 					newFileCreationPage.setFileName(modelFilename);
