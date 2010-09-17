@@ -88,12 +88,12 @@ public class RentalItemProvider
 	 * This adds a property descriptor for the Customer feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addCustomerPropertyDescriptor(Object object)
 	{
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Rental_customer_feature"),
@@ -104,7 +104,17 @@ public class RentalItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+
+					@Override
+					public Collection<?> getChoiceOfValues(Object object)
+					{
+						Rental r = (Rental) object;
+						RentalAgency ra = r.getParentAgency();
+						
+						// TODO Auto-generated method stub
+						return super.getChoiceOfValues(object);
+					}} );
 	}
 
 	/**

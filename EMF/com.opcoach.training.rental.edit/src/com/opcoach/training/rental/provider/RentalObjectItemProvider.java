@@ -70,8 +70,7 @@ public class RentalObjectItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addIDPropertyDescriptor(object);
@@ -189,8 +188,7 @@ public class RentalObjectItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RentalObject.class))
-		{
+		switch (notification.getFeatureID(RentalObject.class)) {
 			case RentalPackage.RENTAL_OBJECT__ID:
 			case RentalPackage.RENTAL_OBJECT__NAME:
 			case RentalPackage.RENTAL_OBJECT__PICTURE:

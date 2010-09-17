@@ -70,8 +70,7 @@ public class LicenseItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNumberPropertyDescriptor(object);
@@ -163,8 +162,7 @@ public class LicenseItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(License.class))
-		{
+		switch (notification.getFeatureID(License.class)) {
 			case RentalPackage.LICENSE__NUMBER:
 			case RentalPackage.LICENSE__VALIDITY_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
