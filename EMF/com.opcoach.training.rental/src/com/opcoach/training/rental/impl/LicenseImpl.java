@@ -182,8 +182,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	 */
 	public void setOwner(Customer newOwner)
 	{
-		if (newOwner != eInternalContainer() || (eContainerFeatureID() != RentalPackage.LICENSE__OWNER && newOwner != null))
-		{
+		if (newOwner != eInternalContainer() || (eContainerFeatureID() != RentalPackage.LICENSE__OWNER && newOwner != null)) {
 			if (EcoreUtil.isAncestor(this, newOwner))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -216,8 +215,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.LICENSE__OWNER:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -234,8 +232,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.LICENSE__OWNER:
 				return basicSetOwner(null, msgs);
 		}
@@ -250,8 +247,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID())
-		{
+		switch (eContainerFeatureID()) {
 			case RentalPackage.LICENSE__OWNER:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.CUSTOMER__LICENSES, Customer.class, msgs);
 		}
@@ -266,8 +262,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.LICENSE__NUMBER:
 				return getNumber();
 			case RentalPackage.LICENSE__VALIDITY_DATE:
@@ -286,8 +281,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.LICENSE__NUMBER:
 				setNumber((Integer)newValue);
 				return;
@@ -309,8 +303,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.LICENSE__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
@@ -332,8 +325,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.LICENSE__NUMBER:
 				return number != NUMBER_EDEFAULT;
 			case RentalPackage.LICENSE__VALIDITY_DATE:

@@ -47,8 +47,7 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 	 */
 	public RentalAdapterFactory()
 	{
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = RentalPackage.eINSTANCE;
 		}
 	}
@@ -64,12 +63,10 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 	@Override
 	public boolean isFactoryForType(Object object)
 	{
-		if (object == modelPackage)
-		{
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
+		if (object instanceof EObject) {
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -82,41 +79,33 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	protected RentalSwitch<Adapter> modelSwitch =
-		new RentalSwitch<Adapter>()
-		{
+		new RentalSwitch<Adapter>() {
 			@Override
-			public Adapter caseRentalAgency(RentalAgency object)
-			{
+			public Adapter caseRentalAgency(RentalAgency object) {
 				return createRentalAgencyAdapter();
 			}
 			@Override
-			public Adapter caseCustomer(Customer object)
-			{
+			public Adapter caseCustomer(Customer object) {
 				return createCustomerAdapter();
 			}
 			@Override
-			public Adapter caseAddress(Address object)
-			{
+			public Adapter caseAddress(Address object) {
 				return createAddressAdapter();
 			}
 			@Override
-			public Adapter caseRentalObject(RentalObject object)
-			{
+			public Adapter caseRentalObject(RentalObject object) {
 				return createRentalObjectAdapter();
 			}
 			@Override
-			public Adapter caseLicense(License object)
-			{
+			public Adapter caseLicense(License object) {
 				return createLicenseAdapter();
 			}
 			@Override
-			public Adapter caseRental(Rental object)
-			{
+			public Adapter caseRental(Rental object) {
 				return createRentalAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object)
-			{
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};

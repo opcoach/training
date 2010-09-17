@@ -132,6 +132,7 @@ public interface RentalAgency extends EObject
 	/**
 	 * Returns the value of the '<em><b>Rentals</b></em>' containment reference list.
 	 * The list contents are of type {@link com.opcoach.training.rental.Rental}.
+	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.Rental#getParentAgency <em>Parent Agency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rentals</em>' containment reference list isn't clear,
@@ -140,7 +141,8 @@ public interface RentalAgency extends EObject
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Rentals</em>' containment reference list.
 	 * @see com.opcoach.training.rental.RentalPackage#getRentalAgency_Rentals()
-	 * @model containment="true"
+	 * @see com.opcoach.training.rental.Rental#getParentAgency
+	 * @model opposite="parentAgency" containment="true"
 	 * @generated
 	 */
 	EList<Rental> getRentals();

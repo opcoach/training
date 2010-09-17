@@ -11,20 +11,22 @@ import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rental</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Rental</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -38,19 +40,16 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class RentalImpl extends EObjectImpl implements Rental
-{
+public class RentalImpl extends EObjectImpl implements Rental {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "OPCoach @ 2009";
 
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCustomer()
 	 * @generated
 	 * @ordered
@@ -59,8 +58,8 @@ public class RentalImpl extends EObjectImpl implements Rental
 
 	/**
 	 * The cached value of the '{@link #getRentedObject() <em>Rented Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getRentedObject()
 	 * @generated
 	 * @ordered
@@ -69,8 +68,7 @@ public class RentalImpl extends EObjectImpl implements Rental
 
 	/**
 	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStartDate()
 	 * @generated
 	 * @ordered
@@ -79,8 +77,7 @@ public class RentalImpl extends EObjectImpl implements Rental
 
 	/**
 	 * The cached value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStartDate()
 	 * @generated
 	 * @ordered
@@ -89,8 +86,7 @@ public class RentalImpl extends EObjectImpl implements Rental
 
 	/**
 	 * The default value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEndDate()
 	 * @generated
 	 * @ordered
@@ -99,8 +95,7 @@ public class RentalImpl extends EObjectImpl implements Rental
 
 	/**
 	 * The cached value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEndDate()
 	 * @generated
 	 * @ordered
@@ -108,49 +103,31 @@ public class RentalImpl extends EObjectImpl implements Rental
 	protected Date endDate = END_DATE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getParentAgency() <em>Parent Agency</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentAgency()
-	 * @generated
-	 * @ordered
-	 */
-	protected RentalAgency parentAgency;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RentalImpl()
-	{
+	protected RentalImpl() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return RentalPackage.Literals.RENTAL;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer getCustomer()
-	{
-		if (customer != null && customer.eIsProxy())
-		{
+	public Customer getCustomer() {
+		if (customer != null && customer.eIsProxy()) {
 			InternalEObject oldCustomer = (InternalEObject)customer;
 			customer = (Customer)eResolveProxy(oldCustomer);
-			if (customer != oldCustomer)
-			{
+			if (customer != oldCustomer) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RentalPackage.RENTAL__CUSTOMER, oldCustomer, customer));
 			}
@@ -159,22 +136,18 @@ public class RentalImpl extends EObjectImpl implements Rental
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer basicGetCustomer()
-	{
+	public Customer basicGetCustomer() {
 		return customer;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCustomer(Customer newCustomer)
-	{
+	public void setCustomer(Customer newCustomer) {
 		Customer oldCustomer = customer;
 		customer = newCustomer;
 		if (eNotificationRequired())
@@ -182,18 +155,14 @@ public class RentalImpl extends EObjectImpl implements Rental
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RentalObject getRentedObject()
-	{
-		if (rentedObject != null && rentedObject.eIsProxy())
-		{
+	public RentalObject getRentedObject() {
+		if (rentedObject != null && rentedObject.eIsProxy()) {
 			InternalEObject oldRentedObject = (InternalEObject)rentedObject;
 			rentedObject = (RentalObject)eResolveProxy(oldRentedObject);
-			if (rentedObject != oldRentedObject)
-			{
+			if (rentedObject != oldRentedObject) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RentalPackage.RENTAL__RENTED_OBJECT, oldRentedObject, rentedObject));
 			}
@@ -202,22 +171,18 @@ public class RentalImpl extends EObjectImpl implements Rental
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RentalObject basicGetRentedObject()
-	{
+	public RentalObject basicGetRentedObject() {
 		return rentedObject;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRentedObject(RentalObject newRentedObject)
-	{
+	public void setRentedObject(RentalObject newRentedObject) {
 		RentalObject oldRentedObject = rentedObject;
 		rentedObject = newRentedObject;
 		if (eNotificationRequired())
@@ -225,22 +190,18 @@ public class RentalImpl extends EObjectImpl implements Rental
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getStartDate()
-	{
+	public Date getStartDate() {
 		return startDate;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStartDate(Date newStartDate)
-	{
+	public void setStartDate(Date newStartDate) {
 		Date oldStartDate = startDate;
 		startDate = newStartDate;
 		if (eNotificationRequired())
@@ -248,22 +209,18 @@ public class RentalImpl extends EObjectImpl implements Rental
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getEndDate()
-	{
+	public Date getEndDate() {
 		return endDate;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEndDate(Date newEndDate)
-	{
+	public void setEndDate(Date newEndDate) {
 		Date oldEndDate = endDate;
 		endDate = newEndDate;
 		if (eNotificationRequired())
@@ -271,72 +228,107 @@ public class RentalImpl extends EObjectImpl implements Rental
 	}
 
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RentalAgency getParentAgency() {
+		if (eContainerFeatureID() != RentalPackage.RENTAL__PARENT_AGENCY) return null;
+		return (RentalAgency)eContainer();
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RentalAgency getParentAgency()
-	{
-		if (parentAgency != null && parentAgency.eIsProxy())
-		{
-			InternalEObject oldParentAgency = (InternalEObject)parentAgency;
-			parentAgency = (RentalAgency)eResolveProxy(oldParentAgency);
-			if (parentAgency != oldParentAgency)
-			{
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RentalPackage.RENTAL__PARENT_AGENCY, oldParentAgency, parentAgency));
-			}
+	public NotificationChain basicSetParentAgency(RentalAgency newParentAgency, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentAgency, RentalPackage.RENTAL__PARENT_AGENCY, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentAgency(RentalAgency newParentAgency) {
+		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL__PARENT_AGENCY && newParentAgency != null)) {
+			if (EcoreUtil.isAncestor(this, newParentAgency))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentAgency != null)
+				msgs = ((InternalEObject)newParentAgency).eInverseAdd(this, RentalPackage.RENTAL_AGENCY__RENTALS, RentalAgency.class, msgs);
+			msgs = basicSetParentAgency(newParentAgency, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return parentAgency;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL__PARENT_AGENCY, newParentAgency, newParentAgency));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RentalAgency basicGetParentAgency()
-	{
-		return parentAgency;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentAgency(RentalAgency newParentAgency)
-	{
-		RentalAgency oldParentAgency = parentAgency;
-		parentAgency = newParentAgency;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL__PARENT_AGENCY, oldParentAgency, parentAgency));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
-	public int nbDaysBooked()
-	{
-		final long NBMSINDAY = 24*3600000L;
+	public int nbDaysBooked() {
+		final long NBMSINDAY = 24 * 3600000L;
 		long duration = getEndDate().getTime() - getStartDate().getTime();
 		int nbDays = (int) (duration / NBMSINDAY);
 		return nbDays;
 	}
 
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType)
-	{
-		switch (featureID)
-		{
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RentalPackage.RENTAL__PARENT_AGENCY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentAgency((RentalAgency)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RentalPackage.RENTAL__PARENT_AGENCY:
+				return basicSetParentAgency(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RentalPackage.RENTAL__PARENT_AGENCY:
+				return eInternalContainer().eInverseRemove(this, RentalPackage.RENTAL_AGENCY__RENTALS, RentalAgency.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
 			case RentalPackage.RENTAL__CUSTOMER:
 				if (resolve) return getCustomer();
 				return basicGetCustomer();
@@ -348,22 +340,18 @@ public class RentalImpl extends EObjectImpl implements Rental
 			case RentalPackage.RENTAL__END_DATE:
 				return getEndDate();
 			case RentalPackage.RENTAL__PARENT_AGENCY:
-				if (resolve) return getParentAgency();
-				return basicGetParentAgency();
+				return getParentAgency();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue)
-	{
-		switch (featureID)
-		{
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
 			case RentalPackage.RENTAL__CUSTOMER:
 				setCustomer((Customer)newValue);
 				return;
@@ -384,15 +372,12 @@ public class RentalImpl extends EObjectImpl implements Rental
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID)
-	{
-		switch (featureID)
-		{
+	public void eUnset(int featureID) {
+		switch (featureID) {
 			case RentalPackage.RENTAL__CUSTOMER:
 				setCustomer((Customer)null);
 				return;
@@ -413,15 +398,12 @@ public class RentalImpl extends EObjectImpl implements Rental
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID)
-	{
-		switch (featureID)
-		{
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
 			case RentalPackage.RENTAL__CUSTOMER:
 				return customer != null;
 			case RentalPackage.RENTAL__RENTED_OBJECT:
@@ -431,28 +413,26 @@ public class RentalImpl extends EObjectImpl implements Rental
 			case RentalPackage.RENTAL__END_DATE:
 				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
 			case RentalPackage.RENTAL__PARENT_AGENCY:
-				return parentAgency != null;
+				return getParentAgency() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public String toString()
-	{
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (startDate: ");
-		result.append(startDate);
-		result.append(", endDate: ");
-		result.append(endDate);
-		result.append(')');
-		return result.toString();
+	public String toString() {
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		RentalObject o = getRentedObject();
+		StringBuffer buf = new StringBuffer((o == null) ? "?" : o.getName());
+		Customer c = getCustomer();
+		buf.append(" loué par ").append((c == null) ? "?" : c.getLastName());
+		buf.append(" du ").append((getStartDate() == null) ? " ?" : df.format(getStartDate())).append(" au ");
+		buf.append((getEndDate() == null) ? " ? " : df.format(getEndDate()));
+		return buf.toString();
 	}
 
-} //RentalImpl
+} // RentalImpl

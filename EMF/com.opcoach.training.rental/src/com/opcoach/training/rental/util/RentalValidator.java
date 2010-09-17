@@ -101,8 +101,7 @@ public class RentalValidator extends EObjectValidator
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context)
 	{
-		switch (classifierID)
-		{
+		switch (classifierID) {
 			case RentalPackage.RENTAL_AGENCY:
 				return validateRentalAgency((RentalAgency)value, diagnostics, context);
 			case RentalPackage.CUSTOMER:
@@ -131,9 +130,11 @@ public class RentalValidator extends EObjectValidator
 	 */
 	public boolean validateCustomer(Customer customer, DiagnosticChain diagnostics, Map<Object, Object> context)
 	{
+		if (!validate_NoCircularContainment(customer, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(customer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(customer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(customer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(customer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(customer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(customer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(customer, diagnostics, context);
@@ -154,10 +155,8 @@ public class RentalValidator extends EObjectValidator
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false)
-		{
-			if (diagnostics != null)
-			{
+		if (false) {
+			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
 						(Diagnostic.ERROR,
@@ -251,9 +250,11 @@ public class RentalValidator extends EObjectValidator
 	 */
 	public boolean validateRental(Rental rental, DiagnosticChain diagnostics, Map<Object, Object> context)
 	{
+		if (!validate_NoCircularContainment(rental, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(rental, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(rental, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(rental, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(rental, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(rental, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(rental, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rental, diagnostics, context);
@@ -274,10 +275,8 @@ public class RentalValidator extends EObjectValidator
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false)
-		{
-			if (diagnostics != null)
-			{
+		if (false) {
+			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
 						(Diagnostic.ERROR,

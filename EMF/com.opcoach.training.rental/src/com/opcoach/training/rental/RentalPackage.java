@@ -409,7 +409,7 @@ public interface RentalPackage extends EPackage
 	int RENTAL__END_DATE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Parent Agency</b></em>' reference.
+	 * The feature id for the '<em><b>Parent Agency</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -794,10 +794,10 @@ public interface RentalPackage extends EPackage
 	EAttribute getRental_EndDate();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.opcoach.training.rental.Rental#getParentAgency <em>Parent Agency</em>}'.
+	 * Returns the meta object for the container reference '{@link com.opcoach.training.rental.Rental#getParentAgency <em>Parent Agency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent Agency</em>'.
+	 * @return the meta object for the container reference '<em>Parent Agency</em>'.
 	 * @see com.opcoach.training.rental.Rental#getParentAgency()
 	 * @see #getRental()
 	 * @generated
@@ -1117,7 +1117,7 @@ public interface RentalPackage extends EPackage
 		EAttribute RENTAL__END_DATE = eINSTANCE.getRental_EndDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Agency</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Parent Agency</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

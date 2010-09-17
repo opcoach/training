@@ -157,10 +157,8 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
 			(theRentalPackage, 
-			 new EValidator.Descriptor()
-			 {
-				 public EValidator getEValidator()
-				 {
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
 					 return RentalValidator.INSTANCE;
 				 }
 			 });
@@ -636,7 +634,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		initEReference(getRentalAgency_Address(), this.getAddress(), null, "address", null, 1, 1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRentalAgency_ObjectsToRent(), this.getRentalObject(), this.getRentalObject_ParentAgency(), "objectsToRent", null, 0, -1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRentalAgency_Customers(), this.getCustomer(), this.getCustomer_ParentAgency(), "customers", null, 0, -1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRentalAgency_Rentals(), this.getRental(), null, "rentals", null, 0, -1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRentalAgency_Rentals(), this.getRental(), this.getRental_ParentAgency(), "rentals", null, 0, -1, RentalAgency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(rentalAgencyEClass, this.getRental(), "book", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCustomer(), "customer", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -701,7 +699,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		initEReference(getRental_RentedObject(), this.getRentalObject(), null, "rentedObject", null, 0, 1, Rental.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRental_StartDate(), ecorePackage.getEDate(), "startDate", null, 0, 1, Rental.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRental_EndDate(), ecorePackage.getEDate(), "endDate", null, 0, 1, Rental.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRental_ParentAgency(), this.getRentalAgency(), null, "parentAgency", null, 1, 1, Rental.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRental_ParentAgency(), this.getRentalAgency(), this.getRentalAgency_Rentals(), "parentAgency", null, 1, 1, Rental.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(rentalEClass, ecorePackage.getEInt(), "nbDaysBooked", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -743,8 +741,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (this, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });															
 	}
@@ -761,8 +758,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (rentalAgencyEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });														
 	}
@@ -779,22 +775,19 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (getRentalAgency_Address(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });						
 		addAnnotation
 		  (getCustomer_Address(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });		
 		addAnnotation
 		  (getCustomer_Licenses(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });							
 	}
@@ -811,15 +804,13 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "constraints", "consistentName"
 		   });										
 		addAnnotation
 		  (rentalEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "constraints", "startDateBeforeEndDate"
 		   });			
 	}
@@ -836,50 +827,43 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "firstName,lastName"
 		   });		
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label.pattern", "{0}:{1}"
 		   });		
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "figure", "com.opcoach.training.rental.gef.figures"
 		   });				
 		addAnnotation
 		  (addressEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "city"
 		   });		
 		addAnnotation
 		  (rentalObjectEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "name"
 		   });		
 		addAnnotation
 		  (licenseEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "number"
 		   });			
 		addAnnotation
 		  (rentalEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "startDate"
 		   });		
 	}
@@ -896,16 +880,14 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (getRental_Customer(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "target.decoration", "arrow",
 			 "style", "dash"
 		   });		
 		addAnnotation
 		  (getRental_RentedObject(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "target.decoration", "arrow",
 			 "style", "solid"
 		   });

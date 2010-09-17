@@ -41,16 +41,13 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	 */
 	public static RentalFactory init()
 	{
-		try
-		{
+		try {
 			RentalFactory theRentalFactory = (RentalFactory)EPackage.Registry.INSTANCE.getEFactory("http://com.opcoach.training/rental/1.0"); 
-			if (theRentalFactory != null)
-			{
+			if (theRentalFactory != null) {
 				return theRentalFactory;
 			}
 		}
-		catch (Exception exception)
-		{
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RentalFactoryImpl();
@@ -75,8 +72,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public EObject create(EClass eClass)
 	{
-		switch (eClass.getClassifierID())
-		{
+		switch (eClass.getClassifierID()) {
 			case RentalPackage.RENTAL_AGENCY: return createRentalAgency();
 			case RentalPackage.CUSTOMER: return createCustomer();
 			case RentalPackage.ADDRESS: return createAddress();
@@ -96,8 +92,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue)
 	{
-		switch (eDataType.getClassifierID())
-		{
+		switch (eDataType.getClassifierID()) {
 			case RentalPackage.STREET_TYPE:
 				return createStreetTypeFromString(eDataType, initialValue);
 			case RentalPackage.IMAGE:
@@ -115,8 +110,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue)
 	{
-		switch (eDataType.getClassifierID())
-		{
+		switch (eDataType.getClassifierID()) {
 			case RentalPackage.STREET_TYPE:
 				return convertStreetTypeToString(eDataType, instanceValue);
 			case RentalPackage.IMAGE:

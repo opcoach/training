@@ -145,26 +145,28 @@ public interface Rental extends EObject
 	void setEndDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Agency</b></em>' reference.
+	 * Returns the value of the '<em><b>Parent Agency</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.RentalAgency#getRentals <em>Rentals</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Agency</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Agency</em>' reference.
+	 * @return the value of the '<em>Parent Agency</em>' container reference.
 	 * @see #setParentAgency(RentalAgency)
 	 * @see com.opcoach.training.rental.RentalPackage#getRental_ParentAgency()
-	 * @model required="true"
+	 * @see com.opcoach.training.rental.RentalAgency#getRentals
+	 * @model opposite="rentals" required="true" transient="false"
 	 * @generated
 	 */
 	RentalAgency getParentAgency();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.training.rental.Rental#getParentAgency <em>Parent Agency</em>}' reference.
+	 * Sets the value of the '{@link com.opcoach.training.rental.Rental#getParentAgency <em>Parent Agency</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Agency</em>' reference.
+	 * @param value the new value of the '<em>Parent Agency</em>' container reference.
 	 * @see #getParentAgency()
 	 * @generated
 	 */

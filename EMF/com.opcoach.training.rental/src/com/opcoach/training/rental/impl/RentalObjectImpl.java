@@ -228,8 +228,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	 */
 	public void setParentAgency(RentalAgency newParentAgency)
 	{
-		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL_OBJECT__PARENT_AGENCY && newParentAgency != null))
-		{
+		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL_OBJECT__PARENT_AGENCY && newParentAgency != null)) {
 			if (EcoreUtil.isAncestor(this, newParentAgency))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -264,8 +263,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -282,8 +280,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				return basicSetParentAgency(null, msgs);
 		}
@@ -298,8 +295,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID())
-		{
+		switch (eContainerFeatureID()) {
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT, RentalAgency.class, msgs);
 		}
@@ -314,8 +310,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.RENTAL_OBJECT__ID:
 				return getID();
 			case RentalPackage.RENTAL_OBJECT__NAME:
@@ -336,8 +331,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.RENTAL_OBJECT__ID:
 				setID((Long)newValue);
 				return;
@@ -362,8 +356,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.RENTAL_OBJECT__ID:
 				setID(ID_EDEFAULT);
 				return;
@@ -388,8 +381,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.RENTAL_OBJECT__ID:
 				return id != ID_EDEFAULT;
 			case RentalPackage.RENTAL_OBJECT__NAME:

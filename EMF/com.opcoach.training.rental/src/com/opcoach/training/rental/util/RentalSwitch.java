@@ -50,8 +50,7 @@ public class RentalSwitch<T>
 	 */
 	public RentalSwitch()
 	{
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = RentalPackage.eINSTANCE;
 		}
 	}
@@ -77,12 +76,10 @@ public class RentalSwitch<T>
 	 */
 	protected T doSwitch(EClass theEClass, EObject theEObject)
 	{
-		if (theEClass.eContainer() == modelPackage)
-		{
+		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		}
-		else
-		{
+		else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
 			return
 				eSuperTypes.isEmpty() ?
@@ -100,45 +97,38 @@ public class RentalSwitch<T>
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject)
 	{
-		switch (classifierID)
-		{
-			case RentalPackage.RENTAL_AGENCY:
-			{
+		switch (classifierID) {
+			case RentalPackage.RENTAL_AGENCY: {
 				RentalAgency rentalAgency = (RentalAgency)theEObject;
 				T result = caseRentalAgency(rentalAgency);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.CUSTOMER:
-			{
+			case RentalPackage.CUSTOMER: {
 				Customer customer = (Customer)theEObject;
 				T result = caseCustomer(customer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.ADDRESS:
-			{
+			case RentalPackage.ADDRESS: {
 				Address address = (Address)theEObject;
 				T result = caseAddress(address);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.RENTAL_OBJECT:
-			{
+			case RentalPackage.RENTAL_OBJECT: {
 				RentalObject rentalObject = (RentalObject)theEObject;
 				T result = caseRentalObject(rentalObject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.LICENSE:
-			{
+			case RentalPackage.LICENSE: {
 				License license = (License)theEObject;
 				T result = caseLicense(license);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.RENTAL:
-			{
+			case RentalPackage.RENTAL: {
 				Rental rental = (Rental)theEObject;
 				T result = caseRental(rental);
 				if (result == null) result = defaultCase(theEObject);
