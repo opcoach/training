@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:locator pattern="^com\.opcoach\.training\..*" searchPathRef="svnOpcoach"/>
+  <rm:searchPath name="svnOpcoach">
+    <rm:provider componentTypes="osgi.bundle" readerType="svn" resolutionFilter="">
+      <rm:uri format="svn://www.opcoach.com/training/trunk/RCP/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+</rm:rmap>
