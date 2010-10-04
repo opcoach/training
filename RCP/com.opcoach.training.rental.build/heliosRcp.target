@@ -8,5 +8,9 @@
 <unit id="org.eclipse.rcp.sdk.id" version="3.6.0.M20100909-0800"/>
 <repository location="http://download.eclipse.org/releases/helios/"/>
 </location>
+<location includeAllPlatforms="true" includeMode="slicer" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecore.feature.group" version="2.6.1.v20100914-1218"/>
+<repository location="http://download.eclipse.org/releases/helios/"/>
+</location>
 </locations>
 </target>
