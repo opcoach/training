@@ -14,7 +14,7 @@ import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.ui.RentalUIConstants;
 
-/**
+/**    ElectriqueMonte
  * @author olivier
  */
 public class AgencyContentProvider implements ITreeContentProvider, RentalUIConstants

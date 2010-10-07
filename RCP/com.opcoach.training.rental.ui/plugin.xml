@@ -24,6 +24,14 @@
             name="Rental Agency View"
             restorable="true">
       </view>
+      <view
+            category="com.opcoach.rental.ui"
+            class="com.opcoach.training.rental.ui.views.RentalAgencyUIFormView"
+            icon="icons/Agency.png"
+            id="com.opcoach.training.rental.ui.agencyformview"
+            name="Rental Agency UIForm"
+            restorable="true">
+      </view>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
@@ -73,7 +81,8 @@
          <view
                id="com.opcoach.rental.ui.rentalagencyview"
                minimized="false"
-               relationship="left"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ResourceNavigator"
                visible="true">
          </view>
          <view

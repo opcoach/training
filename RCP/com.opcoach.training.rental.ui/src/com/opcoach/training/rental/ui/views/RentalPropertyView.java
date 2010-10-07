@@ -7,6 +7,12 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.DragSource;
+import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.DragSourceListener;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -25,12 +31,12 @@ import com.opcoach.training.rental.core.RentalCoreActivator;
 
 public class RentalPropertyView extends ViewPart implements ISelectionListener
 {
-	public static final String VIEW_ID = "com.opcoach.rental.ui.views.rentalView";
+	public static final String	VIEW_ID	= "com.opcoach.rental.ui.views.rentalView";
 
-	private Label rentedObjectLabel;
-	private Label customerNameLabel;
-	private Label startDateLabel;
-	private Label endDateLabel;
+	private Label				rentedObjectLabel;
+	private Label				customerNameLabel;
+	private Label				startDateLabel;
+	private Label				endDateLabel;
 
 	public RentalPropertyView()
 	{
@@ -40,10 +46,10 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	public void createPartControl(Composite parent)
 	{
 		parent.setLayout(new GridLayout(1, false));
-		
+
 		Group infoGroup = new Group(parent, SWT.NONE);
 		infoGroup.setText("Informations");
-		infoGroup.setLayout(new GridLayout(2,false));
+		infoGroup.setLayout(new GridLayout(2, false));
 
 		rentedObjectLabel = new Label(infoGroup, SWT.BORDER);
 		GridData gd = new GridData();
@@ -51,13 +57,34 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		gd.horizontalAlignment = SWT.FILL;
 		rentedObjectLabel.setLayoutData(gd);
 
+		DragSource ds = new DragSource(rentedObjectLabel, DND.DROP_COPY);
+		ds.setTransfer(new Transfer[] { TextTransfer.getInstance() });
+		ds.addDragListener(new DragSourceListener()
+		{
+			public void dragFinished(DragSourceEvent event)
+			{
+			}
+
+			public void dragSetData(DragSourceEvent event)
+			{
+				if (TextTransfer.getInstance().isSupportedType(event.dataType))
+				{
+					event.data = rentedObjectLabel.getText();
+				}
+			}
+
+			public void dragStart(DragSourceEvent event)
+			{
+			}
+		});
+
 		Label customerTitle = new Label(infoGroup, SWT.NONE);
 		customerTitle.setText("Loué à : ");
 		customerNameLabel = new Label(infoGroup, SWT.NONE);
 
 		Group dateGroup = new Group(parent, SWT.NONE);
 		dateGroup.setText("Dates de location");
-		dateGroup.setLayout(new GridLayout(2,false));
+		dateGroup.setLayout(new GridLayout(2, false));
 
 		Label startDateTitle = new Label(dateGroup, SWT.NONE);
 		startDateTitle.setText("du : ");
@@ -85,13 +112,12 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 	}
 
-	
 	@Override
 	public void init(IViewSite site) throws PartInitException
 	{
 		// TODO Auto-generated method stub
 		super.init(site);
-		
+
 		site.getPage().addSelectionListener(this);
 	}
 
@@ -102,8 +128,11 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.
+	 * IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
 	 */
 	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection)
@@ -111,36 +140,35 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		if (selection instanceof IStructuredSelection)
 		{
 			Object sel = ((IStructuredSelection) selection).getFirstElement();
-			
+
 			if (sel == null)
 				return;
-			
-			// Est ce une rental directement ? 
+
+			// Est ce une rental directement ?
 			if (sel instanceof Rental)
 			{
 				setRental((Rental) sel);
-			}
-			
-			// Existe t il un adapter en rental ? 
-			Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel, Rental.class);
-			if (r != null)
+			} else
 			{
-				setRental(r);
-			}
-			else if (sel instanceof IAdaptable)
-			{
-				// Sinon l'objet est il finalement adaptable ? 
-				IAdaptable selAd = (IAdaptable) sel;
-				r = (Rental) selAd.getAdapter(Rental.class);
+				// Existe t il un adapter en rental ?
+				Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel, Rental.class);
 				if (r != null)
 				{
 					setRental(r);
+				} else if (sel instanceof IAdaptable)
+				{
+					// Sinon l'objet est il finalement adaptable ?
+					IAdaptable selAd = (IAdaptable) sel;
+					r = (Rental) selAd.getAdapter(Rental.class);
+					if (r != null)
+					{
+						setRental(r);
+					}
 				}
 			}
-			
-			
+
 		}
-		
+
 	}
 
 }
