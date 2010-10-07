@@ -3,8 +3,6 @@
 
 <target name="Eclipse Helios RCP EMF">
 <locations>
-<location id="org.eclipse.rcp" path="/Users/olivier/Documents/OPCoach/tools/eclipse_Helios" type="Feature"/>
-<location id="org.eclipse.emf.ecore" path="/Users/olivier/Documents/OPCoach/tools/eclipse_Helios" type="Feature"/>
-<location id="org.eclipse.emf.common" path="/Users/olivier/Documents/OPCoach/tools/eclipse_Helios" type="Feature"/>
+<location path="/Users/olivier/Documents/OPCoach/tools/eclipse_Helios" type="Profile"/>
 </locations>
 </target>
