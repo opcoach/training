@@ -14,30 +14,25 @@ import com.opcoach.training.rental.core.RentalCoreActivator;
 public class RentalAdapterFactory implements IAdapterFactory
 {
 
-	@SuppressWarnings("unchecked")
-	@Override
+	/** Transform an IFile into a Rental object if extension is .rental */
 	public Object getAdapter(Object adaptableObject, Class adapterType)
 	{
-		if (adaptableObject instanceof IFile)
+		Rental result = null;
+		if ((adaptableObject instanceof IFile) && Rental.class.equals(adapterType))
 		{
 			IFile f = (IFile) adaptableObject;
 			if (f.getFileExtension().equals("rental"))
 			{
-				RentalAgency agency  = RentalCoreActivator.getAgency();
-
+				// Create a sample rental object... does not read the file...
+				RentalAgency agency = RentalCoreActivator.getAgency();
 				Customer c = agency.getCustomers().get(0);
 				RentalObject ro = agency.getObjectsToRent().get(0);
-			
-				Rental r = agency.book(c,ro, new Date(), new Date());
-				return r;
+				result = agency.book(c, ro, new Date(), new Date());
 			}
 		}
-		// TODO Auto-generated method stub
-		return null;
+		return result;
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
 	public Class[] getAdapterList()
 	{
 		// TODO Auto-generated method stub
