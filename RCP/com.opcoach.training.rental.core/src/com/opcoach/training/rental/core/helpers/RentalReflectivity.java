@@ -24,7 +24,9 @@ public class RentalReflectivity
 		EClass customerClass = RentalPackage.eINSTANCE.getCustomer();
 		EClass rentalClass   = (EClass) RentalPackage.eINSTANCE.getEClassifier("Rental");
 		
+		@SuppressWarnings("unused")
 		Customer c = (Customer) RentalPackage.eINSTANCE.getEFactoryInstance().create(customerClass);
+		@SuppressWarnings("unused")
 		Rental r = (Rental) RentalFactory.eINSTANCE.create(rentalClass);
 		
 		
