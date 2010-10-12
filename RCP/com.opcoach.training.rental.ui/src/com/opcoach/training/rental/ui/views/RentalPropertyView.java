@@ -28,10 +28,11 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.RentalCoreActivator;
+import com.opcoach.training.rental.ui.Messages;
 
 public class RentalPropertyView extends ViewPart implements ISelectionListener
 {
-	public static final String	VIEW_ID	= "com.opcoach.rental.ui.views.rentalView";
+	public static final String	VIEW_ID	= "com.opcoach.rental.ui.views.rentalView"; //$NON-NLS-1$
 
 	private Label				rentedObjectLabel;
 	private Label				customerNameLabel;
@@ -48,7 +49,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		parent.setLayout(new GridLayout(1, false));
 
 		Group infoGroup = new Group(parent, SWT.NONE);
-		infoGroup.setText("Informations");
+		infoGroup.setText(Messages.RentalPropertyView_Information);
 		infoGroup.setLayout(new GridLayout(2, false));
 
 		rentedObjectLabel = new Label(infoGroup, SWT.BORDER);
@@ -79,19 +80,19 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		});
 
 		Label customerTitle = new Label(infoGroup, SWT.NONE);
-		customerTitle.setText("Loué à : ");
+		customerTitle.setText(Messages.RentalPropertyView_RentedBy);
 		customerNameLabel = new Label(infoGroup, SWT.NONE);
 
 		Group dateGroup = new Group(parent, SWT.NONE);
-		dateGroup.setText("Dates de location");
+		dateGroup.setText(Messages.RentalPropertyView_RentalDateTitle);
 		dateGroup.setLayout(new GridLayout(2, false));
 
 		Label startDateTitle = new Label(dateGroup, SWT.NONE);
-		startDateTitle.setText("du : ");
+		startDateTitle.setText(Messages.RentalPropertyView_From);
 		startDateLabel = new Label(dateGroup, SWT.NONE);
 
 		Label endDateTitle = new Label(dateGroup, SWT.NONE);
-		endDateTitle.setText("au : ");
+		endDateTitle.setText(Messages.RentalPropertyView_To);
 		endDateLabel = new Label(dateGroup, SWT.NONE);
 
 		// Try with sample
@@ -106,7 +107,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		Customer c = r.getCustomer();
 		customerNameLabel.setText(c.getDisplayName());
 
-		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat df = new SimpleDateFormat(Messages.RentalPropertyView_dateFormat);
 		startDateLabel.setText(df.format(r.getStartDate()));
 		endDateLabel.setText(df.format(r.getEndDate()));
 

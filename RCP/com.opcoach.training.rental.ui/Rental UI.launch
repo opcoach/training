@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.RuntimeWorkbench">
+<booleanAttribute key="append.args" value="true"/>
+<booleanAttribute key="askclear" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
+<booleanAttribute key="automaticValidate" value="false"/>
+<stringAttribute key="bootstrap" value=""/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearConfig" value="false"/>
+<booleanAttribute key="clearws" value="false"/>
+<booleanAttribute key="clearwslog" value="false"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/Rental UI"/>
+<booleanAttribute key="default" value="false"/>
+<booleanAttribute key="includeOptional" value="true"/>
+<stringAttribute key="location" value="/Users/olivier/Documents/OPCoach/workspaces/runtime-RentalUI"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl en -consoleLog"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.requiredJavaVersion=1.5 -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m -Xms40m -Xmx512m -Xdock:icon=../Resources/Eclipse.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts"/>
+<booleanAttribute key="pde.generated.config" value="false"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<stringAttribute key="product" value="org.eclipse.platform.ide"/>
+<stringAttribute key="selected_target_plugins" value="org.eclipse.osgi@-1:true,org.eclipse.ecf.provider.filetransfer.ssl@default:false,org.apache.jasper@default:default,org.eclipse.core.jobs@default:default,org.eclipse.emf.ecore@default:default,org.eclipse.help.ui@default:default,org.eclipse.help@default:default,org.hamcrest.text@default:default,org.mortbay.jetty.util@default:default,org.mortbay.jetty.server@default:default,org.junit4@default:default,org.eclipse.core.runtime.compatibility.auth@default:default,org.eclipse.equinox.p2.repository@default:default,org.eclipse.ui@default:default,javax.servlet@default:default,org.eclipse.ui.forms@default:default,org.slf4j.api@default:default,org.eclipse.equinox.http.servlet@default:default,org.eclipse.ui.views@default:default,javax.mail.glassfish@default:default,org.eclipse.core.filebuffers@default:default,org.eclipse.core.runtime.compatibility@default:default,org.eclipse.equinox.registry@default:default,org.eclipse.core.databinding.observable@default:default,org.eclipse.equinox.security@default:default,org.eclipse.equinox.p2.engine@default:default,ch.qos.logback.classic@default:default,org.hamcrest.library@default:default,org.eclipse.core.commands@default:default,org.apache.lucene.analysis@default:default,org.eclipse.core.net@default:default,org.eclipse.jdt.junit.runtime@default:default,org.eclipse.net4j.jms.api@default:default,org.apache.ant@default:default,org.eclipse.jface.text@default:default,org.eclipse.equinox.common@2:true,org.eclipse.core.databinding@default:default,org.eclipse.swt@default:default,org.eclipse.equinox.p2.metadata@default:default,org.eclipse.swtbot.junit4_x@default:default,javax.activation@default:default,org.eclipse.equinox.http.jetty@default:default,org.eclipse.xtext.logging@default:false,ch.qos.logback.core@default:default,org.eclipse.equinox.app@default:default,org.eclipse.update.configurator@3:true,org.eclipse.osgi.services@default:default,javax.transaction@default:false,org.eclipse.ecf.identity@default:default,org.eclipse.ecf@default:default,org.eclipse.ecf.filetransfer@default:default,org.hamcrest@default:default,org.eclipse.emf.ecore.xmi@default:default,org.apache.commons.logging*1.1.1.v201005080502@default:default,org.eclipse.swtbot.ant.optional.junit4@default:false,org.eclipse.core.runtime@default:true,ch.qos.logback.slf4j@default:false,org.eclipse.ecf.ssl@default:false,org.eclipse.swtbot.eclipse.core@default:default,org.eclipse.ui.workbench.texteditor@default:default,org.eclipse.equinox.p2.metadata.repository@default:default,org.eclipse.core.runtime.compatibility.registry@default:false,org.eclipse.ecf.provider.filetransfer@default:default,org.eclipse.swt.cocoa.macosx.x86_64@default:false,org.eclipse.equinox.security.macosx@default:false,org.eclipse.swtbot.eclipse.finder@default:default,org.eclipse.ui.workbench@default:default,org.eclipse.compare.core@default:default,org.eclipse.help.base@default:default,org.hamcrest.integration@default:default,org.eclipse.ui.editors@default:default,javax.servlet.jsp@default:default,org.eclipse.equinox.preferences@default:default,org.eclipse.core.databinding.property@default:default,org.eclipse.equinox.concurrent@default:default,org.hamcrest.core@default:default,org.eclipse.jface.databinding@default:default,org.eclipse.core.variables@default:default,org.eclipse.core.expressions@default:default,org.eclipse.emf.common@default:default,org.eclipse.core.filesystem.macosx@default:false,org.eclipse.ui.intro@default:default,org.eclipse.text@default:default,org.eclipse.core.filesystem@default:default,org.junit*4.8.1.v4_8_1_v20100427-1100@default:default,org.eclipse.ui.cheatsheets@default:default,org.apache.log4j*1.2.15.v201005080500@default:default,org.eclipse.swtbot.swt.finder@default:default,org.eclipse.core.databinding.beans@default:default,org.eclipse.core.contenttype@default:default,org.eclipse.equinox.p2.core@default:default,org.eclipse.team.core@default:default,org.apache.commons.el@default:default,org.eclipse.ant.core@default:default,org.eclipse.platform@default:default,org.eclipse.ui.cocoa@default:false,org.apache.lucene@default:default,com.ibm.icu@default:default,org.eclipse.core.resources@default:default,org.eclipse.jface@default:default"/>
+<stringAttribute key="selected_workspace_plugins" value="com.opcoach.training.rental.core@default:default,com.opcoach.training.rental.ui@default:default,com.opcoach.training.rental@default:default,org.eclipse.ui.ide@default:default,com.opcoach.training.rental.ui.test@default:false,com.opcoach.training.rental.ui.lang_de@default:false"/>
+<booleanAttribute key="show_selected_only" value="false"/>
+<booleanAttribute key="tracing" value="false"/>
+<booleanAttribute key="useCustomFeatures" value="false"/>
+<booleanAttribute key="useDefaultConfig" value="true"/>
+<booleanAttribute key="useDefaultConfigArea" value="true"/>
+<booleanAttribute key="useProduct" value="true"/>
+<booleanAttribute key="usefeatures" value="false"/>
+</launchConfiguration>
