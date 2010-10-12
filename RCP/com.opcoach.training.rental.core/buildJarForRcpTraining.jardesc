@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="MacRoman" standalone="no"?>
+<jardesc>
+    <jar path="com.opcoach.training.rental.core/jar/rentalForRCPTraining.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/com.opcoach.training.rental.core/buildJarForRcpTraining.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/com.opcoach.training.rental.core/.DS_Store"/>
+        <file path="/com.opcoach.training.rental.core/build.properties"/>
+        <file path="/com.opcoach.training.rental.core/.classpath"/>
+        <javaElement handleIdentifier="=com.opcoach.training.rental/src&lt;com.opcoach.training.rental.impl"/>
+        <javaElement handleIdentifier="=com.opcoach.training.rental.core/src&lt;com.opcoach.training.rental.core.helpers"/>
+        <javaElement handleIdentifier="=com.opcoach.training.rental/src&lt;com.opcoach.training.rental"/>
+        <file path="/com.opcoach.training.rental.core/.project"/>
+    </selectedElements>
+</jardesc>
