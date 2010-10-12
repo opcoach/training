@@ -1,18 +1,26 @@
+// ------------------------------------------------
+// OPCoach Training Projects
+// © OPCoach 2010 http://www.opcoach.com
+// ------------------------------------------------
+
 package com.opcoach.training.rental_rcp;
 
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
-public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
+import com.opcoach.training.rental.ui.views.RentalPerspective;
 
-	private static final String PERSPECTIVE_ID = "com.opcoach.training.rental_rcp.perspective";
+public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor
+{
 
-    public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
-        return new ApplicationWorkbenchWindowAdvisor(configurer);
-    }
+	public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer)
+	{
+		return new ApplicationWorkbenchWindowAdvisor(configurer);
+	}
 
-	public String getInitialWindowPerspectiveId() {
-		return PERSPECTIVE_ID;
+	public String getInitialWindowPerspectiveId()
+	{
+		return RentalPerspective.ID;
 	}
 }
