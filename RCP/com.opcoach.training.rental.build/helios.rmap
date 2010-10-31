@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm:rmap xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:locator pattern="" searchPathRef="org.eclipse.platform"/>
+  <rm:searchPath name="org.eclipse.platform">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="eclipse.import" source="false" mutable="false">
+      <rm:uri format="http://download.eclipse.org/releases/helios?importType=binary"/>
+    </rm:provider>
+  </rm:searchPath>
+</rm:rmap>
