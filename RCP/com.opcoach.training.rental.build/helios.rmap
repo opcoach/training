@@ -3,7 +3,7 @@
   <rm:locator pattern="" searchPathRef="org.eclipse.platform"/>
   <rm:searchPath name="org.eclipse.platform">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
-      <rm:uri format="http://download.eclipse.org/releases/helios?importType=binary"/>
+      <rm:uri format="http://download.eclipse.org/releases/galileo?importType=binary"/>
     </rm:provider>
   </rm:searchPath>
 </rm:rmap>
