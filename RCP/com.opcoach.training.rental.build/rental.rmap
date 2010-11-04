@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
-  <rm:locator pattern="^com\.opcoach\.training\..*" searchPathRef="svnOpcoach"/>
+  <rm:locator pattern="^com\.opcoach\.training\..*" searchPathRef="svnOpcoach" failOnError="false"/>
+  <rm:locator pattern="EXTERNAL^com\.opcoach\.training\..*" searchPathRef="workspaceLocal"/>
   <rm:searchPath name="svnOpcoach">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn" resolutionFilter="">
       <rm:uri format="svn://www.opcoach.com/training/trunk/RCP/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="workspaceLocal">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local">
+      <rm:uri format="/Users/olivier/Documents/OPCoach/workspaces/OPCoach_Training/{0}">
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
