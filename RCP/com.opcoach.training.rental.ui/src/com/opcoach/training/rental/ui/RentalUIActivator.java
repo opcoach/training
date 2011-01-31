@@ -53,7 +53,11 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 		plugin = this;
 		readColorProviderExtensions();
 		
-		// Listen to preferences
+		// Get the pref value for color preference
+		String val = getPreferenceStore().getString(COLOR_PROVIDER);
+		chosenColorProvider = (val == null) ? null : additionalColorProviders.get(val);
+
+;		// Listen to preferences
 		getPreferenceStore().addPropertyChangeListener(this);
 	}
 
