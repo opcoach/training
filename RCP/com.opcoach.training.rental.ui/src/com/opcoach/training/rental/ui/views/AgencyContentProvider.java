@@ -20,6 +20,7 @@ import com.opcoach.training.rental.ui.RentalUIConstants;
 public class AgencyContentProvider implements ITreeContentProvider, RentalUIConstants
 {
 
+	private static final Object[] EMPTY_RESULT = new Object[0];
 	/**
 	 * 
 	 */
@@ -90,7 +91,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 			{ CUSTOMERS_NODE, RENTALS_NODE, OBJECTS_NODE };
 		}
 
-		return (result == null) ? new Object[0] : result;
+		return (result == null) ? EMPTY_RESULT : result;
 	}
 
 	/*
@@ -118,8 +119,8 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 		{
 			result = (ROOT_AGENCY_NODE.equals(element)) ? null : agency;
 		}
-
 		return result;
+
 	}
 
 	/*
