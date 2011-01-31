@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Core
-Bundle-SymbolicName: com.opcoach.training.rental.core
+Bundle-SymbolicName: com.opcoach.training.rental.core;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.opcoach.training.rental.core.RentalCoreActivator
 Bundle-Vendor: OPCOACH
