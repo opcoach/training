@@ -4,7 +4,7 @@
   <rm:locator pattern="^com\.opcoach\.training\.rental\.feature*" searchPathRef="svnOpcoach"/>
   <rm:searchPath name="svnOpcoach">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn" resolutionFilter="">
-      <rm:uri format="svn://www.opcoach.com/training/trunk/RCP/{0}">
+      <rm:uri format="svn://opcoach.com/training/trunk/RCP/{0}">
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
