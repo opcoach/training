@@ -10,7 +10,9 @@
       </rm:uri>
     </rm:provider>
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="svn" resolutionFilter="">
-      <rm:uri format="svn://opcoach.com/training/trunk/EMF/{0}"/>
+      <rm:uri format="svn://opcoach.com/training/trunk/EMF/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
     </rm:provider>
   </rm:searchPath>
 </rm:rmap>
