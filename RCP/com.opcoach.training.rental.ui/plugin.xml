@@ -17,12 +17,8 @@
       </page>
    </extension>
 
-   <extension
-         point="org.eclipse.ui.views">
-      <category
-            name="Rental"
-            id="com.opcoach.rental.ui">
-      </category>
+   <extension   point="org.eclipse.ui.views">
+      <category name="Rental"  id="com.opcoach.rental.ui"/>
       <view
             name="Rental Property view"
             icon="icons/Rentals.png"
@@ -30,6 +26,9 @@
             class="com.opcoach.training.rental.ui.views.RentalPropertyView"
             id="com.opcoach.rental.ui.views.rentalView">
       </view>
+      
+      
+      
       <view
             category="com.opcoach.rental.ui"
             class="com.opcoach.training.rental.ui.views.RentalAgencyView"

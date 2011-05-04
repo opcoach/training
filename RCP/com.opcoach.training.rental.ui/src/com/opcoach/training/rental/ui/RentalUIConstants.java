@@ -19,7 +19,6 @@ public interface RentalUIConstants {
 	public static final String COLOR_PROVIDER = "addedColorProvider";
 	
 	// Nodes for providers
-	public static final String ROOT_AGENCY_NODE = "Agences";
 	public static final String CUSTOMERS_NODE = "Customers";
 	public static final String RENTALS_NODE = "Locations";
 	public static final String OBJECTS_NODE = "Objets ˆ louer";

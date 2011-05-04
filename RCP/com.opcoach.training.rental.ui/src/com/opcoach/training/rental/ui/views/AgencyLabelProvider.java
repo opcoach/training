@@ -26,6 +26,7 @@ import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
+import com.opcoach.training.rental.ui.views.AgencyContentProvider.TNode;
 
 /**
  * @author olivier
@@ -33,11 +34,12 @@ import com.opcoach.training.rental.ui.RentalUIConstants;
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
 {
 	private RentalAgency agency;
-	
-	   public AgencyLabelProvider(RentalAgency ag)
-	   {
-		   agency = ag;
-	   }
+
+	public AgencyLabelProvider(RentalAgency ag)
+	{
+		agency = ag;
+	}
+
 	private SimpleDateFormat df = new SimpleDateFormat("dd/MM");
 
 	@Override
@@ -46,38 +48,31 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 		String result = null;
 		boolean displayCount = RentalUIActivator.getDefault().getPreferenceStore().getBoolean(DISPLAY_COUNT_PREF);
 
-
 		if (element instanceof RentalAgency)
 		{
 			result = ((RentalAgency) element).getName();
-		}
-		if (CUSTOMERS_NODE == element)
+		} else if (element instanceof TNode)
 		{
-			result = CUSTOMERS_NODE + (displayCount ? "(" + agency.getCustomers().size() + ")" : "");
+			TNode t = (TNode) element;
+			if (CUSTOMERS_NODE == t.name)
+			{
+				result = CUSTOMERS_NODE + (displayCount ? "(" + agency.getCustomers().size() + ")" : "");
+			} else if (RENTALS_NODE == t.name)
+			{
+				result = RENTALS_NODE + (displayCount ? "(" + agency.getRentals().size() + ")" : "");
+			} else if (OBJECTS_NODE == t.name)
+			{
+				result = OBJECTS_NODE + (displayCount ? "(" + agency.getObjectsToRent().size() + ")" : "");
+			}
 		}
-		else if (RENTALS_NODE == element)
-		{
-			result = RENTALS_NODE + (displayCount ? "(" + agency.getRentals().size() + ")" : "");
-		}
-		else if (OBJECTS_NODE == element)
-		{
-			result = OBJECTS_NODE + (displayCount ? "(" + agency.getObjectsToRent().size() + ")" : "");
-		}
-		
-		
-		else if (element instanceof String)
-		{
-			result = (String) element;
-		}
+
 		else if (element instanceof Customer)
 		{
 			result = ((Customer) element).getDisplayName();
-		}
-		else if (element instanceof RentalObject)
+		} else if (element instanceof RentalObject)
 		{
 			result = ((RentalObject) element).getName();
-		}
-		else if (element instanceof Rental)
+		} else if (element instanceof Rental)
 		{
 			Rental r = (Rental) element;
 			Date start = r.getStartDate();
@@ -92,49 +87,46 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.jface.viewers.IColorProvider#getBackground(java.lang.Object)
+	 * @see
+	 * org.eclipse.jface.viewers.IColorProvider#getBackground(java.lang.Object)
 	 */
 	@Override
 	public Color getBackground(Object element)
 	{
 		IColorProvider cp = RentalUIActivator.getDefault().getColorProvider();
 		return (cp == null) ? null : cp.getBackground(element);
-		
+
 	}
-	
-	
 
 	@Override
 	public Image getImage(Object element)
 	{
 		// TODO Auto-generated method stub
-		Image result =  null;
+		Image result = null;
 		ImageRegistry reg = RentalUIActivator.getDefault().getImageRegistry();
-		
+
 		if (element instanceof RentalAgency)
 		{
 			result = reg.get(AGENCY_KEY);
-		}
-		else if (element == RENTALS_NODE)
+		} else if (element == RENTALS_NODE)
 		{
 			result = reg.get(RENTAL_KEY);
-		}
-		else if (element == CUSTOMERS_NODE)
+		} else if (element == CUSTOMERS_NODE)
 		{
 			result = reg.get(CUSTOMER_KEY);
-		}
-		else if (element == OBJECTS_NODE)
+		} else if (element == OBJECTS_NODE)
 		{
 			result = reg.get(RENTAL_OBJECT_KEY);
 		}
-		
+
 		return result;
-		
+
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.jface.viewers.IColorProvider#getForeground(java.lang.Object)
+	 * @see
+	 * org.eclipse.jface.viewers.IColorProvider#getForeground(java.lang.Object)
 	 */
 	@Override
 	public Color getForeground(Object element)
@@ -160,7 +152,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 		IPreferenceStore pref = RentalUIActivator.getDefault().getPreferenceStore();
 		String rgbKey = pref.getString(key);
 		ColorRegistry reg = JFaceResources.getColorRegistry();
-		Color result = JFaceResources.getColorRegistry().get(rgbKey);
+		Color result = reg.get(rgbKey);
 		if (result == null)
 		{
 			// Get value in pref store

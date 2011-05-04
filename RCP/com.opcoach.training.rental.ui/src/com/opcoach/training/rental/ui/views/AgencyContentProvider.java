@@ -5,6 +5,8 @@
 
 package com.opcoach.training.rental.ui.views;
 
+import java.util.Collection;
+
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
@@ -21,16 +23,9 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 {
 
 	private static final Object[] EMPTY_RESULT = new Object[0];
-	/**
-	 * 
-	 */
-
-	private RentalAgency agency = null;
-
 	
-	public AgencyContentProvider(RentalAgency pagency)
+	public AgencyContentProvider()
 	{
-		agency = pagency;
 		
 	}
 	/*
@@ -67,28 +62,30 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 	{
 		Object[] result = null;
 
-		if (parentElement instanceof String)
+		if (parentElement instanceof TNode)
 		{
 			// This is one of the logical nodes  : 
 			// Use == because constants and avoid of string with same values
-			if (CUSTOMERS_NODE == parentElement)
+			TNode t = (TNode) parentElement;
+			if (CUSTOMERS_NODE == t.name)
 			{
-				result = agency.getCustomers().toArray();
+				result = t.agency.getCustomers().toArray();
 			}
-			else if (RENTALS_NODE == parentElement)
+			else if (RENTALS_NODE == t.name)
 			{
-				result = agency.getRentals().toArray();
+				result = t.agency.getRentals().toArray();
 			}
-			else if (OBJECTS_NODE == parentElement)
+			else if (OBJECTS_NODE == t.name)
 			{
-				result = agency.getObjectsToRent().toArray();
+				result = t.agency.getObjectsToRent().toArray();
 			}
 			
 		}
 		else if (parentElement instanceof RentalAgency)
 		{
-			return new String[]
-			{ CUSTOMERS_NODE, RENTALS_NODE, OBJECTS_NODE };
+			RentalAgency a = (RentalAgency) parentElement;
+			return new TNode[]
+			{ new TNode(CUSTOMERS_NODE, a), new TNode(RENTALS_NODE,a), new TNode(OBJECTS_NODE,a) };
 		}
 
 		return (result == null) ? EMPTY_RESULT : result;
@@ -103,21 +100,9 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 	{
 		Object result = null;
 
-		if (element instanceof Customer)
+		if (element instanceof TNode)
 		{
-			result = CUSTOMERS_NODE;
-		}
-		else if (element instanceof RentalObject)
-		{
-			result = OBJECTS_NODE;
-		}
-		else if (element instanceof Rental)
-		{
-			result = RENTALS_NODE;
-		}
-		else if (element instanceof String)
-		{
-			result = (ROOT_AGENCY_NODE.equals(element)) ? null : agency;
+			result = ((TNode)element).agency;
 		}
 		return result;
 
@@ -130,7 +115,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 	@Override
 	public boolean hasChildren(Object element)
 	{
-		return ((element instanceof RentalAgency) || (element instanceof String));
+		return ((element instanceof RentalAgency) || (element instanceof TNode));
 	}
 
 	/*
@@ -140,7 +125,23 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 	@Override
 	public Object[] getElements(Object inputElement)
 	{
-		return new Object[]
-		{ agency };
+		if (inputElement instanceof Collection<?>)
+		{
+			return ((Collection<?>) inputElement).toArray();
+		}
+		
+		return EMPTY_RESULT;
+	}
+	
+	/** A private class to manage the logical nodes in tree */
+    class TNode
+	{
+		public String name;
+		public RentalAgency agency;
+		public TNode(String n, RentalAgency a)
+		{
+			name = n;
+			agency = a;
+		}
 	}
 }

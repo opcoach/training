@@ -1,5 +1,8 @@
 package com.opcoach.training.rental.ui.views;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
@@ -14,6 +17,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.part.ViewPart;
 
+import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 
@@ -39,9 +43,11 @@ public class RentalAgencyUIFormView extends ViewPart implements IPropertyChangeL
        t.setLayoutData(new TableWrapData(TableWrapData.FILL));
        
        agencyViewer = new TreeViewer(t);
-		agencyViewer.setContentProvider(new AgencyContentProvider(RentalCoreActivator.getAgency()));
+		agencyViewer.setContentProvider(new AgencyContentProvider());
 		agencyViewer.setLabelProvider(new AgencyLabelProvider(RentalCoreActivator.getAgency()));
-		agencyViewer.setInput(AgencyContentProvider.ROOT_AGENCY_NODE);
+		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
+		agencies.add(RentalCoreActivator.getAgency());
+		agencyViewer.setInput(agencies);
 		
 		// Autorise le popup sur le treeviewer
 		MenuManager menuManager = new MenuManager();

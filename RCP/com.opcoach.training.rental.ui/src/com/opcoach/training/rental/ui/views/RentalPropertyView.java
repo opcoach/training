@@ -42,6 +42,10 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	public RentalPropertyView()
 	{
 	}
+	
+	
+
+	
 
 	@Override
 	public void createPartControl(Composite parent)
@@ -121,6 +125,19 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 		site.getPage().addSelectionListener(this);
 	}
+	
+	
+	/* (non-Javadoc)
+	 * @see org.eclipse.ui.part.WorkbenchPart#dispose()
+	 */
+	@Override
+	public void dispose()
+	{
+		super.dispose();
+		getSite().getPage().removeSelectionListener(this);
+	}
+
+
 
 	@Override
 	public void setFocus()
