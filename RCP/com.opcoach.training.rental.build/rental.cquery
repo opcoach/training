@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="rental.rmap" properties="buckminster_p2_action.properties">
+<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="rental.rmap">
     <cq:rootRequest name="com.opcoach.training.rental.feature" componentType="eclipse.feature"/>
 </cq:componentQuery>
