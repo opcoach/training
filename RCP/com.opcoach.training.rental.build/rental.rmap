@@ -5,12 +5,12 @@
   <rm:locator pattern="^com\.opcoach\.training\.rental" searchPathRef="svnOpcoach" failOnError="false"/>
   <rm:searchPath name="svnOpcoach">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn">
-      <rm:uri format="svn+ssh://olivier@svn.opcoach.com/srv/d_opcoach/svn/training/trunk/RCP/{0}">
+      <rm:uri format="svn://svn.opcoach.com/training/trunk/RCP/{0}">
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="svn">
-      <rm:uri format="svn+ssh://olivier@svn.opcoach.com/srv/d_opcoach/svn/training/trunk/EMF/{0}">
+      <rm:uri format="svn://svn.opcoach.com/training/trunk/EMF/{0}">
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
