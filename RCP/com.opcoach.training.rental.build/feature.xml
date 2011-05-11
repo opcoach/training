@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.opcoach.training.rental.build"
+      label="Rental_Build_feature"
+      version="1.0.0.qualifier"
+      provider-name="OPCOACH">
+
+   <description url="http://www.example.com/description">
+      Feature de build pour livrer la feature des locations.
+Contient la cquery, resource map, permettant d&apos;appeler le siteP2 en tant qu&apos;action
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      Licence EPL cool.
+   </license>
+
+   <includes
+         id="com.opcoach.training.rental.feature"
+         version="0.0.0"/>
+
+</feature>
