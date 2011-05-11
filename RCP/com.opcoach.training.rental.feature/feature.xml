@@ -18,26 +18,22 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="greaterOrEqual"/>
       <import plugin="com.opcoach.training.rental.core" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.jface.databinding" version="1.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.databinding" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.databinding.beans" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.5.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.expressions" version="3.4.101" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.forms" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="com.opcoach.training.rental.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.swt" version="3.5.1" match="greaterOrEqual"/>
       <import plugin="com.opcoach.training.rental" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="greaterOrEqual"/>
+      <import plugin="com.opcoach.training.rental.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.security" version="1.0.200" match="greaterOrEqual"/>
    </requires>
-
-   <plugin
-         id="com.opcoach.training.rental.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="com.opcoach.training.rental.ui"
@@ -47,7 +43,21 @@
          unpack="false"/>
 
    <plugin
-         id="com.opcoach.training.rental.ui.colorprovider"
+         id="com.opcoach.training.rental"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.opcoach.training.rental.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.opcoach.training.rental.rcp"
          download-size="0"
          install-size="0"
          version="0.0.0"
