@@ -45,6 +45,11 @@
             name="Rental Agency UIForm"
             restorable="true">
       </view>
+      <view
+            class="com.opcoach.training.rental.ui.views.CustomerViewPart"
+            id="com.opcoach.training.rental.ui.views.CustomerViewPart"
+            name="Customer Propertie">
+      </view>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
