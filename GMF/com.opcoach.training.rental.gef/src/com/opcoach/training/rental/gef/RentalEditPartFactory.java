@@ -11,27 +11,31 @@ import org.eclipse.gef.EditPartFactory;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
-import com.opcoach.training.rental.gef.parts.CustomerPart;
-import com.opcoach.training.rental.gef.parts.RentalObjectPart;
-import com.opcoach.training.rental.gef.parts.RentalPart;
+import com.opcoach.training.rental.gef.parts.CustomerEditPart;
+import com.opcoach.training.rental.gef.parts.RentalAgencyEditPart;
+import com.opcoach.training.rental.gef.parts.RentalEditPart;
+import com.opcoach.training.rental.gef.parts.RentalObjectEditPart;
 import com.opcoach.training.rental.util.RentalSwitch;
 
 /**
  * @author olivier
  *
  */
-public class RentalPartFactory implements EditPartFactory
+public class RentalEditPartFactory implements EditPartFactory
 {
 
 	private  RentalSwitch<EditPart> switcher = new RentalSwitch<EditPart>()
 	{
-		public EditPart caseCustomer(Customer object) { return new CustomerPart(); }
+		public EditPart caseCustomer(Customer object) { return new CustomerEditPart(); }
+ 
+		public EditPart caseRental(Rental object) 	{ return new RentalEditPart(); }
 
-		public EditPart caseRental(Rental object) 	{ return new RentalPart(); }
-
-		public EditPart caseRentalObject(RentalObject object) { return new RentalObjectPart(); }
-		
+        public EditPart caseRentalObject(RentalObject object) { return new RentalObjectEditPart(); }
+        
+        public EditPart caseRentalAgency(RentalAgency object) { return new RentalAgencyEditPart(); }
+        		
 	};
 	
 	

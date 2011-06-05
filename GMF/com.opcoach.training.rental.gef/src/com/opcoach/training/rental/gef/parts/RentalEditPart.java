@@ -14,7 +14,7 @@ import com.opcoach.training.rental.gef.figures.RentalFigure;
  * @author olivier
  *
  */
-public class RentalPart extends AbstractGraphicalEditPart
+public class RentalEditPart extends AbstractGraphicalEditPart
 {
 
 

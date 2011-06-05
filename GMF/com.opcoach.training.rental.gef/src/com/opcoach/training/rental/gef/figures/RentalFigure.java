@@ -19,24 +19,29 @@ public class RentalFigure extends Figure
 {
 	public RentalFigure()
 	{
+		super();
 		setLayoutManager(new XYLayout());
+		setSize(50,50);
 		RoundedRectangle fils = new RoundedRectangle();
-		fils.setBackgroundColor(ColorConstants.yellow);
-		fils.setBounds(new Rectangle(10, 10, 200, 200));
+		fils.setBackgroundColor(ColorConstants.orange);
+		fils.setBounds(new Rectangle(0,0,getSize().width, getSize().height));
 		add(fils);
 	}
 
 	protected void paintBorder(Graphics graphics)
 	{
 		graphics.pushState();
-		graphics.setBackgroundColor(ColorConstants.blue);
+		graphics.setForegroundColor(ColorConstants.cyan);
 		graphics.drawOval(getBounds());
 		graphics.popState();
 	}
 
-	protected void paintFigure(Graphics graphics)
+	
+	@Override
+	protected boolean useLocalCoordinates()
 	{
-		graphics.fillRectangle(getBounds());
+		return true;
 	}
+	
 }
  

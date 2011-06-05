@@ -8,19 +8,19 @@ package com.opcoach.training.rental.gef.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 
-import com.opcoach.training.rental.gef.figures.RentalFigure;
+import com.opcoach.training.rental.gef.figures.RentalObjectFigure;
 
 /**
  * @author olivier
  *
  */
-public class RentalObjectPart extends AbstractGraphicalEditPart
+public class RentalObjectEditPart extends AbstractGraphicalEditPart
 {
 
 	@Override
 	protected IFigure createFigure()
 	{
-		return new RentalFigure();
+		return new RentalObjectFigure();
 	}
 
 	@Override

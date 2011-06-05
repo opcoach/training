@@ -6,18 +6,18 @@ import org.osgi.framework.BundleContext;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class Activator extends AbstractUIPlugin {
+public class RentalGEFActivator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "com.opcoach.sample.gef";
+	public static final String PLUGIN_ID = "com.opcoach.training.rental.gef";
 
 	// The shared instance
-	private static Activator plugin;
+	private static RentalGEFActivator plugin;
 	
 	/**
 	 * The constructor
 	 */
-	public Activator() {
+	public RentalGEFActivator() {
 	}
 
 	/*
@@ -43,7 +43,7 @@ public class Activator extends AbstractUIPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static Activator getDefault() {
+	public static RentalGEFActivator getDefault() {
 		return plugin;
 	}
 
