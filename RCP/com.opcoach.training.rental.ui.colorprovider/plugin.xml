@@ -11,7 +11,7 @@
    <extension
          point="com.opcoach.training.rental.ui.ColorProvider">
       <colorProvider
-            colorProviderClass="com.opcoach.training.rental.ui.colorprovider.PastelColorProvider"
+            colorProviderClass="com.opcoach.training.rental.ui.colorprovider.ViveColorProvider"
             name="Couleurs Vives">
       </colorProvider>
    </extension>

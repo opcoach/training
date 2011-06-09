@@ -92,7 +92,8 @@
          <view
                id="com.opcoach.rental.ui.views.rentalView"
                minimized="false"
-               relationship="left">
+               relationship="stack"
+               relative="org.eclipse.ui.views.ResourceNavigator">
          </view>
          <perspectiveShortcut
                id="com.opcoach.training.rental.ui.rentalperspective">
