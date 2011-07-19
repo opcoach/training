@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.opcoach.training.rental_feature_1.0.0.201004221444.jar" id="com.opcoach.training.rental_feature" version="1.0.0.201004221444">
+   <feature url="features/com.opcoach.training.rental.feature_1.0.0.201103181623.jar" id="com.opcoach.training.rental.feature" version="1.0.0.201103181623">
       <category name="com.opcoach.category.rental"/>
    </feature>
-   <category-def name="com.opcoach.category.rental" label="Rental"/>
+   <category-def name="com.opcoach.category.rental" label="Rental">
+      <description>
+         Framework de gestion de locations.
+      </description>
+   </category-def>
 </site>
