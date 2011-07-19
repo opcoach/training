@@ -1,46 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
-   <extension
-         point="org.eclipse.ui.commands">
-      <category
-            name="Sample Category"
-            id="com.opcoach.training.uimenu.commands.category">
-      </category>
-      <command
-            name="Single Command"
-            categoryId="com.opcoach.training.uimenu.commands.category"
-            id="com.opcoach.training.uimenu.commands.singleCommand">
-      </command>
-      <command
-            categoryId="com.opcoach.training.uimenu.commands.category"
-            id="com.opcoach.training.uimenu.commands.multipleCommand"
-            name="Multiple Command">
-      </command>
-   </extension>
-   <extension
-         point="org.eclipse.ui.handlers">
-      <handler
-            commandId="com.opcoach.training.uimenu.commands.singleCommand"
-            class="com.opcoach.training.uimenu.handlers.SingleTxtHandler">
-      </handler>
-      <handler
-            class="com.opcoach.training.uimenu.handlers.MultipleTxtHandler"
-            commandId="com.opcoach.training.uimenu.commands.multipleCommand">
-      </handler>
-   </extension>
-   <extension
-         point="org.eclipse.ui.bindings">
-      <key
-            commandId="com.opcoach.training.uimenu.commands.sampleCommand"
-            contextId="org.eclipse.ui.contexts.window"
-            sequence="M1+6"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
-      </key>
-   </extension>
    <extension
          point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?before=additions">
+         <menu
+               id="com.opcoach.training.menumultipletxt"
+               label="Sous Menu Multiple Txt"
+               tooltip="Access to submenu on when txt file is selected">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="com.opcoach.training.uicommand.severalTxtFileSelected">
+               </reference>
+            </visibleWhen>
+            <separator
+                  name="commands"
+                  visible="false">
+            </separator>
+         </menu>
+      </menuContribution>
+         <menuContribution
+            locationURI="popup:com.opcoach.training.menumultipletxt?after=commands">
+         <command
+               commandId="com.opcoach.training.uimenu.commands.multipleCommand"
+               label="Txt dans sous menu Multiple"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="popup:com.opcoach.training.menusingletxt?after=commands">
+         <command
+               commandId="com.opcoach.training.uimenu.commands.singleCommand"
+               label="Txt dans Sous menu Single"
+               style="push"
+               tooltip="Commande simple">
+         </command>
+      </menuContribution>
       <menuContribution
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
@@ -91,41 +88,44 @@
             </separator>
          </menu>
       </menuContribution>
-      <menuContribution
-            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-         <menu
-               id="com.opcoach.training.menumultipletxt"
-               label="Sous Menu Multiple Txt"
-               tooltip="Access to submenu on when txt file is selected">
-            <visibleWhen
-                  checkEnabled="false">
-               <reference
-                     definitionId="com.opcoach.training.uicommand.severalTxtFileSelected">
-               </reference>
-            </visibleWhen>
-            <separator
-                  name="commands"
-                  visible="false">
-            </separator>
-         </menu>
-      </menuContribution>
-      <menuContribution
-            locationURI="popup:com.opcoach.training.menusingletxt?after=commands">
-         <command
-               commandId="com.opcoach.training.uimenu.commands.singleCommand"
-               label="Txt dans Sous menu SIngle"
-               style="push"
-               tooltip="Commande simple">
-         </command>
-      </menuContribution>
-      <menuContribution
-            locationURI="popup:com.opcoach.training.menumultipletxt?after=commands">
-         <command
-               commandId="com.opcoach.training.uimenu.commands.multipleCommand"
-               label="Txt dans sous menu Multiple"
-               style="push">
-         </command>
-      </menuContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="com.opcoach.training.cmd.category">
+      </category>
+      <command
+            name="Single Command"
+            categoryId="com.opcoach.training.cmd.category"
+            id="com.opcoach.training.uimenu.commands.singleCommand">
+      </command>
+      <command
+            categoryId="com.opcoach.training.uimenu.commands.category"
+            id="com.opcoach.training.uimenu.commands.multipleCommand"
+            name="Multiple Command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.opcoach.training.uimenu.commands.singleCommand"
+            class="com.opcoach.training.uimenu.handlers.SingleTxtHandler">
+      </handler>
+      <handler
+            class="com.opcoach.training.uimenu.handlers.MultipleTxtHandler"
+            commandId="com.opcoach.training.uimenu.commands.multipleCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.opcoach.training.uimenu.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
    </extension>
    <extension
          point="org.eclipse.core.expressions.definitions">
@@ -137,7 +137,7 @@
             </count>
             <iterate>
                <adapt
-                     type="org.eclipse.core.resources.IResource">
+                     type="org.eclipse.core.resources.IFile">
                   <test
                         property="org.eclipse.core.resources.extension"
                         value="txt">
@@ -148,7 +148,24 @@
       </definition>
       <definition
             id="com.opcoach.training.uicommand.severalTxtFileSelected">
+         <iterate>
+            <adapt
+                  type="org.eclipse.core.resources.IFile">
+               <test
+                     property="org.eclipse.core.resources.extension"
+                     value="txt">
+               </test>
+            </adapt>
+         </iterate>
       </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <actionProvider
+            class="com.opcoach.training.uimenu.CommonActionProvider1"
+            overrides="org.eclipse.ui.navigator.resources.OpenActions">
+         <enablement></enablement>
+      </actionProvider>
    </extension>
 
 </plugin>
