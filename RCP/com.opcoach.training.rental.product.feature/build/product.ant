@@ -11,14 +11,17 @@
 	 </pathconvert>
 
 	<target name="create.product">
-		<property name="destination" location="${sp:destination}"/>
+		<echo message="-----------------------------------------------------------"/>
+		<echo message="-- create.product : ${target.os} ${target.ws} ${target.arch}"/>
+		<echo message="-----------------------------------------------------------"/>
+		<property name="destination" location="${sp:destination}_${target.os}"/>
 		<delete dir="${destination}"/>
 		<makeurl property="repository" file="${sp:repository}"/>
 		<mkdir dir="${destination}"/>
 		<echoproperties/>
-		<echo message="${equinox.launcher.jar}"/>
-		<echo message="${repository}"/>
-		<echo message="${destination}"/>
+		<echo message="Launcher for director : ${equinox.launcher.jar}"/>
+		<echo message="Site p2 à descendre : ${repository}"/>
+		<echo message="Destination : ${destination}"/>
 		<java jar="${equinox.launcher.jar}" fork="true" failonerror="true" >
 			<arg value="-application"/>
 			<arg value="org.eclipse.equinox.p2.director"/>

@@ -11,7 +11,7 @@
             </actorProperties>
             <properties>
                 <property key="profile" value="RentalProfile"/>
-                <property key="iu" value="com.opcoach.training.rental_rcp.product"/>
+                <property key="iu" value="com.opcoach.training.rental.rcp.product"/>
             </properties>
 			<prerequisites alias="repository">
 				<attribute name="site.p2"/>
@@ -29,7 +29,7 @@
 				<attribute name="create.product"/>
 			</prerequisites>
             <products alias="action.output" base="${buckminster.output}">
-            	<path path="Rental.zip"/>
+            	<path path="Rental_${target.os}.zip"/>
             </products>
 		</public>
 	</actions>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Gestion de locations" uid="rentalproduct" id="com.opcoach.training.rental_rcp.product" version="1.0.1" useFeatures="true" includeLaunchers="true">
+<product name="Gestion de locations" id="com.opcoach.training.rental.rcp.product" application="com.opcoach.training.rental.rcp.application" version="1.0.2" useFeatures="true" includeLaunchers="true">
+
 
    <configIni use="default">
    </configIni>
@@ -10,6 +11,9 @@
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
+   <windowImages/>
+
+
    <launcher>
       <solaris/>
       <win useIco="false">
@@ -17,8 +21,10 @@
       </win>
    </launcher>
 
+
    <vm>
    </vm>
+
 
    <plugins>
    </plugins>
