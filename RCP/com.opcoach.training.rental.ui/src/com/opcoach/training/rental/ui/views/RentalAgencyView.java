@@ -27,6 +27,8 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 
 	private TreeViewer agencyViewer;
 
+	private AgencyLabelProvider labelProvider;
+
 	public RentalAgencyView()
 	{
 		// TODO Auto-generated constructor stub
@@ -42,7 +44,8 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());
-		agencyViewer.setLabelProvider(new AgencyLabelProvider(RentalCoreActivator.getAgency()));
+		labelProvider = new AgencyLabelProvider();
+		agencyViewer.setLabelProvider(labelProvider);
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
 		agencies.add(RentalCoreActivator.getAgency());
 		agencyViewer.setInput(agencies);
@@ -69,7 +72,8 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 
 	@Override
 	public void propertyChange(PropertyChangeEvent event)
-	{
+	{	
+		labelProvider.initPalette();
 		agencyViewer.refresh();
 	}
 

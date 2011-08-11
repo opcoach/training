@@ -32,12 +32,14 @@ import com.opcoach.training.rental.ui.views.AgencyContentProvider.TNode;
  * @author olivier
  */
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
-{
-	private RentalAgency agency;
+{	
+	/** The choosen palette among the addtional (may be null) */
+	private IColorProvider currentPalette;
 
-	public AgencyLabelProvider(RentalAgency ag)
+
+	public AgencyLabelProvider()
 	{
-		agency = ag;
+		initPalette();
 	}
 
 	private SimpleDateFormat df = new SimpleDateFormat("dd/MM");
@@ -56,13 +58,13 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 			TNode t = (TNode) element;
 			if (CUSTOMERS_NODE == t.name)
 			{
-				result = CUSTOMERS_NODE + (displayCount ? "(" + agency.getCustomers().size() + ")" : "");
+				result = CUSTOMERS_NODE + (displayCount ? "(" + t.agency.getCustomers().size() + ")" : "");
 			} else if (RENTALS_NODE == t.name)
 			{
-				result = RENTALS_NODE + (displayCount ? "(" + agency.getRentals().size() + ")" : "");
+				result = RENTALS_NODE + (displayCount ? "(" + t.agency.getRentals().size() + ")" : "");
 			} else if (OBJECTS_NODE == t.name)
 			{
-				result = OBJECTS_NODE + (displayCount ? "(" + agency.getObjectsToRent().size() + ")" : "");
+				result = OBJECTS_NODE + (displayCount ? "(" + t.agency.getObjectsToRent().size() + ")" : "");
 			}
 		}
 
@@ -93,8 +95,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	@Override
 	public Color getBackground(Object element)
 	{
-		IColorProvider cp = RentalUIActivator.getDefault().getColorProvider();
-		return (cp == null) ? null : cp.getBackground(element);
+		return (currentPalette == null) ? null : currentPalette.getBackground(element);
 
 	}
 
@@ -131,9 +132,8 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	@Override
 	public Color getForeground(Object element)
 	{
-		IColorProvider cp = RentalUIActivator.getDefault().getColorProvider();
-		if (cp != null)
-			return cp.getForeground(element);
+		if (currentPalette != null)
+			return currentPalette.getForeground(element);
 		else
 		{
 			if (element instanceof Customer)
@@ -160,6 +160,15 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 			result = reg.get(rgbKey);
 		}
 		return result;
+
+	}
+	
+	public void initPalette()
+	{
+		// Recupere la palette selectionnée dans les preferences
+		// (appelé par le listener de preference store de l'agency view et par le constructeur du label provider)
+		String val = RentalUIActivator.getDefault().getPreferenceStore().getString(COLOR_PROVIDER);
+		currentPalette = (val == null) ? null : RentalUIActivator.getDefault().getPaletteManager().get(val);
 
 	}
 

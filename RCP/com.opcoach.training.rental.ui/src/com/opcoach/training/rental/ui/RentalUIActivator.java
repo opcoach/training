@@ -22,7 +22,7 @@ import org.osgi.framework.BundleContext;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChangeListener, RentalUIConstants
+public class RentalUIActivator extends AbstractUIPlugin implements  RentalUIConstants
 {
 
 	// The plug-in ID
@@ -32,9 +32,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 	private static RentalUIActivator plugin;
 
 	/** The collection of possible color providers (read in extensions) */
-	private Map<String, IColorProvider> additionalColorProviders = new HashMap<String, IColorProvider>();
-	/** The choosen color provider among the addtional (may be null) */
-	private IColorProvider chosenColorProvider;
+	private Map<String, IColorProvider> paletteManager = new HashMap<String, IColorProvider>();
 
 	/**
 	 * The constructor
@@ -49,16 +47,10 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 	 */
 	public void start(BundleContext context) throws Exception
 	{
-		super.start(context);
+		super.start(context); 
 		plugin = this;
 		readColorProviderExtensions();
 		
-		// Get the pref value for color preference
-		String val = getPreferenceStore().getString(COLOR_PROVIDER);
-		chosenColorProvider = (val == null) ? null : additionalColorProviders.get(val);
-
-;		// Listen to preferences
-		getPreferenceStore().addPropertyChangeListener(this);
 	}
 
 	public void readColorProviderExtensions()
@@ -79,7 +71,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 					Object exeExt = elt.createExecutableExtension("colorProviderClass");
 					// Add it (with its name) in the color provider map
 					String name = elt.getAttribute("name");
-					additionalColorProviders.put(name, (IColorProvider) exeExt);
+					paletteManager.put(name, (IColorProvider) exeExt);
 				} catch (CoreException e)
 				{
 					// TODO Auto-generated catch block
@@ -92,16 +84,11 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 
 	/* @return a never null collection of overriden color providers */
 
-	public Map<String, IColorProvider> getAdditionalColorProviders()
+	public Map<String, IColorProvider> getPaletteManager()
 	{
-		return additionalColorProviders;
+		return paletteManager;
 	}
 
-	/** @return the selected chosen color provider (null if none selected) */
-	public IColorProvider getColorProvider()
-	{
-		return chosenColorProvider;
-	}
 
 	/*
 	 * (non-Javadoc)
@@ -136,22 +123,6 @@ public class RentalUIActivator extends AbstractUIPlugin implements IPropertyChan
 
 
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.jface.util.IPropertyChangeListener#propertyChange(org.eclipse.jface.util.PropertyChangeEvent)
-	 */
-	@Override
-	public void propertyChange(PropertyChangeEvent event)
-	{
-		// Get the possible chosen color provider.
-		if (COLOR_PROVIDER.equals(event.getProperty()))
-		{
-			String newVal = (String) event.getNewValue();
-			// null value means selected 'None'.
-			chosenColorProvider = (newVal == null) ? null : additionalColorProviders.get(newVal);
-		}
-
-	}
 
 	@Override
 	protected void initializeImageRegistry(ImageRegistry reg)
