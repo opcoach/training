@@ -13,7 +13,7 @@ Require-Bundle: com.opcoach.training.rental.core;visibility:=reexport,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
  org.eclipse.ui.forms,
- org.eclipse.ui;bundle-version="3.6.2"
+ org.eclipse.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.ui,
