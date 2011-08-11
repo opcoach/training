@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: com.opcoach.training.rental;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Bundle-ClassPath: .
 Bundle-Vendor: OPCoach
 Bundle-Localization: plugin
@@ -12,5 +12,5 @@ Export-Package: com.opcoach.training.rental,
  com.opcoach.training.rental.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.swt;bundle-version="3.5.1";visibility:=reexport
+ org.eclipse.swt;visibility:=reexport
 Bundle-ActivationPolicy: lazy

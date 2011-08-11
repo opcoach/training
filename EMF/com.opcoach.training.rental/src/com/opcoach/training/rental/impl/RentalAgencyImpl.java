@@ -257,6 +257,9 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	{
 		getCustomers().add(customer);
 		customer.setParentAgency(this);
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.ADD, RentalPackage.RENTAL_AGENCY__CUSTOMERS, null, customer));
+
 	}
 
 	/**

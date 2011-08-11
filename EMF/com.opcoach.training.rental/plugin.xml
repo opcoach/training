@@ -15,5 +15,6 @@
             class="com.opcoach.training.rental.RentalPackage"
             genModel="model/rental.genmodel"/>
    </extension>
+   
 
 </plugin>

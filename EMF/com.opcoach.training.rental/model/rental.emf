@@ -68,6 +68,7 @@ class License {
   attr int number;
   attr EDate validityDate;
   ref Customer#licenses owner;
+  ref Customer EReference0;
 }
 
 @Ecore(constraints="startDateBeforeEndDate")
