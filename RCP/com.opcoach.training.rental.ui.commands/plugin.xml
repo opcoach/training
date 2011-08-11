@@ -78,6 +78,31 @@
             </command>
          </menu>
       </menuContribution>
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:com.opcoach.rental.ui.rentalagencyview?after=additions">
+         <menu
+               label="POPUP AJOUTER DIRECT">
+            <command
+                  commandId="org.eclipse.ui.edit.paste"
+                  label="Paste CUSTOMER"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:com.opcoach.rental.ui.rentalagencyview?after=additions">
+         <menu
+               id="com.opcoach.training.agencyviewMenu"
+               label="MENU DANS LA VUE">
+            <command
+                  commandId="org.eclipse.ui.edit.paste"
+                  label="Paste CUSTOMER"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.core.expressions.definitions">
