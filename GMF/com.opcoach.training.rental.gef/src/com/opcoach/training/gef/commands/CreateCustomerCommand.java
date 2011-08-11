@@ -1,5 +1,6 @@
 package com.opcoach.training.gef.commands;
 
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.commands.Command;
 
 import com.opcoach.training.rental.Customer;
@@ -9,12 +10,14 @@ public class CreateCustomerCommand extends Command
 {
 	private Customer customer = null;
 	private RentalAgency agency = null;
+	private Rectangle customerBox = null;
 
-	public CreateCustomerCommand(Customer c, RentalAgency parentAgency)
+	public CreateCustomerCommand(Customer c, RentalAgency parentAgency, Rectangle constraint)
 	{
 		super("Create Customer");
 		agency = parentAgency;
 		customer = c;
+		customerBox = constraint;
 	}
 
 	/*

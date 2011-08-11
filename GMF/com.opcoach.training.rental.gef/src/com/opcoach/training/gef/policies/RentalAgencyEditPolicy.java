@@ -56,22 +56,7 @@ public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
     		AbstractGraphicalEditPart cep = (AbstractGraphicalEditPart) child;
     		command =    new ChangeBoundsCommand(cep.getFigure(), (Rectangle) constraint);
     	}
-    	/*
-    	else if (child.getModel() instanceof Circle){
-    		command = new ChangeBoundsCircleCommand((Circle) child.getModel(), (Rectangle) constraint);
-    	}
-    	else if (child.getModel() instanceof Zone){
-    		command = new ChangeBoundsZoneCommand((Zone) child.getModel(), (Rectangle) constraint);
-    	}
-    	else if (child.getModel() instanceof Point){
-    		command = new ChangeBoundsPointCommand((Point) child.getModel(), (Rectangle) constraint);
-    	}
-    	else if (child.getModel() instanceof Line){
-    		command = new ChangeBoundsLineCommand((Line) child.getModel(), (Rectangle) constraint);
-    	}
-    	else if (child.getModel() instanceof Runway){
-    	    command = new ChangeBoundsRunwayCommand((Runway)child.getModel(), (Rectangle)constraint);
-    	}*/
+    	
     	return command;
     }
 
@@ -93,7 +78,7 @@ public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
         {
         	if (newObject instanceof Customer)
         	{
-        		command = new CreateCustomerCommand((Customer) newObject,  parentAgency);
+        		command = new CreateCustomerCommand((Customer) newObject,  parentAgency, constraint);
         	}
         }
         

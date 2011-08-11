@@ -15,30 +15,19 @@ public class RentalCreationFactory implements CreationFactory {
 	@SuppressWarnings("rawtypes")
 	private final Class clazz;
 
-	/**
-	 * Constructor
-	 */
+	/**  Constructor  */
 	public RentalCreationFactory(@SuppressWarnings("rawtypes") Class clazz) {
 		super();
 		this.clazz = clazz;
 	}
 
-	/**
-	 * return a model instance of class clazz
-	 * 
-	 * @see org.eclipse.gef.requests.CreationFactory#getNewObject()
-	 */
+	/** return a model instance of class clazz */
 	public Object getNewObject() {
 		Object object = null;
 		RentalFactory f = RentalFactory.eINSTANCE;
-		if (clazz.equals(Customer.class)) {
-			object = f.createCustomer();
-		}
-		else if (clazz.equals(Rental.class)) {
-			object = f.createRental();
-		}
-		else if (clazz.equals(RentalObject.class)) {
-			object = f.createRentalObject();
+		if (clazz.equals(Customer.class))    { object = f.createCustomer(); }
+		else if (clazz.equals(Rental.class)) { object = f.createRental();   }
+		else if (clazz.equals(RentalObject.class)) { object = f.createRentalObject();
 		}
 		
 		return object;

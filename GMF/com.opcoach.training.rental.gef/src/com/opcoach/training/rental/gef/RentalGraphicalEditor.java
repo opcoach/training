@@ -8,7 +8,7 @@ package com.opcoach.training.rental.gef;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
-import org.eclipse.gef.editparts.FreeformGraphicalRootEditPart;
+import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.palette.CreationToolEntry;
 import org.eclipse.gef.palette.PaletteEntry;
 import org.eclipse.gef.palette.PaletteGroup;
@@ -19,8 +19,6 @@ import org.eclipse.gef.ui.parts.GraphicalEditorWithFlyoutPalette;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
-import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 
@@ -93,7 +91,7 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		super.configureGraphicalViewer();
 
 		GraphicalViewer viewer = getGraphicalViewer();
-		viewer.setRootEditPart(new FreeformGraphicalRootEditPart());
+		viewer.setRootEditPart(new ScalableFreeformRootEditPart());
 		viewer.setEditPartFactory(new RentalEditPartFactory());
 		/*
 		 * viewer.setKeyHandler( new
