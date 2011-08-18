@@ -7,8 +7,6 @@ package com.opcoach.training.rental;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.swt.graphics.Image;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Object</b></em>'.
@@ -19,8 +17,8 @@ import org.eclipse.swt.graphics.Image;
  * <ul>
  *   <li>{@link com.opcoach.training.rental.RentalObject#getID <em>ID</em>}</li>
  *   <li>{@link com.opcoach.training.rental.RentalObject#getName <em>Name</em>}</li>
- *   <li>{@link com.opcoach.training.rental.RentalObject#getPicture <em>Picture</em>}</li>
  *   <li>{@link com.opcoach.training.rental.RentalObject#getParentAgency <em>Parent Agency</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.RentalObject#isDispo <em>Dispo</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,32 +88,6 @@ public interface RentalObject extends EObject
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Picture</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Picture</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Picture</em>' attribute.
-	 * @see #setPicture(Image)
-	 * @see com.opcoach.training.rental.RentalPackage#getRentalObject_Picture()
-	 * @model dataType="com.opcoach.training.rental.Image"
-	 * @generated
-	 */
-	Image getPicture();
-
-	/**
-	 * Sets the value of the '{@link com.opcoach.training.rental.RentalObject#getPicture <em>Picture</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Picture</em>' attribute.
-	 * @see #getPicture()
-	 * @generated
-	 */
-	void setPicture(Image value);
-
-	/**
 	 * Returns the value of the '<em><b>Parent Agency</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.RentalAgency#getObjectsToRent <em>Objects To Rent</em>}'.
 	 * <!-- begin-user-doc -->
@@ -142,6 +114,32 @@ public interface RentalObject extends EObject
 	 * @generated
 	 */
 	void setParentAgency(RentalAgency value);
+
+	/**
+	 * Returns the value of the '<em><b>Dispo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Dispo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dispo</em>' attribute.
+	 * @see #setDispo(boolean)
+	 * @see com.opcoach.training.rental.RentalPackage#getRentalObject_Dispo()
+	 * @model
+	 * @generated
+	 */
+	boolean isDispo();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.training.rental.RentalObject#isDispo <em>Dispo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dispo</em>' attribute.
+	 * @see #isDispo()
+	 * @generated
+	 */
+	void setDispo(boolean value);
 
 	/**
 	 * <!-- begin-user-doc -->

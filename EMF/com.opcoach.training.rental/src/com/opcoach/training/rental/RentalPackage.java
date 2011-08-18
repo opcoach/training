@@ -7,7 +7,6 @@ package com.opcoach.training.rental;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -290,22 +289,22 @@ public interface RentalPackage extends EPackage
 	int RENTAL_OBJECT__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Picture</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RENTAL_OBJECT__PICTURE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Parent Agency</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RENTAL_OBJECT__PARENT_AGENCY = 3;
+	int RENTAL_OBJECT__PARENT_AGENCY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Dispo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENTAL_OBJECT__DISPO = 3;
 
 	/**
 	 * The number of structural features of the '<em>Object</em>' class.
@@ -354,13 +353,22 @@ public interface RentalPackage extends EPackage
 	int LICENSE__OWNER = 2;
 
 	/**
+	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LICENSE__EREFERENCE0 = 3;
+
+	/**
 	 * The number of structural features of the '<em>License</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LICENSE_FEATURE_COUNT = 3;
+	int LICENSE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.training.rental.impl.RentalImpl <em>Rental</em>}' class.
@@ -435,17 +443,6 @@ public interface RentalPackage extends EPackage
 	 * @generated
 	 */
 	int STREET_TYPE = 6;
-
-	/**
-	 * The meta object id for the '<em>Image</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.swt.graphics.Image
-	 * @see com.opcoach.training.rental.impl.RentalPackageImpl#getImage()
-	 * @generated
-	 */
-	int IMAGE = 7;
-
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.training.rental.Customer <em>Customer</em>}'.
@@ -675,17 +672,6 @@ public interface RentalPackage extends EPackage
 	EAttribute getRentalObject_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.opcoach.training.rental.RentalObject#getPicture <em>Picture</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Picture</em>'.
-	 * @see com.opcoach.training.rental.RentalObject#getPicture()
-	 * @see #getRentalObject()
-	 * @generated
-	 */
-	EAttribute getRentalObject_Picture();
-
-	/**
 	 * Returns the meta object for the container reference '{@link com.opcoach.training.rental.RentalObject#getParentAgency <em>Parent Agency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -695,6 +681,17 @@ public interface RentalPackage extends EPackage
 	 * @generated
 	 */
 	EReference getRentalObject_ParentAgency();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.training.rental.RentalObject#isDispo <em>Dispo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dispo</em>'.
+	 * @see com.opcoach.training.rental.RentalObject#isDispo()
+	 * @see #getRentalObject()
+	 * @generated
+	 */
+	EAttribute getRentalObject_Dispo();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.training.rental.License <em>License</em>}'.
@@ -738,6 +735,17 @@ public interface RentalPackage extends EPackage
 	 * @generated
 	 */
 	EReference getLicense_Owner();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.opcoach.training.rental.License#getEReference0 <em>EReference0</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>EReference0</em>'.
+	 * @see com.opcoach.training.rental.License#getEReference0()
+	 * @see #getLicense()
+	 * @generated
+	 */
+	EReference getLicense_EReference0();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.training.rental.Rental <em>Rental</em>}'.
@@ -813,17 +821,6 @@ public interface RentalPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getStreetType();
-
-	/**
-	 * Returns the meta object for data type '{@link org.eclipse.swt.graphics.Image <em>Image</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Image</em>'.
-	 * @see org.eclipse.swt.graphics.Image
-	 * @model instanceClass="org.eclipse.swt.graphics.Image"
-	 * @generated
-	 */
-	EDataType getImage();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1025,20 +1022,20 @@ public interface RentalPackage extends EPackage
 		EAttribute RENTAL_OBJECT__NAME = eINSTANCE.getRentalObject_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Picture</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RENTAL_OBJECT__PICTURE = eINSTANCE.getRentalObject_Picture();
-
-		/**
 		 * The meta object literal for the '<em><b>Parent Agency</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference RENTAL_OBJECT__PARENT_AGENCY = eINSTANCE.getRentalObject_ParentAgency();
+
+		/**
+		 * The meta object literal for the '<em><b>Dispo</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RENTAL_OBJECT__DISPO = eINSTANCE.getRentalObject_Dispo();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.training.rental.impl.LicenseImpl <em>License</em>}' class.
@@ -1073,6 +1070,14 @@ public interface RentalPackage extends EPackage
 		 * @generated
 		 */
 		EReference LICENSE__OWNER = eINSTANCE.getLicense_Owner();
+
+		/**
+		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LICENSE__EREFERENCE0 = eINSTANCE.getLicense_EReference0();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.training.rental.impl.RentalImpl <em>Rental</em>}' class.
@@ -1133,16 +1138,6 @@ public interface RentalPackage extends EPackage
 		 * @generated
 		 */
 		EEnum STREET_TYPE = eINSTANCE.getStreetType();
-
-		/**
-		 * The meta object literal for the '<em>Image</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.swt.graphics.Image
-		 * @see com.opcoach.training.rental.impl.RentalPackageImpl#getImage()
-		 * @generated
-		 */
-		EDataType IMAGE = eINSTANCE.getImage();
 
 	}
 

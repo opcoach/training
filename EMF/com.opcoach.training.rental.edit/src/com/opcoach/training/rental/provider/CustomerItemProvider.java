@@ -73,7 +73,8 @@ public class CustomerItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addFirstNamePropertyDescriptor(object);
@@ -139,7 +140,8 @@ public class CustomerItemProvider
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
 	{
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RentalPackage.Literals.CUSTOMER__ADDRESS);
 			childrenFeatures.add(RentalPackage.Literals.CUSTOMER__LICENSES);
@@ -200,7 +202,8 @@ public class CustomerItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Customer.class)) {
+		switch (notification.getFeatureID(Customer.class))
+		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 			case RentalPackage.CUSTOMER__LAST_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

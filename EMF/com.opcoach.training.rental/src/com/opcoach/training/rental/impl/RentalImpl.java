@@ -5,24 +5,22 @@
  */
 package com.opcoach.training.rental.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -124,10 +122,12 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 * @generated
 	 */
 	public Customer getCustomer() {
-		if (customer != null && customer.eIsProxy()) {
+		if (customer != null && customer.eIsProxy())
+		{
 			InternalEObject oldCustomer = (InternalEObject)customer;
 			customer = (Customer)eResolveProxy(oldCustomer);
-			if (customer != oldCustomer) {
+			if (customer != oldCustomer)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RentalPackage.RENTAL__CUSTOMER, oldCustomer, customer));
 			}
@@ -159,10 +159,12 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 * @generated
 	 */
 	public RentalObject getRentedObject() {
-		if (rentedObject != null && rentedObject.eIsProxy()) {
+		if (rentedObject != null && rentedObject.eIsProxy())
+		{
 			InternalEObject oldRentedObject = (InternalEObject)rentedObject;
 			rentedObject = (RentalObject)eResolveProxy(oldRentedObject);
-			if (rentedObject != oldRentedObject) {
+			if (rentedObject != oldRentedObject)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RentalPackage.RENTAL__RENTED_OBJECT, oldRentedObject, rentedObject));
 			}
@@ -251,7 +253,8 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 * @generated
 	 */
 	public void setParentAgency(RentalAgency newParentAgency) {
-		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL__PARENT_AGENCY && newParentAgency != null)) {
+		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL__PARENT_AGENCY && newParentAgency != null))
+		{
 			if (EcoreUtil.isAncestor(this, newParentAgency))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -285,7 +288,8 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL__PARENT_AGENCY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -301,7 +305,8 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL__PARENT_AGENCY:
 				return basicSetParentAgency(null, msgs);
 		}
@@ -315,7 +320,8 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case RentalPackage.RENTAL__PARENT_AGENCY:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.RENTAL_AGENCY__RENTALS, RentalAgency.class, msgs);
 		}
@@ -328,7 +334,8 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL__CUSTOMER:
 				if (resolve) return getCustomer();
 				return basicGetCustomer();
@@ -351,7 +358,8 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL__CUSTOMER:
 				setCustomer((Customer)newValue);
 				return;
@@ -377,7 +385,8 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL__CUSTOMER:
 				setCustomer((Customer)null);
 				return;
@@ -403,7 +412,8 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL__CUSTOMER:
 				return customer != null;
 			case RentalPackage.RENTAL__RENTED_OBJECT:

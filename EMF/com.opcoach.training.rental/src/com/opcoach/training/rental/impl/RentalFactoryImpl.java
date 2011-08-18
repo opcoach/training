@@ -5,18 +5,22 @@
  */
 package com.opcoach.training.rental.impl;
 
-import com.opcoach.training.rental.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.eclipse.swt.graphics.Image;
+import com.opcoach.training.rental.Address;
+import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.License;
+import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.RentalFactory;
+import com.opcoach.training.rental.RentalObject;
+import com.opcoach.training.rental.RentalPackage;
+import com.opcoach.training.rental.StreetType;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,13 +45,16 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	 */
 	public static RentalFactory init()
 	{
-		try {
+		try
+		{
 			RentalFactory theRentalFactory = (RentalFactory)EPackage.Registry.INSTANCE.getEFactory("http://com.opcoach.training/rental/1.0"); 
-			if (theRentalFactory != null) {
+			if (theRentalFactory != null)
+			{
 				return theRentalFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RentalFactoryImpl();
@@ -72,7 +79,8 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public EObject create(EClass eClass)
 	{
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case RentalPackage.RENTAL_AGENCY: return createRentalAgency();
 			case RentalPackage.CUSTOMER: return createCustomer();
 			case RentalPackage.ADDRESS: return createAddress();
@@ -92,11 +100,10 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue)
 	{
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case RentalPackage.STREET_TYPE:
 				return createStreetTypeFromString(eDataType, initialValue);
-			case RentalPackage.IMAGE:
-				return createImageFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -110,11 +117,10 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue)
 	{
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case RentalPackage.STREET_TYPE:
 				return convertStreetTypeToString(eDataType, instanceValue);
-			case RentalPackage.IMAGE:
-				return convertImageToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -206,26 +212,6 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	public String convertStreetTypeToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Image createImageFromString(EDataType eDataType, String initialValue)
-	{
-		return (Image)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertImageToString(EDataType eDataType, Object instanceValue)
-	{
-		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

@@ -5,19 +5,22 @@
  */
 package com.opcoach.training.rental.util;
 
-import com.opcoach.training.rental.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import org.eclipse.swt.graphics.Image;
+import com.opcoach.training.rental.Address;
+import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.License;
+import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.RentalObject;
+import com.opcoach.training.rental.RentalPackage;
+import com.opcoach.training.rental.StreetType;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,7 +104,8 @@ public class RentalValidator extends EObjectValidator
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context)
 	{
-		switch (classifierID) {
+		switch (classifierID)
+		{
 			case RentalPackage.RENTAL_AGENCY:
 				return validateRentalAgency((RentalAgency)value, diagnostics, context);
 			case RentalPackage.CUSTOMER:
@@ -116,8 +120,6 @@ public class RentalValidator extends EObjectValidator
 				return validateRental((Rental)value, diagnostics, context);
 			case RentalPackage.STREET_TYPE:
 				return validateStreetType((StreetType)value, diagnostics, context);
-			case RentalPackage.IMAGE:
-				return validateImage((Image)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -155,8 +157,10 @@ public class RentalValidator extends EObjectValidator
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
+		if (false)
+		{
+			if (diagnostics != null)
+			{
 				diagnostics.add
 					(createDiagnostic
 						(Diagnostic.ERROR,
@@ -275,8 +279,10 @@ public class RentalValidator extends EObjectValidator
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
+		if (false)
+		{
+			if (diagnostics != null)
+			{
 				diagnostics.add
 					(createDiagnostic
 						(Diagnostic.ERROR,
@@ -298,16 +304,6 @@ public class RentalValidator extends EObjectValidator
 	 * @generated
 	 */
 	public boolean validateStreetType(StreetType streetType, DiagnosticChain diagnostics, Map<Object, Object> context)
-	{
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateImage(Image image, DiagnosticChain diagnostics, Map<Object, Object> context)
 	{
 		return true;
 	}

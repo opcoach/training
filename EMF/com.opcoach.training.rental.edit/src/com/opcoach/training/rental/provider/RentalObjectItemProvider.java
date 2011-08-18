@@ -70,12 +70,13 @@ public class RentalObjectItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addIDPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addPicturePropertyDescriptor(object);
+			addDispoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -127,24 +128,24 @@ public class RentalObjectItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Picture feature.
+	 * This adds a property descriptor for the Dispo feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPicturePropertyDescriptor(Object object)
+	protected void addDispoPropertyDescriptor(Object object)
 	{
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RentalObject_picture_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RentalObject_picture_feature", "_UI_RentalObject_type"),
-				 RentalPackage.Literals.RENTAL_OBJECT__PICTURE,
+				 getString("_UI_RentalObject_dispo_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RentalObject_dispo_feature", "_UI_RentalObject_type"),
+				 RentalPackage.Literals.RENTAL_OBJECT__DISPO,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -188,10 +189,11 @@ public class RentalObjectItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RentalObject.class)) {
+		switch (notification.getFeatureID(RentalObject.class))
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 			case RentalPackage.RENTAL_OBJECT__NAME:
-			case RentalPackage.RENTAL_OBJECT__PICTURE:
+			case RentalPackage.RENTAL_OBJECT__DISPO:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

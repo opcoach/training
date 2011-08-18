@@ -70,11 +70,13 @@ public class LicenseItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addNumberPropertyDescriptor(object);
 			addValidityDatePropertyDescriptor(object);
+			addEReference0PropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -126,6 +128,29 @@ public class LicenseItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the EReference0 feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEReference0PropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_License_EReference0_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_License_EReference0_feature", "_UI_License_type"),
+				 RentalPackage.Literals.LICENSE__EREFERENCE0,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns License.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -162,7 +187,8 @@ public class LicenseItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(License.class)) {
+		switch (notification.getFeatureID(License.class))
+		{
 			case RentalPackage.LICENSE__NUMBER:
 			case RentalPackage.LICENSE__VALIDITY_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

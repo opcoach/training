@@ -5,22 +5,19 @@
  */
 package com.opcoach.training.rental.impl;
 
-import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.License;
-import com.opcoach.training.rental.RentalPackage;
-
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.License;
+import com.opcoach.training.rental.RentalPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +29,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link com.opcoach.training.rental.impl.LicenseImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.LicenseImpl#getValidityDate <em>Validity Date</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.LicenseImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.impl.LicenseImpl#getEReference0 <em>EReference0</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,6 +83,16 @@ public class LicenseImpl extends EObjectImpl implements License
 	 * @ordered
 	 */
 	protected Date validityDate = VALIDITY_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEReference0()
+	 * @generated
+	 * @ordered
+	 */
+	protected Customer eReference0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +190,8 @@ public class LicenseImpl extends EObjectImpl implements License
 	 */
 	public void setOwner(Customer newOwner)
 	{
-		if (newOwner != eInternalContainer() || (eContainerFeatureID() != RentalPackage.LICENSE__OWNER && newOwner != null)) {
+		if (newOwner != eInternalContainer() || (eContainerFeatureID() != RentalPackage.LICENSE__OWNER && newOwner != null))
+		{
 			if (EcoreUtil.isAncestor(this, newOwner))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -195,6 +204,49 @@ public class LicenseImpl extends EObjectImpl implements License
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.LICENSE__OWNER, newOwner, newOwner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer getEReference0()
+	{
+		if (eReference0 != null && eReference0.eIsProxy())
+		{
+			InternalEObject oldEReference0 = (InternalEObject)eReference0;
+			eReference0 = (Customer)eResolveProxy(oldEReference0);
+			if (eReference0 != oldEReference0)
+			{
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RentalPackage.LICENSE__EREFERENCE0, oldEReference0, eReference0));
+			}
+		}
+		return eReference0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer basicGetEReference0()
+	{
+		return eReference0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEReference0(Customer newEReference0)
+	{
+		Customer oldEReference0 = eReference0;
+		eReference0 = newEReference0;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.LICENSE__EREFERENCE0, oldEReference0, eReference0));
 	}
 
 	/**
@@ -215,7 +267,8 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__OWNER:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -232,7 +285,8 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__OWNER:
 				return basicSetOwner(null, msgs);
 		}
@@ -247,7 +301,8 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case RentalPackage.LICENSE__OWNER:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.CUSTOMER__LICENSES, Customer.class, msgs);
 		}
@@ -262,13 +317,17 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__NUMBER:
 				return getNumber();
 			case RentalPackage.LICENSE__VALIDITY_DATE:
 				return getValidityDate();
 			case RentalPackage.LICENSE__OWNER:
 				return getOwner();
+			case RentalPackage.LICENSE__EREFERENCE0:
+				if (resolve) return getEReference0();
+				return basicGetEReference0();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,7 +340,8 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__NUMBER:
 				setNumber((Integer)newValue);
 				return;
@@ -290,6 +350,9 @@ public class LicenseImpl extends EObjectImpl implements License
 				return;
 			case RentalPackage.LICENSE__OWNER:
 				setOwner((Customer)newValue);
+				return;
+			case RentalPackage.LICENSE__EREFERENCE0:
+				setEReference0((Customer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -303,7 +366,8 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
@@ -312,6 +376,9 @@ public class LicenseImpl extends EObjectImpl implements License
 				return;
 			case RentalPackage.LICENSE__OWNER:
 				setOwner((Customer)null);
+				return;
+			case RentalPackage.LICENSE__EREFERENCE0:
+				setEReference0((Customer)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -325,13 +392,16 @@ public class LicenseImpl extends EObjectImpl implements License
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__NUMBER:
 				return number != NUMBER_EDEFAULT;
 			case RentalPackage.LICENSE__VALIDITY_DATE:
 				return VALIDITY_DATE_EDEFAULT == null ? validityDate != null : !VALIDITY_DATE_EDEFAULT.equals(validityDate);
 			case RentalPackage.LICENSE__OWNER:
 				return getOwner() != null;
+			case RentalPackage.LICENSE__EREFERENCE0:
+				return eReference0 != null;
 		}
 		return super.eIsSet(featureID);
 	}

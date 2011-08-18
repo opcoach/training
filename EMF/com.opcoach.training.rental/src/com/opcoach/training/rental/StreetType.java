@@ -86,7 +86,8 @@ public enum StreetType implements Enumerator
 	 * @generated
 	 */
 	private static final StreetType[] VALUES_ARRAY =
-		new StreetType[] {
+		new StreetType[]
+		{
 			STREET,
 			ROAD,
 		};
@@ -107,9 +108,11 @@ public enum StreetType implements Enumerator
 	 */
 	public static StreetType get(String literal)
 	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			StreetType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -124,9 +127,11 @@ public enum StreetType implements Enumerator
 	 */
 	public static StreetType getByName(String name)
 	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			StreetType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -141,7 +146,8 @@ public enum StreetType implements Enumerator
 	 */
 	public static StreetType get(int value)
 	{
-		switch (value) {
+		switch (value)
+		{
 			case STREET_VALUE: return STREET;
 			case ROAD_VALUE: return ROAD;
 		}

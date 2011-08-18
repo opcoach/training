@@ -12,7 +12,6 @@
       <genEnumLiterals ecoreEnumLiteral="rental.ecore#//StreetType/Street"/>
       <genEnumLiterals ecoreEnumLiteral="rental.ecore#//StreetType/Road"/>
     </genEnums>
-    <genDataTypes ecoreDataType="rental.ecore#//Image"/>
     <genClasses ecoreClass="rental.ecore#//RentalAgency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalAgency/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/address"/>
@@ -64,8 +63,8 @@
     <genClasses ecoreClass="rental.ecore#//RentalObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalObject/ID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalObject/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalObject/picture"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//RentalObject/parentAgency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalObject/dispo"/>
       <genOperations ecoreOperation="rental.ecore#//RentalObject/rent">
         <genParameters ecoreParameter="rental.ecore#//RentalObject/rent/customer"/>
       </genOperations>

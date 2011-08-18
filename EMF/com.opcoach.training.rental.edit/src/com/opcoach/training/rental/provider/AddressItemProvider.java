@@ -70,7 +70,8 @@ public class AddressItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addStreetTypePropertyDescriptor(object);
@@ -236,7 +237,8 @@ public class AddressItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Address.class)) {
+		switch (notification.getFeatureID(Address.class))
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 			case RentalPackage.ADDRESS__NUMBER:
 			case RentalPackage.ADDRESS__ZIP_CODE:

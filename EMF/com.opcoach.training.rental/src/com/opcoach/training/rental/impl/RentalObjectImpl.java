@@ -5,24 +5,19 @@
  */
 package com.opcoach.training.rental.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.eclipse.swt.graphics.Image;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,8 +28,8 @@ import org.eclipse.swt.graphics.Image;
  * <ul>
  *   <li>{@link com.opcoach.training.rental.impl.RentalObjectImpl#getID <em>ID</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.RentalObjectImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.opcoach.training.rental.impl.RentalObjectImpl#getPicture <em>Picture</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.RentalObjectImpl#getParentAgency <em>Parent Agency</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.impl.RentalObjectImpl#isDispo <em>Dispo</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,24 +85,24 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPicture() <em>Picture</em>}' attribute.
+	 * The default value of the '{@link #isDispo() <em>Dispo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPicture()
+	 * @see #isDispo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Image PICTURE_EDEFAULT = null;
+	protected static final boolean DISPO_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getPicture() <em>Picture</em>}' attribute.
+	 * The cached value of the '{@link #isDispo() <em>Dispo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPicture()
+	 * @see #isDispo()
 	 * @generated
 	 * @ordered
 	 */
-	protected Image picture = PICTURE_EDEFAULT;
+	protected boolean dispo = DISPO_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,29 +176,6 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Image getPicture()
-	{
-		return picture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPicture(Image newPicture)
-	{
-		Image oldPicture = picture;
-		picture = newPicture;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_OBJECT__PICTURE, oldPicture, picture));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RentalAgency getParentAgency()
 	{
 		if (eContainerFeatureID() != RentalPackage.RENTAL_OBJECT__PARENT_AGENCY) return null;
@@ -228,7 +200,8 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	 */
 	public void setParentAgency(RentalAgency newParentAgency)
 	{
-		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL_OBJECT__PARENT_AGENCY && newParentAgency != null)) {
+		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL_OBJECT__PARENT_AGENCY && newParentAgency != null))
+		{
 			if (EcoreUtil.isAncestor(this, newParentAgency))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -241,6 +214,29 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_OBJECT__PARENT_AGENCY, newParentAgency, newParentAgency));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDispo()
+	{
+		return dispo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDispo(boolean newDispo)
+	{
+		boolean oldDispo = dispo;
+		dispo = newDispo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_OBJECT__DISPO, oldDispo, dispo));
 	}
 
 	/**
@@ -263,7 +259,8 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -280,7 +277,8 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				return basicSetParentAgency(null, msgs);
 		}
@@ -295,7 +293,8 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT, RentalAgency.class, msgs);
 		}
@@ -310,15 +309,16 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 				return getID();
 			case RentalPackage.RENTAL_OBJECT__NAME:
 				return getName();
-			case RentalPackage.RENTAL_OBJECT__PICTURE:
-				return getPicture();
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				return getParentAgency();
+			case RentalPackage.RENTAL_OBJECT__DISPO:
+				return isDispo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -331,18 +331,19 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 				setID((Long)newValue);
 				return;
 			case RentalPackage.RENTAL_OBJECT__NAME:
 				setName((String)newValue);
 				return;
-			case RentalPackage.RENTAL_OBJECT__PICTURE:
-				setPicture((Image)newValue);
-				return;
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				setParentAgency((RentalAgency)newValue);
+				return;
+			case RentalPackage.RENTAL_OBJECT__DISPO:
+				setDispo((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -356,18 +357,19 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 				setID(ID_EDEFAULT);
 				return;
 			case RentalPackage.RENTAL_OBJECT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case RentalPackage.RENTAL_OBJECT__PICTURE:
-				setPicture(PICTURE_EDEFAULT);
-				return;
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				setParentAgency((RentalAgency)null);
+				return;
+			case RentalPackage.RENTAL_OBJECT__DISPO:
+				setDispo(DISPO_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -381,15 +383,16 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 				return id != ID_EDEFAULT;
 			case RentalPackage.RENTAL_OBJECT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case RentalPackage.RENTAL_OBJECT__PICTURE:
-				return PICTURE_EDEFAULT == null ? picture != null : !PICTURE_EDEFAULT.equals(picture);
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				return getParentAgency() != null;
+			case RentalPackage.RENTAL_OBJECT__DISPO:
+				return dispo != DISPO_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -409,8 +412,8 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 		result.append(id);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", picture: ");
-		result.append(picture);
+		result.append(", dispo: ");
+		result.append(dispo);
 		result.append(')');
 		return result.toString();
 	}

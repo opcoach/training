@@ -5,16 +5,14 @@
  */
 package com.opcoach.training.rental.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.RentalPackage;
 import com.opcoach.training.rental.StreetType;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -286,7 +284,8 @@ public class AddressImpl extends EObjectImpl implements Address
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				return getStreetType();
 			case RentalPackage.ADDRESS__NUMBER:
@@ -309,7 +308,8 @@ public class AddressImpl extends EObjectImpl implements Address
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				setStreetType((StreetType)newValue);
 				return;
@@ -337,7 +337,8 @@ public class AddressImpl extends EObjectImpl implements Address
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				setStreetType(STREET_TYPE_EDEFAULT);
 				return;
@@ -365,7 +366,8 @@ public class AddressImpl extends EObjectImpl implements Address
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				return streetType != STREET_TYPE_EDEFAULT;
 			case RentalPackage.ADDRESS__NUMBER:
