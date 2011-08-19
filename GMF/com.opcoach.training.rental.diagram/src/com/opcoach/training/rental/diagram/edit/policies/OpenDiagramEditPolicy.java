@@ -101,7 +101,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy
 					diagram = intializeNewDiagram();
 				}
 				URI uri = EcoreUtil.getURI(diagram);
-				String editorName = uri.lastSegment() + "#" + diagram.eResource().getContents().indexOf(diagram); //$NON-NLS-1$
+				String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 				IEditorInput editorInput = new URIEditorInput(uri, editorName);
 				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 				page.openEditor(editorInput, getEditorID());
@@ -142,25 +142,27 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy
 			try
 			{
 				new WorkspaceModifyOperation()
-				{
-					protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException
 					{
-						try
+						protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException,
+								InterruptedException
 						{
-							for (Iterator it = diagramFacet.eResource().getResourceSet().getResources().iterator(); it.hasNext();)
+							try
 							{
-								Resource nextResource = (Resource) it.next();
-								if (nextResource.isLoaded() && !getEditingDomain().isReadOnly(nextResource))
+								for (Iterator it = diagramFacet.eResource().getResourceSet().getResources().iterator(); it
+										.hasNext();)
 								{
-									nextResource.save(RentalDiagramEditorUtil.getSaveOptions());
+									Resource nextResource = (Resource) it.next();
+									if (nextResource.isLoaded() && !getEditingDomain().isReadOnly(nextResource))
+									{
+										nextResource.save(RentalDiagramEditorUtil.getSaveOptions());
+									}
 								}
+							} catch (IOException ex)
+							{
+								throw new InvocationTargetException(ex, "Save operation failed");
 							}
-						} catch (IOException ex)
-						{
-							throw new InvocationTargetException(ex, "Save operation failed");
 						}
-					}
-				}.run(null);
+					}.run(null);
 			} catch (InvocationTargetException e)
 			{
 				throw new ExecutionException("Can't create diagram of '" + getDiagramKind() + "' kind", e);

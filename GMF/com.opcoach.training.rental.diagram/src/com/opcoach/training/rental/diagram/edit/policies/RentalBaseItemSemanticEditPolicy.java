@@ -35,6 +35,7 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.diagram.edit.helpers.RentalBaseEditHelper;
+import com.opcoach.training.rental.diagram.part.RentalDiagramEditorPlugin;
 import com.opcoach.training.rental.diagram.part.RentalVisualIDRegistry;
 import com.opcoach.training.rental.diagram.providers.RentalElementTypes;
 
@@ -128,7 +129,8 @@ public class RentalBaseItemSemanticEditPolicy extends SemanticEditPolicy
 	{
 		if (editPolicyCommand != null)
 		{
-			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand).getICommand() : new CommandProxy(editPolicyCommand);
+			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand).getICommand()
+					: new CommandProxy(editPolicyCommand);
 			request.setParameter(RentalBaseEditHelper.EDIT_POLICY_COMMAND, command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
@@ -164,44 +166,34 @@ public class RentalBaseItemSemanticEditPolicy extends SemanticEditPolicy
 		if (req instanceof CreateRelationshipRequest)
 		{
 			return getCreateRelationshipCommand((CreateRelationshipRequest) req);
-		}
-		else if (req instanceof CreateElementRequest)
+		} else if (req instanceof CreateElementRequest)
 		{
 			return getCreateCommand((CreateElementRequest) req);
-		}
-		else if (req instanceof ConfigureRequest)
+		} else if (req instanceof ConfigureRequest)
 		{
 			return getConfigureCommand((ConfigureRequest) req);
-		}
-		else if (req instanceof DestroyElementRequest)
+		} else if (req instanceof DestroyElementRequest)
 		{
 			return getDestroyElementCommand((DestroyElementRequest) req);
-		}
-		else if (req instanceof DestroyReferenceRequest)
+		} else if (req instanceof DestroyReferenceRequest)
 		{
 			return getDestroyReferenceCommand((DestroyReferenceRequest) req);
-		}
-		else if (req instanceof DuplicateElementsRequest)
+		} else if (req instanceof DuplicateElementsRequest)
 		{
 			return getDuplicateCommand((DuplicateElementsRequest) req);
-		}
-		else if (req instanceof GetEditContextRequest)
+		} else if (req instanceof GetEditContextRequest)
 		{
 			return getEditContextCommand((GetEditContextRequest) req);
-		}
-		else if (req instanceof MoveRequest)
+		} else if (req instanceof MoveRequest)
 		{
 			return getMoveCommand((MoveRequest) req);
-		}
-		else if (req instanceof ReorientReferenceRelationshipRequest)
+		} else if (req instanceof ReorientReferenceRelationshipRequest)
 		{
 			return getReorientReferenceRelationshipCommand((ReorientReferenceRelationshipRequest) req);
-		}
-		else if (req instanceof ReorientRelationshipRequest)
+		} else if (req instanceof ReorientRelationshipRequest)
 		{
 			return getReorientRelationshipCommand((ReorientRelationshipRequest) req);
-		}
-		else if (req instanceof SetRequest)
+		} else if (req instanceof SetRequest)
 		{
 			return getSetCommand((SetRequest) req);
 		}
@@ -333,13 +325,34 @@ public class RentalBaseItemSemanticEditPolicy extends SemanticEditPolicy
 	/**
 	 * @generated
 	 */
+	public static LinkConstraints getLinkConstraints()
+	{
+		LinkConstraints cached = RentalDiagramEditorPlugin.getInstance().getLinkConstraints();
+		if (cached == null)
+		{
+			RentalDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static class LinkConstraints
 	{
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateRentalCustomer_4001(Rental source, Customer target)
+		LinkConstraints()
+		{
+			// use static method #getLinkConstraints() to access instance
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateRentalCustomer_4001(Rental source, Customer target)
 		{
 			if (source != null)
 			{
@@ -355,7 +368,7 @@ public class RentalBaseItemSemanticEditPolicy extends SemanticEditPolicy
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateRentalRentedObject_4002(Rental source, RentalObject target)
+		public boolean canCreateRentalRentedObject_4002(Rental source, RentalObject target)
 		{
 			if (source != null)
 			{
@@ -371,7 +384,7 @@ public class RentalBaseItemSemanticEditPolicy extends SemanticEditPolicy
 		/**
 		 * @generated
 		 */
-		public static boolean canExistRentalCustomer_4001(Rental source, Customer target)
+		public boolean canExistRentalCustomer_4001(Rental source, Customer target)
 		{
 			return true;
 		}
@@ -379,7 +392,7 @@ public class RentalBaseItemSemanticEditPolicy extends SemanticEditPolicy
 		/**
 		 * @generated
 		 */
-		public static boolean canExistRentalRentedObject_4002(Rental source, RentalObject target)
+		public boolean canExistRentalRentedObject_4002(Rental source, RentalObject target)
 		{
 			return true;
 		}

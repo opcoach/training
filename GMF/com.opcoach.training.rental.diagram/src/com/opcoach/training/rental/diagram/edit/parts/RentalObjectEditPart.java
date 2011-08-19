@@ -1,6 +1,7 @@
 package com.opcoach.training.rental.diagram.edit.parts;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
@@ -77,29 +78,29 @@ public class RentalObjectEditPart extends ShapeNodeEditPart
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy()
 	{
-		LayoutEditPolicy lep = new LayoutEditPolicy()
-		{
-
-			protected EditPolicy createChildEditPolicy(EditPart child)
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy()
 			{
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null)
+
+				protected EditPolicy createChildEditPolicy(EditPart child)
 				{
-					result = new NonResizableEditPolicy();
+					EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+					if (result == null)
+					{
+						result = new NonResizableEditPolicy();
+					}
+					return result;
 				}
-				return result;
-			}
 
-			protected Command getMoveChildrenCommand(Request request)
-			{
-				return null;
-			}
+				protected Command getMoveChildrenCommand(Request request)
+				{
+					return null;
+				}
 
-			protected Command getCreateCommand(CreateRequest request)
-			{
-				return null;
-			}
-		};
+				protected Command getCreateCommand(CreateRequest request)
+				{
+					return null;
+				}
+			};
 		return lep;
 	}
 
@@ -108,8 +109,7 @@ public class RentalObjectEditPart extends ShapeNodeEditPart
 	 */
 	protected IFigure createNodeShape()
 	{
-		RentalObjectFigure figure = new RentalObjectFigure();
-		return primaryShape = figure;
+		return primaryShape = new RentalObjectFigure();
 	}
 
 	/**
@@ -288,9 +288,9 @@ public class RentalObjectEditPart extends ShapeNodeEditPart
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget()
+	public List<IElementType> getMARelTypesOnTarget()
 	{
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(RentalElementTypes.RentalRentedObject_4002);
 		return types;
 	}
@@ -298,9 +298,9 @@ public class RentalObjectEditPart extends ShapeNodeEditPart
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType)
+	public List<IElementType> getMATypesForSource(IElementType relationshipType)
 	{
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == RentalElementTypes.RentalRentedObject_4002)
 		{
 			types.add(RentalElementTypes.Rental_2004);
@@ -326,7 +326,8 @@ public class RentalObjectEditPart extends ShapeNodeEditPart
 		{
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setLineWidth(1);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode()
+					.DPtoLP(5)));
 			createContents();
 		}
 

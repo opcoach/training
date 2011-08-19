@@ -47,8 +47,7 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		{
 			((WrappingLabel) getHostFigure()).setSelected(true);
 			((WrappingLabel) getHostFigure()).setFocus(true);
-		}
-		else
+		} else
 		{
 			showSelection();
 			showFocus();
@@ -64,8 +63,7 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		{
 			((WrappingLabel) getHostFigure()).setSelected(true);
 			((WrappingLabel) getHostFigure()).setFocus(false);
-		}
-		else
+		} else
 		{
 			hideSelection();
 			addFeedback(selectionFeedbackFigure = createSelectionFeedbackFigure());
@@ -84,8 +82,7 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		{
 			((WrappingLabel) getHostFigure()).setSelected(false);
 			((WrappingLabel) getHostFigure()).setFocus(false);
-		}
-		else
+		} else
 		{
 			if (selectionFeedbackFigure != null)
 			{
@@ -105,8 +102,7 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		if (getHostFigure() instanceof WrappingLabel)
 		{
 			((WrappingLabel) getHostFigure()).setFocus(true);
-		}
-		else
+		} else
 		{
 			hideFocus();
 			addFeedback(focusFeedbackFigure = createFocusFeedbackFigure());
@@ -122,8 +118,7 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		if (getHostFigure() instanceof WrappingLabel)
 		{
 			((WrappingLabel) getHostFigure()).setFocus(false);
-		}
-		else
+		} else
 		{
 			if (focusFeedbackFigure != null)
 			{
@@ -143,8 +138,7 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		{
 			bounds = ((Label) getHostFigure()).getTextBounds();
 			bounds.intersect(getHostFigure().getBounds());
-		}
-		else
+		} else
 		{
 			bounds = getHostFigure().getBounds().getCopy();
 		}
@@ -165,8 +159,7 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 			feedbackFigure.setBackgroundColor(ColorConstants.menuBackgroundSelected);
 			feedbackFigure.setForegroundColor(ColorConstants.menuForegroundSelected);
 			return feedbackFigure;
-		}
-		else
+		} else
 		{
 			RectangleFigure feedbackFigure = new RectangleFigure();
 			feedbackFigure.setFill(false);
@@ -180,13 +173,13 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 	protected IFigure createFocusFeedbackFigure()
 	{
 		return new Figure()
-		{
-
-			protected void paintFigure(Graphics graphics)
 			{
-				graphics.drawFocus(getBounds().getResized(-1, -1));
-			}
-		};
+
+				protected void paintFigure(Graphics graphics)
+				{
+					graphics.drawFocus(getBounds().getResized(-1, -1));
+				}
+			};
 	}
 
 	/**
@@ -211,8 +204,7 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 			{
 				updateLabel((Label) selectionFeedbackFigure);
 				selectionFeedbackFigure.setBounds(getFeedbackBounds());
-			}
-			else
+			} else
 			{
 				selectionFeedbackFigure.setBounds(getFeedbackBounds().expand(5, 5));
 			}
@@ -247,12 +239,12 @@ public class RentalTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		if (hostPositionListener == null)
 		{
 			hostPositionListener = new FigureListener()
-			{
-				public void figureMoved(IFigure source)
 				{
-					refreshFeedback();
-				}
-			};
+					public void figureMoved(IFigure source)
+					{
+						refreshFeedback();
+					}
+				};
 		}
 		return hostPositionListener;
 	}

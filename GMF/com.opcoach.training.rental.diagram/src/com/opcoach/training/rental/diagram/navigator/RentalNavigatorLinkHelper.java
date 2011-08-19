@@ -38,9 +38,8 @@ public class RentalNavigatorLinkHelper implements ILinkHelper
 	private static IEditorInput getEditorInput(Diagram diagram)
 	{
 		Resource diagramResource = diagram.eResource();
-		for (Iterator it = diagramResource.getContents().iterator(); it.hasNext();)
+		for (EObject nextEObject : diagramResource.getContents())
 		{
-			EObject nextEObject = (EObject) it.next();
 			if (nextEObject == diagram)
 			{
 				return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
@@ -51,7 +50,7 @@ public class RentalNavigatorLinkHelper implements ILinkHelper
 			}
 		}
 		URI uri = EcoreUtil.getURI(diagram);
-		String editorName = uri.lastSegment() + "#" + diagram.eResource().getContents().indexOf(diagram); //$NON-NLS-1$
+		String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 		IEditorInput editorInput = new URIEditorInput(uri, editorName);
 		return editorInput;
 	}
@@ -67,6 +66,10 @@ public class RentalNavigatorLinkHelper implements ILinkHelper
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
+		if (diagram == null || diagram.eResource() == null)
+		{
+			return StructuredSelection.EMPTY;
+		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null)
 		{
@@ -95,8 +98,7 @@ public class RentalNavigatorLinkHelper implements ILinkHelper
 		if (abstractNavigatorItem instanceof RentalNavigatorItem)
 		{
 			navigatorView = ((RentalNavigatorItem) abstractNavigatorItem).getView();
-		}
-		else if (abstractNavigatorItem instanceof RentalNavigatorGroup)
+		} else if (abstractNavigatorItem instanceof RentalNavigatorGroup)
 		{
 			RentalNavigatorGroup navigatorGroup = (RentalNavigatorGroup) abstractNavigatorItem;
 			if (navigatorGroup.getParent() instanceof RentalNavigatorItem)

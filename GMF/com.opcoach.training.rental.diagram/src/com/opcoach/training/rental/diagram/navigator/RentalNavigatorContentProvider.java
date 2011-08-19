@@ -6,8 +6,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import java.util.LinkedList;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -15,6 +17,7 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
@@ -69,79 +72,59 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 	public RentalNavigatorContentProvider()
 	{
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap()
-		{
-			public Object get(Object key)
 			{
-				if (!containsKey(key))
+				public Object get(Object key)
 				{
-					put(key, Boolean.TRUE);
+					if (!containsKey(key))
+					{
+						put(key, Boolean.TRUE);
+					}
+					return super.get(key);
 				}
-				return super.get(key);
-			}
-		});
+			});
 		myViewerRefreshRunnable = new Runnable()
-		{
-			public void run()
 			{
-				if (myViewer != null)
+				public void run()
 				{
-					myViewer.refresh();
+					if (myViewer != null)
+					{
+						myViewer.refresh();
+					}
 				}
-			}
-		};
+			};
 		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate()
-		{
-			public void dispose()
 			{
-			}
+				public void dispose()
+				{
+				}
 
-			public boolean handleResourceChanged(final Resource resource)
-			{
-				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();)
+				public boolean handleResourceChanged(final Resource resource)
 				{
-					Resource nextResource = (Resource) it.next();
-					nextResource.unload();
+					unloadAllResources();
+					asyncRefresh();
+					return true;
 				}
-				if (myViewer != null)
-				{
-					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
-				}
-				return true;
-			}
 
-			public boolean handleResourceDeleted(Resource resource)
-			{
-				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();)
+				public boolean handleResourceDeleted(Resource resource)
 				{
-					Resource nextResource = (Resource) it.next();
-					nextResource.unload();
+					unloadAllResources();
+					asyncRefresh();
+					return true;
 				}
-				if (myViewer != null)
-				{
-					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
-				}
-				return true;
-			}
 
-			public boolean handleResourceMoved(Resource resource, final URI newURI)
-			{
-				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();)
+				public boolean handleResourceMoved(Resource resource, final URI newURI)
 				{
-					Resource nextResource = (Resource) it.next();
-					nextResource.unload();
+					unloadAllResources();
+					asyncRefresh();
+					return true;
 				}
-				if (myViewer != null)
-				{
-					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
-				}
-				return true;
-			}
-		});
+			});
 	}
 
 	/**
@@ -152,11 +135,8 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 		myWorkspaceSynchronizer.dispose();
 		myWorkspaceSynchronizer = null;
 		myViewerRefreshRunnable = null;
-		for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();)
-		{
-			Resource resource = (Resource) it.next();
-			resource.unload();
-		}
+		myViewer = null;
+		unloadAllResources();
 		((TransactionalEditingDomain) myEditingDomain).dispose();
 		myEditingDomain = null;
 	}
@@ -167,6 +147,28 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput)
 	{
 		myViewer = viewer;
+	}
+
+	/**
+	 * @generated
+	 */
+	void unloadAllResources()
+	{
+		for (Resource nextResource : myEditingDomain.getResourceSet().getResources())
+		{
+			nextResource.unload();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	void asyncRefresh()
+	{
+		if (myViewer != null && !myViewer.getControl().isDisposed())
+		{
+			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
+		}
 	}
 
 	/**
@@ -208,8 +210,15 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 			IFile file = (IFile) parentElement;
 			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
-			Collection result = new ArrayList();
-			result.addAll(createNavigatorItems(selectViewsByType(resource.getContents(), RentalAgencyEditPart.MODEL_ID), file, false));
+			ArrayList<RentalNavigatorItem> result = new ArrayList<RentalNavigatorItem>();
+			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
+			for (EObject o : resource.getContents())
+			{
+				if (o instanceof View)
+				{
+					topViews.add((View) o);
+				}
+			}
 			return result.toArray();
 		}
 
@@ -240,84 +249,20 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 		switch (RentalVisualIDRegistry.getVisualID(view))
 		{
 
-		case RentalAgencyEditPart.VISUAL_ID:
-		{
-			Collection result = new ArrayList();
-			RentalNavigatorGroup links = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalAgency_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), RentalVisualIDRegistry.getType(AddressEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalObjectEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), RentalVisualIDRegistry.getType(CustomerEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalCustomerEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalRentedObjectEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			if (!links.isEmpty())
-			{
-				result.add(links);
-			}
-			return result.toArray();
-		}
-
-		case RentalObjectEditPart.VISUAL_ID:
-		{
-			Collection result = new ArrayList();
-			RentalNavigatorGroup incominglinks = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalObject_2002_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalRentedObjectEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			if (!incominglinks.isEmpty())
-			{
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case CustomerEditPart.VISUAL_ID:
-		{
-			Collection result = new ArrayList();
-			RentalNavigatorGroup incominglinks = new RentalNavigatorGroup(Messages.NavigatorGroupName_Customer_2003_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), RentalVisualIDRegistry.getType(CustomerCustomerAddressCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, RentalVisualIDRegistry.getType(Address2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), RentalVisualIDRegistry.getType(CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, RentalVisualIDRegistry.getType(LicenseEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalCustomerEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			if (!incominglinks.isEmpty())
-			{
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case RentalEditPart.VISUAL_ID:
-		{
-			Collection result = new ArrayList();
-			RentalNavigatorGroup outgoinglinks = new RentalNavigatorGroup(Messages.NavigatorGroupName_Rental_2004_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalCustomerEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalRentedObjectEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!outgoinglinks.isEmpty())
-			{
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
 		case RentalCustomerEditPart.VISUAL_ID:
 		{
-			Collection result = new ArrayList();
-			RentalNavigatorGroup target = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalCustomer_4001_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			RentalNavigatorGroup source = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalCustomer_4001_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), RentalVisualIDRegistry.getType(CustomerEditPart.VISUAL_ID));
+			LinkedList<RentalAbstractNavigatorItem> result = new LinkedList<RentalAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			RentalNavigatorGroup target = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalCustomer_4001_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			RentalNavigatorGroup source = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalCustomer_4001_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(CustomerEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalEditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty())
 			{
@@ -332,12 +277,18 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 
 		case RentalRentedObjectEditPart.VISUAL_ID:
 		{
-			Collection result = new ArrayList();
-			RentalNavigatorGroup target = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalRentedObject_4002_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			RentalNavigatorGroup source = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalRentedObject_4002_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalObjectEditPart.VISUAL_ID));
+			LinkedList<RentalAbstractNavigatorItem> result = new LinkedList<RentalAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			RentalNavigatorGroup target = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalRentedObject_4002_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			RentalNavigatorGroup source = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalRentedObject_4002_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalObjectEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), RentalVisualIDRegistry.getType(RentalEditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty())
 			{
@@ -349,6 +300,99 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 			}
 			return result.toArray();
 		}
+
+		case CustomerEditPart.VISUAL_ID:
+		{
+			LinkedList<RentalAbstractNavigatorItem> result = new LinkedList<RentalAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			RentalNavigatorGroup incominglinks = new RentalNavigatorGroup(Messages.NavigatorGroupName_Customer_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(CustomerCustomerAddressCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews, RentalVisualIDRegistry.getType(Address2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews, RentalVisualIDRegistry.getType(LicenseEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalCustomerEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			if (!incominglinks.isEmpty())
+			{
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case RentalEditPart.VISUAL_ID:
+		{
+			LinkedList<RentalAbstractNavigatorItem> result = new LinkedList<RentalAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			RentalNavigatorGroup outgoinglinks = new RentalNavigatorGroup(Messages.NavigatorGroupName_Rental_2004_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalCustomerEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalRentedObjectEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!outgoinglinks.isEmpty())
+			{
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case RentalObjectEditPart.VISUAL_ID:
+		{
+			LinkedList<RentalAbstractNavigatorItem> result = new LinkedList<RentalAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			RentalNavigatorGroup incominglinks = new RentalNavigatorGroup(
+					Messages.NavigatorGroupName_RentalObject_2002_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalRentedObjectEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			if (!incominglinks.isEmpty())
+			{
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case RentalAgencyEditPart.VISUAL_ID:
+		{
+			LinkedList<RentalAbstractNavigatorItem> result = new LinkedList<RentalAbstractNavigatorItem>();
+			Diagram sv = (Diagram) view;
+			RentalNavigatorGroup links = new RentalNavigatorGroup(Messages.NavigatorGroupName_RentalAgency_1000_links,
+					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv), RentalVisualIDRegistry.getType(AddressEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalObjectEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(CustomerEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), RentalVisualIDRegistry.getType(RentalEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalCustomerEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					RentalVisualIDRegistry.getType(RentalRentedObjectEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			if (!links.isEmpty())
+			{
+				result.add(links);
+			}
+			return result.toArray();
+		}
 		}
 		return EMPTY_ARRAY;
 	}
@@ -356,12 +400,11 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
-	private Collection getLinksSourceByType(Collection edges, String type)
+	private Collection<View> getLinksSourceByType(Collection<Edge> edges, String type)
 	{
-		Collection result = new ArrayList();
-		for (Iterator it = edges.iterator(); it.hasNext();)
+		LinkedList<View> result = new LinkedList<View>();
+		for (Edge nextEdge : edges)
 		{
-			Edge nextEdge = (Edge) it.next();
 			View nextEdgeSource = nextEdge.getSource();
 			if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource))
 			{
@@ -374,12 +417,11 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
-	private Collection getLinksTargetByType(Collection edges, String type)
+	private Collection<View> getLinksTargetByType(Collection<Edge> edges, String type)
 	{
-		Collection result = new ArrayList();
-		for (Iterator it = edges.iterator(); it.hasNext();)
+		LinkedList<View> result = new LinkedList<View>();
+		for (Edge nextEdge : edges)
 		{
-			Edge nextEdge = (Edge) it.next();
 			View nextEdgeTarget = nextEdge.getTarget();
 			if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget))
 			{
@@ -392,12 +434,11 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
-	private Collection getOutgoingLinksByType(Collection nodes, String type)
+	private Collection<View> getOutgoingLinksByType(Collection<? extends View> nodes, String type)
 	{
-		Collection result = new ArrayList();
-		for (Iterator it = nodes.iterator(); it.hasNext();)
+		LinkedList<View> result = new LinkedList<View>();
+		for (View nextNode : nodes)
 		{
-			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
 		}
 		return result;
@@ -406,12 +447,11 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
-	private Collection getIncomingLinksByType(Collection nodes, String type)
+	private Collection<View> getIncomingLinksByType(Collection<? extends View> nodes, String type)
 	{
-		Collection result = new ArrayList();
-		for (Iterator it = nodes.iterator(); it.hasNext();)
+		LinkedList<View> result = new LinkedList<View>();
+		for (View nextNode : nodes)
 		{
-			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
 		}
 		return result;
@@ -420,12 +460,11 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
-	private Collection getChildrenByType(Collection nodes, String type)
+	private Collection<View> getChildrenByType(Collection<? extends View> nodes, String type)
 	{
-		Collection result = new ArrayList();
-		for (Iterator it = nodes.iterator(); it.hasNext();)
+		LinkedList<View> result = new LinkedList<View>();
+		for (View nextNode : nodes)
 		{
-			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getChildren(), type));
 		}
 		return result;
@@ -434,12 +473,11 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
-	private Collection getDiagramLinksByType(Collection diagrams, String type)
+	private Collection<View> getDiagramLinksByType(Collection<Diagram> diagrams, String type)
 	{
-		Collection result = new ArrayList();
-		for (Iterator it = diagrams.iterator(); it.hasNext();)
+		ArrayList<View> result = new ArrayList<View>();
+		for (Diagram nextDiagram : diagrams)
 		{
-			Diagram nextDiagram = (Diagram) it.next();
 			result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
 		}
 		return result;
@@ -448,12 +486,11 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
-	private Collection selectViewsByType(Collection views, String type)
+	private Collection<View> selectViewsByType(Collection<View> views, String type)
 	{
-		Collection result = new ArrayList();
-		for (Iterator it = views.iterator(); it.hasNext();)
+		ArrayList<View> result = new ArrayList<View>();
+		for (View nextView : views)
 		{
-			View nextView = (View) it.next();
 			if (type.equals(nextView.getType()) && isOwnView(nextView))
 			{
 				result.add(nextView);
@@ -473,12 +510,12 @@ public class RentalNavigatorContentProvider implements ICommonContentProvider
 	/**
 	 * @generated
 	 */
-	private Collection createNavigatorItems(Collection views, Object parent, boolean isLeafs)
+	private Collection<RentalNavigatorItem> createNavigatorItems(Collection<View> views, Object parent, boolean isLeafs)
 	{
-		Collection result = new ArrayList();
-		for (Iterator it = views.iterator(); it.hasNext();)
+		ArrayList<RentalNavigatorItem> result = new ArrayList<RentalNavigatorItem>(views.size());
+		for (View nextView : views)
 		{
-			result.add(new RentalNavigatorItem((View) it.next(), parent, isLeafs));
+			result.add(new RentalNavigatorItem(nextView, parent, isLeafs));
 		}
 		return result;
 	}

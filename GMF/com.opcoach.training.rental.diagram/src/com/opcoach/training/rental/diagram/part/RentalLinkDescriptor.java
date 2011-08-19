@@ -44,16 +44,16 @@ public class RentalLinkDescriptor extends RentalNodeDescriptor
 		this(source, destination, (EObject) null, linkVID);
 		final IElementType elementTypeCopy = elementType;
 		mySemanticAdapter = new IAdaptable()
-		{
-			public Object getAdapter(Class adapter)
 			{
-				if (IElementType.class.equals(adapter))
+				public Object getAdapter(Class adapter)
 				{
-					return elementTypeCopy;
+					if (IElementType.class.equals(adapter))
+					{
+						return elementTypeCopy;
+					}
+					return null;
 				}
-				return null;
-			}
-		};
+			};
 	}
 
 	/**
@@ -64,16 +64,16 @@ public class RentalLinkDescriptor extends RentalNodeDescriptor
 		this(source, destination, linkElement, linkVID);
 		final IElementType elementTypeCopy = elementType;
 		mySemanticAdapter = new EObjectAdapter(linkElement)
-		{
-			public Object getAdapter(Class adapter)
 			{
-				if (IElementType.class.equals(adapter))
+				public Object getAdapter(Class adapter)
 				{
-					return elementTypeCopy;
+					if (IElementType.class.equals(adapter))
+					{
+						return elementTypeCopy;
+					}
+					return super.getAdapter(adapter);
 				}
-				return super.getAdapter(adapter);
-			}
-		};
+			};
 	}
 
 	/**

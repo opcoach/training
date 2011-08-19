@@ -73,7 +73,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -85,7 +85,9 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 	 */
 	static
 	{
-		registerSnapBackPosition(RentalVisualIDRegistry.getType(com.opcoach.training.rental.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID), new Point(0, 40));
+		registerSnapBackPosition(
+				RentalVisualIDRegistry.getType(com.opcoach.training.rental.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID),
+				new Point(0, 40));
 	}
 
 	/**
@@ -104,16 +106,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new RentalTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableLabelEditPolicy()
-		{
-
-			protected List createSelectionHandles()
-			{
-				MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
-				mh.setBorder(null);
-				return Collections.singletonList(mh);
-			}
-		});
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new RentalAgencyEditPart.LinkLabelDragPolicy());
 	}
 
 	/**
@@ -132,8 +125,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		if (figure instanceof WrappingLabel)
 		{
 			return ((WrappingLabel) figure).getText();
-		}
-		else
+		} else
 		{
 			return ((Label) figure).getText();
 		}
@@ -147,8 +139,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		if (figure instanceof WrappingLabel)
 		{
 			((WrappingLabel) figure).setText(text);
-		}
-		else
+		} else
 		{
 			((Label) figure).setText(text);
 		}
@@ -162,8 +153,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		if (figure instanceof WrappingLabel)
 		{
 			return ((WrappingLabel) figure).getIcon();
-		}
-		else
+		} else
 		{
 			return ((Label) figure).getIcon();
 		}
@@ -177,8 +167,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		if (figure instanceof WrappingLabel)
 		{
 			((WrappingLabel) figure).setIcon(icon);
-		}
-		else
+		} else
 		{
 			((Label) figure).setIcon(icon);
 		}
@@ -199,6 +188,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren()
 	{
 		return Collections.EMPTY_LIST;
@@ -290,35 +280,36 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 	public ICellEditorValidator getEditTextValidator()
 	{
 		return new ICellEditorValidator()
-		{
-
-			public String isValid(final Object value)
 			{
-				if (value instanceof String)
+
+				public String isValid(final Object value)
 				{
-					final EObject element = getParserElement();
-					final IParser parser = getParser();
-					try
+					if (value instanceof String)
 					{
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl()
+						final EObject element = getParserElement();
+						final IParser parser = getParser();
+						try
 						{
+							IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(
+									new RunnableWithResult.Impl<IParserEditStatus>()
+										{
 
-							public void run()
-							{
-								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
-							}
-						});
-						return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
-					} catch (InterruptedException ie)
-					{
-						ie.printStackTrace();
+											public void run()
+											{
+												setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
+											}
+										});
+							return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
+						} catch (InterruptedException ie)
+						{
+							ie.printStackTrace();
+						}
 					}
-				}
 
-				// shouldn't get here
-				return null;
-			}
-		};
+					// shouldn't get here
+					return null;
+				}
+			};
 	}
 
 	/**
@@ -348,7 +339,8 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 	{
 		if (parser == null)
 		{
-			parser = RentalParserProvider.getParser(RentalElementTypes.RentalRentedObject_4002, getParserElement(), CommonParserHint.DESCRIPTION);
+			parser = RentalParserProvider.getParser(RentalElementTypes.RentalRentedObject_4002, getParserElement(),
+					CommonParserHint.DESCRIPTION);
 		}
 		return parser;
 	}
@@ -360,7 +352,8 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 	{
 		if (manager == null)
 		{
-			setManager(new TextDirectEditManager(this, TextDirectEditManager.getTextCellEditorClass(this), RentalEditPartFactory.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, TextDirectEditManager.getTextCellEditorClass(this),
+					RentalEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}
@@ -400,8 +393,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		if (getManager() instanceof TextDirectEditManager)
 		{
 			((TextDirectEditManager) getManager()).show(initialCharacter);
-		}
-		else
+		} else
 		{
 			performDirectEdit();
 		}
@@ -416,29 +408,28 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		try
 		{
 			getEditingDomain().runExclusive(new Runnable()
-			{
-
-				public void run()
 				{
-					if (isActive() && isEditable())
+
+					public void run()
 					{
-						if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character)
+						if (isActive() && isEditable())
 						{
-							Character initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
-							performDirectEdit(initialChar.charValue());
-						}
-						else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText())))
-						{
-							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
-							performDirectEdit(editRequest.getLocation());
-						}
-						else
-						{
-							performDirectEdit();
+							if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character)
+							{
+								Character initialChar = (Character) theRequest.getExtendedData().get(
+										RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+								performDirectEdit(initialChar.charValue());
+							} else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText())))
+							{
+								DirectEditRequest editRequest = (DirectEditRequest) theRequest;
+								performDirectEdit(editRequest.getLocation());
+							} else
+							{
+								performDirectEdit();
+							}
 						}
 					}
-				}
-			});
+				});
 		} catch (InterruptedException e)
 		{
 			e.printStackTrace();
@@ -509,7 +500,8 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null)
 		{
-			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? SWT.BOLD : SWT.NORMAL) | (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
+			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? SWT.BOLD : SWT.NORMAL)
+					| (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
 			setFont(fontData);
 		}
 	}
@@ -535,8 +527,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 			{
 				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
 			}
-		}
-		else
+		} else
 		{
 			super.addSemanticListeners();
 		}
@@ -553,8 +544,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 			{
 				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
 			}
-		}
-		else
+		} else
 		{
 			super.removeSemanticListeners();
 		}
@@ -568,13 +558,13 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		if (accessibleEP == null)
 		{
 			accessibleEP = new AccessibleGraphicalEditPart()
-			{
-
-				public void getName(AccessibleEvent e)
 				{
-					e.result = getLabelTextHelper(getFigure());
-				}
-			};
+
+					public void getName(AccessibleEvent e)
+					{
+						e.result = getLabelTextHelper(getFigure());
+					}
+				};
 		}
 		return accessibleEP;
 	}
@@ -597,21 +587,19 @@ public class WrappingLabel2EditPart extends LabelEditPart implements ITextAwareE
 		{
 			Integer c = (Integer) event.getNewValue();
 			setFontColor(DiagramColorRegistry.getInstance().getColor(c));
-		}
-		else if (NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature))
+		} else if (NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature))
 		{
 			refreshUnderline();
-		}
-		else if (NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature))
+		} else if (NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature))
 		{
 			refreshStrikeThrough();
-		}
-		else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature)
-				|| NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature))
+		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature))
 		{
 			refreshFont();
-		}
-		else
+		} else
 		{
 			if (getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue()))
 			{

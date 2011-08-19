@@ -41,8 +41,7 @@ public class RentalParserProvider extends AbstractProvider implements IParserPro
 	{
 		if (addressCity_5001Parser == null)
 		{
-			EAttribute[] features = new EAttribute[]
-			{ RentalPackage.eINSTANCE.getAddress_City() };
+			EAttribute[] features = new EAttribute[] { RentalPackage.eINSTANCE.getAddress_City() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			addressCity_5001Parser = parser;
 		}
@@ -61,8 +60,7 @@ public class RentalParserProvider extends AbstractProvider implements IParserPro
 	{
 		if (rentalObjectName_5002Parser == null)
 		{
-			EAttribute[] features = new EAttribute[]
-			{ RentalPackage.eINSTANCE.getRentalObject_Name() };
+			EAttribute[] features = new EAttribute[] { RentalPackage.eINSTANCE.getRentalObject_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			rentalObjectName_5002Parser = parser;
 		}
@@ -81,8 +79,8 @@ public class RentalParserProvider extends AbstractProvider implements IParserPro
 	{
 		if (customerFirstNameLastName_5005Parser == null)
 		{
-			EAttribute[] features = new EAttribute[]
-			{ RentalPackage.eINSTANCE.getCustomer_FirstName(), RentalPackage.eINSTANCE.getCustomer_LastName() };
+			EAttribute[] features = new EAttribute[] { RentalPackage.eINSTANCE.getCustomer_FirstName(),
+					RentalPackage.eINSTANCE.getCustomer_LastName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			customerFirstNameLastName_5005Parser = parser;
 		}
@@ -101,8 +99,7 @@ public class RentalParserProvider extends AbstractProvider implements IParserPro
 	{
 		if (rentalStartDate_5006Parser == null)
 		{
-			EAttribute[] features = new EAttribute[]
-			{ RentalPackage.eINSTANCE.getRental_StartDate() };
+			EAttribute[] features = new EAttribute[] { RentalPackage.eINSTANCE.getRental_StartDate() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			rentalStartDate_5006Parser = parser;
 		}
@@ -121,8 +118,7 @@ public class RentalParserProvider extends AbstractProvider implements IParserPro
 	{
 		if (addressCity_5003Parser == null)
 		{
-			EAttribute[] features = new EAttribute[]
-			{ RentalPackage.eINSTANCE.getAddress_City() };
+			EAttribute[] features = new EAttribute[] { RentalPackage.eINSTANCE.getAddress_City() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			addressCity_5003Parser = parser;
 		}
@@ -141,8 +137,7 @@ public class RentalParserProvider extends AbstractProvider implements IParserPro
 	{
 		if (licenseNumber_5004Parser == null)
 		{
-			EAttribute[] features = new EAttribute[]
-			{ RentalPackage.eINSTANCE.getLicense_Number() };
+			EAttribute[] features = new EAttribute[] { RentalPackage.eINSTANCE.getLicense_Number() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			licenseNumber_5004Parser = parser;
 		}

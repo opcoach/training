@@ -60,7 +60,7 @@ public class RentalCustomerCreateCommand extends EditElementCommand
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return RentalBaseItemSemanticEditPolicy.LinkConstraints.canCreateRentalCustomer_4001(getSource(), getTarget());
+		return RentalBaseItemSemanticEditPolicy.getLinkConstraints().canCreateRentalCustomer_4001(getSource(), getTarget());
 	}
 
 	/**

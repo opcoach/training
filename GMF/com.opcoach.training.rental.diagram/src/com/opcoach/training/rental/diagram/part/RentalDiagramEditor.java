@@ -104,18 +104,18 @@ public class RentalDiagramEditor extends DiagramDocumentEditor implements IGotoM
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class type)
 	{
 		if (type == IShowInTargetList.class)
 		{
 			return new IShowInTargetList()
-			{
-				public String[] getShowInTargetIds()
 				{
-					return new String[]
-					{ ProjectExplorer.VIEW_ID };
-				}
-			};
+					public String[] getShowInTargetIds()
+					{
+						return new String[] { ProjectExplorer.VIEW_ID };
+					}
+				};
 		}
 		return super.getAdapter(type);
 	}
@@ -153,8 +153,7 @@ public class RentalDiagramEditor extends DiagramDocumentEditor implements IGotoM
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput)
 		{
 			setDocumentProvider(RentalDiagramEditorPlugin.getInstance().getDocumentProvider());
-		}
-		else
+		} else
 		{
 			super.setDocumentProvider(input);
 		}
@@ -237,7 +236,8 @@ public class RentalDiagramEditor extends DiagramDocumentEditor implements IGotoM
 		{
 			if (matchingStrategy.matches(editorRefs[i], newInput))
 			{
-				MessageDialog.openWarning(shell, Messages.RentalDiagramEditor_SaveAsErrorTitle, Messages.RentalDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell, Messages.RentalDiagramEditor_SaveAsErrorTitle,
+						Messages.RentalDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -245,14 +245,16 @@ public class RentalDiagramEditor extends DiagramDocumentEditor implements IGotoM
 		try
 		{
 			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor, newInput, getDocumentProvider().getDocument(getEditorInput()), true);
+			getDocumentProvider(newInput).saveDocument(progressMonitor, newInput,
+					getDocumentProvider().getDocument(getEditorInput()), true);
 			success = true;
 		} catch (CoreException x)
 		{
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL)
 			{
-				ErrorDialog.openError(shell, Messages.RentalDiagramEditor_SaveErrorTitle, Messages.RentalDiagramEditor_SaveErrorMessage, x.getStatus());
+				ErrorDialog.openError(shell, Messages.RentalDiagramEditor_SaveErrorTitle,
+						Messages.RentalDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally
 		{
@@ -287,6 +289,10 @@ public class RentalDiagramEditor extends DiagramDocumentEditor implements IGotoM
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
+		if (diagram == null || diagram.eResource() == null)
+		{
+			return StructuredSelection.EMPTY;
+		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null)
 		{

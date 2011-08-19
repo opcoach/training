@@ -80,7 +80,7 @@ public class RentalCustomerReorientCommand extends EditElementCommand
 		{
 			return false;
 		}
-		return RentalBaseItemSemanticEditPolicy.LinkConstraints.canExistRentalCustomer_4001(getNewSource(), getOldTarget());
+		return RentalBaseItemSemanticEditPolicy.getLinkConstraints().canExistRentalCustomer_4001(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class RentalCustomerReorientCommand extends EditElementCommand
 		{
 			return false;
 		}
-		return RentalBaseItemSemanticEditPolicy.LinkConstraints.canExistRentalCustomer_4001(getOldSource(), getNewTarget());
+		return RentalBaseItemSemanticEditPolicy.getLinkConstraints().canExistRentalCustomer_4001(getOldSource(), getNewTarget());
 	}
 
 	/**

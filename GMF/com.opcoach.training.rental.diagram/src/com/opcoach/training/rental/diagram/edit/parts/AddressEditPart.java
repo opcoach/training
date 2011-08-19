@@ -72,29 +72,29 @@ public class AddressEditPart extends ShapeNodeEditPart
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy()
 	{
-		LayoutEditPolicy lep = new LayoutEditPolicy()
-		{
-
-			protected EditPolicy createChildEditPolicy(EditPart child)
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy()
 			{
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null)
+
+				protected EditPolicy createChildEditPolicy(EditPart child)
 				{
-					result = new NonResizableEditPolicy();
+					EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+					if (result == null)
+					{
+						result = new NonResizableEditPolicy();
+					}
+					return result;
 				}
-				return result;
-			}
 
-			protected Command getMoveChildrenCommand(Request request)
-			{
-				return null;
-			}
+				protected Command getMoveChildrenCommand(Request request)
+				{
+					return null;
+				}
 
-			protected Command getCreateCommand(CreateRequest request)
-			{
-				return null;
-			}
-		};
+				protected Command getCreateCommand(CreateRequest request)
+				{
+					return null;
+				}
+			};
 		return lep;
 	}
 
@@ -103,8 +103,7 @@ public class AddressEditPart extends ShapeNodeEditPart
 	 */
 	protected IFigure createNodeShape()
 	{
-		AddressFigure figure = new AddressFigure();
-		return primaryShape = figure;
+		return primaryShape = new AddressFigure();
 	}
 
 	/**
@@ -298,7 +297,8 @@ public class AddressEditPart extends ShapeNodeEditPart
 		{
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setLineWidth(1);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode()
+					.DPtoLP(5)));
 			createContents();
 		}
 

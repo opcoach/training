@@ -114,17 +114,17 @@ public class RentalCreationWizard extends Wizard implements INewWizard
 
 		domainModelFilePage = new RentalCreationWizardPage("DomainModelFile", getSelection(), "rental") { //$NON-NLS-1$ //$NON-NLS-2$
 
-			public void setVisible(boolean visible)
-			{
-				if (visible)
+				public void setVisible(boolean visible)
 				{
-					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".rental_diagram".length()); //$NON-NLS-1$
-					setFileName(RentalDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName, "rental")); //$NON-NLS-1$
+					if (visible)
+					{
+						String fileName = diagramModelFilePage.getFileName();
+						fileName = fileName.substring(0, fileName.length() - ".rental_diagram".length()); //$NON-NLS-1$
+						setFileName(RentalDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName, "rental")); //$NON-NLS-1$
+					}
+					super.setVisible(visible);
 				}
-				super.setVisible(visible);
-			}
-		};
+			};
 		domainModelFilePage.setTitle(Messages.RentalCreationWizard_DomainModelFilePageTitle);
 		domainModelFilePage.setDescription(Messages.RentalCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
@@ -136,23 +136,25 @@ public class RentalCreationWizard extends Wizard implements INewWizard
 	public boolean performFinish()
 	{
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null)
-		{
-
-			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException
 			{
-				diagram = RentalDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), monitor);
-				if (isOpenNewlyCreatedDiagramEditor() && diagram != null)
+
+				protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException
 				{
-					try
+					diagram = RentalDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(),
+							monitor);
+					if (isOpenNewlyCreatedDiagramEditor() && diagram != null)
 					{
-						RentalDiagramEditorUtil.openDiagram(diagram);
-					} catch (PartInitException e)
-					{
-						ErrorDialog.openError(getContainer().getShell(), Messages.RentalCreationWizardOpenEditorError, null, e.getStatus());
+						try
+						{
+							RentalDiagramEditorUtil.openDiagram(diagram);
+						} catch (PartInitException e)
+						{
+							ErrorDialog.openError(getContainer().getShell(), Messages.RentalCreationWizardOpenEditorError, null,
+									e.getStatus());
+						}
 					}
 				}
-			}
-		};
+			};
 		try
 		{
 			getContainer().run(false, true, op);
@@ -163,9 +165,9 @@ public class RentalCreationWizard extends Wizard implements INewWizard
 		{
 			if (e.getTargetException() instanceof CoreException)
 			{
-				ErrorDialog.openError(getContainer().getShell(), Messages.RentalCreationWizardCreationError, null, ((CoreException) e.getTargetException()).getStatus());
-			}
-			else
+				ErrorDialog.openError(getContainer().getShell(), Messages.RentalCreationWizardCreationError, null,
+						((CoreException) e.getTargetException()).getStatus());
+			} else
 			{
 				RentalDiagramEditorPlugin.getInstance().logError("Error creating diagram", e.getTargetException()); //$NON-NLS-1$
 			}

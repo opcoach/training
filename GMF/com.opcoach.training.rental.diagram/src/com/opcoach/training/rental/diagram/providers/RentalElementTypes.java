@@ -31,7 +31,7 @@ import com.opcoach.training.rental.diagram.part.RentalDiagramEditorPlugin;
 /**
  * @generated
  */
-public class RentalElementTypes extends ElementInitializers
+public class RentalElementTypes
 {
 
 	/**
@@ -44,7 +44,7 @@ public class RentalElementTypes extends ElementInitializers
 	/**
 	 * @generated
 	 */
-	private static Map elements;
+	private static Map<IElementType, ENamedElement> elements;
 
 	/**
 	 * @generated
@@ -54,7 +54,7 @@ public class RentalElementTypes extends ElementInitializers
 	/**
 	 * @generated
 	 */
-	private static Set KNOWN_ELEMENT_TYPES;
+	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
 
 	/**
 	 * @generated
@@ -126,8 +126,7 @@ public class RentalElementTypes extends ElementInitializers
 			if (eContainingClass != null && !eContainingClass.isAbstract())
 			{
 				element = eContainingClass;
-			}
-			else if (eType instanceof EClass && !((EClass) eType).isAbstract())
+			} else if (eType instanceof EClass && !((EClass) eType).isAbstract())
 			{
 				element = eType;
 			}
@@ -137,7 +136,8 @@ public class RentalElementTypes extends ElementInitializers
 			EClass eClass = (EClass) element;
 			if (!eClass.isAbstract())
 			{
-				return RentalDiagramEditorPlugin.getInstance().getItemImageDescriptor(eClass.getEPackage().getEFactoryInstance().create(eClass));
+				return RentalDiagramEditorPlugin.getInstance().getItemImageDescriptor(
+						eClass.getEPackage().getEFactoryInstance().create(eClass));
 			}
 		}
 		// TODO : support structural features
@@ -219,7 +219,7 @@ public class RentalElementTypes extends ElementInitializers
 		Object type = hint.getAdapter(IElementType.class);
 		if (elements == null)
 		{
-			elements = new IdentityHashMap();
+			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
 			elements.put(RentalAgency_1000, RentalPackage.eINSTANCE.getRentalAgency());
 
@@ -257,7 +257,7 @@ public class RentalElementTypes extends ElementInitializers
 	{
 		if (KNOWN_ELEMENT_TYPES == null)
 		{
-			KNOWN_ELEMENT_TYPES = new HashSet();
+			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(RentalAgency_1000);
 			KNOWN_ELEMENT_TYPES.add(Address_2001);
 			KNOWN_ELEMENT_TYPES.add(RentalObject_2002);

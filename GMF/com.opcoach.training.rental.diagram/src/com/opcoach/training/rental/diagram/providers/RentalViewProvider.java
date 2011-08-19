@@ -83,12 +83,10 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		if (operation instanceof CreateDiagramViewOperation)
 		{
 			return provides((CreateDiagramViewOperation) operation);
-		}
-		else if (operation instanceof CreateEdgeViewOperation)
+		} else if (operation instanceof CreateEdgeViewOperation)
 		{
 			return provides((CreateEdgeViewOperation) operation);
-		}
-		else if (operation instanceof CreateNodeViewOperation)
+		} else if (operation instanceof CreateNodeViewOperation)
 		{
 			return provides((CreateNodeViewOperation) operation);
 		}
@@ -114,7 +112,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	 */
 	protected boolean provides(CreateDiagramViewOperation op)
 	{
-		return RentalAgencyEditPart.MODEL_ID.equals(op.getSemanticHint()) && RentalVisualIDRegistry.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
+		return RentalAgencyEditPart.MODEL_ID.equals(op.getSemanticHint())
+				&& RentalVisualIDRegistry.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
 	}
 
 	/**
@@ -139,8 +138,7 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 				return false;
 			}
 			visualID = RentalVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement);
-		}
-		else
+		} else
 		{
 			visualID = RentalVisualIDRegistry.getVisualID(op.getSemanticHint());
 			if (elementType != null)
@@ -154,12 +152,12 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 				{
 					return false; // if semantic hint is specified it should be the same as in element type
 				}
-				if (domainElement != null && visualID != RentalVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement))
+				if (domainElement != null
+						&& visualID != RentalVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement))
 				{
 					return false; // visual id for node EClass should match visual id from element type
 				}
-			}
-			else
+			} else
 			{
 				if (!RentalAgencyEditPart.MODEL_ID.equals(RentalVisualIDRegistry.getModelID(op.getContainerView())))
 				{
@@ -173,7 +171,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 				case RentalEditPart.VISUAL_ID:
 				case LicenseEditPart.VISUAL_ID:
 				case Address2EditPart.VISUAL_ID:
-					if (domainElement == null || visualID != RentalVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement))
+					if (domainElement == null
+							|| visualID != RentalVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement))
 					{
 						return false; // visual id in semantic hint should match visual id for domain element
 					}
@@ -183,7 +182,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 				}
 			}
 		}
-		return AddressEditPart.VISUAL_ID == visualID || RentalObjectEditPart.VISUAL_ID == visualID || CustomerEditPart.VISUAL_ID == visualID || RentalEditPart.VISUAL_ID == visualID
+		return AddressEditPart.VISUAL_ID == visualID || RentalObjectEditPart.VISUAL_ID == visualID
+				|| CustomerEditPart.VISUAL_ID == visualID || RentalEditPart.VISUAL_ID == visualID
 				|| Address2EditPart.VISUAL_ID == visualID || LicenseEditPart.VISUAL_ID == visualID;
 	}
 
@@ -227,15 +227,15 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	/**
 	 * @generated
 	 */
-	public Node createNode(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint)
+	public Node createNode(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted,
+			PreferencesHint preferencesHint)
 	{
 		final EObject domainElement = getSemanticElement(semanticAdapter);
 		final int visualID;
 		if (semanticHint == null)
 		{
 			visualID = RentalVisualIDRegistry.getNodeVisualID(containerView, domainElement);
-		}
-		else
+		} else
 		{
 			visualID = RentalVisualIDRegistry.getVisualID(semanticHint);
 		}
@@ -261,7 +261,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	/**
 	 * @generated
 	 */
-	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint)
+	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted,
+			PreferencesHint preferencesHint)
 	{
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
@@ -279,7 +280,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	/**
 	 * @generated
 	 */
-	public Node createAddress_2001(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint)
+	public Node createAddress_2001(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint)
 	{
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -291,7 +293,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null)
 		{
@@ -304,7 +307,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5001 = createLabel(node, RentalVisualIDRegistry.getType(AddressCityEditPart.VISUAL_ID));
 		return node;
 	}
@@ -312,7 +316,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	/**
 	 * @generated
 	 */
-	public Node createRentalObject_2002(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint)
+	public Node createRentalObject_2002(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint)
 	{
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -324,7 +329,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null)
 		{
@@ -337,7 +343,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5002 = createLabel(node, RentalVisualIDRegistry.getType(RentalObjectNameEditPart.VISUAL_ID));
 		return node;
 	}
@@ -345,7 +352,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	/**
 	 * @generated
 	 */
-	public Node createCustomer_2003(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint)
+	public Node createCustomer_2003(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint)
 	{
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
@@ -358,7 +366,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null)
 		{
@@ -371,17 +380,21 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5005 = createLabel(node, RentalVisualIDRegistry.getType(CustomerFirstNameLastNameEditPart.VISUAL_ID));
-		createCompartment(node, RentalVisualIDRegistry.getType(CustomerCustomerAddressCompartmentEditPart.VISUAL_ID), true, false, true, true);
-		createCompartment(node, RentalVisualIDRegistry.getType(CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID), true, false, true, true);
+		createCompartment(node, RentalVisualIDRegistry.getType(CustomerCustomerAddressCompartmentEditPart.VISUAL_ID), true, false,
+				true, true);
+		createCompartment(node, RentalVisualIDRegistry.getType(CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID), true, false,
+				true, true);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createRental_2004(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint)
+	public Node createRental_2004(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint)
 	{
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -393,7 +406,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null)
 		{
@@ -406,7 +420,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5006 = createLabel(node, RentalVisualIDRegistry.getType(RentalStartDateEditPart.VISUAL_ID));
 		return node;
 	}
@@ -414,7 +429,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	/**
 	 * @generated
 	 */
-	public Node createAddress_3001(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint)
+	public Node createAddress_3001(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint)
 	{
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -425,7 +441,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null)
 		{
@@ -438,7 +455,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5003 = createLabel(node, RentalVisualIDRegistry.getType(AddressCity2EditPart.VISUAL_ID));
 		return node;
 	}
@@ -446,7 +464,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	/**
 	 * @generated
 	 */
-	public Node createLicense_3002(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint)
+	public Node createLicense_3002(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint)
 	{
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -457,7 +476,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null)
 		{
@@ -470,7 +490,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5004 = createLabel(node, RentalVisualIDRegistry.getType(LicenseNumberEditPart.VISUAL_ID));
 		return node;
 	}
@@ -483,7 +504,7 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
-		ArrayList points = new ArrayList(2);
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
 		points.add(new RelativeBendpoint());
 		points.add(new RelativeBendpoint());
 		bendpoints.setPoints(points);
@@ -495,7 +516,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null)
 		{
@@ -529,7 +551,7 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
-		ArrayList points = new ArrayList(2);
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
 		points.add(new RelativeBendpoint());
 		points.add(new RelativeBendpoint());
 		bendpoints.setPoints(points);
@@ -541,7 +563,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null)
 		{
@@ -595,7 +618,8 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 	/**
 	 * @generated
 	 */
-	private Node createCompartment(View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort, boolean canFilter)
+	private Node createCompartment(View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort,
+			boolean canFilter)
 	{
 		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
 		//rv.setShowTitle(showTitle);
@@ -604,8 +628,7 @@ public class RentalViewProvider extends AbstractProvider implements IViewProvide
 		if (canCollapse)
 		{
 			rv = NotationFactory.eINSTANCE.createBasicCompartment();
-		}
-		else
+		} else
 		{
 			rv = NotationFactory.eINSTANCE.createDecorationNode();
 		}

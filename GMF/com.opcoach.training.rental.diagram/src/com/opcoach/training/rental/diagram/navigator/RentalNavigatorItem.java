@@ -17,25 +17,25 @@ public class RentalNavigatorItem extends RentalAbstractNavigatorItem
 	 */
 	static
 	{
-		final Class[] supportedTypes = new Class[]
-		{ View.class, EObject.class };
+		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory()
-		{
-
-			public Object getAdapter(Object adaptableObject, Class adapterType)
 			{
-				if (adaptableObject instanceof com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem && (adapterType == View.class || adapterType == EObject.class))
+
+				public Object getAdapter(Object adaptableObject, Class adapterType)
 				{
-					return ((com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem) adaptableObject).getView();
+					if (adaptableObject instanceof com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem
+							&& (adapterType == View.class || adapterType == EObject.class))
+					{
+						return ((com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem) adaptableObject).getView();
+					}
+					return null;
 				}
-				return null;
-			}
 
-			public Class[] getAdapterList()
-			{
-				return supportedTypes;
-			}
-		}, com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem.class);
+				public Class[] getAdapterList()
+				{
+					return supportedTypes;
+				}
+			}, com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem.class);
 	}
 
 	/**
@@ -81,7 +81,8 @@ public class RentalNavigatorItem extends RentalAbstractNavigatorItem
 	{
 		if (obj instanceof com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem)
 		{
-			return EcoreUtil.getURI(getView()).equals(EcoreUtil.getURI(((com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem) obj).getView()));
+			return EcoreUtil.getURI(getView()).equals(
+					EcoreUtil.getURI(((com.opcoach.training.rental.diagram.navigator.RentalNavigatorItem) obj).getView()));
 		}
 		return super.equals(obj);
 	}

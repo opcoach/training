@@ -19,35 +19,34 @@ public class RentalDomainNavigatorItem extends PlatformObject
 	 */
 	static
 	{
-		final Class[] supportedTypes = new Class[]
-		{ EObject.class, IPropertySource.class };
+		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory()
-		{
-
-			public Object getAdapter(Object adaptableObject, Class adapterType)
 			{
-				if (adaptableObject instanceof com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem)
+
+				public Object getAdapter(Object adaptableObject, Class adapterType)
 				{
-					com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem domainNavigatorItem = (com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem) adaptableObject;
-					EObject eObject = domainNavigatorItem.getEObject();
-					if (adapterType == EObject.class)
+					if (adaptableObject instanceof com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem)
 					{
-						return eObject;
+						com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem domainNavigatorItem = (com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem) adaptableObject;
+						EObject eObject = domainNavigatorItem.getEObject();
+						if (adapterType == EObject.class)
+						{
+							return eObject;
+						}
+						if (adapterType == IPropertySource.class)
+						{
+							return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
+						}
 					}
-					if (adapterType == IPropertySource.class)
-					{
-						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
-					}
+
+					return null;
 				}
 
-				return null;
-			}
-
-			public Class[] getAdapterList()
-			{
-				return supportedTypes;
-			}
-		}, com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem.class);
+				public Class[] getAdapterList()
+				{
+					return supportedTypes;
+				}
+			}, com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem.class);
 	}
 
 	/**
@@ -106,7 +105,8 @@ public class RentalDomainNavigatorItem extends PlatformObject
 	{
 		if (obj instanceof com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem)
 		{
-			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(((com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem) obj).getEObject()));
+			return EcoreUtil.getURI(getEObject()).equals(
+					EcoreUtil.getURI(((com.opcoach.training.rental.diagram.navigator.RentalDomainNavigatorItem) obj).getEObject()));
 		}
 		return super.equals(obj);
 	}

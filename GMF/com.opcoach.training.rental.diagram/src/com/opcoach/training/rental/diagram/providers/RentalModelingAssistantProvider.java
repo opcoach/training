@@ -40,20 +40,20 @@ public class RentalModelingAssistantProvider extends ModelingAssistantProvider
 	public List getTypesForPopupBar(IAdaptable host)
 	{
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
-		if (editPart instanceof CustomerEditPart)
-		{
-			ArrayList types = new ArrayList(2);
-			types.add(RentalElementTypes.Address_3001);
-			types.add(RentalElementTypes.License_3002);
-			return types;
-		}
 		if (editPart instanceof RentalAgencyEditPart)
 		{
-			ArrayList types = new ArrayList(4);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 			types.add(RentalElementTypes.Address_2001);
 			types.add(RentalElementTypes.RentalObject_2002);
 			types.add(RentalElementTypes.Customer_2003);
 			types.add(RentalElementTypes.Rental_2004);
+			return types;
+		}
+		if (editPart instanceof CustomerEditPart)
+		{
+			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+			types.add(RentalElementTypes.Address_3001);
+			types.add(RentalElementTypes.License_3002);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -164,10 +164,10 @@ public class RentalModelingAssistantProvider extends ModelingAssistantProvider
 			return null;
 		}
 		Diagram diagram = (Diagram) editPart.getRoot().getContents().getModel();
-		Collection elements = new HashSet();
-		for (Iterator it = diagram.getElement().eAllContents(); it.hasNext();)
+		HashSet<EObject> elements = new HashSet<EObject>();
+		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it.hasNext();)
 		{
-			EObject element = (EObject) it.next();
+			EObject element = it.next();
 			if (isApplicableElement(element, types))
 			{
 				elements.add(element);
@@ -195,7 +195,8 @@ public class RentalModelingAssistantProvider extends ModelingAssistantProvider
 	protected EObject selectElement(EObject[] elements)
 	{
 		Shell shell = Display.getCurrent().getActiveShell();
-		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(RentalDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(RentalDiagramEditorPlugin.getInstance()
+				.getItemProvidersAdapterFactory());
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, labelProvider);
 		dialog.setMessage(Messages.RentalModelingAssistantProviderMessage);
 		dialog.setTitle(Messages.RentalModelingAssistantProviderTitle);

@@ -43,12 +43,13 @@ public class RentalObjectItemSemanticEditPolicy extends RentalBaseItemSemanticEd
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for (Iterator it = view.getTargetEdges().iterator(); it.hasNext();)
+		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();)
 		{
 			Edge incomingLink = (Edge) it.next();
 			if (RentalVisualIDRegistry.getVisualID(incomingLink) == RentalRentedObjectEditPart.VISUAL_ID)
 			{
-				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink
+						.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
@@ -61,8 +62,7 @@ public class RentalObjectItemSemanticEditPolicy extends RentalBaseItemSemanticEd
 			addDestroyShortcutsCommand(cmd, view);
 			// delete host element
 			cmd.add(new DestroyElementCommand(req));
-		}
-		else
+		} else
 		{
 			cmd.add(new DeleteCommand(getEditingDomain(), view));
 		}
@@ -74,7 +74,8 @@ public class RentalObjectItemSemanticEditPolicy extends RentalBaseItemSemanticEd
 	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req)
 	{
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
+				: getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 

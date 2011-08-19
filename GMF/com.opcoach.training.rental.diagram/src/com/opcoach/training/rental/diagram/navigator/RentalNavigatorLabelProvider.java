@@ -49,8 +49,10 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	static
 	{
-		RentalDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		RentalDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		RentalDiagramEditorPlugin.getInstance().getImageRegistry()
+				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		RentalDiagramEditorPlugin.getInstance().getImageRegistry()
+				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
 	}
 
 	/**
@@ -98,24 +100,30 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	{
 		switch (RentalVisualIDRegistry.getVisualID(view))
 		{
-		case RentalAgencyEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://com.opcoach.training/rental/1.0?RentalAgency", RentalElementTypes.RentalAgency_1000); //$NON-NLS-1$
-		case AddressEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://com.opcoach.training/rental/1.0?Address", RentalElementTypes.Address_2001); //$NON-NLS-1$
-		case RentalObjectEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://com.opcoach.training/rental/1.0?RentalObject", RentalElementTypes.RentalObject_2002); //$NON-NLS-1$
-		case CustomerEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://com.opcoach.training/rental/1.0?Customer", RentalElementTypes.Customer_2003); //$NON-NLS-1$
-		case RentalEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://com.opcoach.training/rental/1.0?Rental", RentalElementTypes.Rental_2004); //$NON-NLS-1$
-		case Address2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://com.opcoach.training/rental/1.0?Address", RentalElementTypes.Address_3001); //$NON-NLS-1$
+		case RentalCustomerEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://com.opcoach.training/rental/1.0?Rental?customer", RentalElementTypes.RentalCustomer_4001); //$NON-NLS-1$
 		case LicenseEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://com.opcoach.training/rental/1.0?License", RentalElementTypes.License_3002); //$NON-NLS-1$
-		case RentalCustomerEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://com.opcoach.training/rental/1.0?Rental?customer", RentalElementTypes.RentalCustomer_4001); //$NON-NLS-1$
+		case AddressEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://com.opcoach.training/rental/1.0?Address", RentalElementTypes.Address_2001); //$NON-NLS-1$
+		case Address2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://com.opcoach.training/rental/1.0?Address", RentalElementTypes.Address_3001); //$NON-NLS-1$
 		case RentalRentedObjectEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://com.opcoach.training/rental/1.0?Rental?rentedObject", RentalElementTypes.RentalRentedObject_4002); //$NON-NLS-1$
+			return getImage(
+					"Navigator?Link?http://com.opcoach.training/rental/1.0?Rental?rentedObject", RentalElementTypes.RentalRentedObject_4002); //$NON-NLS-1$
+		case CustomerEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://com.opcoach.training/rental/1.0?Customer", RentalElementTypes.Customer_2003); //$NON-NLS-1$
+		case RentalEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://com.opcoach.training/rental/1.0?Rental", RentalElementTypes.Rental_2004); //$NON-NLS-1$
+		case RentalObjectEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://com.opcoach.training/rental/1.0?RentalObject", RentalElementTypes.RentalObject_2002); //$NON-NLS-1$
+		case RentalAgencyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http://com.opcoach.training/rental/1.0?RentalAgency", RentalElementTypes.RentalAgency_1000); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -176,24 +184,24 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 		}
 		switch (RentalVisualIDRegistry.getVisualID(view))
 		{
-		case RentalAgencyEditPart.VISUAL_ID:
-			return getRentalAgency_1000Text(view);
+		case RentalCustomerEditPart.VISUAL_ID:
+			return getRentalCustomer_4001Text(view);
+		case LicenseEditPart.VISUAL_ID:
+			return getLicense_3002Text(view);
 		case AddressEditPart.VISUAL_ID:
 			return getAddress_2001Text(view);
-		case RentalObjectEditPart.VISUAL_ID:
-			return getRentalObject_2002Text(view);
+		case Address2EditPart.VISUAL_ID:
+			return getAddress_3001Text(view);
+		case RentalRentedObjectEditPart.VISUAL_ID:
+			return getRentalRentedObject_4002Text(view);
 		case CustomerEditPart.VISUAL_ID:
 			return getCustomer_2003Text(view);
 		case RentalEditPart.VISUAL_ID:
 			return getRental_2004Text(view);
-		case Address2EditPart.VISUAL_ID:
-			return getAddress_3001Text(view);
-		case LicenseEditPart.VISUAL_ID:
-			return getLicense_3002Text(view);
-		case RentalCustomerEditPart.VISUAL_ID:
-			return getRentalCustomer_4001Text(view);
-		case RentalRentedObjectEditPart.VISUAL_ID:
-			return getRentalRentedObject_4002Text(view);
+		case RentalObjectEditPart.VISUAL_ID:
+			return getRentalObject_2002Text(view);
+		case RentalAgencyEditPart.VISUAL_ID:
+			return getRentalAgency_1000Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -207,8 +215,7 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 		if (domainModelElement != null)
 		{
 			return domainModelElement.getName();
-		}
-		else
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
@@ -220,13 +227,14 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getAddress_2001Text(View view)
 	{
-		IParser parser = RentalParserProvider.getParser(RentalElementTypes.Address_2001, view.getElement() != null ? view.getElement() : view, RentalVisualIDRegistry
-				.getType(AddressCityEditPart.VISUAL_ID));
+		IParser parser = RentalParserProvider
+				.getParser(RentalElementTypes.Address_2001, view.getElement() != null ? view.getElement() : view,
+						RentalVisualIDRegistry.getType(AddressCityEditPart.VISUAL_ID));
 		if (parser != null)
 		{
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		}
-		else
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
@@ -238,13 +246,14 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getRentalObject_2002Text(View view)
 	{
-		IParser parser = RentalParserProvider.getParser(RentalElementTypes.RentalObject_2002, view.getElement() != null ? view.getElement() : view, RentalVisualIDRegistry
-				.getType(RentalObjectNameEditPart.VISUAL_ID));
+		IParser parser = RentalParserProvider.getParser(RentalElementTypes.RentalObject_2002,
+				view.getElement() != null ? view.getElement() : view,
+				RentalVisualIDRegistry.getType(RentalObjectNameEditPart.VISUAL_ID));
 		if (parser != null)
 		{
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		}
-		else
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
@@ -256,13 +265,14 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getCustomer_2003Text(View view)
 	{
-		IParser parser = RentalParserProvider.getParser(RentalElementTypes.Customer_2003, view.getElement() != null ? view.getElement() : view, RentalVisualIDRegistry
-				.getType(CustomerFirstNameLastNameEditPart.VISUAL_ID));
+		IParser parser = RentalParserProvider.getParser(RentalElementTypes.Customer_2003,
+				view.getElement() != null ? view.getElement() : view,
+				RentalVisualIDRegistry.getType(CustomerFirstNameLastNameEditPart.VISUAL_ID));
 		if (parser != null)
 		{
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		}
-		else
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
@@ -274,13 +284,14 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getRental_2004Text(View view)
 	{
-		IParser parser = RentalParserProvider.getParser(RentalElementTypes.Rental_2004, view.getElement() != null ? view.getElement() : view, RentalVisualIDRegistry
-				.getType(RentalStartDateEditPart.VISUAL_ID));
+		IParser parser = RentalParserProvider.getParser(RentalElementTypes.Rental_2004,
+				view.getElement() != null ? view.getElement() : view,
+				RentalVisualIDRegistry.getType(RentalStartDateEditPart.VISUAL_ID));
 		if (parser != null)
 		{
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		}
-		else
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5006); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
@@ -292,13 +303,14 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getAddress_3001Text(View view)
 	{
-		IParser parser = RentalParserProvider.getParser(RentalElementTypes.Address_3001, view.getElement() != null ? view.getElement() : view, RentalVisualIDRegistry
-				.getType(AddressCity2EditPart.VISUAL_ID));
+		IParser parser = RentalParserProvider.getParser(RentalElementTypes.Address_3001,
+				view.getElement() != null ? view.getElement() : view,
+				RentalVisualIDRegistry.getType(AddressCity2EditPart.VISUAL_ID));
 		if (parser != null)
 		{
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		}
-		else
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
@@ -310,13 +322,14 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getLicense_3002Text(View view)
 	{
-		IParser parser = RentalParserProvider.getParser(RentalElementTypes.License_3002, view.getElement() != null ? view.getElement() : view, RentalVisualIDRegistry
-				.getType(LicenseNumberEditPart.VISUAL_ID));
+		IParser parser = RentalParserProvider.getParser(RentalElementTypes.License_3002,
+				view.getElement() != null ? view.getElement() : view,
+				RentalVisualIDRegistry.getType(LicenseNumberEditPart.VISUAL_ID));
 		if (parser != null)
 		{
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		}
-		else
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
@@ -328,12 +341,13 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getRentalCustomer_4001Text(View view)
 	{
-		IParser parser = RentalParserProvider.getParser(RentalElementTypes.RentalCustomer_4001, view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
+		IParser parser = RentalParserProvider.getParser(RentalElementTypes.RentalCustomer_4001,
+				view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
 		if (parser != null)
 		{
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		}
-		else
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
@@ -345,12 +359,13 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getRentalRentedObject_4002Text(View view)
 	{
-		IParser parser = RentalParserProvider.getParser(RentalElementTypes.RentalRentedObject_4002, view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
+		IParser parser = RentalParserProvider.getParser(RentalElementTypes.RentalRentedObject_4002,
+				view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
 		if (parser != null)
 		{
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		}
-		else
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else
 		{
 			RentalDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$

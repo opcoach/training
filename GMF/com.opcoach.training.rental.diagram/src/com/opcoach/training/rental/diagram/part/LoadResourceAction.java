@@ -23,7 +23,8 @@ public class LoadResourceAction extends AbstractHandler
 		Shell shell = diagramEditor.getEditorSite().getShell();
 		assert diagramEditor instanceof DiagramEditor;
 		TransactionalEditingDomain editingDomain = ((DiagramEditor) diagramEditor).getEditingDomain();
-		org.eclipse.emf.edit.ui.action.LoadResourceAction.LoadResourceDialog loadResourceDialog = new org.eclipse.emf.edit.ui.action.LoadResourceAction.LoadResourceDialog(shell, editingDomain);
+		org.eclipse.emf.edit.ui.action.LoadResourceAction.LoadResourceDialog loadResourceDialog = new org.eclipse.emf.edit.ui.action.LoadResourceAction.LoadResourceDialog(
+				shell, editingDomain);
 		loadResourceDialog.open();
 		return null;
 	}

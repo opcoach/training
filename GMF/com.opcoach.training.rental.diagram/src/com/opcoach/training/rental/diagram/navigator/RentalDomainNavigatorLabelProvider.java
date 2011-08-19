@@ -18,7 +18,8 @@ public class RentalDomainNavigatorLabelProvider implements ICommonLabelProvider
 	/**
 	 * @generated
 	 */
-	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(RentalDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(RentalDiagramEditorPlugin
+			.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated

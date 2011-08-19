@@ -46,19 +46,21 @@ public class RentalItemSemanticEditPolicy extends RentalBaseItemSemanticEditPoli
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for (Iterator it = view.getSourceEdges().iterator(); it.hasNext();)
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();)
 		{
 			Edge outgoingLink = (Edge) it.next();
 			if (RentalVisualIDRegistry.getVisualID(outgoingLink) == RentalCustomerEditPart.VISUAL_ID)
 			{
-				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink
+						.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
 			if (RentalVisualIDRegistry.getVisualID(outgoingLink) == RentalRentedObjectEditPart.VISUAL_ID)
 			{
-				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink
+						.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
@@ -71,8 +73,7 @@ public class RentalItemSemanticEditPolicy extends RentalBaseItemSemanticEditPoli
 			addDestroyShortcutsCommand(cmd, view);
 			// delete host element
 			cmd.add(new DestroyElementCommand(req));
-		}
-		else
+		} else
 		{
 			cmd.add(new DeleteCommand(getEditingDomain(), view));
 		}
@@ -84,7 +85,8 @@ public class RentalItemSemanticEditPolicy extends RentalBaseItemSemanticEditPoli
 	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req)
 	{
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
+				: getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 

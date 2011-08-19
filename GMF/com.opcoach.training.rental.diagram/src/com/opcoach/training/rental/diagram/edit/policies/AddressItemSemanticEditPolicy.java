@@ -39,8 +39,7 @@ public class AddressItemSemanticEditPolicy extends RentalBaseItemSemanticEditPol
 			addDestroyShortcutsCommand(cmd, view);
 			// delete host element
 			cmd.add(new DestroyElementCommand(req));
-		}
-		else
+		} else
 		{
 			cmd.add(new DeleteCommand(getEditingDomain(), view));
 		}

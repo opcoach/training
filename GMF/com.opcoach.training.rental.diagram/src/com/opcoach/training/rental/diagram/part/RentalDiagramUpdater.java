@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
@@ -40,36 +41,36 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	public static List getSemanticChildren(View view)
+	public static List<RentalNodeDescriptor> getSemanticChildren(View view)
 	{
 		switch (RentalVisualIDRegistry.getVisualID(view))
 		{
+		case RentalAgencyEditPart.VISUAL_ID:
+			return getRentalAgency_1000SemanticChildren(view);
 		case CustomerCustomerAddressCompartmentEditPart.VISUAL_ID:
 			return getCustomerCustomerAddressCompartment_7001SemanticChildren(view);
 		case CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID:
 			return getCustomerCustomerLicensesCompartment_7002SemanticChildren(view);
-		case RentalAgencyEditPart.VISUAL_ID:
-			return getRentalAgency_1000SemanticChildren(view);
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getCustomerCustomerAddressCompartment_7001SemanticChildren(View view)
+	public static List<RentalNodeDescriptor> getCustomerCustomerAddressCompartment_7001SemanticChildren(View view)
 	{
 		if (false == view.eContainer() instanceof View)
 		{
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement())
 		{
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Customer modelElement = (Customer) containerView.getElement();
-		List result = new LinkedList();
+		LinkedList<RentalNodeDescriptor> result = new LinkedList<RentalNodeDescriptor>();
 		{
 			Address childElement = modelElement.getAddress();
 			int visualID = RentalVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -84,20 +85,20 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	public static List getCustomerCustomerLicensesCompartment_7002SemanticChildren(View view)
+	public static List<RentalNodeDescriptor> getCustomerCustomerLicensesCompartment_7002SemanticChildren(View view)
 	{
 		if (false == view.eContainer() instanceof View)
 		{
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement())
 		{
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Customer modelElement = (Customer) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getLicenses().iterator(); it.hasNext();)
+		LinkedList<RentalNodeDescriptor> result = new LinkedList<RentalNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLicenses().iterator(); it.hasNext();)
 		{
 			License childElement = (License) it.next();
 			int visualID = RentalVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -113,14 +114,14 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	public static List getRentalAgency_1000SemanticChildren(View view)
+	public static List<RentalNodeDescriptor> getRentalAgency_1000SemanticChildren(View view)
 	{
 		if (!view.isSetElement())
 		{
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		RentalAgency modelElement = (RentalAgency) view.getElement();
-		List result = new LinkedList();
+		LinkedList<RentalNodeDescriptor> result = new LinkedList<RentalNodeDescriptor>();
 		{
 			Address childElement = modelElement.getAddress();
 			int visualID = RentalVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -129,7 +130,7 @@ public class RentalDiagramUpdater
 				result.add(new RentalNodeDescriptor(childElement, visualID));
 			}
 		}
-		for (Iterator it = modelElement.getObjectsToRent().iterator(); it.hasNext();)
+		for (Iterator<?> it = modelElement.getObjectsToRent().iterator(); it.hasNext();)
 		{
 			RentalObject childElement = (RentalObject) it.next();
 			int visualID = RentalVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -139,7 +140,7 @@ public class RentalDiagramUpdater
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getCustomers().iterator(); it.hasNext();)
+		for (Iterator<?> it = modelElement.getCustomers().iterator(); it.hasNext();)
 		{
 			Customer childElement = (Customer) it.next();
 			int visualID = RentalVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -149,7 +150,7 @@ public class RentalDiagramUpdater
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getRentals().iterator(); it.hasNext();)
+		for (Iterator<?> it = modelElement.getRentals().iterator(); it.hasNext();)
 		{
 			Rental childElement = (Rental) it.next();
 			int visualID = RentalVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -165,7 +166,7 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	public static List getContainedLinks(View view)
+	public static List<RentalLinkDescriptor> getContainedLinks(View view)
 	{
 		switch (RentalVisualIDRegistry.getVisualID(view))
 		{
@@ -184,13 +185,13 @@ public class RentalDiagramUpdater
 		case LicenseEditPart.VISUAL_ID:
 			return getLicense_3002ContainedLinks(view);
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getIncomingLinks(View view)
+	public static List<RentalLinkDescriptor> getIncomingLinks(View view)
 	{
 		switch (RentalVisualIDRegistry.getVisualID(view))
 		{
@@ -207,13 +208,13 @@ public class RentalDiagramUpdater
 		case LicenseEditPart.VISUAL_ID:
 			return getLicense_3002IncomingLinks(view);
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOutgoingLinks(View view)
+	public static List<RentalLinkDescriptor> getOutgoingLinks(View view)
 	{
 		switch (RentalVisualIDRegistry.getVisualID(view))
 		{
@@ -230,48 +231,48 @@ public class RentalDiagramUpdater
 		case LicenseEditPart.VISUAL_ID:
 			return getLicense_3002OutgoingLinks(view);
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getRentalAgency_1000ContainedLinks(View view)
+	public static List<RentalLinkDescriptor> getRentalAgency_1000ContainedLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAddress_2001ContainedLinks(View view)
+	public static List<RentalLinkDescriptor> getAddress_2001ContainedLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getRentalObject_2002ContainedLinks(View view)
+	public static List<RentalLinkDescriptor> getRentalObject_2002ContainedLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getCustomer_2003ContainedLinks(View view)
+	public static List<RentalLinkDescriptor> getCustomer_2003ContainedLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getRental_2004ContainedLinks(View view)
+	public static List<RentalLinkDescriptor> getRental_2004ContainedLinks(View view)
 	{
 		Rental modelElement = (Rental) view.getElement();
-		List result = new LinkedList();
+		LinkedList<RentalLinkDescriptor> result = new LinkedList<RentalLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Rental_Customer_4001(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Rental_RentedObject_4002(modelElement));
 		return result;
@@ -280,35 +281,36 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	public static List getAddress_3001ContainedLinks(View view)
+	public static List<RentalLinkDescriptor> getAddress_3001ContainedLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getLicense_3002ContainedLinks(View view)
+	public static List<RentalLinkDescriptor> getLicense_3002ContainedLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAddress_2001IncomingLinks(View view)
+	public static List<RentalLinkDescriptor> getAddress_2001IncomingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getRentalObject_2002IncomingLinks(View view)
+	public static List<RentalLinkDescriptor> getRentalObject_2002IncomingLinks(View view)
 	{
 		RentalObject modelElement = (RentalObject) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource()
+				.getResourceSet().getResources());
+		LinkedList<RentalLinkDescriptor> result = new LinkedList<RentalLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Rental_RentedObject_4002(modelElement, crossReferences));
 		return result;
 	}
@@ -316,11 +318,12 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	public static List getCustomer_2003IncomingLinks(View view)
+	public static List<RentalLinkDescriptor> getCustomer_2003IncomingLinks(View view)
 	{
 		Customer modelElement = (Customer) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource()
+				.getResourceSet().getResources());
+		LinkedList<RentalLinkDescriptor> result = new LinkedList<RentalLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Rental_Customer_4001(modelElement, crossReferences));
 		return result;
 	}
@@ -328,58 +331,58 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	public static List getRental_2004IncomingLinks(View view)
+	public static List<RentalLinkDescriptor> getRental_2004IncomingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAddress_3001IncomingLinks(View view)
+	public static List<RentalLinkDescriptor> getAddress_3001IncomingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getLicense_3002IncomingLinks(View view)
+	public static List<RentalLinkDescriptor> getLicense_3002IncomingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAddress_2001OutgoingLinks(View view)
+	public static List<RentalLinkDescriptor> getAddress_2001OutgoingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getRentalObject_2002OutgoingLinks(View view)
+	public static List<RentalLinkDescriptor> getRentalObject_2002OutgoingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getCustomer_2003OutgoingLinks(View view)
+	public static List<RentalLinkDescriptor> getCustomer_2003OutgoingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getRental_2004OutgoingLinks(View view)
+	public static List<RentalLinkDescriptor> getRental_2004OutgoingLinks(View view)
 	{
 		Rental modelElement = (Rental) view.getElement();
-		List result = new LinkedList();
+		LinkedList<RentalLinkDescriptor> result = new LinkedList<RentalLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Rental_Customer_4001(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Rental_RentedObject_4002(modelElement));
 		return result;
@@ -388,32 +391,33 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	public static List getAddress_3001OutgoingLinks(View view)
+	public static List<RentalLinkDescriptor> getAddress_3001OutgoingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getLicense_3002OutgoingLinks(View view)
+	public static List<RentalLinkDescriptor> getLicense_3002OutgoingLinks(View view)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Rental_Customer_4001(Customer target, Map crossReferences)
+	private static Collection<RentalLinkDescriptor> getIncomingFeatureModelFacetLinks_Rental_Customer_4001(Customer target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences)
 	{
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();)
+		LinkedList<RentalLinkDescriptor> result = new LinkedList<RentalLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings)
 		{
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
 			if (setting.getEStructuralFeature() == RentalPackage.eINSTANCE.getRental_Customer())
 			{
-				result.add(new RentalLinkDescriptor(setting.getEObject(), target, RentalElementTypes.RentalCustomer_4001, RentalCustomerEditPart.VISUAL_ID));
+				result.add(new RentalLinkDescriptor(setting.getEObject(), target, RentalElementTypes.RentalCustomer_4001,
+						RentalCustomerEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -422,16 +426,17 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Rental_RentedObject_4002(RentalObject target, Map crossReferences)
+	private static Collection<RentalLinkDescriptor> getIncomingFeatureModelFacetLinks_Rental_RentedObject_4002(RentalObject target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences)
 	{
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();)
+		LinkedList<RentalLinkDescriptor> result = new LinkedList<RentalLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings)
 		{
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
 			if (setting.getEStructuralFeature() == RentalPackage.eINSTANCE.getRental_RentedObject())
 			{
-				result.add(new RentalLinkDescriptor(setting.getEObject(), target, RentalElementTypes.RentalRentedObject_4002, RentalRentedObjectEditPart.VISUAL_ID));
+				result.add(new RentalLinkDescriptor(setting.getEObject(), target, RentalElementTypes.RentalRentedObject_4002,
+						RentalRentedObjectEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -440,30 +445,32 @@ public class RentalDiagramUpdater
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Rental_Customer_4001(Rental source)
+	private static Collection<RentalLinkDescriptor> getOutgoingFeatureModelFacetLinks_Rental_Customer_4001(Rental source)
 	{
-		Collection result = new LinkedList();
+		LinkedList<RentalLinkDescriptor> result = new LinkedList<RentalLinkDescriptor>();
 		Customer destination = source.getCustomer();
 		if (destination == null)
 		{
 			return result;
 		}
-		result.add(new RentalLinkDescriptor(source, destination, RentalElementTypes.RentalCustomer_4001, RentalCustomerEditPart.VISUAL_ID));
+		result.add(new RentalLinkDescriptor(source, destination, RentalElementTypes.RentalCustomer_4001,
+				RentalCustomerEditPart.VISUAL_ID));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Rental_RentedObject_4002(Rental source)
+	private static Collection<RentalLinkDescriptor> getOutgoingFeatureModelFacetLinks_Rental_RentedObject_4002(Rental source)
 	{
-		Collection result = new LinkedList();
+		LinkedList<RentalLinkDescriptor> result = new LinkedList<RentalLinkDescriptor>();
 		RentalObject destination = source.getRentedObject();
 		if (destination == null)
 		{
 			return result;
 		}
-		result.add(new RentalLinkDescriptor(source, destination, RentalElementTypes.RentalRentedObject_4002, RentalRentedObjectEditPart.VISUAL_ID));
+		result.add(new RentalLinkDescriptor(source, destination, RentalElementTypes.RentalRentedObject_4002,
+				RentalRentedObjectEditPart.VISUAL_ID));
 		return result;
 	}
 

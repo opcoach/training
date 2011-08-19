@@ -49,12 +49,13 @@ public class CustomerItemSemanticEditPolicy extends RentalBaseItemSemanticEditPo
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for (Iterator it = view.getTargetEdges().iterator(); it.hasNext();)
+		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();)
 		{
 			Edge incomingLink = (Edge) it.next();
 			if (RentalVisualIDRegistry.getVisualID(incomingLink) == RentalCustomerEditPart.VISUAL_ID)
 			{
-				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink
+						.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
@@ -68,8 +69,7 @@ public class CustomerItemSemanticEditPolicy extends RentalBaseItemSemanticEditPo
 			addDestroyShortcutsCommand(cmd, view);
 			// delete host element
 			cmd.add(new DestroyElementCommand(req));
-		}
-		else
+		} else
 		{
 			cmd.add(new DeleteCommand(getEditingDomain(), view));
 		}
@@ -82,13 +82,13 @@ public class CustomerItemSemanticEditPolicy extends RentalBaseItemSemanticEditPo
 	private void addDestroyChildNodesCommand(ICompositeCommand cmd)
 	{
 		View view = (View) getHost().getModel();
-		for (Iterator nit = view.getChildren().iterator(); nit.hasNext();)
+		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();)
 		{
 			Node node = (Node) nit.next();
 			switch (RentalVisualIDRegistry.getVisualID(node))
 			{
 			case CustomerCustomerAddressCompartmentEditPart.VISUAL_ID:
-				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();)
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();)
 				{
 					Node cnode = (Node) cit.next();
 					switch (RentalVisualIDRegistry.getVisualID(cnode))
@@ -102,7 +102,7 @@ public class CustomerItemSemanticEditPolicy extends RentalBaseItemSemanticEditPo
 				}
 				break;
 			case CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID:
-				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();)
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();)
 				{
 					Node cnode = (Node) cit.next();
 					switch (RentalVisualIDRegistry.getVisualID(cnode))
@@ -124,7 +124,8 @@ public class CustomerItemSemanticEditPolicy extends RentalBaseItemSemanticEditPo
 	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req)
 	{
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
+				: getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 

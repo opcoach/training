@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -67,8 +68,9 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 	{
 		if (false == element instanceof FileEditorInput && false == element instanceof URIEditorInput)
 		{
-			throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, NLS.bind(Messages.RentalDocumentProvider_IncorrectInputError, new Object[]
-			{ element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+			throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, NLS.bind(
+					Messages.RentalDocumentProvider_IncorrectInputError, new Object[] { element,
+							"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 					null));
 		}
 		IEditorInput editorInput = (IEditorInput) element;
@@ -87,8 +89,9 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 	{
 		if (false == element instanceof FileEditorInput && false == element instanceof URIEditorInput)
 		{
-			throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, NLS.bind(Messages.RentalDocumentProvider_IncorrectInputError, new Object[]
-			{ element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+			throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, NLS.bind(
+					Messages.RentalDocumentProvider_IncorrectInputError, new Object[] { element,
+							"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 					null));
 		}
 		IDocument document = createEmptyDocument();
@@ -117,17 +120,16 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 	private long computeModificationStamp(ResourceSetInfo info)
 	{
 		int result = 0;
-		for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+		for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 		{
-			Resource nextResource = (Resource) it.next();
+			Resource nextResource = it.next();
 			IFile file = WorkspaceSynchronizer.getFile(nextResource);
 			if (file != null)
 			{
 				if (file.getLocation() != null)
 				{
 					result += file.getLocation().toFile().lastModified();
-				}
-				else
+				} else
 				{
 					result += file.getModificationStamp();
 				}
@@ -153,41 +155,43 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 	{
 		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory.getInstance().createEditingDomain();
 		editingDomain.setID("com.opcoach.training.rental.diagram.EditingDomain"); //$NON-NLS-1$
-		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter.createNotifierFilter(editingDomain.getResourceSet())
-				.and(NotificationFilter.createEventTypeFilter(Notification.ADD)).and(NotificationFilter.createFeatureFilter(ResourceSet.class, ResourceSet.RESOURCE_SET__RESOURCES));
+		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
+				.createNotifierFilter(editingDomain.getResourceSet())
+				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))
+				.and(NotificationFilter.createFeatureFilter(ResourceSet.class, ResourceSet.RESOURCE_SET__RESOURCES));
 		editingDomain.getResourceSet().eAdapters().add(new Adapter()
-		{
-
-			private Notifier myTarger;
-
-			public Notifier getTarget()
 			{
-				return myTarger;
-			}
 
-			public boolean isAdapterForType(Object type)
-			{
-				return false;
-			}
+				private Notifier myTarger;
 
-			public void notifyChanged(Notification notification)
-			{
-				if (diagramResourceModifiedFilter.matches(notification))
+				public Notifier getTarget()
 				{
-					Object value = notification.getNewValue();
-					if (value instanceof Resource)
+					return myTarger;
+				}
+
+				public boolean isAdapterForType(Object type)
+				{
+					return false;
+				}
+
+				public void notifyChanged(Notification notification)
+				{
+					if (diagramResourceModifiedFilter.matches(notification))
 					{
-						((Resource) value).setTrackingModification(true);
+						Object value = notification.getNewValue();
+						if (value instanceof Resource)
+						{
+							((Resource) value).setTrackingModification(true);
+						}
 					}
 				}
-			}
 
-			public void setTarget(Notifier newTarget)
-			{
-				myTarger = newTarget;
-			}
+				public void setTarget(Notifier newTarget)
+				{
+					myTarger = newTarget;
+				}
 
-		});
+			});
 
 		return editingDomain;
 	}
@@ -204,8 +208,7 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 			IStorage storage = ((FileEditorInput) element).getStorage();
 			Diagram diagram = DiagramIOUtil.load(domain, storage, true, getProgressMonitor());
 			document.setContent(diagram);
-		}
-		else if (element instanceof URIEditorInput)
+		} else if (element instanceof URIEditorInput)
 		{
 			URI uri = ((URIEditorInput) element).getURI();
 			Resource resource = null;
@@ -238,8 +241,7 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 						document.setContent((Diagram) rootElement);
 						return;
 					}
-				}
-				else
+				} else
 				{
 					for (Iterator it = resource.getContents().iterator(); it.hasNext();)
 					{
@@ -258,19 +260,19 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 				if (e instanceof CoreException)
 				{
 					thrownExcp = (CoreException) e;
-				}
-				else
+				} else
 				{
 					String msg = e.getLocalizedMessage();
-					thrownExcp = new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, msg != null ? msg : Messages.RentalDocumentProvider_DiagramLoadingError, e));
+					thrownExcp = new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, msg != null ? msg
+							: Messages.RentalDocumentProvider_DiagramLoadingError, e));
 				}
 				throw thrownExcp;
 			}
-		}
-		else
+		} else
 		{
-			throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, NLS.bind(Messages.RentalDocumentProvider_IncorrectInputError, new Object[]
-			{ element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+			throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, NLS.bind(
+					Messages.RentalDocumentProvider_IncorrectInputError, new Object[] { element,
+							"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 					null));
 		}
 	}
@@ -335,17 +337,18 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null)
 		{
-			Collection/*<org.eclipse.core.resources.IFile>*/files2Validate = new ArrayList/*<org.eclipse.core.resources.IFile>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+			LinkedList<IFile> files2Validate = new LinkedList<IFile>();
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 			{
-				Resource nextResource = (Resource) it.next();
+				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null && file.isReadOnly())
 				{
 					files2Validate.add(file);
 				}
 			}
-			ResourcesPlugin.getWorkspace().validateEdit((IFile[]) files2Validate.toArray(new IFile[files2Validate.size()]), computationContext);
+			ResourcesPlugin.getWorkspace().validateEdit((IFile[]) files2Validate.toArray(new IFile[files2Validate.size()]),
+					computationContext);
 		}
 
 		super.doValidateState(element, computationContext);
@@ -414,9 +417,9 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null)
 		{
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 			{
-				Resource nextResource = (Resource) it.next();
+				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null && file.isReadOnly())
 				{
@@ -465,10 +468,10 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null)
 		{
-			Collection/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/rules = new ArrayList/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+			LinkedList<ISchedulingRule> rules = new LinkedList<ISchedulingRule>();
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 			{
-				Resource nextResource = (Resource) it.next();
+				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null)
 				{
@@ -488,10 +491,10 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null)
 		{
-			Collection/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/rules = new ArrayList/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+			LinkedList<ISchedulingRule> rules = new LinkedList<ISchedulingRule>();
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 			{
-				Resource nextResource = (Resource) it.next();
+				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null)
 				{
@@ -511,10 +514,10 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null)
 		{
-			Collection/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/rules = new ArrayList/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+			LinkedList<ISchedulingRule> rules = new LinkedList<ISchedulingRule>();
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 			{
-				Resource nextResource = (Resource) it.next();
+				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null)
 				{
@@ -534,17 +537,18 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null)
 		{
-			Collection/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/files = new ArrayList/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+			LinkedList<ISchedulingRule> files = new LinkedList<ISchedulingRule>();
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 			{
-				Resource nextResource = (Resource) it.next();
+				Resource nextResource = it.next();
 				IFile file = WorkspaceSynchronizer.getFile(nextResource);
 				if (file != null)
 				{
 					files.add(file);
 				}
 			}
-			return ResourcesPlugin.getWorkspace().getRuleFactory().validateEditRule((IFile[]) files.toArray(new IFile[files.size()]));
+			return ResourcesPlugin.getWorkspace().getRuleFactory()
+					.validateEditRule((IFile[]) files.toArray(new IFile[files.size()]));
 		}
 		return null;
 	}
@@ -581,9 +585,9 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null)
 		{
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+			for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 			{
-				Resource nextResource = (Resource) it.next();
+				Resource nextResource = it.next();
 				handleElementChanged(info, nextResource, monitor);
 			}
 			return;
@@ -594,23 +598,25 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 	/**
 	 * @generated
 	 */
-	protected void doSaveDocument(IProgressMonitor monitor, Object element, IDocument document, boolean overwrite) throws CoreException
+	protected void doSaveDocument(IProgressMonitor monitor, Object element, IDocument document, boolean overwrite)
+			throws CoreException
 	{
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null)
 		{
 			if (!overwrite && !info.isSynchronized())
 			{
-				throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, IResourceStatus.OUT_OF_SYNC_LOCAL, Messages.RentalDocumentProvider_UnsynchronizedFileSaveError, null));
+				throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, IResourceStatus.OUT_OF_SYNC_LOCAL,
+						Messages.RentalDocumentProvider_UnsynchronizedFileSaveError, null));
 			}
 			info.stopResourceListening();
 			fireElementStateChanging(element);
 			try
 			{
 				monitor.beginTask(Messages.RentalDocumentProvider_SaveDiagramTask, info.getResourceSet().getResources().size() + 1); //"Saving diagram"
-				for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info.getLoadedResourcesIterator(); it.hasNext();)
+				for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();)
 				{
-					Resource nextResource = (Resource) it.next();
+					Resource nextResource = it.next();
 					monitor.setTaskName(NLS.bind(Messages.RentalDocumentProvider_SaveNextResourceTask, nextResource.getURI()));
 					if (nextResource.isLoaded() && !info.getEditingDomain().isReadOnly(nextResource))
 					{
@@ -620,7 +626,8 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 						} catch (IOException e)
 						{
 							fireElementStateChangeFailed(element);
-							throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, EditorStatusCodes.RESOURCE_FAILURE, e.getLocalizedMessage(), null));
+							throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID,
+									EditorStatusCodes.RESOURCE_FAILURE, e.getLocalizedMessage(), null));
 						}
 					}
 					monitor.worked(1);
@@ -635,47 +642,51 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 			{
 				info.startResourceListening();
 			}
-		}
-		else
+		} else
 		{
 			URI newResoruceURI;
-			List affectedFiles = null;
+			List<IFile> affectedFiles = null;
 			if (element instanceof FileEditorInput)
 			{
 				IFile newFile = ((FileEditorInput) element).getFile();
 				affectedFiles = Collections.singletonList(newFile);
 				newResoruceURI = URI.createPlatformResourceURI(newFile.getFullPath().toString(), true);
-			}
-			else if (element instanceof URIEditorInput)
+			} else if (element instanceof URIEditorInput)
 			{
 				newResoruceURI = ((URIEditorInput) element).getURI();
-			}
-			else
+			} else
 			{
 				fireElementStateChangeFailed(element);
-				throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, NLS.bind(Messages.RentalDocumentProvider_IncorrectInputError, new Object[]
-				{ element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+				throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0, NLS.bind(
+						Messages.RentalDocumentProvider_IncorrectInputError, new Object[] { element,
+								"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 						null));
 			}
 			if (false == document instanceof IDiagramDocument)
 			{
 				fireElementStateChangeFailed(element);
-				throw new CoreException(new Status(IStatus.ERROR, RentalDiagramEditorPlugin.ID, 0,
-						"Incorrect document used: " + document + " instead of org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument", null)); //$NON-NLS-1$ //$NON-NLS-2$
+				throw new CoreException(
+						new Status(
+								IStatus.ERROR,
+								RentalDiagramEditorPlugin.ID,
+								0,
+								"Incorrect document used: " + document + " instead of org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument", null)); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			IDiagramDocument diagramDocument = (IDiagramDocument) document;
 			final Resource newResource = diagramDocument.getEditingDomain().getResourceSet().createResource(newResoruceURI);
 			final Diagram diagramCopy = (Diagram) EcoreUtil.copy(diagramDocument.getDiagram());
 			try
 			{
-				new AbstractTransactionalCommand(diagramDocument.getEditingDomain(), NLS.bind(Messages.RentalDocumentProvider_SaveAsOperation, diagramCopy.getName()), affectedFiles)
-				{
-					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException
+				new AbstractTransactionalCommand(diagramDocument.getEditingDomain(), NLS.bind(
+						Messages.RentalDocumentProvider_SaveAsOperation, diagramCopy.getName()), affectedFiles)
 					{
-						newResource.getContents().add(diagramCopy);
-						return CommandResult.newOKCommandResult();
-					}
-				}.execute(monitor, null);
+						protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
+								throws ExecutionException
+						{
+							newResource.getContents().add(diagramCopy);
+							return CommandResult.newOKCommandResult();
+						}
+					}.execute(monitor, null);
 				newResource.save(RentalDiagramEditorUtil.getSaveOptions());
 			} catch (ExecutionException e)
 			{
@@ -734,7 +745,8 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 	{
 		if (input instanceof FileEditorInput)
 		{
-			IFile newFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(URI.decode(uri.path())).removeFirstSegments(1));
+			IFile newFile = ResourcesPlugin.getWorkspace().getRoot()
+					.getFile(new Path(URI.decode(uri.path())).removeFirstSegments(1));
 			fireElementMoved(input, newFile == null ? null : new FileEditorInput(newFile));
 			return;
 		}
@@ -790,7 +802,7 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		/**
 		 * @generated
 		 */
-		private Collection myUnSynchronizedResources = new ArrayList();
+		private LinkedList<Resource> myUnSynchronizedResources = new LinkedList<Resource>();
 
 		/**
 		 * @generated
@@ -870,9 +882,9 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		/**
 		 * @generated
 		 */
-		public Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/getLoadedResourcesIterator()
+		public Iterator<Resource> getLoadedResourcesIterator()
 		{
-			return new ArrayList/*<org.eclipse.emf.ecore.resource.Resource>*/(getResourceSet().getResources()).iterator();
+			return new ArrayList<Resource>(getResourceSet().getResources()).iterator();
 		}
 
 		/**
@@ -890,9 +902,9 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		{
 			stopResourceListening();
 			getResourceSet().eAdapters().remove(myResourceSetListener);
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = getLoadedResourcesIterator(); it.hasNext();)
+			for (Iterator<Resource> it = getLoadedResourcesIterator(); it.hasNext();)
 			{
-				Resource resource = (Resource) it.next();
+				Resource resource = it.next();
 				resource.unload();
 			}
 			getEditingDomain().dispose();
@@ -1014,12 +1026,12 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 					}
 				}
 				Display.getDefault().asyncExec(new Runnable()
-				{
-					public void run()
 					{
-						handleElementChanged(ResourceSetInfo.this, resource, null);
-					}
-				});
+						public void run()
+						{
+							handleElementChanged(ResourceSetInfo.this, resource, null);
+						}
+					});
 				return true;
 			}
 
@@ -1037,12 +1049,12 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 					}
 				}
 				Display.getDefault().asyncExec(new Runnable()
-				{
-					public void run()
 					{
-						fireElementDeleted(ResourceSetInfo.this.getEditorInput());
-					}
-				});
+						public void run()
+						{
+							fireElementDeleted(ResourceSetInfo.this.getEditorInput());
+						}
+					});
 				return true;
 			}
 
@@ -1062,14 +1074,13 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 				if (myDocument.getDiagram().eResource() == resource)
 				{
 					Display.getDefault().asyncExec(new Runnable()
-					{
-						public void run()
 						{
-							handleElementMoved(ResourceSetInfo.this.getEditorInput(), newURI);
-						}
-					});
-				}
-				else
+							public void run()
+							{
+								handleElementMoved(ResourceSetInfo.this.getEditorInput(), newURI);
+							}
+						});
+				} else
 				{
 					handleResourceDeleted(resource);
 				}
@@ -1102,8 +1113,9 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 		public ResourceSetModificationListener(ResourceSetInfo info)
 		{
 			myInfo = info;
-			myModifiedFilter = NotificationFilter.createEventTypeFilter(Notification.SET).or(NotificationFilter.createEventTypeFilter(Notification.UNSET)).and(
-					NotificationFilter.createFeatureFilter(Resource.class, Resource.RESOURCE__IS_MODIFIED));
+			myModifiedFilter = NotificationFilter.createEventTypeFilter(Notification.SET)
+					.or(NotificationFilter.createEventTypeFilter(Notification.UNSET))
+					.and(NotificationFilter.createFeatureFilter(Resource.class, Resource.RESOURCE__IS_MODIFIED));
 		}
 
 		/**
@@ -1123,7 +1135,8 @@ public class RentalDocumentProvider extends AbstractDocumentProvider implements 
 					if (resource.isLoaded())
 					{
 						boolean modified = false;
-						for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = myInfo.getLoadedResourcesIterator(); it.hasNext() && !modified;)
+						for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = myInfo.getLoadedResourcesIterator(); it
+								.hasNext() && !modified;)
 						{
 							Resource nextResource = (Resource) it.next();
 							if (nextResource.isLoaded())

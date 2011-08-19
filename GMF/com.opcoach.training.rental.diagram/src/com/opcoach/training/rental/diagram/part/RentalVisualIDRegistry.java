@@ -53,8 +53,7 @@ public class RentalVisualIDRegistry
 			if (RentalAgencyEditPart.MODEL_ID.equals(view.getType()))
 			{
 				return RentalAgencyEditPart.VISUAL_ID;
-			}
-			else
+			} else
 			{
 				return -1;
 			}
@@ -103,7 +102,7 @@ public class RentalVisualIDRegistry
 	 */
 	public static String getType(int visualID)
 	{
-		return String.valueOf(visualID);
+		return Integer.toString(visualID);
 	}
 
 	/**
@@ -115,7 +114,8 @@ public class RentalVisualIDRegistry
 		{
 			return -1;
 		}
-		if (RentalPackage.eINSTANCE.getRentalAgency().isSuperTypeOf(domainElement.eClass()) && isDiagram((RentalAgency) domainElement))
+		if (RentalPackage.eINSTANCE.getRentalAgency().isSuperTypeOf(domainElement.eClass())
+				&& isDiagram((RentalAgency) domainElement))
 		{
 			return RentalAgencyEditPart.VISUAL_ID;
 		}
@@ -140,32 +140,18 @@ public class RentalVisualIDRegistry
 		if (RentalAgencyEditPart.MODEL_ID.equals(containerModelID))
 		{
 			containerVisualID = com.opcoach.training.rental.diagram.part.RentalVisualIDRegistry.getVisualID(containerView);
-		}
-		else
+		} else
 		{
 			if (containerView instanceof Diagram)
 			{
 				containerVisualID = RentalAgencyEditPart.VISUAL_ID;
-			}
-			else
+			} else
 			{
 				return -1;
 			}
 		}
 		switch (containerVisualID)
 		{
-		case CustomerCustomerAddressCompartmentEditPart.VISUAL_ID:
-			if (RentalPackage.eINSTANCE.getAddress().isSuperTypeOf(domainElement.eClass()))
-			{
-				return Address2EditPart.VISUAL_ID;
-			}
-			break;
-		case CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID:
-			if (RentalPackage.eINSTANCE.getLicense().isSuperTypeOf(domainElement.eClass()))
-			{
-				return LicenseEditPart.VISUAL_ID;
-			}
-			break;
 		case RentalAgencyEditPart.VISUAL_ID:
 			if (RentalPackage.eINSTANCE.getAddress().isSuperTypeOf(domainElement.eClass()))
 			{
@@ -182,6 +168,18 @@ public class RentalVisualIDRegistry
 			if (RentalPackage.eINSTANCE.getRental().isSuperTypeOf(domainElement.eClass()))
 			{
 				return RentalEditPart.VISUAL_ID;
+			}
+			break;
+		case CustomerCustomerAddressCompartmentEditPart.VISUAL_ID:
+			if (RentalPackage.eINSTANCE.getAddress().isSuperTypeOf(domainElement.eClass()))
+			{
+				return Address2EditPart.VISUAL_ID;
+			}
+			break;
+		case CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID:
+			if (RentalPackage.eINSTANCE.getLicense().isSuperTypeOf(domainElement.eClass()))
+			{
+				return LicenseEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -202,20 +200,36 @@ public class RentalVisualIDRegistry
 		if (RentalAgencyEditPart.MODEL_ID.equals(containerModelID))
 		{
 			containerVisualID = com.opcoach.training.rental.diagram.part.RentalVisualIDRegistry.getVisualID(containerView);
-		}
-		else
+		} else
 		{
 			if (containerView instanceof Diagram)
 			{
 				containerVisualID = RentalAgencyEditPart.VISUAL_ID;
-			}
-			else
+			} else
 			{
 				return false;
 			}
 		}
 		switch (containerVisualID)
 		{
+		case RentalAgencyEditPart.VISUAL_ID:
+			if (AddressEditPart.VISUAL_ID == nodeVisualID)
+			{
+				return true;
+			}
+			if (RentalObjectEditPart.VISUAL_ID == nodeVisualID)
+			{
+				return true;
+			}
+			if (CustomerEditPart.VISUAL_ID == nodeVisualID)
+			{
+				return true;
+			}
+			if (RentalEditPart.VISUAL_ID == nodeVisualID)
+			{
+				return true;
+			}
+			break;
 		case AddressEditPart.VISUAL_ID:
 			if (AddressCityEditPart.VISUAL_ID == nodeVisualID)
 			{
@@ -268,24 +282,6 @@ public class RentalVisualIDRegistry
 			break;
 		case CustomerCustomerLicensesCompartmentEditPart.VISUAL_ID:
 			if (LicenseEditPart.VISUAL_ID == nodeVisualID)
-			{
-				return true;
-			}
-			break;
-		case RentalAgencyEditPart.VISUAL_ID:
-			if (AddressEditPart.VISUAL_ID == nodeVisualID)
-			{
-				return true;
-			}
-			if (RentalObjectEditPart.VISUAL_ID == nodeVisualID)
-			{
-				return true;
-			}
-			if (CustomerEditPart.VISUAL_ID == nodeVisualID)
-			{
-				return true;
-			}
-			if (RentalEditPart.VISUAL_ID == nodeVisualID)
 			{
 				return true;
 			}

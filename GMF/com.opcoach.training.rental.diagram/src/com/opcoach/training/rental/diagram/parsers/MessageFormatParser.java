@@ -189,7 +189,8 @@ public class MessageFormatParser extends AbstractParser
 		Object[] values = getEditProcessor().parse(editString, pos);
 		if (values == null)
 		{
-			return new ParserEditStatus(RentalDiagramEditorPlugin.ID, IParserEditStatus.UNEDITABLE, NLS.bind(Messages.MessageFormatParser_InvalidInputError, new Integer(pos.getErrorIndex())));
+			return new ParserEditStatus(RentalDiagramEditorPlugin.ID, IParserEditStatus.UNEDITABLE, NLS.bind(
+					Messages.MessageFormatParser_InvalidInputError, new Integer(pos.getErrorIndex())));
 		}
 		return validateNewValues(values);
 	}

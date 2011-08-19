@@ -283,57 +283,47 @@ public abstract class AbstractParser implements IParser
 				if (value instanceof Boolean)
 				{
 					// ok
-				}
-				else if (value instanceof String)
+				} else if (value instanceof String)
 				{
 					value = Boolean.valueOf((String) value);
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, iClass.getName()));
 				}
-			}
-			else if (Character.TYPE.equals(iClass))
+			} else if (Character.TYPE.equals(iClass))
 			{
 				if (value instanceof Character)
 				{
 					// ok
-				}
-				else if (value instanceof String)
+				} else if (value instanceof String)
 				{
 					String s = (String) value;
 					if (s.length() == 0)
 					{
 						value = null;
-					}
-					else
+					} else
 					{
 						value = new Character(s.charAt(0));
 					}
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, iClass.getName()));
 				}
-			}
-			else if (Byte.TYPE.equals(iClass))
+			} else if (Byte.TYPE.equals(iClass))
 			{
 				if (value instanceof Byte)
 				{
 					// ok
-				}
-				else if (value instanceof Number)
+				} else if (value instanceof Number)
 				{
 					value = new Byte(((Number) value).byteValue());
-				}
-				else if (value instanceof String)
+				} else if (value instanceof String)
 				{
 					String s = (String) value;
 					if (s.length() == 0)
 					{
 						value = null;
-					}
-					else
+					} else
 					{
 						try
 						{
@@ -343,30 +333,25 @@ public abstract class AbstractParser implements IParser
 							value = new InvalidValue(NLS.bind(Messages.AbstractParser_WrongStringConversion, iClass.getName()));
 						}
 					}
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, iClass.getName()));
 				}
-			}
-			else if (Short.TYPE.equals(iClass))
+			} else if (Short.TYPE.equals(iClass))
 			{
 				if (value instanceof Short)
 				{
 					// ok
-				}
-				else if (value instanceof Number)
+				} else if (value instanceof Number)
 				{
 					value = new Short(((Number) value).shortValue());
-				}
-				else if (value instanceof String)
+				} else if (value instanceof String)
 				{
 					String s = (String) value;
 					if (s.length() == 0)
 					{
 						value = null;
-					}
-					else
+					} else
 					{
 						try
 						{
@@ -376,30 +361,25 @@ public abstract class AbstractParser implements IParser
 							value = new InvalidValue(NLS.bind(Messages.AbstractParser_WrongStringConversion, iClass.getName()));
 						}
 					}
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, iClass.getName()));
 				}
-			}
-			else if (Integer.TYPE.equals(iClass))
+			} else if (Integer.TYPE.equals(iClass))
 			{
 				if (value instanceof Integer)
 				{
 					// ok
-				}
-				else if (value instanceof Number)
+				} else if (value instanceof Number)
 				{
 					value = new Integer(((Number) value).intValue());
-				}
-				else if (value instanceof String)
+				} else if (value instanceof String)
 				{
 					String s = (String) value;
 					if (s.length() == 0)
 					{
 						value = null;
-					}
-					else
+					} else
 					{
 						try
 						{
@@ -409,30 +389,25 @@ public abstract class AbstractParser implements IParser
 							value = new InvalidValue(NLS.bind(Messages.AbstractParser_WrongStringConversion, iClass.getName()));
 						}
 					}
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, iClass.getName()));
 				}
-			}
-			else if (Long.TYPE.equals(iClass))
+			} else if (Long.TYPE.equals(iClass))
 			{
 				if (value instanceof Long)
 				{
 					// ok
-				}
-				else if (value instanceof Number)
+				} else if (value instanceof Number)
 				{
 					value = new Long(((Number) value).longValue());
-				}
-				else if (value instanceof String)
+				} else if (value instanceof String)
 				{
 					String s = (String) value;
 					if (s.length() == 0)
 					{
 						value = null;
-					}
-					else
+					} else
 					{
 						try
 						{
@@ -442,30 +417,25 @@ public abstract class AbstractParser implements IParser
 							value = new InvalidValue(NLS.bind(Messages.AbstractParser_WrongStringConversion, iClass.getName()));
 						}
 					}
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, iClass.getName()));
 				}
-			}
-			else if (Float.TYPE.equals(iClass))
+			} else if (Float.TYPE.equals(iClass))
 			{
 				if (value instanceof Float)
 				{
 					// ok
-				}
-				else if (value instanceof Number)
+				} else if (value instanceof Number)
 				{
 					value = new Float(((Number) value).floatValue());
-				}
-				else if (value instanceof String)
+				} else if (value instanceof String)
 				{
 					String s = (String) value;
 					if (s.length() == 0)
 					{
 						value = null;
-					}
-					else
+					} else
 					{
 						try
 						{
@@ -475,30 +445,25 @@ public abstract class AbstractParser implements IParser
 							value = new InvalidValue(NLS.bind(Messages.AbstractParser_WrongStringConversion, iClass.getName()));
 						}
 					}
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, iClass.getName()));
 				}
-			}
-			else if (Double.TYPE.equals(iClass))
+			} else if (Double.TYPE.equals(iClass))
 			{
 				if (value instanceof Double)
 				{
 					// ok
-				}
-				else if (value instanceof Number)
+				} else if (value instanceof Number)
 				{
 					value = new Double(((Number) value).doubleValue());
-				}
-				else if (value instanceof String)
+				} else if (value instanceof String)
 				{
 					String s = (String) value;
 					if (s.length() == 0)
 					{
 						value = null;
-					}
-					else
+					} else
 					{
 						try
 						{
@@ -508,13 +473,11 @@ public abstract class AbstractParser implements IParser
 							value = new InvalidValue(NLS.bind(Messages.AbstractParser_WrongStringConversion, iClass.getName()));
 						}
 					}
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, iClass.getName()));
 				}
-			}
-			else if (type instanceof EEnum)
+			} else if (type instanceof EEnum)
 			{
 				if (value instanceof String)
 				{
@@ -522,13 +485,11 @@ public abstract class AbstractParser implements IParser
 					if (literal == null)
 					{
 						value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnknownLiteral, value));
-					}
-					else
+					} else
 					{
 						value = literal.getInstance();
 					}
-				}
-				else
+				} else
 				{
 					value = new InvalidValue(NLS.bind(Messages.AbstractParser_UnexpectedValueType, String.class.getName()));
 				}

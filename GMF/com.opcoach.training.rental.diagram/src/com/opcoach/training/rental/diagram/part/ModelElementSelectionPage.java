@@ -61,8 +61,7 @@ public class ModelElementSelectionPage extends WizardPage
 			{
 				modelViewer.setInput(selectedModelElement.eResource());
 				modelViewer.setSelection(new StructuredSelection(selectedModelElement));
-			}
-			else
+			} else
 			{
 				modelViewer.setInput(null);
 			}
@@ -93,20 +92,22 @@ public class ModelElementSelectionPage extends WizardPage
 		layoutData.heightHint = 300;
 		layoutData.widthHint = 300;
 		modelViewer.getTree().setLayoutData(layoutData);
-		modelViewer.setContentProvider(new AdapterFactoryContentProvider(RentalDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory()));
-		modelViewer.setLabelProvider(new AdapterFactoryLabelProvider(RentalDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory()));
+		modelViewer.setContentProvider(new AdapterFactoryContentProvider(RentalDiagramEditorPlugin.getInstance()
+				.getItemProvidersAdapterFactory()));
+		modelViewer.setLabelProvider(new AdapterFactoryLabelProvider(RentalDiagramEditorPlugin.getInstance()
+				.getItemProvidersAdapterFactory()));
 		if (selectedModelElement != null)
 		{
 			modelViewer.setInput(selectedModelElement.eResource());
 			modelViewer.setSelection(new StructuredSelection(selectedModelElement));
 		}
 		modelViewer.addSelectionChangedListener(new ISelectionChangedListener()
-		{
-			public void selectionChanged(SelectionChangedEvent event)
 			{
-				ModelElementSelectionPage.this.updateSelection((IStructuredSelection) event.getSelection());
-			}
-		});
+				public void selectionChanged(SelectionChangedEvent event)
+				{
+					ModelElementSelectionPage.this.updateSelection((IStructuredSelection) event.getSelection());
+				}
+			});
 
 		setPageComplete(validatePage());
 	}

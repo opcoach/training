@@ -62,78 +62,58 @@ public class RentalDomainNavigatorContentProvider implements ICommonContentProvi
 	 */
 	public RentalDomainNavigatorContentProvider()
 	{
-		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(RentalDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(RentalDiagramEditorPlugin.getInstance()
+				.getItemProvidersAdapterFactory());
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap()
-		{
-			public Object get(Object key)
 			{
-				if (!containsKey(key))
+				public Object get(Object key)
 				{
-					put(key, Boolean.TRUE);
+					if (!containsKey(key))
+					{
+						put(key, Boolean.TRUE);
+					}
+					return super.get(key);
 				}
-				return super.get(key);
-			}
-		});
+			});
 		myViewerRefreshRunnable = new Runnable()
-		{
-			public void run()
 			{
-				if (myViewer != null)
+				public void run()
 				{
-					myViewer.refresh();
+					if (myViewer != null)
+					{
+						myViewer.refresh();
+					}
 				}
-			}
-		};
+			};
 		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate()
-		{
-			public void dispose()
 			{
-			}
+				public void dispose()
+				{
+				}
 
-			public boolean handleResourceChanged(final Resource resource)
-			{
-				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();)
+				public boolean handleResourceChanged(final Resource resource)
 				{
-					Resource nextResource = (Resource) it.next();
-					nextResource.unload();
+					unloadAllResources();
+					asyncRefresh();
+					return true;
 				}
-				if (myViewer != null)
-				{
-					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
-				}
-				return true;
-			}
 
-			public boolean handleResourceDeleted(Resource resource)
-			{
-				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();)
+				public boolean handleResourceDeleted(Resource resource)
 				{
-					Resource nextResource = (Resource) it.next();
-					nextResource.unload();
+					unloadAllResources();
+					asyncRefresh();
+					return true;
 				}
-				if (myViewer != null)
-				{
-					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
-				}
-				return true;
-			}
 
-			public boolean handleResourceMoved(Resource resource, final URI newURI)
-			{
-				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();)
+				public boolean handleResourceMoved(Resource resource, final URI newURI)
 				{
-					Resource nextResource = (Resource) it.next();
-					nextResource.unload();
+					unloadAllResources();
+					asyncRefresh();
+					return true;
 				}
-				if (myViewer != null)
-				{
-					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
-				}
-				return true;
-			}
-		});
+			});
 	}
 
 	/**
@@ -144,11 +124,8 @@ public class RentalDomainNavigatorContentProvider implements ICommonContentProvi
 		myWorkspaceSynchronizer.dispose();
 		myWorkspaceSynchronizer = null;
 		myViewerRefreshRunnable = null;
-		for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();)
-		{
-			Resource resource = (Resource) it.next();
-			resource.unload();
-		}
+		myViewer = null;
+		unloadAllResources();
 		((TransactionalEditingDomain) myEditingDomain).dispose();
 		myEditingDomain = null;
 	}
@@ -159,6 +136,28 @@ public class RentalDomainNavigatorContentProvider implements ICommonContentProvi
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput)
 	{
 		myViewer = viewer;
+	}
+
+	/**
+	 * @generated
+	 */
+	void unloadAllResources()
+	{
+		for (Resource nextResource : myEditingDomain.getResourceSet().getResources())
+		{
+			nextResource.unload();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	void asyncRefresh()
+	{
+		if (myViewer != null && !myViewer.getControl().isDisposed())
+		{
+			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
+		}
 	}
 
 	/**
@@ -205,7 +204,9 @@ public class RentalDomainNavigatorContentProvider implements ICommonContentProvi
 
 		if (parentElement instanceof RentalDomainNavigatorItem)
 		{
-			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(((RentalDomainNavigatorItem) parentElement).getEObject()), parentElement);
+			return wrapEObjects(
+					myAdapterFctoryContentProvier.getChildren(((RentalDomainNavigatorItem) parentElement).getEObject()),
+					parentElement);
 		}
 		return EMPTY_ARRAY;
 	}

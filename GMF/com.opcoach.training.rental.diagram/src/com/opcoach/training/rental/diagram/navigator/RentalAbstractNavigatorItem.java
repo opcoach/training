@@ -16,32 +16,32 @@ public abstract class RentalAbstractNavigatorItem extends PlatformObject
 	 */
 	static
 	{
-		final Class[] supportedTypes = new Class[]
-		{ ITabbedPropertySheetPageContributor.class };
+		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor()
-		{
-			public String getContributorId()
 			{
-				return "com.opcoach.training.rental.diagram"; //$NON-NLS-1$
-			}
-		};
-		Platform.getAdapterManager().registerAdapters(new IAdapterFactory()
-		{
-
-			public Object getAdapter(Object adaptableObject, Class adapterType)
-			{
-				if (adaptableObject instanceof com.opcoach.training.rental.diagram.navigator.RentalAbstractNavigatorItem && adapterType == ITabbedPropertySheetPageContributor.class)
+				public String getContributorId()
 				{
-					return propertySheetPageContributor;
+					return "com.opcoach.training.rental.diagram"; //$NON-NLS-1$
 				}
-				return null;
-			}
-
-			public Class[] getAdapterList()
+			};
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory()
 			{
-				return supportedTypes;
-			}
-		}, com.opcoach.training.rental.diagram.navigator.RentalAbstractNavigatorItem.class);
+
+				public Object getAdapter(Object adaptableObject, Class adapterType)
+				{
+					if (adaptableObject instanceof com.opcoach.training.rental.diagram.navigator.RentalAbstractNavigatorItem
+							&& adapterType == ITabbedPropertySheetPageContributor.class)
+					{
+						return propertySheetPageContributor;
+					}
+					return null;
+				}
+
+				public Class[] getAdapterList()
+				{
+					return supportedTypes;
+				}
+			}, com.opcoach.training.rental.diagram.navigator.RentalAbstractNavigatorItem.class);
 	}
 
 	/**

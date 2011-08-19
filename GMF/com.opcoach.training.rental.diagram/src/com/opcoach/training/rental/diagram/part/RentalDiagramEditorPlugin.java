@@ -20,6 +20,8 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import com.opcoach.training.rental.diagram.edit.policies.RentalBaseItemSemanticEditPolicy;
+import com.opcoach.training.rental.diagram.providers.ElementInitializers;
 import com.opcoach.training.rental.provider.RentalItemProviderAdapterFactory;
 
 /**
@@ -56,6 +58,16 @@ public class RentalDiagramEditorPlugin extends AbstractUIPlugin
 	/**
 	 * @generated
 	 */
+	private RentalBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+
+	/**
+	 * @generated
+	 */
+	private ElementInitializers initializers;
+
+	/**
+	 * @generated
+	 */
 	public RentalDiagramEditorPlugin()
 	{
 	}
@@ -78,6 +90,8 @@ public class RentalDiagramEditorPlugin extends AbstractUIPlugin
 	{
 		adapterFactory.dispose();
 		adapterFactory = null;
+		linkConstraints = null;
+		initializers = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -95,7 +109,7 @@ public class RentalDiagramEditorPlugin extends AbstractUIPlugin
 	 */
 	protected ComposedAdapterFactory createAdapterFactory()
 	{
-		List factories = new ArrayList();
+		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
 		return new ComposedAdapterFactory(factories);
 	}
@@ -103,7 +117,7 @@ public class RentalDiagramEditorPlugin extends AbstractUIPlugin
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(List factories)
+	protected void fillItemProviderFactories(List<AdapterFactory> factories)
 	{
 		factories.add(new RentalItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
@@ -159,8 +173,7 @@ public class RentalDiagramEditorPlugin extends AbstractUIPlugin
 		if (p.isAbsolute() && p.segmentCount() > 1)
 		{
 			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p.removeFirstSegments(1).makeAbsolute().toString());
-		}
-		else
+		} else
 		{
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
 		}
@@ -205,6 +218,38 @@ public class RentalDiagramEditorPlugin extends AbstractUIPlugin
 			documentProvider = new RentalDocumentProvider();
 		}
 		return documentProvider;
+	}
+
+	/**
+	 * @generated
+	 */
+	public RentalBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints()
+	{
+		return linkConstraints;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setLinkConstraints(RentalBaseItemSemanticEditPolicy.LinkConstraints lc)
+	{
+		this.linkConstraints = lc;
+	}
+
+	/**
+	 * @generated
+	 */
+	public ElementInitializers getElementInitializers()
+	{
+		return initializers;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setElementInitializers(ElementInitializers i)
+	{
+		this.initializers = i;
 	}
 
 	/**

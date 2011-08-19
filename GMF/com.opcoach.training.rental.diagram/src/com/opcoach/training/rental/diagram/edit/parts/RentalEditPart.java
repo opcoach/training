@@ -1,6 +1,7 @@
 package com.opcoach.training.rental.diagram.edit.parts;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
@@ -77,29 +78,29 @@ public class RentalEditPart extends ShapeNodeEditPart
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy()
 	{
-		LayoutEditPolicy lep = new LayoutEditPolicy()
-		{
-
-			protected EditPolicy createChildEditPolicy(EditPart child)
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy()
 			{
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null)
+
+				protected EditPolicy createChildEditPolicy(EditPart child)
 				{
-					result = new NonResizableEditPolicy();
+					EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+					if (result == null)
+					{
+						result = new NonResizableEditPolicy();
+					}
+					return result;
 				}
-				return result;
-			}
 
-			protected Command getMoveChildrenCommand(Request request)
-			{
-				return null;
-			}
+				protected Command getMoveChildrenCommand(Request request)
+				{
+					return null;
+				}
 
-			protected Command getCreateCommand(CreateRequest request)
-			{
-				return null;
-			}
-		};
+				protected Command getCreateCommand(CreateRequest request)
+				{
+					return null;
+				}
+			};
 		return lep;
 	}
 
@@ -108,8 +109,7 @@ public class RentalEditPart extends ShapeNodeEditPart
 	 */
 	protected IFigure createNodeShape()
 	{
-		RentalFigure figure = new RentalFigure();
-		return primaryShape = figure;
+		return primaryShape = new RentalFigure();
 	}
 
 	/**
@@ -288,9 +288,9 @@ public class RentalEditPart extends ShapeNodeEditPart
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource()
+	public List<IElementType> getMARelTypesOnSource()
 	{
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(RentalElementTypes.RentalCustomer_4001);
 		types.add(RentalElementTypes.RentalRentedObject_4002);
 		return types;
@@ -299,9 +299,9 @@ public class RentalEditPart extends ShapeNodeEditPart
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart)
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart)
 	{
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof CustomerEditPart)
 		{
 			types.add(RentalElementTypes.RentalCustomer_4001);
@@ -316,14 +316,13 @@ public class RentalEditPart extends ShapeNodeEditPart
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType)
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType)
 	{
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == RentalElementTypes.RentalCustomer_4001)
 		{
 			types.add(RentalElementTypes.Customer_2003);
-		}
-		if (relationshipType == RentalElementTypes.RentalRentedObject_4002)
+		} else if (relationshipType == RentalElementTypes.RentalRentedObject_4002)
 		{
 			types.add(RentalElementTypes.RentalObject_2002);
 		}
@@ -348,7 +347,8 @@ public class RentalEditPart extends ShapeNodeEditPart
 		{
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setLineWidth(1);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode()
+					.DPtoLP(5)));
 			createContents();
 		}
 

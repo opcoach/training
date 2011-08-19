@@ -1,6 +1,7 @@
 package com.opcoach.training.rental.diagram.part;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.gef.Tool;
@@ -11,6 +12,7 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import com.opcoach.training.rental.diagram.providers.RentalElementTypes;
 
 /**
@@ -62,7 +64,7 @@ public class RentalPaletteFactory
 	 */
 	private ToolEntry createAddress1CreationTool()
 	{
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(RentalElementTypes.Address_2001);
 		types.add(RentalElementTypes.Address_3001);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Address1CreationTool_title, Messages.Address1CreationTool_desc, types);
@@ -77,9 +79,8 @@ public class RentalPaletteFactory
 	 */
 	private ToolEntry createCustomer2CreationTool()
 	{
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(RentalElementTypes.Customer_2003);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Customer2CreationTool_title, Messages.Customer2CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Customer2CreationTool_title, Messages.Customer2CreationTool_desc,
+				Collections.singletonList(RentalElementTypes.Customer_2003));
 		entry.setId("createCustomer2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(RentalElementTypes.getImageDescriptor(RentalElementTypes.Customer_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -91,9 +92,8 @@ public class RentalPaletteFactory
 	 */
 	private ToolEntry createLicense3CreationTool()
 	{
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(RentalElementTypes.License_3002);
-		NodeToolEntry entry = new NodeToolEntry(Messages.License3CreationTool_title, Messages.License3CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.License3CreationTool_title, Messages.License3CreationTool_desc,
+				Collections.singletonList(RentalElementTypes.License_3002));
 		entry.setId("createLicense3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(RentalElementTypes.getImageDescriptor(RentalElementTypes.License_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -105,9 +105,8 @@ public class RentalPaletteFactory
 	 */
 	private ToolEntry createRental4CreationTool()
 	{
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(RentalElementTypes.Rental_2004);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Rental4CreationTool_title, Messages.Rental4CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Rental4CreationTool_title, Messages.Rental4CreationTool_desc,
+				Collections.singletonList(RentalElementTypes.Rental_2004));
 		entry.setId("createRental4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(RentalElementTypes.getImageDescriptor(RentalElementTypes.Rental_2004));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -119,9 +118,8 @@ public class RentalPaletteFactory
 	 */
 	private ToolEntry createRentalObject5CreationTool()
 	{
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(RentalElementTypes.RentalObject_2002);
-		NodeToolEntry entry = new NodeToolEntry(Messages.RentalObject5CreationTool_title, Messages.RentalObject5CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.RentalObject5CreationTool_title, Messages.RentalObject5CreationTool_desc,
+				Collections.singletonList(RentalElementTypes.RentalObject_2002));
 		entry.setId("createRentalObject5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(RentalElementTypes.getImageDescriptor(RentalElementTypes.RentalObject_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -133,9 +131,8 @@ public class RentalPaletteFactory
 	 */
 	private ToolEntry createCustomer1CreationTool()
 	{
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(RentalElementTypes.RentalCustomer_4001);
-		LinkToolEntry entry = new LinkToolEntry(Messages.Customer1CreationTool_title, Messages.Customer1CreationTool_desc, types);
+		LinkToolEntry entry = new LinkToolEntry(Messages.Customer1CreationTool_title, Messages.Customer1CreationTool_desc,
+				Collections.singletonList(RentalElementTypes.RentalCustomer_4001));
 		entry.setId("createCustomer1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(RentalElementTypes.getImageDescriptor(RentalElementTypes.RentalCustomer_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -147,9 +144,8 @@ public class RentalPaletteFactory
 	 */
 	private ToolEntry createRentedObject2CreationTool()
 	{
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(RentalElementTypes.RentalRentedObject_4002);
-		LinkToolEntry entry = new LinkToolEntry(Messages.RentedObject2CreationTool_title, Messages.RentedObject2CreationTool_desc, types);
+		LinkToolEntry entry = new LinkToolEntry(Messages.RentedObject2CreationTool_title, Messages.RentedObject2CreationTool_desc,
+				Collections.singletonList(RentalElementTypes.RentalRentedObject_4002));
 		entry.setId("createRentedObject2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(RentalElementTypes.getImageDescriptor(RentalElementTypes.RentalRentedObject_4002));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -165,12 +161,12 @@ public class RentalPaletteFactory
 		/**
 		 * @generated
 		 */
-		private final List elementTypes;
+		private final List<IElementType> elementTypes;
 
 		/**
 		 * @generated
 		 */
-		private NodeToolEntry(String title, String description, List elementTypes)
+		private NodeToolEntry(String title, String description, List<IElementType> elementTypes)
 		{
 			super(title, description, null, null);
 			this.elementTypes = elementTypes;
@@ -196,12 +192,12 @@ public class RentalPaletteFactory
 		/**
 		 * @generated
 		 */
-		private final List relationshipTypes;
+		private final List<IElementType> relationshipTypes;
 
 		/**
 		 * @generated
 		 */
-		private LinkToolEntry(String title, String description, List relationshipTypes)
+		private LinkToolEntry(String title, String description, List<IElementType> relationshipTypes)
 		{
 			super(title, description, null, null);
 			this.relationshipTypes = relationshipTypes;
