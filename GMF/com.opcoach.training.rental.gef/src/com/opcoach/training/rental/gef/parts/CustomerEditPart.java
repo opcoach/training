@@ -39,6 +39,19 @@ public class CustomerEditPart extends AbstractGraphicalEditPart
 		lastLocation = new Point(b.x + b.width + 2, b.y);
 		return result;
 	}
+	
+	
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.gef.editparts.AbstractEditPart#refreshVisuals()
+	 */
+	@Override
+	protected void refreshVisuals()
+	{
+		CustomerFigure fig = (CustomerFigure) getFigure();
+		Customer c = (Customer) getModel();
+		fig.setName(c.getDisplayName());
+	}
 
 	@Override
 	protected void createEditPolicies()

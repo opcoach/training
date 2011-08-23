@@ -19,6 +19,7 @@ import org.eclipse.gef.ui.parts.GraphicalEditorWithFlyoutPalette;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 
@@ -72,6 +73,13 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		return palette;
 	}
 
+	/** A private method to create the default starting model */
+	protected RentalAgency createAgencyModel()
+	{
+		return RentalAgencyGenerator.createSampleAgency();
+	}
+	
+	
 	/* (non-Javadoc)
 	 * @see org.eclipse.gef.ui.parts.GraphicalEditorWithFlyoutPalette#initializeGraphicalViewer()
 	 */
@@ -80,8 +88,7 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 	{
 		// element associated to root edit part
 		GraphicalViewer viewer = getGraphicalViewer();
-       //  viewer.setContents(RentalFactory.eINSTANCE.createRentalAgency());
-        viewer.setContents(RentalAgencyGenerator.createSampleAgency());
+        viewer.setContents(createAgencyModel());
     }
 	
 	@Override

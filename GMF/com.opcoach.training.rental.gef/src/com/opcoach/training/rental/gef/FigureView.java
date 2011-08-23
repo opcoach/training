@@ -1,5 +1,7 @@
 package com.opcoach.training.rental.gef;
 
+import java.util.Date;
+
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LightweightSystem;
@@ -49,20 +51,24 @@ public class FigureView extends ViewPart {
 	    ovf.add(c3);
 	   
 	    RentalFigure fg1 = new RentalFigure();
+	    fg1.setDates(new Date(), new Date(System.currentTimeMillis()+3600000L));
 	    fg1.setLocation(new Point(0, b.y+b.height));
 	    Rectangle fgb = fg1.getBounds();
 	    ovf.add(fg1);
 
 	    RentalFigure fg2 = new RentalFigure();
+	    fg2.setDates(new Date(), new Date(System.currentTimeMillis()+3600000L));
 	    fg2.setLocation(new Point(fgb.x+fgb.width + 2, fgb.y));
 	    ovf.add(fg2);
 	    
 	    RentalObjectFigure ro1 = new RentalObjectFigure();
+	    ro1.setObjectName("Helico");
 	    ro1.setLocation(new Point(0, fgb.y+fgb.height));
 	    Rectangle rob = ro1.getBounds();
 	    ovf.add(ro1);
 
 	    RentalObjectFigure ro2 = new RentalObjectFigure();
+	    ro2.setObjectName("Perceuse");
 	    ro2.setLocation(new Point(rob.x+rob.width + 2, rob.y));
 	    ovf.add(ro2);
 

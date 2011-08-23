@@ -5,9 +5,16 @@
 
 package com.opcoach.training.rental.gef.parts;
 
+import java.rmi.server.RemoteObject;
+
+import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 
+import com.opcoach.training.rental.RentalObject;
+import com.opcoach.training.rental.gef.figures.CustomerFigure;
 import com.opcoach.training.rental.gef.figures.RentalObjectFigure;
 
 /**
@@ -17,10 +24,16 @@ import com.opcoach.training.rental.gef.figures.RentalObjectFigure;
 public class RentalObjectEditPart extends AbstractGraphicalEditPart
 {
 
+	private static Point lastLocation = new Point(0,CustomerFigure.H+ 60);
+
 	@Override
 	protected IFigure createFigure()
 	{
-		return new RentalObjectFigure();
+		Figure f =  new RentalObjectFigure();
+		f.setLocation(lastLocation);
+		Rectangle b = f.getBounds();
+		lastLocation = new Point(b.x + b.width + 2, b.y);
+		return f;
 	}
 
 	@Override
@@ -29,5 +42,21 @@ public class RentalObjectEditPart extends AbstractGraphicalEditPart
 		// TODO Auto-generated method stub
 
 	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.gef.editparts.AbstractEditPart#refreshVisuals()
+	 */
+	@Override
+	protected void refreshVisuals()
+	{
+		
+		super.refreshVisuals();
+		RentalObjectFigure fig = (RentalObjectFigure) getFigure();
+		RentalObject ro = (RentalObject) getModel();
+		fig.setObjectName(ro.getName());
+		
+	}
+	
+	
 
 }
