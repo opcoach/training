@@ -1,9 +1,9 @@
 package com.opcoach.training.gef.commands;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 /**
  * An implementation of  ChangeBoundsCirleCommand
  * for changing the bounds of the Circle.
@@ -14,9 +14,9 @@ public class ChangeBoundsCommand extends Command
 {
 	
 	private IFigure figure;
-
-    private Point newLocation;
-    private Point oldLocation;
+    
+    private Rectangle newBounds, oldBounds;
+    private AbstractGraphicalEditPart part ;
 
     /**
      * Constructor
@@ -24,11 +24,13 @@ public class ChangeBoundsCommand extends Command
      * @param element the element to resize
      * @param constraint the new rectangle that contain the figure
      */
-    public ChangeBoundsCommand(final IFigure element, final Rectangle constraint)
+    public ChangeBoundsCommand(final AbstractGraphicalEditPart p, final Rectangle constraint)
     {
-        super("Move Object");
-        setElement(element);
-        setNewLocation(new Point(constraint.x, constraint.y));
+        super("Move or resize Object");
+        figure = p.getFigure();
+        part = p;
+        oldBounds = figure.getBounds();
+        setNewBounds(constraint);
     }
 
     /**
@@ -37,8 +39,8 @@ public class ChangeBoundsCommand extends Command
     public boolean canExecute()
     {
     	return figure != null
-                && newLocation != null
-                && (!(newLocation.equals(new Point(getX(), getY()))));
+                && newBounds != null
+                && (!(newBounds.equals(figure.getBounds())));
     }
 
     /**
@@ -46,7 +48,7 @@ public class ChangeBoundsCommand extends Command
      */
     public void execute()
     {
-    	oldLocation = new Point(getX(), getY());
+        oldBounds = figure.getBounds();
         redo();
     }
 
@@ -55,18 +57,18 @@ public class ChangeBoundsCommand extends Command
      */
     public void redo()
     {
-    	Point p = new Point(newLocation.x, newLocation.y);
-        figure.setLocation(p);
+    	//Rectangle r = new Rectangle()
+    	/*Point p = new Point(newLocation.x, newLocation.y);
+        figure.setLocation(p);*/
+    	figure.setBounds(newBounds);
+    	part.refresh();
     }
 
-    private void setElement(final IFigure element)
-    {
-        this.figure = element;
-    }
 
-    private void setNewLocation(final Point loc)
+
+    private void setNewBounds(final Rectangle r)
     {
-        newLocation = loc;
+        newBounds = r;
     }
 
     
@@ -76,17 +78,8 @@ public class ChangeBoundsCommand extends Command
      */
     public void undo()
     {
-    	Point p = new Point(oldLocation.x, oldLocation.y);
-    	figure.setLocation(p);
+    	figure.setBounds(oldBounds);
      }
     
-    private int getX()
-    {
-    	return figure.getBounds().x;
-    }
-    private int getY()
-    {
-    	return figure.getBounds().y;
-    }
 
 }

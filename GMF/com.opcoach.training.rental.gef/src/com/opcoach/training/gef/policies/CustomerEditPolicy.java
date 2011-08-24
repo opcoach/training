@@ -15,7 +15,7 @@ public class CustomerEditPolicy extends  ComponentEditPolicy
 
 	protected Command createDeleteCommand(final GroupRequest request)
 	    {
-		  System.out.println(" Host is : " + getHost().getClass().getName());
+		  System.out.println(" Create DeleteCommand, Host is : " + getHost().getClass().getName());
 		  RentalAgency parent = (RentalAgency) getHost().getParent().getModel();
 	        Customer child = ((CustomerEditPart) getHost()).getCustomer();
 	        DeleteCustomerCommand deleteCmd = new DeleteCustomerCommand(child, parent);

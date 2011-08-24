@@ -3,6 +3,7 @@ package com.opcoach.training.gef.policies;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
@@ -12,10 +13,11 @@ import org.eclipse.gef.requests.CreateRequest;
 
 import com.opcoach.training.gef.commands.ChangeBoundsCommand;
 import com.opcoach.training.gef.commands.CreateCustomerCommand;
+import com.opcoach.training.gef.commands.CreateRentalObjectCommand;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.gef.figures.CustomerFigure;
-import com.opcoach.training.rental.gef.parts.CustomerEditPart;
+import com.opcoach.training.rental.RentalObject;
+import com.opcoach.training.rental.gef.parts.AbstractRentalEditPart;
 
 public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
 {
@@ -54,7 +56,7 @@ public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
     	//return new ChangeBoundsCommand(locatedElement, (Rectangle) constraint);
     	if (child  instanceof AbstractGraphicalEditPart){
     		AbstractGraphicalEditPart cep = (AbstractGraphicalEditPart) child;
-    		command =    new ChangeBoundsCommand(cep.getFigure(), (Rectangle) constraint);
+    		command =    new ChangeBoundsCommand(cep, (Rectangle) constraint);
     	}
     	
     	return command;
@@ -80,9 +82,35 @@ public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
         	{
         		command = new CreateCustomerCommand((Customer) newObject,  parentAgency, constraint);
         	}
+        	else if (newObject instanceof RentalObject)
+        	{
+        		command = new CreateRentalObjectCommand((RentalObject) newObject,  parentAgency, constraint);
+        	}
         }
         
         return command;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.gef.editpolicies.ConstrainedLayoutEditPolicy#getResizeChildrenCommand(org.eclipse.gef.requests.ChangeBoundsRequest)
+	 */
+	@Override
+	protected Command getResizeChildrenCommand(ChangeBoundsRequest request)
+	{
+		// TODO Auto-generated method stub
+		return super.getResizeChildrenCommand(request);
+	}
+
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.gef.editpolicies.ConstrainedLayoutEditPolicy#getMoveChildrenCommand(org.eclipse.gef.Request)
+	 */
+	@Override
+	protected Command getMoveChildrenCommand(Request request)
+	{
+		// TODO Auto-generated method stub
+		return super.getMoveChildrenCommand(request);
 	}
 
 

@@ -12,11 +12,8 @@ import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.XYLayout;
-import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.RootComponentEditPolicy;
 
 import com.opcoach.training.gef.policies.RentalAgencyEditPolicy;
@@ -25,7 +22,7 @@ import com.opcoach.training.rental.RentalAgency;
 /**
  * @author olivier
  */
-public class RentalAgencyEditPart extends AbstractGraphicalEditPart implements Adapter
+public class RentalAgencyEditPart extends AbstractRentalEditPart
 {
 
 	private IFigure figure;
@@ -86,58 +83,17 @@ public class RentalAgencyEditPart extends AbstractGraphicalEditPart implements A
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#activate()
+	/* (non-Javadoc)
+	 * @see com.opcoach.training.rental.gef.parts.AbstractRentalEditPart#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
-	@Override
-	public void activate()
-	{
-		super.activate();
-		getAgency().eAdapters().add(this);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#deactivate()
-	 */
-	@Override
-	public void deactivate()
-	{
-		// TODO Auto-generated method stub
-		super.deactivate();
-	}
-
 	@Override
 	public void notifyChanged(Notification notification)
 	{
-		refreshVisuals();
-	}
-
-	@Override
-	public Notifier getTarget()
-	{
 		// TODO Auto-generated method stub
-		return null;
+		super.notifyChanged(notification);
+		refreshChildren();
 	}
 
-	@Override
-	public void setTarget(Notifier newTarget)
-	{
-		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public boolean isAdapterForType(Object type)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	/*
-	 * @Override protected IFigure createFigure() { return new CustomerFigure();
-	 * }
-	 */
 
 }

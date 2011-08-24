@@ -9,7 +9,6 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 
 import com.opcoach.training.gef.policies.CustomerEditPolicy;
 import com.opcoach.training.rental.Customer;
@@ -18,7 +17,7 @@ import com.opcoach.training.rental.gef.figures.CustomerFigure;
 /**
  * @author olivier
  */
-public class CustomerEditPart extends AbstractGraphicalEditPart
+public class CustomerEditPart extends AbstractRentalEditPart
 
 {
 	private static Point lastLocation = new Point(0,50);
@@ -99,6 +98,7 @@ public class CustomerEditPart extends AbstractGraphicalEditPart
 	{
 		return (Customer) getModel();
 	}
+
 	
 
 }

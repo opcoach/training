@@ -15,7 +15,10 @@ import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.PanningSelectionToolEntry;
 import org.eclipse.gef.palette.ToolEntry;
+import org.eclipse.gef.ui.actions.ActionRegistry;
 import org.eclipse.gef.ui.parts.GraphicalEditorWithFlyoutPalette;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.PropertySheetPage;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
@@ -31,6 +34,9 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 {
 	
 	public static final String ID = "com.opcoach.training.rental.gef.rental.editor";
+	
+	private IPropertySheetPage propertySheetPage;
+
 
 	public RentalGraphicalEditor()
 	{
@@ -123,5 +129,64 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		// TODO Auto-generated method stub
 
 	}
+	
+	/**
+	 * This is how the framework determines which interfaces we implement.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Object getAdapter(Class key)
+	{
+		 /*if (key.equals(IContentOutlinePage.class))
+		{
+			return showOutlineView() ? getContentOutlinePage() : null;
+		}
+		else*/ if (key.equals(IPropertySheetPage.class))
+		{
+			return getPropertySheetPage();
+		}
+		/*
+		else if (key.equals(IGotoMarker.class))
+		{
+			return this;
+		}*/
+		else
+		{
+			return super.getAdapter(key);
+		}
+	}
 
+	/**
+	 * This accesses a cached version of the property sheet.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IPropertySheetPage getPropertySheetPage()
+	{
+		if (propertySheetPage == null)
+		{
+			propertySheetPage =	new PropertySheetPage();
+
+		}
+
+		return propertySheetPage;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.gef.ui.parts.GraphicalEditor#getActionRegistry()
+	 */
+	@Override
+	protected ActionRegistry getActionRegistry()
+	{
+		return super.getActionRegistry();
+	}
+	
+	
+
+	
 }
