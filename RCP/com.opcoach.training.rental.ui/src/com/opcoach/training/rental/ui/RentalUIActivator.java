@@ -47,6 +47,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	{
 		super.start(context); 
 		plugin = this;
+		System.out.println("Start rental ui bundle");
 		readColorProviderExtensions();
 		
 	}

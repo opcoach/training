@@ -57,27 +57,8 @@
             class="com.opcoach.training.rental.ui.pref.RentalPrefInit">
       </initializer>
    </extension>
-   <extension
-         name="AdapterToRental"
-         point="org.eclipse.core.runtime.adapters">
-      <factory
-            adaptableType="org.eclipse.core.resources.IFile"
-            class="com.opcoach.training.rental.adapter.RentalAdapterFactory">
-         <adapter
-               type="com.opcoach.training.rental.Rental">
-         </adapter>
-      </factory>
-   </extension>
-   <extension
-         point="org.eclipse.ui.propertyPages">
-      <page
-            class="com.opcoach.training.rental.property.RentalProperty"
-            id="com.opcoach.training.rental.ui.rentalproperty"
-            name="Rental"
-            nameFilter="*.rental"
-            objectClass="org.eclipse.core.resources.IFile">
-      </page>
-   </extension>
+   
+ 
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
