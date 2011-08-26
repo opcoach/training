@@ -91,15 +91,6 @@ public interface CarrentalPackage extends EPackage
 	int VEHICLE__NAME = RentalPackage.RENTAL_OBJECT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Picture</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VEHICLE__PICTURE = RentalPackage.RENTAL_OBJECT__PICTURE;
-
-	/**
 	 * The feature id for the '<em><b>Parent Agency</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,6 +98,15 @@ public interface CarrentalPackage extends EPackage
 	 * @ordered
 	 */
 	int VEHICLE__PARENT_AGENCY = RentalPackage.RENTAL_OBJECT__PARENT_AGENCY;
+
+	/**
+	 * The feature id for the '<em><b>Dispo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VEHICLE__DISPO = RentalPackage.RENTAL_OBJECT__DISPO;
 
 	/**
 	 * The feature id for the '<em><b>Plate Number</b></em>' attribute.
@@ -164,15 +164,6 @@ public interface CarrentalPackage extends EPackage
 	int CAR__NAME = VEHICLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Picture</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAR__PICTURE = VEHICLE__PICTURE;
-
-	/**
 	 * The feature id for the '<em><b>Parent Agency</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,6 +171,15 @@ public interface CarrentalPackage extends EPackage
 	 * @ordered
 	 */
 	int CAR__PARENT_AGENCY = VEHICLE__PARENT_AGENCY;
+
+	/**
+	 * The feature id for the '<em><b>Dispo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAR__DISPO = VEHICLE__DISPO;
 
 	/**
 	 * The feature id for the '<em><b>Plate Number</b></em>' attribute.
@@ -337,15 +337,6 @@ public interface CarrentalPackage extends EPackage
 	int BIKE__NAME = VEHICLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Picture</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIKE__PICTURE = VEHICLE__PICTURE;
-
-	/**
 	 * The feature id for the '<em><b>Parent Agency</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,6 +344,15 @@ public interface CarrentalPackage extends EPackage
 	 * @ordered
 	 */
 	int BIKE__PARENT_AGENCY = VEHICLE__PARENT_AGENCY;
+
+	/**
+	 * The feature id for the '<em><b>Dispo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIKE__DISPO = VEHICLE__DISPO;
 
 	/**
 	 * The feature id for the '<em><b>Plate Number</b></em>' attribute.
@@ -435,6 +435,15 @@ public interface CarrentalPackage extends EPackage
 	 * @ordered
 	 */
 	int DRIVING_LICENSE__OWNER = RentalPackage.LICENSE__OWNER;
+
+	/**
+	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRIVING_LICENSE__EREFERENCE0 = RentalPackage.LICENSE__EREFERENCE0;
 
 	/**
 	 * The feature id for the '<em><b>Delivery Date</b></em>' attribute.
