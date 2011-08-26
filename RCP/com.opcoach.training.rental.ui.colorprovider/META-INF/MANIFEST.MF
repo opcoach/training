@@ -4,9 +4,10 @@ Bundle-Name: Colorprovider
 Bundle-SymbolicName: com.opcoach.training.rental.ui.colorprovider;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
-Require-Bundle: org.eclipse.ui,
+Require-Bundle: org.eclipse.ui;resolution:=optional,
  org.eclipse.core.runtime,
- com.opcoach.training.rental.ui
+ com.opcoach.training.rental.ui,
+ org.eclipse.rap.ui;bundle-version="1.4.0";resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.ui.colorprovider
