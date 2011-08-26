@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rap Rental Application
+Bundle-SymbolicName: com.opcoach.training.rental.rap; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.opcoach.training.rental.rap.Activator
+Bundle-Vendor: OPCOACH
+Require-Bundle: org.eclipse.rap.ui;resolution:=optional,
+ com.opcoach.training.rental.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: javax.servlet;version="2.4.0",
+ javax.servlet.http;version="2.4.0"
