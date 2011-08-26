@@ -19,18 +19,10 @@ import org.eclipse.draw2d.geometry.Rectangle;
 public class CustomerFigure extends Figure
 {
 	// Width and height for figures
-	public static final int W_INIT = 90;
-	public static final int H_INIT = 75;
-
-	private static final int W_HEAD = 20;
-	private static final int H_HEAD = 20;
-	private static final int W_BODY = 25;
-	private static final int H_BODY = 30;
-	private static final int H_NAME = 18;
-
+	public static final int W_INIT = 90, H_INIT=75;
+	private static final int W_HEAD = 20, H_HEAD = 20, W_BODY = 25, H_BODY = 30, H_NAME = 18;
 	private Label name;
-	private Ellipse head;
-	private Ellipse body;
+	private Ellipse head, body;
 
 	public CustomerFigure(String n)
 	{
@@ -57,9 +49,13 @@ public class CustomerFigure extends Figure
 	{
 		graphics.pushState();
 		graphics.setForegroundColor(ColorConstants.black);
-		graphics.drawRectangle(getBounds().x, getBounds().y, getBounds().width - 1, getBounds().height - 1);
+		Rectangle r = getBounds();
+		graphics.drawRectangle(r.x, r.y, r.width - 1, r.height - 1);
 		graphics.popState();
 	}
+
+	@Override
+	protected boolean useLocalCoordinates() { return true; 	}
 
 	/*
 	 * (non-Javadoc)
@@ -77,8 +73,7 @@ public class CustomerFigure extends Figure
 
 		if (head != null)
 		{
-			int w = rect.width;
-			int h = rect.height;
+			int w = rect.width, h = rect.height;
 			head.setBounds(new Rectangle((w - W_HEAD) / 2, 4, W_HEAD, H_HEAD));
 			body.setBounds(new Rectangle((w - W_BODY) / 2, 4 + H_HEAD, W_BODY, H_BODY));
 			name.setBounds(new Rectangle(1, h - H_NAME, w - 2, H_NAME));
@@ -86,11 +81,6 @@ public class CustomerFigure extends Figure
 
 	}
 
-	@Override
-	protected boolean useLocalCoordinates()
-	{
-		return true;
-	}
 
 	public void setName(String n)
 	{

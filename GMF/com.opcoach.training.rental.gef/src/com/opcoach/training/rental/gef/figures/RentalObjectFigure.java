@@ -31,7 +31,6 @@ public class RentalObjectFigure extends Figure
 		objectLabel.setForegroundColor(ColorConstants.darkBlue);
 		add(objectLabel);
 		setBounds(new Rectangle(0, 0, W_INIT, H_INIT));
-
 	}
 
 	protected void paintBorder(Graphics graphics)
