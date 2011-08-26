@@ -23,18 +23,24 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	// them in the fill methods. This ensures that the actions aren't recreated
 	// in the fill methods. 
 	private IWorkbenchAction exitAction;
+	private IWorkbenchAction prefAction;
 
 	protected void makeActions(IWorkbenchWindow window) {
 		// Creates the actions and registers them. Registering also 
 		// provides automatic disposal of the actions when the window is closed.
 		exitAction = ActionFactory.QUIT.create(window);
 		register(exitAction);
+		
+		prefAction = ActionFactory.PREFERENCES.create(window);
+		register(prefAction);
+
 	}
 
 	protected void fillMenuBar(IMenuManager menuBar) {
 		MenuManager fileMenu 
 		= new MenuManager("&File",IWorkbenchActionConstants.M_FILE);
 		menuBar.add(fileMenu);
+		fileMenu.add(prefAction);
 		fileMenu.add(exitAction);
 	}
 
