@@ -10,6 +10,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: .
 Export-Package: com.opcoach.training.rental.core,
  com.opcoach.training.rental.core.helpers
+Bundle-ClassPath: .
