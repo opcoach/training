@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Applications reelles" link_to="toc.xml#applisReelles"> 
+	<topic href="html/applisReelles/avis.html" label="Le système information Avis"> 
+		<topic label="Description" href="html/applisReelles/avis_Description.html" /> 
+	</topic>
+ <topic href="html/applisReelles/kiloutou.html" label="Kiloutou">
+ </topic>
+</toc>

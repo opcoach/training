@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Reference" link_to="toc.xml#reference"> 
+	<topic label="API Reference"  href="html/reference/javadoc/index.html">
+    <topic href="html/reference/javadoc/index.html" label="Javadoc">
+    </topic> 
+	</topic>
+ <link toc="tocSampleApplis.xml"/>
+</toc>

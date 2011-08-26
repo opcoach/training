@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.help.toc">
+      <toc file="toc.xml" primary="true"/>
+      <toc file="tocintro.xml"/>
+      <toc file="tocusage.xml"/>
+      <toc file="tocreference.xml"/>
+      <toc
+            file="tocSampleApplis.xml">
+      </toc>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts/rentalContext.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+      <cheatsheet
+            composite="false"
+            contentFile="cheatSheet/rentalCheatSheet.xml"
+            id="com.opcoach.training.rental.help.cheatsheet1"
+            name="Rental Cheat Sheet">
+      </cheatsheet>
+   </extension>
+
+</plugin>

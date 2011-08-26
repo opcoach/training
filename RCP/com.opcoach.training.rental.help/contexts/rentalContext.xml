@@ -1,0 +1,7 @@
+ <contexts> 
+      <context  id="rentalContext"> 
+        <description> This is a sample F1 help string.</description> 
+        <topic href="html/toc.html"  label="Rental Main Help"/> 
+      </context> 
+    </contexts> 
+ 
