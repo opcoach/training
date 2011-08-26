@@ -2,12 +2,12 @@
 <launchConfiguration type="org.eclipse.rap.ui.launch.RAPLauncher">
 <booleanAttribute key="append.args" value="true"/>
 <booleanAttribute key="askclear" value="false"/>
-<booleanAttribute key="automaticAdd" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
 <booleanAttribute key="automaticValidate" value="false"/>
 <stringAttribute key="bootstrap" value=""/>
 <stringAttribute key="checked" value="[NONE]"/>
 <booleanAttribute key="clearConfig" value="false"/>
-<booleanAttribute key="clearws" value="false"/>
+<booleanAttribute key="clearws" value="true"/>
 <stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/Rental RAP"/>
 <booleanAttribute key="default" value="true"/>
 <booleanAttribute key="default_auto_start" value="true"/>
@@ -41,5 +41,5 @@
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
 <booleanAttribute key="useDefaultConfigArea" value="true"/>
-<stringAttribute key="workspace_bundles" value="com.opcoach.training.rental.core@default:default,com.opcoach.training.rental.rap@default:default,com.opcoach.training.rental.ui@default:default,com.opcoach.training.rental@default:default,test.rap@default:default"/>
+<stringAttribute key="workspace_bundles" value="com.opcoach.training.rental.core@default:default,com.opcoach.training.rental.rap@default:default,com.opcoach.training.rental.ui.colorprovider@default:default,com.opcoach.training.rental.ui@default:default,com.opcoach.training.rental@default:default,test.rap@default:default"/>
 </launchConfiguration>
