@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rental RCP Application
+Bundle-SymbolicName: com.opcoach.training.rental.rcp;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.opcoach.training.rental.rcp.Activator
+Bundle-Vendor: OPCOACH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.opcoach.training.rental.ui,
+ org.eclipse.equinox.security
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
