@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+
+<extension
+         name="AdapterToRental"
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.core.resources.IFile"
+            class="com.opcoach.training.rental.adapter.ui.adapters.RentalAdapterFactory">
+         <adapter
+               type="com.opcoach.training.rental.Rental">
+         </adapter>
+      </factory>
+   </extension>
+   
+     <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="com.opcoach.training.rental.property.RentalProperty"
+            id="com.opcoach.training.rental.ui.rentalproperty"
+            name="Rental"
+            nameFilter="*.rental"
+            objectClass="org.eclipse.core.resources.IFile">
+      </page>
+   </extension>
+   
+
+</fragment>
