@@ -5,6 +5,7 @@
  */
 package com.opcoach.training.rental.util;
 
+import com.opcoach.training.rental.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -33,7 +34,7 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The cached model package.

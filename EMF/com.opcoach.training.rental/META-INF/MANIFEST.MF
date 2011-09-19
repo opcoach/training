@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: com.opcoach.training.rental;singleton:=true
 Bundle-Version: 1.0.1
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ model/
 Bundle-Vendor: OPCoach
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

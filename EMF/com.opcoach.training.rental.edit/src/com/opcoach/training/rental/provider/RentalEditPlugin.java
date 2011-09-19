@@ -22,7 +22,7 @@ public final class RentalEditPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * Keep track of the singleton.

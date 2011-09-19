@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rental:RentalAgency xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rental="http://com.opcoach.training/rental/1.0" xsi:schemaLocation="http://com.opcoach.training/rental/1.0 rental.ecore" name="Bordeaux">
+  <address/>
+  <objectsToRent name="Velo"/>
+  <customers firstName="John " lastName="Wayne"/>
+  <rentals customer="//@customers.0" rentedObject="//@objectsToRent.0" startDate="2009-12-03T00:00:00.000+0100" endDate="2010-12-10T00:00:00.000+0100"/>
+</rental:RentalAgency>

@@ -48,7 +48,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.

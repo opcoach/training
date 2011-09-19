@@ -5,6 +5,7 @@
  */
 package com.opcoach.training.rental.util;
 
+import com.opcoach.training.rental.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -37,7 +38,7 @@ public class RentalSwitch<T> extends Switch<T>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The cached model package

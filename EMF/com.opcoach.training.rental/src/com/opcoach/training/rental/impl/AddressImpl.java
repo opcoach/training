@@ -38,7 +38,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The default value of the '{@link #getStreetType() <em>Street Type</em>}' attribute.

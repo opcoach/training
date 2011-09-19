@@ -57,7 +57,7 @@ public class RentalActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * This keeps track of the active editor.

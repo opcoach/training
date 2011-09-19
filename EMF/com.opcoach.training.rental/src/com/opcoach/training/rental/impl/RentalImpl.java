@@ -43,7 +43,7 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.

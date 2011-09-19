@@ -103,7 +103,7 @@ public class RentalModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The supported extensions for created files.

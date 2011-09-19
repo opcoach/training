@@ -48,7 +48,7 @@ public class LicenseItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.

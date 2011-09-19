@@ -42,7 +42,7 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.

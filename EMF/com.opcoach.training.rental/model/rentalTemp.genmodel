@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="OPCoach @ 2011"
-    modelDirectory="/com.opcoach.training.rental/src" modelPluginID="com.opcoach.training.rental"
-    modelName="Rental" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
-    suppressGenModelAnnotations="false">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.opcoach.training.rental/src"
+    modelPluginID="com.opcoach.training.rental" modelName="RentalTemp" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false">
   <foreignModel>rental.ecore</foreignModel>
-  <genPackages prefix="Rental" basePackage="com.opcoach.training" disposableProviderFactory="true"
+  <genPackages prefix="Rental" basePackage="com.alu." disposableProviderFactory="true"
       ecorePackage="rental.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rental.ecore#//StreetType">
       <genEnumLiterals ecoreEnumLiteral="rental.ecore#//StreetType/Street"/>
@@ -81,7 +80,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rental.ecore#//Rental/rentedObject"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Rental/startDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Rental/endDate"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rental.ecore#//Rental/parentAgency"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//Rental/parentAgency"/>
       <genOperations ecoreOperation="rental.ecore#//Rental/nbDaysBooked"/>
     </genClasses>
   </genPackages>

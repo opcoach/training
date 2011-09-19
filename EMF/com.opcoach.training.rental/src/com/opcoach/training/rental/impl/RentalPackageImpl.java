@@ -38,7 +38,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * <!-- begin-user-doc -->

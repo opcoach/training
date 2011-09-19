@@ -5,6 +5,7 @@
  */
 package com.opcoach.training.rental.impl;
 
+import com.opcoach.training.rental.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -35,7 +36,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * Creates the default factory implementation.

@@ -5,6 +5,7 @@
  */
 package com.opcoach.training.rental.util;
 
+import com.opcoach.training.rental.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -36,7 +37,7 @@ public class RentalValidator extends EObjectValidator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The cached model package

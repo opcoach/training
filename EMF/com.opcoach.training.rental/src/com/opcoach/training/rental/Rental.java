@@ -37,7 +37,7 @@ public interface Rental extends EObject
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "OPCoach @ 2009";
+	String copyright = "OPCoach @ 2011";
 
 	/**
 	 * Returns the value of the '<em><b>Customer</b></em>' reference.

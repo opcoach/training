@@ -34,7 +34,7 @@ public interface RentalPackage extends EPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "OPCoach @ 2009";
+	String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The package name.

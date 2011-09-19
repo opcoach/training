@@ -45,7 +45,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2011";
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -237,16 +237,11 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 		r.setEndDate(to);
 		r.setCustomer(customer);
 		r.setRentedObject(rentedObject);
-		addRental(r);
+		getRentals().add(r);
 		return r;
 	}
 	
-	public void addRental(Rental r)
-	{
-		r.setParentAgency(this);
-		getRentals().add(r);
-	}
-
+	
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -271,6 +266,13 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	{
 		getObjectsToRent().add(object);
 		object.setParentAgency(this);
+	}
+
+	
+	public void addRental(Rental r)
+	{
+		r.setParentAgency(this);
+		getRentals().add(r);
 	}
 
 	/**

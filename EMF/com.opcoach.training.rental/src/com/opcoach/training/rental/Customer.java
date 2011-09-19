@@ -38,7 +38,7 @@ public interface Customer extends EObject
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "OPCoach @ 2009";
+	String copyright = "OPCoach @ 2011";
 
 	/**
 	 * Returns the value of the '<em><b>First Name</b></em>' attribute.
