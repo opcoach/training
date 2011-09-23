@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
+import org.eclipse.ui.views.properties.IPropertySource;
 
 /** An helper class to manage the activate and refresh of model
  *  All edit parts must inherits from this one
@@ -18,17 +19,7 @@ import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
  */
 public abstract class AbstractRentalEditPart extends AbstractGraphicalEditPart implements Adapter
 {
-
-	  /**
-	   * The last notifier set to this adapter.
-	   */
-	  private Notifier target = null;
-
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#activate()
-	 */
+	/* @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#activate() 	 */
 	@Override
 	public void activate()
 	{
@@ -37,18 +28,33 @@ public abstract class AbstractRentalEditPart extends AbstractGraphicalEditPart i
 		((EObject)getModel()).eAdapters().add(this);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#deactivate()
-	 */
+	/*  @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#deactivate() */
 	@Override
 	public void deactivate()
 	{
 		super.deactivate();
-		// Unlisten to the object model
+		// Stop listening to the object model
 		((EObject)getModel()).eAdapters().remove(this);
-
 	}
+	
+	@Override
+	public void notifyChanged(Notification notification)
+	{
+		System.out.println("Received a model change for model object : " + getModel().toString());
+	    switch( notification.getEventType() ) 
+	    {
+			case Notification.ADD:
+			case Notification.ADD_MANY:
+			case Notification.REMOVE:
+			case Notification.REMOVE_MANY:
+			          refreshChildren();
+			          break;
+			case Notification.SET:
+			          refreshVisuals();
+			          break;
+	    }
+     }	
+	
 	
 	public Object getAdapter(Class adapterClazz) {
 		Object adapter = null;
@@ -62,15 +68,6 @@ public abstract class AbstractRentalEditPart extends AbstractGraphicalEditPart i
 	}
 
 
-	@Override
-	public void notifyChanged(Notification notification)
-	{
-		System.out.println("Received a model change for model object : " + getModel().toString());
-		refreshVisuals();
-	}
-
-	
-
 	  /**
 	   * Returns <code>false</code>
 	   * @param type the type.
@@ -80,6 +77,12 @@ public abstract class AbstractRentalEditPart extends AbstractGraphicalEditPart i
 	  {
 	    return false;
 	  }
+
+	  /**
+	   * The last notifier set to this adapter.
+	   */
+	  private Notifier target = null;
+
 
 	  /** Adapter method implementation */
 	  public Notifier getTarget()

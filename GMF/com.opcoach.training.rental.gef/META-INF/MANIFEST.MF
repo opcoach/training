@@ -6,10 +6,14 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.opcoach.training.rental.gef.RentalGEFActivator
 Bundle-Vendor: OPCOACH
 Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.views,
+ org.eclipse.core.resources,
  org.eclipse.core.runtime,
  org.eclipse.gef,
+ org.eclipse.emf.edit.ui,
  com.opcoach.training.rental.core,
- org.eclipse.ui.views
+ com.opcoach.training.rental.edit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.gef,

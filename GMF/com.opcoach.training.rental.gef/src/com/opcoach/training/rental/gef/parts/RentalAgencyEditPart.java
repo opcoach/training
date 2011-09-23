@@ -77,6 +77,8 @@ public class RentalAgencyEditPart extends AbstractRentalEditPart
 	protected IFigure createFigure()
 	{
 		figure = (IFigure) new FreeformLayer();
+		// il faut mettre un XYLayout ou un descendant car on doit pouvoir bouger les objets
+		// --> Pas de gridlayout possible
 		figure.setLayoutManager(new FreeformLayout());
 
 		return figure;

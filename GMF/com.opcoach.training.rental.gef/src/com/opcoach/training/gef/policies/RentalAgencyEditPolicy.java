@@ -17,7 +17,6 @@ import com.opcoach.training.gef.commands.CreateRentalObjectCommand;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
-import com.opcoach.training.rental.gef.parts.AbstractRentalEditPart;
 
 public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
 {
@@ -73,7 +72,7 @@ public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
         
         final EditPart editPart = getHost(); 
         final RentalAgency parentAgency = (RentalAgency)editPart.getModel();
-        
+                
         Command command = UnexecutableCommand.INSTANCE;
         
         if (parentAgency != null)
