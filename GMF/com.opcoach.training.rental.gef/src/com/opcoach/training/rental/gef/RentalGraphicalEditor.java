@@ -201,11 +201,6 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		return palette;
 	}
 
-	/** A private method to create the default starting model */
-	/*protected RentalAgency createAgencyModel()
-	{
-		return RentalAgencyGenerator.createSampleAgency();
-	}*/
 	
 	
 	/* (non-Javadoc)
@@ -369,43 +364,44 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 	}
 
 
-	// private boolean isDirty = false;
+	 private boolean isDirty = false;
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.gef.ui.parts.GraphicalEditor#isDirty()
 	 */
 	@Override
-/*	public boolean isDirty()
+	public boolean isDirty()
 	{
 		return isDirty;
 	}
-	*/
+	
 
-	public boolean isDirty()
+/*	public boolean isDirty()
 	{
 		return (editingDomain == null) ? false : ((BasicCommandStack)editingDomain.getCommandStack()).isSaveNeeded();
 	}
+	*/
 
-/*	protected void setDirty(boolean dirty)
+	protected void setDirty(boolean dirty)
 	{
 		if (isDirty != dirty)
 		{
 			isDirty = dirty;
 			firePropertyChange(PROP_DIRTY);
 		}
-	}*/
+	}
 
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.gef.ui.parts.GraphicalEditor#commandStackChanged(java.util.EventObject)
 	 */
-	/*@Override
+	@Override
 	public void commandStackChanged(EventObject event)
 	{
 		super.commandStackChanged(event);
 		// Set the dirty state
 		setDirty(getEditDomain().getCommandStack().isDirty());
-	} */
+	} 
 	
 	
 
