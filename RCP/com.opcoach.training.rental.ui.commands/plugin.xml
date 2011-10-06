@@ -4,8 +4,8 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            id="macommande"
-            name="MA COMMANDE">
+            id="com.opcoach.training.rental.ui.commands.MaCommande"
+            name="Ma Commande">
          <state
                class="org.eclipse.ui.handlers.RadioState"
                id="com.opcoach.training.rental.ui.commands.state3">
@@ -16,56 +16,49 @@
          point="org.eclipse.ui.handlers">
       <handler
             class="com.opcoach.training.rental.ui.commands.SampleCommandHandler"
-            commandId="macommande">
+            commandId="com.opcoach.training.rental.ui.commands.MaCommande">
+      </handler>
+      <handler
+            class="com.opcoach.training.rental.ui.commands.CopyCustomer"
+            commandId="org.eclipse.ui.edit.copy">
+         <enabledWhen>
+            <reference
+                  definitionId="com.opcoach.training.rental.ui.commands.customerSelected">
+            </reference>
+         </enabledWhen>
+         <activeWhen>
+            <reference
+                  definitionId="com.opcoach.training.rental.ui.commands.customerSelected">
+            </reference>
+         </activeWhen>
       </handler>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="true"
-            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+            locationURI="popup:com.opcoach.rental.ui.rentalagencyview?after=additions">
          <menu
                label="Rental Menu">
-            <visibleWhen
-                  checkEnabled="false">
-               <reference
-                     definitionId="com.opcoach.training.rental.ui.commands.agencyview">
-               </reference>
-            </visibleWhen>
             <command
-                  commandId="com.opcoach.training.rental.ui.commands.samplecommand"
-                  label="Autre commande dans le sous menu"
+                  commandId="com.opcoach.training.rental.ui.commands.MaCommande"
+                  icon="icons/RentalCommand.png"
+                  label="Ma commande dans un menu"
                   style="push">
             </command>
          </menu>
-      </menuContribution>
-      <menuContribution
-            allPopups="true"
-            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-         <menu
-               label="Customer Menu">
+         <command
+               commandId="org.eclipse.ui.edit.copy"
+               icon="icons/RentalCommand.png"
+               label="Copy CUSTOMER"
+               style="push">
             <visibleWhen
                   checkEnabled="false">
                <reference
                      definitionId="com.opcoach.training.rental.ui.commands.customerSelected">
                </reference>
             </visibleWhen>
-            <command
-                  commandId="com.opcoach.training.rental.ui.commands.samplecommand"
-                  label="Commande dans le customer menu"
-                  style="push">
-            </command>
-            <command
-                  commandId="org.eclipse.ui.edit.paste"
-                  style="push">
-               <visibleWhen
-                     checkEnabled="false">
-                  <reference
-                        definitionId="com.opcoach.training.rental.ui.commands.customerSelected">
-                  </reference>
-               </visibleWhen>
-            </command>
-         </menu>
+         </command>
       </menuContribution>
       <menuContribution
             allPopups="false"
@@ -73,19 +66,7 @@
          <menu
                label="Pour Commande">
             <command
-                  commandId="macommande"
-                  style="push">
-            </command>
-         </menu>
-      </menuContribution>
-      <menuContribution
-            allPopups="true"
-            locationURI="popup:com.opcoach.rental.ui.rentalagencyview?after=additions">
-         <menu
-               label="POPUP AJOUTER DIRECT">
-            <command
-                  commandId="org.eclipse.ui.edit.paste"
-                  label="Paste CUSTOMER"
+                  commandId="com.opcoach.training.rental.ui.commands.MaCommande"
                   style="push">
             </command>
          </menu>
@@ -93,15 +74,18 @@
       <menuContribution
             allPopups="false"
             locationURI="menu:com.opcoach.rental.ui.rentalagencyview?after=additions">
-         <menu
-               id="com.opcoach.training.agencyviewMenu"
-               label="MENU DANS LA VUE">
-            <command
-                  commandId="org.eclipse.ui.edit.paste"
-                  label="Paste CUSTOMER"
-                  style="push">
-            </command>
-         </menu>
+         <command
+               commandId="org.eclipse.ui.edit.copy"
+               icon="icons/RentalCommand.png"
+               label="Copy CUSTOMER"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="com.opcoach.training.rental.ui.commands.customerSelected">
+               </reference>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
    <extension
@@ -123,27 +107,6 @@
             </instanceof>
          </iterate>
       </definition>
-      <definition
-            id="com.opcoach.training.rental.ui.commands.definition1">
-         <iterate></iterate>
-      </definition>
-   </extension>
-   <extension
-         point="org.eclipse.ui.handlers">
-      <handler
-            class="com.opcoach.training.rental.ui.commands.PasteCustomer"
-            commandId="org.eclipse.ui.edit.paste">
-         <enabledWhen>
-            <reference
-                  definitionId="com.opcoach.training.rental.ui.commands.customerSelected">
-            </reference>
-         </enabledWhen>
-         <activeWhen>
-            <reference
-                  definitionId="com.opcoach.training.rental.ui.commands.customerSelected">
-            </reference>
-         </activeWhen>
-      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.activities">
