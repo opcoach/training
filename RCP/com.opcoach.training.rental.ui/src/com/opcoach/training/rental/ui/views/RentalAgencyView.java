@@ -13,6 +13,8 @@ import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
@@ -63,10 +65,24 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 
 		getSite().setSelectionProvider(agencyViewer);
 
-		// On s'enregistre en tant que pref listener sur le preference store...
-		RentalUIActivator.getDefault().getPreferenceStore().addPropertyChangeListener(this);
 		
 	
+	}
+	
+	@Override
+	public void init(IViewSite site) throws PartInitException
+	{
+		super.init(site);
+		// On s'enregistre en tant que pref listener sur le preference store...
+		RentalUIActivator.getDefault().getPreferenceStore().addPropertyChangeListener(this);
+				
+	}
+	
+	@Override
+	public void dispose()
+	{
+		RentalUIActivator.getDefault().getPreferenceStore().removePropertyChangeListener(this);
+		super.dispose();
 	}
 
 	@Override

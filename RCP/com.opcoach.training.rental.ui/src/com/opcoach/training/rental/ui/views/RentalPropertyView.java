@@ -133,8 +133,8 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	@Override
 	public void dispose()
 	{
-		super.dispose();
 		getSite().getPage().removeSelectionListener(this);
+		super.dispose();
 	}
 
 
