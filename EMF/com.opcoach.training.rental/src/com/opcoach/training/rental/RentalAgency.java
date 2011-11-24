@@ -157,32 +157,24 @@ public interface RentalAgency extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
 	 */
 	void addCustomer(Customer customer);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
 	 */
 	void addObject(RentalObject object);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
 	 */
 	void removeCustomer(Customer customer);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
 	 */
 	void removeObject(RentalObject object);
 

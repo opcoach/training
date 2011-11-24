@@ -245,7 +245,6 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated NOT
 	 */
 	public void addCustomer(Customer customer)
 
@@ -260,7 +259,6 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated NOT
 	 */
 	public void addObject(RentalObject object)
 	{
@@ -278,7 +276,6 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
 	 */
 	public void removeCustomer(Customer customer)
 	{
@@ -289,7 +286,6 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
 	 */
 	public void removeObject(RentalObject object)
 	{

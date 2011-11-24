@@ -16,18 +16,6 @@
       <eParameters name="from" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eParameters name="to" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     </eOperations>
-    <eOperations name="addCustomer">
-      <eParameters name="customer" eType="#//Customer"/>
-    </eOperations>
-    <eOperations name="addObject">
-      <eParameters name="object" eType="#//RentalObject"/>
-    </eOperations>
-    <eOperations name="removeCustomer">
-      <eParameters name="customer" eType="#//Customer"/>
-    </eOperations>
-    <eOperations name="removeObject">
-      <eParameters name="object" eType="#//RentalObject"/>
-    </eOperations>
     <eOperations name="isAvailable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="rentedObject" eType="#//RentalObject"/>
       <eParameters name="from" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
@@ -136,7 +124,8 @@
         <details key="style" value="dash"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rentedObject" eType="#//RentalObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rentedObject" lowerBound="1"
+        eType="#//RentalObject">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="arrow"/>
         <details key="style" value="solid"/>
