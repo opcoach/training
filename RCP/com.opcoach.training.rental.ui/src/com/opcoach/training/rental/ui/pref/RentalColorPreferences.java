@@ -40,7 +40,7 @@ public class RentalColorPreferences extends FieldEditorPreferencePage implements
 			   i++;
 		   }
 		   
-		   addField(new ComboFieldEditor(COLOR_PROVIDER, "Added Color Provider",comboValues,getFieldEditorParent()));
+		   addField(new ComboFieldEditor(COLOR_PROVIDER, "Palette couleur :",comboValues,getFieldEditorParent()));
 		   
 		}
 		

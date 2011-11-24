@@ -25,6 +25,9 @@
             category="com.opcoach.rental.ui"
             class="com.opcoach.training.rental.ui.views.RentalPropertyView"
             id="com.opcoach.rental.ui.views.rentalView">
+         <description>
+            Vue de propriété de la location.
+         </description>
       </view>
       
       
@@ -94,6 +97,12 @@
             icon="icons/Agency.png"
             id="com.opcoach.training.rental.ui.rentalperspective"
             name="Rental">
+      </perspective>
+      <perspective
+            class="com.opcoach.training.rental.ui.views.RentalStandalonePerspective"
+            icon="icons/Customers.png"
+            id="com.opcoach.training.rental.ui.rentalStandalonePerspective"
+            name="Rental StandAlone">
       </perspective>
    </extension>
 

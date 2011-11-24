@@ -120,9 +120,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	@Override
 	public void init(IViewSite site) throws PartInitException
 	{
-		// TODO Auto-generated method stub
 		super.init(site);
-
 		site.getPage().addSelectionListener(this);
 	}
 	
@@ -142,7 +140,6 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	@Override
 	public void setFocus()
 	{
-		// TODO Auto-generated method stub
 
 	}
 

@@ -17,6 +17,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+
 /**
  * The activator class controls the plug-in life cycle
  */
@@ -29,7 +30,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	// The shared instance
 	private static RentalUIActivator plugin;
 
-	/** The collection of possible color providers (read in extensions) */
+	/** The map of possible color providers (read in extensions) */
 	private Map<String, IColorProvider> paletteManager = new HashMap<String, IColorProvider>();
 
 	/**
@@ -49,8 +50,9 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 		plugin = this;
 		System.out.println("Start rental ui bundle");
 		readColorProviderExtensions();
-		
+				
 	}
+
 
 	public void readColorProviderExtensions()
 	{
