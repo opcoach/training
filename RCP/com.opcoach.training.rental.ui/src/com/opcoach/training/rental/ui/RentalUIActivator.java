@@ -49,6 +49,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 		super.start(context); 
 		plugin = this;
 		System.out.println("Start rental ui bundle");
+		readViewExtensions();
 		readColorProviderExtensions();
 				
 	}
@@ -80,6 +81,19 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 				}
 			}
 		}
+
+	}
+
+	
+	public void readViewExtensions()
+	{
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+	
+			for (IConfigurationElement elt : reg.getConfigurationElementsFor("org.eclipse.ui.views"))
+			{
+				if (elt.getName().equals("view"))
+					System.out.println("Plugin : " + elt.getNamespaceIdentifier() + "\t\t\tVue : " + elt.getAttribute("name"));
+			}
 
 	}
 
