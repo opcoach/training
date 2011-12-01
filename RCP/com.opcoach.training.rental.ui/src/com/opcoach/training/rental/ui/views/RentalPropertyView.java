@@ -9,8 +9,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
+import org.eclipse.swt.dnd.DragSourceAdapter;
 import org.eclipse.swt.dnd.DragSourceEvent;
-import org.eclipse.swt.dnd.DragSourceListener;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.layout.GridData;
@@ -64,12 +64,8 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 		DragSource ds = new DragSource(rentedObjectLabel, DND.DROP_COPY);
 		ds.setTransfer(new Transfer[] { TextTransfer.getInstance() });
-		ds.addDragListener(new DragSourceListener()
-		{
-			public void dragFinished(DragSourceEvent event)
-			{
-			}
-
+		ds.addDragListener(new DragSourceAdapter()
+		{	
 			public void dragSetData(DragSourceEvent event)
 			{
 				if (TextTransfer.getInstance().isSupportedType(event.dataType))
@@ -78,9 +74,6 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 				}
 			}
 
-			public void dragStart(DragSourceEvent event)
-			{
-			}
 		});
 
 		Label customerTitle = new Label(infoGroup, SWT.NONE);
