@@ -9,7 +9,7 @@ import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
-import com.opcoach.training.rental.ui.views.RentalPerspective;
+import com.opcoach.training.rental.ui.views.RentalStandalonePerspective;
 
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor
 {
@@ -21,6 +21,6 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor
 
 	public String getInitialWindowPerspectiveId()
 	{
-		return RentalPerspective.ID;
+		return RentalStandalonePerspective.ID;
 	}
 }
