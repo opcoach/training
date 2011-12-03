@@ -1,6 +1,6 @@
 package com.opcoach.training.rental.rcp;
 
-import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.ICoolBarManager;
 import org.eclipse.jface.action.IMenuManager;
@@ -9,6 +9,7 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.ToolBarContributionItem;
 import org.eclipse.jface.action.ToolBarManager;
+import org.eclipse.jface.util.Util;
 import org.eclipse.swt.SWT;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -24,9 +25,9 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     // in the fill methods.  This ensures that the actions aren't recreated
     // when fillActionBars is called with FILL_PROXY.
     private IWorkbenchAction exitAction;
-    private IWorkbenchAction aboutAction;
-    private IWorkbenchAction newWindowAction;
-    private IWorkbenchAction prefAction;
+    //private IWorkbenchAction aboutAction;
+    //private IWorkbenchAction newWindowAction;
+    private IWorkbenchAction prefAction;  
 
     public ApplicationActionBarAdvisor(IActionBarConfigurer configurer) {
         super(configurer);
@@ -42,11 +43,11 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         exitAction = ActionFactory.QUIT.create(window);
         register(exitAction);
         
-        aboutAction = ActionFactory.ABOUT.create(window);
-        register(aboutAction);
+       // aboutAction = ActionFactory.ABOUT.create(window);
+       // register(aboutAction);
         
-        newWindowAction = ActionFactory.OPEN_NEW_WINDOW.create(window);
-        register(newWindowAction);
+        //newWindowAction = ActionFactory.OPEN_NEW_WINDOW.create(window);
+        //register(newWindowAction);
         
         prefAction = ActionFactory.PREFERENCES.create(window);
         register(prefAction);
@@ -55,7 +56,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     }
     
     protected void fillMenuBar(IMenuManager menuBar) {
-        MenuManager fileMenu = new MenuManager("&File", IWorkbenchActionConstants.M_FILE);
+        MenuManager fileMenu = new MenuManager("&File",  IWorkbenchActionConstants.M_FILE);
         MenuManager helpMenu = new MenuManager("&Help", IWorkbenchActionConstants.M_HELP);
         
         menuBar.add(fileMenu);
@@ -64,14 +65,23 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         menuBar.add(helpMenu);
         
         // File
-        fileMenu.add(newWindowAction);
         fileMenu.add(new Separator());
-        fileMenu.add(prefAction);
+        /*fileMenu.add(prefAction);
         fileMenu.add(new Separator());
-        fileMenu.add(exitAction);
+        fileMenu.add(exitAction); */
         
-        // Help
-        helpMenu.add(aboutAction);
+        // Ajout sous la forme de ActionContributionItem pour pouvoir rendre les actions ensuite
+        // invisibles, car elle sont déjà présentes dans le menu Pomme du mac. 
+        ActionContributionItem preferencesActionItem = new ActionContributionItem(prefAction);
+        fileMenu.add(preferencesActionItem);
+    	ActionContributionItem exitActionItem = new ActionContributionItem(exitAction);
+		fileMenu.add(exitActionItem);
+          
+        if(Util.isMac()) {
+        	preferencesActionItem.setVisible(false);
+        	exitActionItem.setVisible(false);
+        }
+        
     }
     
     protected void fillCoolBar(ICoolBarManager coolBar) {
@@ -79,5 +89,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         coolBar.add(new ToolBarContributionItem(toolbar, "main"));   
         toolbar.add(exitAction);
     }
+    
+  
     
 }
