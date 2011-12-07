@@ -21,8 +21,12 @@
             serialization="org.eclipse.ui.views.showView(org.eclipse.ui.views.showView.viewId=org.eclipse.search.ui.views.SearchView)"/>      
      </perform-when>
   </item> 
-  <item title="Close Views">
+  <item
+        title="Close Views">
      <description>Close the search view and package explorer if open</description>
+     <command
+           required="false"
+           serialization="org.eclipse.ui.dialogs.openMessageDialog(title=Select View,message=Select a view ,buttonLabel0=Package Explorer,buttonLabel1=Search View)"/>
   </item>
   <item title="Open the view from a perform when subitem">
      <description>Uses perform when to open the view seleted previously.</description> 

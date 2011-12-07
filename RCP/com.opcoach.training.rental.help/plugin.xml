@@ -14,7 +14,8 @@
    <extension
          point="org.eclipse.help.contexts">
       <contexts
-            file="contexts/rentalContext.xml">
+            file="contexts/rentalContext.xml"
+            plugin="com.opcoach.training.rental.ui">
       </contexts>
    </extension>
    <extension

@@ -1,6 +1,5 @@
  <contexts> 
-      <context  id="rentalContext"> 
-        <description> This is a sample F1 help string.</description> 
+      <context id="rentalContext" title="Aide pour l&apos;agence de location"> 
         <topic href="html/toc.html"  label="Rental Main Help"/> 
       </context> 
     </contexts> 
