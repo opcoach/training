@@ -9,6 +9,7 @@ import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
+import org.eclipse.swt.dnd.RTFTransfer;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.widgets.Composite;
@@ -37,11 +38,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 
 	@Override
 	public void createPartControl(Composite parent)
-	{
-		
-		// Association de la vue sur un contexte d'aide
-		PlatformUI.getWorkbench().getHelpSystem().setHelp(parent, "rentalContext");
-		
+	{		
 		
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());
@@ -50,6 +47,10 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
 		agencies.add(RentalCoreActivator.getAgency());
 		agencyViewer.setInput(agencies);
+		
+		// Association de la vue sur un contexte d'aide
+		PlatformUI.getWorkbench().getHelpSystem().setHelp(agencyViewer.getControl(), "com.opcoach.training.rental.ui.rentalContext");
+
 
 		// Autorise le popup sur le treeviewer
 		MenuManager menuManager = new MenuManager();
@@ -59,7 +60,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 
 		// L'arbre est draggable
 		DragSource ds = new DragSource(agencyViewer.getControl(), DND.DROP_COPY);
-		Transfer[] ts = new Transfer[] { TextTransfer.getInstance() };
+		Transfer[] ts = new Transfer[] { TextTransfer.getInstance(), RTFTransfer.getInstance() };
 		ds.setTransfer(ts);
 		ds.addDragListener(new AgencyTreeDragSourceListener(agencyViewer));
 
