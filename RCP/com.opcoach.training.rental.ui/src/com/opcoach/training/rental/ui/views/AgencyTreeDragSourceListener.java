@@ -5,7 +5,9 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.dnd.DragSourceAdapter;
 import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.RTFTransfer;
 import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
 
 import com.opcoach.training.rental.Customer;
 
@@ -22,21 +24,26 @@ final class AgencyTreeDragSourceListener extends DragSourceAdapter
 	@Override
 	public void dragSetData(DragSourceEvent event)
 	{
-		if (TextTransfer.getInstance().isSupportedType(event.dataType))
+		ISelection sel = selProvider.getSelection();
+		Object selectedObject = (sel instanceof IStructuredSelection) ? ((IStructuredSelection) sel).getFirstElement() : null;
+		if (selectedObject == null)
+			return;
+
+		if (RTFTransfer.getInstance().isSupportedType(event.dataType))
 		{
-			// Recupere la source
-			ISelection sel = selProvider.getSelection();
-			if (sel instanceof IStructuredSelection)
+			if  (selectedObject instanceof Customer)
+			event.data = "{\\rtf1\\b\\i " + ((Customer)selectedObject).getDisplayName() + "}";
+			else 
+				event.data = "{\\rtf1 " + selectedObject.toString()+ "}";
+		} else if (TextTransfer.getInstance().isSupportedType(event.dataType))
+		{
+			if (selectedObject instanceof Customer)
 			{
-				IStructuredSelection ss = (IStructuredSelection) sel;
-				Object selectedObject = ss.getFirstElement();
-				if (selectedObject instanceof Customer)
-				{
-					Customer c = (Customer) selectedObject;
-					event.data = "Customer : " + c.getDisplayName();
-				} else
-					event.data = selectedObject.toString();
-			}
+				Customer c = (Customer) selectedObject;
+				event.data = "Customer : " + c.getDisplayName();
+			} else
+				event.data = selectedObject.toString();
+
 		}
 
 	}
