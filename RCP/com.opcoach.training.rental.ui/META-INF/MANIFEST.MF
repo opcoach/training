@@ -12,7 +12,8 @@ Require-Bundle: com.opcoach.training.rental.core;visibility:=reexport,
  org.eclipse.ui.forms;resolution:=optional,
  org.eclipse.rap.ui;bundle-version="1.4.0";resolution:=optional,
  org.eclipse.rap.ui.forms;bundle-version="1.4.0";resolution:=optional,
- com.opcoach.training.rental.ui.commands;bundle-version="1.0.0";resolution:=optional
+ com.opcoach.training.rental.ui.commands;bundle-version="1.0.0";resolution:=optional,
+ com.opcoach.training.rental.help;bundle-version="1.0.0";resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.ui,
