@@ -29,6 +29,8 @@ import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.Messages;
+import com.opcoach.training.rental.ui.RentalUIActivator;
+import com.opcoach.training.rental.ui.RentalUIConstants;
 
 public class RentalPropertyView extends ViewPart implements ISelectionListener
 {
@@ -72,6 +74,12 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 				{
 					event.data = rentedObjectLabel.getText();
 				}
+			}
+			
+			@Override
+			public void dragStart(DragSourceEvent event)
+			{
+				event.image = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.AGENCY_KEY);
 			}
 
 		});
