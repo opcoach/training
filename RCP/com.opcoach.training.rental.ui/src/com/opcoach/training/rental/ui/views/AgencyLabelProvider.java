@@ -33,7 +33,7 @@ import com.opcoach.training.rental.ui.views.AgencyContentProvider.TNode;
  */
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
 {	
-	/** The choosen palette among the addtional (may be null) */
+	/** The choosen palette among the additional (may be null) */
 	private IColorProvider currentPalette;
 
 
@@ -76,12 +76,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 			result = ((RentalObject) element).getName();
 		} else if (element instanceof Rental)
 		{
-			Rental r = (Rental) element;
-			Date start = r.getStartDate();
-			Date end = r.getEndDate();
-			StringBuilder sb = new StringBuilder(r.getRentedObject().getName());
-			sb.append(" [").append(df.format(start)).append("->").append(df.format(end)).append("]");
-			result = sb.toString();
+			result = element.toString();
 		}
 
 		return result;
