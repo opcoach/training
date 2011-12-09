@@ -237,39 +237,28 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 		r.setEndDate(to);
 		r.setCustomer(customer);
 		r.setRentedObject(rentedObject);
-		getRentals().add(r);
+		addRental(r);
 		return r;
 	}
 	
 	
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 */
+	
+	
 	public void addCustomer(Customer customer)
 
 	{
 		getCustomers().add(customer);
-		customer.setParentAgency(this);
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.ADD, RentalPackage.RENTAL_AGENCY__CUSTOMERS, null, customer));
-
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 */
+	
 	public void addObject(RentalObject object)
 	{
 		getObjectsToRent().add(object);
-		object.setParentAgency(this);
 	}
 
 	
 	public void addRental(Rental r)
 	{
-		r.setParentAgency(this);
 		getRentals().add(r);
 	}
 
