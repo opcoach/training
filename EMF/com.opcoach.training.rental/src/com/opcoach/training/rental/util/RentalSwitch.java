@@ -14,7 +14,7 @@ import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.License;
 import com.opcoach.training.rental.Rental;
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 
@@ -38,7 +38,7 @@ public class RentalSwitch<T> extends Switch<T>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The cached model package
@@ -135,22 +135,6 @@ public class RentalSwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Customer</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Customer</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCustomer(Customer object)
-	{
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Agency</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -162,6 +146,22 @@ public class RentalSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseRentalAgency(RentalAgency object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Customer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Customer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCustomer(Customer object)
 	{
 		return null;
 	}

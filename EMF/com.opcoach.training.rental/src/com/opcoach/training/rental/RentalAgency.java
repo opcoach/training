@@ -37,7 +37,7 @@ public interface RentalAgency extends EObject
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "OPCoach @ 2011";
+	String copyright = "OPCoach @ 2012";
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -154,30 +154,7 @@ public interface RentalAgency extends EObject
 	 */
 	Rental book(Customer customer, RentalObject rentedObject, Date from, Date to);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	void addCustomer(Customer customer);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	void addObject(RentalObject object);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	void removeCustomer(Customer customer);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	void removeObject(RentalObject object);
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

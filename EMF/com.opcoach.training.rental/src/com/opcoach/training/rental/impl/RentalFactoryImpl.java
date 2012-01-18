@@ -36,7 +36,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * Creates the default factory implementation.

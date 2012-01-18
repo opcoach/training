@@ -34,7 +34,7 @@ public interface Address extends EObject
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "OPCoach @ 2011";
+	String copyright = "OPCoach @ 2012";
 
 	/**
 	 * Returns the value of the '<em><b>Street Type</b></em>' attribute.

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 
@@ -43,7 +44,7 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
@@ -243,16 +244,19 @@ public class RentalImpl extends EObjectImpl implements Rental {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetParentAgency(RentalAgency newParentAgency, NotificationChain msgs) {
+	public NotificationChain basicSetParentAgency(RentalAgency newParentAgency, NotificationChain msgs)
+	{
 		msgs = eBasicSetContainer((InternalEObject)newParentAgency, RentalPackage.RENTAL__PARENT_AGENCY, msgs);
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAgency(RentalAgency newParentAgency) {
+	public void setParentAgency(RentalAgency newParentAgency)
+	{
 		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL__PARENT_AGENCY && newParentAgency != null))
 		{
 			if (EcoreUtil.isAncestor(this, newParentAgency))

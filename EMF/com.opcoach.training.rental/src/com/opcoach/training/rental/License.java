@@ -35,7 +35,7 @@ public interface License extends EObject
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "OPCoach @ 2011";
+	String copyright = "OPCoach @ 2012";
 
 	/**
 	 * Returns the value of the '<em><b>Number</b></em>' attribute.

@@ -22,7 +22,7 @@ public interface RentalFactory extends EFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "OPCoach @ 2011";
+	String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The singleton instance of the factory.

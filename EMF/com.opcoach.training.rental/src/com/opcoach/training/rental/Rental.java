@@ -37,7 +37,7 @@ public interface Rental extends EObject
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "OPCoach @ 2011";
+	String copyright = "OPCoach @ 2012";
 
 	/**
 	 * Returns the value of the '<em><b>Customer</b></em>' reference.
@@ -77,7 +77,8 @@ public interface Rental extends EObject
 	 * @return the value of the '<em>Rented Object</em>' reference.
 	 * @see #setRentedObject(RentalObject)
 	 * @see com.opcoach.training.rental.RentalPackage#getRental_RentedObject()
-	 * @model annotation="gmf.link target.decoration='arrow' style='solid'"
+	 * @model required="true"
+	 *        annotation="gmf.link target.decoration='arrow' style='solid'"
 	 * @generated
 	 */
 	RentalObject getRentedObject();

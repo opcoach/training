@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.MyRentalFactory;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 
@@ -45,7 +45,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -232,7 +232,7 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	 */
 	public Rental book(Customer customer, RentalObject rentedObject, Date from, Date to)
 	{
-		Rental r = RentalFactory.eINSTANCE.createRental();
+		Rental r = MyRentalFactory.eINSTANCE.createRental();
 		r.setStartDate(from);
 		r.setEndDate(to);
 		r.setCustomer(customer);
@@ -241,46 +241,13 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 		return r;
 	}
 	
-	
-	
-	
-	public void addCustomer(Customer customer)
-
-	{
-		getCustomers().add(customer);
-	}
-
-	
-	public void addObject(RentalObject object)
-	{
-		getObjectsToRent().add(object);
-	}
-
-	
 	public void addRental(Rental r)
 	{
 		getRentals().add(r);
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public void removeCustomer(Customer customer)
-	{
-		customer.setParentAgency(null);
-		getCustomers().remove(customer);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public void removeObject(RentalObject object)
-	{
-		object.setParentAgency(null);
-		getObjectsToRent().remove(object);
-	}
+	
+	
+	
 
 	/**
 	 * <!-- begin-user-doc -->

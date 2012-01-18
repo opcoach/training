@@ -15,6 +15,13 @@
             class="com.opcoach.training.rental.RentalPackage"
             genModel="model/rental.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="com.opcoach.training.rental.impl.MyRentalFactoryImpl"
+            uri="http://com.opcoach.training/rental/1.0">
+      </factory>
+   </extension>
    
 
 </plugin>

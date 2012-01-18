@@ -47,7 +47,7 @@ public enum StreetType implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The '<em><b>Street</b></em>' literal value.
