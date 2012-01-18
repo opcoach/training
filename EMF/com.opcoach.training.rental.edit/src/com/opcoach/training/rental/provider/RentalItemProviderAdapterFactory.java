@@ -20,10 +20,15 @@ import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemColorProvider;
+import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITableItemColorProvider;
+import org.eclipse.emf.edit.provider.ITableItemFontProvider;
+import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
@@ -42,7 +47,7 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -81,6 +86,11 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 		supportedTypes.add(ITreeItemContentProvider.class);
 		supportedTypes.add(IItemLabelProvider.class);
 		supportedTypes.add(IItemPropertySource.class);
+		supportedTypes.add(ITableItemLabelProvider.class);
+		supportedTypes.add(ITableItemColorProvider.class);
+		supportedTypes.add(ITableItemFontProvider.class);
+		supportedTypes.add(IItemColorProvider.class);
+		supportedTypes.add(IItemFontProvider.class);
 	}
 
 	/**

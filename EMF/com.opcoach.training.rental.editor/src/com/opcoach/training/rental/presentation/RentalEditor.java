@@ -158,6 +158,9 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import com.opcoach.training.rental.provider.RentalItemProviderAdapterFactory;
 
+import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -169,14 +172,38 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
  */
 public class RentalEditor
 	extends MultiPageEditorPart
-	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker
+	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
+
+	/**
+	 * The filters for file extensions supported by the editor.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final List<String> FILE_EXTENSION_FILTERS = prefixExtensions(RentalModelWizard.FILE_EXTENSIONS, "*.");
+
+	/**
+	 * Returns a new unmodifiable list containing prefixed versions of the extensions in the given list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static List<String> prefixExtensions(List<String> extensions, String prefix)
+	{
+		List<String> result = new ArrayList<String>();
+		for (String extension : extensions)
+		{
+			result.add(prefix + extension);
+		}
+		return Collections.unmodifiableList(result);
+	}
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
@@ -317,15 +344,6 @@ public class RentalEditor
 	 * @generated
 	 */
 	protected ISelection editorSelection = StructuredSelection.EMPTY;
-
-	/**
-	 * The MarkerHelper is responsible for creating workspace resource markers presented
-	 * in Eclipse's Problems View.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MarkerHelper markerHelper = new EditUIMarkerHelper();
 
 	/**
 	 * This listens for when the outline becomes active
@@ -484,104 +502,6 @@ public class RentalEditor
 		};
 
 	/**
-	 * This listens for workspace changes.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IResourceChangeListener resourceChangeListener =
-		new IResourceChangeListener()
-		{
-			public void resourceChanged(IResourceChangeEvent event)
-			{
-				IResourceDelta delta = event.getDelta();
-				try
-				{
-					class ResourceDeltaVisitor implements IResourceDeltaVisitor
-					{
-						protected ResourceSet resourceSet = editingDomain.getResourceSet();
-						protected Collection<Resource> changedResources = new ArrayList<Resource>();
-						protected Collection<Resource> removedResources = new ArrayList<Resource>();
-
-						public boolean visit(IResourceDelta delta)
-						{
-							if (delta.getResource().getType() == IResource.FILE)
-							{
-								if (delta.getKind() == IResourceDelta.REMOVED ||
-								    delta.getKind() == IResourceDelta.CHANGED && delta.getFlags() != IResourceDelta.MARKERS)
-								{
-									Resource resource = resourceSet.getResource(URI.createPlatformResourceURI(delta.getFullPath().toString(), true), false);
-									if (resource != null)
-									{
-										if (delta.getKind() == IResourceDelta.REMOVED)
-										{
-											removedResources.add(resource);
-										}
-										else if (!savedResources.remove(resource))
-										{
-											changedResources.add(resource);
-										}
-									}
-								}
-							}
-
-							return true;
-						}
-
-						public Collection<Resource> getChangedResources()
-						{
-							return changedResources;
-						}
-
-						public Collection<Resource> getRemovedResources()
-						{
-							return removedResources;
-						}
-					}
-
-					final ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
-					delta.accept(visitor);
-
-					if (!visitor.getRemovedResources().isEmpty())
-					{
-						getSite().getShell().getDisplay().asyncExec
-							(new Runnable()
-							 {
-								 public void run()
-								 {
-									 removedResources.addAll(visitor.getRemovedResources());
-									 if (!isDirty())
-									 {
-										 getSite().getPage().closeEditor(RentalEditor.this, false);
-									 }
-								 }
-							 });
-					}
-
-					if (!visitor.getChangedResources().isEmpty())
-					{
-						getSite().getShell().getDisplay().asyncExec
-							(new Runnable()
-							 {
-								 public void run()
-								 {
-									 changedResources.addAll(visitor.getChangedResources());
-									 if (getSite().getPage().getActiveEditor() == RentalEditor.this)
-									 {
-										 handleActivate();
-									 }
-								 }
-							 });
-					}
-				}
-				catch (CoreException exception)
-				{
-					RentalEditorPlugin.INSTANCE.log(exception);
-				}
-			}
-		};
-
-	/**
 	 * Handles activation of the editor or it's associated views.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -706,7 +626,6 @@ public class RentalEditor
 			{
 				ProblemEditorPart problemEditorPart = new ProblemEditorPart();
 				problemEditorPart.setDiagnostic(diagnostic);
-				problemEditorPart.setMarkerHelper(markerHelper);
 				try
 				{
 					addPage(++lastEditorPage, problemEditorPart, getEditorInput());
@@ -717,22 +636,6 @@ public class RentalEditor
 				catch (PartInitException exception)
 				{
 					RentalEditorPlugin.INSTANCE.log(exception);
-				}
-			}
-
-			if (markerHelper.hasMarkers(editingDomain.getResourceSet()))
-			{
-				markerHelper.deleteMarkers(editingDomain.getResourceSet());
-				if (diagnostic.getSeverity() != Diagnostic.OK)
-				{
-					try
-					{
-						markerHelper.createMarkers(diagnostic);
-					}
-					catch (CoreException exception)
-					{
-						RentalEditorPlugin.INSTANCE.log(exception);
-					}
 				}
 			}
 		}
@@ -1154,7 +1057,7 @@ public class RentalEditor
 				selectionViewer = (TreeViewer)viewerPane.getViewer();
 				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 
-				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, selectionViewer));
 				selectionViewer.setInput(editingDomain.getResourceSet());
 				selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 				viewerPane.setTitle(editingDomain.getResourceSet());
@@ -1191,7 +1094,7 @@ public class RentalEditor
 				parentViewer = (TreeViewer)viewerPane.getViewer();
 				parentViewer.setAutoExpandLevel(30);
 				parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
-				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, parentViewer));
 
 				createContextMenuFor(parentViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1219,7 +1122,7 @@ public class RentalEditor
 				viewerPane.createControl(getContainer());
 				listViewer = (ListViewer)viewerPane.getViewer();
 				listViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				listViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				listViewer.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, listViewer));
 
 				createContextMenuFor(listViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1247,7 +1150,7 @@ public class RentalEditor
 				viewerPane.createControl(getContainer());
 				treeViewer = (TreeViewer)viewerPane.getViewer();
 				treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, treeViewer));
 
 				new AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);
 
@@ -1295,7 +1198,7 @@ public class RentalEditor
 
 				tableViewer.setColumnProperties(new String [] {"a", "b"});
 				tableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				tableViewer.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, tableViewer));
 
 				createContextMenuFor(tableViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1341,7 +1244,7 @@ public class RentalEditor
 
 				treeViewerWithColumns.setColumnProperties(new String [] {"a", "b"});
 				treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, treeViewerWithColumns));
 
 				createContextMenuFor(treeViewerWithColumns);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1464,10 +1367,6 @@ public class RentalEditor
 		{
 			return getPropertySheetPage();
 		}
-		else if (key.equals(IGotoMarker.class))
-		{
-			return this;
-		}
 		else
 		{
 			return super.getAdapter(key);
@@ -1498,7 +1397,7 @@ public class RentalEditor
 					// Set up the tree viewer.
 					//
 					contentOutlineViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-					contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+					contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, contentOutlineViewer));
 					contentOutlineViewer.setInput(editingDomain.getResourceSet());
 
 					// Make sure our popups work.
@@ -1654,13 +1553,12 @@ public class RentalEditor
 
 		// Do the work within an operation because this is a long running activity that modifies the workbench.
 		//
-		WorkspaceModifyOperation operation =
-			new WorkspaceModifyOperation()
+		IRunnableWithProgress operation =
+			new IRunnableWithProgress()
 			{
 				// This is the method that gets invoked when the operation runs.
 				//
-				@Override
-				public void execute(IProgressMonitor monitor)
+				public void run(IProgressMonitor monitor)
 				{
 					// Save the resources to the file system.
 					//
@@ -1757,17 +1655,30 @@ public class RentalEditor
 	@Override
 	public void doSaveAs()
 	{
-		SaveAsDialog saveAsDialog = new SaveAsDialog(getSite().getShell());
-		saveAsDialog.open();
-		IPath path = saveAsDialog.getResult();
-		if (path != null)
-		{
-			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-			if (file != null)
+		new ResourceDialog(getSite().getShell(), null, SWT.NONE)
 			{
-				doSaveAs(URI.createPlatformResourceURI(file.getFullPath().toString(), true), new FileEditorInput(file));
-			}
-		}
+				@Override
+				protected boolean isSave()
+				{
+					return true;
+				}
+
+				@Override
+				protected boolean processResources()
+				{
+					List<URI> uris = getURIs();
+					if (uris.size() > 0)
+					{
+						URI uri = uris.get(0);
+						doSaveAs(uri, new URIEditorInput(uri));
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}.open();
 	}
 
 	/**
@@ -1788,35 +1699,6 @@ public class RentalEditor
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void gotoMarker(IMarker marker)
-	{
-		try
-		{
-			if (marker.getType().equals(EValidator.MARKER))
-			{
-				String uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
-				if (uriAttribute != null)
-				{
-					URI uri = URI.createURI(uriAttribute);
-					EObject eObject = editingDomain.getResourceSet().getEObject(uri, true);
-					if (eObject != null)
-					{
-					  setSelectionToViewer(Collections.singleton(editingDomain.getWrapper(eObject)));
-					}
-				}
-			}
-		}
-		catch (CoreException exception)
-		{
-			RentalEditorPlugin.INSTANCE.log(exception);
-		}
-	}
-
-	/**
 	 * This is called during startup.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1830,7 +1712,6 @@ public class RentalEditor
 		setPartName(editorInput.getName());
 		site.setSelectionProvider(this);
 		site.getPage().addPartListener(partListener);
-		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
 	}
 
 	/**
@@ -2016,8 +1897,6 @@ public class RentalEditor
 	public void dispose()
 	{
 		updateProblemIndication = false;
-
-		ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
 
 		getSite().getPage().removePartListener(partListener);
 

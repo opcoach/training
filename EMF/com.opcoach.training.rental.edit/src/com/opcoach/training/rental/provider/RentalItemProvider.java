@@ -6,6 +6,7 @@
 package com.opcoach.training.rental.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -15,15 +16,21 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemColorProvider;
+import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITableItemColorProvider;
+import org.eclipse.emf.edit.provider.ITableItemFontProvider;
+import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
@@ -38,18 +45,14 @@ import com.opcoach.training.rental.RentalPackage;
 public class RentalItemProvider
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -111,9 +114,14 @@ public class RentalItemProvider
 					{
 						Rental r = (Rental) object;
 						RentalAgency ra = r.getParentAgency();
+						Collection<Customer> result = new ArrayList<Customer>();
+						for (Customer c : ra.getCustomers())
+						{
+							if (c.getFirstName().startsWith("A"))
+								result.add(c);
+						}
 						
-						// TODO Auto-generated method stub
-						return super.getChoiceOfValues(object);
+						return result;
 					}} );
 	}
 
@@ -143,10 +151,10 @@ public class RentalItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object)
 				{
-					// TODO Auto-generated method stub
+					// This is the propertyDescriptor for RentedObject, so getChoiceOfValues returns a collection of RentalObjects
 					Collection<RentalObject> result = (Collection<RentalObject>) super.getChoiceOfValues(object);
 					
-					Rental r = (Rental) object;
+					Rental r = (Rental) object;  // We are in RentalItemProvider, so object is a Rental instance
 					RentalAgency agency = r.getParentAgency();
 					for (RentalObject ro : agency.getObjectsToRent())
 					{

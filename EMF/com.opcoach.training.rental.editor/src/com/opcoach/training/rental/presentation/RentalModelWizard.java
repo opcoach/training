@@ -67,6 +67,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
+import com.opcoach.training.rental.RentalFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
@@ -74,11 +75,14 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import com.opcoach.training.rental.RentalFactory;
+import com.opcoach.training.rental.MyRentalFactory;
 import com.opcoach.training.rental.RentalPackage;
 import com.opcoach.training.rental.provider.RentalEditPlugin;
 
 
+import java.io.File;
+import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;
@@ -103,7 +107,7 @@ public class RentalModelWizard extends Wizard implements INewWizard
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2011";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The supported extensions for created files.
@@ -138,14 +142,6 @@ public class RentalModelWizard extends Wizard implements INewWizard
 	 * @generated
 	 */
 	protected RentalFactory rentalFactory = rentalPackage.getRentalFactory();
-
-	/**
-	 * This is the file creation page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RentalModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -215,7 +211,7 @@ public class RentalModelWizard extends Wizard implements INewWizard
 					}
 				}
 			}
-			Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
+			Collections.sort(initialObjectNames, java.text.Collator.getInstance());
 		}
 		return initialObjectNames;
 	}
@@ -244,27 +240,32 @@ public class RentalModelWizard extends Wizard implements INewWizard
 	{
 		try
 		{
-			// Remember the file.
+			// Get the URI of the model file.
 			//
-			final IFile modelFile = getModelFile();
-
+			final URI fileURI = getModelURI();
+			if (new File(fileURI.toFileString()).exists())
+			{
+				if (!MessageDialog.openQuestion
+						(getShell(),
+						 RentalEditorPlugin.INSTANCE.getString("_UI_Question_title"),
+						 RentalEditorPlugin.INSTANCE.getString("_WARN_FileConflict", new String []{ fileURI.toFileString() })))
+				{
+					initialObjectCreationPage.selectFileField();
+					return false;
+				}
+			}
+			
 			// Do the work within an operation.
 			//
-			WorkspaceModifyOperation operation =
-				new WorkspaceModifyOperation()
-				{
-					@Override
-					protected void execute(IProgressMonitor progressMonitor)
+			IRunnableWithProgress operation = new IRunnableWithProgress()
+			{
+				public void run(IProgressMonitor progressMonitor)
 					{
 						try
 						{
 							// Create a resource set
 							//
 							ResourceSet resourceSet = new ResourceSetImpl();
-
-							// Get the URI of the model file.
-							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
 							// Create a resource for this file.
 							//
@@ -297,97 +298,12 @@ public class RentalModelWizard extends Wizard implements INewWizard
 
 			getContainer().run(false, false, operation);
 
-			// Select the new file resource in the current view.
-			//
-			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
-			IWorkbenchPage page = workbenchWindow.getActivePage();
-			final IWorkbenchPart activePart = page.getActivePart();
-			if (activePart instanceof ISetSelectionTarget)
-			{
-				final ISelection targetSelection = new StructuredSelection(modelFile);
-				getShell().getDisplay().asyncExec
-					(new Runnable()
-					 {
-						 public void run()
-						 {
-							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
-						 }
-					 });
-			}
-
-			// Open an editor on the new file.
-			//
-			try
-			{
-				page.openEditor
-					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
-			}
-			catch (PartInitException exception)
-			{
-				MessageDialog.openError(workbenchWindow.getShell(), RentalEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
-				return false;
-			}
-
-			return true;
+			return RentalEditorAdvisor.openEditor(workbench, fileURI);			
 		}
 		catch (Exception exception)
 		{
 			RentalEditorPlugin.INSTANCE.log(exception);
 			return false;
-		}
-	}
-
-	/**
-	 * This is the one page of the wizard.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public class RentalModelWizardNewFileCreationPage extends WizardNewFileCreationPage
-	{
-		/**
-		 * Pass in the selection.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public RentalModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection)
-		{
-			super(pageId, selection);
-		}
-
-		/**
-		 * The framework calls this to see if the file is correct.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		@Override
-		protected boolean validatePage()
-		{
-			if (super.validatePage())
-			{
-				String extension = new Path(getFileName()).getFileExtension();
-				if (extension == null || !FILE_EXTENSIONS.contains(extension))
-				{
-					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(RentalEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
-					return false;
-				}
-				return true;
-			}
-			return false;
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public IFile getModelFile()
-		{
-			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
 		}
 	}
 
@@ -399,6 +315,13 @@ public class RentalModelWizard extends Wizard implements INewWizard
 	 */
 	public class RentalModelWizardInitialObjectCreationPage extends WizardPage
 	{
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected Text fileField;
+
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -545,6 +468,22 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		 */
 		protected boolean validatePage()
 		{
+			URI fileURI = getFileURI();
+			if (fileURI == null || fileURI.isEmpty())
+			{
+				setErrorMessage(null);
+				return false;
+			}
+
+			String extension = fileURI.fileExtension();
+			if (extension == null || !FILE_EXTENSIONS.contains(extension))
+			{
+				String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
+				setErrorMessage(RentalEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+				return false;
+			}
+
+			setErrorMessage(null);
 			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
 		}
 
@@ -559,16 +498,9 @@ public class RentalModelWizard extends Wizard implements INewWizard
 			super.setVisible(visible);
 			if (visible)
 			{
-				if (initialObjectField.getItemCount() == 1)
-				{
-					initialObjectField.clearSelection();
-					encodingField.setFocus();
-				}
-				else
-				{
-					encodingField.clearSelection();
-					initialObjectField.setFocus();
-				}
+				initialObjectField.clearSelection();
+				encodingField.clearSelection();
+				fileField.setFocus();
 			}
 		}
 
@@ -599,6 +531,37 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		public String getEncoding()
 		{
 			return encodingField.getText();
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public URI getFileURI()
+		{
+			try
+			{
+				return URI.createFileURI(fileField.getText());
+			}
+			catch (Exception exception)
+			{
+				// Ignore
+			}
+			return null;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public void selectFileField()
+		{
+				initialObjectField.clearSelection();
+				encodingField.clearSelection();
+				fileField.selectAll();
+				fileField.setFocus();
 		}
 
 		/**
@@ -648,52 +611,6 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		@Override
 	public void addPages()
 	{
-		// Create a page, set the title, and the initial model file name.
-		//
-		newFileCreationPage = new RentalModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(RentalEditorPlugin.INSTANCE.getString("_UI_RentalModelWizard_label"));
-		newFileCreationPage.setDescription(RentalEditorPlugin.INSTANCE.getString("_UI_RentalModelWizard_description"));
-		newFileCreationPage.setFileName(RentalEditorPlugin.INSTANCE.getString("_UI_RentalEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
-		addPage(newFileCreationPage);
-
-		// Try and get the resource selection to determine a current directory for the file dialog.
-		//
-		if (selection != null && !selection.isEmpty())
-		{
-			// Get the resource...
-			//
-			Object selectedElement = selection.iterator().next();
-			if (selectedElement instanceof IResource)
-			{
-				// Get the resource parent, if its a file.
-				//
-				IResource selectedResource = (IResource)selectedElement;
-				if (selectedResource.getType() == IResource.FILE)
-				{
-					selectedResource = selectedResource.getParent();
-				}
-
-				// This gives us a directory...
-				//
-				if (selectedResource instanceof IFolder || selectedResource instanceof IProject)
-				{
-					// Set this for the container.
-					//
-					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
-
-					// Make up a unique new name here.
-					//
-					String defaultModelBaseFilename = RentalEditorPlugin.INSTANCE.getString("_UI_RentalEditorFilenameDefaultBase");
-					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
-					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i)
-					{
-						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
-					}
-					newFileCreationPage.setFileName(modelFilename);
-				}
-			}
-		}
 		initialObjectCreationPage = new RentalModelWizardInitialObjectCreationPage("Whatever2");
 		initialObjectCreationPage.setTitle(RentalEditorPlugin.INSTANCE.getString("_UI_RentalModelWizard_label"));
 		initialObjectCreationPage.setDescription(RentalEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
@@ -701,14 +618,14 @@ public class RentalModelWizard extends Wizard implements INewWizard
 	}
 
 	/**
-	 * Get the file from the page.
+	 * Get the URI from the page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IFile getModelFile()
+	public URI getModelURI()
 	{
-		return newFileCreationPage.getModelFile();
+		return initialObjectCreationPage.getFileURI();
 	}
 
 }
