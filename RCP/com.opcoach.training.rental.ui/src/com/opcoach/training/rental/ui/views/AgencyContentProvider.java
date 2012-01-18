@@ -16,18 +16,21 @@ import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.ui.RentalUIConstants;
 
-/**    ElectriqueMonte
+/**
+ * ElectriqueMonte
+ * 
  * @author olivier
  */
 public class AgencyContentProvider implements ITreeContentProvider, RentalUIConstants
 {
 
 	private static final Object[] EMPTY_RESULT = new Object[0];
-	
+
 	public AgencyContentProvider()
 	{
-		
+
 	}
+
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
@@ -41,21 +44,25 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+	 * @see
+	 * org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface
+	 * .viewers.Viewer, java.lang.Object, java.lang.Object)
 	 */
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput)
 	{
-		/*if (newInput instanceof RentalAgency)
-			agency = (RentalAgency) newInput;
-		else
-			agency = null;*/
+		/*
+		 * if (newInput instanceof RentalAgency) agency = (RentalAgency)
+		 * newInput; else agency = null;
+		 */
 
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.Object)
+	 * @see
+	 * org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.
+	 * Object)
 	 */
 	@Override
 	public Object[] getChildren(Object parentElement)
@@ -64,28 +71,12 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 		if (parentElement instanceof TNode)
 		{
-			// This is one of the logical nodes  : 
-			// Use == because constants and avoid of string with same values
-			TNode t = (TNode) parentElement;
-			if (CUSTOMERS_NODE == t.name)
-			{
-				result = t.agency.getCustomers().toArray();
-			}
-			else if (RENTALS_NODE == t.name)
-			{
-				result = t.agency.getRentals().toArray();
-			}
-			else if (OBJECTS_NODE == t.name)
-			{
-				result = t.agency.getObjectsToRent().toArray();
-			}
-			
-		}
-		else if (parentElement instanceof RentalAgency)
+			return ((TNode) parentElement).getChildren();
+
+		} else if (parentElement instanceof RentalAgency)
 		{
 			RentalAgency a = (RentalAgency) parentElement;
-			return new TNode[]
-			{ new TNode(CUSTOMERS_NODE, a), new TNode(RENTALS_NODE,a), new TNode(OBJECTS_NODE,a) };
+			return new TNode[] { new TNode(CUSTOMERS_NODE, a), new TNode(RENTALS_NODE, a), new TNode(OBJECTS_NODE, a) };
 		}
 
 		return (result == null) ? EMPTY_RESULT : result;
@@ -93,7 +84,9 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.Object)
+	 * @see
+	 * org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.Object
+	 * )
 	 */
 	@Override
 	public Object getParent(Object element)
@@ -102,7 +95,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 		if (element instanceof TNode)
 		{
-			result = ((TNode)element).agency;
+			result = ((TNode) element).agency;
 		}
 		return result;
 
@@ -110,7 +103,9 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(java.lang.Object)
+	 * @see
+	 * org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(java.lang.
+	 * Object)
 	 */
 	@Override
 	public boolean hasChildren(Object element)
@@ -120,7 +115,9 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
+	 * @see
+	 * org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java
+	 * .lang.Object)
 	 */
 	@Override
 	public Object[] getElements(Object inputElement)
@@ -129,19 +126,38 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 		{
 			return ((Collection<?>) inputElement).toArray();
 		}
-		
+
 		return EMPTY_RESULT;
 	}
-	
+
 	/** A private class to manage the logical nodes in tree */
-    class TNode
+	class TNode
 	{
 		public String name;
 		public RentalAgency agency;
+
 		public TNode(String n, RentalAgency a)
 		{
 			name = n;
 			agency = a;
 		}
+
+		public Object[] getChildren()
+		{
+
+			if (CUSTOMERS_NODE == name)
+			{
+				return agency.getCustomers().toArray();
+			} else if (RENTALS_NODE == name)
+			{
+				return agency.getRentals().toArray();
+			} else if (OBJECTS_NODE == name)
+			{
+				return agency.getObjectsToRent().toArray();
+			}
+			return null;
+
+		}
+
 	}
 }
