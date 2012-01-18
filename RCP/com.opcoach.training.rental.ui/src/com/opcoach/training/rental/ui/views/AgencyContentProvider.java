@@ -10,10 +10,7 @@ import java.util.Collection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.ui.RentalUIConstants;
 
 /**

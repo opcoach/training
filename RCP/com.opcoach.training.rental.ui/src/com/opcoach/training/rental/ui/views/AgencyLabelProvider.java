@@ -6,7 +6,6 @@
 package com.opcoach.training.rental.ui.views;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ColorRegistry;
