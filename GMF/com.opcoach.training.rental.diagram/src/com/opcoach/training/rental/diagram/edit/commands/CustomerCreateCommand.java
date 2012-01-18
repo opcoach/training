@@ -13,8 +13,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.RentalFactory;
+import com.opcoach.training.rental.MyRentalAgency;
+import com.opcoach.training.rental.MyRentalFactory;
 
 /**
  * @generated
@@ -58,9 +58,9 @@ public class CustomerCreateCommand extends EditElementCommand
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException
 	{
-		Customer newElement = RentalFactory.eINSTANCE.createCustomer();
+		Customer newElement = MyRentalFactory.eINSTANCE.createCustomer();
 
-		RentalAgency owner = (RentalAgency) getElementToEdit();
+		MyRentalAgency owner = (MyRentalAgency) getElementToEdit();
 		owner.getCustomers().add(newElement);
 
 		doConfigure(newElement, monitor, info);

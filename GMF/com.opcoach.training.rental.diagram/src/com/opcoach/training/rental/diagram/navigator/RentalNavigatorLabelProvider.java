@@ -17,7 +17,7 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.diagram.edit.parts.Address2EditPart;
 import com.opcoach.training.rental.diagram.edit.parts.AddressCity2EditPart;
 import com.opcoach.training.rental.diagram.edit.parts.AddressCityEditPart;
@@ -211,7 +211,7 @@ public class RentalNavigatorLabelProvider extends LabelProvider implements IComm
 	 */
 	private String getRentalAgency_1000Text(View view)
 	{
-		RentalAgency domainModelElement = (RentalAgency) view.getElement();
+		MyRentalAgency domainModelElement = (MyRentalAgency) view.getElement();
 		if (domainModelElement != null)
 		{
 			return domainModelElement.getName();

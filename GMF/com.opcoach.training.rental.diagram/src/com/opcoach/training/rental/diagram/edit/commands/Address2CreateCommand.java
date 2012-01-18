@@ -14,7 +14,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.RentalFactory;
+import com.opcoach.training.rental.MyRentalFactory;
 
 /**
  * @generated
@@ -63,7 +63,7 @@ public class Address2CreateCommand extends EditElementCommand
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException
 	{
-		Address newElement = RentalFactory.eINSTANCE.createAddress();
+		Address newElement = MyRentalFactory.eINSTANCE.createAddress();
 
 		Customer owner = (Customer) getElementToEdit();
 		owner.setAddress(newElement);

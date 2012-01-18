@@ -13,8 +13,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import com.opcoach.training.rental.Address;
-import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.RentalFactory;
+import com.opcoach.training.rental.MyRentalAgency;
+import com.opcoach.training.rental.MyRentalFactory;
 
 /**
  * @generated
@@ -49,7 +49,7 @@ public class AddressCreateCommand extends EditElementCommand
 	 */
 	public boolean canExecute()
 	{
-		RentalAgency container = (RentalAgency) getElementToEdit();
+		MyRentalAgency container = (MyRentalAgency) getElementToEdit();
 		if (container.getAddress() != null)
 		{
 			return false;
@@ -63,9 +63,9 @@ public class AddressCreateCommand extends EditElementCommand
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException
 	{
-		Address newElement = RentalFactory.eINSTANCE.createAddress();
+		Address newElement = MyRentalFactory.eINSTANCE.createAddress();
 
-		RentalAgency owner = (RentalAgency) getElementToEdit();
+		MyRentalAgency owner = (MyRentalAgency) getElementToEdit();
 		owner.setAddress(newElement);
 
 		doConfigure(newElement, monitor, info);

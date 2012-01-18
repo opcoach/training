@@ -12,8 +12,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.RentalFactory;
+import com.opcoach.training.rental.MyRentalAgency;
+import com.opcoach.training.rental.MyRentalFactory;
 import com.opcoach.training.rental.RentalObject;
 
 /**
@@ -58,9 +58,9 @@ public class RentalObjectCreateCommand extends EditElementCommand
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException
 	{
-		RentalObject newElement = RentalFactory.eINSTANCE.createRentalObject();
+		RentalObject newElement = MyRentalFactory.eINSTANCE.createRentalObject();
 
-		RentalAgency owner = (RentalAgency) getElementToEdit();
+		MyRentalAgency owner = (MyRentalAgency) getElementToEdit();
 		owner.getObjectsToRent().add(newElement);
 
 		doConfigure(newElement, monitor, info);

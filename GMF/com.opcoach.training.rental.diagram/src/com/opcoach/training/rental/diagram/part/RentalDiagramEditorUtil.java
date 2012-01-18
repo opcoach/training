@@ -1,7 +1,6 @@
 package com.opcoach.training.rental.diagram.part;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -50,6 +49,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.diagram.edit.parts.RentalAgencyEditPart;

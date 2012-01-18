@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalPackage;
 import com.opcoach.training.rental.diagram.edit.parts.Address2EditPart;
 import com.opcoach.training.rental.diagram.edit.parts.AddressCity2EditPart;
@@ -115,7 +115,7 @@ public class RentalVisualIDRegistry
 			return -1;
 		}
 		if (RentalPackage.eINSTANCE.getRentalAgency().isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((RentalAgency) domainElement))
+				&& isDiagram((MyRentalAgency) domainElement))
 		{
 			return RentalAgencyEditPart.VISUAL_ID;
 		}
@@ -320,7 +320,7 @@ public class RentalVisualIDRegistry
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(RentalAgency element)
+	private static boolean isDiagram(MyRentalAgency element)
 	{
 		return true;
 	}

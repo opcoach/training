@@ -14,7 +14,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.License;
-import com.opcoach.training.rental.RentalFactory;
+import com.opcoach.training.rental.MyRentalFactory;
 
 /**
  * @generated
@@ -58,7 +58,7 @@ public class LicenseCreateCommand extends EditElementCommand
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException
 	{
-		License newElement = RentalFactory.eINSTANCE.createLicense();
+		License newElement = MyRentalFactory.eINSTANCE.createLicense();
 
 		Customer owner = (Customer) getElementToEdit();
 		owner.getLicenses().add(newElement);
