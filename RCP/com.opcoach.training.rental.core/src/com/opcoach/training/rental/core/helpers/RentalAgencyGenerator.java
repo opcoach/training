@@ -12,7 +12,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
+import com.opcoach.training.rental.MyRentalFactory;
 import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
@@ -25,10 +26,10 @@ import com.opcoach.training.rental.StreetType;
  */
 public class RentalAgencyGenerator
 {
-public static RentalAgency createSampleAgency() 
+public static MyRentalAgency createSampleAgency() 
 {
-	RentalFactory f = RentalFactory.eINSTANCE;
-    RentalAgency agency = f.createRentalAgency();
+	MyRentalFactory f = (MyRentalFactory) RentalFactory.eINSTANCE;
+    MyRentalAgency agency = f.createRentalAgency();
     
     // Create some addresses
     Address ad1 = f.createAddress();
@@ -129,7 +130,7 @@ public static void navigateInModel()
 
 public static void main(String[] arg)
 {
-	RentalAgency agency = createSampleAgency();
+	MyRentalAgency agency = createSampleAgency();
 	System.out.println("agence crée... Nb de clients : " + agency.getCustomers().size());
 }
 

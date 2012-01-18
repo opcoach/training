@@ -3,7 +3,7 @@ package com.opcoach.training.rental.core;
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 
 /**
@@ -50,9 +50,9 @@ public class RentalCoreActivator extends Plugin {
 		return plugin;
 	}
 	
-	private static RentalAgency agency = null;
+	private static MyRentalAgency agency = null;
 	
-	public static RentalAgency getAgency()
+	public static MyRentalAgency getAgency()
 	{
 		if (agency == null)
 		{

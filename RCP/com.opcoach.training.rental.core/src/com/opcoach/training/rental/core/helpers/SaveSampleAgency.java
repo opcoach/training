@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 
 /**
  * @author olivier
@@ -23,7 +23,7 @@ public class SaveSampleAgency
 	public static void main(String[] args) throws IOException
 	{
 		// Store a sample Rental.
-		RentalAgency agency = RentalAgencyGenerator.createSampleAgency();
+		MyRentalAgency agency = RentalAgencyGenerator.createSampleAgency();
 
 		ResourceSet rset = new ResourceSetImpl();
 		rset.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xml", new XMIResourceFactoryImpl());

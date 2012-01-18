@@ -10,8 +10,8 @@ import java.io.IOException;
 import org.eclipse.emf.ecore.EClass;
 
 import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.MyRentalFactory;
 import com.opcoach.training.rental.Rental;
-import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalPackage;
 
 /**
@@ -27,7 +27,7 @@ public class RentalReflectivity
 		@SuppressWarnings("unused")
 		Customer c = (Customer) RentalPackage.eINSTANCE.getEFactoryInstance().create(customerClass);
 		@SuppressWarnings("unused")
-		Rental r = (Rental) RentalFactory.eINSTANCE.create(rentalClass);
+		Rental r = (Rental) MyRentalFactory.eINSTANCE.create(rentalClass);
 		
 		
 	}

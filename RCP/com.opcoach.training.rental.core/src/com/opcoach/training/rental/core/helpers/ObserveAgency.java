@@ -11,7 +11,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 
 /**
  * @author olivier
@@ -23,9 +23,9 @@ public class ObserveAgency
 		@Override
 		public void notifyChanged(Notification msg)
 		{
-			if (msg.getNotifier() instanceof RentalAgency)
+			if (msg.getNotifier() instanceof MyRentalAgency)
 			{
-				System.out.println("RentalAgency touched : " + ((RentalAgency) msg.getNotifier()).getName());
+				System.out.println("RentalAgency touched : " + ((MyRentalAgency) msg.getNotifier()).getName());
 			}
 		}
 	}
@@ -33,7 +33,7 @@ public class ObserveAgency
 	public static void main(String[] args) throws IOException
 	{
 		// Store a sample Rental.
-		RentalAgency agency = RentalAgencyGenerator.createSampleAgency();
+		MyRentalAgency agency = RentalAgencyGenerator.createSampleAgency();
 		Adapter cadapter = new RentalAgencyAdapter();
 		agency.eAdapters().add(cadapter);
 		agency.setName("Bordeaux");
