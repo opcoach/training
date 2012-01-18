@@ -6,21 +6,13 @@
 package com.opcoach.training.rental.provider;
 
 
-import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.RentalFactory;
-import com.opcoach.training.rental.MyRentalFactory;
-import com.opcoach.training.rental.RentalPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -36,6 +28,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.RentalFactory;
+import com.opcoach.training.rental.RentalPackage;
 
 /**
  * This is the item provider adapter for a {@link com.opcoach.training.rental.Customer} object.

@@ -5,15 +5,12 @@
  */
 package com.opcoach.training.rental.provider;
 
-import com.opcoach.training.rental.util.RentalAdapterFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -30,6 +27,8 @@ import org.eclipse.emf.edit.provider.ITableItemColorProvider;
 import org.eclipse.emf.edit.provider.ITableItemFontProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import com.opcoach.training.rental.util.RentalAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
