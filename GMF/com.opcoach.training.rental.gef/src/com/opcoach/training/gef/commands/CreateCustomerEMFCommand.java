@@ -11,12 +11,12 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalPackage;
 
 public class CreateCustomerEMFCommand extends EMFWrapCommand
 {
-	public CreateCustomerEMFCommand(Customer c, RentalAgency parentAgency, Rectangle constraint)
+	public CreateCustomerEMFCommand(Customer c, MyRentalAgency parentAgency, Rectangle constraint)
 	{
 		super();
 		

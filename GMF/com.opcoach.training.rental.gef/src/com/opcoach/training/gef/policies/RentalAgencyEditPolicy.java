@@ -15,11 +15,38 @@ import com.opcoach.training.gef.commands.ChangeBoundsCommand;
 import com.opcoach.training.gef.commands.CreateCustomerCommand;
 import com.opcoach.training.gef.commands.CreateRentalObjectCommand;
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
 public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
 {
+
+	@Override
+	protected Command getCreateCommand(CreateRequest request)
+	{
+        final Rectangle constraint = (Rectangle) getConstraintFor(request);
+        // get the child object to create
+        final Object newObject = request.getNewObject();
+        final EditPart editPart = getHost(); 
+        final MyRentalAgency parentAgency = (MyRentalAgency) editPart.getModel();      
+        Command command = UnexecutableCommand.INSTANCE;
+        
+        if (parentAgency != null)
+        {
+        	if (newObject instanceof Customer)
+        	{
+        		command = new CreateCustomerCommand((Customer) newObject,  parentAgency, constraint);
+        	}
+        	else if (newObject instanceof RentalObject)
+        	{
+        		command = new CreateRentalObjectCommand((RentalObject) newObject,  parentAgency, constraint);
+        	}
+        }
+        
+        return command;
+	}
+	
+	
 	public RentalAgencyEditPolicy(final XYLayout layout)
     {
         super();
@@ -27,15 +54,7 @@ public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
     }
 	
 
-/*	protected Command createDeleteCommand(final GroupRequest request)
-	    {
-		  System.out.println(" Host is : " + getHost().getClass().getName());
-		  RentalAgency parent = (RentalAgency) getHost().getParent().getModel();
-	        Customer child = ((CustomerEditPart) getHost()).getCustomer();
-	        DeleteCustomerCommand deleteCmd = new DeleteCustomerCommand(child, parent);
-	        return deleteCmd;
-	    }
-*/
+
 	@Override
 	protected Command createChangeConstraintCommand(EditPart child, Object constraint)
 	{
@@ -62,33 +81,6 @@ public class RentalAgencyEditPolicy extends XYLayoutEditPolicy
     }
 
 
-	@Override
-	protected Command getCreateCommand(CreateRequest request)
-	{
-		 //EObject selectedLine = null;
-        final Rectangle constraint = (Rectangle) getConstraintFor(request);
-        // get the child object to create
-        final Object newObject = request.getNewObject();
-        
-        final EditPart editPart = getHost(); 
-        final RentalAgency parentAgency = (RentalAgency)editPart.getModel();
-                
-        Command command = UnexecutableCommand.INSTANCE;
-        
-        if (parentAgency != null)
-        {
-        	if (newObject instanceof Customer)
-        	{
-        		command = new CreateCustomerCommand((Customer) newObject,  parentAgency, constraint);
-        	}
-        	else if (newObject instanceof RentalObject)
-        	{
-        		command = new CreateRentalObjectCommand((RentalObject) newObject,  parentAgency, constraint);
-        	}
-        }
-        
-        return command;
-	}
 
 
 	/* (non-Javadoc)

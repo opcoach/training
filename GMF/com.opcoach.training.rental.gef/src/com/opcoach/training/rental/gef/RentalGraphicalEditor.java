@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
@@ -38,7 +37,6 @@ import org.eclipse.gef.palette.PanningSelectionToolEntry;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gef.ui.actions.ActionRegistry;
 import org.eclipse.gef.ui.parts.GraphicalEditorWithFlyoutPalette;
-import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
@@ -49,6 +47,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
 import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
@@ -118,14 +117,17 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
         else
         {
 
-            // il s'agit du cas ou on ouvre un .games qui est en fait un level,
-            // (a voir si ca pourra etre utile dans le futur ou pas)
-            // mais ca fonctionne pas correctement aujourd'hui
-            // the file to edit: loading the model from the opened file
             final IFile file = ((IFileEditorInput) input).getFile();
             final URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
             // resource with respect to EMF model
-            resource = resourceSet.getResource(uri, true);
+            try
+			{
+				resource = resourceSet.getResource(uri, true);
+			} catch (Exception e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             //resource = editingDomain.getResourceSet().getResource(uri, true);
             // getting the root element and cast as Level
             // MB, 03/06/09 : on verifie que cet element est bien un Level, car lors de la creation
@@ -183,16 +185,16 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		group1.add(selTool);
 
 		PaletteGroup group2 = new PaletteGroup("Groupe 2");
-		PaletteEntry custTool = new CreationToolEntry("Customer", "Création de l'objet", 
-				                                      new RentalCreationFactory(Customer.class), null, null);
+		RentalCreationFactory rf = new RentalCreationFactory(Customer.class);
+		PaletteEntry custTool = new CreationToolEntry("Customer", "Création du client",rf,null,null);
 		group2.add(custTool);
 
-		PaletteEntry rentalObjectTool = new CreationToolEntry("Rental Object", "Création de l'objet", 
-				                                              new RentalCreationFactory(RentalObject.class), null, null);
-		group2.add(rentalObjectTool);
+		rf = new RentalCreationFactory(RentalObject.class);
+		PaletteEntry objTool = new CreationToolEntry("Rental Object", "Création de l'objet",rf,null, null);
+		group2.add(objTool);
 
-		PaletteEntry rentalTool = new CreationToolEntry("Rental", "Création de l'objet", new RentalCreationFactory(Rental.class), null,
-				null);
+		rf = new RentalCreationFactory(Rental.class);
+		PaletteEntry rentalTool = new CreationToolEntry("Rental", "Création d'une location",rf,null,null);
 		group2.add(rentalTool);
 
 		palette.setDefaultEntry(selTool);
@@ -223,14 +225,6 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		GraphicalViewer viewer = getGraphicalViewer();
 		viewer.setRootEditPart(new ScalableFreeformRootEditPart());
 		viewer.setEditPartFactory(new RentalEditPartFactory());
-		/*
-		 * viewer.setKeyHandler( new
-		 * GraphicalViewerKeyHandler(viewer).setParent(getCommonKeyHandler()));
-		 * ContextMenuProvider cmProvider = new
-		 * ShapesEditorContextMenuProvider(viewer, getActionRegistry());
-		 * viewer.setContextMenu(cmProvider); //
-		 * getSite().registerContextMenu(cmProvider, viewer);
-		 */
 
 	}
 	
@@ -246,13 +240,11 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		try
 		{
 			// Save only resources that have actually changed.
-			// and use CData for text nodes
 			final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 			saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 
 			// Do the work within an operation because this is a long running
 			// activity that modifies the workbench.
-			//
 			WorkspaceModifyOperation operation = new WorkspaceModifyOperation()
 				{
 					@Override
@@ -268,25 +260,18 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 								{
 									resource.save(saveOptions);
 
-								} catch (IOException e)
-								{
-									RentalGEFActivator.log(e);
-								}
+								} catch (IOException e) { RentalGEFActivator.log(e); }
 								first = false;
 							}
 						}
 					}
 				};
 			operation.run(new NullProgressMonitor());
-
 			getCommandStack().markSaveLocation();
-
 		} catch (Exception e)
 		{
 			RentalGEFActivator.log(e);
-
 		}
-
 	}
 	
 	/**

@@ -3,16 +3,16 @@ package com.opcoach.training.gef.commands;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.commands.Command;
 
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
 public class CreateRentalObjectCommand extends Command
 {
 	private RentalObject ro = null;
-	private RentalAgency agency = null;
+	private MyRentalAgency agency = null;
 	private Rectangle customerBox = null;
 
-	public CreateRentalObjectCommand(RentalObject r, RentalAgency parentAgency, Rectangle constraint)
+	public CreateRentalObjectCommand(RentalObject r, MyRentalAgency parentAgency, Rectangle constraint)
 	{
 		super("Create Rental Object");
 		agency = parentAgency;

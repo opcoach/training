@@ -17,7 +17,7 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editpolicies.RootComponentEditPolicy;
 
 import com.opcoach.training.gef.policies.RentalAgencyEditPolicy;
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 
 /**
  * @author olivier
@@ -27,9 +27,9 @@ public class RentalAgencyEditPart extends AbstractRentalEditPart
 
 	private IFigure figure;
 
-	RentalAgency getAgency()
+	MyRentalAgency getAgency()
 	{
-		return (RentalAgency) getModel();
+		return (MyRentalAgency) getModel();
 	}
 
 	/*
@@ -55,23 +55,12 @@ public class RentalAgencyEditPart extends AbstractRentalEditPart
 	{
 		// Interdit ˆ l'Žditeur de supprimer ce noeud (car root node)
 		installEditPolicy(EditPolicy.COMPONENT_ROLE, new RootComponentEditPolicy());
+		// Ajoute le comportement de deplacement des fils
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new RentalAgencyEditPolicy((XYLayout) getContentPane().getLayoutManager()));
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.gef.editparts.FreeformGraphicalRootEditPart#getModel()
-	 */
-	@Override
-	public Object getModel()
-	{
-		// TODO Auto-generated method stub
-		Object result = super.getModel();
-		// System.out.println("Model returned : " + result);
-		return result;
-
-	}
+	
 
 	@Override
 	protected IFigure createFigure()

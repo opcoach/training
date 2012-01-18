@@ -3,14 +3,14 @@ package com.opcoach.training.gef.commands;
 import org.eclipse.gef.commands.Command;
 
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 
 public class DeleteCustomerCommand extends Command
 {
 	private Customer customer = null;
-	private RentalAgency agency = null;
+	private MyRentalAgency agency = null;
 
-	public DeleteCustomerCommand(Customer c, RentalAgency parentAgency)
+	public DeleteCustomerCommand(Customer c, MyRentalAgency parentAgency)
 	{
 		super("Delete Customer");
 		agency = parentAgency;
