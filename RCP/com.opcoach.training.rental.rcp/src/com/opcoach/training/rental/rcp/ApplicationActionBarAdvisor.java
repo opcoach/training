@@ -64,9 +64,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         menuBar.add(new GroupMarker(IWorkbenchActionConstants.MB_ADDITIONS));
         menuBar.add(helpMenu);
         
-        // File
-        fileMenu.add(new Separator());
-        /*fileMenu.add(prefAction);
+        // File Menu
+        /* fileMenu.add(prefAction);
         fileMenu.add(new Separator());
         fileMenu.add(exitAction); */
         
@@ -77,7 +76,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     	ActionContributionItem exitActionItem = new ActionContributionItem(exitAction);
 		fileMenu.add(exitActionItem);
           
-        if(Util.isMac()) {
+        if (Util.isMac()) {
         	preferencesActionItem.setVisible(false);
         	exitActionItem.setVisible(false);
         }

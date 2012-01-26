@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Gestion de locations" uid="rental.produtct" id="com.opcoach.training.rental.rcp.product" application="com.opcoach.training.rental.rcp.application" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="Gestion de locations" uid="rental.product" id="com.opcoach.training.rental.rcp.product" application="com.opcoach.training.rental.rcp.application" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
 
    <configIni use="default">
