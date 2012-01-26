@@ -20,8 +20,6 @@ import com.opcoach.training.rental.License;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalFactory;
-import com.opcoach.training.rental.MyRentalAgency;
-import com.opcoach.training.rental.MyRentalFactory;
 import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 import com.opcoach.training.rental.StreetType;

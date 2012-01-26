@@ -22,7 +22,6 @@ import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.License;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalPackage;
 
 /**
