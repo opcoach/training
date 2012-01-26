@@ -12,6 +12,7 @@ import org.eclipse.swt.dnd.DragSource;
 import org.eclipse.swt.dnd.RTFTransfer;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.dnd.URLTransfer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.IViewSite;
@@ -60,7 +61,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 
 		// L'arbre est draggable
 		DragSource ds = new DragSource(agencyViewer.getControl(), DND.DROP_COPY);
-		Transfer[] ts = new Transfer[] { TextTransfer.getInstance(), RTFTransfer.getInstance() };
+		Transfer[] ts = new Transfer[] { TextTransfer.getInstance(), RTFTransfer.getInstance(), URLTransfer.getInstance() };
 		ds.setTransfer(ts);
 		ds.addDragListener(new AgencyTreeDragSourceListener(agencyViewer));
 
