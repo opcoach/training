@@ -7,6 +7,7 @@ import org.eclipse.swt.dnd.DragSourceAdapter;
 import org.eclipse.swt.dnd.DragSourceEvent;
 import org.eclipse.swt.dnd.RTFTransfer;
 import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.URLTransfer;
 
 import com.opcoach.training.rental.Customer;
 
@@ -30,10 +31,19 @@ final class AgencyTreeDragSourceListener extends DragSourceAdapter
 
 		if (RTFTransfer.getInstance().isSupportedType(event.dataType))
 		{
-			if  (selectedObject instanceof Customer)
-			event.data = "{\\rtf1\\b\\i " + ((Customer)selectedObject).getDisplayName() + "}";
-			else 
-				event.data = "{\\rtf1 " + selectedObject.toString()+ "}";
+			if (selectedObject instanceof Customer)
+				event.data = "{\\rtf1\\b\\i " + ((Customer) selectedObject).getDisplayName() + "}";
+			else
+				event.data = "{\\rtf1 " + selectedObject.toString() + "}";
+		} else if (URLTransfer.getInstance().isSupportedType(event.dataType))
+		{
+			if (selectedObject instanceof Customer)
+			{
+				Customer c = (Customer) selectedObject;
+				event.data = "http://www.google.fr/search?q=" + c.getDisplayName();
+			} else
+				event.data = "http://www.yahoo.fr";
+
 		} else if (TextTransfer.getInstance().isSupportedType(event.dataType))
 		{
 			if (selectedObject instanceof Customer)
