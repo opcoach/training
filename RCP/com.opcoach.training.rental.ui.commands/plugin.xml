@@ -5,10 +5,10 @@
          point="org.eclipse.ui.commands">
       <command
             id="com.opcoach.training.rental.ui.commands.MaCommande"
-            name="Ma Commande">
+            name="%command.name">
          <state
-               class="org.eclipse.ui.handlers.RadioState"
-               id="com.opcoach.training.rental.ui.commands.state3">
+               class="org.eclipse.ui.handlers.RegistryToggleState:true"
+               id="org.eclipse.ui.commands.toggleState">
          </state>
       </command>
    </extension>
@@ -39,18 +39,18 @@
             allPopups="true"
             locationURI="popup:com.opcoach.rental.ui.rentalagencyview?after=additions">
          <menu
-               label="Rental Menu">
+               label="%menu.label">
             <command
                   commandId="com.opcoach.training.rental.ui.commands.MaCommande"
                   icon="icons/RentalCommand.png"
-                  label="Ma commande dans un menu"
+                  label="%command.label"
                   style="push">
             </command>
          </menu>
          <command
                commandId="org.eclipse.ui.edit.copy"
                icon="icons/RentalCommand.png"
-               label="Copy CUSTOMER"
+               label="%command.label.0"
                style="push">
             <visibleWhen
                   checkEnabled="false">
@@ -64,7 +64,7 @@
             allPopups="false"
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
-               label="Pour Commande">
+               label="%menu.label.0">
             <command
                   commandId="com.opcoach.training.rental.ui.commands.MaCommande"
                   style="push">
@@ -77,7 +77,7 @@
          <command
                commandId="org.eclipse.ui.edit.copy"
                icon="icons/RentalCommand.png"
-               label="Copy CUSTOMER"
+               label="%command.label.1"
                style="push">
             <visibleWhen
                   checkEnabled="false">
@@ -87,6 +87,10 @@
             </visibleWhen>
          </command>
       </menuContribution>
+      <widget
+            class="com.opcoach.training.rental.ui.commands.WorkbenchWidget1"
+            id="com.opcoach.training.rental.ui.commands.widget1">
+      </widget>
    </extension>
    <extension
          point="org.eclipse.core.expressions.definitions">
@@ -112,9 +116,18 @@
          point="org.eclipse.ui.activities">
       <activity
             id="com.opcoach.training.rental.ui.commands.activity1"
-            name="Rental">
+            name="%activity.name">
          <enabledWhen></enabledWhen>
       </activity>
+   </extension>
+   <extension
+         id="caseManagement.ui"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="com.opcoach.training.rental.ui.commands.ProjectNature1">
+         </run>
+      </runtime>
    </extension>
 
 </plugin>
