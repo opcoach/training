@@ -34,20 +34,16 @@ import com.opcoach.training.rental.ui.RentalUIConstants;
 
 public class RentalPropertyView extends ViewPart implements ISelectionListener
 {
-	public static final String	VIEW_ID	= "com.opcoach.rental.ui.views.rentalView"; //$NON-NLS-1$
+	public static final String VIEW_ID = "com.opcoach.rental.ui.views.rentalView"; //$NON-NLS-1$
 
-	private Label				rentedObjectLabel;
-	private Label				customerNameLabel;
-	private Label				startDateLabel;
-	private Label				endDateLabel;
+	private Label rentedObjectLabel;
+	private Label customerNameLabel;
+	private Label startDateLabel;
+	private Label endDateLabel;
 
 	public RentalPropertyView()
 	{
 	}
-	
-	
-
-	
 
 	@Override
 	public void createPartControl(Composite parent)
@@ -67,22 +63,22 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		DragSource ds = new DragSource(rentedObjectLabel, DND.DROP_COPY);
 		ds.setTransfer(new Transfer[] { TextTransfer.getInstance() });
 		ds.addDragListener(new DragSourceAdapter()
-		{	
-			public void dragSetData(DragSourceEvent event)
 			{
-				if (TextTransfer.getInstance().isSupportedType(event.dataType))
+				public void dragSetData(DragSourceEvent event)
 				{
-					event.data = rentedObjectLabel.getText();
+					if (TextTransfer.getInstance().isSupportedType(event.dataType))
+					{
+						event.data = rentedObjectLabel.getText();
+					}
 				}
-			}
-			
-			@Override
-			public void dragStart(DragSourceEvent event)
-			{
-				event.image = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.AGENCY_KEY);
-			}
 
-		});
+				@Override
+				public void dragStart(DragSourceEvent event)
+				{
+					event.image = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.AGENCY_KEY);
+				}
+
+			});
 
 		Label customerTitle = new Label(infoGroup, SWT.NONE);
 		customerTitle.setText(Messages.RentalPropertyView_RentedBy);
@@ -124,9 +120,9 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		super.init(site);
 		site.getPage().addSelectionListener(this);
 	}
-	
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
 	 * @see org.eclipse.ui.part.WorkbenchPart#dispose()
 	 */
 	@Override
@@ -136,8 +132,6 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		super.dispose();
 	}
 
-
-
 	@Override
 	public void setFocus()
 	{
@@ -146,7 +140,6 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 	/*
 	 * (non-Javadoc)
-	 * 
 	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.
 	 * IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
 	 */
@@ -160,27 +153,11 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 			if (sel == null)
 				return;
 
-			// Est ce une rental directement ?
-			if (sel instanceof Rental)
+			// La selection courante est elle un Rental ou adaptable en Rental ? 
+			Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel, Rental.class);
+			if (r != null)
 			{
-				setRental((Rental) sel);
-			} else
-			{
-				// Existe t il un adapter en rental ?
-				Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel, Rental.class);
-				if (r != null)
-				{
-					setRental(r);
-				} else if (sel instanceof IAdaptable)
-				{
-					// Sinon l'objet est il finalement adaptable ?
-					IAdaptable selAd = (IAdaptable) sel;
-					r = (Rental) selAd.getAdapter(Rental.class);
-					if (r != null)
-					{
-						setRental(r);
-					}
-				}
+				setRental(r);
 			}
 
 		}
