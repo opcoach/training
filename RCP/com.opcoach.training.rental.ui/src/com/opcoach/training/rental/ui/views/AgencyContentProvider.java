@@ -7,6 +7,7 @@ package com.opcoach.training.rental.ui.views;
 
 import java.util.Collection;
 
+import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
@@ -74,7 +75,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 		{
 			RentalAgency a = (RentalAgency) parentElement;
 			return new TNode[] { new TNode(CUSTOMERS_NODE, a), new TNode(RENTALS_NODE, a), new TNode(OBJECTS_NODE, a) };
-		}
+		} 
 
 		return (result == null) ? EMPTY_RESULT : result;
 	}
