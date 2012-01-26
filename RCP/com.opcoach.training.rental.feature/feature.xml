@@ -22,9 +22,6 @@
       <import plugin="org.eclipse.core.expressions" version="3.4.101" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.equinox.security" version="1.0.200" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources" version="3.5.2" match="greaterOrEqual"/>
    </requires>
 
    <plugin
