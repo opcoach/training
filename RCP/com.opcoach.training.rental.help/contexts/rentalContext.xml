@@ -1,5 +1,6 @@
  <contexts> 
-      <context id="rentalContext" title="Aide pour l&apos;agence de location"> 
+      <context id="rentalContext" title="Aide pour l&apos;agence de location">
+         <description>Cette partie décrit comment naviguer dans l&apos;agence de location.</description> 
         <topic href="html/toc.html"  label="Rental Main Help"/> 
       </context> 
     </contexts> 
