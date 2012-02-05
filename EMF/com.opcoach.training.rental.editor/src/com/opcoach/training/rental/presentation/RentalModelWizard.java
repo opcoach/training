@@ -323,24 +323,29 @@ public class RentalModelWizard extends Wizard implements INewWizard
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
 				composite.setLayout(layout);
+
 				GridData data = new GridData();
 				data.verticalAlignment = GridData.FILL;
 				data.grabExcessVerticalSpace = true;
 				data.horizontalAlignment = GridData.FILL;
 				composite.setLayoutData(data);
 			}
+			
 			Label resourceURILabel = new Label(composite, SWT.LEFT);
 			{
 				resourceURILabel.setText(RentalEditorPlugin.INSTANCE.getString("_UI_File_label"));
+
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
 				resourceURILabel.setLayoutData(data);
 			}
+
 			Composite fileComposite = new Composite(composite, SWT.NONE);
 			{
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.END;
 				fileComposite.setLayoutData(data);
+
 				GridLayout layout = new GridLayout();
 				data.horizontalAlignment = GridData.FILL;
 				layout.marginHeight = 0;
@@ -348,6 +353,7 @@ public class RentalModelWizard extends Wizard implements INewWizard
 				layout.numColumns = 2;
 				fileComposite.setLayout(layout);
 			}
+
 			fileField = new Text(fileComposite, SWT.BORDER);
 			{
 				GridData data = new GridData();
@@ -356,14 +362,18 @@ public class RentalModelWizard extends Wizard implements INewWizard
 				data.horizontalSpan = 1;
 				fileField.setLayoutData(data);
 			}
+
 			fileField.addModifyListener(validator);
+
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
 				containerLabel.setText(RentalEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
 				containerLabel.setLayoutData(data);
 			}
+
 			initialObjectField = new Combo(composite, SWT.BORDER);
 			{
 				GridData data = new GridData();
@@ -371,18 +381,22 @@ public class RentalModelWizard extends Wizard implements INewWizard
 				data.grabExcessHorizontalSpace = true;
 				initialObjectField.setLayoutData(data);
 			}
+
 			for (String objectName : getInitialObjectNames())
 			{
 				initialObjectField.add(getLabel(objectName));
 			}
+
 			if (initialObjectField.getItemCount() == 1)
 			{
 				initialObjectField.select(0);
 			}
 			initialObjectField.addModifyListener(validator);
+
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
 				encodingLabel.setText(RentalEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
 				encodingLabel.setLayoutData(data);
@@ -394,12 +408,15 @@ public class RentalModelWizard extends Wizard implements INewWizard
 				data.grabExcessHorizontalSpace = true;
 				encodingField.setLayoutData(data);
 			}
+
 			for (String encoding : getEncodings())
 			{
 				encodingField.add(encoding);
 			}
+
 			encodingField.select(0);
 			encodingField.addModifyListener(validator);
+
 			setPageComplete(validatePage());
 			setControl(composite);
 		}
