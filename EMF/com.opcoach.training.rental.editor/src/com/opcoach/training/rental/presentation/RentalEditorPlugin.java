@@ -1,12 +1,12 @@
 /**
- * OPCoach @ 2009
- *
- * $Id$
+ * OPCoach @ 2012
  */
 package com.opcoach.training.rental.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
+
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
+
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**

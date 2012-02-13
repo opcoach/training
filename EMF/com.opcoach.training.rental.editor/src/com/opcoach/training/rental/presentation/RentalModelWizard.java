@@ -1,12 +1,9 @@
 /**
- * OPCoach @ 2009
- *
- * $Id$
+ * OPCoach @ 2012
  */
 package com.opcoach.training.rental.presentation;
 
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -17,38 +14,56 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.ecore.xmi.XMLResource;
+
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.operation.IRunnableWithProgress;
+
 import org.eclipse.jface.viewers.IStructuredSelection;
+
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
+
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
+
 import org.eclipse.swt.events.ModifyListener;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.events.ModifyEvent;
+
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
+
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
 import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalPackage;
 import com.opcoach.training.rental.provider.RentalEditPlugin;
+
+
+import java.io.File;
+
+import org.eclipse.jface.operation.IRunnableWithProgress;
+
+import org.eclipse.swt.widgets.Text;
 
 
 /**
@@ -312,10 +327,11 @@ public class RentalModelWizard extends Wizard implements INewWizard
 		}
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public void createControlGen(Composite parent)
+		public void createControl(Composite parent)
 		{
 			Composite composite = new Composite(parent, SWT.NONE);
 			{
@@ -420,34 +436,6 @@ public class RentalModelWizard extends Wizard implements INewWizard
 			setPageComplete(validatePage());
 			setControl(composite);
 		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated NOT
-		 */
-		public void createControl(Composite parent)
-		{
-			createControlGen(parent);
-			
-			// OPCOach custom
-			initialObjectField.addSelectionListener(new SelectionListener()
-			{
-				
-				public void widgetSelected(SelectionEvent e)
-				{
-					setPageComplete(validatePage());
-				}
-				
-				public void widgetDefaultSelected(SelectionEvent e)
-				{
-					// TODO Auto-generated method stub
-					
-				}
-			}); 
-		}
-
-
 
 		/**
 		 * <!-- begin-user-doc -->
@@ -564,7 +552,7 @@ public class RentalModelWizard extends Wizard implements INewWizard
 				encodingField.clearSelection();
 				fileField.selectAll();
 				fileField.setFocus();
-		}
+		}		
 
 		/**
 		 * Returns the label for the specified type name.
