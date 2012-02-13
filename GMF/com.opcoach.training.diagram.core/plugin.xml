@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.opcoach.com/diagram/1.0"
+            class="com.opcoach.training.diagram.DiagramPackage"
+            genModel="model/diagram.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.opcoach.training.diagram.core.createDiagram"
+            name="Create Diagram">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.opcoach.training.diagram.editor.CreateDiagramHandler"
+            commandId="com.opcoach.training.diagram.core.createDiagram">
+         <activeWhen>
+            <reference
+                  definitionId="com.opcoach.training.diagram.core.oneIFileSelected">
+            </reference></activeWhen>
+         <enabledWhen>
+            <reference
+                  definitionId="com.opcoach.training.diagram.core.oneIFileSelected">
+            </reference>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="com.opcoach.training.diagram.core.oneIFileSelected">
+         <and>
+            <count
+                  value="1">
+            </count>
+            <iterate>
+               <instanceof
+                     value="org.eclipse.core.resources.IFile">
+               </instanceof>
+            </iterate>
+         </and>
+      </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="com.opcoach.training.diagram.core.createDiagram"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
