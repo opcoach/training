@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="com.opcoach.training.rental.ui.compare.twoRentalsSelected">
+         <and>
+            <count
+                  value="2">
+            </count>
+            <iterate>
+               <adapt
+                     type="com.opcoach.training.rental.Rental">
+               </adapt>
+            </iterate>
+         </and>
+      </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.opcoach.training.rental.ui.compare.CompareRentals"
+            commandId="org.eclipse.compare.compareWithOther">
+         <activeWhen>
+            <reference
+                  definitionId="com.opcoach.training.rental.ui.compare.twoRentalsSelected">
+            </reference>
+         </activeWhen>
+         <enabledWhen>
+            <reference
+                  definitionId="com.opcoach.training.rental.ui.compare.twoRentalsSelected">
+            </reference>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:com.opcoach.rental.ui.rentalagencyview?after=additions">
+         <command
+               commandId="org.eclipse.compare.compareWithOther"
+               label="Compare Rentals"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="com.opcoach.training.rental.ui.compare.twoRentalsSelected">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="org.eclipse.compare.compareWithOther"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+6">
+      </key>
+   </extension>
+
+</plugin>

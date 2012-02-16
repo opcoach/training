@@ -22,6 +22,7 @@ import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.RentalCoreActivator;
+import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 
 public class RentalAgencyView extends ViewPart implements IPropertyChangeListener
@@ -45,9 +46,18 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		agencyViewer.setContentProvider(new AgencyContentProvider());
 		labelProvider = new AgencyLabelProvider();
 		agencyViewer.setLabelProvider(labelProvider);
+		
+		
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
 		agencies.add(RentalCoreActivator.getAgency());
+		
+		RentalAgency lyon = RentalAgencyGenerator.createSampleAgency();
+		lyon.setName("Lyon");
+		agencies.add(lyon);
+
 		agencyViewer.setInput(agencies);
+		
+		
 		
 		// Association de la vue sur un contexte d'aide
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(agencyViewer.getControl(), "com.opcoach.training.rental.ui.rentalContext");

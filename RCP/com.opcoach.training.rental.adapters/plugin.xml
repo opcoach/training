@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.core.resources.IFile"
+            class="com.opcoach.training.rental.adapters.RentalAdapterFactory">
+         <adapter
+               type="com.opcoach.training.rental.Rental">
+         </adapter>
+      </factory>
+   </extension>
+
+</plugin>

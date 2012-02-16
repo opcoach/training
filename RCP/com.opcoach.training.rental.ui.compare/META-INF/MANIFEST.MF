@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Compare
+Bundle-SymbolicName: com.opcoach.training.rental.ui.compare;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: OPCOACH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
+ org.eclipse.compare;bundle-version="3.5.200",
+ com.opcoach.training.rental.ui;bundle-version="1.0.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
