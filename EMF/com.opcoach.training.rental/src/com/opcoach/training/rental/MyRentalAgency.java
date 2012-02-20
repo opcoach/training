@@ -12,7 +12,15 @@ package com.opcoach.training.rental;
 public interface MyRentalAgency extends RentalAgency
 {
 	void addRental(Rental object);
-	
+
 	void removeRental(Rental object);
-	
+
+	void addCustomer(Customer c);
+
+	void removeCustomer(Customer c);
+
+	void addObject(RentalObject r);
+
+	void removeObject(RentalObject r);
+
 } // MyRentalAgency

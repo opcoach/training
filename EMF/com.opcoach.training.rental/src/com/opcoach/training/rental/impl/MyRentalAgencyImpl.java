@@ -13,7 +13,8 @@ public class MyRentalAgencyImpl extends RentalAgencyImpl implements MyRentalAgen
 	@Override
 	public Rental book(Customer customer, RentalObject rentedObject, Date from, Date to)
 	{
-		System.out.println("book method overriden");  // ancestor throws exception
+		System.out.println("book method overriden"); // ancestor throws
+														// exception
 		Rental r = MyRentalFactory.eINSTANCE.createRental();
 		r.setStartDate(from);
 		r.setEndDate(to);
@@ -22,9 +23,36 @@ public class MyRentalAgencyImpl extends RentalAgencyImpl implements MyRentalAgen
 		addRental(r);
 		return r;
 	}
-	
-	public void addRental(Rental object) { 	getRentals().add(object); }
 
-	public void removeRental(Rental object) {  getRentals().remove(object); }
+	public void addRental(Rental object)
+	{
+		getRentals().add(object);
+	}
+
+	public void removeRental(Rental object)
+	{
+		getRentals().remove(object);
+	}
+
+	public void addCustomer(Customer c)
+	{
+		getCustomers().add(c);
+
+	}
+
+	public void removeCustomer(Customer c)
+	{
+		getCustomers().remove(c);
+	}
+
+	public void addObject(RentalObject r)
+	{
+		getObjectsToRent().add(r);
+	}
+
+	public void removeObject(RentalObject r)
+	{
+		getObjectsToRent().remove(r);
+	}
 
 }
