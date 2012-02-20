@@ -1,27 +1,18 @@
 /**
- * OPCoach @ 2009
+ * OPCoach @ 2012
  *
  * $Id$
  */
 package com.opcoach.training.rental;
 
-
-/** This code override the generated RentalAgency interface and add some convenients methods not defined in model
+/**
+ * This code overrides the generated RentalAgency interface and adds some
+ * convenients methods not defined in model
  */
 public interface MyRentalAgency extends RentalAgency
 {
+	void addRental(Rental object);
 	
-	void addCustomer(Customer customer);
-
+	void removeRental(Rental object);
 	
-	void addObject(RentalObject object);
-
-	
-	void removeCustomer(Customer customer);
-
-	
-	void removeObject(RentalObject object);
-
-	
-
 } // MyRentalAgency
