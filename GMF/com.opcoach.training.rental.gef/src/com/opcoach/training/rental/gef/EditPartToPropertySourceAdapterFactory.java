@@ -13,9 +13,9 @@ import com.opcoach.training.rental.provider.RentalItemProviderAdapterFactory;
   * @author olivier
   *
   */
-public class EditPartToProperySourceAdapterFactory extends AdapterFactoryContentProvider
+public class EditPartToPropertySourceAdapterFactory extends AdapterFactoryContentProvider
 {
-	public EditPartToProperySourceAdapterFactory()
+	public EditPartToPropertySourceAdapterFactory()
 	{
 		// initialize with the factory providing propertySources for EObject subclasses
 		super(new RentalItemProviderAdapterFactory());

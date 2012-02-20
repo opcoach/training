@@ -28,6 +28,7 @@ import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
+import org.eclipse.gef.RootEditPart;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.palette.CreationToolEntry;
 import org.eclipse.gef.palette.PaletteEntry;
@@ -47,7 +48,6 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
@@ -223,7 +223,8 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		super.configureGraphicalViewer();
 
 		GraphicalViewer viewer = getGraphicalViewer();
-		viewer.setRootEditPart(new ScalableFreeformRootEditPart());
+		rootPart = new ScalableFreeformRootEditPart();
+		viewer.setRootEditPart(rootPart);
 		viewer.setEditPartFactory(new RentalEditPartFactory());
 
 	}
@@ -313,7 +314,7 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 		if (propertySheetPage == null)
 		{
 			propertySheetPage =	new ExtendedPropertySheetPage(editingDomain);
-			propertySheetPage.setPropertySourceProvider(new EditPartToProperySourceAdapterFactory());
+			propertySheetPage.setPropertySourceProvider(new EditPartToPropertySourceAdapterFactory());
 		}
 		return propertySheetPage;
 	}
@@ -350,6 +351,8 @@ public class RentalGraphicalEditor extends GraphicalEditorWithFlyoutPalette
 
 
 	 private boolean isDirty = false;
+
+	private RootEditPart rootPart;
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.gef.ui.parts.GraphicalEditor#isDirty()
