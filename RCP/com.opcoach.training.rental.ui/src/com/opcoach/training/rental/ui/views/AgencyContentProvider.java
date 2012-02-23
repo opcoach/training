@@ -153,8 +153,26 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 			{
 				return agency.getObjectsToRent().toArray();
 			}
-			return null;
+			return EMPTY_RESULT;
 
+		}
+		
+		public String getText(boolean displayCount)
+		{
+
+			
+			if (CUSTOMERS_NODE == name)
+			{
+				return  CUSTOMERS_NODE + (displayCount ? "(" + agency.getCustomers().size() + ")" : "");
+			} else if (RENTALS_NODE == name)
+			{
+				return RENTALS_NODE + (displayCount ? "(" + agency.getRentals().size() + ")" : "");
+			} else if (OBJECTS_NODE == name)
+			{
+				return OBJECTS_NODE + (displayCount ? "(" + agency.getObjectsToRent().size() + ")" : "");
+			}
+			return "No Text for TNode";
+		
 		}
 
 	}

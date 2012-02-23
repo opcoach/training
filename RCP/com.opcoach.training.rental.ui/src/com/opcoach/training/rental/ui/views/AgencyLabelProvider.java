@@ -54,17 +54,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 			result = ((RentalAgency) element).getName();
 		} else if (element instanceof TNode)
 		{
-			TNode t = (TNode) element;
-			if (CUSTOMERS_NODE == t.name)
-			{
-				result = CUSTOMERS_NODE + (displayCount ? "(" + t.agency.getCustomers().size() + ")" : "");
-			} else if (RENTALS_NODE == t.name)
-			{
-				result = RENTALS_NODE + (displayCount ? "(" + t.agency.getRentals().size() + ")" : "");
-			} else if (OBJECTS_NODE == t.name)
-			{
-				result = OBJECTS_NODE + (displayCount ? "(" + t.agency.getObjectsToRent().size() + ")" : "");
-			}
+			return ((TNode) element).getText(displayCount);
 		}
 
 		else if (element instanceof Customer)
