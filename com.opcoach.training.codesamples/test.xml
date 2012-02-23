@@ -1,0 +1,753 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <!-- standard : HTML 4.01 Transitional (Standards mode) dialog : /@c0/@c2_Ahome/@c2_Ahome/_Na -->
+ <head>
+  <title>Eclipse Rich Client Platform - Page de garde</title>
+  <meta
+   http-equiv="Content-Type"
+   content="text/html; charset=UTF-8">
+   <meta
+    content="no-cache"
+    http-equiv="Cache-Control">
+    <meta
+     content="no-cache"
+     http-equiv="Pragma">
+     <meta
+      content="Fri, 01 Jan 1990 00:00:00 GMT"
+      name="Expires"
+      http-equiv="expires">
+      <meta
+       content="text/css"
+       http-equiv="Content-Style-Type">
+       <script
+        type="text/JavaScript"> /*0*/ var scServices = {}; /*1*/ scServices["scLoad"] =
+        {loadFromRoot:function(pUrl){window.location.href="../)"+pUrl;},
+        getUrlFromRoot:function(pHref){if(!this.fRootOffset)
+        this.fRootOffset = window.location.href.length -17; return
+        pHref.substring(this.fRootOffset);}}; </script>
+       <script
+        src="../jslib/scCoLib.js"
+        type="text/JavaScript"></script>
+       <script
+        src="../jslib/scSiLib.js"
+        type="text/JavaScript"></script>
+       <script
+        src="../jslib/scTiLib.js"
+        type="text/JavaScript"></script>
+       <script
+        src="../jslib/scPaLib.js"
+        type="text/JavaScript"></script>
+       <script
+        src="../svc/storage.js"
+        type="text/JavaScript"></script>
+       <script
+        src="../jslib/scTooltipMgr.js"
+        type="text/JavaScript"></script>
+       <script
+        src="../jslib/scDragMgr.js"
+        type="text/JavaScript"></script>
+       <script
+        src="../jslib/scDynUiMgr.js"
+        type="text/JavaScript"></script>
+       <script
+        src="../scripts/pres.js"
+        type="text/JavaScript"></script>
+       <script
+        type="text/JavaScript">scCoLib.fDebug = true;</script>
+       <script
+        type="text/javascript">// if (scOnLoads) scOnLoads[scOnLoads.length] = { onLoad :
+        function() { var vIsIE6 = scCoLib.isIE &&
+        parseFloat(scCoLib.userAgent.substring(scCoLib.userAgent.indexOf("msie")+5))
+        < 7; var vIsIE7 = scCoLib.userAgent.indexOf("msie 7")!=-1; var
+        vIsIE8 = scCoLib.isIE &&
+        parseFloat(scCoLib.userAgent.substring(scCoLib.userAgent.indexOf("msie")+5))
+        > 7; var vIsff2 = scCoLib.userAgent.indexOf("firefox/2")!=-1;
+        var vIsff = scCoLib.userAgent.indexOf("firefox/")!=-1 ||
+        scCoLib.userAgent.indexOf("granparadiso/")!=-1; var vIssf =
+        scCoLib.userAgent.indexOf("safari")!=-1; var vIssf3 = vIssf &&
+        scCoLib.userAgent.indexOf("version/3")!=-1; var vIsWin =
+        scCoLib.userAgent.indexOf("windows")!=-1; var vIsMac =
+        scCoLib.userAgent.indexOf("mac")!=-1; var vIsLinux =
+        scCoLib.userAgent.indexOf("linux")!=-1; var vMsg = "Cette
+        présentation à été produite avec OPALE 3.\n\n"; if (vIsIE6){
+        vMsg += "Celle-ci ne peut-être exécutée sur Internet Explorer 7
+        et supérieure ou Firefox."; } else if (vIsLinux && vIsff2){ vMsg
+        += "Attention, sur Linux avec Firefox 2, les ressources flash ne
+        seront pas correctement affichées. Ce problème est résolu avec
+        la version 3 de Firefox et la version 10 du plugin flash."; }
+        else if (vIsMac && vIsff2) { vMsg += "Attention, sur Mac, les
+        ressources flash ne seront peut-etre pas correctement affichées.
+        Ce problème est résolu avec la version 3 de Firefox."; } else if
+        (!vIsff && !vIssf && !vIsIE8) { vMsg += "Celle-ci n'est
+        compatible qu'avec les navigateurs Firefox 2 et supérieure,
+        Explorer 8 et supérieure ou Safari 3 et supérieure."; if
+        (vIsLinux) vMsg += "\nAttention, sur Linux, les ressources flash
+        ne seront peut-etre pas correctement affichées. Ce problème est
+        résolu avec la version 3 de Firefox et la version 10 du plugin
+        flash."; } else if (vIssf3){ vMsg += "Safari 3 ne permet pas
+        d\'enregistrer les personnalisations que vous pourriez apporter
+        (menu \'édition\'). Pour bénéficier de l\'enregistrement
+        automatique vous devez utiliser Safari 4 et supérieure ou
+        Firefox."; } else if (vIsIE7){ vMsg += "Internet Explorer 7 ne
+        permet pas d\'enregistrer les personnalisations que vous
+        pourriez apporter (menu \'édition\'). Pour bénéficier de
+        l\'enregistrement automatique vous devez utiliser Internet
+        Explorer 8 et supérieure ou Firefox."; } else
+        if(location.href.substring(0,5)=="file:") { vMsg = "Attention,
+        vous avez ouvert cette présentation via votre système de
+        fichiers (protocole \'file\'). Dans ces conditions, votre
+        navigateur ne permet pas d\'enregistrer les personnalisations
+        que vous pourriez apporter (menu \'édition\'). Pour bénéficier
+        de l\'enregistrement automatique vous devez accéder à cette
+        présentation au travers de Scenari ou d\'un serveur web
+        (utilisation du protocole \'http\' ou \'https\')."; }else
+        return; alert(vMsg); } } //</script>
+       <meta
+        content="Scenari - Opale 3.1 - http://scenari-platform.org/opale"
+        name="generator">
+        <link
+         media="all"
+         href="../styles/home.css"
+         type="text/css"
+         rel="stylesheet">
+         <link
+          media="all"
+          href="../styles/outline.css"
+          type="text/css"
+          rel="stylesheet">
+          <link
+           media="all"
+           href="../styles/decor.css"
+           type="text/css"
+           rel="stylesheet">
+           <link
+            media="all"
+            href="../styles/content.css"
+            type="text/css"
+            rel="stylesheet">
+            <link
+             media="all"
+             href="../styles/editor.css"
+             type="text/css"
+             rel="stylesheet">
+             <script
+              type="text/JavaScript"
+              src="../scripts/bhv.js"></script>
+             <script
+              type="text/JavaScript"
+              src="../scripts/sizeMgr.js"></script>
+             <script
+              type="text/javascript"> //Gestion des blocs var vOptions = {}; var
+              vDefaultParams = {} var vCutBlockParams = {cutBefore:1};
+              var vHiddenBlockParams = {hidden:true}; function
+              cutIfNotFirst(pParams){
+              if(scPresUt.isFirstElt(this.fNode)) pParams.cutBefore = 0;
+              } function hiddenIfEmpty(pParams){ if( !
+              scPresUt.isFilled(this.fNode)) pParams.hidden = true; }
+              scPresMgr.addBhvBinder(new
+              ScBhvBinderPathBlock("des:.mainContent",
+              {isRootPage:true}, vDefaultParams, hiddenIfEmpty));
+              //Divisions scPresMgr.addBhvBinder(new
+              ScBhvBinderPathBlock("des:.expUcDiv", vOptions ,
+              vCutBlockParams, cutIfNotFirst));
+              scPresMgr.addBhvBinder(new
+              ScBhvBinderPathBlock("des:.expUcDiv_ti",
+              {uiEditNoCutBefore:true}, vDefaultParams)); //Balises
+              d'intentionalité scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\binfo\b|\bdef\b|\bexample\b|\bremark\b|\badvice\b|\bwarning\b|\bmethod\b|\bremind\b|\bbasic\b|\blegal\b|\bsyntax\b/,
+              vOptions, vCutBlockParams, cutIfNotFirst)); //Balises
+              d'intentionalité masquées scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\bcomplement\b|\bsimulation\b/,
+              vOptions, vHiddenBlockParams)); //Paragraphes et listes et
+              ressources scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\op_txt_tb\b|\bop_txt_p\b|\blnkDoc\b|\bsimu\b/,
+              vOptions, vDefaultParams)); scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\bop_txt_[io]l\b/,
+              {publishIfNotEmpty:true}, vDefaultParams));
+              scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\bop_txt_[io]li\b/,
+              {publishIfNotEmpty:true, uiEditHidden:true},
+              vDefaultParams)); //Ressources scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\bembedInFlow\b/, vOptions,
+              vDefaultParams, null, ScBhvBlockEmbed));
+              scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\bembedInline\b/,
+              {captionHeight:0}, vDefaultParams, null,
+              ScBhvBlockEmbed)); scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\bimgInFlow\b/, vOptions,
+              vDefaultParams, null, ScBhvBlockImg));
+              scPresMgr.addBhvBinder(new
+              ScBhvBinderClassesBlock(/\bimgInline\b/,
+              {captionHeight:0}, vDefaultParams, null, ScBhvBlockImg)); </script>
+ </head>
+ <body>
+  <div
+   class="toolsHidden"
+   id="toolsZ">
+   <div
+    title="Outils (touche T)"
+    onmouseout="scPresTools.closeToolsBarAfter(500); "
+    onmouseover="scPresTools.setToolsBar(true); return false;"
+    id="toolsGrippy">
+    <div
+     id="toolsBody">
+     <a
+      title="Pr&eacute;c&eacute;dent (touche gauche)"
+      onclick="scPresMgr.prev();"
+      href="#"
+      id="prevBtn">
+      <span>Page
+       pr&eacute;c&eacute;dente
+      </span>
+     </a>
+     <a
+      title="Plan (touche P)"
+      onclick="scPresTools.showOutline(); return false;"
+      href="#"
+      id="outlineBtn">
+      <span>Plan...</span>
+     </a>
+     <a
+      title="Editer (touche E)"
+      onclick="scPresTools.toggleEditPage(); return false;"
+      href="#"
+      class="editOff"
+      id="editBtn">
+      <span>&Eacute;diter
+      </span>
+     </a>
+     <a
+      title="Effacer toute la personnalisation"
+      onclick="scPresStor.resetData(); return false;"
+      href="#"
+      id="resetBtn">
+      <span>R&eacute;initialiser
+      </span>
+     </a>
+     <a
+      title="Suivant (touche espace ou droite)"
+      onclick="scPresMgr.next();"
+      href="#"
+      id="nextBtn">
+      <span>Page suivante</span>
+     </a>
+    </div>
+   </div>
+  </div>
+  <div
+   id="mainZ">
+   <div
+    id="decor">
+    <div
+     id="titleFrm">
+     <h1
+      id="title"></h1>
+    </div>
+   </div>
+   <div
+    id="container">
+    <div
+     onmouseout="scrollTiTask.fSpeed=0;"
+     onmouseover="if(scrollTiTask.fSpeed&gt;=0) {scrollTiTask.fSpeed=-2; scTiLib.addTaskNow(scrollTiTask);}"
+     onclick="scrollTiTask.step(-$('container').offsetHeight/10); scrollTiTask.fSpeed-=2;"
+     id="scrollTop">
+     <span
+      id="scrollTopLeft"></span>
+     <span
+      id="scrollTopCenter"></span>
+     <span
+      id="scrollTopRight"></span>
+    </div>
+    <div
+     id="viewHome">
+     <div>
+      <h1>
+       <span>Eclipse Rich Client Platform</span>
+      </h1>
+      <div></div>
+     </div>
+    </div>
+    <div
+     style="visibility: hidden;"
+     id="view1"></div>
+    <div
+     style="visibility: hidden;"
+     id="view2"></div>
+    <div
+     onmouseout="scrollTiTask.fSpeed=0;"
+     onmouseover="if(scrollTiTask.fSpeed&lt;=0) {scrollTiTask.fSpeed=2; scTiLib.addTaskNow(scrollTiTask);}"
+     onclick="scrollTiTask.step($('container').offsetHeight/10); scrollTiTask.fSpeed+=2;"
+     id="scrollBottom">
+     <span
+      id="scrollBottomLeft"></span>
+     <span
+      id="scrollBottomCenter"></span>
+     <span
+      id="scrollBottomRight"></span>
+    </div>
+   </div>
+   <div
+    style="visibility: hidden;"
+    id="zoomFrm">
+    <div
+     id="zoomH">
+     <a
+      title="Fermer le zoom."
+      onclick="scPresMgr.displayZoom(false); return false;"
+      href="#"
+      id="zoomClose">
+      <span>Fermer</span>
+     </a>
+    </div>
+    <div
+     id="zoom"></div>
+   </div>
+   <div
+    style="display: none;"
+    id="editorFrm">
+    <h1
+     id="editorTitle"></h1>
+    <div
+     id="editor"></div>
+   </div>
+   <div
+    style="display: none;"
+    id="outlineFrm">
+    <div
+     id="outlineHeader">
+     <a
+      title="Fermer"
+      onclick="scPresTools.hideOutline(); return false;"
+      href="#"
+      id="outlineCloseBtn">
+      <span>X</span>
+     </a>
+    </div>
+    <div
+     id="outline"><!--outline : <treeContent><entry dialog="/@c0/@c2_Ahome/@c2_Ahome/_Na" 
+      title="Page de garde" position="current"><root>ue</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_Na_c2_13" 
+      title="Objectifs" position="sibling"><root>obj</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N1d" 
+      title="Plan" position="sibling"><root>ue</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c6/@c6/_N8" 
+      title="Présentation" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c7/@c7/_N8" title="Communauté Eclipse" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c8/@c8/_N8" title="IDE" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_58" title="Architecture OSGI et Eclipse" 
+      position="sibling"><root>courseUa</root><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_58/@c3/@c3/_N1d" 
+      title="Plan" position="cousin"><root>courseUa</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_58/@c3/@c14/@c14/_N8" 
+      title="OSGi" position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_58/@c3/@c15/@c15/_N8" 
+      title="Architecture Eclipse" position="cousin"><root>expUc</root></entry></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c9/@c9/_N8" title="PDE" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62" title="La création d'IHM dans 
+      Eclipse" position="sibling"><root>courseUa</root><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c4/_Na_c4_10" 
+      title="Objectifs" position="cousin"><root>obj</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c4/_N1d" 
+      title="Plan" position="cousin"><root>courseUa</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c4/_N3d_c4_31" 
+      title="Introduction" position="cousin"><root>intro</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c16/@c16/_N8" 
+      title="SWT" position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c17/@c17/_N8" 
+      title="Point d'extension de vue" position="cousin"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c18/@c18/_N8" title="Gestion 
+      des événements SWT" position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c19/@c19/_N8" 
+      title="Intégrer du Swing dans SWT" position="cousin"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c20/@c20/_N8" title="JFace" 
+      position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c21/@c21/_N8" 
+      title="Librairie UIForms" position="cousin"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c22/@c22/_N8" title="Visual 
+      editor" position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_62/@c4/@c23/@c23/_N8" 
+      title="API IHM" position="cousin"><root>expUc</root></entry></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64" title="Points d'extension IHM" 
+      position="sibling"><root>courseUa</root><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c5/_N1d" 
+      title="Plan" position="cousin"><root>courseUa</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c5/_N3d_c5_10" 
+      title="Introduction" position="cousin"><root>intro</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c24/@c24/_N8" 
+      title="Aide en ligne" position="cousin"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c25/@c25/_N8" title="Editor" 
+      position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c26/@c26/_N8" 
+      title="Perspective" position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c27/@c27/_N8" 
+      title="Wizard" position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c28/@c28/_N8" 
+      title="Preferences" position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c29/@c29/_N8" 
+      title="Property" position="cousin"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c30/@c30/_N8" 
+      title="Points Extension Commande" position="cousin"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c2/_N54_c2_64/@c5/@c5/_N5a_c5_105" title="Conclusion" 
+      position="cousin"><root>conclu</root></entry></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c285/@c285/_N8" 
+      title="Actions" position="sibling"><root>expUc</root></entry><entry dialog="/@c0/@c2_Ahome/@c2/@c286/@c286/_N8" 
+      title="Gestions des Opérations" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c10/@c10/_N8" title="API Eclipse" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c295/@c295/_N8" title="Workbench advisors" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c11/@c11/_N8" title="Introduction Build" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c12/@c12/_N8" title="Le PDE Build" position="sibling"><root>expUc</root></entry><entry 
+      dialog="/@c0/@c2_Ahome/@c2/@c13/@c13/_N8" title="Création de Points Extensions" 
+      position="sibling"><root>expUc</root></entry></treeContent> -->
+     <ul
+      class=" sw_menu_navList">
+      <li>
+       <a
+        target="_self"
+        href="Intel_RCP.html"
+        class=" mnu_l home">
+        <span>Page de garde</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="Intel_RCP_1.html"
+        class=" mnu_l mnu_obj">
+        <span>Objectifs</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="Intel_RCP_2.html"
+        class=" mnu_l mnu_map">
+        <span>Plan</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="PresentationOPCoach.html"
+        class=" mnu_l mnu_expUc">
+        <span>Pr&eacute;sentation
+        </span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="IntroductionEclipse.html"
+        class=" mnu_l mnu_expUc">
+        <span>Communaut&eacute;
+         Eclipse
+        </span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="IDE%20Eclipse%20Java.html"
+        class=" mnu_l mnu_expUc">
+        <span>IDE</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="ArchitectureOSGi_Eclipse.html"
+        class=" mnu_b mnu_div">
+        <span>Architecture OSGI et Eclipse</span>
+       </a>
+       <ul>
+        <li>
+         <a
+          target="_self"
+          href="ArchitectureOSGi_Eclipse.html"
+          class=" mnu_l mnu_map">
+          <span>Plan</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="Presentation%20OSGi.html"
+          class=" mnu_l mnu_expUc">
+          <span>OSGi</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="ArchitectureEclipse.html"
+          class=" mnu_l mnu_expUc">
+          <span>Architecture Eclipse</span>
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="PDE_plugin.html"
+        class=" mnu_l mnu_expUc">
+        <span>PDE</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="IHM.html"
+        class=" mnu_b mnu_div">
+        <span>La
+         cr&eacute;ation
+         d'IHM dans Eclipse
+        </span>
+       </a>
+       <ul>
+        <li>
+         <a
+          target="_self"
+          href="IHM.html"
+          class=" mnu_l mnu_obj">
+          <span>Objectifs</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="IHM_1.html"
+          class=" mnu_l mnu_map">
+          <span>Plan</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="IHM_2.html"
+          class=" mnu_l mnu_intro">
+          <span>Introduction</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="SWT.html"
+          class=" mnu_l mnu_expUc">
+          <span>SWT</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointExtensionView.html"
+          class=" mnu_l mnu_expUc">
+          <span>Point d'extension de vue</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="SWT%20Events.html"
+          class=" mnu_l mnu_expUc">
+          <span>Gestion
+           des &eacute;v&eacute;nements
+           SWT
+          </span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="SwtSwing.html"
+          class=" mnu_l mnu_expUc">
+          <span>Int&eacute;grer
+           du Swing dans SWT
+          </span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="JFace.html"
+          class=" mnu_l mnu_expUc">
+          <span>JFace</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="UIForms.html"
+          class=" mnu_l mnu_expUc">
+          <span>Librairie UIForms</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="Visual%20Editor.html"
+          class=" mnu_l mnu_expUc">
+          <span>Visual editor</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="API_IHM_Eclipse.html"
+          class=" mnu_l mnu_expUc">
+          <span>API IHM</span>
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="PointsExtension.html"
+        class=" mnu_b mnu_div">
+        <span>Points d'extension IHM</span>
+       </a>
+       <ul>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtension.html"
+          class=" mnu_l mnu_map">
+          <span>Plan</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtension_1.html"
+          class=" mnu_l mnu_intro">
+          <span>Introduction</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtensionHelp.html"
+          class=" mnu_l mnu_expUc">
+          <span>Aide en ligne</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtensionEditor.html"
+          class=" mnu_l mnu_expUc">
+          <span>Editor</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtensionPerspective.html"
+          class=" mnu_l mnu_expUc">
+          <span>Perspective</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtensionWizards.html"
+          class=" mnu_l mnu_expUc">
+          <span>Wizard</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtensionPreferences.html"
+          class=" mnu_l mnu_expUc">
+          <span>Preferences</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtensionProperties.html"
+          class=" mnu_l mnu_expUc">
+          <span>Property</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointExtensionCommande.html"
+          class=" mnu_l mnu_expUc">
+          <span>Points Extension Commande</span>
+         </a>
+        </li>
+        <li>
+         <a
+          target="_self"
+          href="PointsExtension_2.html"
+          class=" mnu_l mnu_conclu">
+          <span>Conclusion</span>
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="Actions.html"
+        class=" mnu_l mnu_expUc">
+        <span>Actions</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="Operations.html"
+        class=" mnu_l mnu_expUc">
+        <span>Gestions
+         des Op&eacute;rations
+        </span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="APIEclipse.html"
+        class=" mnu_l mnu_expUc">
+        <span>API Eclipse</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="RCP_Advisors.html"
+        class=" mnu_l mnu_expUc">
+        <span>Workbench advisors</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="Introduction_Build.html"
+        class=" mnu_l mnu_expUc">
+        <span>Introduction Build</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="PDE_build.html"
+        class=" mnu_l mnu_expUc">
+        <span>Le PDE Build</span>
+       </a>
+      </li>
+      <li>
+       <a
+        target="_self"
+        href="CreerPointsExtension.html"
+        class=" mnu_l mnu_expUc">
+        <span>Cr&eacute;ation
+         de Points Extensions
+        </span>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div
+   id="progressBarZ">
+   <table
+    id="progressBarTable">
+    <tr
+     id="progressBarTr"></tr>
+   </table>
+  </div>
+  <div
+   id="wait">
+   <div
+    class="presWait">
+    <span>Chargement en cours...</span>
+   </div>
+  </div>
+  <div
+   style="visibility: hidden;"
+   id="poolSrc"></div>
+ </body>
+</html>

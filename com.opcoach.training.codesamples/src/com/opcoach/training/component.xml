@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.opcoach.training.codesamples">
+   <implementation class="testComponent"/>
+   <reference cardinality="1..1" interface="org.eclipse.jface.viewers.ILabelProvider" name="ILabelProvider" policy="static"/>
+   <service>
+      <provide interface="org.eclipse.jface.viewers.IColorProvider"/>
+   </service>
+</scr:component>
