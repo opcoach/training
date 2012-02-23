@@ -187,18 +187,17 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
   }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public EList<RentalObject> getObjectsToRentGen()
 	{
-		if (objectsToRent == null)
-		{
-			objectsToRent = new EObjectContainmentWithInverseEList<RentalObject>(RentalObject.class, this, RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT,
-					RentalPackage.RENTAL_OBJECT__PARENT_AGENCY);
-		}
-		return objectsToRent;
-	}
+    if (objectsToRent == null)
+    {
+      objectsToRent = new EObjectContainmentWithInverseEList<RentalObject>(RentalObject.class, this, RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT, RentalPackage.RENTAL_OBJECT__PARENT_AGENCY);
+    }
+    return objectsToRent;
+  }
 
 	/**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -251,18 +250,17 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 	
 	/**
-	   * <!-- begin-user-doc --> <!-- end-user-doc -->
-	   * @generated
-	   */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public EList<Rental> getRentals()
 	{
-		if (rentals == null)
-		{
-			rentals = new EObjectContainmentWithInverseEList<Rental>(Rental.class, this, RentalPackage.RENTAL_AGENCY__RENTALS,
-					RentalPackage.RENTAL__PARENT_AGENCY);
-		}
-		return rentals;
-	}
+    if (rentals == null)
+    {
+      rentals = new EObjectContainmentWithInverseEList<Rental>(Rental.class, this, RentalPackage.RENTAL_AGENCY__RENTALS, RentalPackage.RENTAL__PARENT_AGENCY);
+    }
+    return rentals;
+  }
 	
 	
 
