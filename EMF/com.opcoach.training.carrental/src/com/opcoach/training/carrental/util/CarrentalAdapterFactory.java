@@ -9,7 +9,7 @@ package com.opcoach.training.carrental.util;
 import com.opcoach.training.carrental.*;
 
 import com.opcoach.training.rental.License;
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -113,7 +113,7 @@ public class CarrentalAdapterFactory extends AdapterFactoryImpl
 				return createRentalObjectAdapter();
 			}
 			@Override
-			public Adapter caseRentalAgency(RentalAgency object)
+			public Adapter caseRentalAgency(MyRentalAgency object)
 			{
 				return createRentalAgencyAdapter();
 			}
@@ -235,13 +235,13 @@ public class CarrentalAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.training.rental.RentalAgency <em>Agency</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.training.rental.MyRentalAgency <em>Agency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.training.rental.RentalAgency
+	 * @see com.opcoach.training.rental.MyRentalAgency
 	 * @generated
 	 */
 	public Adapter createRentalAgencyAdapter()

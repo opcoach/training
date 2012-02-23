@@ -6,13 +6,12 @@
  */
 package com.opcoach.training.carrental.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import com.opcoach.training.carrental.Car;
 import com.opcoach.training.carrental.CarRentalAgency;
 import com.opcoach.training.carrental.CarrentalPackage;
-
-import com.opcoach.training.rental.impl.RentalAgencyImpl;
-
-import org.eclipse.emf.ecore.EClass;
+import com.opcoach.training.rental.impl.MyRentalAgencyImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class CarRentalAgencyImpl extends RentalAgencyImpl implements CarRentalAgency
+public class CarRentalAgencyImpl extends MyRentalAgencyImpl implements CarRentalAgency
 {
 	/**
 	 * <!-- begin-user-doc -->

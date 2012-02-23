@@ -9,7 +9,7 @@ package com.opcoach.training.carrental.util;
 import com.opcoach.training.carrental.*;
 
 import com.opcoach.training.rental.License;
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
 import java.util.List;
@@ -235,7 +235,7 @@ public class CarrentalSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRentalAgency(RentalAgency object)
+	public T caseRentalAgency(MyRentalAgency object)
 	{
 		return null;
 	}

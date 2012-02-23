@@ -6,7 +6,7 @@
  */
 package com.opcoach.training.carrental;
 
-import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.MyRentalAgency;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,7 @@ import com.opcoach.training.rental.RentalAgency;
  * @model
  * @generated
  */
-public interface CarRentalAgency extends RentalAgency
+public interface CarRentalAgency extends MyRentalAgency
 {
 	/**
 	 * <!-- begin-user-doc -->
