@@ -2,7 +2,6 @@ package com.opcoach.training.rental.ui.views;
 
 import java.text.SimpleDateFormat;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -104,13 +103,23 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 	public void setRental(Rental r)
 	{
-		rentedObjectLabel.setText(r.getRentedObject().getName());
-		Customer c = r.getCustomer();
-		customerNameLabel.setText(c.getDisplayName());
+		if (r==null)
+		{
+			rentedObjectLabel.setText(" ");
+			customerNameLabel.setText(" ");
+			startDateLabel.setText(" ");
+			endDateLabel.setText(" ");
+		}
+		else
+		{
+			rentedObjectLabel.setText(r.getRentedObject().getName());
+			Customer c = r.getCustomer();
+			customerNameLabel.setText(c.getDisplayName());
 
-		SimpleDateFormat df = new SimpleDateFormat(Messages.RentalPropertyView_dateFormat);
-		startDateLabel.setText(df.format(r.getStartDate()));
+			SimpleDateFormat df = new SimpleDateFormat(Messages.RentalPropertyView_dateFormat);
+			startDateLabel.setText(df.format(r.getStartDate()));
 		endDateLabel.setText(df.format(r.getEndDate()));
+		}
 
 	}
 
@@ -136,8 +145,8 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	public void setFocus()
 	{
 
-	}
-
+    }
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.
@@ -150,15 +159,9 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		{
 			Object sel = ((IStructuredSelection) selection).getFirstElement();
 
-			if (sel == null)
-				return;
-
 			// La selection courante est elle un Rental ou adaptable en Rental ? 
 			Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel, Rental.class);
-			if (r != null)
-			{
-				setRental(r);
-			}
+			setRental(r);
 
 		}
 
