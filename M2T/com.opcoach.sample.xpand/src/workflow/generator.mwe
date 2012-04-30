@@ -14,23 +14,24 @@
 		<modelSlot value="model" />
 	</component>
 
-	<!-- check model -->
+	<!-- check model 
 	<component class="org.eclipse.xtend.check.CheckComponent">
 		<metaModel id="mm"
 			class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel"/>
-			
-	
 		<checkFile value="metamodel::Checks" />
 		<emfAllChildrenSlot value="model" />
 	</component>
+	-->
 
 	<!--  generate code -->
 	<component class="org.eclipse.xpand2.Generator">
 	    
-		<!-- metaModel id="rentalMetaModel" class="org.eclipse.xtend.typesystem.emf.EmfMetaModel">
-           <metaModelFile value="rental.ecore"/> 
-         </metaModel>  -->
-	     <metaModel idRef="mm"/>
+		<metaModel id="rentalMetaModel" class="org.eclipse.xtend.typesystem.emf.EmfMetaModel">
+           <metaModelFile value="src/metamodel/metamodel.ecore"/> 
+         </metaModel> 
+         <!-- 
+	     <metaModel idRef="mm"/> 
+	     -->
 		<fileEncoding value="ISO-8859-1"/>		
 		<expand
 			value="template::Template::main FOR model" />
