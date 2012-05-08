@@ -50,14 +50,10 @@ public class RentalCoreActivator extends Plugin {
 		return plugin;
 	}
 	
-	private static MyRentalAgency agency = null;
+	private static MyRentalAgency agency = RentalAgencyGenerator.createSampleAgency();
 	
 	public static MyRentalAgency getAgency()
-	{
-		if (agency == null)
-		{
-			agency = RentalAgencyGenerator.createSampleAgency();
-		}
+	{		
 		return agency;
 	}
 
