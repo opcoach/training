@@ -4,8 +4,10 @@
 // ------------------------------------------------ 
 package com.opcoach.message;
 
+
 public interface MessageFactory
 {
+	public static MessageFactory eInstance =  com.opcoach.message.impl.DefaultMessageFactory.getDefault();
 
 	public Message createMessage();
 
