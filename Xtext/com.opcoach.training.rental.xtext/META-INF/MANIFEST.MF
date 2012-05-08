@@ -3,18 +3,21 @@ Bundle-ManifestVersion: 2
 Bundle-Name: com.opcoach.training.rental.xtext
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0
-Bundle-SymbolicName: com.opcoach.training.rental.xtext; singleton:=true
+Bundle-SymbolicName: com.opcoach.training.rental.xtext;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
- org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
- org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
+Require-Bundle: com.opcoach.training.rental,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext;visibility:=reexport,
+ org.apache.log4j;visibility:=reexport,
+ org.apache.commons.logging;resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
- org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
- com.opcoach.training.rental,
  org.eclipse.xtext.util,
- org.antlr.runtime
+ org.antlr.runtime,
+ org.eclipse.xtext.builder,
+ org.eclipse.emf.ecore,
+ org.eclipse.core.resources
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
@@ -23,4 +26,6 @@ Export-Package: com.opcoach.training.rental.xtext,
  com.opcoach.training.rental.xtext.parseTreeConstruction,
  com.opcoach.training.rental.xtext.parser.antlr,
  com.opcoach.training.rental.xtext.parser.antlr.internal,
- com.opcoach.training.rental.xtext.validation
+ com.opcoach.training.rental.xtext.validation,
+ com.opcoach.training.rental.xtext.scoping,
+ com.opcoach.training.rental.xtext.formatting

@@ -204,111 +204,107 @@ public class RentalDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class AddressElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Address");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cAddressAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cAddressKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cAddressKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cStreetTypeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cStreetTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cStreetTypeStreetTypeEnumRuleCall_2_1_0 = (RuleCall)cStreetTypeAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cStreetTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cStreetTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cStreetTypeStreetTypeEnumRuleCall_3_1_0 = (RuleCall)cStreetTypeAssignment_3_1.eContents().get(0);
+		private final Keyword cNumberKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cNumberAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cNumberEIntParserRuleCall_3_1_0 = (RuleCall)cNumberAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cNumberKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cNumberAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cNumberEIntParserRuleCall_4_1_0 = (RuleCall)cNumberAssignment_4_1.eContents().get(0);
+		private final Keyword cZipCodeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cZipCodeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cZipCodeEStringParserRuleCall_4_1_0 = (RuleCall)cZipCodeAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cZipCodeKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cZipCodeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cZipCodeEStringParserRuleCall_5_1_0 = (RuleCall)cZipCodeAssignment_5_1.eContents().get(0);
+		private final Keyword cCityKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cCityAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cCityEStringParserRuleCall_5_1_0 = (RuleCall)cCityAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cCityKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cCityAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cCityEStringParserRuleCall_6_1_0 = (RuleCall)cCityAssignment_6_1.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cStreetNameKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cStreetNameAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cStreetNameEStringParserRuleCall_7_1_0 = (RuleCall)cStreetNameAssignment_7_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cStreetNameKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cStreetNameAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cStreetNameEStringParserRuleCall_6_1_0 = (RuleCall)cStreetNameAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Address:
-		//	{Address} "Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)?
-		//	("city" city=EString)? ("streetName" streetName=EString)? "}";
+		//	"Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)? ("city"
+		//	city=EString)? ("streetName" streetName=EString)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Address} "Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)?
-		//("city" city=EString)? ("streetName" streetName=EString)? "}"
+		//"Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)? ("city"
+		//city=EString)? ("streetName" streetName=EString)? "}"
 		public Group getGroup() { return cGroup; }
 
-		//{Address}
-		public Action getAddressAction_0() { return cAddressAction_0; }
-
 		//"Address"
-		public Keyword getAddressKeyword_1() { return cAddressKeyword_1; }
+		public Keyword getAddressKeyword_0() { return cAddressKeyword_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
 		//("streetType" streetType=StreetType)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 
 		//"streetType"
-		public Keyword getStreetTypeKeyword_3_0() { return cStreetTypeKeyword_3_0; }
+		public Keyword getStreetTypeKeyword_2_0() { return cStreetTypeKeyword_2_0; }
 
 		//streetType=StreetType
-		public Assignment getStreetTypeAssignment_3_1() { return cStreetTypeAssignment_3_1; }
+		public Assignment getStreetTypeAssignment_2_1() { return cStreetTypeAssignment_2_1; }
 
 		//StreetType
-		public RuleCall getStreetTypeStreetTypeEnumRuleCall_3_1_0() { return cStreetTypeStreetTypeEnumRuleCall_3_1_0; }
+		public RuleCall getStreetTypeStreetTypeEnumRuleCall_2_1_0() { return cStreetTypeStreetTypeEnumRuleCall_2_1_0; }
 
 		//("number" number=EInt)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"number"
-		public Keyword getNumberKeyword_4_0() { return cNumberKeyword_4_0; }
+		public Keyword getNumberKeyword_3_0() { return cNumberKeyword_3_0; }
 
 		//number=EInt
-		public Assignment getNumberAssignment_4_1() { return cNumberAssignment_4_1; }
+		public Assignment getNumberAssignment_3_1() { return cNumberAssignment_3_1; }
 
 		//EInt
-		public RuleCall getNumberEIntParserRuleCall_4_1_0() { return cNumberEIntParserRuleCall_4_1_0; }
+		public RuleCall getNumberEIntParserRuleCall_3_1_0() { return cNumberEIntParserRuleCall_3_1_0; }
 
 		//("zipCode" zipCode=EString)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"zipCode"
-		public Keyword getZipCodeKeyword_5_0() { return cZipCodeKeyword_5_0; }
+		public Keyword getZipCodeKeyword_4_0() { return cZipCodeKeyword_4_0; }
 
 		//zipCode=EString
-		public Assignment getZipCodeAssignment_5_1() { return cZipCodeAssignment_5_1; }
+		public Assignment getZipCodeAssignment_4_1() { return cZipCodeAssignment_4_1; }
 
 		//EString
-		public RuleCall getZipCodeEStringParserRuleCall_5_1_0() { return cZipCodeEStringParserRuleCall_5_1_0; }
+		public RuleCall getZipCodeEStringParserRuleCall_4_1_0() { return cZipCodeEStringParserRuleCall_4_1_0; }
 
 		//("city" city=EString)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_5() { return cGroup_5; }
 
 		//"city"
-		public Keyword getCityKeyword_6_0() { return cCityKeyword_6_0; }
+		public Keyword getCityKeyword_5_0() { return cCityKeyword_5_0; }
 
 		//city=EString
-		public Assignment getCityAssignment_6_1() { return cCityAssignment_6_1; }
+		public Assignment getCityAssignment_5_1() { return cCityAssignment_5_1; }
 
 		//EString
-		public RuleCall getCityEStringParserRuleCall_6_1_0() { return cCityEStringParserRuleCall_6_1_0; }
+		public RuleCall getCityEStringParserRuleCall_5_1_0() { return cCityEStringParserRuleCall_5_1_0; }
 
 		//("streetName" streetName=EString)?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_6() { return cGroup_6; }
 
 		//"streetName"
-		public Keyword getStreetNameKeyword_7_0() { return cStreetNameKeyword_7_0; }
+		public Keyword getStreetNameKeyword_6_0() { return cStreetNameKeyword_6_0; }
 
 		//streetName=EString
-		public Assignment getStreetNameAssignment_7_1() { return cStreetNameAssignment_7_1; }
+		public Assignment getStreetNameAssignment_6_1() { return cStreetNameAssignment_6_1; }
 
 		//EString
-		public RuleCall getStreetNameEStringParserRuleCall_7_1_0() { return cStreetNameEStringParserRuleCall_7_1_0; }
+		public RuleCall getStreetNameEStringParserRuleCall_6_1_0() { return cStreetNameEStringParserRuleCall_6_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class RentalObjectElements extends AbstractParserRuleElementFinder {
@@ -799,8 +795,8 @@ public class RentalDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Address:
-	//	{Address} "Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)?
-	//	("city" city=EString)? ("streetName" streetName=EString)? "}";
+	//	"Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)? ("city"
+	//	city=EString)? ("streetName" streetName=EString)? "}";
 	public AddressElements getAddressAccess() {
 		return (pAddress != null) ? pAddress : (pAddress = new AddressElements());
 	}
