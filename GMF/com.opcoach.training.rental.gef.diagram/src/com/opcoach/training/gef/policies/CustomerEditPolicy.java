@@ -9,13 +9,14 @@ import com.opcoach.training.gef.commands.DeleteCustomerCommand;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.gef.parts.CustomerEditPart;
+import com.opcoach.training.rental.gef.parts.RentalAgencyEditPart;
 
 public class CustomerEditPolicy extends  ComponentEditPolicy
 {
 	protected Command createDeleteCommand(final GroupRequest request)
 	    {
-		DiagramElementEditPart part = (DiagramElementEditPart) getHost().getParent();
-		  MyRentalAgency parent = (MyRentalAgency) part.getModelObject();
+		RentalAgencyEditPart part = (RentalAgencyEditPart) getHost().getParent();
+		  MyRentalAgency parent = (MyRentalAgency) part.getModel();
 	        Customer child = ((CustomerEditPart) getHost()).getCustomer();
 	        DeleteCustomerCommand deleteCmd = new DeleteCustomerCommand(child, parent);
 	        return deleteCmd;

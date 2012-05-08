@@ -50,6 +50,8 @@ public class RentalAgencyEditPart extends AbstractGraphicalEditPart
 		children.addAll(getAgency().getObjectsToRent());
 		children.addAll(getAgency().getRentals());
 
+		
+		
 		return children;
 	}
 
