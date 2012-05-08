@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -31,7 +30,10 @@ import com.opcoach.training.rental.ui.views.AgencyContentProvider.TNode;
  * @author olivier
  */
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
-{	
+{
+	/** A local color registry to store the node colors */
+	private ColorRegistry colorRegistry = new ColorRegistry();
+	
 	/** The choosen palette among the additional (may be null) */
 	private IColorProvider currentPalette;
 
@@ -130,18 +132,18 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 		}
 	}
 
-	/** A private methode to get a color in the preference store */
+	/** A private methode to get a color in the preference store 
+	 * @param key the preference key to get the rgb value */
 	private Color getPrefColor(String key)
 	{
 		IPreferenceStore pref = RentalUIActivator.getDefault().getPreferenceStore();
 		String rgbKey = pref.getString(key);
-		ColorRegistry reg = JFaceResources.getColorRegistry();
-		Color result = reg.get(rgbKey);
+		Color result = colorRegistry.get(rgbKey);
 		if (result == null)
 		{
 			// Get value in pref store
-			reg.put(rgbKey, StringConverter.asRGB(rgbKey));
-			result = reg.get(rgbKey);
+			colorRegistry.put(rgbKey, StringConverter.asRGB(rgbKey));
+			result = colorRegistry.get(rgbKey);
 		}
 		return result;
 
