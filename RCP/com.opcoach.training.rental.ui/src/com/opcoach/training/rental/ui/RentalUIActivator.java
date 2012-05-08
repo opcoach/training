@@ -78,7 +78,8 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 					paletteManager.put(name, (IColorProvider) exeExt);
 				} catch (CoreException e)
 				{
-					IStatus st = new Status(IStatus.ERROR, PLUGIN_ID, "Impossible de creer la classe de palette : "+elt.getAttribute("colorProviderClass"),e);
+					IStatus st = new Status(IStatus.ERROR, PLUGIN_ID, "Impossible de creer la classe de palette : "+
+				                  elt.getAttribute("colorProviderClass"),e);
 					getLog().log(st);
 					
 				}
