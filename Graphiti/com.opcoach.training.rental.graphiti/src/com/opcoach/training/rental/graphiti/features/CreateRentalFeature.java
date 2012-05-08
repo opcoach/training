@@ -56,7 +56,7 @@ public class CreateRentalFeature extends AbstractCreateConnectionFeature
 			r.setStartDate(now);
 			r.setEndDate(new Date(now.getTime() + 7*24*3600*1000L));
 			
-			//Add the customer in agency.
+			//Add the rental in agency.
 			((RentalDiagramTypeProvider)getFeatureProvider().getDiagramTypeProvider()).getAgency().getRentals().add(r);
 
 			// add connection for business object
