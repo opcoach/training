@@ -105,5 +105,82 @@
             name="Rental StandAlone">
       </perspective>
    </extension>
+   
+   
+      <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.opcoach.training.rental.ui.commands.MaCommande"
+            name="%command.name">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:true"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.opcoach.training.rental.ui.commands.SampleCommandHandler"
+            commandId="com.opcoach.training.rental.ui.commands.MaCommande">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:com.opcoach.rental.ui.rentalagencyview?after=additions">
+         <menu
+               label="%menu.label">
+            <command
+                  commandId="com.opcoach.training.rental.ui.commands.MaCommande"
+                  icon="icons/Agency.png"
+                  label="%command.label"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <!-- Ajout d'un menu dans le main menu -->
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="%menu.label.0">
+            <command
+                  commandId="com.opcoach.training.rental.ui.commands.MaCommande"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="com.opcoach.training.rental.ui.agencyview">
+         <with
+               variable="activePartId">
+            <equals
+                  value="com.opcoach.rental.ui.rentalagencyview">
+            </equals>
+         </with>
+      </definition>
+      <definition
+            id="com.opcoach.training.rental.ui.customerSelected">
+         <iterate>
+            <instanceof
+                  value="com.opcoach.training.rental.Customer">
+            </instanceof>
+         </iterate>
+      </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.activities">
+      <activity
+            id="com.opcoach.training.rental.ui.commands.activity1"
+            name="%activity.name">
+         <enabledWhen></enabledWhen>
+      </activity>
+   </extension>
+   
 
 </plugin>
