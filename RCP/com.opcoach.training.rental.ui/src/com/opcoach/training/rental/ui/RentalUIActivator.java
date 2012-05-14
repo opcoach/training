@@ -40,7 +40,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	 */
 	public RentalUIActivator()
 	{
-		System.out.println("Start Rental UI Activator"); // For git hub commit
+		System.out.println("Start Rental UI Activator"); // For git hub commit test
 	}
 
 	/*
