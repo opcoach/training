@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+   <extension-point id="Palette" name="Palette" schema="schema/Palette.exsd"/>
+
+  <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.opcoach.training.e4.rental.ui.views.RentalPerspective"
+            icon="icons/Agency.png"
+            id="com.opcoach.training.rental.ui.rentalperspective"
+            name="Rental">
+      </perspective>
+   
+   </extension>
+
+
 
    <extension
          id="product"
@@ -20,7 +34,34 @@
                name="applicationCSS"
                value="platform:/plugin/com.opcoach.training.e4.rental.ui/css/default.css">
          </property>
+         <property
+               name="lifeCycleURI"
+               value="com.opcoach.training.e4.rental.ui.views.RentalAgencyView">
+         </property>
       </product>
    </extension>
+   
+     <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.opcoach.training.e4.rental.ui.pref.RentalPrefInit">
+      </initializer>
+   </extension>
+   
+    <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="com.opcoach.training.rental.preferences"
+            class="com.opcoach.training.e4.rental.ui.pref.RentalColorPreferences"
+            id="com.opcoach.rental.ui.colorprefpage"
+            name="Colors">
+      </page>
+      <page
+            class="com.opcoach.training.e4.rental.ui.pref.RentalPrefHomePage"
+            id="com.opcoach.training.rental.preferences"
+            name="Rental">
+      </page>
+   </extension>
+   
 
 </plugin>

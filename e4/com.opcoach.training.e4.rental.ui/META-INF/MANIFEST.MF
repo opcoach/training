@@ -22,5 +22,13 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  org.eclipse.e4.ui.css.core;bundle-version="0.10.0",
  org.w3c.css.sac;bundle-version="1.3.1",
  org.eclipse.e4.core.commands;bundle-version="0.10.0",
- org.eclipse.e4.ui.bindings;bundle-version="0.10.0"
+ org.eclipse.e4.ui.bindings;bundle-version="0.10.0",
+ com.opcoach.training.rental.core;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.ui;bundle-version="3.103.0",
+ com.opcoach.training.e4.rental.ui.cmd;bundle-version="1.0.0";resolution:=optional,
+ org.eclipse.e4.core.di.extensions;bundle-version="0.10.0",
+ org.eclipse.e4.ui.di;bundle-version="0.10.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Activator: com.opcoach.training.e4.rental.ui.RentalUIActivator
+Export-Package: com.opcoach.training.e4.rental.ui.handlers
+Bundle-ActivationPolicy: lazy
