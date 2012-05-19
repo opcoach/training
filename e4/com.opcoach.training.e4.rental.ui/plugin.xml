@@ -12,10 +12,29 @@
       </perspective>
    
    </extension>
-
-
-
-   <extension
+     <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.opcoach.training.e4.rental.ui.pref.RentalPrefInit">
+      </initializer>
+   </extension>
+   
+    <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="com.opcoach.training.rental.preferences"
+            class="com.opcoach.training.e4.rental.ui.pref.RentalColorPreferences"
+            id="com.opcoach.rental.ui.colorprefpage"
+            name="Colors">
+      </page>
+      <page
+            class="com.opcoach.training.e4.rental.ui.pref.RentalPrefHomePage"
+            id="com.opcoach.training.rental.preferences"
+            name="Rental">
+      </page>
+   </extension>
+   
+  <extension
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
@@ -41,27 +60,6 @@
       </product>
    </extension>
    
-     <extension
-         point="org.eclipse.core.runtime.preferences">
-      <initializer
-            class="com.opcoach.training.e4.rental.ui.pref.RentalPrefInit">
-      </initializer>
-   </extension>
+ 
    
-    <extension
-         point="org.eclipse.ui.preferencePages">
-      <page
-            category="com.opcoach.training.rental.preferences"
-            class="com.opcoach.training.e4.rental.ui.pref.RentalColorPreferences"
-            id="com.opcoach.rental.ui.colorprefpage"
-            name="Colors">
-      </page>
-      <page
-            class="com.opcoach.training.e4.rental.ui.pref.RentalPrefHomePage"
-            id="com.opcoach.training.rental.preferences"
-            name="Rental">
-      </page>
-   </extension>
-   
-
 </plugin>

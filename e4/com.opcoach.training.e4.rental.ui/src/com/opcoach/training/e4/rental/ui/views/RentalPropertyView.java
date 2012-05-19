@@ -35,8 +35,6 @@ public class RentalPropertyView  {
 	private Label endDateLabel;
 
 
-
-	@Inject
 	public RentalPropertyView(Composite parent) {
 		parent.setLayout(new GridLayout(1, false));
 
@@ -93,10 +91,10 @@ public class RentalPropertyView  {
 
 	public void setRental(Rental r) {
 		if (r == null) {
-			rentedObjectLabel.setText(" ");
+			rentedObjectLabel.setText("                               ");
 			customerNameLabel.setText(" ");
 			startDateLabel.setText(" ");
-			endDateLabel.setText(" ");
+			endDateLabel.setText("                                    ");
 		} else {
 			rentedObjectLabel.setText(r.getRentedObject().getName());
 			Customer c = r.getCustomer();
@@ -109,39 +107,14 @@ public class RentalPropertyView  {
 
 	}
 	
-	@Inject 
-	private Adapter adapter;
 	
 	@Inject
-	public void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object o) {
+	public void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object o, Adapter adapter) {
 		
 		Rental r = adapter.adapt(o, Rental.class);
 		setRental(r);
 	
 	}
-
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.
-	 * IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
-	 */
-	/*
-	 * public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-	 * if (selection.isEmpty()) return;
-	 * 
-	 * if (selection instanceof IStructuredSelection) { Object sel =
-	 * ((IStructuredSelection) selection).getFirstElement();
-	 * 
-	 * // La selection courante est elle un Rental ou adaptable en Rental ?
-	 * Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel,
-	 * Rental.class); setRental(r);
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
 
 
 }

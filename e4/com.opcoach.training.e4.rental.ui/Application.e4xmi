@@ -19,7 +19,9 @@
             </children>
             <children xsi:type="advanced:Placeholder" xmi:id="_-UaHYKDWEeGSZcJc4hEsWA" ref="_vGxgkKDLEeGSZcJc4hEsWA"/>
           </children>
-          <children xsi:type="basic:Part" xmi:id="_EzgzEJ4JEeGjZMSURtjBGw" elementId="com.opcoach.rental.e4.ui.views.rentalView" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.views.RentalPropertyView" label="Rental Property"/>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_KYPXsKG-EeGt1MjJ4j3IUg" elementId="com.opcoach.training.e4.extendProperties">
+            <children xsi:type="basic:Part" xmi:id="_EzgzEJ4JEeGjZMSURtjBGw" elementId="com.opcoach.rental.e4.ui.views.rentalView" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.views.RentalPropertyView" label="Rental Property"/>
+          </children>
         </children>
       </children>
     </children>
