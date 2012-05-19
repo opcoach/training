@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    
+  <extension
+        id="customerFragment"
+        point="org.eclipse.e4.workbench.model">
+     <fragment
+           uri="fragment.e4xmi">
+     </fragment>
+  </extension>
+  <extension
+        point="org.eclipse.core.runtime.adapters">
+     <factory
+           adaptableType="com.opcoach.training.rental.Rental"
+           class="com.opcoach.training.e4.rental.ui.customer.RentalToCustomerAdapterFactory">
+        <adapter
+              type="com.opcoach.training.rental.Customer">
+        </adapter>
+     </factory>
+  </extension>
+
+</plugin>
