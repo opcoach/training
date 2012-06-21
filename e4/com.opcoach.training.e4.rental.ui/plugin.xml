@@ -53,13 +53,8 @@
                name="applicationCSS"
                value="platform:/plugin/com.opcoach.training.e4.rental.ui/css/default.css">
          </property>
-         <property
-               name="lifeCycleURI"
-               value="com.opcoach.training.e4.rental.ui.views.RentalAgencyView">
-         </property>
       </product>
    </extension>
    
- 
    
 </plugin>
