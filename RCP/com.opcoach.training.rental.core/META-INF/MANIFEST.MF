@@ -13,7 +13,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental,
  com.opcoach.training.rental.core,
- com.opcoach.training.rental.core.helpers,
+ com.opcoach.training.rental.helpers,
  com.opcoach.training.rental.util
 Bundle-ClassPath: .,
  lib/rental.jar
