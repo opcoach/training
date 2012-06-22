@@ -32,13 +32,6 @@
          unpack="false"/>
 
    <plugin
-         id="com.opcoach.training.rental"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="com.opcoach.training.rental.core"
          download-size="0"
          install-size="0"
@@ -50,14 +43,6 @@
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.opcoach.training.rental.ui.rcp.ext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
          unpack="false"/>
 
    <plugin
