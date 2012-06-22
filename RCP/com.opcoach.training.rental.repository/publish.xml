@@ -1,0 +1,72 @@
+<project name="Generate Java DataSample" default="fillProjectStructure" basedir=".">
+	<description>
+        This ant file can : 
+    	- create a new java project containing all dependencies to the data sample project 
+        - regenerate all java file for data sample generators 
+    	
+    	Parameters : 
+    	workflowPath : path where workflows has been extracted.
+    	templatePath : path where templates have been extracted.
+    </description>
+
+	<!-- remettre cette ligne quand la livraison de la tache sera faite dans mwe
+	<taskdef name="workflow" classname="org.eclipse.emf.mwe.core.ant.WorkflowAntTask"/>
+	-->
+	<taskdef name="workflow" classname="com.opcoach.generator.ecore.ui.handlers.ant.WorkflowAntTask" classpath="../bin" />
+
+
+	<!-- set global properties for this build -->
+	<!-- projectname is supposed to be already created -->
+	<property name="homeWorkspace" location="${basedir}/tmp" />
+	<property name="projectName" value="defaultProject" />
+	<property name="homeProject" value="${homeWorkspace}/${projectName}" />
+	<property name="srcProject" value="${homeProject}/src" />
+	<property name="workflowPath" value="default" />
+	<property name="templatePath" value="default" />
+	<property name="homedsgen2java" value="default" />
+	<!--
+	<eclipse.convertPath resourcePath="com.opcoach.generator.xpand.dsgen2java/src/workflow/" property="workflowPath"/>
+	<eclipse.convertPath resourcePath="com.opcoach.generator.xpand.dsgen2java/src/template/" property="templatePath"/>
+-->
+	<target name="fillProjectStructure">
+		<tstamp />
+		<ftp action="put" />
+		<!-- Create the project directory structure -->
+		<echo message="Create project Structure in ${homeProject}" />
+
+		<copy todir="${homeProject}">
+			<fileset dir="${homedsgen2java}" includes="**"/>
+		</copy>
+		<eclipse.refreshLocal resource="${projectName}" depth="infinite" />
+		<echo message="WorkflowPath = ${workflowPath}" />
+		<echo message="TemplatePath = ${templatePath}" />
+	</target>
+
+	<target name='generate' depends="fillProjectStructure">
+		<workflow file='${workflowPath}/workflow.mwe'>
+			<param name='baseDir' value='/tmp/base/' />
+		</workflow>
+	</target>
+
+
+	<!--
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <javac srcdir="${src}" destdir="${build}"/>
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <mkdir dir="${dist}/lib"/>
+
+    <jar jarfile="${dist}/lib/Rental-${DSTAMP}.jar" basedir="${build}"/>
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+	
+	-->
+</project>
