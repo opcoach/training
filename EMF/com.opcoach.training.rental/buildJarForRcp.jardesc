@@ -11,8 +11,9 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
-        <file path="/com.opcoach.training.rental/model/rental.ecore"/>
         <javaElement handleIdentifier="=com.opcoach.training.rental/src"/>
+        <file path="/com.opcoach.training.rental/model/rental.ecore"/>
         <file path="/com.opcoach.training.rental/model/rental.genmodel"/>
+        <javaElement handleIdentifier="=com.opcoach.training.rental/src-gen"/>
     </selectedElements>
 </jardesc>
