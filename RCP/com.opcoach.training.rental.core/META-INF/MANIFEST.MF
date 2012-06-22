@@ -6,10 +6,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.opcoach.training.rental.core.RentalCoreActivator
 Bundle-Vendor: OPCOACH
 Require-Bundle: org.eclipse.core.runtime,
- com.opcoach.training.rental;visibility:=reexport,
  org.eclipse.emf.ecore.xmi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.core,
  com.opcoach.training.rental.core.helpers
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/rental.jar
