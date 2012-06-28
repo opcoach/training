@@ -1,4 +1,4 @@
-package com.opcoach.training.rental.ui.colorprovider;
+package com.opcoach.training.rental.ui.palettes;
 
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.swt.SWT;
@@ -9,17 +9,17 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalObject;
 
-public class ViveColorProvider implements IColorProvider
+public class PastelColorProvider implements IColorProvider
 {
 
-	public ViveColorProvider()
+	public PastelColorProvider()
 	{
 	}
 
 	@Override
 	public Color getBackground(Object element)
 	{
-		return Display.getCurrent().getSystemColor(SWT.COLOR_YELLOW);
+		return Display.getCurrent().getSystemColor(SWT.COLOR_GRAY);
 	}
 
 	public Color getForeground(Object element)
