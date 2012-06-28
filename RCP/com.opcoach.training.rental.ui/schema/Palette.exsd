@@ -18,7 +18,7 @@
       </annotation>
       <complexType>
          <sequence minOccurs="0" maxOccurs="1">
-            <element ref="colorProvider"/>
+            <element ref="palette"/>
          </sequence>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -47,15 +47,15 @@
       </complexType>
    </element>
 
-   <element name="colorProvider">
+   <element name="palette">
       <complexType>
-         <attribute name="colorProviderClass" type="string">
+         <attribute name="id" type="string" use="required">
             <annotation>
                <documentation>
-                  Classe qui implémente le color provider
+                  
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.eclipse.jface.viewers.IColorProvider"/>
+                  <meta.attribute kind="identifier"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -64,6 +64,16 @@
                <documentation>
                   Name for this color provider (pastel...)
                </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="paletteClass" type="string">
+            <annotation>
+               <documentation>
+                  Classe qui implémente le color provider
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.jface.viewers.IColorProvider"/>
+               </appinfo>
             </annotation>
          </attribute>
       </complexType>

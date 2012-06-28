@@ -9,6 +9,7 @@ import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
+import com.opcoach.training.rental.ui.Palette;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
 
@@ -26,17 +27,17 @@ public class RentalColorPreferences extends FieldEditorPreferencePage implements
 	protected void createFieldEditors()
 	{
 		// Extract the double String array for name and color provider (value is the key)
-		Map<String, IColorProvider> addedProviders = RentalUIActivator.getDefault().getPaletteManager();
-		if (!addedProviders.isEmpty())
+		Map<String, Palette> palettes = RentalUIActivator.getDefault().getPaletteManager();
+		if (!palettes.isEmpty())
 		{
-		   String[][] comboValues = new String[addedProviders.size()+1][2];
+		   String[][] comboValues = new String[palettes.size()+1][2];
 		   comboValues[0][0] = "None";   // Displayed name
 		   comboValues[0][1] = null;
 		   int i = 1;
-		   for (String key : addedProviders.keySet())
+		   for (Palette p : palettes.values())
 		   {
-			   comboValues[i][0] = key;   // Displayed name
-			   comboValues[i][1] = key;   // Returned value if selected
+			   comboValues[i][0] = p.getName();   // Displayed name
+			   comboValues[i][1] = p.getId();   // Returned value if selected
 			   i++;
 		   }
 		   

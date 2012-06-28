@@ -33,7 +33,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	private static RentalUIActivator plugin;
 
 	/** The map of possible color providers (read in extensions) */
-	private Map<String, IColorProvider> paletteManager = new HashMap<String, IColorProvider>();
+	private Map<String, Palette> paletteManager = new HashMap<String, Palette>();
 
 	/**
 	 * The constructor
@@ -61,7 +61,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	public void readColorProviderExtensions()
 	{
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
-		IExtensionPoint extp = reg.getExtensionPoint("com.opcoach.training.rental.ui.ColorProvider");
+		IExtensionPoint extp = reg.getExtensionPoint("com.opcoach.training.rental.ui.Palette");
 		IExtension[] extensions = extp.getExtensions();
 
 		for (IExtension ext : extensions)
@@ -69,18 +69,21 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 			IConfigurationElement[] config = ext.getConfigurationElements();
 			for (IConfigurationElement elt : config)
 			{
-				// Create the color provider for label.
+				// Create the palette for current extension.
 				try
 				{
 					// Create the executable extension
-					Object exeExt = elt.createExecutableExtension("colorProviderClass");
+					IColorProvider delegatedICP = (IColorProvider) elt.createExecutableExtension("paletteClass");
+					
 					// Add it (with its name) in the color provider map
-					String name = elt.getAttribute("name");
-					paletteManager.put(name, (IColorProvider) exeExt);
+					Palette p = new Palette(elt.getAttribute("id"));
+					p.setName(elt.getAttribute("name"));
+					p.setColorProvider(delegatedICP);
+					paletteManager.put(p.getId(), p);
 				} catch (CoreException e)
 				{
 					IStatus st = new Status(IStatus.ERROR, PLUGIN_ID, "Impossible de creer la classe de palette : "+
-				                  elt.getAttribute("colorProviderClass"),e);
+				                  elt.getAttribute("paletteClass"),e);
 					getLog().log(st);
 					
 				}
@@ -104,7 +107,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 
 	/* @return a never null collection of overriden color providers */
 
-	public Map<String, IColorProvider> getPaletteManager()
+	public Map<String, Palette> getPaletteManager()
 	{
 		return paletteManager;
 	}
