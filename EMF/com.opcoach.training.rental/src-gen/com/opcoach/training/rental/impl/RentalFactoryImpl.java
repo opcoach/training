@@ -5,6 +5,7 @@
  */
 package com.opcoach.training.rental.impl;
 
+import com.opcoach.training.rental.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
