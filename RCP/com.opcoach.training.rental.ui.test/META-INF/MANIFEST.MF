@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: com.opcoach.training.rental.ui.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: OPCOACH
+Fragment-Host: com.opcoach.training.rental.ui;bundle-version="1.0.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.swtbot.go;bundle-version="2.0.5"
