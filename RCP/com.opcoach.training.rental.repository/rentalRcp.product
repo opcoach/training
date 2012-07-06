@@ -111,7 +111,7 @@
    </plugins>
 
    <features>
-      <feature id="com.opcoach.training.rental.feature" version="1.0.0.qualifier"/>
+      <feature id="com.opcoach.training.rental.feature"/>
       <feature id="org.eclipse.rcp" version="3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272"/>
       <feature id="org.eclipse.emf" version="2.7.2.v20120130-0943"/>
    </features>
