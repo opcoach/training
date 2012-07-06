@@ -6,7 +6,6 @@ import java.util.Collection;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
-import javax.xml.ws.FaultAction;
 
 import org.eclipse.e4.core.contexts.Active;
 import org.eclipse.e4.core.di.annotations.Optional;
@@ -33,7 +32,7 @@ import org.eclipse.swt.widgets.Composite;
 import com.opcoach.training.e4.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.RentalCoreActivator;
-import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
+import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 
 public class RentalAgencyView implements IPropertyChangeListener
 {
