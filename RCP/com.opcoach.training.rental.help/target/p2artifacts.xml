@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='osgi.bundle' id='com.opcoach.training.rental.help' version='1.0.0.201206272115'>
+  <artifact classifier='osgi.bundle' id='com.opcoach.training.rental.help' version='1.0.0.201207061241'>
     <properties size='5'>
       <property name='artifact.size' value='191371'/>
       <property name='download.size' value='191371'/>

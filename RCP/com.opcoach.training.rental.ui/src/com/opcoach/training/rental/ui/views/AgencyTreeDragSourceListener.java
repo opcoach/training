@@ -5,11 +5,14 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.dnd.DragSourceAdapter;
 import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.ImageTransfer;
 import org.eclipse.swt.dnd.RTFTransfer;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.URLTransfer;
 
 import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.ui.RentalUIActivator;
+import com.opcoach.training.rental.ui.RentalUIConstants;
 
 final class AgencyTreeDragSourceListener extends DragSourceAdapter
 {
@@ -29,6 +32,13 @@ final class AgencyTreeDragSourceListener extends DragSourceAdapter
 		if (selectedObject == null)
 			return;
 
+		if (ImageTransfer.getInstance().isSupportedType(event.dataType))
+		{
+			if (selectedObject instanceof Customer)
+				event.data = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.CUSTOMER_KEY);
+			else
+				event.data = null;
+		}
 		if (RTFTransfer.getInstance().isSupportedType(event.dataType))
 		{
 			if (selectedObject instanceof Customer)
