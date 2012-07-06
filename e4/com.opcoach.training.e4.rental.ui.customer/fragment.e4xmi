@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_8rhxIKDuEeGSZcJc4hEsWA">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_GsP5AKG8EeGt1MjJ4j3IUg" featurename="children" parentElementId="com.opcoach.training.e4.extendProperties">
+    <elements xsi:type="basic:Part" xmi:id="_ItA24KG8EeGt1MjJ4j3IUg" elementId="com.opcoach.training.e4.rental.ui.views.CustomerViewPart" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui.customer/com.opcoach.training.e4.rental.ui.customer.CustomerView" label="Customer Properties"/>
+  </fragments>
+</fragment:ModelFragments>

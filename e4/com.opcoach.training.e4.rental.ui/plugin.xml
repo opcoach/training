@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension-point id="Palette" name="Palette" schema="schema/Palette.exsd"/>
+
+  <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.opcoach.training.e4.rental.ui.views.RentalPerspective"
+            icon="icons/Agency.png"
+            id="com.opcoach.training.rental.ui.rentalperspective"
+            name="Rental">
+      </perspective>
+   
+   </extension>
+     <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.opcoach.training.e4.rental.ui.pref.RentalPrefInit">
+      </initializer>
+   </extension>
+   
+    <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="com.opcoach.training.rental.preferences"
+            class="com.opcoach.training.e4.rental.ui.pref.RentalColorPreferences"
+            id="com.opcoach.rental.ui.colorprefpage"
+            name="Colors">
+      </page>
+      <page
+            class="com.opcoach.training.e4.rental.ui.pref.RentalPrefHomePage"
+            id="com.opcoach.training.rental.preferences"
+            name="Rental">
+      </page>
+   </extension>
+   
+  <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            description="Rental ui made over e4"
+            name="Rental e4 ui">
+         <property
+               name="appName"
+               value="Rental e4">
+         </property>
+         <property
+               name="applicationXMI"
+               value="com.opcoach.training.e4.rental.ui/Application.e4xmi">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/com.opcoach.training.e4.rental.ui/css/default.css">
+         </property>
+      </product>
+   </extension>
+   
+   
+</plugin>
