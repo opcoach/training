@@ -50,8 +50,8 @@ public class RentalAgencyView implements IPropertyChangeListener
 	private EMenuService menuService;
 	
 
-	@Inject
-	public RentalAgencyView(Composite parent, @Optional IStylingEngine styleEngine)
+	@PostConstruct
+	public void createContent(Composite parent, @Optional IStylingEngine styleEngine)
 	{
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());

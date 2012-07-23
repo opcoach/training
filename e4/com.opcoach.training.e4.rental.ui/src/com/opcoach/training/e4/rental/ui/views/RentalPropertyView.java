@@ -2,6 +2,7 @@ package com.opcoach.training.e4.rental.ui.views;
 
 import java.text.SimpleDateFormat;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -35,8 +36,8 @@ public class RentalPropertyView
 	private Label startDateLabel;
 	private Label endDateLabel;
 
-	@Inject
-	public RentalPropertyView(Composite parent)
+	@PostConstruct
+	public void createContent(Composite parent)
 	{
 		parent.setLayout(new GridLayout(1, false));
 
