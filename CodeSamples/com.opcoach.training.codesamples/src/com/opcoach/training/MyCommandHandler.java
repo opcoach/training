@@ -14,7 +14,7 @@ public class MyCommandHandler extends AbstractHandler
 	public Object execute(ExecutionEvent event) throws ExecutionException
 	{
 		// Create an operation
-		IUndoableOperation op = new MyOperation("myOperation");
+		IUndoableOperation op = new SepiaFilterOperation(null, null);
 		// Add it on history
 		IProgressMonitor pm = new NullProgressMonitor();
 		PlatformUI.getWorkbench().getOperationSupport().getOperationHistory().execute(op, pm, null);
