@@ -930,13 +930,13 @@ protected class RentalAgency_RightCurlyBracketKeyword_7 extends KeywordToken  {
 /************ begin Rule Address ****************
  *
  * Address:
- * 	"Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)? ("city"
- * 	city=EString)? ("streetName" streetName=EString)? "}";
+ * 	{Address} "Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)?
+ * 	("city" city=EString)? ("streetName" streetName=EString)? "}";
  *
  **/
 
-// "Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)? ("city"
-// city=EString)? ("streetName" streetName=EString)? "}"
+// {Address} "Address" "{" ("streetType" streetType=StreetType)? ("number" number=EInt)? ("zipCode" zipCode=EString)?
+// ("city" city=EString)? ("streetName" streetName=EString)? "}"
 protected class Address_Group extends GroupToken {
 	
 	public Address_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -951,30 +951,30 @@ protected class Address_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_RightCurlyBracketKeyword_7(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_RightCurlyBracketKeyword_8(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getAddressRule().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getAddressAccess().getAddressAction_0().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
 
 }
 
-// "Address"
-protected class Address_AddressKeyword_0 extends KeywordToken  {
-	
-	public Address_AddressKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+// {Address}
+protected class Address_AddressAction_0 extends ActionToken  {
+
+	public Address_AddressAction_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getAddressAccess().getAddressKeyword_0();
+	public Action getGrammarElement() {
+		return grammarAccess.getAddressAccess().getAddressAction_0();
 	}
 
     @Override
@@ -984,24 +984,51 @@ protected class Address_AddressKeyword_0 extends KeywordToken  {
 		}	
 	}
 
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(!eObjectConsumer.isConsumed()) return null;
+		return eObjectConsumer;
+	}
 }
 
-// "{"
-protected class Address_LeftCurlyBracketKeyword_1 extends KeywordToken  {
+// "Address"
+protected class Address_AddressKeyword_1 extends KeywordToken  {
 	
-	public Address_LeftCurlyBracketKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_AddressKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getAddressAccess().getLeftCurlyBracketKeyword_1();
+		return grammarAccess.getAddressAccess().getAddressKeyword_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_AddressKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_AddressAction_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "{"
+protected class Address_LeftCurlyBracketKeyword_2 extends KeywordToken  {
+	
+	public Address_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getAddressAccess().getLeftCurlyBracketKeyword_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Address_AddressKeyword_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1009,85 +1036,6 @@ protected class Address_LeftCurlyBracketKeyword_1 extends KeywordToken  {
 }
 
 // ("streetType" streetType=StreetType)?
-protected class Address_Group_2 extends GroupToken {
-	
-	public Address_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Group getGrammarElement() {
-		return grammarAccess.getAddressAccess().getGroup_2();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new Address_StreetTypeAssignment_2_1(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-}
-
-// "streetType"
-protected class Address_StreetTypeKeyword_2_0 extends KeywordToken  {
-	
-	public Address_StreetTypeKeyword_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getAddressAccess().getStreetTypeKeyword_2_0();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new Address_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-}
-
-// streetType=StreetType
-protected class Address_StreetTypeAssignment_2_1 extends AssignmentToken  {
-	
-	public Address_StreetTypeAssignment_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getAddressAccess().getStreetTypeAssignment_2_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new Address_StreetTypeKeyword_2_0(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("streetType",false)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("streetType");
-		if(enumLitSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getStreetTypeStreetTypeEnumRuleCall_2_1_0(), value, null)) { 
-			type = AssignmentType.ENUM_RULE_CALL;
-			element = grammarAccess.getAddressAccess().getStreetTypeStreetTypeEnumRuleCall_2_1_0();
-			return obj;
-		}
-		return null;
-	}
-
-}
-
-
-// ("number" number=EInt)?
 protected class Address_Group_3 extends GroupToken {
 	
 	public Address_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1102,63 +1050,62 @@ protected class Address_Group_3 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_NumberAssignment_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_StreetTypeAssignment_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// "number"
-protected class Address_NumberKeyword_3_0 extends KeywordToken  {
+// "streetType"
+protected class Address_StreetTypeKeyword_3_0 extends KeywordToken  {
 	
-	public Address_NumberKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_StreetTypeKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getAddressAccess().getNumberKeyword_3_0();
+		return grammarAccess.getAddressAccess().getStreetTypeKeyword_3_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_Group_2(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Address_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Address_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// number=EInt
-protected class Address_NumberAssignment_3_1 extends AssignmentToken  {
+// streetType=StreetType
+protected class Address_StreetTypeAssignment_3_1 extends AssignmentToken  {
 	
-	public Address_NumberAssignment_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_StreetTypeAssignment_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAddressAccess().getNumberAssignment_3_1();
+		return grammarAccess.getAddressAccess().getStreetTypeAssignment_3_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_NumberKeyword_3_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_StreetTypeKeyword_3_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("number",false)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("number");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getNumberEIntParserRuleCall_3_1_0(), value, null)) {
-			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getAddressAccess().getNumberEIntParserRuleCall_3_1_0();
+		if((value = eObjectConsumer.getConsumable("streetType",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("streetType");
+		if(enumLitSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getStreetTypeStreetTypeEnumRuleCall_3_1_0(), value, null)) { 
+			type = AssignmentType.ENUM_RULE_CALL;
+			element = grammarAccess.getAddressAccess().getStreetTypeStreetTypeEnumRuleCall_3_1_0();
 			return obj;
 		}
 		return null;
@@ -1167,7 +1114,7 @@ protected class Address_NumberAssignment_3_1 extends AssignmentToken  {
 }
 
 
-// ("zipCode" zipCode=EString)?
+// ("number" number=EInt)?
 protected class Address_Group_4 extends GroupToken {
 	
 	public Address_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1182,64 +1129,63 @@ protected class Address_Group_4 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_ZipCodeAssignment_4_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_NumberAssignment_4_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// "zipCode"
-protected class Address_ZipCodeKeyword_4_0 extends KeywordToken  {
+// "number"
+protected class Address_NumberKeyword_4_0 extends KeywordToken  {
 	
-	public Address_ZipCodeKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_NumberKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getAddressAccess().getZipCodeKeyword_4_0();
+		return grammarAccess.getAddressAccess().getNumberKeyword_4_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new Address_Group_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Address_Group_2(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Address_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, this, 2, inst);
+			case 1: return new Address_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// zipCode=EString
-protected class Address_ZipCodeAssignment_4_1 extends AssignmentToken  {
+// number=EInt
+protected class Address_NumberAssignment_4_1 extends AssignmentToken  {
 	
-	public Address_ZipCodeAssignment_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_NumberAssignment_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAddressAccess().getZipCodeAssignment_4_1();
+		return grammarAccess.getAddressAccess().getNumberAssignment_4_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_ZipCodeKeyword_4_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_NumberKeyword_4_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("zipCode",false)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("zipCode");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getZipCodeEStringParserRuleCall_4_1_0(), value, null)) {
+		if((value = eObjectConsumer.getConsumable("number",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("number");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getNumberEIntParserRuleCall_4_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getAddressAccess().getZipCodeEStringParserRuleCall_4_1_0();
+			element = grammarAccess.getAddressAccess().getNumberEIntParserRuleCall_4_1_0();
 			return obj;
 		}
 		return null;
@@ -1248,7 +1194,7 @@ protected class Address_ZipCodeAssignment_4_1 extends AssignmentToken  {
 }
 
 
-// ("city" city=EString)?
+// ("zipCode" zipCode=EString)?
 protected class Address_Group_5 extends GroupToken {
 	
 	public Address_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1263,23 +1209,23 @@ protected class Address_Group_5 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_CityAssignment_5_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_ZipCodeAssignment_5_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// "city"
-protected class Address_CityKeyword_5_0 extends KeywordToken  {
+// "zipCode"
+protected class Address_ZipCodeKeyword_5_0 extends KeywordToken  {
 	
-	public Address_CityKeyword_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_ZipCodeKeyword_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getAddressAccess().getCityKeyword_5_0();
+		return grammarAccess.getAddressAccess().getZipCodeKeyword_5_0();
 	}
 
     @Override
@@ -1287,41 +1233,40 @@ protected class Address_CityKeyword_5_0 extends KeywordToken  {
 		switch(index) {
 			case 0: return new Address_Group_4(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new Address_Group_3(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Address_Group_2(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Address_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, this, 3, inst);
+			case 2: return new Address_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// city=EString
-protected class Address_CityAssignment_5_1 extends AssignmentToken  {
+// zipCode=EString
+protected class Address_ZipCodeAssignment_5_1 extends AssignmentToken  {
 	
-	public Address_CityAssignment_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_ZipCodeAssignment_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAddressAccess().getCityAssignment_5_1();
+		return grammarAccess.getAddressAccess().getZipCodeAssignment_5_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_CityKeyword_5_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_ZipCodeKeyword_5_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("city",false)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("city");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getCityEStringParserRuleCall_5_1_0(), value, null)) {
+		if((value = eObjectConsumer.getConsumable("zipCode",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("zipCode");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getZipCodeEStringParserRuleCall_5_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getAddressAccess().getCityEStringParserRuleCall_5_1_0();
+			element = grammarAccess.getAddressAccess().getZipCodeEStringParserRuleCall_5_1_0();
 			return obj;
 		}
 		return null;
@@ -1330,7 +1275,7 @@ protected class Address_CityAssignment_5_1 extends AssignmentToken  {
 }
 
 
-// ("streetName" streetName=EString)?
+// ("city" city=EString)?
 protected class Address_Group_6 extends GroupToken {
 	
 	public Address_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1345,23 +1290,23 @@ protected class Address_Group_6 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_StreetNameAssignment_6_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_CityAssignment_6_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// "streetName"
-protected class Address_StreetNameKeyword_6_0 extends KeywordToken  {
+// "city"
+protected class Address_CityKeyword_6_0 extends KeywordToken  {
 	
-	public Address_StreetNameKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_CityKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getAddressAccess().getStreetNameKeyword_6_0();
+		return grammarAccess.getAddressAccess().getCityKeyword_6_0();
 	}
 
     @Override
@@ -1370,41 +1315,40 @@ protected class Address_StreetNameKeyword_6_0 extends KeywordToken  {
 			case 0: return new Address_Group_5(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new Address_Group_4(lastRuleCallOrigin, this, 1, inst);
 			case 2: return new Address_Group_3(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Address_Group_2(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Address_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, this, 4, inst);
+			case 3: return new Address_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, this, 3, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// streetName=EString
-protected class Address_StreetNameAssignment_6_1 extends AssignmentToken  {
+// city=EString
+protected class Address_CityAssignment_6_1 extends AssignmentToken  {
 	
-	public Address_StreetNameAssignment_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_CityAssignment_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAddressAccess().getStreetNameAssignment_6_1();
+		return grammarAccess.getAddressAccess().getCityAssignment_6_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Address_StreetNameKeyword_6_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Address_CityKeyword_6_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("streetName",false)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("streetName");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getStreetNameEStringParserRuleCall_6_1_0(), value, null)) {
+		if((value = eObjectConsumer.getConsumable("city",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("city");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getCityEStringParserRuleCall_6_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getAddressAccess().getStreetNameEStringParserRuleCall_6_1_0();
+			element = grammarAccess.getAddressAccess().getCityEStringParserRuleCall_6_1_0();
 			return obj;
 		}
 		return null;
@@ -1413,16 +1357,38 @@ protected class Address_StreetNameAssignment_6_1 extends AssignmentToken  {
 }
 
 
-// "}"
-protected class Address_RightCurlyBracketKeyword_7 extends KeywordToken  {
+// ("streetName" streetName=EString)?
+protected class Address_Group_7 extends GroupToken {
 	
-	public Address_RightCurlyBracketKeyword_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Address_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getAddressAccess().getGroup_7();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Address_StreetNameAssignment_7_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "streetName"
+protected class Address_StreetNameKeyword_7_0 extends KeywordToken  {
+	
+	public Address_StreetNameKeyword_7_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getAddressAccess().getRightCurlyBracketKeyword_7();
+		return grammarAccess.getAddressAccess().getStreetNameKeyword_7_0();
 	}
 
     @Override
@@ -1432,8 +1398,69 @@ protected class Address_RightCurlyBracketKeyword_7 extends KeywordToken  {
 			case 1: return new Address_Group_5(lastRuleCallOrigin, this, 1, inst);
 			case 2: return new Address_Group_4(lastRuleCallOrigin, this, 2, inst);
 			case 3: return new Address_Group_3(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Address_Group_2(lastRuleCallOrigin, this, 4, inst);
-			case 5: return new Address_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, this, 5, inst);
+			case 4: return new Address_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, this, 4, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// streetName=EString
+protected class Address_StreetNameAssignment_7_1 extends AssignmentToken  {
+	
+	public Address_StreetNameAssignment_7_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getAddressAccess().getStreetNameAssignment_7_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Address_StreetNameKeyword_7_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("streetName",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("streetName");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAddressAccess().getStreetNameEStringParserRuleCall_7_1_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getAddressAccess().getStreetNameEStringParserRuleCall_7_1_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+
+// "}"
+protected class Address_RightCurlyBracketKeyword_8 extends KeywordToken  {
+	
+	public Address_RightCurlyBracketKeyword_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getAddressAccess().getRightCurlyBracketKeyword_8();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Address_Group_7(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Address_Group_6(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new Address_Group_5(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new Address_Group_4(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new Address_Group_3(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new Address_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, this, 5, inst);
 			default: return null;
 		}	
 	}

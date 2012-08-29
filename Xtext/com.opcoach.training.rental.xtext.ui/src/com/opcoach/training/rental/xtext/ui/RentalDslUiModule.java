@@ -12,4 +12,6 @@ public class RentalDslUiModule extends com.opcoach.training.rental.xtext.ui.Abst
 	public RentalDslUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+
 }

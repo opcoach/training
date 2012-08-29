@@ -7,8 +7,8 @@ Bundle-SymbolicName: com.opcoach.training.rental.xtext.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: com.opcoach.training.rental.xtext;visibility:=reexport,
  org.eclipse.xtext.ui,
- org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
  org.eclipse.xtext.ui.shared,
  org.eclipse.ui,
  org.antlr.runtime,
@@ -17,5 +17,6 @@ Require-Bundle: com.opcoach.training.rental.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: com.opcoach.training.rental.xtext.ui.contentassist.antlr
+Export-Package: com.opcoach.training.rental.xtext.ui.contentassist.antlr,
+ com.opcoach.training.rental.xtext.ui.contentassist
 Bundle-Activator: com.opcoach.training.rental.xtext.ui.internal.RentalDslActivator

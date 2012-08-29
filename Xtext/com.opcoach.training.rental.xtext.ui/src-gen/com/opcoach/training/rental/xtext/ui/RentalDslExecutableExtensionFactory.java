@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import com.opcoach.training.rental.xtext.ui.internal.RentalDslActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class RentalDslExecutableExtensionFactory extends AbstractGuiceAwareExecu
 
 	@Override
 	protected Bundle getBundle() {
-		return com.opcoach.training.rental.xtext.ui.internal.RentalDslActivator.getInstance().getBundle();
+		return RentalDslActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return com.opcoach.training.rental.xtext.ui.internal.RentalDslActivator.getInstance().getInjector("com.opcoach.training.rental.xtext.RentalDsl");
+		return RentalDslActivator.getInstance().getInjector(RentalDslActivator.COM_OPCOACH_TRAINING_RENTAL_XTEXT_RENTALDSL);
 	}
 	
 }

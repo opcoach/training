@@ -16,10 +16,10 @@ RentalAgency returns RentalAgency:
 
 
 EString returns ecore::EString:
-	STRING | ID;
+	STRING | ID;  
 
 Address returns Address:
-	
+	{Address}
 	'Address'
 	'{'
 		('streetType' streetType=StreetType)?

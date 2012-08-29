@@ -111,6 +111,9 @@ Workflow {
 
 			// quickfix API 
 			fragment = quickfix.QuickfixProviderFragment {}
+			
+			// Code generator -> Must add this line to bind xtend generators !!!!
+			fragment = generator.GeneratorFragment {}
 		}
 	}
 }

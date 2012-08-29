@@ -21,10 +21,6 @@ public class RentalDslRuntimeModule extends com.opcoach.training.rental.xtext.Ab
 	}
 	
 	
-	 public Class<? extends org.eclipse.xtext.generator.IGenerator> bindIGenerator() {
-		 System.out.println("On bind le generator....");
-	        return RentalAgencyGenerator.class;
-	    }
-	 
+	
 	
 }

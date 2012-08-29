@@ -339,127 +339,133 @@ ruleAddress returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='Address' 
+((
     {
-    	newLeafNode(otherlv_0, grammarAccess.getAddressAccess().getAddressKeyword_0());
+        $current = forceCreateModelElement(
+            grammarAccess.getAddressAccess().getAddressAction_0(),
+            $current);
     }
-	otherlv_1='{' 
+)	otherlv_1='Address' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getAddressAccess().getLeftCurlyBracketKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getAddressAccess().getAddressKeyword_1());
     }
-(	otherlv_2='streetType' 
+	otherlv_2='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getAddressAccess().getStreetTypeKeyword_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getAddressAccess().getLeftCurlyBracketKeyword_2());
+    }
+(	otherlv_3='streetType' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getAddressAccess().getStreetTypeKeyword_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAddressAccess().getStreetTypeStreetTypeEnumRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getAddressAccess().getStreetTypeStreetTypeEnumRuleCall_3_1_0()); 
 	    }
-		lv_streetType_3_0=ruleStreetType		{
+		lv_streetType_4_0=ruleStreetType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAddressRule());
 	        }
        		set(
        			$current, 
        			"streetType",
-        		lv_streetType_3_0, 
+        		lv_streetType_4_0, 
         		"StreetType");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_4='number' 
+))?(	otherlv_5='number' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getAddressAccess().getNumberKeyword_3_0());
+    	newLeafNode(otherlv_5, grammarAccess.getAddressAccess().getNumberKeyword_4_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAddressAccess().getNumberEIntParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getAddressAccess().getNumberEIntParserRuleCall_4_1_0()); 
 	    }
-		lv_number_5_0=ruleEInt		{
+		lv_number_6_0=ruleEInt		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAddressRule());
 	        }
        		set(
        			$current, 
        			"number",
-        		lv_number_5_0, 
+        		lv_number_6_0, 
         		"EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_6='zipCode' 
+))?(	otherlv_7='zipCode' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getAddressAccess().getZipCodeKeyword_4_0());
+    	newLeafNode(otherlv_7, grammarAccess.getAddressAccess().getZipCodeKeyword_5_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAddressAccess().getZipCodeEStringParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getAddressAccess().getZipCodeEStringParserRuleCall_5_1_0()); 
 	    }
-		lv_zipCode_7_0=ruleEString		{
+		lv_zipCode_8_0=ruleEString		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAddressRule());
 	        }
        		set(
        			$current, 
        			"zipCode",
-        		lv_zipCode_7_0, 
+        		lv_zipCode_8_0, 
         		"EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_8='city' 
+))?(	otherlv_9='city' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getAddressAccess().getCityKeyword_5_0());
+    	newLeafNode(otherlv_9, grammarAccess.getAddressAccess().getCityKeyword_6_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAddressAccess().getCityEStringParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getAddressAccess().getCityEStringParserRuleCall_6_1_0()); 
 	    }
-		lv_city_9_0=ruleEString		{
+		lv_city_10_0=ruleEString		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAddressRule());
 	        }
        		set(
        			$current, 
        			"city",
-        		lv_city_9_0, 
+        		lv_city_10_0, 
         		"EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_10='streetName' 
+))?(	otherlv_11='streetName' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getAddressAccess().getStreetNameKeyword_6_0());
+    	newLeafNode(otherlv_11, grammarAccess.getAddressAccess().getStreetNameKeyword_7_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAddressAccess().getStreetNameEStringParserRuleCall_6_1_0()); 
+	        newCompositeNode(grammarAccess.getAddressAccess().getStreetNameEStringParserRuleCall_7_1_0()); 
 	    }
-		lv_streetName_11_0=ruleEString		{
+		lv_streetName_12_0=ruleEString		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAddressRule());
 	        }
        		set(
        			$current, 
        			"streetName",
-        		lv_streetName_11_0, 
+        		lv_streetName_12_0, 
         		"EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_12='}' 
+))?	otherlv_13='}' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getAddressAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_13, grammarAccess.getAddressAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;
