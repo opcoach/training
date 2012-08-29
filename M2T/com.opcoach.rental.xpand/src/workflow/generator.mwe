@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <workflow>
-	<property name="model" value="com.opcoach.rental.xpand/src/rental.ecore" />
+	<property name="model" value="com.opcoach.training.rental.xpand/src/rental.ecore" />
 	<property name="src-gen" value="src-gen" />
 	
 	<!-- set up EMF for standalone execution -->

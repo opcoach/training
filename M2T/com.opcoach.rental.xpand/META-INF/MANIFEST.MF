@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: com.opcoach.rental.xpand
-Bundle-SymbolicName: com.opcoach.rental.xpand; singleton:=true
+Bundle-SymbolicName: com.opcoach.training.rental.xpand;singleton:=true
 Bundle-Version: 1.0.0
 Require-Bundle: org.eclipse.jdt.core,
  org.eclipse.xtend.profiler;resolution:=optional,

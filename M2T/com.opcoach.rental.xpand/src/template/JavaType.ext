@@ -5,8 +5,8 @@ String getJavaType(ecore::EAttribute this) :
    else if (eAttributeType.name == "EInt") then "int"
    else if (eAttributeType.name == "EDate") then "java.util.Date"
    else if (eAttributeType.name == "ELong") then "long"
-   else if (eAttributeType.eClass().name == "EEnum") then eAttributeType.name
-   else  eAttributeType.instanceTypeName;
+   else if (eAttributeType.name == "EEnum") then eAttributeType.name
+   else  eAttributeType.instanceClassName;
       
       
 String getterName(ecore::EAttribute this) :
