@@ -217,6 +217,16 @@ public class RentalAgencyItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(RentalPackage.Literals.RENTAL_AGENCY__OBJECTS_TO_RENT,
+				 RentalFactory.eINSTANCE.createCar()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RentalPackage.Literals.RENTAL_AGENCY__OBJECTS_TO_RENT,
+				 RentalFactory.eINSTANCE.createDevice()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(RentalPackage.Literals.RENTAL_AGENCY__CUSTOMERS,
 				 RentalFactory.eINSTANCE.createCustomer()));
 

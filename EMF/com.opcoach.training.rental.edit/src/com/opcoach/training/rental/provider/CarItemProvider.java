@@ -1,17 +1,18 @@
 /**
- * OPCoach @ 2009
- *
- * $Id$
+ * OPCoach @ 2012
  */
 package com.opcoach.training.rental.provider;
 
+
+import com.opcoach.training.rental.Car;
+import com.opcoach.training.rental.RentalPackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -25,22 +26,27 @@ import org.eclipse.emf.edit.provider.ITableItemFontProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import com.opcoach.training.rental.RentalObject;
-import com.opcoach.training.rental.RentalPackage;
-
 /**
- * This is the item provider adapter for a {@link com.opcoach.training.rental.RentalObject} object.
+ * This is the item provider adapter for a {@link com.opcoach.training.rental.Car} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RentalObjectItemProvider
-	extends ItemProviderAdapter
+public class CarItemProvider
+	extends RentalObjectItemProvider
 	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource,
+		ITableItemLabelProvider,
+		ITableItemColorProvider,
+		ITableItemFontProvider,
+		IItemColorProvider,
+		IItemFontProvider
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -55,7 +61,7 @@ public class RentalObjectItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RentalObjectItemProvider(AdapterFactory adapterFactory)
+	public CarItemProvider(AdapterFactory adapterFactory)
 	{
 		super(adapterFactory);
 	}
@@ -73,51 +79,26 @@ public class RentalObjectItemProvider
 		{
 			super.getPropertyDescriptors(object);
 
-			addIDPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addAvailablePropertyDescriptor(object);
+			addLicensePlatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the ID feature.
+	 * This adds a property descriptor for the License Plate feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIDPropertyDescriptor(Object object)
+	protected void addLicensePlatePropertyDescriptor(Object object)
 	{
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RentalObject_ID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RentalObject_ID_feature", "_UI_RentalObject_type"),
-				 RentalPackage.Literals.RENTAL_OBJECT__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RentalObject_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RentalObject_name_feature", "_UI_RentalObject_type"),
-				 RentalPackage.Literals.RENTAL_OBJECT__NAME,
+				 getString("_UI_Car_licensePlate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Car_licensePlate_feature", "_UI_Car_type"),
+				 RentalPackage.Literals.CAR__LICENSE_PLATE,
 				 true,
 				 false,
 				 false,
@@ -127,30 +108,7 @@ public class RentalObjectItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Available feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAvailablePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RentalObject_available_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RentalObject_available_feature", "_UI_RentalObject_type"),
-				 RentalPackage.Literals.RENTAL_OBJECT__AVAILABLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns RentalObject.gif.
+	 * This returns Car.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -158,7 +116,7 @@ public class RentalObjectItemProvider
 	@Override
 	public Object getImage(Object object)
 	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RentalObject"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Car"));
 	}
 
 	/**
@@ -170,10 +128,10 @@ public class RentalObjectItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		String label = ((RentalObject)object).getName();
+		String label = ((Car)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RentalObject_type") :
-			getString("_UI_RentalObject_type") + " " + label;
+			getString("_UI_Car_type") :
+			getString("_UI_Car_type") + " " + label;
 	}
 
 	/**
@@ -188,11 +146,9 @@ public class RentalObjectItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RentalObject.class))
+		switch (notification.getFeatureID(Car.class))
 		{
-			case RentalPackage.RENTAL_OBJECT__ID:
-			case RentalPackage.RENTAL_OBJECT__NAME:
-			case RentalPackage.RENTAL_OBJECT__AVAILABLE:
+			case RentalPackage.CAR__LICENSE_PLATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -210,18 +166,6 @@ public class RentalObjectItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator()
-	{
-		return RentalEditPlugin.INSTANCE;
 	}
 
 }

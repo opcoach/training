@@ -243,6 +243,56 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.opcoach.training.rental.Car} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CarItemProvider carItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.opcoach.training.rental.Car}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCarAdapter()
+	{
+		if (carItemProvider == null)
+		{
+			carItemProvider = new CarItemProvider(this);
+		}
+
+		return carItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.opcoach.training.rental.Device} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DeviceItemProvider deviceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.opcoach.training.rental.Device}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDeviceAdapter()
+	{
+		if (deviceItemProvider == null)
+		{
+			deviceItemProvider = new DeviceItemProvider(this);
+		}
+
+		return deviceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,6 +409,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 		if (rentalObjectItemProvider != null) rentalObjectItemProvider.dispose();
 		if (licenseItemProvider != null) licenseItemProvider.dispose();
 		if (rentalItemProvider != null) rentalItemProvider.dispose();
+		if (carItemProvider != null) carItemProvider.dispose();
+		if (deviceItemProvider != null) deviceItemProvider.dispose();
 	}
 
 }

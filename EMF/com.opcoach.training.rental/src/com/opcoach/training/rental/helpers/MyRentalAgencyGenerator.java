@@ -83,19 +83,19 @@ public static MyRentalAgency createSampleAgency()
     agency.addCustomer(c3);
     agency.addCustomer(c4);
     
-    RentalObject o1 = f.createRentalObject();
+    RentalObject o1 = f.createDevice();
     o1.setID(IDGenerator.get());
     o1.setName("Perceuse Electrique");
-    RentalObject o2 = f.createRentalObject();
+    RentalObject o2 = f.createDevice();
     o2.setID(IDGenerator.get());
     o2.setName("Lave Moquette");
-    RentalObject o3 = f.createRentalObject();
+    RentalObject o3 = f.createDevice();
     o3.setID(IDGenerator.get());
     o3.setName("Monte Charge");
-    RentalObject o4 = f.createRentalObject();
+    RentalObject o4 = f.createDevice();
     o4.setID(IDGenerator.get());
     o4.setName("Motoculteur");
-    RentalObject o5 = f.createRentalObject();
+    RentalObject o5 = f.createDevice();
     o5.setID(IDGenerator.get());
     o5.setName("Tondeuse ˆ gazon");
     
