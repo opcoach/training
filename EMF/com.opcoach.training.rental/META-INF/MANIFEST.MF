@@ -3,8 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: com.opcoach.training.rental;singleton:=true
 Bundle-Version: 1.0.1.qualifier
-Bundle-ClassPath: .,
- model/
+Bundle-ClassPath: .
 Bundle-Vendor: OPCoach
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -13,5 +12,7 @@ Export-Package: com.opcoach.training.rental,
  com.opcoach.training.rental.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;bundle-version="2.7.0"
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.teneo.hibernate,
+ org.apache.commons.logging;bundle-version="1.1.1"
 Bundle-ActivationPolicy: lazy
