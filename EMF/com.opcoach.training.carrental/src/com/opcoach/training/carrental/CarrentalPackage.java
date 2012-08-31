@@ -106,7 +106,7 @@ public interface CarrentalPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int VEHICLE__DISPO = RentalPackage.RENTAL_OBJECT__DISPO;
+	int VEHICLE__DISPO = RentalPackage.RENTAL_OBJECT__AVAILABLE;
 
 	/**
 	 * The feature id for the '<em><b>Plate Number</b></em>' attribute.
