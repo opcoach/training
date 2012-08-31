@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRentalDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EDate'", "'Street'", "'Road'", "'RentalAgency'", "'{'", "'}'", "'objectsToRent'", "','", "'customers'", "'rentals'", "'Address'", "'streetType'", "'number'", "'zipCode'", "'city'", "'streetName'", "'RentalObject'", "'name'", "'Customer'", "'firstName'", "'lastName'", "'licenses'", "'Rental'", "'customer'", "'startDate'", "'endDate'", "'rentedObject'", "'-'", "'License'", "'validityDate'", "'EReference0'", "'dispo'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EDate'", "'Street'", "'Road'", "'RentalAgency'", "'{'", "'}'", "'objectsToRent'", "','", "'customers'", "'rentals'", "'Address'", "'streetType'", "'number'", "'zipCode'", "'city'", "'streetName'", "'RentalObject'", "'name'", "'Customer'", "'firstName'", "'lastName'", "'licenses'", "'Rental'", "'customer'", "'startDate'", "'endDate'", "'rentedObject'", "'-'", "'License'", "'validityDate'", "'EReference0'", "'available'"
     };
     public static final int T__42=42;
     public static final int RULE_ID=5;
@@ -5105,20 +5105,20 @@ public class InternalRentalDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__RentalObject__Group__1__Impl"
-    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1978:1: rule__RentalObject__Group__1__Impl : ( ( rule__RentalObject__DispoAssignment_1 )? ) ;
+    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1978:1: rule__RentalObject__Group__1__Impl : ( ( rule__RentalObject__AvailableAssignment_1 )? ) ;
     public final void rule__RentalObject__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1982:1: ( ( ( rule__RentalObject__DispoAssignment_1 )? ) )
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1983:1: ( ( rule__RentalObject__DispoAssignment_1 )? )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1982:1: ( ( ( rule__RentalObject__AvailableAssignment_1 )? ) )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1983:1: ( ( rule__RentalObject__AvailableAssignment_1 )? )
             {
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1983:1: ( ( rule__RentalObject__DispoAssignment_1 )? )
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1984:1: ( rule__RentalObject__DispoAssignment_1 )?
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1983:1: ( ( rule__RentalObject__AvailableAssignment_1 )? )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1984:1: ( rule__RentalObject__AvailableAssignment_1 )?
             {
-             before(grammarAccess.getRentalObjectAccess().getDispoAssignment_1()); 
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1985:1: ( rule__RentalObject__DispoAssignment_1 )?
+             before(grammarAccess.getRentalObjectAccess().getAvailableAssignment_1()); 
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1985:1: ( rule__RentalObject__AvailableAssignment_1 )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -5127,10 +5127,10 @@ public class InternalRentalDslParser extends AbstractInternalContentAssistParser
             }
             switch (alt15) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1985:2: rule__RentalObject__DispoAssignment_1
+                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:1985:2: rule__RentalObject__AvailableAssignment_1
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__RentalObject__DispoAssignment_1_in_rule__RentalObject__Group__1__Impl3902);
-                    rule__RentalObject__DispoAssignment_1();
+                    pushFollow(FollowSets000.FOLLOW_rule__RentalObject__AvailableAssignment_1_in_rule__RentalObject__Group__1__Impl3902);
+                    rule__RentalObject__AvailableAssignment_1();
 
                     state._fsp--;
 
@@ -5140,7 +5140,7 @@ public class InternalRentalDslParser extends AbstractInternalContentAssistParser
 
             }
 
-             after(grammarAccess.getRentalObjectAccess().getDispoAssignment_1()); 
+             after(grammarAccess.getRentalObjectAccess().getAvailableAssignment_1()); 
 
             }
 
@@ -9960,30 +9960,30 @@ public class InternalRentalDslParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Address__StreetNameAssignment_7_1"
 
 
-    // $ANTLR start "rule__RentalObject__DispoAssignment_1"
-    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3882:1: rule__RentalObject__DispoAssignment_1 : ( ( 'dispo' ) ) ;
-    public final void rule__RentalObject__DispoAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__RentalObject__AvailableAssignment_1"
+    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3882:1: rule__RentalObject__AvailableAssignment_1 : ( ( 'available' ) ) ;
+    public final void rule__RentalObject__AvailableAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3886:1: ( ( ( 'dispo' ) ) )
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3887:1: ( ( 'dispo' ) )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3886:1: ( ( ( 'available' ) ) )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3887:1: ( ( 'available' ) )
             {
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3887:1: ( ( 'dispo' ) )
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3888:1: ( 'dispo' )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3887:1: ( ( 'available' ) )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3888:1: ( 'available' )
             {
-             before(grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0()); 
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3889:1: ( 'dispo' )
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3890:1: 'dispo'
+             before(grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0()); 
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3889:1: ( 'available' )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:3890:1: 'available'
             {
-             before(grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0()); 
-            match(input,42,FollowSets000.FOLLOW_42_in_rule__RentalObject__DispoAssignment_17664); 
-             after(grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0()); 
+             before(grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0()); 
+            match(input,42,FollowSets000.FOLLOW_42_in_rule__RentalObject__AvailableAssignment_17664); 
+             after(grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0()); 
 
             }
 
-             after(grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0()); 
+             after(grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0()); 
 
             }
 
@@ -10002,7 +10002,7 @@ public class InternalRentalDslParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__RentalObject__DispoAssignment_1"
+    // $ANTLR end "rule__RentalObject__AvailableAssignment_1"
 
 
     // $ANTLR start "rule__RentalObject__IDAssignment_3"
@@ -10778,7 +10778,7 @@ public class InternalRentalDslParser extends AbstractInternalContentAssistParser
         public static final BitSet FOLLOW_rule__RentalObject__Group__1_in_rule__RentalObject__Group__03814 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__RentalObject__Group__1__Impl_in_rule__RentalObject__Group__13872 = new BitSet(new long[]{0x0000040008000000L});
         public static final BitSet FOLLOW_rule__RentalObject__Group__2_in_rule__RentalObject__Group__13875 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__RentalObject__DispoAssignment_1_in_rule__RentalObject__Group__1__Impl3902 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__RentalObject__AvailableAssignment_1_in_rule__RentalObject__Group__1__Impl3902 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__RentalObject__Group__2__Impl_in_rule__RentalObject__Group__23933 = new BitSet(new long[]{0x0000004000000040L});
         public static final BitSet FOLLOW_rule__RentalObject__Group__3_in_rule__RentalObject__Group__23936 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_27_in_rule__RentalObject__Group__2__Impl3964 = new BitSet(new long[]{0x0000000000000002L});
@@ -10936,7 +10936,7 @@ public class InternalRentalDslParser extends AbstractInternalContentAssistParser
         public static final BitSet FOLLOW_ruleEString_in_rule__Address__ZipCodeAssignment_5_17566 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__Address__CityAssignment_6_17597 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__Address__StreetNameAssignment_7_17628 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_rule__RentalObject__DispoAssignment_17664 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_rule__RentalObject__AvailableAssignment_17664 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleELong_in_rule__RentalObject__IDAssignment_37703 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__RentalObject__NameAssignment_67734 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__Customer__FirstNameAssignment_37765 = new BitSet(new long[]{0x0000000000000002L});

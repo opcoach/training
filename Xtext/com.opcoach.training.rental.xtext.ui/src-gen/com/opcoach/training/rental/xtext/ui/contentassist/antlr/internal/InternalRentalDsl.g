@@ -1981,9 +1981,9 @@ rule__RentalObject__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getRentalObjectAccess().getDispoAssignment_1()); }
-(rule__RentalObject__DispoAssignment_1)?
-{ after(grammarAccess.getRentalObjectAccess().getDispoAssignment_1()); }
+{ before(grammarAccess.getRentalObjectAccess().getAvailableAssignment_1()); }
+(rule__RentalObject__AvailableAssignment_1)?
+{ after(grammarAccess.getRentalObjectAccess().getAvailableAssignment_1()); }
 )
 
 ;
@@ -3879,22 +3879,22 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__RentalObject__DispoAssignment_1
+rule__RentalObject__AvailableAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0()); }
+{ before(grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0()); }
 (
-{ before(grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0()); }
+{ before(grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0()); }
 
-	'dispo' 
+	'available' 
 
-{ after(grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0()); }
+{ after(grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0()); }
 )
 
-{ after(grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0()); }
+{ after(grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0()); }
 )
 
 ;

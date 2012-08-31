@@ -80,7 +80,7 @@ public class RentalDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAddressAccess().getZipCodeAssignment_5_1(), "rule__Address__ZipCodeAssignment_5_1");
 					put(grammarAccess.getAddressAccess().getCityAssignment_6_1(), "rule__Address__CityAssignment_6_1");
 					put(grammarAccess.getAddressAccess().getStreetNameAssignment_7_1(), "rule__Address__StreetNameAssignment_7_1");
-					put(grammarAccess.getRentalObjectAccess().getDispoAssignment_1(), "rule__RentalObject__DispoAssignment_1");
+					put(grammarAccess.getRentalObjectAccess().getAvailableAssignment_1(), "rule__RentalObject__AvailableAssignment_1");
 					put(grammarAccess.getRentalObjectAccess().getIDAssignment_3(), "rule__RentalObject__IDAssignment_3");
 					put(grammarAccess.getRentalObjectAccess().getNameAssignment_6(), "rule__RentalObject__NameAssignment_6");
 					put(grammarAccess.getCustomerAccess().getFirstNameAssignment_3(), "rule__Customer__FirstNameAssignment_3");
