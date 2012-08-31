@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRentalDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'RentalAgency'", "'{'", "'objectsToRent'", "','", "'}'", "'customers'", "'rentals'", "'Address'", "'streetType'", "'number'", "'zipCode'", "'city'", "'streetName'", "'dispo'", "'RentalObject'", "'name'", "'Customer'", "'firstName'", "'lastName'", "'licenses'", "'Rental'", "'startDate'", "'endDate'", "'customer'", "'rentedObject'", "'-'", "'License'", "'validityDate'", "'EReference0'", "'EDate'", "'Street'", "'Road'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'RentalAgency'", "'{'", "'objectsToRent'", "','", "'}'", "'customers'", "'rentals'", "'Address'", "'streetType'", "'number'", "'zipCode'", "'city'", "'streetName'", "'available'", "'RentalObject'", "'name'", "'Customer'", "'firstName'", "'lastName'", "'licenses'", "'Rental'", "'startDate'", "'endDate'", "'customer'", "'rentedObject'", "'-'", "'License'", "'validityDate'", "'EReference0'", "'EDate'", "'Street'", "'Road'"
     };
     public static final int T__42=42;
     public static final int RULE_ID=5;
@@ -1169,11 +1169,11 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRentalObject"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:487:1: ruleRentalObject returns [EObject current=null] : ( () ( (lv_dispo_1_0= 'dispo' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}' ) ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:487:1: ruleRentalObject returns [EObject current=null] : ( () ( (lv_available_1_0= 'available' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}' ) ;
     public final EObject ruleRentalObject() throws RecognitionException {
         EObject current = null;
 
-        Token lv_dispo_1_0=null;
+        Token lv_available_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
@@ -1186,11 +1186,11 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:490:28: ( ( () ( (lv_dispo_1_0= 'dispo' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}' ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:491:1: ( () ( (lv_dispo_1_0= 'dispo' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:490:28: ( ( () ( (lv_available_1_0= 'available' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}' ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:491:1: ( () ( (lv_available_1_0= 'available' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}' )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:491:1: ( () ( (lv_dispo_1_0= 'dispo' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}' )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:491:2: () ( (lv_dispo_1_0= 'dispo' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}'
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:491:1: ( () ( (lv_available_1_0= 'available' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:491:2: () ( (lv_available_1_0= 'available' ) )? otherlv_2= 'RentalObject' ( (lv_ID_3_0= ruleELong ) ) otherlv_4= '{' otherlv_5= 'name' ( (lv_name_6_0= ruleEString ) ) otherlv_7= '}'
             {
             // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:491:2: ()
             // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:492:5: 
@@ -1203,7 +1203,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:497:2: ( (lv_dispo_1_0= 'dispo' ) )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:497:2: ( (lv_available_1_0= 'available' ) )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -1212,20 +1212,20 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:498:1: (lv_dispo_1_0= 'dispo' )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:498:1: (lv_available_1_0= 'available' )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:498:1: (lv_dispo_1_0= 'dispo' )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:499:3: lv_dispo_1_0= 'dispo'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:498:1: (lv_available_1_0= 'available' )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:499:3: lv_available_1_0= 'available'
                     {
-                    lv_dispo_1_0=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleRentalObject994); 
+                    lv_available_1_0=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleRentalObject994); 
 
-                            newLeafNode(lv_dispo_1_0, grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0());
+                            newLeafNode(lv_available_1_0, grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0());
                         
 
                     	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getRentalObjectRule());
                     	        }
-                           		setWithLastConsumed(current, "dispo", true, "dispo");
+                           		setWithLastConsumed(current, "available", true, "available");
                     	    
 
                     }

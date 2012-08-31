@@ -1474,11 +1474,11 @@ protected class Address_RightCurlyBracketKeyword_8 extends KeywordToken  {
 /************ begin Rule RentalObject ****************
  *
  * RentalObject:
- * 	{RentalObject} dispo?="dispo"? "RentalObject" ID=ELong "{" "name" name=EString "}";
+ * 	{RentalObject} available?="available"? "RentalObject" ID=ELong "{" "name" name=EString "}";
  *
  **/
 
-// {RentalObject} dispo?="dispo"? "RentalObject" ID=ELong "{" "name" name=EString "}"
+// {RentalObject} available?="available"? "RentalObject" ID=ELong "{" "name" name=EString "}"
 protected class RentalObject_Group extends GroupToken {
 	
 	public RentalObject_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1533,16 +1533,16 @@ protected class RentalObject_RentalObjectAction_0 extends ActionToken  {
 	}
 }
 
-// dispo?="dispo"?
-protected class RentalObject_DispoAssignment_1 extends AssignmentToken  {
+// available?="available"?
+protected class RentalObject_AvailableAssignment_1 extends AssignmentToken  {
 	
-	public RentalObject_DispoAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public RentalObject_AvailableAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getRentalObjectAccess().getDispoAssignment_1();
+		return grammarAccess.getRentalObjectAccess().getAvailableAssignment_1();
 	}
 
     @Override
@@ -1555,11 +1555,11 @@ protected class RentalObject_DispoAssignment_1 extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("dispo",false)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("dispo");
+		if((value = eObjectConsumer.getConsumable("available",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("available");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0();
+			element = grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0();
 			return obj;
 		}
 		return null;
@@ -1582,7 +1582,7 @@ protected class RentalObject_RentalObjectKeyword_2 extends KeywordToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new RentalObject_DispoAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new RentalObject_AvailableAssignment_1(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new RentalObject_RentalObjectAction_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	

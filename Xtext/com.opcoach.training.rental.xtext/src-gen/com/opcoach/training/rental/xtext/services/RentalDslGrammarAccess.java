@@ -317,8 +317,8 @@ public class RentalDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RentalObject");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cRentalObjectAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cDispoAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cDispoDispoKeyword_1_0 = (Keyword)cDispoAssignment_1.eContents().get(0);
+		private final Assignment cAvailableAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cAvailableAvailableKeyword_1_0 = (Keyword)cAvailableAssignment_1.eContents().get(0);
 		private final Keyword cRentalObjectKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cIDAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cIDELongParserRuleCall_3_0 = (RuleCall)cIDAssignment_3.eContents().get(0);
@@ -329,20 +329,20 @@ public class RentalDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//RentalObject:
-		//	{RentalObject} dispo?="dispo"? "RentalObject" ID=ELong "{" "name" name=EString "}";
+		//	{RentalObject} available?="available"? "RentalObject" ID=ELong "{" "name" name=EString "}";
 		public ParserRule getRule() { return rule; }
 
-		//{RentalObject} dispo?="dispo"? "RentalObject" ID=ELong "{" "name" name=EString "}"
+		//{RentalObject} available?="available"? "RentalObject" ID=ELong "{" "name" name=EString "}"
 		public Group getGroup() { return cGroup; }
 
 		//{RentalObject}
 		public Action getRentalObjectAction_0() { return cRentalObjectAction_0; }
 
-		//dispo?="dispo"?
-		public Assignment getDispoAssignment_1() { return cDispoAssignment_1; }
+		//available?="available"?
+		public Assignment getAvailableAssignment_1() { return cAvailableAssignment_1; }
 
-		//"dispo"
-		public Keyword getDispoDispoKeyword_1_0() { return cDispoDispoKeyword_1_0; }
+		//"available"
+		public Keyword getAvailableAvailableKeyword_1_0() { return cAvailableAvailableKeyword_1_0; }
 
 		//"RentalObject"
 		public Keyword getRentalObjectKeyword_2() { return cRentalObjectKeyword_2; }
@@ -829,7 +829,7 @@ public class RentalDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RentalObject:
-	//	{RentalObject} dispo?="dispo"? "RentalObject" ID=ELong "{" "name" name=EString "}";
+	//	{RentalObject} available?="available"? "RentalObject" ID=ELong "{" "name" name=EString "}";
 	public RentalObjectElements getRentalObjectAccess() {
 		return (pRentalObject != null) ? pRentalObject : (pRentalObject = new RentalObjectElements());
 	}

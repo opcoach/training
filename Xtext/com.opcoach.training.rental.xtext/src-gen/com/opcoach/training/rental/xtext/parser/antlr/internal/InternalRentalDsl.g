@@ -496,16 +496,16 @@ ruleRentalObject returns [EObject current=null]
     }
 )(
 (
-		lv_dispo_1_0=	'dispo' 
+		lv_available_1_0=	'available' 
     {
-        newLeafNode(lv_dispo_1_0, grammarAccess.getRentalObjectAccess().getDispoDispoKeyword_1_0());
+        newLeafNode(lv_available_1_0, grammarAccess.getRentalObjectAccess().getAvailableAvailableKeyword_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getRentalObjectRule());
 	        }
-       		setWithLastConsumed($current, "dispo", true, "dispo");
+       		setWithLastConsumed($current, "available", true, "available");
 	    }
 
 )
