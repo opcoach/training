@@ -1,24 +1,20 @@
 /**
- * OPCoach @ 2009
- *
- * $Id$
+ * OPCoach @ 2012
  */
 package com.opcoach.training.rental.tests;
 
-import com.opcoach.training.rental.Address;
+import com.opcoach.training.rental.Car;
 import com.opcoach.training.rental.RentalFactory;
-
-import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Address</b></em>'.
+ * A test case for the model object '<em><b>Car</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class AddressTest extends TestCase
+public class CarTest extends RentalObjectTest
 {
 
 	/**
@@ -29,54 +25,36 @@ public class AddressTest extends TestCase
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
-	 * The fixture for this Address test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Address fixture = null;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args)
 	{
-		TestRunner.run(AddressTest.class);
+		TestRunner.run(CarTest.class);
 	}
 
 	/**
-	 * Constructs a new Address test case with the given name.
+	 * Constructs a new Car test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddressTest(String name)
+	public CarTest(String name)
 	{
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Address test case.
+	 * Returns the fixture for this Car test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Address fixture)
+	@Override
+	protected Car getFixture()
 	{
-		this.fixture = fixture;
-	}
-
-	/**
-	 * Returns the fixture for this Address test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Address getFixture()
-	{
-		return fixture;
+		return (Car)fixture;
 	}
 
 	/**
@@ -88,7 +66,7 @@ public class AddressTest extends TestCase
 	@Override
 	protected void setUp() throws Exception
 	{
-		setFixture(RentalFactory.eINSTANCE.createAddress());
+		setFixture(RentalFactory.eINSTANCE.createCar());
 	}
 
 	/**
@@ -103,4 +81,4 @@ public class AddressTest extends TestCase
 		setFixture(null);
 	}
 
-} //AddressTest
+} //CarTest

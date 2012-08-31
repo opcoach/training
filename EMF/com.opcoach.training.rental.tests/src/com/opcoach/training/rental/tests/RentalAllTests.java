@@ -24,7 +24,7 @@ public class RentalAllTests extends TestSuite
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * <!-- begin-user-doc -->

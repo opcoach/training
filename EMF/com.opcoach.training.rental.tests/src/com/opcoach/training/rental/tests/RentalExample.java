@@ -40,7 +40,7 @@ public class RentalExample
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "OPCoach @ 2009";
+	public static final String copyright = "OPCoach @ 2012";
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +95,7 @@ public class RentalExample
 				// Otherwise, it's directly treated as a URL.
 				//
 				File file = new File(args[i]);
-				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()): URI.createURI(args[0]);
+				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()): URI.createURI(args[i]);
 
 				try
 				{
