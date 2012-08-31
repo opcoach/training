@@ -21,7 +21,7 @@ Require-Bundle: org.eclipse.core.runtime,
 Import-Package: org.apache.log4j,
  org.apache.commons.logging,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.opcoach.training.rental.xtext,
  com.opcoach.training.rental.xtext.formatting,
  com.opcoach.training.rental.xtext.generator,

@@ -16,7 +16,7 @@ Require-Bundle: com.opcoach.training.rental.xtext;visibility:=reexport,
  org.eclipse.xtext.builder
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.opcoach.training.rental.xtext.ui.contentassist.antlr,
  com.opcoach.training.rental.xtext.ui.contentassist
 Bundle-Activator: com.opcoach.training.rental.xtext.ui.internal.RentalDslActivator
