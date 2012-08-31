@@ -42,162 +42,162 @@ import com.opcoach.training.rental.RentalPackage;
 public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 {
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getAddress()
-	 * @generated
-	 * @ordered
-	 */
+   * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @see #getAddress()
+   * @generated
+   * @ordered
+   */
 	protected Address address;
 
 	/**
-	 * The cached value of the '{@link #getObjectsToRent() <em>Objects To Rent</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getObjectsToRent()
-	 * @generated
-	 * @ordered
-	 */
+   * The cached value of the '{@link #getObjectsToRent() <em>Objects To Rent</em>}' containment reference list.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @see #getObjectsToRent()
+   * @generated
+   * @ordered
+   */
 	protected EList<RentalObject> objectsToRent;
 
 	/**
-	 * The cached value of the '{@link #getCustomers() <em>Customers</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getCustomers()
-	 * @generated
-	 * @ordered
-	 */
+   * The cached value of the '{@link #getCustomers() <em>Customers</em>}' containment reference list.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @see #getCustomers()
+   * @generated
+   * @ordered
+   */
 	protected EList<Customer> customers;
 
 	/**
-	 * The cached value of the '{@link #getRentals() <em>Rentals</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getRentals()
-	 * @generated
-	 * @ordered
-	 */
+   * The cached value of the '{@link #getRentals() <em>Rentals</em>}' containment reference list.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @see #getRentals()
+   * @generated
+   * @ordered
+   */
 	protected EList<Rental> rentals;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	protected RentalAgencyImpl()
 	{
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return RentalPackage.Literals.RENTAL_AGENCY;
-	}
+    return RentalPackage.Literals.RENTAL_AGENCY;
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public String getName()
 	{
-		return name;
-	}
+    return name;
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public void setName(String newName)
 	{
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_AGENCY__NAME, oldName, name));
-	}
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_AGENCY__NAME, oldName, name));
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public Address getAddress()
 	{
-		return address;
-	}
+    return address;
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public NotificationChain basicSetAddress(Address newAddress, NotificationChain msgs)
 	{
-		Address oldAddress = address;
-		address = newAddress;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_AGENCY__ADDRESS, oldAddress, newAddress);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    Address oldAddress = address;
+    address = newAddress;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_AGENCY__ADDRESS, oldAddress, newAddress);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public void setAddress(Address newAddress)
 	{
-		if (newAddress != address)
-		{
-			NotificationChain msgs = null;
-			if (address != null)
-				msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RentalPackage.RENTAL_AGENCY__ADDRESS, null, msgs);
-			if (newAddress != null)
-				msgs = ((InternalEObject)newAddress).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RentalPackage.RENTAL_AGENCY__ADDRESS, null, msgs);
-			msgs = basicSetAddress(newAddress, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_AGENCY__ADDRESS, newAddress, newAddress));
-	}
+    if (newAddress != address)
+    {
+      NotificationChain msgs = null;
+      if (address != null)
+        msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RentalPackage.RENTAL_AGENCY__ADDRESS, null, msgs);
+      if (newAddress != null)
+        msgs = ((InternalEObject)newAddress).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RentalPackage.RENTAL_AGENCY__ADDRESS, null, msgs);
+      msgs = basicSetAddress(newAddress, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_AGENCY__ADDRESS, newAddress, newAddress));
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public EList<RentalObject> getObjectsToRentGen()
 	{
-		if (objectsToRent == null)
-		{
-			objectsToRent = new EObjectContainmentWithInverseEList<RentalObject>(RentalObject.class, this, RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT, RentalPackage.RENTAL_OBJECT__PARENT_AGENCY);
-		}
-		return objectsToRent;
-	}
+    if (objectsToRent == null)
+    {
+      objectsToRent = new EObjectContainmentWithInverseEList<RentalObject>(RentalObject.class, this, RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT, RentalPackage.RENTAL_OBJECT__PARENT_AGENCY);
+    }
+    return objectsToRent;
+  }
 
 	/**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -214,17 +214,17 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public EList<Customer> getCustomers()
 	{
-		if (customers == null)
-		{
-			customers = new EObjectContainmentWithInverseEList<Customer>(Customer.class, this, RentalPackage.RENTAL_AGENCY__CUSTOMERS, RentalPackage.CUSTOMER__PARENT_AGENCY);
-		}
-		return customers;
-	}
+    if (customers == null)
+    {
+      customers = new EObjectContainmentWithInverseEList<Customer>(Customer.class, this, RentalPackage.RENTAL_AGENCY__CUSTOMERS, RentalPackage.CUSTOMER__PARENT_AGENCY);
+    }
+    return customers;
+  }
 
 	
 	public void addRental(Rental r)
@@ -250,17 +250,17 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 	
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public EList<Rental> getRentals()
 	{
-		if (rentals == null)
-		{
-			rentals = new EObjectContainmentWithInverseEList<Rental>(Rental.class, this, RentalPackage.RENTAL_AGENCY__RENTALS, RentalPackage.RENTAL__PARENT_AGENCY);
-		}
-		return rentals;
-	}
+    if (rentals == null)
+    {
+      rentals = new EObjectContainmentWithInverseEList<Rental>(Rental.class, this, RentalPackage.RENTAL_AGENCY__RENTALS, RentalPackage.RENTAL__PARENT_AGENCY);
+    }
+    return rentals;
+  }
 	
 	
 
@@ -302,166 +302,166 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
-			case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getObjectsToRent()).basicAdd(otherEnd, msgs);
-			case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCustomers()).basicAdd(otherEnd, msgs);
-			case RentalPackage.RENTAL_AGENCY__RENTALS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRentals()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getObjectsToRent()).basicAdd(otherEnd, msgs);
+      case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getCustomers()).basicAdd(otherEnd, msgs);
+      case RentalPackage.RENTAL_AGENCY__RENTALS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getRentals()).basicAdd(otherEnd, msgs);
+    }
+    return super.eInverseAdd(otherEnd, featureID, msgs);
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
-			case RentalPackage.RENTAL_AGENCY__ADDRESS:
-				return basicSetAddress(null, msgs);
-			case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
-				return ((InternalEList<?>)getObjectsToRent()).basicRemove(otherEnd, msgs);
-			case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
-				return ((InternalEList<?>)getCustomers()).basicRemove(otherEnd, msgs);
-			case RentalPackage.RENTAL_AGENCY__RENTALS:
-				return ((InternalEList<?>)getRentals()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case RentalPackage.RENTAL_AGENCY__ADDRESS:
+        return basicSetAddress(null, msgs);
+      case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
+        return ((InternalEList<?>)getObjectsToRent()).basicRemove(otherEnd, msgs);
+      case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
+        return ((InternalEList<?>)getCustomers()).basicRemove(otherEnd, msgs);
+      case RentalPackage.RENTAL_AGENCY__RENTALS:
+        return ((InternalEList<?>)getRentals()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case RentalPackage.RENTAL_AGENCY__NAME:
-				return getName();
-			case RentalPackage.RENTAL_AGENCY__ADDRESS:
-				return getAddress();
-			case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
-				return getObjectsToRent();
-			case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
-				return getCustomers();
-			case RentalPackage.RENTAL_AGENCY__RENTALS:
-				return getRentals();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case RentalPackage.RENTAL_AGENCY__NAME:
+        return getName();
+      case RentalPackage.RENTAL_AGENCY__ADDRESS:
+        return getAddress();
+      case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
+        return getObjectsToRent();
+      case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
+        return getCustomers();
+      case RentalPackage.RENTAL_AGENCY__RENTALS:
+        return getRentals();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case RentalPackage.RENTAL_AGENCY__NAME:
-				setName((String)newValue);
-				return;
-			case RentalPackage.RENTAL_AGENCY__ADDRESS:
-				setAddress((Address)newValue);
-				return;
-			case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
-				getObjectsToRent().clear();
-				getObjectsToRent().addAll((Collection<? extends RentalObject>)newValue);
-				return;
-			case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
-				getCustomers().clear();
-				getCustomers().addAll((Collection<? extends Customer>)newValue);
-				return;
-			case RentalPackage.RENTAL_AGENCY__RENTALS:
-				getRentals().clear();
-				getRentals().addAll((Collection<? extends Rental>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case RentalPackage.RENTAL_AGENCY__NAME:
+        setName((String)newValue);
+        return;
+      case RentalPackage.RENTAL_AGENCY__ADDRESS:
+        setAddress((Address)newValue);
+        return;
+      case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
+        getObjectsToRent().clear();
+        getObjectsToRent().addAll((Collection<? extends RentalObject>)newValue);
+        return;
+      case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
+        getCustomers().clear();
+        getCustomers().addAll((Collection<? extends Customer>)newValue);
+        return;
+      case RentalPackage.RENTAL_AGENCY__RENTALS:
+        getRentals().clear();
+        getRentals().addAll((Collection<? extends Rental>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case RentalPackage.RENTAL_AGENCY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case RentalPackage.RENTAL_AGENCY__ADDRESS:
-				setAddress((Address)null);
-				return;
-			case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
-				getObjectsToRent().clear();
-				return;
-			case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
-				getCustomers().clear();
-				return;
-			case RentalPackage.RENTAL_AGENCY__RENTALS:
-				getRentals().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case RentalPackage.RENTAL_AGENCY__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case RentalPackage.RENTAL_AGENCY__ADDRESS:
+        setAddress((Address)null);
+        return;
+      case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
+        getObjectsToRent().clear();
+        return;
+      case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
+        getCustomers().clear();
+        return;
+      case RentalPackage.RENTAL_AGENCY__RENTALS:
+        getRentals().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case RentalPackage.RENTAL_AGENCY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case RentalPackage.RENTAL_AGENCY__ADDRESS:
-				return address != null;
-			case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
-				return objectsToRent != null && !objectsToRent.isEmpty();
-			case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
-				return customers != null && !customers.isEmpty();
-			case RentalPackage.RENTAL_AGENCY__RENTALS:
-				return rentals != null && !rentals.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case RentalPackage.RENTAL_AGENCY__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case RentalPackage.RENTAL_AGENCY__ADDRESS:
+        return address != null;
+      case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
+        return objectsToRent != null && !objectsToRent.isEmpty();
+      case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
+        return customers != null && !customers.isEmpty();
+      case RentalPackage.RENTAL_AGENCY__RENTALS:
+        return rentals != null && !rentals.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	@Override
 	public String toString()
 	{
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
 
 } // RentalAgencyImpl

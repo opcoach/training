@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 
 import com.opcoach.training.rental.Address;
+import com.opcoach.training.rental.Car;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalAgency;
@@ -98,12 +99,17 @@ public static RentalAgency createSampleAgency()
     RentalObject o5 = f.createDevice();
     o5.setID(IDGenerator.get());
     o5.setName("Tondeuse ˆ gazon");
+    Car o6 = f.createCar();
+    o6.setName("Voiture");
+    o6.setLicensePlate("1234 AAZ 31");
+
     
     agency.getObjectsToRent().add(o1);
     agency.getObjectsToRent().add(o2);
     agency.getObjectsToRent().add(o3);
     agency.getObjectsToRent().add(o4);
     agency.getObjectsToRent().add(o5);
+    agency.getObjectsToRent().add(o6);
     
     Date now = new Date();
     Date oneWeek  = new Date(now.getTime()+3600000L*24*7);

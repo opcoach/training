@@ -18,99 +18,99 @@ import org.eclipse.emf.ecore.EFactory;
 public interface RentalFactory extends EFactory
 {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	String copyright = "OPCoach @ 2012";
 
 	/**
-	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
+   * The singleton instance of the factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	RentalFactory eINSTANCE = com.opcoach.training.rental.impl.RentalFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Customer</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Customer</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Customer</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Customer</em>'.
+   * @generated
+   */
 	Customer createCustomer();
 
 	/**
-	 * Returns a new object of class '<em>Agency</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Agency</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Agency</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Agency</em>'.
+   * @generated
+   */
 	RentalAgency createRentalAgency();
 
 	/**
-	 * Returns a new object of class '<em>Address</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Address</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Address</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Address</em>'.
+   * @generated
+   */
 	Address createAddress();
 
 	/**
-	 * Returns a new object of class '<em>Object</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Object</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Object</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Object</em>'.
+   * @generated
+   */
 	RentalObject createRentalObject();
 
 	/**
-	 * Returns a new object of class '<em>License</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>License</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>License</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>License</em>'.
+   * @generated
+   */
 	License createLicense();
 
 	/**
-	 * Returns a new object of class '<em>Rental</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Rental</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rental</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Rental</em>'.
+   * @generated
+   */
 	Rental createRental();
 
 	/**
-	 * Returns a new object of class '<em>Car</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Car</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Car</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Car</em>'.
+   * @generated
+   */
 	Car createCar();
 
 	/**
-	 * Returns a new object of class '<em>Device</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Device</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Device</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Device</em>'.
+   * @generated
+   */
 	Device createDevice();
 
 	/**
-	 * Returns the package supported by this factory.
-	 * <!-- begin-user-doc -->
+   * Returns the package supported by this factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
-	 * @generated
-	 */
+   * @return the package supported by this factory.
+   * @generated
+   */
 	RentalPackage getRentalPackage();
 
 } //RentalFactory
