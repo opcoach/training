@@ -31,7 +31,7 @@ Address returns Address:
 
 RentalObject returns RentalObject:
 	{RentalObject}
-	(dispo?='dispo')?
+	(available?='available')?
 	'RentalObject'
 	ID=ELong
 	'{'
