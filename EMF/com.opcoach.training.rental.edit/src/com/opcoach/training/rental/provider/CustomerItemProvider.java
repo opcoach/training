@@ -77,6 +77,7 @@ public class CustomerItemProvider
 
 			addFirstNamePropertyDescriptor(object);
 			addLastNamePropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -123,6 +124,29 @@ public class CustomerItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Customer_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Customer_ID_feature", "_UI_Customer_type"),
+				 RentalPackage.Literals.CUSTOMER__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -204,6 +228,7 @@ public class CustomerItemProvider
 		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 			case RentalPackage.CUSTOMER__LAST_NAME:
+			case RentalPackage.CUSTOMER__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RentalPackage.CUSTOMER__ADDRESS:
