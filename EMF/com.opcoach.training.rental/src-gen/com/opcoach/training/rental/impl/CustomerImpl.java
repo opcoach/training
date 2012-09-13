@@ -36,6 +36,7 @@ import com.opcoach.training.rental.RentalPackage;
  *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getLicenses <em>Licenses</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getParentAgency <em>Parent Agency</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getID <em>ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,6 +110,26 @@ public class CustomerImpl extends EObjectImpl implements Customer
    * @ordered
    */
 	protected EList<License> licenses;
+
+	/**
+   * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @see #getID()
+   * @generated
+   * @ordered
+   */
+	protected static final long ID_EDEFAULT = 0L;
+
+	/**
+   * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @see #getID()
+   * @generated
+   * @ordered
+   */
+	protected long id = ID_EDEFAULT;
 
 	/**
    * <!-- begin-user-doc -->
@@ -285,6 +306,29 @@ public class CustomerImpl extends EObjectImpl implements Customer
   }
 
 	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	public long getID()
+	{
+    return id;
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	public void setID(long newID)
+	{
+    long oldID = id;
+    id = newID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.CUSTOMER__ID, oldID, id));
+  }
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -382,6 +426,8 @@ public class CustomerImpl extends EObjectImpl implements Customer
         return getLicenses();
       case RentalPackage.CUSTOMER__PARENT_AGENCY:
         return getParentAgency();
+      case RentalPackage.CUSTOMER__ID:
+        return getID();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -413,6 +459,9 @@ public class CustomerImpl extends EObjectImpl implements Customer
       case RentalPackage.CUSTOMER__PARENT_AGENCY:
         setParentAgency((RentalAgency)newValue);
         return;
+      case RentalPackage.CUSTOMER__ID:
+        setID((Long)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -442,6 +491,9 @@ public class CustomerImpl extends EObjectImpl implements Customer
       case RentalPackage.CUSTOMER__PARENT_AGENCY:
         setParentAgency((RentalAgency)null);
         return;
+      case RentalPackage.CUSTOMER__ID:
+        setID(ID_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -466,6 +518,8 @@ public class CustomerImpl extends EObjectImpl implements Customer
         return licenses != null && !licenses.isEmpty();
       case RentalPackage.CUSTOMER__PARENT_AGENCY:
         return getParentAgency() != null;
+      case RentalPackage.CUSTOMER__ID:
+        return id != ID_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -485,6 +539,8 @@ public class CustomerImpl extends EObjectImpl implements Customer
     result.append(firstName);
     result.append(", lastName: ");
     result.append(lastName);
+    result.append(", ID: ");
+    result.append(id);
     result.append(')');
     return result.toString();
   }

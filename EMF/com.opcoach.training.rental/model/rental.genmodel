@@ -36,6 +36,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/address"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//Customer/licenses"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//Customer/parentAgency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//Customer/ID"/>
       <genOperations ecoreOperation="rental.ecore#//Customer/getDisplayName"/>
       <genOperations ecoreOperation="rental.ecore#//Customer/addLicense">
         <genParameters ecoreParameter="rental.ecore#//Customer/addLicense/license"/>

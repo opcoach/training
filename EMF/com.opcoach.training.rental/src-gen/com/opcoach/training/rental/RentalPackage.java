@@ -188,13 +188,22 @@ public interface RentalPackage extends EPackage
 	int CUSTOMER__PARENT_AGENCY = 4;
 
 	/**
+   * The feature id for the '<em><b>ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int CUSTOMER__ID = 5;
+
+	/**
    * The number of structural features of the '<em>Customer</em>' class.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-	int CUSTOMER_FEATURE_COUNT = 5;
+	int CUSTOMER_FEATURE_COUNT = 6;
 
 	/**
    * The meta object id for the '{@link com.opcoach.training.rental.impl.AddressImpl <em>Address</em>}' class.
@@ -665,6 +674,17 @@ public interface RentalPackage extends EPackage
 	EReference getCustomer_ParentAgency();
 
 	/**
+   * Returns the meta object for the attribute '{@link com.opcoach.training.rental.Customer#getID <em>ID</em>}'.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>ID</em>'.
+   * @see com.opcoach.training.rental.Customer#getID()
+   * @see #getCustomer()
+   * @generated
+   */
+	EAttribute getCustomer_ID();
+
+	/**
    * Returns the meta object for class '{@link com.opcoach.training.rental.RentalAgency <em>Agency</em>}'.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1124,6 +1144,14 @@ public interface RentalPackage extends EPackage
      * @generated
      */
 		EReference CUSTOMER__PARENT_AGENCY = eINSTANCE.getCustomer_ParentAgency();
+
+		/**
+     * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+     * @generated
+     */
+		EAttribute CUSTOMER__ID = eINSTANCE.getCustomer_ID();
 
 		/**
      * The meta object literal for the '{@link com.opcoach.training.rental.impl.RentalAgencyImpl <em>Agency</em>}' class.

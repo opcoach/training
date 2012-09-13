@@ -244,6 +244,16 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	 * <!-- end-user-doc -->
    * @generated
    */
+	public EAttribute getCustomer_ID()
+	{
+    return (EAttribute)customerEClass.getEStructuralFeatures().get(5);
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
 	public EClass getRentalAgency()
 	{
     return rentalAgencyEClass;
@@ -642,6 +652,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
     createEReference(customerEClass, CUSTOMER__ADDRESS);
     createEReference(customerEClass, CUSTOMER__LICENSES);
     createEReference(customerEClass, CUSTOMER__PARENT_AGENCY);
+    createEAttribute(customerEClass, CUSTOMER__ID);
 
     addressEClass = createEClass(ADDRESS);
     createEAttribute(addressEClass, ADDRESS__STREET_TYPE);
@@ -739,6 +750,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
     initEReference(getCustomer_Address(), this.getAddress(), null, "address", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCustomer_Licenses(), this.getLicense(), this.getLicense_Owner(), "licenses", null, 0, -1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCustomer_ParentAgency(), this.getRentalAgency(), this.getRentalAgency_Customers(), "parentAgency", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCustomer_ID(), ecorePackage.getELong(), "ID", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     addEOperation(customerEClass, ecorePackage.getEString(), "getDisplayName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
