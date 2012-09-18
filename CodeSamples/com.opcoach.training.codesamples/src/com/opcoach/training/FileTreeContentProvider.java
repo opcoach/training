@@ -7,6 +7,21 @@ import org.eclipse.jface.viewers.Viewer;
 
 public class FileTreeContentProvider implements ITreeContentProvider
 {
+	private static final Object[] EMPTY_RESULT = new Object[0];
+
+	// returns the first level element in the viewer
+	public Object[] getElements(Object element)
+	{
+		Object[] result = null;
+
+		if (element instanceof File)
+		{
+			result = ((File) element).listFiles();
+		}
+
+		return (result == null) ? EMPTY_RESULT : result;
+	}
+	
 
 	public Object[] getChildren(Object parentElement)
 	{
@@ -29,19 +44,7 @@ public class FileTreeContentProvider implements ITreeContentProvider
 		return EMPTY_RESULT;
 	}
 
-	private static final Object[]	EMPTY_RESULT	= new Object[0];
 
-	public Object[] getElements(Object element)
-	{
-		Object[] result = null;
-
-		if (element instanceof File)
-		{
-			result = ((File) element).listFiles();
-		}
-
-		return (result == null) ? EMPTY_RESULT : result;
-	}
 
 	public void dispose()
 	{
@@ -62,11 +65,7 @@ public class FileTreeContentProvider implements ITreeContentProvider
 	// hasChildren method
 	public boolean hasChildren(Object element)
 	{
-		if ("ROOT".equals(element))
-		{
-			return true;
-		} 
-		else if (element instanceof File)
+	    if (element instanceof File)
 		{
 			File file = (File) element;
 			// return true if file is a drive or directory

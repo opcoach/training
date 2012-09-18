@@ -2,25 +2,21 @@ package com.opcoach.training;
 
 import java.io.File;
 
-import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.GridData;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 
 public class SampleViewer
 {
 
 	public void createPartControl(Composite parent)
 	{
-		TableViewer tv = new TableViewer(parent);
+		TreeViewer tv = new TreeViewer(parent);
 		
-		tv.setContentProvider(new FileTableContentProvider());
+		tv.setContentProvider(new FileTreeContentProvider());
 		
-		tv.setLabelProvider(new FileTableLabelProvider());
+		tv.setLabelProvider(new FileLabelProvider());
 		
 		tv.setInput(new File("C:\\"));
-		
 		
 	}
 }
