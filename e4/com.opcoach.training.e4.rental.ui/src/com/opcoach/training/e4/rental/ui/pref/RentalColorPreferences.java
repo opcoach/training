@@ -26,7 +26,7 @@ public class RentalColorPreferences extends FieldEditorPreferencePage implements
 	protected void createFieldEditors()
 	{
 		// Extract the double String array for name and color provider (value is the key)
-		Map<String, IColorProvider> addedProviders = RentalUIActivator.getDefault().getPaletteManager();
+		Map<String, IColorProvider> addedProviders = RentalUIActivator.getPaletteManager();
 		if (!addedProviders.isEmpty())
 		{
 		   String[][] comboValues = new String[addedProviders.size()+1][2];

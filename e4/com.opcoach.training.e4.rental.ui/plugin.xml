@@ -50,11 +50,54 @@
                value="com.opcoach.training.e4.rental.ui/Application.e4xmi">
          </property>
          <property
-               name="applicationCSS"
-               value="platform:/plugin/com.opcoach.training.e4.rental.ui/css/default.css">
+               name="lifeCycleURI"
+               value="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.RentalUIActivator">
          </property>
       </product>
    </extension>
+   <extension
+         id="productLegacy"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            description="Rental ui made over e4 with legacy model"
+            name="Rental e4 ui Legacy">
+         <property
+               name="appName"
+               value="Rental e4 with Legacy">
+         </property>
+         <property
+               name="applicationXMI"
+               value="com.opcoach.training.e4.rental.ui/LegacyIDE.e4xmi">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/com.opcoach.training.e4.rental.ui/css/default.css">
+         </property>
+         <property
+               name="lifeCycleURI"
+               value="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.RentalUIActivator">
+         </property>
+      </product>
+   </extension>
+  <extension
+        point="org.eclipse.ui.handlers">
+     <handler
+           class="org.eclipse.ui.internal.handlers.ShowPreferencePageHandler"
+           commandId="org.eclipse.ui.window.preferences">
+     </handler>
+  </extension>
+  <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="com.opcoach.training.e4.rental.ui.customerSelected">
+        <iterate>
+           <instanceof
+                 value="com.opcoach.training.rental.Customer">
+           </instanceof>
+        </iterate>
+     </definition>
+  </extension>
    
    
 </plugin>

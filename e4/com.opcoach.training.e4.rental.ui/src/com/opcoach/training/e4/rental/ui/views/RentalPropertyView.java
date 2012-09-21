@@ -6,9 +6,15 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.services.adapter.Adapter;
+import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.FeaturePath;
+import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -21,27 +27,29 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Text;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.core.RentalCoreActivator;
+import com.opcoach.training.rental.RentalPackage.Literals;
 
 public class RentalPropertyView
 {
+	private DataBindingContext m_bindingContext;
 	public static final String VIEW_ID = "com.opcoach.rental.e4.ui.views.rentalView"; //$NON-NLS-1$
 
-	private Label rentedObjectLabel;
-	private Label customerNameLabel;
-	private Label startDateLabel;
-	private Label endDateLabel;
+	private Label rentedObjectLabel, customerNameLabel, startDateLabel, endDateLabel;
+	private Rental currentRental;
+	private Label customerTitle;
 
 	@PostConstruct
-	public void createContent(Composite parent)
+	public void createContent(Composite parent, RentalAgency agency)
 	{
 		parent.setLayout(new GridLayout(1, false));
 
 		Group infoGroup = new Group(parent, SWT.NONE);
+		infoGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
 		infoGroup.setText("Information");
 		infoGroup.setLayout(new GridLayout(2, false));
 
@@ -53,48 +61,66 @@ public class RentalPropertyView
 
 		DragSource ds = new DragSource(rentedObjectLabel, DND.DROP_COPY);
 		ds.setTransfer(new Transfer[] { TextTransfer.getInstance() });
-		ds.addDragListener(new DragSourceAdapter() {
-			public void dragSetData(DragSourceEvent event)
+		ds.addDragListener(new DragSourceAdapter()
 			{
-				if (TextTransfer.getInstance().isSupportedType(event.dataType))
+				public void dragSetData(DragSourceEvent event)
 				{
-					event.data = rentedObjectLabel.getText();
+					if (TextTransfer.getInstance().isSupportedType(event.dataType))
+					{
+						event.data = rentedObjectLabel.getText();
+					}
 				}
-			}
 
-			/*
-			 * public void dragStart(DragSourceEvent event) { event.image =
-			 * RentalUIActivator
-			 * .getDefault().getImageRegistry().get(RentalUIConstants
-			 * .AGENCY_KEY); }
-			 */
+				/*
+				 * public void dragStart(DragSourceEvent event) { event.image =
+				 * RentalUIActivator
+				 * .getDefault().getImageRegistry().get(RentalUIConstants
+				 * .AGENCY_KEY); }
+				 */
 
-		});
+			});
 
-		Label customerTitle = new Label(infoGroup, SWT.NONE);
+		customerTitle = new Label(infoGroup, SWT.NONE);
 		customerTitle.setText("Client : ");
 		customerNameLabel = new Label(infoGroup, SWT.NONE);
+		customerNameLabel.setText("        ");
 
 		Group dateGroup = new Group(parent, SWT.NONE);
+		dateGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
 		dateGroup.setText("Dates");
 		dateGroup.setLayout(new GridLayout(2, false));
 
 		Label startDateTitle = new Label(dateGroup, SWT.NONE);
 		startDateTitle.setText("Start date :");
 		startDateLabel = new Label(dateGroup, SWT.NONE);
+		startDateLabel.setText("         ");
 
 		Label endDateTitle = new Label(dateGroup, SWT.NONE);
 		endDateTitle.setText("End date");
 		endDateLabel = new Label(dateGroup, SWT.NONE);
 
-		// Try with sample
-		RentalAgency agency = RentalCoreActivator.getAgency();
-		setRental(agency.getRentals().get(0));
+		
 
+		// Try with sample (agency injected)
+		setRental(agency.getRentals().get(0));
+		m_bindingContext = initDataBindings();
+
+	}
+
+	
+
+	@Inject
+	public void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object o, Adapter adapter)
+	{
+		System.out.println("Enter in setSelection, object is " + (o == null ? "null" : o.getClass().toString()));
+		Rental r = adapter.adapt(o, Rental.class);
+		setRental(r);
 	}
 
 	public void setRental(Rental r)
 	{
+		if (rentedObjectLabel == null)
+			return; // ui not created yet
 		if (r == null)
 		{
 			rentedObjectLabel.setText("                               ");
@@ -113,14 +139,21 @@ public class RentalPropertyView
 		}
 
 	}
-
-	@Inject
-	public void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object o, 
-			                 Adapter adapter)
+	
+	@Focus
+	private void setFocus()
 	{
-		Rental r = adapter.adapt(o, Rental.class);
-		setRental(r);
-
+		rentedObjectLabel.setFocus();
 	}
-
+	
+	
+	protected DataBindingContext initDataBindings() {
+		DataBindingContext bindingContext = new DataBindingContext();
+		//
+		IObservableValue observeTextRentedObjectLabelObserveWidget = WidgetProperties.text().observe(rentedObjectLabel);
+		IObservableValue currentRentalNameObserveValue = EMFProperties.value(FeaturePath.fromList(Literals.RENTAL__RENTED_OBJECT, Literals.RENTAL_OBJECT__NAME)).observe(currentRental);
+		bindingContext.bindValue(observeTextRentedObjectLabelObserveWidget, currentRentalNameObserveValue, null, null);
+		//
+		return bindingContext;
+	}
 }

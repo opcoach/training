@@ -12,22 +12,24 @@ package com.opcoach.training.e4.rental.ui.handlers;
 
 import javax.inject.Named;
 
-import org.eclipse.core.commands.ParameterizedCommand;
-import org.eclipse.e4.core.commands.ECommandService;
-import org.eclipse.e4.core.commands.EHandlerService;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IWorkbenchCommandConstants;
+import org.eclipse.ui.dialogs.PreferencesUtil;
 
 public class PrefHandler
 {
 
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell, EHandlerService handlerService, ECommandService commandService)
+	public void execute() //@Named(IServiceConstants.ACTIVE_SHELL) Shell shell)
+	//EHandlerService handlerService, ECommandService commandService)
 	{
-		ParameterizedCommand command = commandService.createCommand(IWorkbenchCommandConstants.WINDOW_PREFERENCES, null);
-		handlerService.executeHandler(command);
+		System.out.println("ENter in open preferences");
+		PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(null, null, null, null);
+		dialog.open();
+		//ParameterizedCommand command = commandService.createCommand(IWorkbenchCommandConstants.WINDOW_PREFERENCES, null);
+	//	handlerService.executeHandler(command);
 	}
 
 }

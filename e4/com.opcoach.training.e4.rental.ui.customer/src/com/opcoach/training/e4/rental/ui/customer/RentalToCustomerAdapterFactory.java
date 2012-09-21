@@ -8,7 +8,7 @@ import com.opcoach.training.rental.Rental;
 /** Transform a rental into a customer. Just extract customer from rental */
 public class RentalToCustomerAdapterFactory implements IAdapterFactory
 {
-	/** Transform an IFile into a Rental object if extension is .rental */
+	// Transform a Rental into a Customer object 
 	public Object getAdapter(Object adaptableObject, Class adapterType)
 	{
 		Customer result = null;

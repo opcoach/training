@@ -7,13 +7,17 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
+import org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChangeListener;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
 import org.eclipse.e4.core.contexts.Active;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.model.application.ui.menu.MPopupMenu;
 import org.eclipse.e4.ui.services.IStylingEngine;
+import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
@@ -31,10 +35,9 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.opcoach.training.e4.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 
-public class RentalAgencyView implements IPropertyChangeListener
+public class RentalAgencyView implements  IPropertyChangeListener
 {
 	public static final String VIEW_ID = "com.opcoach.rental.e4.ui.rentalagencyview";
 	public static final String MENU_ID = VIEW_ID+".menu";
@@ -43,15 +46,13 @@ public class RentalAgencyView implements IPropertyChangeListener
 
 	private AgencyLabelProvider labelProvider;
 
-	@Inject
-	private ESelectionService selectionService;
 	
 	@Inject
 	private EMenuService menuService;
 	
 
 	@PostConstruct
-	public void createContent(Composite parent, @Optional IStylingEngine styleEngine)
+	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency)
 	{
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());
@@ -59,8 +60,7 @@ public class RentalAgencyView implements IPropertyChangeListener
 		agencyViewer.setLabelProvider(labelProvider);
 
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
-		agencies.add(RentalCoreActivator.getAgency());
-
+		agencies.add(agency);
 		RentalAgency lyon = RentalAgencyGenerator.createSampleAgency();
 		lyon.setName("Lyon");
 		agencies.add(lyon);
@@ -72,6 +72,9 @@ public class RentalAgencyView implements IPropertyChangeListener
 		// IWorkbench wb; // COmment le récupérer ?
 		// PlatformUI.getWorkbench().getHelpSystem().setHelp(agencyViewer.getControl(),
 		// "com.opcoach.training.rental.ui.rentalContext");
+
+		// Register a popup menu on viewer (MENU_ID is the id of popupmenu in application model)
+		MPopupMenu menu = menuService.registerContextMenu(agencyViewer.getControl(), MENU_ID);
 
 		// Autorise le popup sur le treeviewer
 /*
@@ -92,35 +95,32 @@ public class RentalAgencyView implements IPropertyChangeListener
 		{
 			styleEngine.setClassname(agencyViewer.getControl(), "agencyViewer");
 		}
+		
+		// Listen to the preference store
+		RentalUIActivator.getDefault().getPreferenceStore().addPropertyChangeListener(this);
+
+
+		provideSelection();
 
 	}
 
-	@PostConstruct
-	void initializeListeners(@Active MPart part)
-	{
-		// attach a selection listener to our jface viewer
-		System.out.println("On ajoute le mécanisme de selection sur l'agence");
+	@Inject
+	private ESelectionService selectionService;
 
+	private void provideSelection()
+	{
+		// attach a selection listener to the jface viewer 
 		agencyViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event)
 			{
-				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
+				// Get the selection in event
+				IStructuredSelection sel = (IStructuredSelection) event.getSelection();
 				// set the selection to the service
-				selectionService.setSelection(selection.size() == 1 ? selection.getFirstElement() : selection.toArray());
+				selectionService.setSelection(sel.size() == 1 ? sel.getFirstElement() : sel.toArray());
 			}
 		});
-
-		// Listen to the preference store
-		RentalUIActivator.getDefault().getPreferenceStore().addPropertyChangeListener(this);
-		
-		// Register the popup menu on viewer
-		MPopupMenu menu = menuService.registerContextMenu(agencyViewer.getControl(), MENU_ID);
-
-		System.out.println("Description du part courant : " + part.getDescription());		//menu.setLabel("MENU SUR AGENCE");
-		//menu.setVisible(true);*/
-		
-
 	}
+
 
 	@PreDestroy
 	public void dispose()
@@ -128,17 +128,27 @@ public class RentalAgencyView implements IPropertyChangeListener
 		RentalUIActivator.getDefault().getPreferenceStore().removePropertyChangeListener(this);
 	}
 
+
+	
+	@Focus
+	public void setFocus(EPartService ps)
+	{
+		//System.out.println("Affichage de l'agency viewer et montée de la vue navigateur");
+		agencyViewer.getControl().setFocus();
+		/*MPart p = ps.showPart("org.eclipse.ui.views.ResourceNavigator", PartState.ACTIVATE);
+		System.out.println("Part navigateur = " + p);*/
+	}
+
+
+
+
 	@Override
 	public void propertyChange(PropertyChangeEvent event)
 	{
 		labelProvider.initPalette();
-		agencyViewer.refresh();
+		agencyViewer.refresh();				
 	}
 	
-	@Focus
-	public void onFocus()
-	{
-		System.out.println("On entre dans l'agency view");
-	}
+	
 
 }

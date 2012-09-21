@@ -7,7 +7,6 @@
       </appinfo>
       <documentation>
          This extension point provides color palettes for business objects
-
       </documentation>
    </annotation>
 
@@ -19,7 +18,7 @@
       </annotation>
       <complexType>
          <sequence minOccurs="0" maxOccurs="1">
-            <element ref="palette"/>
+            <element ref="palette" minOccurs="1" maxOccurs="unbounded"/>
          </sequence>
          <attribute name="point" type="string" use="required">
             <annotation>
