@@ -15,6 +15,7 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -27,12 +28,16 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
 
+import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalPackage.Literals;
+import org.eclipse.core.databinding.beans.PojoProperties;
+import org.eclipse.emf.databinding.EMFObservables;
+import org.eclipse.core.databinding.UpdateValueStrategy;
+import org.eclipse.core.internal.databinding.conversion.DateToStringConverter;
 
 public class RentalPropertyView
 {
@@ -44,7 +49,7 @@ public class RentalPropertyView
 	private Label customerTitle;
 
 	@PostConstruct
-	public void createContent(Composite parent, RentalAgency agency)
+	public void createContent(Composite parent, RentalAgency agency, final ImageRegistry reg)
 	{
 		parent.setLayout(new GridLayout(1, false));
 
@@ -71,12 +76,10 @@ public class RentalPropertyView
 					}
 				}
 
-				/*
-				 * public void dragStart(DragSourceEvent event) { event.image =
-				 * RentalUIActivator
-				 * .getDefault().getImageRegistry().get(RentalUIConstants
-				 * .AGENCY_KEY); }
-				 */
+				public void dragStart(DragSourceEvent event)
+				{
+					event.image = reg.get(RentalUIConstants.AGENCY_KEY);
+				}
 
 			});
 
@@ -99,15 +102,12 @@ public class RentalPropertyView
 		endDateTitle.setText("End date");
 		endDateLabel = new Label(dateGroup, SWT.NONE);
 
-		
-
 		// Try with sample (agency injected)
 		setRental(agency.getRentals().get(0));
 		m_bindingContext = initDataBindings();
+		// m_bindingContext = initDataBindings();
 
 	}
-
-	
 
 	@Inject
 	public void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object o, Adapter adapter)
@@ -119,40 +119,52 @@ public class RentalPropertyView
 
 	public void setRental(Rental r)
 	{
-		if (rentedObjectLabel == null)
-			return; // ui not created yet
-		if (r == null)
-		{
-			rentedObjectLabel.setText("                               ");
-			customerNameLabel.setText(" ");
-			startDateLabel.setText(" ");
-			endDateLabel.setText("                                    ");
-		} else
-		{
-			rentedObjectLabel.setText(r.getRentedObject().getName());
-			Customer c = r.getCustomer();
-			customerNameLabel.setText(c.getDisplayName());
+		currentRental = r;
+		if (r != null)
+			initDataBindings();
 
-			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-			startDateLabel.setText(df.format(r.getStartDate()));
-			endDateLabel.setText(df.format(r.getEndDate()));
-		}
+		/*
+		 * if (rentedObjectLabel == null) return; // ui not created yet if (r ==
+		 * null) { rentedObjectLabel.setText("                               ");
+		 * customerNameLabel.setText(" "); startDateLabel.setText(" ");
+		 * endDateLabel.setText("                                    "); } else
+		 * { rentedObjectLabel.setText(r.getRentedObject().getName()); Customer
+		 * c = r.getCustomer(); customerNameLabel.setText(c.getDisplayName());
+		 * 
+		 * SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		 * startDateLabel.setText(df.format(r.getStartDate()));
+		 * endDateLabel.setText(df.format(r.getEndDate())); }
+		 */
 
 	}
-	
+
 	@Focus
 	private void setFocus()
 	{
 		rentedObjectLabel.setFocus();
 	}
-	
-	
 	protected DataBindingContext initDataBindings() {
 		DataBindingContext bindingContext = new DataBindingContext();
 		//
 		IObservableValue observeTextRentedObjectLabelObserveWidget = WidgetProperties.text().observe(rentedObjectLabel);
 		IObservableValue currentRentalNameObserveValue = EMFProperties.value(FeaturePath.fromList(Literals.RENTAL__RENTED_OBJECT, Literals.RENTAL_OBJECT__NAME)).observe(currentRental);
 		bindingContext.bindValue(observeTextRentedObjectLabelObserveWidget, currentRentalNameObserveValue, null, null);
+		//
+		IObservableValue observeTextCustomerNameLabelObserveWidget = WidgetProperties.text().observe(customerNameLabel);
+		IObservableValue displayNameCurrentRentalgetCustomerObserveValue = PojoProperties.value("displayName").observe(currentRental.getCustomer());
+		bindingContext.bindValue(observeTextCustomerNameLabelObserveWidget, displayNameCurrentRentalgetCustomerObserveValue, null, null);
+		//
+		IObservableValue observeTextStartDateLabelObserveWidget = WidgetProperties.text().observe(startDateLabel);
+		IObservableValue currentRentalStartDateObserveValue = EMFObservables.observeValue(currentRental, Literals.RENTAL__START_DATE);
+		UpdateValueStrategy strategy = new UpdateValueStrategy();
+		strategy.setConverter(new DateToStringConverter());
+		bindingContext.bindValue(observeTextStartDateLabelObserveWidget, currentRentalStartDateObserveValue, null, strategy);
+		//
+		IObservableValue observeTextEndDateLabelObserveWidget = WidgetProperties.text().observe(endDateLabel);
+		IObservableValue currentRentalEndDateObserveValue = EMFObservables.observeValue(currentRental, Literals.RENTAL__END_DATE);
+		UpdateValueStrategy strategy_1 = new UpdateValueStrategy();
+		strategy_1.setConverter(new DateToStringConverter());
+		bindingContext.bindValue(observeTextEndDateLabelObserveWidget, currentRentalEndDateObserveValue, null, strategy_1);
 		//
 		return bindingContext;
 	}

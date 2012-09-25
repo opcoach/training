@@ -7,18 +7,14 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
-import org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChangeListener;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
-import org.eclipse.e4.core.contexts.Active;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
-import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.model.application.ui.menu.MPopupMenu;
 import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
-import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -52,11 +48,11 @@ public class RentalAgencyView implements  IPropertyChangeListener
 	
 
 	@PostConstruct
-	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency)
+	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency, ImageRegistry imgRegistry)
 	{
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());
-		labelProvider = new AgencyLabelProvider();
+		labelProvider = new AgencyLabelProvider(imgRegistry);
 		agencyViewer.setLabelProvider(labelProvider);
 
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();

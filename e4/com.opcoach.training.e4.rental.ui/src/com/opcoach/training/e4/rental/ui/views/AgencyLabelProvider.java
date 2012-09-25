@@ -5,6 +5,8 @@
 
 package com.opcoach.training.e4.rental.ui.views;
 
+import javax.inject.Inject;
+
 import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -35,11 +37,15 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	/** The choosen palette among the additional (may be null) */
 	private IColorProvider currentPalette;
 	
+	
+	private ImageRegistry registry;
+	
 
 	
-	public AgencyLabelProvider()
+	public AgencyLabelProvider(ImageRegistry imgRegistry)
 	{
 		initPalette();
+		registry = imgRegistry;
 	}
 
 
@@ -83,21 +89,20 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	public Image getImage(Object element)
 	{
 		Image result = null;
-	    ImageRegistry reg = RentalUIActivator.getDefault().getImageRegistry();
 
 
 		if (element instanceof RentalAgency)
 		{
-			result = reg.get(AGENCY_KEY);
+			result = registry.get(AGENCY_KEY);
 		} else if (element instanceof Rental)
 		{
-			result = reg.get(RENTAL_KEY);
+			result = registry.get(RENTAL_KEY);
 		} else if (element instanceof Customer)
 		{
-			result = reg.get(CUSTOMER_KEY);
+			result = registry.get(CUSTOMER_KEY);
 		} else if (element instanceof RentalObject)
 		{
-			result = reg.get(RENTAL_OBJECT_KEY);
+			result = registry.get(RENTAL_OBJECT_KEY);
 		}
 
 		return result;

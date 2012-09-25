@@ -11,10 +11,10 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.core.di.annotations.Creatable;
+import org.eclipse.e4.core.di.InjectorFactory;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.workbench.lifecycle.PostContextCreate;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -25,6 +25,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import com.opcoach.training.e4.rental.ui.views.AgencyLabelProvider;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 
@@ -41,11 +42,15 @@ public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConst
 	{
 		return plugin;
 	};
+	
+	
 
 	@PostContextCreate
 	private void publishRentalAgency(IEclipseContext econtext)
 	{
 		econtext.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
+		econtext.set(ImageRegistry.class, getImageRegistry() );
+		// InjectorFactory.getDefault().addBinding(AgencyLabelProvider.class).implementedBy(AgencyLabelProvider.class);
 	}
 
 	private static BundleContext context;
