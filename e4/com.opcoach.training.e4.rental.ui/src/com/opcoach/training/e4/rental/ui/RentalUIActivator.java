@@ -12,20 +12,22 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.e4.core.contexts.ContextInjectionFactory;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.core.di.InjectorFactory;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.workbench.lifecycle.PostContextCreate;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import com.opcoach.training.e4.rental.ui.views.AgencyLabelProvider;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 
@@ -33,31 +35,65 @@ import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
  * The activator class controls the plug-in life cycle This class must be
  * registered as a LifeCycleURI to fill the context
  */
-public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConstants
+public class RentalUIActivator implements BundleActivator, RentalUIConstants
 {
 
 	private static RentalUIActivator plugin;
+	
 
-	public static RentalUIActivator getDefault()
-	{
-		return plugin;
-	};
+	/*
+	 * public static RentalUIActivator getDefault() { return plugin; };
+	 */
 	
-	
+	private static int count = 0;
 
 	@PostContextCreate
-	private void publishRentalAgency(IEclipseContext econtext)
+	private void populateContext(IEclipseContext econtext)
 	{
+		System.out.println("********************  Enter in RUIA populate context #" + count++);
 		econtext.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
-		econtext.set(ImageRegistry.class, getImageRegistry() );
+		econtext.set(ImageRegistry.class, getLocalImageRegistry() );
+		econtext.set(IPreferenceStore.class, new ScopedPreferenceStore(InstanceScope.INSTANCE,PLUGIN_ID));
 		// InjectorFactory.getDefault().addBinding(AgencyLabelProvider.class).implementedBy(AgencyLabelProvider.class);
 	}
 
-	private static BundleContext context;
+	
+	private IPreferenceStore preferenceStore;
+	
+	public IPreferenceStore getPreferenceStore() {
+        // Create the preference store lazily.
+        if (preferenceStore == null) {
+            preferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, context.getBundle().getSymbolicName());
 
-	static BundleContext getContext()
+        }
+        return preferenceStore;
+    }
+	
+	
+	private  static BundleContext context;
+
+	public static BundleContext getContext()
 	{
 		return context;
+	}
+
+	private ImageRegistry getLocalImageRegistry()
+	{
+		Bundle b = context.getBundle();
+		ImageRegistry reg = new ImageRegistry();
+
+		reg.put(CUSTOMER_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Customers.png")));
+		reg.put(RENTAL_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Rentals.png")));
+		reg.put(RENTAL_OBJECT_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/RentalObjects.png")));
+		reg.put(AGENCY_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Agency.png")));
+
+		return reg;
+
+	}
+	
+	public static RentalUIActivator getDefault()
+	{
+		return plugin;
 	}
 
 	// The plug-in ID
@@ -73,13 +109,13 @@ public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConst
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
 	 * )
 	 */
-	public void start(BundleContext context) throws Exception
+	public void start(BundleContext bcontext) throws Exception
 	{
-		RentalUIActivator.context = context;
+		context = bcontext;
 		plugin = this;
 		System.out.println("Start rental ui bundle");
-		//readViewExtensions();
-		//readColorProviderExtensions();
+		// readViewExtensions();
+		// readColorProviderExtensions();
 	}
 
 	@Inject
@@ -121,9 +157,6 @@ public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConst
 
 	}
 
-	
-		
-	
 	@Inject
 	public void readViewExtensions(IExtensionRegistry reg)
 	{
@@ -157,31 +190,5 @@ public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConst
 		plugin = null;
 	}
 
-	protected void initializeImageRegistry(ImageRegistry reg)
-	{
-		reg.put(CUSTOMER_KEY, imageDescriptorFromPlugin(PLUGIN_ID, "icons/Customers.png"));
-		reg.put(RENTAL_KEY, imageDescriptorFromPlugin(PLUGIN_ID, "icons/Rentals.png"));
-		reg.put(RENTAL_OBJECT_KEY, imageDescriptorFromPlugin(PLUGIN_ID, "icons/RentalObjects.png"));
-		reg.put(AGENCY_KEY, imageDescriptorFromPlugin(PLUGIN_ID, "icons/Agency.png"));
-	}
-
-	public Image getMyImage(String path)
-	{
-		// Utilise le Registry global de JfaceResources
-		ImageRegistry reg = JFaceResources.getImageRegistry();
-		// Essai de récuperer l'image peut être déjà présente
-		Image img = reg.get(path);
-		if (img == null)
-		{
-			// L'image n'est pas encore stockée dans le registry, on l'ajoute
-			ImageDescriptor desc = ImageDescriptor.createFromFile(this.getClass(), path);
-			// Le path sert de clé
-			reg.put(path, desc);
-			img = reg.get(path);
-		}
-
-		return img;
-
-	}
 
 }

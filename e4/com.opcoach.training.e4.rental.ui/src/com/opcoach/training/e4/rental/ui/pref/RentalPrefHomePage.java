@@ -16,11 +16,14 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 
 {
 
+	
+	
 	public RentalPrefHomePage()
 	{
 		super(GRID);
-		setPreferenceStore(RentalUIActivator.getDefault().getPreferenceStore());
-		// noDefaultAndApplyButton();
+		//IEclipseContext ctx = EclipseContextFactory.getServiceContext(RentalUIActivator.getContext());
+		// IPreferenceStore ps = ctx.get(IPreferenceStore.class);
+		setPreferenceStore(RentalUIActivator.getDefault().getPreferenceStore());		// noDefaultAndApplyButton();
 	}
 
 	

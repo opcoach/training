@@ -11,7 +11,7 @@
                 <children xsi:type="menu:DirectMenuItem" xmi:id="_YdzngKA6EeG1-fMS8F9koA" label="My E4 Handler" tooltip="Do a sys.out.println" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.handlers.MyE4Handler"/>
                 <children xsi:type="menu:MenuSeparator" xmi:id="_jd0tcKA8EeG1-fMS8F9koA"/>
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_1VEb0KA8EeG1-fMS8F9koA" label="Copy Customer " command="_ruEsYKA8EeG1-fMS8F9koA">
-                  <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_EEju4AQxEeKwlMNql7AR_w"/>
+                  <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_jNe7wAfAEeK-mYcrckMgOw" coreExpressionId="com.opcoach.training.e4.rental.ui.customerSelected"/>
                 </children>
               </menus>
             </children>

@@ -16,13 +16,13 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 
 	public RentalPrefInit()
 	{
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void initializeDefaultPreferences()
 	{
 		System.out.println("Bonjour");
+		//IEclipseContext ctx = EclipseContextFactory.getServiceContext(RentalUIActivator.getContext());
 		IPreferenceStore ps = RentalUIActivator.getDefault().getPreferenceStore();
 
 		Color c = Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);

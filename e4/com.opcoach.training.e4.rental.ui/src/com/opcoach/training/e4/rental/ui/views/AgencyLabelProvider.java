@@ -5,9 +5,8 @@
 
 package com.opcoach.training.e4.rental.ui.views;
 
-import javax.inject.Inject;
-
 import org.eclipse.e4.core.di.extensions.Preference;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.resource.StringConverter;
@@ -39,7 +38,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	
 	
 	private ImageRegistry registry;
-	
+		
 
 	
 	public AgencyLabelProvider(ImageRegistry imgRegistry)
@@ -53,7 +52,8 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	public String getText(Object element)
 	{
 		String result = null;
-		boolean displayCount = RentalUIActivator.getDefault().getPreferenceStore().getBoolean(DISPLAY_COUNT_PREF);
+		IPreferenceStore prefStore = RentalUIActivator.getDefault().getPreferenceStore();
+		boolean displayCount = prefStore.getBoolean(DISPLAY_COUNT_PREF);
 
 		if (element instanceof RentalAgency)
 		{
@@ -142,9 +142,8 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	 */
 	private Color getPrefColor(String key)
 	{
-		//IPreferenceStore pref = RentalUIActivator.getDefault().getPreferenceStore();
-
-		String rgbKey = RentalUIActivator.getDefault().getPreferenceStore().getString(key);
+		IPreferenceStore prefStore = RentalUIActivator.getDefault().getPreferenceStore();
+		String rgbKey = prefStore.getString(key);
 		
 		
 		Color result = colorRegistry.get(rgbKey);
@@ -162,14 +161,10 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	/** Init the palette using the preference key */
 	public void initPalette()
 	{
-		// Recupere la palette selectionnée dans les preferences
-		// (appelé par le listener de preference store de l'agency view et par
-		// le constructeur du label provider)
-		//String val = RentalUIActivator.getDefault().getPreferenceStore().getString(COLOR_PROVIDER);
-		//currentPalette = (val == null) ? null : RentalUIActivator.getDefault().getPaletteManager().get(val);
-		
+		// Get palette defined in preferences
+		// this method is called by constructor and listener on preference store
 		String val = RentalUIActivator.getDefault().getPreferenceStore().getString(COLOR_PROVIDER);
-		currentPalette = (val == null) ? null : RentalUIActivator.getPaletteManager().get(val);
+		currentPalette = (val == null) ? null : RentalUIActivator.getDefault().getPaletteManager().get(val);
 	}
 
 }

@@ -14,6 +14,7 @@ import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
@@ -119,9 +120,9 @@ public class RentalAgencyView implements  IPropertyChangeListener
 
 
 	@PreDestroy
-	public void dispose()
+	public void dispose(IPreferenceStore ps)
 	{
-		RentalUIActivator.getDefault().getPreferenceStore().removePropertyChangeListener(this);
+		ps.removePropertyChangeListener(this);
 	}
 
 

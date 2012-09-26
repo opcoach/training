@@ -105,7 +105,6 @@ public class RentalPropertyView
 		// Try with sample (agency injected)
 		setRental(agency.getRentals().get(0));
 		m_bindingContext = initDataBindings();
-		// m_bindingContext = initDataBindings();
 
 	}
 
