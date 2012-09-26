@@ -8,6 +8,7 @@ import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.model.application.ui.menu.MPopupMenu;
 import org.eclipse.e4.ui.services.IStylingEngine;
@@ -31,10 +32,11 @@ import org.eclipse.swt.dnd.URLTransfer;
 import org.eclipse.swt.widgets.Composite;
 
 import com.opcoach.training.e4.rental.ui.RentalUIActivator;
+import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 
-public class RentalAgencyView implements  IPropertyChangeListener
+public class RentalAgencyView // implements  IPropertyChangeListener
 {
 	public static final String VIEW_ID = "com.opcoach.rental.e4.ui.rentalagencyview";
 	public static final String MENU_ID = VIEW_ID+".menu";
@@ -94,7 +96,7 @@ public class RentalAgencyView implements  IPropertyChangeListener
 		}
 		
 		// Listen to the preference store
-		pstore.addPropertyChangeListener(this);
+		//pstore.addPropertyChangeListener(this);
 
 
 		provideSelection();
@@ -122,7 +124,7 @@ public class RentalAgencyView implements  IPropertyChangeListener
 	@PreDestroy
 	public void dispose(IPreferenceStore ps)
 	{
-		ps.removePropertyChangeListener(this);
+		// ps.removePropertyChangeListener(this);
 	}
 
 
@@ -136,15 +138,29 @@ public class RentalAgencyView implements  IPropertyChangeListener
 		System.out.println("Part navigateur = " + p);*/
 	}
 
+	
+	@Inject
+	public void refreshTree(@Preference(nodePath=RentalUIActivator.PLUGIN_ID, value=RentalUIConstants.CUSTOMER_KEY) String custCol,
+			@Preference(nodePath=RentalUIActivator.PLUGIN_ID, value=RentalUIConstants.RENTAL_KEY) String rk,
+			@Preference(nodePath=RentalUIActivator.PLUGIN_ID, value=RentalUIConstants.RENTAL_OBJECT_KEY) String rok)
+	{
+		if (agencyViewer != null)
+		{
+		agencyViewer.refresh();
+		labelProvider.initPalette();
+		}
+
+	}
+			
 
 
-
+/*
 	@Override
 	public void propertyChange(PropertyChangeEvent event)
 	{
-		labelProvider.initPalette();
 		agencyViewer.refresh();				
 	}
+	*/
 	
 	
 
