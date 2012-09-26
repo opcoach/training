@@ -18,15 +18,22 @@ import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 public class RentalColorPreferences extends FieldEditorPreferencePage implements IWorkbenchPreferencePage, RentalUIConstants
 
 {
-
 	@Inject
-	public RentalColorPreferences(IPreferenceStore ps)
+	IPreferenceStore prefStore;
+
+	public RentalColorPreferences()
 	{
 		super(GRID);
-		//IEclipseContext ctx = EclipseContextFactory.getServiceContext(RentalUIActivator.getContext());
-		// IPreferenceStore ps = ctx.get(IPreferenceStore.class);
-		setPreferenceStore(RentalUIActivator.getDefault().getPreferenceStore());
+		// Init of preference store delegated in init (pstore not initialized else)
 	}
+	
+	@Override
+	public void init(IWorkbench workbench)
+	{
+		setPreferenceStore(prefStore);
+
+	}
+
 
 	@Override
 	protected void createFieldEditors()
@@ -56,11 +63,5 @@ public class RentalColorPreferences extends FieldEditorPreferencePage implements
 
 	}
 
-	@Override
-	public void init(IWorkbench workbench)
-	{
-		// TODO Auto-generated method stub
-
-	}
 
 }

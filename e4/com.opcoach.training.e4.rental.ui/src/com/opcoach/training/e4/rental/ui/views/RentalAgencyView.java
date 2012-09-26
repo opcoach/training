@@ -49,11 +49,11 @@ public class RentalAgencyView implements  IPropertyChangeListener
 	
 
 	@PostConstruct
-	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency, ImageRegistry imgRegistry)
+	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency, ImageRegistry imgRegistry, IPreferenceStore pstore)
 	{
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());
-		labelProvider = new AgencyLabelProvider(imgRegistry);
+		labelProvider = new AgencyLabelProvider(imgRegistry, pstore);
 		agencyViewer.setLabelProvider(labelProvider);
 
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
@@ -94,7 +94,7 @@ public class RentalAgencyView implements  IPropertyChangeListener
 		}
 		
 		// Listen to the preference store
-		RentalUIActivator.getDefault().getPreferenceStore().addPropertyChangeListener(this);
+		pstore.addPropertyChangeListener(this);
 
 
 		provideSelection();

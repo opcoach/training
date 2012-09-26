@@ -53,7 +53,7 @@ public class RentalUIActivator implements BundleActivator, RentalUIConstants
 		System.out.println("********************  Enter in RUIA populate context #" + count++);
 		econtext.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
 		econtext.set(ImageRegistry.class, getLocalImageRegistry() );
-		econtext.set(IPreferenceStore.class, new ScopedPreferenceStore(InstanceScope.INSTANCE,PLUGIN_ID));
+		econtext.set(IPreferenceStore.class, getPreferenceStore());
 		// InjectorFactory.getDefault().addBinding(AgencyLabelProvider.class).implementedBy(AgencyLabelProvider.class);
 	}
 

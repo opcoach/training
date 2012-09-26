@@ -21,8 +21,7 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 	@Override
 	public void initializeDefaultPreferences()
 	{
-		System.out.println("Bonjour");
-		//IEclipseContext ctx = EclipseContextFactory.getServiceContext(RentalUIActivator.getContext());
+		// Unfortunately, in Eclipse 4.2, injection is not done in Pref initializer :(
 		IPreferenceStore ps = RentalUIActivator.getDefault().getPreferenceStore();
 
 		Color c = Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);

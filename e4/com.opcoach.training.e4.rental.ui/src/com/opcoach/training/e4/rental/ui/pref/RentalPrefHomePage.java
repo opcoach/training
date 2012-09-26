@@ -1,7 +1,10 @@
 package com.opcoach.training.e4.rental.ui.pref;
 
+import javax.inject.Inject;
+
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -16,22 +19,20 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 
 {
 
-	
+	@Inject
+	IPreferenceStore prefStore;
+
 	
 	public RentalPrefHomePage()
 	{
 		super(GRID);
-		//IEclipseContext ctx = EclipseContextFactory.getServiceContext(RentalUIActivator.getContext());
-		// IPreferenceStore ps = ctx.get(IPreferenceStore.class);
-		setPreferenceStore(RentalUIActivator.getDefault().getPreferenceStore());		// noDefaultAndApplyButton();
+		// Init of preference store delegated in init (pstore not initialized else)
 	}
-
 	
-
 	@Override
 	public void init(IWorkbench workbench)
 	{
-		// TODO Auto-generated method stub
+		setPreferenceStore(prefStore);
 
 	}
 

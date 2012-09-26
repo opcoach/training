@@ -38,13 +38,17 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	
 	
 	private ImageRegistry registry;
+	
+	private IPreferenceStore prefStore;
 		
 
 	
-	public AgencyLabelProvider(ImageRegistry imgRegistry)
+	public AgencyLabelProvider(ImageRegistry imgRegistry, IPreferenceStore pStore)
 	{
-		initPalette();
 		registry = imgRegistry;
+		prefStore = pStore;
+		initPalette();
+
 	}
 
 
@@ -52,7 +56,6 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	public String getText(Object element)
 	{
 		String result = null;
-		IPreferenceStore prefStore = RentalUIActivator.getDefault().getPreferenceStore();
 		boolean displayCount = prefStore.getBoolean(DISPLAY_COUNT_PREF);
 
 		if (element instanceof RentalAgency)
@@ -132,9 +135,6 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 		}
 	}
 	
-	@Preference(nodePath="com.opcoach.training.e4.rental.ui", value=CUSTOMER_KEY)
-	private String rgbKeyCustomerInjected;
-
 
 	/**
 	 * Get a color according to a key in the preference store
@@ -142,7 +142,6 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	 */
 	private Color getPrefColor(String key)
 	{
-		IPreferenceStore prefStore = RentalUIActivator.getDefault().getPreferenceStore();
 		String rgbKey = prefStore.getString(key);
 		
 		
@@ -163,7 +162,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	{
 		// Get palette defined in preferences
 		// this method is called by constructor and listener on preference store
-		String val = RentalUIActivator.getDefault().getPreferenceStore().getString(COLOR_PROVIDER);
+		String val = prefStore.getString(COLOR_PROVIDER);
 		currentPalette = (val == null) ? null : RentalUIActivator.getDefault().getPaletteManager().get(val);
 	}
 
