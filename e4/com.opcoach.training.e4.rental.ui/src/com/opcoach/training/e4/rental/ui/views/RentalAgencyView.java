@@ -146,8 +146,8 @@ public class RentalAgencyView // implements  IPropertyChangeListener
 	{
 		if (agencyViewer != null)
 		{
-		agencyViewer.refresh();
-		labelProvider.initPalette();
+			labelProvider.initPalette();
+			agencyViewer.refresh();
 		}
 
 	}
