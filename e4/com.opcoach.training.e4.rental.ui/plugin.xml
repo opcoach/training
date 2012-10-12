@@ -40,10 +40,10 @@
       <product
             application="org.eclipse.e4.ui.workbench.swt.E4Application"
             description="Rental ui made over e4"
-            name="Rental e4 ui">
+            name="Rental">
          <property
                name="appName"
-               value="Rental e4">
+               value="Rental">
          </property>
          <property
                name="applicationXMI"
@@ -52,6 +52,34 @@
          <property
                name="lifeCycleURI"
                value="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.RentalUIActivator">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/com.opcoach.training.e4.rental.ui/css/default.css">
+         </property>
+         <property
+               name="aboutImage"
+               value="eclipse_lg.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="%productBlurb">
+         </property>
+         <property
+               name="windowImages"
+               value="eclipse16.gif,eclipse32.gif,eclipse48.gif,eclipse16.png,eclipse32.png">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="FFFFFF">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,225,320,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="2,290,448,10">
          </property>
       </product>
    </extension>
