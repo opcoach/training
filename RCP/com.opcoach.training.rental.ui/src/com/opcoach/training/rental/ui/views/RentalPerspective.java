@@ -19,6 +19,7 @@ public class RentalPerspective implements IPerspectiveFactory
 		// Top left: Project Explorer view and Bookmarks view placeholder
 		IFolderLayout topLeft = layout.createFolder("topLeft", IPageLayout.LEFT, 0.25f, editorArea);
 		topLeft.addView(RentalAgencyView.VIEW_ID);
+		topLeft.addView(RentalAgencyDashBoard.VIEW_ID);
 
 		// Bottom left: Outline view and Property Sheet view
 		IFolderLayout bottomLeft = layout.createFolder("bottomLeft", IPageLayout.BOTTOM, 0.50f, "topLeft");

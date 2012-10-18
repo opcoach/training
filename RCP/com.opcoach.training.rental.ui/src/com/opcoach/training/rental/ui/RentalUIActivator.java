@@ -26,6 +26,7 @@ import org.osgi.framework.BundleContext;
 public class RentalUIActivator extends AbstractUIPlugin implements  RentalUIConstants
 {
 
+	
 	// The plug-in ID
 	public static final String PLUGIN_ID = "com.opcoach.training.rental.ui";
 
@@ -80,6 +81,8 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 					p.setName(elt.getAttribute("name"));
 					p.setColorProvider(delegatedICP);
 					paletteManager.put(p.getId(), p);
+					
+					// paletteManager.put(elt.getAttribute("name"), delegatedICP);
 				} catch (CoreException e)
 				{
 					IStatus st = new Status(IStatus.ERROR, PLUGIN_ID, "Impossible de creer la classe de palette : "+

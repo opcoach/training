@@ -39,6 +39,8 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	private Label customerNameLabel;
 	private Label startDateLabel;
 	private Label endDateLabel;
+	
+	private Rental currentRental;
 
 	public RentalPropertyView()
 	{
@@ -103,6 +105,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 	public void setRental(Rental r)
 	{
+		currentRental = r;
 		if (r==null)
 		{
 			rentedObjectLabel.setText(" ");

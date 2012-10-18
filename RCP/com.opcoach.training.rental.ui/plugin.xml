@@ -53,6 +53,14 @@
             id="com.opcoach.training.rental.ui.views.CustomerViewPart"
             name="Customer Propertie">
       </view>
+      <view
+            category="com.opcoach.rental.ui"
+            class="com.opcoach.training.rental.ui.views.RentalAgencyDashBoard"
+            icon="icons/Agency.png"
+            id="com.opcoach.rental.ui.agencyDashboard"
+            name="Agency Dashboard"
+            restorable="true">
+      </view>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
