@@ -7,21 +7,17 @@ package com.opcoach.training.rental.ui.views;
 
 import java.text.SimpleDateFormat;
 
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
+import com.opcoach.training.rental.ui.Palette;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.ui.views.AgencyContentProvider.TNode;
@@ -33,7 +29,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 {
 		
 	/** The choosen palette among the additional (may be null) */
-	private IColorProvider currentPalette;
+	private Palette currentPalette;
 
 
 	public AgencyLabelProvider()
