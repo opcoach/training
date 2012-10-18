@@ -31,9 +31,7 @@ import com.opcoach.training.rental.ui.views.AgencyContentProvider.TNode;
  */
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
 {
-	/** A local color registry to store the node colors */
-	private ColorRegistry colorRegistry = new ColorRegistry();
-	
+		
 	/** The choosen palette among the additional (may be null) */
 	private IColorProvider currentPalette;
 
@@ -118,36 +116,11 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	@Override
 	public Color getForeground(Object element)
 	{
-		if (currentPalette != null)
-			return currentPalette.getForeground(element);
-		else
-		{
-			if (element instanceof Customer)
-				return getPrefColor(CUSTOMER_KEY);
-			else if (element instanceof Rental)
-				return getPrefColor(RENTAL_KEY);
-			else if (element instanceof RentalObject)
-				return getPrefColor(RENTAL_OBJECT_KEY);
-			return Display.getCurrent().getSystemColor(SWT.COLOR_BLACK);
-		}
+		return  (currentPalette != null) ? currentPalette.getForeground(element) : null;
+		
 	}
 
-	/** A private methode to get a color in the preference store 
-	 * @param key the preference key to get the rgb value */
-	private Color getPrefColor(String key)
-	{
-		IPreferenceStore pref = RentalUIActivator.getDefault().getPreferenceStore();
-		String rgbKey = pref.getString(key);
-		Color result = colorRegistry.get(rgbKey);
-		if (result == null)
-		{
-			// Get value in pref store
-			colorRegistry.put(rgbKey, StringConverter.asRGB(rgbKey));
-			result = colorRegistry.get(rgbKey);
-		}
-		return result;
-
-	}
+	
 	
 	public void initPalette()
 	{

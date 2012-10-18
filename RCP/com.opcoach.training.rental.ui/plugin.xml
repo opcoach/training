@@ -192,6 +192,11 @@
    <extension
          point="com.opcoach.training.rental.ui.Palette">
       <palette
+            id="com.opcoach.training.rental.ui.nonePalette"
+            name="None"
+            paletteClass="com.opcoach.training.rental.ui.palette.NonePalette">
+      </palette>
+      <palette
             id="com.opcoach.training.rental.ui.paletteJaune"
             name="Jaune"
             paletteClass="com.opcoach.training.rental.ui.palette.PaletteJaune">
