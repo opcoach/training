@@ -27,7 +27,7 @@ public class SampleCommandHandler extends AbstractHandler
 			IStructuredSelection isel = (IStructuredSelection) currentSelection;
 			for (Iterator<?> it = isel.iterator(); it.hasNext(); )
 			{
-				System.out.println("Objet selectionné : " + it.next());
+				System.out.println(Messages.SampleCommandHandler_0 + it.next());
 			}
 		}
 		
@@ -35,13 +35,13 @@ public class SampleCommandHandler extends AbstractHandler
 		Command c = event.getCommand();
 		for (String st : c.getStateIds())
 		{
-			System.out.println("Etat de la commande : " + st);
+			System.out.println(Messages.SampleCommandHandler_1 + st);
 			State s = c.getState(st);
-			System.out.println("Etat de : " + st + " value = " + s.getValue());
+			System.out.println(Messages.SampleCommandHandler_2 + st + Messages.SampleCommandHandler_3 + s.getValue());
 
 			
 		}
-		State s = c.getState("com.opcoach.training.rental.ui.commands.state3");
+		State s = c.getState(Messages.SampleCommandHandler_4);
 		s.setValue(false);
 		//HandlerUtil.updateRadioState(event.getCommand(), "Toto");
 		
