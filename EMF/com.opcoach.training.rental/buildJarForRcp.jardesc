@@ -14,5 +14,6 @@
         <file path="/com.opcoach.training.rental/model/rental.ecore"/>
         <file path="/com.opcoach.training.rental/model/rental.genmodel"/>
         <javaElement handleIdentifier="=com.opcoach.training.rental/src-gen"/>
+        <javaElement handleIdentifier="=com.opcoach.training.rental/src&lt;com.opcoach.training.rental.helpers"/>
     </selectedElements>
 </jardesc>
