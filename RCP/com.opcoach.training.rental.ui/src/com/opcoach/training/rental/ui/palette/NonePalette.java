@@ -2,6 +2,7 @@ package com.opcoach.training.rental.ui.palette;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ColorRegistry;
+import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.swt.SWT;
@@ -17,9 +18,6 @@ import com.opcoach.training.rental.ui.RentalUIConstants;
 public class NonePalette implements IColorProvider, RentalUIConstants
 {
 	
-	/** A local color registry to store the node colors */
-	private ColorRegistry colorRegistry = new ColorRegistry();
-
 
 	public NonePalette()
 	{
@@ -51,6 +49,8 @@ public class NonePalette implements IColorProvider, RentalUIConstants
 	 * @param key the preference key to get the rgb value */
 	private Color getPrefColor(String key)
 	{
+	    ColorRegistry colorRegistry = JFaceResources.getColorRegistry();
+
 		IPreferenceStore pref = RentalUIActivator.getDefault().getPreferenceStore();
 		String rgbKey = pref.getString(key);
 		Color result = colorRegistry.get(rgbKey);

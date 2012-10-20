@@ -12,7 +12,15 @@ Require-Bundle: com.opcoach.training.rental.core;visibility:=reexport,
  org.eclipse.ui.forms;resolution:=optional,
  org.eclipse.rap.ui;bundle-version="1.4.0";resolution:=optional,
  org.eclipse.rap.ui.forms;bundle-version="1.4.0";resolution:=optional,
- com.opcoach.training.rental.help;bundle-version="1.0.0";resolution:=optional
+ com.opcoach.training.rental.help;bundle-version="1.0.0";resolution:=optional,
+ org.eclipse.emf.databinding,
+ org.eclipse.core.databinding,
+ org.eclipse.core.databinding.beans,
+ org.eclipse.core.databinding.observable,
+ org.eclipse.core.databinding.property,
+ org.eclipse.jface.databinding;resolution:=optional,
+ com.ibm.icu;resolution:=optional,
+ org.eclipse.rap.jface.databinding;bundle-version="1.5.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.ui,
