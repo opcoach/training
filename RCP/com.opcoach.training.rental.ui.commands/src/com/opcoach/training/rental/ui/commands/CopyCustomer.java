@@ -16,6 +16,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.ui.handlers.Messages;
 
 
 public class CopyCustomer extends AbstractHandler implements IHandler
