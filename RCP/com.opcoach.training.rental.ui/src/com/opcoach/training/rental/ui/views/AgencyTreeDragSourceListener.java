@@ -14,7 +14,7 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
 
-final class AgencyTreeDragSourceListener extends DragSourceAdapter
+final public class AgencyTreeDragSourceListener extends DragSourceAdapter
 {
 	private ISelectionProvider selProvider = null;
 
