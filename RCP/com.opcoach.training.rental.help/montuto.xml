@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet
+      title="Title">
+   <intro>
+      <description>
+         <b>Body</b>
+      </description>
+   </intro>
+   <item
+         title="Item">
+      <description>
+         <b>Body</b>
+      </description>
+      <subitem
+            label="Sub-Step">
+         <command
+               required="false"
+               serialization="org.eclipse.ui.views.showView(org.eclipse.ui.views.showView.viewId=org.eclipse.net4j.debug.RemoteTraceView)"/>
+      </subitem>
+   </item>
+</cheatsheet>
