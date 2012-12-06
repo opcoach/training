@@ -17,6 +17,7 @@ import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
+import org.eclipse.jface.action.IAction;
 
 public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 
@@ -28,6 +29,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     //private IWorkbenchAction aboutAction;
     //private IWorkbenchAction newWindowAction;
     private IWorkbenchAction prefAction;  
+    private IAction helpContentsAction;
+    
 
     public ApplicationActionBarAdvisor(IActionBarConfigurer configurer) {
         super(configurer);
@@ -53,6 +56,10 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         register(prefAction);
         
    
+    	{
+    		helpContentsAction = ActionFactory.HELP_CONTENTS.create(window);
+    		register(helpContentsAction);
+    	}
     }
     
     protected void fillMenuBar(IMenuManager menuBar) {
@@ -63,6 +70,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         // Add a group marker indicating where action set menus will appear.
         menuBar.add(new GroupMarker(IWorkbenchActionConstants.MB_ADDITIONS));
         menuBar.add(helpMenu);
+        helpMenu.add(helpContentsAction);
         
         // File Menu
         /* fileMenu.add(prefAction);
