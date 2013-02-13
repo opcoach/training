@@ -36,7 +36,6 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 	private TableViewer rentalViewer;
 	private TableViewer customerViewer;
 
-	private AgencyLabelProvider labelProvider;
 
 	public RentalAgencyDashBoard()
 	{
@@ -232,7 +231,6 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 	@Override
 	public void propertyChange(PropertyChangeEvent event)
 	{	
-		labelProvider.initPalette();
 		customerViewer.refresh();
 	}
 
