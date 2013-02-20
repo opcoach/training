@@ -174,6 +174,25 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 			return "No Text for TNode";
 		
 		}
+		
+		// To refresh the expanded nodes, this class must implement equals and hascode
+		@Override
+		public int hashCode()
+		{
+			// TODO Auto-generated method stub
+			return name.hashCode();
+		}
+		
+		@Override
+		public boolean equals(Object arg0)
+		{
+			if (arg0 instanceof TNode)
+			{
+				TNode other = (TNode) arg0;
+				return (other.name.equals(name)) && (other.agency == agency);
+			}
+			return false;
+		}
 
 	}
 }

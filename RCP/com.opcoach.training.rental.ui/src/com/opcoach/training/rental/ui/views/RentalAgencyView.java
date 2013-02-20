@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.jface.viewers.TreePath;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -41,7 +42,6 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 	@Override
 	public void createPartControl(Composite parent)
 	{		
-		
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());
 		labelProvider = new AgencyLabelProvider();
@@ -101,7 +101,9 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 	public void propertyChange(PropertyChangeEvent event)
 	{	
 		labelProvider.initPalette();
+		TreePath[] tps  = agencyViewer.getExpandedTreePaths();
 		agencyViewer.refresh();
+		agencyViewer.setExpandedTreePaths(tps);
 	}
 
 	@Override
