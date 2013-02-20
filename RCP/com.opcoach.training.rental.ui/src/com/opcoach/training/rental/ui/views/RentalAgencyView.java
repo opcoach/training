@@ -101,9 +101,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 	public void propertyChange(PropertyChangeEvent event)
 	{	
 		labelProvider.initPalette();
-		TreePath[] tps  = agencyViewer.getExpandedTreePaths();
 		agencyViewer.refresh();
-		agencyViewer.setExpandedTreePaths(tps);
 	}
 
 	@Override
