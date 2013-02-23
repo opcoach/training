@@ -36,7 +36,7 @@ import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 
-public class RentalAgencyView // implements  IPropertyChangeListener
+public class RentalAgencyView implements RentalUIConstants // implements  IPropertyChangeListener
 {
 	public static final String VIEW_ID = "com.opcoach.rental.e4.ui.rentalagencyview";
 	public static final String MENU_ID = VIEW_ID+".menu";
@@ -108,7 +108,7 @@ public class RentalAgencyView // implements  IPropertyChangeListener
 
 	private void provideSelection()
 	{
-		// attach a selection listener to the jface viewer 
+		// attach a selection listener to the viewer 
 		agencyViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event)
 			{
@@ -138,18 +138,18 @@ public class RentalAgencyView // implements  IPropertyChangeListener
 		System.out.println("Part navigateur = " + p);*/
 	}
 
+	private final static String PLUGIN_ID = RentalUIActivator.PLUGIN_ID;
 	
 	@Inject
-	public void refreshTree(@Preference(nodePath=RentalUIActivator.PLUGIN_ID, value=RentalUIConstants.CUSTOMER_KEY) String custCol,
-			@Preference(nodePath=RentalUIActivator.PLUGIN_ID, value=RentalUIConstants.RENTAL_KEY) String rk,
-			@Preference(nodePath=RentalUIActivator.PLUGIN_ID, value=RentalUIConstants.RENTAL_OBJECT_KEY) String rok)
+	public void refreshTree(@Preference(nodePath=PLUGIN_ID, value=CUSTOMER_KEY) String custCol,
+			@Preference(nodePath=PLUGIN_ID, value=RENTAL_KEY) String rk,
+			@Preference(nodePath=PLUGIN_ID, value=RENTAL_OBJECT_KEY) String rok)
 	{
 		if (agencyViewer != null)
 		{
 			labelProvider.initPalette();
 			agencyViewer.refresh();
 		}
-
 	}
 			
 

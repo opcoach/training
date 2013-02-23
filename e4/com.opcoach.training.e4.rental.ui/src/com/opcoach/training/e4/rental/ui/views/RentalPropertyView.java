@@ -111,7 +111,6 @@ public class RentalPropertyView
 	@Inject
 	public void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object o, Adapter adapter)
 	{
-		System.out.println("Enter in setSelection, object is " + (o == null ? "null" : o.getClass().toString()));
 		Rental r = adapter.adapt(o, Rental.class);
 		setRental(r);
 	}
