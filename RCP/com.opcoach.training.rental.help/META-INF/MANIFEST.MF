@@ -4,8 +4,8 @@ Bundle-Name: Help
 Bundle-SymbolicName: com.opcoach.training.rental.help; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
-Require-Bundle: org.eclipse.help.webapp;bundle-version="3.5.2";resolution:=optional,
+Require-Bundle: org.eclipse.help.webapp;resolution:=optional,
  org.eclipse.help,
  org.eclipse.ui.cheatsheets,
- org.eclipse.help.ui;bundle-version="3.5.200",
- org.eclipse.help.appserver;bundle-version="3.1.400"
+ org.eclipse.help.ui,
+ org.eclipse.help.appserver

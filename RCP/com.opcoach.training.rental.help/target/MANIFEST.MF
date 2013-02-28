@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
-Require-Bundle: org.eclipse.help.webapp;bundle-version="3.5.2";resolut
- ion:=optional,org.eclipse.help,org.eclipse.ui.cheatsheets
+Require-Bundle: org.eclipse.help.webapp;resolution:=optional,org.eclip
+ se.help,org.eclipse.ui.cheatsheets,org.eclipse.help.ui,org.eclipse.he
+ lp.appserver
 Bundle-Vendor: OPCOACH
-Bundle-Version: 1.0.0.201211261201
+Bundle-Version: 1.0.0.201302281622
 Bundle-Name: Help
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: com.opcoach.training.rental.help; singleton:=true
