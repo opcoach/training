@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            applicationId="com.opcoach.training.rental.rcp.application"
+            brandingId="com.opcoach.training.rental.rcp.applicationbranding"
+            id="com.opcoach.training.rental.rcp.rap.entrypoint"
+            path="/rap">
+      </entrypoint>
+   </extension>
+
+<extension
+      point="org.eclipse.rap.ui.branding">
+   <branding
+         id="com.opcoach.training.rental.rcp.applicationbranding"
+         themeId="org.eclipse.rap.design.example.business.theme"
+         title="Rental Management">
+   </branding>
+</extension>
+
+</fragment>
