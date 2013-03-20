@@ -3,11 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Adapters
 Bundle-SymbolicName: com.opcoach.training.rental.adapters;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.opcoach.training.rental.adapters.RentalAdaptersActivator
 Bundle-Vendor: OPCOACH
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.core.resources;bundle-version="3.7.100",
- com.opcoach.training.rental.core;bundle-version="1.0.0",
- org.eclipse.ui.views;bundle-version="3.6.0"
+ com.opcoach.training.rental.core;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: com.opcoach.training.rental.adapters.RentalAdaptersActivator

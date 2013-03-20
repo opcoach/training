@@ -4,10 +4,10 @@
    <extension
          point="org.eclipse.core.runtime.adapters">
       <factory
-            adaptableType="org.eclipse.core.resources.IFile"
+            adaptableType="com.opcoach.training.rental.Rental"
             class="com.opcoach.training.rental.adapters.RentalAdapterFactory">
          <adapter
-               type="com.opcoach.training.rental.Rental">
+               type="com.opcoach.training.rental.Customer">
          </adapter>
       </factory>
    </extension>
