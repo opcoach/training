@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009 http://www.opcoach.com
+// ï¿½ OPCoach 2009 http://www.opcoach.com
 // ------------------------------------------------
 
 package com.opcoach.training.rental.ui.views;
@@ -179,7 +179,6 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 		@Override
 		public int hashCode()
 		{
-			// TODO Auto-generated method stub
 			return name.hashCode();
 		}
 		
