@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_7mhXIAQmEeKwlMNql7AR_w" elementId="org.eclipse.e4.ide.application" bindingContexts="_7mhXIQQmEeKwlMNql7AR_w">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_7mh-PAQmEeKwlMNql7AR_w" label="com.opcoach.training.e4.codesamples" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_7mh-RAQmEeKwlMNql7AR_w">
+      <children xsi:type="advanced:Perspective" xmi:id="_7mh-RQQmEeKwlMNql7AR_w" label="Home">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_7milQAQmEeKwlMNql7AR_w">
+          <children xsi:type="basic:PartStack" xmi:id="_7milQQQmEeKwlMNql7AR_w">
+            <children xsi:type="basic:Part" xmi:id="_Ubd20JSHEeK3vJyHkV3YEw" elementId="com.opcoach.training.e4.codesamples.part.1" contributionURI="bundleclass://com.opcoach.e4.contextExplorer/com.opcoach.e4.contextExplorer.parts.ContextExplorerPart" label="Context Explorer" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/inject.png"/>
+            <children xsi:type="basic:Part" xmi:id="_TyLxUBR3EeKLRqSp9Oq4eQ" elementId="com.opcoach.training.e4.codesamples.part.0" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.SampleView" label="Home"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_RTkRwJSHEeK3vJyHkV3YEw" elementId="com.opcoach.training.e4.codesamples.perspective.0" label="Contexts">
+        <children xsi:type="basic:Part" xmi:id="_zH9PIJTQEeKQcawqaJzSiQ" elementId="com.opcoach.training.e4.codesamples.part.2" contributionURI="bundleclass://com.opcoach.e4.contextExplorer/com.opcoach.e4.contextExplorer.parts.ContextExplorerPart"/>
+      </children>
+    </children>
+    <mainMenu xmi:id="_7mh-PQQmEeKwlMNql7AR_w" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_7mh-PgQmEeKwlMNql7AR_w" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_7mh-PwQmEeKwlMNql7AR_w" label="Open" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/sample.gif" command="_7mh-MwQmEeKwlMNql7AR_w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_7mh-QAQmEeKwlMNql7AR_w" label="Save" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/save_edit.gif" command="_7mh-NgQmEeKwlMNql7AR_w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_7mh-QQQmEeKwlMNql7AR_w" label="Quit" command="_7mhXKgQmEeKwlMNql7AR_w"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_8b1dkIGxEeKefZHl3LydKA" elementId="com.opcoach.training.e4.codesamples.menu.0" label="Injection" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/inject.png">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_ZaOq0BRqEeKLRqSp9Oq4eQ" elementId="com.opcoach.training.e4.codesamples.handledmenuitem.0" label="Simple call " iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/inject.png" tooltip="Demonstrate the simple call order for injection" command="_N-5P8BRqEeKLRqSp9Oq4eQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_dL8H8IsFEeKkRu2qMXuGIQ" elementId="com.opcoach.training.e4.codesamples.handledmenuitem.2" label="Full Call" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/inject.png" tooltip="Demonstrate the a full sample for injection" command="_TRa_kIsFEeKkRu2qMXuGIQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_as5nYJSBEeK3vJyHkV3YEw" elementId="com.opcoach.training.e4.codesamples.handledmenuitem.displayContext" label="Display Contexts" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/inject.png" command="_UOQI8JSBEeK3vJyHkV3YEw"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_7mh-QgQmEeKwlMNql7AR_w" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_7mh-QwQmEeKwlMNql7AR_w" label="About" command="_7mh-OQQmEeKwlMNql7AR_w"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_7milQgQmEeKwlMNql7AR_w">
+      <children xsi:type="menu:ToolBar" xmi:id="_7milQwQmEeKwlMNql7AR_w" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_7milRAQmEeKwlMNql7AR_w" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/sample.gif" command="_7mh-MwQmEeKwlMNql7AR_w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_7milRQQmEeKwlMNql7AR_w" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/save_edit.gif" command="_7mh-NgQmEeKwlMNql7AR_w"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_BqYXUIG4EeKefZHl3LydKA" elementId="com.opcoach.training.e4.codesamples.toolbar.inject">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-q0O4IG3EeKefZHl3LydKA" elementId="com.opcoach.training.e4.codesamples.handledtoolitem.0" label="Inject" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/inject.png" command="_N-5P8BRqEeKLRqSp9Oq4eQ">
+          <menu xmi:id="_FWp0wIG4EeKefZHl3LydKA" elementId="com.opcoach.training.e4.codesamples.menu.1" label="Injection Tests">
+            <children xsi:type="menu:HandledMenuItem" xmi:id="_HunxsIG4EeKefZHl3LydKA" elementId="com.opcoach.training.e4.codesamples.handledmenuitem.1" label="Simple Call Order" command="_N-5P8BRqEeKLRqSp9Oq4eQ"/>
+            <children xsi:type="menu:HandledMenuItem" xmi:id="_3Ye34IsGEeKkRu2qMXuGIQ" elementId="com.opcoach.training.e4.codesamples.handledmenuitem.2" label="Full Call" iconURI="platform:/plugin/com.opcoach.training.e4.codesamples/icons/inject.png" tooltip="Demonstrate the a full sample for injection" command="_TRa_kIsFEeKkRu2qMXuGIQ"/>
+          </menu>
+        </children>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_7mh-MAQmEeKwlMNql7AR_w" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.handlers.QuitHandler" command="_7mhXKgQmEeKwlMNql7AR_w"/>
+  <handlers xmi:id="_7mh-NAQmEeKwlMNql7AR_w" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.handlers.OpenHandler" command="_7mh-MwQmEeKwlMNql7AR_w"/>
+  <handlers xmi:id="_7mh-NwQmEeKwlMNql7AR_w" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.handlers.SaveHandler" command="_7mh-NgQmEeKwlMNql7AR_w"/>
+  <handlers xmi:id="_7mh-OgQmEeKwlMNql7AR_w" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.handlers.AboutHandler" command="_7mh-OQQmEeKwlMNql7AR_w"/>
+  <handlers xmi:id="_KhO2QBRqEeKLRqSp9Oq4eQ" elementId="com.opcoach.training.e4.codesamples.handler.callHandler" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.handlers.SimpleCallOrderHandler" command="_N-5P8BRqEeKLRqSp9Oq4eQ"/>
+  <handlers xmi:id="_YDUoUIsFEeKkRu2qMXuGIQ" elementId="com.opcoach.training.e4.codesamples.handler.fullCallHandler" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.handlers.FullCallOrderHandler" command="_TRa_kIsFEeKkRu2qMXuGIQ"/>
+  <handlers xmi:id="_XSZPYJSBEeK3vJyHkV3YEw" elementId="com.opcoach.training.e4.codesamples.handler.displayContexts" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.handlers.DisplayContextsHandler" command="_UOQI8JSBEeK3vJyHkV3YEw"/>
+  <bindingTables xmi:id="_7mh-MQQmEeKwlMNql7AR_w" bindingContext="_7mhXIQQmEeKwlMNql7AR_w">
+    <bindings xmi:id="_7mh-MgQmEeKwlMNql7AR_w" keySequence="M1+Q" command="_7mhXKgQmEeKwlMNql7AR_w"/>
+    <bindings xmi:id="_7mh-NQQmEeKwlMNql7AR_w" keySequence="M1+O" command="_7mh-MwQmEeKwlMNql7AR_w"/>
+    <bindings xmi:id="_7mh-OAQmEeKwlMNql7AR_w" keySequence="M1+S" command="_7mh-NgQmEeKwlMNql7AR_w"/>
+    <bindings xmi:id="_7mh-OwQmEeKwlMNql7AR_w" keySequence="M1+A" command="_7mh-OQQmEeKwlMNql7AR_w"/>
+  </bindingTables>
+  <rootContext xmi:id="_7mhXIQQmEeKwlMNql7AR_w" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_7mhXIgQmEeKwlMNql7AR_w" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_7mhXIwQmEeKwlMNql7AR_w" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_7mhXKgQmEeKwlMNql7AR_w" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_7mh-MwQmEeKwlMNql7AR_w" elementId="com.opcoach.training.e4.codesamples.open" commandName="openCommand"/>
+  <commands xmi:id="_7mh-NgQmEeKwlMNql7AR_w" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_7mh-OQQmEeKwlMNql7AR_w" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_N-5P8BRqEeKLRqSp9Oq4eQ" elementId="com.opcoach.training.e4.codesamples.callOrder" commandName="Call Order" description="Change MYPARAM name and check that callOrder is called ! "/>
+  <commands xmi:id="_TRa_kIsFEeKkRu2qMXuGIQ" elementId="com.opcoach.training.e4.codesamples.fullCallOrder" commandName="Full Call Order" description="Call the full call order sample to test injection"/>
+  <commands xmi:id="_UOQI8JSBEeK3vJyHkV3YEw" elementId="com.opcoach.training.e4.codesamples.command.displayContexts" commandName="Display contexts"/>
+  <addons xmi:id="_7mhXJAQmEeKwlMNql7AR_w" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_7mhXJQQmEeKwlMNql7AR_w" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_7mhXJgQmEeKwlMNql7AR_w" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_7mhXJwQmEeKwlMNql7AR_w" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_7mhXKAQmEeKwlMNql7AR_w" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_7mhXKQQmEeKwlMNql7AR_w" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_diD_sBRmEeKLRqSp9Oq4eQ" elementId="com.opcoach.training.e4.codesamples.addon.0" contributionURI="bundleclass://com.opcoach.training.e4.codesamples/com.opcoach.training.e4.codesamples.CodeSampleAddon"/>
+</application:Application>
