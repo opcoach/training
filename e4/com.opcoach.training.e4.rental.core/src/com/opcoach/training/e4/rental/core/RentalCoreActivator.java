@@ -30,6 +30,9 @@ public class RentalCoreActivator implements BundleActivator {
 	public void stop(BundleContext bundleContext) throws Exception {
 		RentalCoreActivator.context = null;
 	}
+	
+	
+	
 
 
 }

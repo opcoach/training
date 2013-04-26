@@ -4,10 +4,12 @@
    <extension
          point="com.opcoach.training.e4.rental.ui.Palette">
       <palette
+            id="com.opcoach.training.e4.rental.ui.palettes.PastelColorProvider"
             name="Pastel"
             paletteClass="com.opcoach.training.e4.rental.ui.palettes.PastelColorProvider">
       </palette>
       <palette
+            id="com.opcoach.training.e4.rental.ui.palettes.ViveColorProvider"
             name="Vive"
             paletteClass="com.opcoach.training.e4.rental.ui.palettes.ViveColorProvider">
       </palette>

@@ -49,13 +49,13 @@
 
    <element name="palette">
       <complexType>
-         <attribute name="paletteClass" type="string">
+         <attribute name="id" type="string" use="required">
             <annotation>
                <documentation>
-                  Class implementing IColorProvider
+                  
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.eclipse.jface.viewers.IColorProvider"/>
+                  <meta.attribute kind="identifier"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -64,6 +64,16 @@
                <documentation>
                   Name for this palette (pastel...)
                </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="paletteClass" type="string">
+            <annotation>
+               <documentation>
+                  Class implementing IColorProvider
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.jface.viewers.IColorProvider"/>
+               </appinfo>
             </annotation>
          </attribute>
       </complexType>

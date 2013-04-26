@@ -61,3 +61,4 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  javax.annotation
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
+Service-Component: src/com/opcoach/training/e4/rental/ui/views/component.xml

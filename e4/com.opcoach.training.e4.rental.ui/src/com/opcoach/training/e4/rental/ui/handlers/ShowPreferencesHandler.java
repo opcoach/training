@@ -61,7 +61,7 @@ public class ShowPreferencesHandler
 	{
 		PreferenceManager pm = configurePreferences();
 		PreferenceDialog dialog = new PreferenceDialog(shell, pm);
-		dialog.setPreferenceStore(new ScopedPreferenceStore(InstanceScope.INSTANCE, RentalUIActivator.PLUGIN_ID));
+		dialog.setPreferenceStore(RentalUIActivator.getPreferenceStore());
 		dialog.create();
 		dialog.getTreeViewer().setComparator(new ViewerComparator());
 		dialog.getTreeViewer().expandAll();

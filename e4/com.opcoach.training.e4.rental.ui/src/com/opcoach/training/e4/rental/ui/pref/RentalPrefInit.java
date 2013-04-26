@@ -22,15 +22,16 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 	public void initializeDefaultPreferences()
 	{
 		// Unfortunately, in Eclipse 4.2, injection is not done in Pref initializer :(
-		IPreferenceStore ps = RentalUIActivator.getDefault().getPreferenceStore();
+		IPreferenceStore ps = RentalUIActivator.getPreferenceStore();
 
 		Color c = Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
 
-		ps.setDefault(CUSTOMER_KEY, StringConverter.asString(c.getRGB()));
-
-		ps.setDefault(RENTAL_KEY, StringConverter.asString(new RGB(255, 0, 0)));
-		ps.setDefault(RENTAL_OBJECT_KEY, StringConverter.asString(new RGB(0, 255, 0)));
-		ps.setDefault(DISPLAY_COUNT_PREF, StringConverter.asString(false));
+		ps.setDefault(PREF_CUSTOMER_COLOR, StringConverter.asString(c.getRGB()));
+		ps.setDefault(PREF_RENTAL_COLOR, StringConverter.asString(new RGB(255, 0, 0)));
+		ps.setDefault(PREF_RENTAL_OBJECT_COLOR, StringConverter.asString(new RGB(0, 255, 0)));
+		ps.setDefault(PREF_PALETTE, NONE_PALETTE);
+		
+		ps.setDefault(PREF_DISPLAY_COUNT, StringConverter.asString(false));
 	}
 
 }
