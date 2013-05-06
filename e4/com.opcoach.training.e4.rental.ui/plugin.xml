@@ -2,15 +2,6 @@
 <plugin>
    <extension-point id="Palette" name="Palette" schema="schema/Palette.exsd"/>
 
-  <extension point="org.eclipse.ui.perspectives">
-      <perspective
-            class="com.opcoach.training.e4.rental.ui.parts.RentalPerspective"
-            icon="icons/Agency.png"
-            id="com.opcoach.training.rental.ui.rentalperspective"
-            name="Rental">
-      </perspective>
-   
-   </extension>
      
    <extension point="org.eclipse.core.runtime.preferences">
       <initializer
@@ -40,86 +31,6 @@
      </definition>
   </extension>
    
-  <extension id="product" point="org.eclipse.core.runtime.products">
-      <product
-            application="org.eclipse.e4.ui.workbench.swt.E4Application"
-            description="Rental ui made over e4"
-            name="Rental">
-            
-         <property name="appName"
-                   value="Rental">
-         </property>
-         
-         <property name="applicationXMI" 
-               value="com.opcoach.training.e4.rental.ui/Application.e4xmi">
-         </property>
-         
-         <property
-               name="lifeCycleURI"
-               value="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.RentalUIActivator">
-         </property>
-         <property
-               name="applicationCSS"
-               value="platform:/plugin/com.opcoach.training.e4.rental.ui/css/default.css">
-         </property>
-         <property
-               name="aboutImage"
-               value="eclipse_lg.gif">
-         </property>
-         <property
-               name="aboutText"
-               value="%productBlurb">
-         </property>
-         <property
-               name="windowImages"
-               value="eclipse16.gif,eclipse32.gif,eclipse48.gif,eclipse16.png,eclipse32.png">
-         </property>
-         <property
-               name="startupForegroundColor"
-               value="FFFFFF">
-         </property>
-         <property
-               name="startupMessageRect"
-               value="7,225,320,20">
-         </property>
-         <property
-               name="startupProgressRect"
-               value="2,290,448,10">
-         </property>
-      </product>
-   </extension>
-   <extension
-         id="productLegacy"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="org.eclipse.e4.ui.workbench.swt.E4Application"
-            description="Rental ui made over e4 with legacy model"
-            name="Rental e4 ui Legacy">
-         <property
-               name="appName"
-               value="Rental e4 with Legacy">
-         </property>
-         <property
-               name="applicationXMI"
-               value="com.opcoach.training.e4.rental.ui/LegacyIDE.e4xmi">
-         </property>
-         <property
-               name="applicationCSS"
-               value="platform:/plugin/com.opcoach.training.e4.rental.ui/css/default.css">
-         </property>
-         <property
-               name="lifeCycleURI"
-               value="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.RentalUIActivator">
-         </property>
-      </product>
-   </extension>
-  <extension
-        point="org.eclipse.ui.handlers">
-     <handler
-           class="org.eclipse.ui.internal.handlers.ShowPreferencePageHandler"
-           commandId="org.eclipse.ui.window.preferences">
-     </handler>
-  </extension>
   <extension
         point="com.opcoach.training.e4.rental.ui.Palette">
      <palette
