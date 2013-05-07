@@ -47,9 +47,6 @@ public class RentalAddon implements RentalUIConstants
 		String palId = prefStore.getString(PREF_PALETTE);
 		ctx.set(Palette.class, paletteManager.get(palId));
 
-		// Display extensions sample
-		readAdapterExtensions(reg);
-
 	}
 
 	@Inject
