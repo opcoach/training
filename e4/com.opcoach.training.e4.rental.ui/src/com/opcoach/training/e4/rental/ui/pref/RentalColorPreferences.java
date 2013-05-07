@@ -18,7 +18,7 @@ import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 public class RentalColorPreferences extends FieldEditorPreferencePage implements IWorkbenchPreferencePage, RentalUIConstants
 
 {
-	@Inject
+	@Inject @Named(RENTAL_UI_PREF_STORE)
 	IPreferenceStore prefStore;
 	
 	

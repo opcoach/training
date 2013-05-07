@@ -99,11 +99,6 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 	
 
-	@PreDestroy
-	public void dispose(IPreferenceStore ps)
-	{
-		// ps.removePropertyChangeListener(this);
-	}
 
 	@Focus
 	public void setFocus(EPartService ps)
@@ -116,7 +111,6 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 		 */
 	}
 
-	private final static String PLUGIN_ID = RentalUIActivator.PLUGIN_ID;
 
 	/**
 	 * We can receive at least one of the preferences values... This method will

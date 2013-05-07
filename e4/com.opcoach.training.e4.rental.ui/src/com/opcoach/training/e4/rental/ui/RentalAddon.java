@@ -12,10 +12,8 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.e4.core.contexts.ContextInjectionFactory;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.core.services.log.Logger;
@@ -23,6 +21,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.osgi.framework.Bundle;
 
 import com.opcoach.training.rental.RentalAgency;
@@ -30,37 +29,44 @@ import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 
 public class RentalAddon implements RentalUIConstants
 {
-	@Inject
-	private Logger logger;
-
-	/** The map of possible color providers (read in extensions) */
-	private Map<String, Palette> paletteManager = new HashMap<String, Palette>();
 
 	@PostConstruct
 	void startRentalFeature(IEclipseContext ctx, IExtensionRegistry reg)
 	{
-		// Hook event listeners
+		// Put objects in context
 		ctx.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
 		ctx.set(ImageRegistry.class, getLocalImageRegistry());
 
-		ctx.set(IPreferenceStore.class, RentalUIActivator.getPreferenceStore());
+		ctx.set(RENTAL_UI_PREF_STORE, getPreferenceStore());
 
 		// Read the palettes extensions and publish it in context
 		readPaletteExtensions(reg);
 		ctx.set(PALETTE_MANAGER, paletteManager);
 
 		// Set the current palette in context...
-		String palId = RentalUIActivator.getPreferenceStore().getString(PREF_PALETTE);
+		String palId = prefStore.getString(PREF_PALETTE);
 		ctx.set(Palette.class, paletteManager.get(palId));
 
-		// Display extensions sample 
+		// Display extensions sample
 		readAdapterExtensions(reg);
 
 	}
 
+	@Inject
+	private Logger logger;
+
+	/** The map of possible color providers (read in extensions) */
+	private Map<String, Palette> paletteManager = new HashMap<String, Palette>();
+
+	/**
+	 * A method to create and initialize an ImageRegistry
+	 * 
+	 * @return a initialized ImageRegistry that can be put in the context for
+	 *         instance
+	 */
 	ImageRegistry getLocalImageRegistry()
 	{
-		Bundle b = Platform.getBundle(RentalUIActivator.PLUGIN_ID);
+		Bundle b = Platform.getBundle(PLUGIN_ID);
 		ImageRegistry reg = new ImageRegistry();
 
 		reg.put(CUSTOMER_IMG_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Customers.png")));
@@ -69,7 +75,6 @@ public class RentalAddon implements RentalUIConstants
 		reg.put(AGENCY_IMG_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Agency.png")));
 
 		return reg;
-
 	}
 
 	@PreDestroy
@@ -127,14 +132,36 @@ public class RentalAddon implements RentalUIConstants
 	}
 
 	/**
-	 * Listen to change of the pref palette, and set the current palette in  context
+	 * Listen to change of the pref palette, and set the current palette in
+	 * context
 	 */
 	@Inject
-	public void changePalette(@Preference(nodePath = RentalUIActivator.PLUGIN_ID, value = PREF_PALETTE) String paletteID, IEclipseContext ctx)
+	public void changePalette(@Preference(nodePath = PLUGIN_ID, value = PREF_PALETTE) String paletteID, IEclipseContext ctx)
 	{
 		// DO nothing if palette manager not yet called.
 		if (paletteManager != null)
 			ctx.set(Palette.class, paletteManager.get(paletteID));
+	}
+
+	// ----------------------------------------------------------------------
+	// This part of the code is TEMPORARY
+	// Publish a static method to get the preference store that is used by the
+	// classes
+	// that are not created using ContextInjectionFactory
+	// Other 'injected' classes can use the @Named(RENTAL_UI_PREF_STORE)
+	// IPreferenceStore prefStore to get it !!
+	// Like the preferencePages, preference initializer...
+	// -----------------------------------------------------------------------
+
+	private static IPreferenceStore prefStore;
+
+	public static IPreferenceStore getPreferenceStore()
+	{
+		if (prefStore == null)
+		{
+			prefStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID);
+		}
+		return prefStore;
 	}
 
 }

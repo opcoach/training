@@ -6,6 +6,7 @@ import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.swt.graphics.Color;
 
+import com.opcoach.training.e4.rental.ui.RentalAddon;
 import com.opcoach.training.e4.rental.ui.RentalUIActivator;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.Customer;
@@ -40,7 +41,7 @@ public class NonePalette implements IColorProvider, RentalUIConstants
 	 */
 	private Color getPrefColor(String key)
 	{
-		IPreferenceStore prefStore = RentalUIActivator.getPreferenceStore();
+		IPreferenceStore prefStore = RentalAddon.getPreferenceStore();
 
 		String rgbKey = prefStore.getString(key);
 

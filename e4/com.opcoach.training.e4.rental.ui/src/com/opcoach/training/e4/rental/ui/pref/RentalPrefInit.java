@@ -8,6 +8,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 
+import com.opcoach.training.e4.rental.ui.RentalAddon;
 import com.opcoach.training.e4.rental.ui.RentalUIActivator;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 
@@ -22,7 +23,8 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 	public void initializeDefaultPreferences()
 	{
 		// Unfortunately, in Eclipse 4.2, injection is not done in Pref initializer :(
-		IPreferenceStore ps = RentalUIActivator.getPreferenceStore();
+		// So must get it using a static method 
+		IPreferenceStore ps = RentalAddon.getPreferenceStore();
 
 		Color c = Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
 

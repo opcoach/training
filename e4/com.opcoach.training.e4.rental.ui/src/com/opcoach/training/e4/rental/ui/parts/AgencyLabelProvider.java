@@ -5,12 +5,9 @@
 
 package com.opcoach.training.e4.rental.ui.parts;
 
-import java.util.Map;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
@@ -19,7 +16,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 
 import com.opcoach.training.e4.rental.ui.Palette;
-import com.opcoach.training.e4.rental.ui.RentalUIActivator;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.e4.rental.ui.parts.AgencyContentProvider.TNode;
 import com.opcoach.training.rental.Customer;
@@ -40,7 +36,15 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	@Inject
 	private ImageRegistry registry;
 	
-	@Inject
+	public Image getImageForCustomer()
+	{
+		return registry.get(CUSTOMER_IMG_KEY);
+	}
+	
+	
+	
+	
+	@Inject @Named(RENTAL_UI_PREF_STORE)
 	private IPreferenceStore prefStore;
 		
 
@@ -111,6 +115,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 
 		return result;
 	}
+	
 	
 
 }

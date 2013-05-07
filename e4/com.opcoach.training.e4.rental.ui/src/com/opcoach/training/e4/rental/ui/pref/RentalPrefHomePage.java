@@ -1,6 +1,7 @@
 package com.opcoach.training.e4.rental.ui.pref;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
@@ -12,14 +13,13 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
-import com.opcoach.training.e4.rental.ui.RentalUIActivator;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 
 public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage, RentalUIConstants
 
 {
 
-	@Inject
+	@Inject @Named(RENTAL_UI_PREF_STORE)
 	IPreferenceStore prefStore;
 
 	

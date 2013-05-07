@@ -1,8 +1,5 @@
 package com.opcoach.training.e4.rental.ui;
 
-import org.eclipse.core.runtime.preferences.InstanceScope;
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -13,22 +10,7 @@ import org.osgi.framework.BundleContext;
 public class RentalUIActivator implements BundleActivator
 {
 
-	// The plug-in ID
-	public static final String PLUGIN_ID = "com.opcoach.training.e4.rental.ui";
-
-	private static IPreferenceStore preferenceStore;
-
-	public static IPreferenceStore getPreferenceStore()
-	{
-		// Create the preference store lazily.
-		if (preferenceStore == null)
-		{
-			preferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID);
-
-		}
-		return preferenceStore;
-	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 * 

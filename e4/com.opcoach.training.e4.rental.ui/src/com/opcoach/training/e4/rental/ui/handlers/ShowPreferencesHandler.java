@@ -12,7 +12,6 @@ import javax.inject.Named;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Execute;
@@ -22,6 +21,7 @@ import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.preference.IPreferenceNode;
 import org.eclipse.jface.preference.IPreferencePage;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.jface.preference.PreferenceManager;
 import org.eclipse.jface.preference.PreferenceNode;
@@ -32,9 +32,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
-import com.opcoach.training.e4.rental.ui.RentalUIActivator;
+import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 
 public class ShowPreferencesHandler
 {
@@ -57,11 +56,11 @@ public class ShowPreferencesHandler
 	protected IExtensionRegistry registry;
 
 	@Execute
-	public void execute(MApplication app)
+	public void execute(MApplication app, @Named(RentalUIConstants.RENTAL_UI_PREF_STORE) IPreferenceStore pstore)
 	{
 		PreferenceManager pm = configurePreferences();
 		PreferenceDialog dialog = new PreferenceDialog(shell, pm);
-		dialog.setPreferenceStore(RentalUIActivator.getPreferenceStore());
+		dialog.setPreferenceStore(pstore);
 		dialog.create();
 		dialog.getTreeViewer().setComparator(new ViewerComparator());
 		dialog.getTreeViewer().expandAll();
