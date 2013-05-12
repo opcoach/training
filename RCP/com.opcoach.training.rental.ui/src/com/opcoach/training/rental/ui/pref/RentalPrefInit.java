@@ -22,20 +22,18 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 	@Override
 	public void initializeDefaultPreferences()
 	{
-		System.out.println("Bonjour");
 		IPreferenceStore ps = RentalUIActivator.getDefault().getPreferenceStore();
 		
 		Color c = Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
 		
-		ps.setDefault(CUSTOMER_KEY, StringConverter.asString(c.getRGB()));
-		
-		ps.setDefault(RENTAL_KEY, StringConverter.asString(new RGB(255,0,0)));
-		ps.setDefault(RENTAL_OBJECT_KEY, StringConverter.asString(new RGB(0,255,0)));
-		ps.setDefault(DISPLAY_COUNT_PREF, StringConverter.asString(false));
+		ps.setDefault(PREF_CUSTOMER_COLOR, StringConverter.asString(c.getRGB()));
+		ps.setDefault(PREF_RENTAL_COLOR, StringConverter.asString(new RGB(255,0,0)));
+		ps.setDefault(PREF_RENTAL_OBJECT_COLOR, StringConverter.asString(new RGB(0,255,0)));
+		ps.setDefault(PREF_DISPLAY_COUNT, StringConverter.asString(false));
 		
 		
 		// Init the default palette with its ID
-		ps.setDefault(COLOR_PROVIDER, "com.opcoach.training.rental.ui.nonePalette");
+		ps.setDefault(PREF_PALETTE, "com.opcoach.training.rental.ui.nonePalette");
 
 		
 	}

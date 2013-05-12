@@ -40,7 +40,7 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 	@Override
 	protected void createFieldEditors()
 	{
-		addField(new BooleanFieldEditor(DISPLAY_COUNT_PREF, "Affiche les totaux par groupes d'objets", getFieldEditorParent()));
+		addField(new BooleanFieldEditor(PREF_DISPLAY_COUNT, "Affiche les totaux par groupes d'objets", getFieldEditorParent()));
 		
 	}
 

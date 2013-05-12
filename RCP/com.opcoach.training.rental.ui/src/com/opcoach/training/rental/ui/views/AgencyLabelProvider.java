@@ -49,7 +49,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	public String getText(Object element)
 	{
 		String result = null;
-		boolean displayCount = RentalUIActivator.getDefault().getPreferenceStore().getBoolean(DISPLAY_COUNT_PREF);
+		boolean displayCount = RentalUIActivator.getDefault().getPreferenceStore().getBoolean(PREF_DISPLAY_COUNT);
 
 		if (element instanceof RentalAgency)
 		{
@@ -128,7 +128,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	{
 		// Recupere la palette selectionnée dans les preferences
 		// (appelé par le listener de preference store de l'agency view et par le constructeur du label provider)
-		String val = RentalUIActivator.getDefault().getPreferenceStore().getString(COLOR_PROVIDER);
+		String val = RentalUIActivator.getDefault().getPreferenceStore().getString(PREF_PALETTE);
 		currentPalette = (val == null) ? null : RentalUIActivator.getDefault().getPaletteManager().get(val);
 
 	}

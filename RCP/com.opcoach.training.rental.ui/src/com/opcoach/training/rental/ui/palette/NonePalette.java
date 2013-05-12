@@ -17,7 +17,6 @@ import com.opcoach.training.rental.ui.RentalUIConstants;
 
 public class NonePalette implements IColorProvider, RentalUIConstants
 {
-	
 
 	public NonePalette()
 	{
@@ -28,13 +27,12 @@ public class NonePalette implements IColorProvider, RentalUIConstants
 	public Color getForeground(Object element)
 	{
 		if (element instanceof Customer)
-			return getPrefColor(CUSTOMER_KEY);
+			return getPrefColor(PREF_CUSTOMER_COLOR);
 		else if (element instanceof Rental)
-			return getPrefColor(RENTAL_KEY);
+			return getPrefColor(PREF_RENTAL_COLOR);
 		else if (element instanceof RentalObject)
-			return getPrefColor(RENTAL_OBJECT_KEY);
+			return getPrefColor(PREF_RENTAL_OBJECT_COLOR);
 
-		
 		return null;
 	}
 
@@ -45,11 +43,15 @@ public class NonePalette implements IColorProvider, RentalUIConstants
 		return null;
 	}
 
-	/** A private methode to get a color in the preference store 
-	 * @param key the preference key to get the rgb value */
+	/**
+	 * A private methode to get a color in the preference store
+	 * 
+	 * @param key
+	 *            the preference key to get the rgb value
+	 */
 	private Color getPrefColor(String key)
 	{
-	    ColorRegistry colorRegistry = JFaceResources.getColorRegistry();
+		ColorRegistry colorRegistry = JFaceResources.getColorRegistry();
 
 		IPreferenceStore pref = RentalUIActivator.getDefault().getPreferenceStore();
 		String rgbKey = pref.getString(key);

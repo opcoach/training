@@ -2,8 +2,11 @@ package com.opcoach.training.rental.ui.views;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.databinding.EMFObservables;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.FormAttachment;
@@ -15,12 +18,16 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalPackage.Literals;
 
-public class CustomerViewPart extends ViewPart
+public class CustomerViewPart extends ViewPart implements ISelectionListener
 {
 	private DataBindingContext m_bindingContext;
 
@@ -31,6 +38,25 @@ public class CustomerViewPart extends ViewPart
 
 	public CustomerViewPart()
 	{
+	}
+
+	@Override
+	public void init(IViewSite site) throws PartInitException
+	{
+		super.init(site);
+		site.getPage().addSelectionListener(this);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.ui.part.WorkbenchPart#dispose()
+	 */
+	@Override
+	public void dispose()
+	{
+		getSite().getPage().removeSelectionListener(this);
+		super.dispose();
 	}
 
 	/**
@@ -88,20 +114,43 @@ public class CustomerViewPart extends ViewPart
 		Label lblAdresse = new Label(grpAdresse, SWT.NONE);
 		lblAdresse.setText("Adresse");
 
-		
 	}
 
-	
 	public void setCustomer(Customer c)
 	{
 		currentCustomer = c;
-		if (c != null)
+		//if (m_bindingContext == null)
 		{
 			m_bindingContext = initDataBindings();
 		}
 
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.
+	 * IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
+	 */
+	@Override
+	public void selectionChanged(IWorkbenchPart part, ISelection selection)
+	{
+		if (selection.isEmpty())
+			return;
+
+		if (selection instanceof IStructuredSelection)
+		{
+			Object sel = ((IStructuredSelection) selection).getFirstElement();
+
+			// La selection courante est elle un Customer ou adaptable en
+			// Customer ?
+			Customer c = (Customer) Platform.getAdapterManager().getAdapter(sel, Customer.class);
+			if (c != null)
+				setCustomer(c);
+
+		}
+
+	}
 
 	@Override
 	public void setFocus()

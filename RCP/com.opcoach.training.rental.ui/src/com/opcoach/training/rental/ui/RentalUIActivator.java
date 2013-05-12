@@ -58,7 +58,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 		System.out.println("Start rental ui bundle");
 		readViewExtensions();
 		readColorProviderExtensions();
-		initializeFontRegistry();
+		// initializeFontRegistry();
 				
 	}
 

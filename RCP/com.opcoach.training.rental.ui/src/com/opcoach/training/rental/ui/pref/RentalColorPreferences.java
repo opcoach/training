@@ -39,11 +39,11 @@ public class RentalColorPreferences extends FieldEditorPreferencePage implements
 			i++;
 		}
 
-		addField(new ComboFieldEditor(COLOR_PROVIDER, "Palette couleur :", comboValues, getFieldEditorParent()));
+		addField(new ComboFieldEditor(PREF_PALETTE, "Palette couleur :", comboValues, getFieldEditorParent()));
 
-		addField(new ColorFieldEditor(CUSTOMER_KEY, "Customer : ", getFieldEditorParent()));
-		addField(new ColorFieldEditor(RENTAL_KEY, "Rental : ", getFieldEditorParent()));
-		addField(new ColorFieldEditor(RENTAL_OBJECT_KEY, "Objets : ", getFieldEditorParent()));
+		addField(new ColorFieldEditor(PREF_CUSTOMER_COLOR, "Customer : ", getFieldEditorParent()));
+		addField(new ColorFieldEditor(PREF_RENTAL_COLOR, "Rental : ", getFieldEditorParent()));
+		addField(new ColorFieldEditor(PREF_RENTAL_OBJECT_COLOR, "Objects : ", getFieldEditorParent()));
 
 	}
 

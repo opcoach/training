@@ -49,7 +49,9 @@
             restorable="true">
       </view>
       <view
+            category="com.opcoach.rental.ui"
             class="com.opcoach.training.rental.ui.views.CustomerViewPart"
+            icon="icons/Customers.png"
             id="com.opcoach.training.rental.ui.views.CustomerViewPart"
             name="Customer Propertie">
       </view>

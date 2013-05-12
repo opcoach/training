@@ -74,7 +74,10 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 		} else if (parentElement instanceof RentalAgency)
 		{
 			RentalAgency a = (RentalAgency) parentElement;
-			return new TNode[] { new TNode(CUSTOMERS_NODE, a), new TNode(RENTALS_NODE, a), new TNode(OBJECTS_NODE, a) };
+			return new TNode[] { new TNode(CUSTOMERS_NODE, a), 
+					             new TNode(RENTALS_NODE, a), 
+					             new TNode(OBJECTS_NODE, a) 
+			                    };
 		} 
 
 		return (result == null) ? EMPTY_RESULT : result;
