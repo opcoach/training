@@ -126,7 +126,7 @@ public class CodeSamplesActivator implements BundleActivator
 	}
 
 	@Inject
-	private Collection<Driver> readIconsURLList(IExtensionRegistry reg, Logger log)
+	private Collection<Driver> readDrivers(IExtensionRegistry reg, Logger log)
 	{
 		// Get drivers and set their configuration files.
 		Collection<Driver> results = new ArrayList<Driver>();
@@ -140,9 +140,9 @@ public class CodeSamplesActivator implements BundleActivator
 				// Create the driver
 				Driver driver = (Driver) e.createExecutableExtension("driverClass");
 				
-				// get config file URL in attribute and set it on driver
-				String iconPath = e.getAttribute("configurationFile");
-				URL url = bdl.getEntry(iconPath);
+				// get configuration file URL in attribute and set it on driver
+				String configFile = e.getAttribute("configurationFile");
+				URL url = bdl.getEntry(configFile);
 				driver.setConfiguration(url);
 				
 				results.add(driver);

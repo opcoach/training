@@ -21,5 +21,20 @@
          </property>
       </product>
    </extension>
+   
+   
+   
+   <extension   point="org.eclipse.core.expressions.definitions">
+   
+      <definition id="com.opcoach.training.e4.codesamples.txtFileSelected">
+         <adapt type="org.eclipse.core.resources.IFile">
+            <test property="org.eclipse.core.resources.extension"  value="txt"/>
+         </adapt>
+      </definition>
+      
+      
+      
+      
+   </extension>
 
 </plugin>

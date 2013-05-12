@@ -5,7 +5,7 @@
       <children xsi:type="advanced:Perspective" xmi:id="_G4kxcAPrEeKwlMNql7AR_w" elementId="com.opcoach.training.e4.rental.ui.rentalperspective" selectedElement="_G4lYgAPrEeKwlMNql7AR_w" label="Rental" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Agency.png" tooltip="Rental Perspective">
         <children xsi:type="basic:PartSashContainer" xmi:id="_G4lYgAPrEeKwlMNql7AR_w" selectedElement="_G4lYgQPrEeKwlMNql7AR_w" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_G4lYgQPrEeKwlMNql7AR_w" selectedElement="_G4lYggPrEeKwlMNql7AR_w">
-            <children xsi:type="basic:Part" xmi:id="_G4lYggPrEeKwlMNql7AR_w" elementId="com.opcoach.rental.e4.ui.rentalagencyview" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.views.RentalAgencyView" label="Rental Agency" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Agency.png">
+            <children xsi:type="basic:Part" xmi:id="_G4lYggPrEeKwlMNql7AR_w" elementId="com.opcoach.rental.e4.ui.rentalagencyview" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.parts.RentalAgencyPart" label="Rental Agency" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Agency.png">
               <menus xsi:type="menu:PopupMenu" xmi:id="_G4lYgwPrEeKwlMNql7AR_w" elementId="com.opcoach.rental.e4.ui.rentalagencyview.menu" label="Mon menu de vue">
                 <children xsi:type="menu:DirectMenuItem" xmi:id="_G4lYhAPrEeKwlMNql7AR_w" label="My E4 Handler" tooltip="Do a sys.out.println" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.handlers.MyE4Handler"/>
                 <children xsi:type="menu:MenuSeparator" xmi:id="_G4lYhQPrEeKwlMNql7AR_w"/>
@@ -27,7 +27,7 @@
             </children>
           </children>
           <children xsi:type="basic:PartSashContainer" xmi:id="_G4lYjQPrEeKwlMNql7AR_w" elementId="com.opcoach.training.e4.extendProperties" selectedElement="_G4lYjgPrEeKwlMNql7AR_w">
-            <children xsi:type="basic:Part" xmi:id="_G4lYjgPrEeKwlMNql7AR_w" elementId="com.opcoach.rental.e4.ui.views.rentalView" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.views.RentalPropertyView" label="Rental Property"/>
+            <children xsi:type="basic:Part" xmi:id="_G4lYjgPrEeKwlMNql7AR_w" elementId="com.opcoach.rental.e4.ui.views.rentalView" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.parts.RentalPropertyPart" label="Rental Property"/>
           </children>
         </children>
       </children>
