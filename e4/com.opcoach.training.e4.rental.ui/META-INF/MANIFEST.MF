@@ -6,8 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.opcoach.training.e4.rental.ui.RentalUIActivator
 Bundle-Vendor: OPCOACH
 Export-Package: com.opcoach.training.e4.rental.ui.handlers
-Require-Bundle: javax.inject;bundle-version="1.0.0",
- org.eclipse.core.resources;bundle-version="3.8.0",
+Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.0",
  org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.swt;bundle-version="3.100.0",
  org.eclipse.core.databinding;bundle-version="1.4.1",
@@ -32,7 +31,6 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  com.opcoach.training.e4.rental.core;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.emf.databinding,
  org.eclipse.core.expressions,
- javax.inject;bundle-version="1.0.0",
  org.eclipse.core.resources;bundle-version="3.8.0",
  org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.swt;bundle-version="3.100.0",
@@ -52,13 +50,14 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  org.eclipse.e4.core.commands;bundle-version="0.10.0",
  org.eclipse.e4.ui.bindings;bundle-version="0.10.0",
  org.eclipse.ui;bundle-version="3.103.0",
- com.opcoach.training.e4.rental.ui.cmd;resolution:=optional;bundle-version="1.0.0",
+ com.opcoach.training.e4.rental.ui.cmd;bundle-version="1.0.0";resolution:=optional,
  org.eclipse.e4.core.di.extensions;bundle-version="0.10.0",
  org.eclipse.e4.ui.di;bundle-version="0.10.0",
- com.opcoach.training.e4.rental.core;visibility:=reexport;bundle-version="1.0.0",
+ com.opcoach.training.e4.rental.core;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.emf.databinding,
- org.eclipse.core.expressions,
- javax.annotation
+ org.eclipse.core.expressions
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Service-Component: src/com/opcoach/training/e4/rental/ui/views/component.xml
+Import-Package: javax.annotation;version="1.0.0",
+ javax.inject;version="1.0.0"
