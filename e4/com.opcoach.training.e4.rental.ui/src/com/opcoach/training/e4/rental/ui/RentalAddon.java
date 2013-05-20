@@ -133,7 +133,7 @@ public class RentalAddon implements RentalUIConstants
 	 * context
 	 */
 	@Inject
-	public void changePalette(@Preference(nodePath = PLUGIN_ID, value = PREF_PALETTE) String paletteID, IEclipseContext ctx)
+	public void changePalette(@Preference(value = PREF_PALETTE) String paletteID, IEclipseContext ctx)
 	{
 		// DO nothing if palette manager not yet called.
 		if (paletteManager != null)
