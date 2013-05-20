@@ -8,6 +8,7 @@ public interface RentalUIConstants {
 
 	public static final String PLUGIN_ID = "com.opcoach.training.e4.rental.ui";
 	public static final String RENTAL_UI_PREF_STORE = PLUGIN_ID + ".preferenceStore";
+	public static final String RENTAL_UI_IMG_REGISTRY = PLUGIN_ID + ".imageRegistry";
 
 	
 	// Constants to manage object images in registry

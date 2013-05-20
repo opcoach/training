@@ -7,6 +7,7 @@ package com.opcoach.training.e4.rental.ui.parts;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -26,6 +27,7 @@ import com.opcoach.training.rental.RentalObject;
 /** This label provider is created by ContextInjectionFactory.
  * @author olivier
  */
+@Singleton
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
 {
 	
@@ -33,7 +35,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	private Palette currentPalette;
 	
 		
-	@Inject
+	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
 	private ImageRegistry registry;
 	
 	public Image getImageForCustomer()

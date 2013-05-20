@@ -35,7 +35,7 @@ public class RentalAddon implements RentalUIConstants
 	{
 		// Put objects in context
 		ctx.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
-		ctx.set(ImageRegistry.class, getLocalImageRegistry());
+		ctx.set(RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
 
 		ctx.set(RENTAL_UI_PREF_STORE, getPreferenceStore());
 
