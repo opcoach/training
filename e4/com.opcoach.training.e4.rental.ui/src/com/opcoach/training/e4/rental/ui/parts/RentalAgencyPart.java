@@ -113,9 +113,8 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 
 	/**
-	 * We can receive at least one of the preferences values... This method will
-	 * be called each time a preference is changed in the corresponding
-	 * preference Store, even if other values are changed.
+	 * We can receive any value of the preferences store... This method will
+	 * be called each time a value has changed in the  preferenceStore.
 	 */
 	@Inject
 	public void refreshTree(@Preference(value = PREF_CUSTOMER_COLOR) String custCol)
