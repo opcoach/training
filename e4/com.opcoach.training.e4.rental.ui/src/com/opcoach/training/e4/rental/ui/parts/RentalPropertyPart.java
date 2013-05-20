@@ -1,17 +1,19 @@
 package com.opcoach.training.e4.rental.ui.parts;
 
-import java.text.SimpleDateFormat;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.UpdateValueStrategy;
+import org.eclipse.core.databinding.beans.PojoProperties;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.core.internal.databinding.conversion.DateToStringConverter;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.services.adapter.Adapter;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.emf.databinding.EMFObservables;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
@@ -30,14 +32,9 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
-import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalPackage.Literals;
-import org.eclipse.core.databinding.beans.PojoProperties;
-import org.eclipse.emf.databinding.EMFObservables;
-import org.eclipse.core.databinding.UpdateValueStrategy;
-import org.eclipse.core.internal.databinding.conversion.DateToStringConverter;
 
 public class RentalPropertyPart
 {
@@ -47,9 +44,11 @@ public class RentalPropertyPart
 	private Label rentedObjectLabel, customerNameLabel, startDateLabel, endDateLabel;
 	private Rental currentRental;
 	private Label customerTitle;
+	@Inject @Named(RentalUIConstants.RENTAL_UI_IMG_REGISTRY)
+	ImageRegistry reg;
 
 	@PostConstruct
-	public void createContent(Composite parent, RentalAgency agency, final ImageRegistry reg)
+	public void createContent(Composite parent, RentalAgency agency)
 	{
 		parent.setLayout(new GridLayout(1, false));
 
