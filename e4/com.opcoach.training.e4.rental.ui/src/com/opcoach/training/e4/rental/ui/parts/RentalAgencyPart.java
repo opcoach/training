@@ -118,7 +118,7 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	 * preference Store, even if other values are changed.
 	 */
 	@Inject
-	public void refreshTree(@Preference(nodePath = PLUGIN_ID, value = PREF_CUSTOMER_COLOR) String custCol)
+	public void refreshTree(@Preference(value = PREF_CUSTOMER_COLOR) String custCol)
 	{
 		if (agencyViewer != null)
 		{
