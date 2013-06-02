@@ -39,6 +39,13 @@
            paletteClass="com.opcoach.training.e4.rental.ui.parts.NonePalette">
      </palette>
   </extension>
+  <extension
+        id="id1"
+        point="org.eclipse.e4.workbench.model">
+     <fragment
+           uri="fragment.e4xmi">
+     </fragment>
+  </extension>
  
    
    

@@ -14,6 +14,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.contributions.IContributionFactory;
 import org.eclipse.e4.core.services.log.Logger;
@@ -55,6 +56,13 @@ public class ShowPreferencesHandler
 	@Inject
 	protected IExtensionRegistry registry;
 
+	
+	@CanExecute
+	public boolean canExecute()
+	{
+		return true;	
+	}
+	
 	@Execute
 	public void execute(MApplication app, @Named(RentalUIConstants.RENTAL_UI_PREF_STORE) IPreferenceStore pstore)
 	{

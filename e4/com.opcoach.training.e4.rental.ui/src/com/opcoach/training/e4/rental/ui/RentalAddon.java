@@ -13,8 +13,10 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -31,8 +33,11 @@ public class RentalAddon implements RentalUIConstants
 {
 
 	@PostConstruct
-	void startRentalFeature(IEclipseContext ctx, IExtensionRegistry reg)
+	void startRentalFeature(IEclipseContext ctx, IExtensionRegistry reg, @Optional IEclipsePreferences prefs)
 	{
+		
+		System.out.println("---->  Enter in the RentalAddon ");
+		System.out.println("IEclipsePreferences is : " + prefs);
 		// Put objects in context
 		ctx.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
 		ctx.set(RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
