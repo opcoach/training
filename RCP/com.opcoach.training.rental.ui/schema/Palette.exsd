@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="com.opcoach.rental.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="com.opcoach.training.rental.ui" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="com.opcoach.rental.ui" id="ColorProvider" name="Color Provider"/>
+         <meta.schema plugin="com.opcoach.training.rental.ui" id="Palette" name="Palette"/>
       </appinfo>
       <documentation>
          Ce point d&apos;extension permet de forcer un color provider pour l&apos;arbre d&apos;agences
