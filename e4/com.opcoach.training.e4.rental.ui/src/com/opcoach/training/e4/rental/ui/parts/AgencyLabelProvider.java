@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
@@ -28,6 +29,7 @@ import com.opcoach.training.rental.RentalObject;
  * @author olivier
  */
 @Singleton
+@Creatable
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
 {
 	

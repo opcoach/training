@@ -39,6 +39,7 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 	private TreeViewer agencyViewer;
 
+	@Inject
 	private AgencyLabelProvider labelProvider;
 
 	@Inject
@@ -49,7 +50,8 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	{
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());
-		labelProvider = ContextInjectionFactory.make(AgencyLabelProvider.class, ctx);
+		// labelProvider is now Creatable, so it is useless to call ContextInjectionFactory
+		// labelProvider = ContextInjectionFactory.make(AgencyLabelProvider.class, ctx);
 		agencyViewer.setLabelProvider(labelProvider);
 
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
