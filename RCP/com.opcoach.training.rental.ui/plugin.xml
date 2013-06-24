@@ -127,12 +127,20 @@
                id="org.eclipse.ui.commands.toggleState">
          </state>
       </command>
+      <command
+            id="com.opcoach.training.rental.ui.sampleJobCommand"
+            name="Launch Sample Job">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
             class="com.opcoach.training.rental.ui.handlers.SampleCommandHandler"
             commandId="com.opcoach.training.rental.ui.commands.MaCommande">
+      </handler>
+      <handler
+            class="com.opcoach.training.rental.ui.handlers.JobLauncherHandler"
+            commandId="com.opcoach.training.rental.ui.sampleJobCommand">
       </handler>
    </extension>
    <extension
@@ -158,6 +166,10 @@
                label="My Menu">
             <command
                   commandId="com.opcoach.training.rental.ui.commands.MaCommande"
+                  style="push">
+            </command>
+            <command
+                  commandId="com.opcoach.training.rental.ui.sampleJobCommand"
                   style="push">
             </command>
          </menu>
