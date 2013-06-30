@@ -23,7 +23,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 
@@ -34,7 +36,7 @@ import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 
-public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeListener, ISelectionProvider
+public  class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeListener, ISelectionProvider, ISelectionListener
 {
 	public static final String VIEW_ID = "com.opcoach.rental.ui.agencyDashboard";
 
@@ -49,6 +51,8 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 	{
 		// TODO Auto-generated constructor stub
 	}
+	
+
 
 	@Override
 	public void createPartControl(Composite parent)
@@ -244,6 +248,9 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 		super.init(site);
 		// On s'enregistre en tant que pref listener sur le preference store...
 		RentalUIActivator.getDefault().getPreferenceStore().addPropertyChangeListener(this);
+		
+		// This part is now selection listener to refresh selection from the agency view
+		getSite().getPage().addSelectionListener(this);
 				
 	}
 	
@@ -251,6 +258,8 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 	public void dispose()
 	{
 		RentalUIActivator.getDefault().getPreferenceStore().removePropertyChangeListener(this);
+		
+		getSite().getPage().removeSelectionListener(this);
 		super.dispose();
 	}
 
@@ -294,6 +303,20 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 	public void setSelection(ISelection selection)
 	{
 		focusedViewer.setSelection(selection);
+	}
+
+
+
+	@Override
+	public void selectionChanged(IWorkbenchPart part, ISelection selection)
+	{
+		if (part != this)
+		{ 
+			customerViewer.setSelection(selection, true);
+			objectViewer.setSelection(selection, true);
+			rentalViewer.setSelection(selection, true); 
+		}
+		
 	}
 
 }
