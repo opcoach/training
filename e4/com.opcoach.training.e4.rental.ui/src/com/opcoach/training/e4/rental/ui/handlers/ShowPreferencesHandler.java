@@ -157,7 +157,7 @@ public class ShowPreferencesHandler
 		{
 			return spec;
 		} // $NON-NLS-1$
-		return "platform:/plugin/" + definingBundleId + '/' + spec;
+		return "bundleclass://" + definingBundleId + '/' + spec;
 	}
 
 	private boolean isEmpty(String value)
