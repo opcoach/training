@@ -23,7 +23,8 @@ public class RentalPerspective implements IPerspectiveFactory
 
 		// Bottom left: Outline view and Property Sheet view
 		IFolderLayout bottomLeft = layout.createFolder("bottomLeft", IPageLayout.BOTTOM, 0.50f, "topLeft");
-		bottomLeft.addView(RentalPropertyView.VIEW_ID);
+		bottomLeft.addView(CustomerViewPart.ID);
+		layout.addView(RentalPropertyView.VIEW_ID, IPageLayout.LEFT, 0.5f, "bottomLeft");
 
 	}
 }

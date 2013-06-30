@@ -30,17 +30,31 @@ import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.Messages;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.FeaturePath;
+import com.opcoach.training.rental.RentalPackage.Literals;
+import org.eclipse.emf.databinding.EMFObservables;
+import org.eclipse.core.databinding.UpdateValueStrategy;
+import org.eclipse.core.internal.databinding.conversion.DateToStringConverter;
+import org.eclipse.core.internal.databinding.conversion.StringToDateConverter;
+import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
+import org.eclipse.core.databinding.beans.PojoProperties;
 
 public class RentalPropertyView extends ViewPart implements ISelectionListener
 {
+	private DataBindingContext m_bindingContext;
 	public static final String VIEW_ID = "com.opcoach.rental.ui.views.rentalView"; //$NON-NLS-1$
 
 	private Label rentedObjectLabel;
 	private Label customerNameLabel;
 	private Label startDateLabel;
 	private Label endDateLabel;
-	
+
 	private Rental currentRental;
+	private Label customerTitle;
 
 	public RentalPropertyView()
 	{
@@ -81,7 +95,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 			});
 
-		Label customerTitle = new Label(infoGroup, SWT.NONE);
+		customerTitle = new Label(infoGroup, SWT.NONE);
 		customerTitle.setText(Messages.RentalPropertyView_RentedBy);
 		customerNameLabel = new Label(infoGroup, SWT.NONE);
 
@@ -97,31 +111,37 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		endDateTitle.setText(Messages.RentalPropertyView_To);
 		endDateLabel = new Label(dateGroup, SWT.NONE);
 
-		// Try with sample
+		// Fill with sample
 		RentalAgency agency = RentalCoreActivator.getAgency();
 		setRental(agency.getRentals().get(0));
+		m_bindingContext = initDataBindings();
+
+		// Initialize binding
+		// m_bindingContext = initDataBindings();
 
 	}
 
 	public void setRental(Rental r)
 	{
 		currentRental = r;
-		if (r==null)
+
+		if (m_bindingContext != null)
+		{
+			m_bindingContext.dispose();
+			m_bindingContext = null;
+		}
+
+		if (r == null)
 		{
 			rentedObjectLabel.setText(" ");
 			customerNameLabel.setText(" ");
 			startDateLabel.setText(" ");
 			endDateLabel.setText(" ");
-		}
-		else
+		} else
 		{
-			rentedObjectLabel.setText(r.getRentedObject().getName());
-			Customer c = r.getCustomer();
-			customerNameLabel.setText(c.getDisplayName());
 
-			SimpleDateFormat df = new SimpleDateFormat(Messages.RentalPropertyView_dateFormat);
-			startDateLabel.setText(df.format(r.getStartDate()));
-		endDateLabel.setText(df.format(r.getEndDate()));
+			m_bindingContext = initDataBindings();
+
 		}
 
 	}
@@ -135,6 +155,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.part.WorkbenchPart#dispose()
 	 */
 	@Override
@@ -148,10 +169,11 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	public void setFocus()
 	{
 
-    }
-	
+	}
+
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.
 	 * IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
 	 */
@@ -160,17 +182,41 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 	{
 		if (selection.isEmpty())
 			return;
-		
+
 		if (selection instanceof IStructuredSelection)
 		{
 			Object sel = ((IStructuredSelection) selection).getFirstElement();
 
-			// La selection courante est elle un Rental ou adaptable en Rental ? 
+			// La selection courante est elle un Rental ou adaptable en Rental ?
 			Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel, Rental.class);
 			setRental(r);
 
 		}
 
 	}
-
+	protected DataBindingContext initDataBindings() {
+		DataBindingContext bindingContext = new DataBindingContext();
+		//
+		IObservableValue observeTextRentedObjectLabelObserveWidget = WidgetProperties.text().observe(rentedObjectLabel);
+		IObservableValue currentRentalNameObserveValue = EMFProperties.value(FeaturePath.fromList(Literals.RENTAL__RENTED_OBJECT, Literals.RENTAL_OBJECT__NAME)).observe(currentRental);
+		bindingContext.bindValue(observeTextRentedObjectLabelObserveWidget, currentRentalNameObserveValue, null, null);
+		//
+		IObservableValue observeTextStartDateLabelObserveWidget = WidgetProperties.text().observe(startDateLabel);
+		IObservableValue startDateCurrentRentalObserveValue = PojoProperties.value("startDate").observe(currentRental);
+		UpdateValueStrategy strategy = new UpdateValueStrategy();
+		strategy.setConverter(new DateToStringConverter());
+		bindingContext.bindValue(observeTextStartDateLabelObserveWidget, startDateCurrentRentalObserveValue, null, strategy);
+		//
+		IObservableValue observeTextEndDateLabelObserveWidget = WidgetProperties.text().observe(endDateLabel);
+		IObservableValue currentRentalEndDateObserveValue = EMFObservables.observeValue(currentRental, Literals.RENTAL__END_DATE);
+		UpdateValueStrategy strategy_1 = new UpdateValueStrategy();
+		strategy_1.setConverter(new DateToStringConverter());
+		bindingContext.bindValue(observeTextEndDateLabelObserveWidget, currentRentalEndDateObserveValue, null, strategy_1);
+		//
+		IObservableValue observeTextCustomerNameLabelObserveWidget = WidgetProperties.text().observe(customerNameLabel);
+		IObservableValue customerdisplayNameCurrentRentalObserveValue = PojoProperties.value("customer.displayName").observe(currentRental);
+		bindingContext.bindValue(observeTextCustomerNameLabelObserveWidget, customerdisplayNameCurrentRentalObserveValue, null, null);
+		//
+		return bindingContext;
+	}
 }

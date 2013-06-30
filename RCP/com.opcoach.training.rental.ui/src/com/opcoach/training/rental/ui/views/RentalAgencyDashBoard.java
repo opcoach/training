@@ -7,9 +7,15 @@ import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -28,13 +34,15 @@ import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 
-public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeListener
+public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeListener, ISelectionProvider
 {
 	public static final String VIEW_ID = "com.opcoach.rental.ui.agencyDashboard";
 
 	private TableViewer objectViewer;
 	private TableViewer rentalViewer;
 	private TableViewer customerViewer;
+	
+	private Viewer focusedViewer;
 
 
 	public RentalAgencyDashBoard()
@@ -67,6 +75,10 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 		customerViewer = createCustomerTable(top, currentAgency);
 		objectViewer = createObjectTable(top, currentAgency);
 		rentalViewer = createRentalTable(bottom, currentAgency);
+		
+		// The current view is now selection provider to choose the focused viewer
+		getSite().setSelectionProvider(this);
+
 		
 	
 	}
@@ -108,7 +120,7 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 		viewer.setContentProvider(ArrayContentProvider.getInstance());
 		viewer.setInput(currentAgency.getCustomers());
 		
-		setMenuAndSelectionOnViewer(viewer);
+		setMenuAndFocusOnViewer(viewer);
 
 		return viewer;
 	}
@@ -139,7 +151,7 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 		viewer.setInput(currentAgency.getObjectsToRent());
 		
 		// Set menu manager and selection provider on viewer (can be removed)
-		setMenuAndSelectionOnViewer(viewer);
+		setMenuAndFocusOnViewer(viewer);
 
 		return viewer;
 	}
@@ -196,20 +208,34 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 		viewer.setInput(currentAgency.getRentals());
 		
 		// Set menu manager and selection provider on viewer (can be removed)
-		setMenuAndSelectionOnViewer(viewer);
+		setMenuAndFocusOnViewer(viewer);
 		return viewer;
 	}
 	
-	private void setMenuAndSelectionOnViewer(TableViewer v)
+	private void setMenuAndFocusOnViewer(final TableViewer v)
 	{
 		// viewer has a popup
 		MenuManager menuManager = new MenuManager();
 		Menu menu = menuManager.createContextMenu(v.getControl());
 		v.getControl().setMenu(menu);
 		getSite().registerContextMenu(menuManager, v);
-		// viewer sends selection
-		getSite().setSelectionProvider(v);
+		
+		// Must listen to the focus of control to react and set the corresponding selectionProvider
+		v.getControl().addFocusListener(new FocusListener(){
+
+			@Override
+			public void focusGained(FocusEvent e)
+			{
+				focusedViewer = v;
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {  	}
+			
+		});
+		
 	}
+	
 	
 	
 	@Override
@@ -232,13 +258,42 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 	public void propertyChange(PropertyChangeEvent event)
 	{	
 		customerViewer.refresh();
+		objectViewer.refresh();
+		rentalViewer.refresh();
 	}
 
 	@Override
 	public void setFocus()
 	{
-		// TODO Auto-generated method stub
+		customerViewer.getControl().setFocus();
+	}
 
+	@Override
+	public void addSelectionChangedListener(ISelectionChangedListener listener)
+	{
+		customerViewer.addSelectionChangedListener(listener);	
+		objectViewer.addSelectionChangedListener(listener);
+		rentalViewer.addSelectionChangedListener(listener);
+	}
+
+	@Override
+	public ISelection getSelection()
+	{
+		return focusedViewer.getSelection();
+	}
+
+	@Override
+	public void removeSelectionChangedListener(ISelectionChangedListener listener)
+	{
+		customerViewer.removeSelectionChangedListener(listener);	
+		objectViewer.removeSelectionChangedListener(listener);
+		rentalViewer.removeSelectionChangedListener(listener);		
+	}
+
+	@Override
+	public void setSelection(ISelection selection)
+	{
+		focusedViewer.setSelection(selection);
 	}
 
 }
