@@ -117,7 +117,8 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	{
 		if (agencyViewer != null)
 		{
-			agencyViewer.refresh();
+			if (! agencyViewer.getControl().isDisposed())
+				agencyViewer.refresh();
 		}
 	}
 
