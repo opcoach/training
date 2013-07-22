@@ -7,11 +7,13 @@ package com.opcoach.training.rental.ui.views;
 
 import java.util.Collection;
 
-import org.eclipse.jface.viewers.IColorProvider;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.graphics.Image;
 
 import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
 
 /**
@@ -31,6 +33,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 	 */
 	@Override
@@ -42,6 +45,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see
 	 * org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface
 	 * .viewers.Viewer, java.lang.Object, java.lang.Object)
@@ -58,6 +62,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see
 	 * org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.
 	 * Object)
@@ -74,17 +79,15 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 		} else if (parentElement instanceof RentalAgency)
 		{
 			RentalAgency a = (RentalAgency) parentElement;
-			return new TNode[] { new TNode(CUSTOMERS_NODE, a), 
-					             new TNode(RENTALS_NODE, a), 
-					             new TNode(OBJECTS_NODE, a) 
-			                    };
-		} 
+			return new TNode[] { new TNode(CUSTOMERS_NODE, a), new TNode(RENTALS_NODE, a), new TNode(OBJECTS_NODE, a) };
+		}
 
 		return (result == null) ? EMPTY_RESULT : result;
 	}
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see
 	 * org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.Object
 	 * )
@@ -104,6 +107,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see
 	 * org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(java.lang.
 	 * Object)
@@ -116,6 +120,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see
 	 * org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java
 	 * .lang.Object)
@@ -135,12 +140,35 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 	class TNode
 	{
 		public String name;
+
 		public RentalAgency agency;
 
 		public TNode(String n, RentalAgency a)
 		{
 			name = n;
 			agency = a;
+		}
+
+		public String getName()
+		{
+			return name;
+		}
+
+		public Image getImage()
+		{
+			ImageRegistry reg = RentalUIActivator.getDefault().getImageRegistry();
+
+			if (name == RENTALS_NODE)
+			{
+				return reg.get(RENTAL_KEY);
+			} else if (name == CUSTOMERS_NODE)
+			{
+				return reg.get(CUSTOMER_KEY);
+			} else if (name == OBJECTS_NODE)
+			{
+				return reg.get(RENTAL_OBJECT_KEY);
+			}
+			return null;
 		}
 
 		public Object[] getChildren()
@@ -159,14 +187,12 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 			return EMPTY_RESULT;
 
 		}
-		
+
 		public String getText(boolean displayCount)
 		{
-
-			
 			if (CUSTOMERS_NODE == name)
 			{
-				return  CUSTOMERS_NODE + (displayCount ? "(" + agency.getCustomers().size() + ")" : "");
+				return CUSTOMERS_NODE + (displayCount ? "(" + agency.getCustomers().size() + ")" : "");
 			} else if (RENTALS_NODE == name)
 			{
 				return RENTALS_NODE + (displayCount ? "(" + agency.getRentals().size() + ")" : "");
@@ -175,16 +201,17 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 				return OBJECTS_NODE + (displayCount ? "(" + agency.getObjectsToRent().size() + ")" : "");
 			}
 			return "No Text for TNode";
-		
+
 		}
-		
-		// To refresh the expanded nodes, this class must implement equals and hascode
+
+		// To refresh the expanded nodes, this class must implement equals and
+		// hascode
 		@Override
 		public int hashCode()
 		{
 			return name.hashCode();
 		}
-		
+
 		@Override
 		public boolean equals(Object arg0)
 		{

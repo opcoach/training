@@ -88,23 +88,16 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	@Override
 	public Image getImage(Object element)
 	{
-		// TODO Auto-generated method stub
 		Image result = null;
 		ImageRegistry reg = RentalUIActivator.getDefault().getImageRegistry();
 
 		if (element instanceof RentalAgency)
 		{
 			result = reg.get(AGENCY_KEY);
-		} else if (element == RENTALS_NODE)
+		} else if (element instanceof TNode)
 		{
-			result = reg.get(RENTAL_KEY);
-		} else if (element == CUSTOMERS_NODE)
-		{
-			result = reg.get(CUSTOMER_KEY);
-		} else if (element == OBJECTS_NODE)
-		{
-			result = reg.get(RENTAL_OBJECT_KEY);
-		}
+			result = ((TNode) element).getImage();
+		} 
 
 		return result;
 
