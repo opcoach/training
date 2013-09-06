@@ -115,7 +115,7 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	@Inject
 	public void refreshTree(@Preference(value = PREF_CUSTOMER_COLOR) String custCol)
 	{
-		if (agencyViewer != null)
+		if ((agencyViewer != null) && (!agencyViewer.getControl().isDisposed()))
 		{
 			if (! agencyViewer.getControl().isDisposed())
 				agencyViewer.refresh();
