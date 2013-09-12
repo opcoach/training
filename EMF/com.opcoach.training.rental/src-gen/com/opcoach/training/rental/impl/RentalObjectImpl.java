@@ -179,7 +179,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	public RentalAgency getParentAgency()
 	{
     if (eContainerFeatureID() != RentalPackage.RENTAL_OBJECT__PARENT_AGENCY) return null;
-    return (RentalAgency)eContainer();
+    return (RentalAgency)eInternalContainer();
   }
 
 	/**

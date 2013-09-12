@@ -48,7 +48,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	{
     try
     {
-      RentalFactory theRentalFactory = (RentalFactory)EPackage.Registry.INSTANCE.getEFactory("http://com.opcoach.training/rental/1.0"); 
+      RentalFactory theRentalFactory = (RentalFactory)EPackage.Registry.INSTANCE.getEFactory(RentalPackage.eNS_URI);
       if (theRentalFactory != null)
       {
         return theRentalFactory;

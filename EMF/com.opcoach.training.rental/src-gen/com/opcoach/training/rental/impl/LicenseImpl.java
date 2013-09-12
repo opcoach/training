@@ -169,7 +169,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	public Customer getOwner()
 	{
     if (eContainerFeatureID() != RentalPackage.LICENSE__OWNER) return null;
-    return (Customer)eContainer();
+    return (Customer)eInternalContainer();
   }
 
 	/**

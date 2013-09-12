@@ -268,7 +268,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	public RentalAgency getParentAgency()
 	{
     if (eContainerFeatureID() != RentalPackage.CUSTOMER__PARENT_AGENCY) return null;
-    return (RentalAgency)eContainer();
+    return (RentalAgency)eInternalContainer();
   }
 
 	/**
