@@ -5,7 +5,8 @@ Bundle-SymbolicName: com.opcoach.training.e4.rental.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.opcoach.training.e4.rental.ui.RentalUIActivator
 Bundle-Vendor: OPCOACH
-Export-Package: com.opcoach.training.e4.rental.ui.handlers
+Export-Package: com.opcoach.training.e4.rental.ui.handlers,
+ com.opcoach.training.e4.rental.ui.progress
 Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.0",
  org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.swt;bundle-version="3.100.0",
@@ -54,10 +55,12 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.0",
  com.opcoach.training.e4.rental.core;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.emf.databinding,
  org.eclipse.core.expressions,
- org.eclipse.e4.ui.model.workbench;bundle-version="0.10.1"
+ org.eclipse.e4.ui.model.workbench;bundle-version="0.10.1",
+ javax.annotation,
+ javax.inject
+Service-Component: src/com/opcoach/training/e4/rental/ui/views/component.xml
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Service-Component: src/com/opcoach/training/e4/rental/ui/views/component.xml
 Import-Package: javax.annotation;version="1.0.0",
  javax.inject;version="1.0.0",
  org.eclipse.ui,
