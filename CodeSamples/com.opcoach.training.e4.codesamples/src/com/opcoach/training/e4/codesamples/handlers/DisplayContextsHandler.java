@@ -10,8 +10,6 @@
  *******************************************************************************/
 package com.opcoach.training.e4.codesamples.handlers;
 
-import javax.inject.Inject;
-
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;

@@ -5,8 +5,7 @@ Bundle-SymbolicName: com.opcoach.training.e4.rental.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.opcoach.training.e4.rental.ui.RentalUIActivator
 Bundle-Vendor: OPCOACH
-Export-Package: com.opcoach.training.e4.rental.ui.handlers,
- com.opcoach.training.e4.rental.ui.progress
+Export-Package: com.opcoach.training.e4.rental.ui.handlers
 Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.0",
  org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.swt;bundle-version="3.100.0",
