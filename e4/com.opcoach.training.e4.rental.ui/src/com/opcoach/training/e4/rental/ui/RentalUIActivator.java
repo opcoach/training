@@ -1,5 +1,7 @@
 package com.opcoach.training.e4.rental.ui;
 
+import org.eclipse.e4.core.contexts.EclipseContextFactory;
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -20,6 +22,8 @@ public class RentalUIActivator implements BundleActivator
 	 */
 	public void start(BundleContext bcontext) throws Exception
 	{
+		IEclipseContext ct = EclipseContextFactory.getServiceContext(bcontext);
+		ct.set(RentalUIConstants.PLUGIN_ID + "context", "My value");
 
 	}
 
