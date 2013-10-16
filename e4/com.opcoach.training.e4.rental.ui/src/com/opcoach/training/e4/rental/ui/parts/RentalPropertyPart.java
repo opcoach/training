@@ -104,14 +104,16 @@ public class RentalPropertyPart
 		// Try with sample (agency injected)
 		setRental(agency.getRentals().get(0));
 		m_bindingContext = initDataBindings();
-
+		
 	}
-
-	@Inject
-	public void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object o, Adapter adapter)
+	
+	/** This method is inject and option -> not called when object is built if injection is not possible */
+	@Inject @Optional
+	public void setSelection(@Named(IServiceConstants.ACTIVE_SELECTION) Object o, Adapter adapter)
 	{
 		Rental r = adapter.adapt(o, Rental.class);
 		setRental(r);
+
 	}
 
 	public void setRental(Rental r)
