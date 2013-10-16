@@ -49,8 +49,10 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	{
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.setContentProvider(new AgencyContentProvider());
-		// labelProvider is now Creatable, so it is useless to call ContextInjectionFactory
-		// labelProvider = ContextInjectionFactory.make(AgencyLabelProvider.class, ctx);
+		// labelProvider is now Creatable, so it is useless to call
+		// ContextInjectionFactory
+		// labelProvider =
+		// ContextInjectionFactory.make(AgencyLabelProvider.class, ctx);
 		agencyViewer.setLabelProvider(labelProvider);
 
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
@@ -92,9 +94,6 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	@Inject
 	private ESelectionService selectionService;
 
-	
-
-
 	@Focus
 	public void setFocus(EPartService ps)
 	{
@@ -106,18 +105,16 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 		 */
 	}
 
-
 	/**
-	 * We can receive any value of the preferences store... This method will
-	 * be called each time a value has changed in the  preferenceStore.
+	 * We can receive any value of the preferences store... This method will be
+	 * called each time a value has changed in the preferenceStore.
 	 */
 	@Inject
 	public void refreshTree(@Preference(value = PREF_CUSTOMER_COLOR) String custCol)
 	{
 		if ((agencyViewer != null) && (!agencyViewer.getControl().isDisposed()))
 		{
-			if (! agencyViewer.getControl().isDisposed())
-				agencyViewer.refresh();
+			agencyViewer.refresh();
 		}
 	}
 
