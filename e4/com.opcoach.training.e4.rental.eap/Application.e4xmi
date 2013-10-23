@@ -73,6 +73,7 @@
     <bindings xmi:id="_wrymA53_EeGjZMSURtjBGw" keySequence="M1+S" command="_wrymAZ3_EeGjZMSURtjBGw"/>
     <bindings xmi:id="_wrymBp3_EeGjZMSURtjBGw" keySequence="M1+A" command="_wrymBJ3_EeGjZMSURtjBGw"/>
     <bindings xmi:id="_iwEoIAieEeKlJ_pXKiId8A" elementId="org.eclipse.e4.css.OpenSpy" keySequence="F6" command="_mHtSUAieEeKlJ_pXKiId8A"/>
+    <bindings xmi:id="_T3ooIDvXEeOsZaeIKr8lHA" elementId="com.opcoach.training.e4.rental.eap.keybinding.0" keySequence="M1 + C" command="_ruEsYKA8EeG1-fMS8F9koA"/>
   </bindingTables>
   <rootContext xmi:id="_wryl8Z3_EeGjZMSURtjBGw" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_wryl8p3_EeGjZMSURtjBGw" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
