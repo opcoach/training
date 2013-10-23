@@ -46,7 +46,7 @@ public class RentalAddon implements RentalUIConstants
 
 		// Read the palettes extensions and publish it in context
 		readPaletteExtensions(reg);
-		// The palette manager is useless in context (use diretly the palette)
+		ctx.set(PALETTE_MANAGER, paletteManager);
 
 		// Set the current palette in context...
 		String palId = prefStore.getString(PREF_PALETTE);
