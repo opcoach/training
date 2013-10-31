@@ -20,7 +20,8 @@ public class Parent
 	@Inject public void parentMethod1()   {}
 	@Inject public void parentMethod2()   {}
 	@Inject public void parentMethodToBeOverriden() {}
-	@Inject public void parentMethodWithChangeableParam(@Optional @Named(PARAM_IN_PARENT) Object o) {}
+	@Inject public void parentMethodWithChangeableParam(@Optional 
+			                       @Named(PARAM_IN_PARENT) Object o) {}
 	
 	@PostConstruct	public void parentMethodPostContruct() {}
 

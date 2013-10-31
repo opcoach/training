@@ -19,13 +19,11 @@ public class Child extends Parent
 	
 	@Inject public void childMethod1()  	{}
 	@Inject public void childMethod2()      {}
-	@Inject public void childMethodWithChangeableParam(@Optional @Named(PARAM_IN_CHILD) Object o) {}
+	@Inject public void childMethodWithChangeableParam (@Optional 
+			            @Named(PARAM_IN_CHILD) Object o) {}
 	
 	@Override @Inject public void parentMethodToBeOverriden() {}
 	
-	@PostConstruct public void childMethodPostContruct1() {}
-	@PostConstruct public void childMethodPostContruct2() {}
-
-	
+	@PostConstruct public void childMethodPostContruct() {}
 
 }

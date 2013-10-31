@@ -11,8 +11,8 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.core.services.contributions.IContributionFactory;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.JFaceResources;
@@ -32,6 +32,8 @@ public class CodeSamplesActivator implements BundleActivator
 	// The plug-in ID
 	public static final String PLUGIN_ID = "com.opcoach.training.codesamples";
 
+	private static final String DRIVER_MANAGER = "com.opcoach.training.DriverManager";
+
 	// The shared instance
 	private static CodeSamplesActivator plugin;
 
@@ -42,7 +44,6 @@ public class CodeSamplesActivator implements BundleActivator
 	{
 	}
 
-	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -108,7 +109,7 @@ public class CodeSamplesActivator implements BundleActivator
 	}
 
 	@Inject
-	private Collection<Driver> readDriverExtensions(IExtensionRegistry reg, Logger log)
+	private void readDriverExtensions(IExtensionRegistry reg, Logger log, IEclipseContext ctx)
 	{
 		Collection<Driver> results = new ArrayList<Driver>();
 		for (IConfigurationElement e : reg.getConfigurationElementsFor("pID.Driver"))
@@ -122,14 +123,43 @@ public class CodeSamplesActivator implements BundleActivator
 				log.error("Unable to create extension.", ex);
 			}
 		}
-		return results;
+		// Add the drive manager in the Eclipse Context
+		ctx.set(DRIVER_MANAGER, results);
+	}
+	
+	@Inject
+	private void createDriverExtensionsWithInjection(IExtensionRegistry reg, Logger log, IEclipseContext ctx)
+	{
+		Collection<Driver> results = new ArrayList<Driver>();
+		for (IConfigurationElement e : reg.getConfigurationElementsFor("pID.Driver"))
+		{
+			try
+			{
+				// Instead of calling createExecutableExtension, use the following code to have injection
+				// results.add((Driver) e.createExecutableExtension("driverClass"));
+				Bundle b = Platform.getBundle(e.getNamespaceIdentifier()); 
+				Class<?> clazz = b.loadClass(e.getAttribute("driverClass"));
+				Driver instance = (Driver) ContextInjectionFactory.make(clazz, ctx);
+				results.add(instance);
+
+			} catch (Exception ex)
+			{
+				log.error("Unable to create extension", ex);
+			}
+		}
+		// Add the drive manager in the Eclipse Context
+		ctx.set(DRIVER_MANAGER, results);
 	}
 
+	/**
+	 * Read the Driver extension point and initialize DriverManager in the
+	 * context
+	 */
 	@Inject
-	private Collection<Driver> readDrivers(IExtensionRegistry reg, Logger log)
+	private void readDrivers(IExtensionRegistry reg, Logger log, IEclipseContext ctx)
 	{
 		// Get drivers and set their configuration files.
-		Collection<Driver> results = new ArrayList<Driver>();
+		Collection<Driver> result = new ArrayList<Driver>();
 
 		for (IConfigurationElement e : reg.getConfigurationElementsFor("pID.Driver"))
 		{
@@ -139,21 +169,21 @@ public class CodeSamplesActivator implements BundleActivator
 			{
 				// Create the driver
 				Driver driver = (Driver) e.createExecutableExtension("driverClass");
-				
+
 				// get configuration file URL in attribute and set it on driver
 				String configFile = e.getAttribute("configurationFile");
 				URL url = bdl.getEntry(configFile);
 				driver.setConfiguration(url);
-				
-				results.add(driver);
-				
+
+				result.add(driver);
+
 			} catch (Exception ex)
 			{
 				log.error("Unable to create Driver extension.", ex);
 			}
 		}
-
-		return results;
+		// Add the drive manager in the Eclipse Context
+		ctx.set(DRIVER_MANAGER, result);
 	}
 
 	/**
@@ -181,7 +211,5 @@ public class CodeSamplesActivator implements BundleActivator
 		return col;
 
 	}
-	
-
 
 }

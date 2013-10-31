@@ -14,8 +14,7 @@
       </eParameters>
     </eOperations>
     <eOperations name="parentMethodToBeOverriden"/>
-    <eOperations name="childMethodPostContruct1"/>
-    <eOperations name="childMethodPostContruct2"/>
+    <eOperations name="childMethodPostContruct"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parent">
     <eOperations name="Parent"/>
