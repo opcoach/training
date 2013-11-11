@@ -122,6 +122,7 @@
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
       <feature id="org.eclipse.emf.databinding"/>
+      <feature id="org.eclipse.platform" version="4.3.1.v20130911-1000"/>
    </features>
 
 
