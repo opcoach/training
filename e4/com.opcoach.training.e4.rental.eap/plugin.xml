@@ -19,6 +19,10 @@
                name="applicationCSS"
                value="platform:/plugin/com.opcoach.training.e4.rental.eap/css/initial.css">
          </property>
+         <property
+               name="appName"
+               value="Rental">
+         </property>
       </product>
    </extension>
 
