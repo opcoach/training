@@ -32,21 +32,11 @@ import com.opcoach.training.rental.RentalObject;
 @Creatable
 public class AgencyLabelProvider extends LabelProvider implements IColorProvider, RentalUIConstants
 {
-	
 	@Inject
 	private Palette currentPalette;
 	
-		
 	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
-	private ImageRegistry registry;
-	
-	public Image getImageForCustomer()
-	{
-		return registry.get(CUSTOMER_IMG_KEY);
-	}
-	
-	
-	
+	private ImageRegistry registry;	
 	
 	@Inject @Named(RENTAL_UI_PREF_STORE)
 	private IPreferenceStore prefStore;
