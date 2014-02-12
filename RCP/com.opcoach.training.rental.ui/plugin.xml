@@ -15,6 +15,12 @@
             id="com.opcoach.training.rental.preferences"
             name="Rental">
       </page>
+      <page
+            category="com.opcoach.rental.ui.colorprefpage"
+            class="com.opcoach.training.rental.ui.pref.DefaultPalettePreferences"
+            id="com.opcoach.training.rental.ui.pageforDefaultPalette"
+            name="Default Palette">
+      </page>
    </extension>
 
    <extension   point="org.eclipse.ui.views">
@@ -207,7 +213,7 @@
          point="com.opcoach.training.rental.ui.Palette">
       <palette
             id="com.opcoach.training.rental.ui.nonePalette"
-            name="None"
+            name="Default"
             paletteClass="com.opcoach.training.rental.ui.palette.NonePalette">
       </palette>
       <palette
