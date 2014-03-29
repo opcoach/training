@@ -42,6 +42,7 @@
           <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_wiH8IKzIEeK7v4dZrk51_A" coreExpressionId="com.opcoach.training.e4.rental.ui.customerSelected"/>
         </children>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_HmfJMMXvEeK7H5w4kJH7Wg" label="Preferences" command="_ewXMsKAkEeGDHcz5E_KmhQ"/>
+        <children xsi:type="menu:DynamicMenuContribution" xmi:id="_qtlkQKlIEeOCVabVRaNMTg" elementId="com.opcoach.training.e4.rental.eap.dynamicmenucontribution.0" label="Dynamic" contributionURI="bundleclass://com.opcoach.training.e4.rental.eap/com.opcoach.training.e4.rental.eap.RentalMenuContribution"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_wrzNA53_EeGjZMSURtjBGw" label="Help">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_dul8MAPFEeKMQdl0OWNdOw" elementId="com.opcoach.training.e4.rental.ui.handledmenuitem.0" label="Help" command="_IRoEUAPFEeKMQdl0OWNdOw"/>
