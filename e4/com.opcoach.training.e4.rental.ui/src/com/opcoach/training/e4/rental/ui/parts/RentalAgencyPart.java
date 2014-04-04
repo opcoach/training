@@ -10,10 +10,10 @@ import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
-import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -97,7 +97,7 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	@Focus
 	public void setFocus(EPartService ps)
 	{
-		// System.out.println("Affichage de l'agency viewer et montŽe de la vue navigateur");
+		// System.out.println("Affichage de l'agency viewer et montï¿½e de la vue navigateur");
 		agencyViewer.getControl().setFocus();
 		/*
 		 * MPart p = ps.showPart("org.eclipse.ui.views.ResourceNavigator",

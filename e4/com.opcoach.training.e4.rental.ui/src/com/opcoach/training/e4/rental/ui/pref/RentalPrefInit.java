@@ -1,12 +1,14 @@
 package com.opcoach.training.e4.rental.ui.pref;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 import com.opcoach.training.e4.rental.ui.RentalAddon;
 import com.opcoach.training.e4.rental.ui.RentalUIActivator;
@@ -22,9 +24,7 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 	@Override
 	public void initializeDefaultPreferences()
 	{
-		// Unfortunately, in Eclipse 4.2, injection is not done in Pref initializer :(
-		// So must get it using a static method 
-		IPreferenceStore ps = RentalAddon.getPreferenceStore();
+		IPreferenceStore ps = new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID);
 
 		Color c = Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
 

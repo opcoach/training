@@ -12,9 +12,11 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.InvalidRegistryObjectException;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
@@ -35,17 +37,18 @@ public class RentalAddon implements RentalUIConstants
 	@PostConstruct
 	void startRentalFeature(IEclipseContext ctx, IExtensionRegistry reg, @Optional IEclipsePreferences prefs)
 	{
-		
+
 		System.out.println("---->  Enter in the RentalAddon ");
 		System.out.println("IEclipsePreferences is : " + prefs);
 		// Put objects in context
 		ctx.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
 		ctx.set(RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
 
-		ctx.set(RENTAL_UI_PREF_STORE, getPreferenceStore());
+		IPreferenceStore prefStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID);
+		ctx.set(RENTAL_UI_PREF_STORE, prefStore);
 
 		// Read the palettes extensions and publish it in context
-		readPaletteExtensions(reg);
+		readPaletteExtensions(reg, ctx);
 		ctx.set(PALETTE_MANAGER, paletteManager);
 
 		// Set the current palette in context...
@@ -86,7 +89,7 @@ public class RentalAddon implements RentalUIConstants
 	}
 
 	/** Read the palette extension (called by the postConstruct) */
-	Map<String, Palette> readPaletteExtensions(IExtensionRegistry reg)
+	Map<String, Palette> readPaletteExtensions(IExtensionRegistry reg, IEclipseContext ctx)
 	{
 		IExtensionPoint extp = reg.getExtensionPoint("com.opcoach.training.e4.rental.ui.Palette");
 		IExtension[] extensions = extp.getExtensions();
@@ -100,7 +103,9 @@ public class RentalAddon implements RentalUIConstants
 				try
 				{
 					// Create the executable extension
-					IColorProvider delegatedICP = (IColorProvider) elt.createExecutableExtension("paletteClass");
+					Bundle b = Platform.getBundle(elt.getNamespaceIdentifier());
+					Class<?> cz = b.loadClass(elt.getAttribute("paletteClass"));
+					IColorProvider delegatedICP = (IColorProvider) ContextInjectionFactory.make(cz, ctx);
 
 					// Add it (with its name) in the color provider map
 					Palette p = new Palette(elt.getAttribute("id"));
@@ -110,9 +115,13 @@ public class RentalAddon implements RentalUIConstants
 
 					// paletteManager.put(elt.getAttribute("name"),
 					// delegatedICP);
-				} catch (CoreException e)
+				} catch (InvalidRegistryObjectException e)
 				{
 					logger.error(e, "Unable to create palette class : " + elt.getAttribute("colorProviderClass"));
+				} catch (ClassNotFoundException e)
+				{
+					logger.error(e, "Unable to create palette class : " + elt.getAttribute("colorProviderClass"));
+
 				}
 			}
 		}
@@ -143,27 +152,6 @@ public class RentalAddon implements RentalUIConstants
 		// DO nothing if palette manager not yet called.
 		if (paletteManager != null)
 			ctx.set(Palette.class, paletteManager.get(paletteID));
-	}
-
-	// ----------------------------------------------------------------------
-	// This part of the code is TEMPORARY
-	// Publish a static method to get the preference store that is used by the
-	// classes
-	// that are not created using ContextInjectionFactory
-	// Other 'injected' classes can use the @Named(RENTAL_UI_PREF_STORE)
-	// IPreferenceStore prefStore to get it !!
-	// Like the preferencePages, preference initializer...
-	// -----------------------------------------------------------------------
-
-	private static IPreferenceStore prefStore;
-
-	public static IPreferenceStore getPreferenceStore()
-	{
-		if (prefStore == null)
-		{
-			prefStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID);
-		}
-		return prefStore;
 	}
 
 }
