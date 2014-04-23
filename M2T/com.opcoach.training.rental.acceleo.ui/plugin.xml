@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Generate"
+            id="com.opcoach.training.rental.acceleo.ui.commands.category">
+      </category>
+      <command
+            name="Generate Html"
+            categoryId="com.opcoach.training.rental.acceleo.ui.commands.category"
+            id="com.opcoach.training.rental.acceleo.ui.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.opcoach.training.rental.acceleo.ui.commands.sampleCommand"
+            class="com.opcoach.training.rental.acceleo.ui.handlers.GenerateHtmlHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.opcoach.training.rental.acceleo.ui.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:com.opcoach.training.rental.presentation.RentalEditorID?after=additions">
+         <command
+               commandId="com.opcoach.training.rental.acceleo.ui.commands.sampleCommand"
+               id="com.opcoach.training.rental.acceleo.ui.menus.sampleCommand"
+               label="Generate On Agency"
+               mnemonic="S">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="com.opcoach.training.rental.acceleo.ui.oneAgencySelected">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="com.opcoach.training.rental.acceleo.ui.oneAgencySelected">
+         <and>
+            <count
+                  value="1">
+            </count>
+            <iterate>
+               <instanceof
+                     value="com.opcoach.training.rental.RentalAgency">
+               </instanceof>
+            </iterate>
+         </and>
+      </definition>
+   </extension>
+
+</plugin>

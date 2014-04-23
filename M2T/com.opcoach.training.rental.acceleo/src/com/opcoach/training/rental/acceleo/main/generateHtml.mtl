@@ -1,0 +1,39 @@
+[comment encoding = UTF-8 /]
+[module generateHtml('http://www.eclipse.org/emf/2002/Ecore','http://com.opcoach.training/rental/1.0')]
+
+[template public generateAgencyInHTML(aRentalAgency : RentalAgency)]
+[comment @main/]
+[file (aRentalAgency.name, false, 'UTF-8')]
+<html>
+  <title>Agence de :  [aRentalAgency.name/] </title>
+   
+  <body>
+  [aRentalAgency.customers->first().generateH1Title()/]
+     <table align="center">
+     [for ( c : Customer | aRentalAgency.customers)]
+     	[c.generateLineForCustomer()/]
+     [/for]
+     </table>
+
+  [aRentalAgency.rentals->first().generateH1Title()/]
+
+
+  </body>
+
+[/file]
+[/template]
+
+[template public generateH1Title (c : EObject) ]
+   <h1> [c.eClass().name/] </h1>
+
+[/template]
+
+[template public generateLineForCustomer(c : Customer)]
+	<tr>
+        <td> [c.firstName/]  </td>
+        <td> [c.lastName/]  </td>
+    </tr>
+[/template]
+
+
+
