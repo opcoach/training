@@ -153,18 +153,6 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 		return plugin;
 	}
 
-	/**
-	 * Returns an image descriptor for the image file at the given plug-in relative path
-	 * 
-	 * @param path the path
-	 * @return the image descriptor
-	 */
-	public static ImageDescriptor getImageDescriptor(String path)
-	{
-		return imageDescriptorFromPlugin(PLUGIN_ID, path);
-	}
-
-
 
 
 	@Override
@@ -177,25 +165,5 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 		reg.put(RENTAL_OBJECT_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/RentalObjects.png")));
 		reg.put(AGENCY_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Agency.png")));
 	}
-	
-	public Image getMyImage(String path)
-	{
-		// Utilise le Registry global de JfaceResources
-		ImageRegistry reg = JFaceResources.getImageRegistry();
-		// Essai de r�cuperer l'image peut �tre d�j� pr�sente
-		Image img = reg.get(path);
-		if (img == null)
-		{
-			// L'image n'est pas encore stock�e dans le registry, on l'ajoute
-			ImageDescriptor desc = ImageDescriptor.createFromFile(this.getClass(), path);
-			// Le path sert de cl�
-			reg.put(path, desc);
-			img = reg.get(path);
-		}
-		
-		return img;
-			
-	}
-	
 	
 }
