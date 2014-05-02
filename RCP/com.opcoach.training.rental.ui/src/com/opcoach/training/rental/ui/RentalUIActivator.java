@@ -20,7 +20,9 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
 
 
 /**
@@ -168,23 +170,25 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	@Override
 	protected void initializeImageRegistry(ImageRegistry reg)
 	{
-		reg.put(CUSTOMER_KEY, getImageDescriptor("icons/Customers.png"));
-		reg.put(RENTAL_KEY, getImageDescriptor("icons/Rentals.png"));
-		reg.put(RENTAL_OBJECT_KEY, getImageDescriptor("icons/RentalObjects.png"));
-		reg.put(AGENCY_KEY, getImageDescriptor("icons/Agency.png"));
+		Bundle b = FrameworkUtil.getBundle(getClass());
+
+		reg.put(CUSTOMER_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Customers.png")));
+		reg.put(RENTAL_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Rentals.png")));
+		reg.put(RENTAL_OBJECT_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/RentalObjects.png")));
+		reg.put(AGENCY_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Agency.png")));
 	}
 	
 	public Image getMyImage(String path)
 	{
 		// Utilise le Registry global de JfaceResources
 		ImageRegistry reg = JFaceResources.getImageRegistry();
-		// Essai de récuperer l'image peut être déjà présente
+		// Essai de rÔøΩcuperer l'image peut ÔøΩtre dÔøΩjÔøΩ prÔøΩsente
 		Image img = reg.get(path);
 		if (img == null)
 		{
-			// L'image n'est pas encore stockée dans le registry, on l'ajoute
+			// L'image n'est pas encore stockÔøΩe dans le registry, on l'ajoute
 			ImageDescriptor desc = ImageDescriptor.createFromFile(this.getClass(), path);
-			// Le path sert de clé
+			// Le path sert de clÔøΩ
 			reg.put(path, desc);
 			img = reg.get(path);
 		}
