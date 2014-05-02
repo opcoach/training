@@ -17,8 +17,11 @@
             </children>
             <children xsi:type="advanced:Placeholder" xmi:id="_wO6v4APdEeKwlMNql7AR_w" elementId="com.opcoach.training.e4.rental.ui.placeholder.0" toBeRendered="false" visible="false" ref="_DYUCoAPeEeKwlMNql7AR_w"/>
           </children>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_KYPXsKG-EeGt1MjJ4j3IUg" elementId="com.opcoach.training.e4.extendProperties" selectedElement="_EzgzEJ4JEeGjZMSURtjBGw">
-            <children xsi:type="basic:Part" xmi:id="_EzgzEJ4JEeGjZMSURtjBGw" elementId="com.opcoach.rental.e4.ui.views.rentalView" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.parts.RentalPropertyPart" label="Rental Property"/>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_KYPXsKG-EeGt1MjJ4j3IUg" elementId="com.opcoach.training.e4.extendProperties">
+            <children xsi:type="basic:Part" xmi:id="_EzgzEJ4JEeGjZMSURtjBGw" elementId="com.opcoach.rental.e4.ui.views.rentalView" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.parts.RentalPropertyPart" label="Rental Property" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Rental.png"/>
+            <children xsi:type="basic:PartStack" xmi:id="_qhmYwNHvEeOjj_VETUHiow" elementId="com.opcoach.training.e4.rental.eap.partstack.0">
+              <children xsi:type="basic:Part" xmi:id="_2-qWYNHvEeOjj_VETUHiow" elementId="com.opcoach.rental.e4.ui.agencyDashboard" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.parts.RentalAgencyDashBoard" label="Dashboard" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Agency.png"/>
+            </children>
           </children>
         </children>
       </children>

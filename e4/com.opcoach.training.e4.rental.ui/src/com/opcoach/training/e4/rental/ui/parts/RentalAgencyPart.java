@@ -5,18 +5,22 @@ import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.services.EMenuService;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -116,6 +120,28 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 		{
 			agencyViewer.refresh();
 		}
+	}
+	
+	
+	/** With the dashboard part, we can now receive selection from outside of this view */
+	@Inject
+	@Optional
+	public void selectionChanged(@Named(IServiceConstants.ACTIVE_SELECTION) Object selection, 
+			                     @Named(IServiceConstants.ACTIVE_PART) MPart currentPart)
+	{
+		// Nothing to do if nothing available.
+		if (currentPart == null || selection == null || agencyViewer == null)
+			return;
+		
+		// Is this selection coming from outside of this part ? 
+		// In this case must set it on the viewer if created
+		if ( ! VIEW_ID.equals(currentPart.getElementId()))
+		{
+			// Must recreate a structuredSelection ! :)
+			IStructuredSelection ss = new StructuredSelection(selection);
+			agencyViewer.setSelection(ss, true);
+		}
+
 	}
 
 }
