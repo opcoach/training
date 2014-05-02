@@ -13,3 +13,4 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  com.opcoach.training.e4.rental.ui;bundle-version="1.0.0",
  org.eclipse.equinox.registry,
  org.eclipse.e4.core.services;bundle-version="1.0.0"
+Import-Package: javax.annotation;version="1.1.0"
