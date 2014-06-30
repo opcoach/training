@@ -18,5 +18,6 @@ Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.opcoach.training.rental.xtext.ui.contentassist.antlr,
- com.opcoach.training.rental.xtext.ui.contentassist
+ com.opcoach.training.rental.xtext.ui.contentassist,
+ com.opcoach.training.rental.xtext.ui.quickfix
 Bundle-Activator: com.opcoach.training.rental.xtext.ui.internal.RentalDslActivator

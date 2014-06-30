@@ -30,6 +30,7 @@ import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.dnd.URLTransfer;
 import org.eclipse.swt.widgets.Composite;
 
+import com.opcoach.training.e4.rental.ui.Palette;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
