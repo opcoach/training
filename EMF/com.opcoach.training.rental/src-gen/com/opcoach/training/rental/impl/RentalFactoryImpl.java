@@ -32,233 +32,233 @@ import com.opcoach.training.rental.StreetType;
 public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 {
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public static RentalFactory init()
 	{
-    try
-    {
-      RentalFactory theRentalFactory = (RentalFactory)EPackage.Registry.INSTANCE.getEFactory(RentalPackage.eNS_URI);
-      if (theRentalFactory != null)
-      {
-        return theRentalFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new RentalFactoryImpl();
-  }
+		try
+		{
+			RentalFactory theRentalFactory = (RentalFactory)EPackage.Registry.INSTANCE.getEFactory(RentalPackage.eNS_URI);
+			if (theRentalFactory != null)
+			{
+				return theRentalFactory;
+			}
+		}
+		catch (Exception exception)
+		{
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new RentalFactoryImpl();
+	}
 
 	/**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public RentalFactoryImpl()
 	{
-    super();
-  }
+		super();
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	public EObject create(EClass eClass)
 	{
-    switch (eClass.getClassifierID())
-    {
-      case RentalPackage.RENTAL_AGENCY: return createRentalAgency();
-      case RentalPackage.CUSTOMER: return createCustomer();
-      case RentalPackage.ADDRESS: return createAddress();
-      case RentalPackage.RENTAL_OBJECT: return createRentalObject();
-      case RentalPackage.LICENSE: return createLicense();
-      case RentalPackage.RENTAL: return createRental();
-      case RentalPackage.CAR: return createCar();
-      case RentalPackage.DEVICE: return createDevice();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID())
+		{
+			case RentalPackage.RENTAL_AGENCY: return createRentalAgency();
+			case RentalPackage.CUSTOMER: return createCustomer();
+			case RentalPackage.ADDRESS: return createAddress();
+			case RentalPackage.RENTAL_OBJECT: return createRentalObject();
+			case RentalPackage.LICENSE: return createLicense();
+			case RentalPackage.RENTAL: return createRental();
+			case RentalPackage.CAR: return createCar();
+			case RentalPackage.DEVICE: return createDevice();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue)
 	{
-    switch (eDataType.getClassifierID())
-    {
-      case RentalPackage.STREET_TYPE:
-        return createStreetTypeFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID())
+		{
+			case RentalPackage.STREET_TYPE:
+				return createStreetTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue)
 	{
-    switch (eDataType.getClassifierID())
-    {
-      case RentalPackage.STREET_TYPE:
-        return convertStreetTypeToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID())
+		{
+			case RentalPackage.STREET_TYPE:
+				return convertStreetTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public Customer createCustomer()
 	{
-    CustomerImpl customer = new CustomerImpl();
-    return customer;
-  }
+		CustomerImpl customer = new CustomerImpl();
+		return customer;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public RentalAgency createRentalAgency()
 	{
-    RentalAgencyImpl rentalAgency = new RentalAgencyImpl();
-    return rentalAgency;
-  }
+		RentalAgencyImpl rentalAgency = new RentalAgencyImpl();
+		return rentalAgency;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public Address createAddress()
 	{
-    AddressImpl address = new AddressImpl();
-    return address;
-  }
+		AddressImpl address = new AddressImpl();
+		return address;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public RentalObject createRentalObject()
 	{
-    RentalObjectImpl rentalObject = new RentalObjectImpl();
-    return rentalObject;
-  }
+		RentalObjectImpl rentalObject = new RentalObjectImpl();
+		return rentalObject;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public License createLicense()
 	{
-    LicenseImpl license = new LicenseImpl();
-    return license;
-  }
+		LicenseImpl license = new LicenseImpl();
+		return license;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public Rental createRental()
 	{
-    RentalImpl rental = new RentalImpl();
-    return rental;
-  }
+		RentalImpl rental = new RentalImpl();
+		return rental;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public Car createCar()
 	{
-    CarImpl car = new CarImpl();
-    return car;
-  }
+		CarImpl car = new CarImpl();
+		return car;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public Device createDevice()
 	{
-    DeviceImpl device = new DeviceImpl();
-    return device;
-  }
+		DeviceImpl device = new DeviceImpl();
+		return device;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public StreetType createStreetTypeFromString(EDataType eDataType, String initialValue)
 	{
-    StreetType result = StreetType.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		StreetType result = StreetType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public String convertStreetTypeToString(EDataType eDataType, Object instanceValue)
 	{
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public RentalPackage getRentalPackage()
 	{
-    return (RentalPackage)getEPackage();
-  }
+		return (RentalPackage)getEPackage();
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
 	@Deprecated
 	public static RentalPackage getPackage()
 	{
-    return RentalPackage.eINSTANCE;
-  }
+		return RentalPackage.eINSTANCE;
+	}
 
 } //RentalFactoryImpl

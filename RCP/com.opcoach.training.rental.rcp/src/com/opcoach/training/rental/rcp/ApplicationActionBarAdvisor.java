@@ -78,16 +78,16 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         fileMenu.add(exitAction); */
         
         // Ajout sous la forme de ActionContributionItem pour pouvoir rendre les actions ensuite
-        // invisibles, car elle sont dŽjˆ prŽsentes dans le menu Pomme du mac. 
+        // invisibles, car elle sont dï¿½jï¿½ prï¿½sentes dans le menu Pomme du mac. 
         ActionContributionItem preferencesActionItem = new ActionContributionItem(prefAction);
         fileMenu.add(preferencesActionItem);
     	ActionContributionItem exitActionItem = new ActionContributionItem(exitAction);
 		fileMenu.add(exitActionItem);
           
-        if (Util.isMac()) {
+  /*      if (Util.isMac()) {
         	preferencesActionItem.setVisible(false);
         	exitActionItem.setVisible(false);
-        }
+        } */
         
     }
     

@@ -28,157 +28,157 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class CarImpl extends RentalObjectImpl implements Car
 {
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
-   * The default value of the '{@link #getLicensePlate() <em>License Plate</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLicensePlate() <em>License Plate</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @see #getLicensePlate()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLicensePlate()
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String LICENSE_PLATE_EDEFAULT = null;
 
 	/**
-   * The cached value of the '{@link #getLicensePlate() <em>License Plate</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLicensePlate() <em>License Plate</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @see #getLicensePlate()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLicensePlate()
+	 * @generated
+	 * @ordered
+	 */
 	protected String licensePlate = LICENSE_PLATE_EDEFAULT;
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	protected CarImpl()
 	{
-    super();
-  }
+		super();
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-    return RentalPackage.Literals.CAR;
-  }
+		return RentalPackage.Literals.CAR;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public String getLicensePlate()
 	{
-    return licensePlate;
-  }
+		return licensePlate;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public void setLicensePlate(String newLicensePlate)
 	{
-    String oldLicensePlate = licensePlate;
-    licensePlate = newLicensePlate;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.CAR__LICENSE_PLATE, oldLicensePlate, licensePlate));
-  }
+		String oldLicensePlate = licensePlate;
+		licensePlate = newLicensePlate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.CAR__LICENSE_PLATE, oldLicensePlate, licensePlate));
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-    switch (featureID)
-    {
-      case RentalPackage.CAR__LICENSE_PLATE:
-        return getLicensePlate();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID)
+		{
+			case RentalPackage.CAR__LICENSE_PLATE:
+				return getLicensePlate();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-    switch (featureID)
-    {
-      case RentalPackage.CAR__LICENSE_PLATE:
-        setLicensePlate((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID)
+		{
+			case RentalPackage.CAR__LICENSE_PLATE:
+				setLicensePlate((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-    switch (featureID)
-    {
-      case RentalPackage.CAR__LICENSE_PLATE:
-        setLicensePlate(LICENSE_PLATE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID)
+		{
+			case RentalPackage.CAR__LICENSE_PLATE:
+				setLicensePlate(LICENSE_PLATE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-    switch (featureID)
-    {
-      case RentalPackage.CAR__LICENSE_PLATE:
-        return LICENSE_PLATE_EDEFAULT == null ? licensePlate != null : !LICENSE_PLATE_EDEFAULT.equals(licensePlate);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID)
+		{
+			case RentalPackage.CAR__LICENSE_PLATE:
+				return LICENSE_PLATE_EDEFAULT == null ? licensePlate != null : !LICENSE_PLATE_EDEFAULT.equals(licensePlate);
+		}
+		return super.eIsSet(featureID);
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	@Override
 	public String toString()
 	{
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (licensePlate: ");
-    result.append(licensePlate);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (licensePlate: ");
+		result.append(licensePlate);
+		result.append(')');
+		return result.toString();
+	}
 
 } //CarImpl

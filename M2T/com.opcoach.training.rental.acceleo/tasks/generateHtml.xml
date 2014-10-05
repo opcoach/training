@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generateHtml" name="com.opcoach.training.rental.acceleo">
-    <property name="ECLIPSE_HOME" value="../../../../../Documents/OPCoach/tools/eclipse Kepler 4.3.2"/>
+    <property name="ECLIPSE_HOME" value="../../../../../Documents/OPCoach/tools/eclipse Luna 4.4 SR1"/>
     <property name="ECLIPSE_WORKSPACE" value="../../../../../Documents/OPCoach/workspaces/OPCoach_Training_e3"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="com.opcoach.training.rental.acceleo.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/com.opcoach.training.rental.acceleo/bin"/>
-        <pathelement location="${ECLIPSE_WORKSPACE}//.metadata/.plugins/org.eclipse.pde.core/.external_libraries/org.eclipse.core.runtime.compatibility.registry_3.5.100.v20120521-2346/runtime_registry_compatibility.jar"/>
     </path>
 
     <path id="com.opcoach.training.rental.acceleo.classpath">
