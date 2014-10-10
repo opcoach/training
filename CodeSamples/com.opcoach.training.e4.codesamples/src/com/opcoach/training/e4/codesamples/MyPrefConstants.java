@@ -8,6 +8,7 @@ public interface MyPrefConstants {
 
 	public static final String PLUGIN_ID = "com.opcoach.training.e4.rental.ui";
 	public static final String RENTAL_UI_PREF_STORE = PLUGIN_ID + ".preferenceStore";
+	public static final String RENTAL_UI_IMG_REGISTRY = PLUGIN_ID + ".imageRegistry";
 
 	
 	// Constants to manage object images in registry
@@ -16,11 +17,18 @@ public interface MyPrefConstants {
 	public static final String RENTAL_IMG_KEY  = "rentalImage";
 	public static final String RENTAL_OBJECT_IMG_KEY  = "rentalObjectImage";
 	
+
+	// Constants to manage object images in registry. Constant values are path to icons
+	public static final String IMG_AGENCY = "icons/Agency.png";
+	public static final String IMG_CUSTOMER = "icons/Customers.png";
+	public static final String IMG_RENTAL = "icons/Rentals.png";
+	public static final String IMG_RENTAL_OBJECT = "icons/RentalObjects.png";
+
 	
 	// Nodes for providers
 	public static final String CUSTOMERS_NODE = "Clients";
 	public static final String RENTALS_NODE = "Locations";
-	public static final String OBJECTS_NODE = "Objets ˆ louer";
+	public static final String OBJECTS_NODE = "Objets ï¿½ louer";
 	
 	// Preferences constants
 	public static final String PALETTE_MANAGER = "com.opcoach.training.e4.rental.ui.paletteManager";
