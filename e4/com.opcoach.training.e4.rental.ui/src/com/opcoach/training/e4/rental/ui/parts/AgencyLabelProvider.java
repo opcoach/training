@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009 http://www.opcoach.com
+// ï¿½ OPCoach 2009 http://www.opcoach.com
 // ------------------------------------------------
 
 package com.opcoach.training.e4.rental.ui.parts;
@@ -95,16 +95,16 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 
 		if (element instanceof RentalAgency)
 		{
-			result = registry.get(AGENCY_IMG_KEY);
+			result = registry.get(IMG_AGENCY);
 		} else if (element instanceof Rental)
 		{
-			result = registry.get(RENTAL_IMG_KEY);
+			result = registry.get(IMG_RENTAL);
 		} else if (element instanceof Customer)
 		{
-			result = registry.get(CUSTOMER_IMG_KEY);
+			result = registry.get(IMG_CUSTOMER);
 		} else if (element instanceof RentalObject)
 		{
-			result = registry.get(RENTAL_OBJECT_IMG_KEY);
+			result = registry.get(IMG_RENTAL_OBJECT);
 		}
 
 		return result;

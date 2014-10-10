@@ -27,6 +27,7 @@ import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
@@ -65,19 +66,21 @@ public class RentalAddon implements RentalUIConstants
 
 	/**
 	 * A method to create and initialize an ImageRegistry
-	 * 
-	 * @return a initialized ImageRegistry that can be put in the context for
-	 *         instance
+	 * @return a initialized ImageRegistry that can be put in the context
 	 */
 	ImageRegistry getLocalImageRegistry()
 	{
-		Bundle b = Platform.getBundle(PLUGIN_ID);
+		// Get the bundle using the universal method to get it from the current class
+		Bundle b = FrameworkUtil.getBundle(getClass());  
+		
+		// Create a local image registry
 		ImageRegistry reg = new ImageRegistry();
 
-		reg.put(CUSTOMER_IMG_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Customers.png")));
-		reg.put(RENTAL_IMG_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Rentals.png")));
-		reg.put(RENTAL_OBJECT_IMG_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/RentalObjects.png")));
-		reg.put(AGENCY_IMG_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Agency.png")));
+		// Then fill the values...
+		reg.put(IMG_CUSTOMER, ImageDescriptor.createFromURL(b.getEntry(IMG_CUSTOMER)));
+		reg.put(IMG_RENTAL, ImageDescriptor.createFromURL(b.getEntry(IMG_RENTAL)));
+		reg.put(IMG_RENTAL_OBJECT, ImageDescriptor.createFromURL(b.getEntry(IMG_RENTAL_OBJECT)));
+		reg.put(IMG_AGENCY, ImageDescriptor.createFromURL(b.getEntry(IMG_AGENCY)));
 
 		return reg;
 	}

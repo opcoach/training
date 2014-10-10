@@ -77,7 +77,7 @@ public class RentalPropertyPart
 
 				public void dragStart(DragSourceEvent event)
 				{
-					event.image = reg.get(RentalUIConstants.AGENCY_IMG_KEY);
+					event.image = reg.get(RentalUIConstants.IMG_AGENCY);
 				}
 
 			});

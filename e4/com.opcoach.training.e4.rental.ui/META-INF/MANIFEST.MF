@@ -54,7 +54,9 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.core.expressions,
  org.eclipse.e4.ui.model.workbench;bundle-version="0.10.1",
  javax.inject,
- org.eclipse.ui;bundle-version="3.105.0"
-Service-Component: src/com/opcoach/training/e4/rental/ui/views/component.xml
+ org.eclipse.ui;bundle-version="3.105.0",
+ javax.annotation,
+ com.opcoach.training.rental.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Service-Component: src/com/opcoach/training/e4/rental/ui/views/component.xml
 Bundle-ActivationPolicy: lazy
