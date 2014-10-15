@@ -17,17 +17,24 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
 import org.eclipse.swt.dnd.RTFTransfer;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.dnd.URLTransfer;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
@@ -47,11 +54,55 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 	@Inject
 	private EMenuService menuService;
+	
+	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
+	private ImageRegistry imgReg;	
+
 
 	@PostConstruct
 	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency, IEclipseContext ctx)
 	{
+		parent.setLayout(new GridLayout(1, false));
+
+		final Composite comp = new Composite(parent, SWT.NONE);
+		comp.setLayout(new GridLayout(2, false));
+
+		Button expandAll = new Button(comp, SWT.FLAT);
+		expandAll.setImage(imgReg.get(IMG_EXPAND_ALL));
+		expandAll.setToolTipText("Expand agency tree");
+		expandAll.addSelectionListener(new SelectionListener()
+			{
+				@Override
+				public void widgetSelected(SelectionEvent e)
+				{
+					agencyViewer.expandAll();
+				}
+
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e)
+				{
+				}
+			});
+		Button collapseAll = new Button(comp, SWT.FLAT);
+		collapseAll.setImage(imgReg.get(IMG_COLLAPSE_ALL));
+		collapseAll.setToolTipText("Collapse context nodes");
+		collapseAll.addSelectionListener(new SelectionListener()
+			{
+
+				@Override
+				public void widgetSelected(SelectionEvent e)
+				{
+					agencyViewer.collapseAll();
+				}
+
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e)
+				{
+				}
+			});
+		
 		agencyViewer = new TreeViewer(parent);
+		agencyViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,true));
 		agencyViewer.setContentProvider(new AgencyContentProvider());
 		// labelProvider is now Creatable, so it is useless to call
 		// ContextInjectionFactory
