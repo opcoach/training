@@ -27,17 +27,11 @@
     </children>
     <mainMenu xmi:id="_wrymCJ3_EeGjZMSURtjBGw" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_wrymCZ3_EeGjZMSURtjBGw" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_wrzNAJ3_EeGjZMSURtjBGw" label="Open" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/sample.gif"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_i89mQAQMEeKwlMNql7AR_w" elementId="com.opcoach.training.e4.rental.ui.handledmenuitem.0" label="Message" command="_y1MfsAQLEeKwlMNql7AR_w">
           <parameters xmi:id="_okOwwAQMEeKwlMNql7AR_w" elementId="IdDuParam" name="com.opcoach.training.e4.rental.ui.messageParam" value="my personnal message"/>
         </children>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_wrzNAZ3_EeGjZMSURtjBGw" label="Save" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/save_edit.gif"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_wrzNAp3_EeGjZMSURtjBGw" label="Quit" command="_wryl-p3_EeGjZMSURtjBGw"/>
         <children xsi:type="menu:DirectMenuItem" xmi:id="_LvDlsJ4FEeGjZMSURtjBGw" label="My E4 Handler" tooltip="Do a sys.out.println" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.handlers.MyE4Handler"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_OUzcYKAoEeGDHcz5E_KmhQ" label="Preferences" command="_ewXMsKAkEeGDHcz5E_KmhQ"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_37T6YAQKEeKwlMNql7AR_w" elementId="com.opcoach.training.e4.rental.ui.handledmenuitem.0" command="_wrymBJ3_EeGjZMSURtjBGw">
-          <parameters xmi:id="_8NgvYAQKEeKwlMNql7AR_w" elementId="aboutTitle" name="com.opcoach.training.e4.rental.ui.aboutParam" value="My title for about window"/>
-        </children>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_rVJUMKy4EeK7v4dZrk51_A" elementId="edit" label="Edit">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_vzr8EKy4EeK7v4dZrk51_A" elementId="com.opcoach.training.e4.rental.eap.handledmenuitem.0" command="_ruEsYKA8EeG1-fMS8F9koA">
@@ -57,8 +51,8 @@
     </mainMenu>
     <trimBars xmi:id="_wrzNCZ3_EeGjZMSURtjBGw">
       <children xsi:type="menu:ToolBar" xmi:id="_wrzNCp3_EeGjZMSURtjBGw" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_wrzNC53_EeGjZMSURtjBGw" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/sample.gif"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_wrzNDJ3_EeGjZMSURtjBGw" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/save_edit.gif"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_wrzNC53_EeGjZMSURtjBGw" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/sample.gif" command="_y1MfsAQLEeKwlMNql7AR_w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_wrzNDJ3_EeGjZMSURtjBGw" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/save_edit.gif" command="_ewXMsKAkEeGDHcz5E_KmhQ"/>
       </children>
     </trimBars>
   </children>
