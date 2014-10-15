@@ -9,7 +9,7 @@ import org.osgi.framework.FrameworkUtil;
 public interface RentalUIConstants
 {
 
-	public static final String PLUGIN_ID = FrameworkUtil.getBundle(RentalUIConstants.class).getSymbolicName(); // "com.opcoach.training.e4.rental.ui";
+	public static final String PLUGIN_ID = "com.opcoach.training.e4.rental.ui";
 	public static final String RENTAL_UI_PREF_STORE = PLUGIN_ID + ".preferenceStore";
 	public static final String RENTAL_UI_IMG_REGISTRY = PLUGIN_ID + ".imageRegistry";
 
