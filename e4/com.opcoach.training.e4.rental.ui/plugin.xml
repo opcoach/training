@@ -46,6 +46,26 @@
            uri="fragment.e4xmi">
      </fragment>
   </extension>
+  <extension
+        point="com.opcoach.e4.preferences.e4PreferencePages">
+     <page
+           class="com.opcoach.training.e4.rental.ui.pref.RentalPrefHomePage"
+           id="com.opcoach.training.e4.rental.ui.rentalHomePage"
+           name="Rental Home">
+     </page>
+     <page
+           category="com.opcoach.training.e4.rental.ui.rentalHomePage"
+           class="com.opcoach.training.e4.rental.ui.pref.RentalPalettePreferences"
+           id="com.opcoach.training.e4.rental.ui.palettePrefPage"
+           name="Palettes">
+     </page>
+     <page
+           category="com.opcoach.training.e4.rental.ui.palettePrefPage"
+           class="com.opcoach.training.e4.rental.ui.pref.RentalColorPreferences"
+           id="com.opcoach.training.e4.rental.ui.defaultPalettePrefPage"
+           name="Default Palette">
+     </page>
+  </extension>
  
    
    

@@ -8,10 +8,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
-import com.opcoach.training.e4.rental.ui.RentalAddon;
-import com.opcoach.training.e4.rental.ui.RentalUIActivator;
+import com.opcoach.e4.preferences.ScopedPreferenceStore;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 
 public class RentalPrefInit extends AbstractPreferenceInitializer implements RentalUIConstants

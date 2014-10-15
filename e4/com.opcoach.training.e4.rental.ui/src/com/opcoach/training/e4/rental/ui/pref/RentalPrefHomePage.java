@@ -10,12 +10,10 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchPreferencePage;
 
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 
-public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage, RentalUIConstants
+public class RentalPrefHomePage extends FieldEditorPreferencePage implements  RentalUIConstants
 
 {
 
@@ -29,12 +27,6 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 		// Init of preference store delegated in init (pstore not initialized else)
 	}
 	
-	@Override
-	public void init(IWorkbench workbench)
-	{
-		setPreferenceStore(prefStore);
-
-	}
 
 
 
@@ -54,7 +46,7 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 	protected Control createContents(Composite parent)
 	{
 		Label lab = new Label(parent, SWT.NONE);
-		lab.setText("Pages de préférences de rental.");
+		lab.setText("Rental Preference page");
 		
 		// TODO Auto-generated method stub
 		return super.createContents(parent);

@@ -17,6 +17,8 @@ public interface RentalUIConstants
 	public static final String IMG_CUSTOMER = "icons/Customers.png";
 	public static final String IMG_RENTAL = "icons/Rentals.png";
 	public static final String IMG_RENTAL_OBJECT = "icons/RentalObjects.png";
+	public static final String IMG_COLLAPSE_ALL = "icons/collapseall.gif";
+	public static final String IMG_EXPAND_ALL = "icons/expandall.gif";
 
 	// Nodes for providers
 	public static final String CUSTOMERS_NODE = "Clients";
