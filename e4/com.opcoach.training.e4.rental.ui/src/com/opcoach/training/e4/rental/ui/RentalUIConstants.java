@@ -1,6 +1,6 @@
 package com.opcoach.training.e4.rental.ui;
 
-import org.eclipse.jface.resource.ImageDescriptor;
+import org.osgi.framework.FrameworkUtil;
 
 /**
  * Constant definitions for plug-in preferences, keys for colors, and to
@@ -9,7 +9,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 public interface RentalUIConstants
 {
 
-	public static final String PLUGIN_ID = "com.opcoach.training.e4.rental.ui";
+	public static final String PLUGIN_ID = FrameworkUtil.getBundle(RentalUIConstants.class).getSymbolicName(); // "com.opcoach.training.e4.rental.ui";
 	public static final String RENTAL_UI_PREF_STORE = PLUGIN_ID + ".preferenceStore";
 	public static final String RENTAL_UI_IMG_REGISTRY = PLUGIN_ID + ".imageRegistry";
 
