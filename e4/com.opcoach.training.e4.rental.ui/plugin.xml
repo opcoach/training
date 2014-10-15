@@ -35,7 +35,7 @@
         point="com.opcoach.training.e4.rental.ui.Palette">
      <palette
            id="com.opcoach.training.e4.rental.ui.NonePalette"
-           name="None"
+           name="Default Palette"
            paletteClass="com.opcoach.training.e4.rental.ui.parts.NonePalette">
      </palette>
   </extension>
