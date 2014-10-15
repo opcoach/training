@@ -1,6 +1,5 @@
 package com.opcoach.training.e4.rental.ui;
 
-import org.osgi.framework.FrameworkUtil;
 
 /**
  * Constant definitions for plug-in preferences, keys for colors, and to
