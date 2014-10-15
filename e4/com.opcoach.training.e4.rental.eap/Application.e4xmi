@@ -49,12 +49,6 @@
         <parameters xmi:id="_6cG4oAQJEeKwlMNql7AR_w" elementId="aboutTitle" name="com.opcoach.training.e4.rental.ui.aboutParam" value="My title for about window"/>
       </children>
     </mainMenu>
-    <trimBars xmi:id="_wrzNCZ3_EeGjZMSURtjBGw">
-      <children xsi:type="menu:ToolBar" xmi:id="_wrzNCp3_EeGjZMSURtjBGw" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_wrzNC53_EeGjZMSURtjBGw" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/sample.gif" command="_y1MfsAQLEeKwlMNql7AR_w"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_wrzNDJ3_EeGjZMSURtjBGw" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/save_edit.gif" command="_ewXMsKAkEeGDHcz5E_KmhQ"/>
-      </children>
-    </trimBars>
   </children>
   <handlers xmi:id="_wryl-53_EeGjZMSURtjBGw" contributionURI="bundleclass://com.opcoach.training.e4.rental.eap/com.opcoach.training.e4.rental.eap.handlers.QuitHandler" command="_wryl-p3_EeGjZMSURtjBGw"/>
   <handlers xmi:id="_wrymBZ3_EeGjZMSURtjBGw" contributionURI="bundleclass://com.opcoach.training.e4.rental.eap/com.opcoach.training.e4.rental.eap.handlers.AboutHandler" command="_wrymBJ3_EeGjZMSURtjBGw"/>
