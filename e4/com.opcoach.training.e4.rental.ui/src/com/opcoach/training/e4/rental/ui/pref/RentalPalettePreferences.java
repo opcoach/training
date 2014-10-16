@@ -16,20 +16,14 @@ import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 public class RentalPalettePreferences extends FieldEditorPreferencePage implements RentalUIConstants
 
 {
-	@Inject @Named(RENTAL_UI_PREF_STORE)
-	IPreferenceStore prefStore;
 	
-	
+	@Inject @Named(PALETTE_MANAGER)
+	private Map<String, Palette> palettes;
+
 	public RentalPalettePreferences()
 	{
 		super(GRID);
-		// Init of preference store delegated in init (pstore not initialized
-		// else)
 	}
-
-	
-	@Inject @Named(RentalUIConstants.PALETTE_MANAGER)
-	private Map<String, Palette> palettes;
 
 
 	@Override
