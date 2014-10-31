@@ -7,7 +7,7 @@ import java.util.Date;
 import org.junit.Test;
 
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.MyRentalAgency;
+import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalObject;
 
@@ -17,7 +17,7 @@ public class TestRentalAgency {
 	@Test
 	public void testBook() {
 		
-		MyRentalAgency agency = (MyRentalAgency) RentalFactory.eINSTANCE.createRentalAgency();
+		RentalAgency agency =  RentalFactory.eINSTANCE.createRentalAgency();
 		Customer c = RentalFactory.eINSTANCE.createCustomer();
 		c.setFirstName("Pierre");
 		c.setLastName("Dupond");
