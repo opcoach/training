@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009     http://www.opcoach.com
+// ï¿½ OPCoach 2009     http://www.opcoach.com
 // ------------------------------------------------ 
 
 package com.opcoach.training.rental.gef.diagram;
@@ -19,7 +19,7 @@ import com.opcoach.training.diagram.editor.DiagramEditor;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalObject;
-import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
+import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 import com.opcoach.training.rental.provider.RentalItemProviderAdapterFactory;
 
 
@@ -68,15 +68,15 @@ public class RentalDiagramEditor extends DiagramEditor
 
 		PaletteGroup group2 = new PaletteGroup("Groupe 2");
 		RentalCreationFactory rf = new RentalCreationFactory(Customer.class);
-		PaletteEntry custTool = new CreationToolEntry("Customer", "CrŽation du client",rf,null,null);
+		PaletteEntry custTool = new CreationToolEntry("Customer", "Crï¿½ation du client",rf,null,null);
 		group2.add(custTool);
 
 		rf = new RentalCreationFactory(RentalObject.class);
-		PaletteEntry objTool = new CreationToolEntry("Rental Object", "CrŽation de l'objet",rf,null, null);
+		PaletteEntry objTool = new CreationToolEntry("Rental Object", "Crï¿½ation de l'objet",rf,null, null);
 		group2.add(objTool);
 
 		rf = new RentalCreationFactory(Rental.class);
-		PaletteEntry rentalTool = new CreationToolEntry("Rental", "CrŽation d'une location",rf,null,null);
+		PaletteEntry rentalTool = new CreationToolEntry("Rental", "Crï¿½ation d'une location",rf,null,null);
 		group2.add(rentalTool);
 
 		palette.setDefaultEntry(selTool);
