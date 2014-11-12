@@ -90,7 +90,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 				@Override
 				public void dragStart(DragSourceEvent event)
 				{
-					event.image = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.AGENCY_KEY);
+					event.image = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.IMG_AGENCY);
 				}
 
 			});

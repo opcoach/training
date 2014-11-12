@@ -70,8 +70,8 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 		FontData[] fdc = new FontData[] { new FontData("times",12,SWT.NORMAL), new FontData("times",12,SWT.ITALIC), new FontData("times",14,SWT.BOLD)};
 		FontData[] fdr = new FontData[] { new FontData("courier",12,SWT.NORMAL), new FontData("courier",12,SWT.ITALIC), new FontData("courier",14,SWT.BOLD)};
 		FontRegistry fr = JFaceResources.getFontRegistry();
-		fr.put(CUSTOMER_KEY, fdc);
-		fr.put(RENTAL_OBJECT_KEY, fdr);
+		fr.put(FONT_CUSTOMER, fdc);
+		fr.put(FONT_RENTAL_OBJECT, fdr);
 		
 		
 	}
@@ -160,10 +160,14 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	{
 		Bundle b = FrameworkUtil.getBundle(getClass());
 
-		reg.put(CUSTOMER_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Customers.png")));
-		reg.put(RENTAL_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Rentals.png")));
-		reg.put(RENTAL_OBJECT_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/RentalObjects.png")));
-		reg.put(AGENCY_KEY, ImageDescriptor.createFromURL(b.getEntry("icons/Agency.png")));
+		// Then fill the values...
+		reg.put(IMG_CUSTOMER, ImageDescriptor.createFromURL(b.getEntry(IMG_CUSTOMER)));
+		reg.put(IMG_RENTAL, ImageDescriptor.createFromURL(b.getEntry(IMG_RENTAL)));
+		reg.put(IMG_RENTAL_OBJECT, ImageDescriptor.createFromURL(b.getEntry(IMG_RENTAL_OBJECT)));
+		reg.put(IMG_AGENCY, ImageDescriptor.createFromURL(b.getEntry(IMG_AGENCY)));
+		reg.put(IMG_COLLAPSE_ALL, ImageDescriptor.createFromURL(b.getEntry(IMG_COLLAPSE_ALL)));
+		reg.put(IMG_EXPAND_ALL, ImageDescriptor.createFromURL(b.getEntry(IMG_EXPAND_ALL)));
+
 	}
 	
 }

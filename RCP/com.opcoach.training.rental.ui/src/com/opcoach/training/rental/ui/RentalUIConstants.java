@@ -6,12 +6,14 @@ package com.opcoach.training.rental.ui;
 public interface RentalUIConstants {
 
 	
-	// Constants to distinguish the different objects in tree 
-	public static final String AGENCY_KEY = "agencyKey";
-	public static final String CUSTOMER_KEY = "customerKey";
-	public static final String RENTAL_KEY  = "rentalKey";
-	public static final String RENTAL_OBJECT_KEY  = "rentalObjectKey";
-	
+	// Constants to manage object images in registry. Constant values are path to icons
+	public static final String IMG_AGENCY = "icons/Agency.png";
+	public static final String IMG_CUSTOMER = "icons/Customers.png";
+	public static final String IMG_RENTAL = "icons/Rentals.png";
+	public static final String IMG_RENTAL_OBJECT = "icons/RentalObjects.png";
+	public static final String IMG_COLLAPSE_ALL = "icons/collapseall.gif";
+	public static final String IMG_EXPAND_ALL = "icons/expandall.gif";
+
 	
 	// Constants for preference values 
 	public static final String PREF_DISPLAY_COUNT = "displayCounter";
@@ -23,7 +25,11 @@ public interface RentalUIConstants {
 	// Nodes for providers
 	public static final String CUSTOMERS_NODE = "Clients";
 	public static final String RENTALS_NODE = "Locations";
-	public static final String OBJECTS_NODE = "Objets ˆ louer";
+	public static final String OBJECTS_NODE = "Objets Ã  louer";
+
+	// Constants for font values
+	public static final String FONT_CUSTOMER = "customerFont";
+	public static final String FONT_RENTAL_OBJECT  = "rentalObjectKey";
 
 
 	

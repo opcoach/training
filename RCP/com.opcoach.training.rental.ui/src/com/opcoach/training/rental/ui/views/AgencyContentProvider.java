@@ -160,13 +160,13 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 
 			if (name == RENTALS_NODE)
 			{
-				return reg.get(RENTAL_KEY);
+				return reg.get(IMG_RENTAL);
 			} else if (name == CUSTOMERS_NODE)
 			{
-				return reg.get(CUSTOMER_KEY);
+				return reg.get(IMG_CUSTOMER);
 			} else if (name == OBJECTS_NODE)
 			{
-				return reg.get(RENTAL_OBJECT_KEY);
+				return reg.get(IMG_RENTAL_OBJECT);
 			}
 			return null;
 		}

@@ -35,7 +35,7 @@ final public class AgencyTreeDragSourceListener extends DragSourceAdapter
 		if (ImageTransfer.getInstance().isSupportedType(event.dataType))
 		{
 			if (selectedObject instanceof Customer)
-				event.data = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.CUSTOMER_KEY);
+				event.data = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.IMG_CUSTOMER);
 			else
 				event.data = null;
 		}

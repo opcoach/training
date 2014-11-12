@@ -124,7 +124,7 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 				@Override
 				public Image getImage(Object element)
 				{
-					Image i = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.CUSTOMER_KEY);
+					Image i = RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.IMG_CUSTOMER);
 					return i;
 				}
 
@@ -135,7 +135,7 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 				}
 			});
 		ColumnViewerToolTipSupport.enableFor(viewer, ToolTip.NO_RECREATE);
-		firstNameCol.getColumn().setImage(RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.CUSTOMER_KEY));
+		firstNameCol.getColumn().setImage(RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.IMG_CUSTOMER));
 		firstNameCol.getColumn().addSelectionListener(getHeaderSelectionAdapter(viewer, firstNameCol.getColumn(), 0));
 		// Add the sort stuff to manage clic on header and the customerComparator
 		comparator = new CustomerComparator();

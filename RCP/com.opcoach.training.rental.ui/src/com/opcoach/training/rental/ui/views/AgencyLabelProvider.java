@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009 http://www.opcoach.com
+// ï¿½ OPCoach 2009 http://www.opcoach.com
 // ------------------------------------------------
 
 package com.opcoach.training.rental.ui.views;
@@ -93,7 +93,7 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 
 		if (element instanceof RentalAgency)
 		{
-			result = reg.get(AGENCY_KEY);
+			result = reg.get(IMG_AGENCY);
 		} else if (element instanceof TNode)
 		{
 			result = ((TNode) element).getImage();
@@ -119,8 +119,8 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	
 	public void initPalette()
 	{
-		// Recupere la palette selectionnŽe dans les preferences
-		// (appelŽ par le listener de preference store de l'agency view et par le constructeur du label provider)
+		// Recupere la palette selectionnï¿½e dans les preferences
+		// (appelï¿½ par le listener de preference store de l'agency view et par le constructeur du label provider)
 		String val = RentalUIActivator.getDefault().getPreferenceStore().getString(PREF_PALETTE);
 		currentPalette = (val == null) ? null : RentalUIActivator.getDefault().getPaletteManager().get(val);
 
@@ -131,9 +131,9 @@ public class AgencyLabelProvider extends LabelProvider implements IColorProvider
 	{
 		if (element instanceof Customer)
 		{
-			return JFaceResources.getFontRegistry().get(CUSTOMER_KEY);
+			return JFaceResources.getFontRegistry().get(FONT_CUSTOMER);
 		} else if (element instanceof RentalObject)
-			return JFaceResources.getFontRegistry().getBold(RENTAL_OBJECT_KEY);
+			return JFaceResources.getFontRegistry().getBold(FONT_RENTAL_OBJECT);
 		
 		return null;
 	}
