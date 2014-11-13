@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>0.20.0</tycho-version>
+		<tycho-version>0.21.0</tycho-version>
 	</properties>
 
 	<repositories>
@@ -50,6 +50,7 @@
 
 	<!-- the modules that should be built together -->
 	<modules>
+		<module>../com.opcoach.training.rental.targetplatform</module>
 		<module>../com.opcoach.training.rental.rcp</module>
 		<module>../com.opcoach.training.rental.feature</module>
 		<module>../com.opcoach.training.rental.ui</module>
@@ -57,6 +58,7 @@
 		<module>../com.opcoach.training.rental.help</module>
 		<module>../com.opcoach.training.rental.core</module>
 		<module>../com.opcoach.training.rental.core.test</module>
+		<module>../com.opcoach.training.rental.ui.test</module>
 		<module>../com.opcoach.training.rental.repository</module>
 	</modules>
 
