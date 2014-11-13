@@ -11,4 +11,5 @@
 
 	<artifactId>com.opcoach.training.rental.targetplatform</artifactId>
 	<packaging>eclipse-target-definition</packaging>
+	
 </project>
