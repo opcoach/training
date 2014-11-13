@@ -6,5 +6,9 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.9.100",
- org.eclipse.xtend2.lib;bundle-version="2.5.4",
- org.eclipse.emf.ecore;bundle-version="2.9.2"
+ org.eclipse.emf.ecore;bundle-version="2.9.2",
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro
+
