@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2010 http://www.opcoach.com
+// ï¿½ OPCoach 2010 http://www.opcoach.com
 // ------------------------------------------------
 
 package com.opcoach.training.rental.rcp;
@@ -9,7 +9,7 @@ import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
-import com.opcoach.training.rental.ui.views.RentalStandalonePerspective;
+import com.opcoach.training.rental.ui.views.RentalPerspective;
 
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor
 {
@@ -21,6 +21,6 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor
 
 	public String getInitialWindowPerspectiveId()
 	{
-		return RentalStandalonePerspective.ID;
+		return RentalPerspective.ID;
 	}
 }
