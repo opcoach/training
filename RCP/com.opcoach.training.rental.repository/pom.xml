@@ -37,6 +37,14 @@
 						</goals>
 					</execution>
 				</executions>
+				 <configuration>
+					<products>
+						<product>
+							<id>rentalRcp.product</id>
+							<rootFolder>rental</rootFolder>
+						</product>
+					</products>
+				</configuration> 
 			</plugin>
 		</plugins>
 	</build>
