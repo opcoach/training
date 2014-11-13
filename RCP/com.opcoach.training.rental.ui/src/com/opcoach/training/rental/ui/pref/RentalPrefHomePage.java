@@ -50,7 +50,7 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements IWo
 	protected Control createContents(Composite parent)
 	{
 		Label lab = new Label(parent, SWT.NONE);
-		lab.setText("Pages de préférences de rental.");
+		lab.setText("Pages de pr√©f√©rences de rental.");
 		
 		// TODO Auto-generated method stub
 		return super.createContents(parent);
