@@ -6,8 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
 Require-Bundle: org.eclipse.ui;resolution:=optional,
  org.eclipse.core.runtime,
- com.opcoach.training.rental.ui;resolution:=optional,
+ com.opcoach.training.rental.ui,
  org.eclipse.equinox.security;resolution:=optional,
  org.eclipse.rap.ui;bundle-version="1.4.0";resolution:=optional
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

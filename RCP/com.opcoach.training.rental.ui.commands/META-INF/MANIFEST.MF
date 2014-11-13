@@ -4,5 +4,4 @@ Bundle-Name: Commands
 Bundle-SymbolicName: com.opcoach.training.rental.ui.commands;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Fragment-Host: com.opcoach.training.rental.ui;bundle-version="1.0.1"

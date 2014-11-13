@@ -21,7 +21,6 @@ Require-Bundle: com.opcoach.training.rental.core;visibility:=reexport,
  org.eclipse.jface.databinding;resolution:=optional,
  com.ibm.icu;resolution:=optional,
  org.eclipse.rap.jface.databinding;resolution:=optional
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.ui,
  com.opcoach.training.rental.ui.pref,
