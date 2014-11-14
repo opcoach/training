@@ -3,7 +3,6 @@
 
 <product name="Rental RCP" uid="rentalRcp.product" id="com.opcoach.training.rental.rcp.product" application="com.opcoach.training.rental.rcp.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -18,7 +17,6 @@
 
    <windowImages/>
 
-
    <launcher name="Rental">
       <solaris/>
       <win useIco="false">
@@ -26,25 +24,22 @@
       </win>
    </launcher>
 
-
    <vm>
    </vm>
-
 
    <plugins>
    </plugins>
 
    <features>
-      <feature id="com.opcoach.training.rental.feature"/>
+      <feature id="com.opcoach.training.rental.feature" version="1.0.0.qualifier"/>
       <feature id="org.eclipse.rcp" version="3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272"/>
       <feature id="org.eclipse.emf.ecore" version="2.7.1.v20120127-1122"/>
    </features>
-   
-    <configurations>
+
+   <configurations>
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
    </configurations>
-
 
 </product>
