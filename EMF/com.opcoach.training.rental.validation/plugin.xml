@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <constraintProvider
+            cache="true"
+            mode="Batch">
+         <package
+               namespaceUri="http://com.opcoach.training/rental/1.0">
+         </package>
+         <constraints
+               categories="com.opcoach.training.rental.validation.business">
+            <constraint
+                  class="com.opcoach.training.rental.validation.CheckRentalDuration"
+                  id="com.opcoach.training.rental.validation.constraint1"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Rental must last at least 1 hour"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  The {0} has a to short duration.
+               </message>
+               <target
+                     class="Rental">
+               </target>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+      <category
+            id="com.opcoach.training.rental.validation.business"
+            mandatory="true"
+            name="Business Validation">
+      </category>
+   </extension>
+
+</plugin>
