@@ -29,8 +29,8 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.model_3.5.1.201409021433.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.profiler_3.5.1.201409021433.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.5.1.201409021433.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.10.1.v20140901-1055.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.10.0.v20140901-1055.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.10.2.v20141013-0308.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.10.0.v20141013-0308.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/com.google.guava_15.0.0.v201403281430.jar"/>
     </path>
 

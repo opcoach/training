@@ -8,6 +8,8 @@ import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
 import org.eclipse.xtext.util.Pair;
 
+import com.opcoach.training.rental.xtext.services.RentalDslGrammarAccess;
+
 /**
  * This class contains custom formatting description.
  * 
@@ -20,7 +22,8 @@ public class RentalDslFormatter extends AbstractDeclarativeFormatter {
 	
 	@Override
 	protected void configureFormatting(FormattingConfig c) {
-		com.opcoach.training.rental.xtext.services.RentalDslGrammarAccess f = (com.opcoach.training.rental.xtext.services.RentalDslGrammarAccess) getGrammarAccess();
+		
+		RentalDslGrammarAccess f =  (RentalDslGrammarAccess) getGrammarAccess();
 		for(Pair<Keyword, Keyword> pair: f.findKeywordPairs("{", "}")) {
 			c.setIndentation(pair.getFirst(), pair.getSecond());
 			c.setLinewrap(1).after(pair.getFirst());
