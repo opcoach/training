@@ -74,8 +74,7 @@ public class RentalItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addCustomerPropertyDescriptor(object);
@@ -280,8 +279,7 @@ public class RentalItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Rental.class))
-		{
+		switch (notification.getFeatureID(Rental.class)) {
 			case RentalPackage.RENTAL__START_DATE:
 			case RentalPackage.RENTAL__END_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

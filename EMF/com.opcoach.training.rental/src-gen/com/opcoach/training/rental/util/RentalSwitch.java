@@ -56,8 +56,7 @@ public class RentalSwitch<T> extends Switch<T>
 	 */
 	public RentalSwitch()
 	{
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = RentalPackage.eINSTANCE;
 		}
 	}
@@ -86,63 +85,40 @@ public class RentalSwitch<T> extends Switch<T>
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject)
 	{
-		switch (classifierID)
-		{
-			case RentalPackage.RENTAL_AGENCY:
-			{
+		switch (classifierID) {
+			case RentalPackage.RENTAL_AGENCY: {
 				RentalAgency rentalAgency = (RentalAgency)theEObject;
 				T result = caseRentalAgency(rentalAgency);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.CUSTOMER:
-			{
+			case RentalPackage.CUSTOMER: {
 				Customer customer = (Customer)theEObject;
 				T result = caseCustomer(customer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.ADDRESS:
-			{
+			case RentalPackage.ADDRESS: {
 				Address address = (Address)theEObject;
 				T result = caseAddress(address);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.RENTAL_OBJECT:
-			{
+			case RentalPackage.RENTAL_OBJECT: {
 				RentalObject rentalObject = (RentalObject)theEObject;
 				T result = caseRentalObject(rentalObject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.LICENSE:
-			{
+			case RentalPackage.LICENSE: {
 				License license = (License)theEObject;
 				T result = caseLicense(license);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RentalPackage.RENTAL:
-			{
+			case RentalPackage.RENTAL: {
 				Rental rental = (Rental)theEObject;
 				T result = caseRental(rental);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RentalPackage.CAR:
-			{
-				Car car = (Car)theEObject;
-				T result = caseCar(car);
-				if (result == null) result = caseRentalObject(car);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RentalPackage.DEVICE:
-			{
-				Device device = (Device)theEObject;
-				T result = caseDevice(device);
-				if (result == null) result = caseRentalObject(device);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,38 +218,6 @@ public class RentalSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseRental(Rental object)
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Car</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Car</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCar(Car object)
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Device</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Device</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDevice(Device object)
 	{
 		return null;
 	}

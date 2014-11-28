@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009     http://www.opcoach.com
+// ï¿½ OPCoach 2009     http://www.opcoach.com
 // ------------------------------------------------ 
 
 package com.opcoach.training.rental.helpers;
@@ -11,9 +11,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 
 import com.opcoach.training.rental.Address;
-import com.opcoach.training.rental.Car;
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.MyRentalAgency;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalFactory;
 import com.opcoach.training.rental.RentalObject;
@@ -84,24 +82,24 @@ public static RentalAgency createSampleAgency()
     agency.getCustomers().add(c3);
     agency.getCustomers().add(c4);
     
-    RentalObject o1 = f.createDevice();
+    RentalObject o1 = f.createRentalObject();
     o1.setID(IDGenerator.get());
     o1.setName("Perceuse Electrique");
-    RentalObject o2 = f.createDevice();
+    RentalObject o2 = f.createRentalObject();
     o2.setID(IDGenerator.get());
     o2.setName("Lave Moquette");
-    RentalObject o3 = f.createDevice();
+    RentalObject o3 = f.createRentalObject();
     o3.setID(IDGenerator.get());
     o3.setName("Monte Charge");
-    RentalObject o4 = f.createDevice();
+    RentalObject o4 = f.createRentalObject();
     o4.setID(IDGenerator.get());
     o4.setName("Motoculteur");
-    RentalObject o5 = f.createDevice();
+    RentalObject o5 = f.createRentalObject();
     o5.setID(IDGenerator.get());
-    o5.setName("Tondeuse ˆ gazon");
-    Car o6 = f.createCar();
+    o5.setName("Tondeuse ï¿½ gazon");
+    RentalObject o6 = f.createRentalObject();
     o6.setName("Voiture");
-    o6.setLicensePlate("1234 AAZ 31");
+    o6.setID(IDGenerator.get());
 
     
     agency.getObjectsToRent().add(o1);
@@ -125,7 +123,7 @@ public static RentalAgency createSampleAgency()
 
 public static void navigateInModel()
 {
-	// RŽcupŽration des objets du mŽtamodele
+	// Rï¿½cupï¿½ration des objets du mï¿½tamodele
 	RentalPackage pack = RentalPackage.eINSTANCE;
 	EClass rentalClass       = pack.getRental();
 	EAttribute startOfRental = pack.getRental_StartDate();
@@ -137,7 +135,7 @@ public static void navigateInModel()
 public static void main(String[] arg)
 {
 	RentalAgency agency = createSampleAgency();
-	System.out.println("agence crŽe... Nb de clients : " + agency.getCustomers().size());
+	System.out.println("agence crï¿½e... Nb de clients : " + agency.getCustomers().size());
 }
 
 

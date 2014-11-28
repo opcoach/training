@@ -217,8 +217,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	{
 		Address oldAddress = address;
 		address = newAddress;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RentalPackage.CUSTOMER__ADDRESS, oldAddress, newAddress);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -232,8 +231,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	 */
 	public void setAddress(Address newAddress)
 	{
-		if (newAddress != address)
-		{
+		if (newAddress != address) {
 			NotificationChain msgs = null;
 			if (address != null)
 				msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RentalPackage.CUSTOMER__ADDRESS, null, msgs);
@@ -253,8 +251,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	 */
 	public EList<License> getLicenses()
 	{
-		if (licenses == null)
-		{
+		if (licenses == null) {
 			licenses = new EObjectContainmentWithInverseEList<License>(License.class, this, RentalPackage.CUSTOMER__LICENSES, RentalPackage.LICENSE__OWNER);
 		}
 		return licenses;
@@ -289,8 +286,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	 */
 	public void setParentAgency(RentalAgency newParentAgency)
 	{
-		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.CUSTOMER__PARENT_AGENCY && newParentAgency != null))
-		{
+		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.CUSTOMER__PARENT_AGENCY && newParentAgency != null)) {
 			if (EcoreUtil.isAncestor(this, newParentAgency))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -358,8 +354,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.CUSTOMER__LICENSES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLicenses()).basicAdd(otherEnd, msgs);
 			case RentalPackage.CUSTOMER__PARENT_AGENCY:
@@ -378,8 +373,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.CUSTOMER__ADDRESS:
 				return basicSetAddress(null, msgs);
 			case RentalPackage.CUSTOMER__LICENSES:
@@ -398,8 +392,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID())
-		{
+		switch (eContainerFeatureID()) {
 			case RentalPackage.CUSTOMER__PARENT_AGENCY:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.RENTAL_AGENCY__CUSTOMERS, RentalAgency.class, msgs);
 		}
@@ -414,8 +407,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				return getFirstName();
 			case RentalPackage.CUSTOMER__LAST_NAME:
@@ -441,8 +433,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				setFirstName((String)newValue);
 				return;
@@ -474,8 +465,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				setFirstName(FIRST_NAME_EDEFAULT);
 				return;
@@ -506,8 +496,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
 			case RentalPackage.CUSTOMER__LAST_NAME:

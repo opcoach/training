@@ -15,9 +15,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import com.opcoach.training.rental.Address;
-import com.opcoach.training.rental.Car;
 import com.opcoach.training.rental.Customer;
-import com.opcoach.training.rental.Device;
 import com.opcoach.training.rental.License;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
@@ -89,20 +87,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass carEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass deviceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum streetTypeEEnum = null;
 
 	/**
@@ -162,10 +146,8 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
 			(theRentalPackage, 
-			 new EValidator.Descriptor()
-			 {
-				 public EValidator getEValidator()
-				 {
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
 					 return RentalValidator.INSTANCE;
 				 }
 			 });
@@ -534,76 +516,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCar()
-	{
-		return carEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCar_LicensePlate()
-	{
-		return (EAttribute)carEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDevice()
-	{
-		return deviceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDevice_SerialNumber()
-	{
-		return (EAttribute)deviceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDevice_Width()
-	{
-		return (EAttribute)deviceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDevice_Height()
-	{
-		return (EAttribute)deviceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDevice_Length()
-	{
-		return (EAttribute)deviceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getStreetType()
 	{
 		return streetTypeEEnum;
@@ -680,15 +592,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		createEAttribute(rentalEClass, RENTAL__END_DATE);
 		createEReference(rentalEClass, RENTAL__PARENT_AGENCY);
 
-		carEClass = createEClass(CAR);
-		createEAttribute(carEClass, CAR__LICENSE_PLATE);
-
-		deviceEClass = createEClass(DEVICE);
-		createEAttribute(deviceEClass, DEVICE__SERIAL_NUMBER);
-		createEAttribute(deviceEClass, DEVICE__WIDTH);
-		createEAttribute(deviceEClass, DEVICE__HEIGHT);
-		createEAttribute(deviceEClass, DEVICE__LENGTH);
-
 		// Create enums
 		streetTypeEEnum = createEEnum(STREET_TYPE);
 	}
@@ -722,8 +625,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		carEClass.getESuperTypes().add(this.getRentalObject());
-		deviceEClass.getESuperTypes().add(this.getRentalObject());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(rentalAgencyEClass, RentalAgency.class, "RentalAgency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -758,7 +659,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addEParameter(op, this.getLicense(), "license", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAddress_StreetType(), this.getStreetType(), "streetType", "0", 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAddress_StreetType(), this.getStreetType(), "streetType", "Street", 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddress_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddress_ZipCode(), ecorePackage.getEString(), "zipCode", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddress_City(), ecorePackage.getEString(), "city", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -789,15 +690,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		initEReference(getRental_ParentAgency(), this.getRentalAgency(), this.getRentalAgency_Rentals(), "parentAgency", null, 1, 1, Rental.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(rentalEClass, ecorePackage.getEInt(), "nbDaysBooked", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(carEClass, Car.class, "Car", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCar_LicensePlate(), ecorePackage.getEString(), "licensePlate", null, 0, 1, Car.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDevice_SerialNumber(), ecorePackage.getEString(), "serialNumber", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDevice_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDevice_Height(), ecorePackage.getEInt(), "height", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDevice_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(streetTypeEEnum, StreetType.class, "StreetType");
@@ -834,8 +726,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (this, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });
 	}
@@ -852,8 +743,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (rentalAgencyEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });
 	}
@@ -870,22 +760,19 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (getRentalAgency_Address(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });	
 		addAnnotation
 		  (getCustomer_Address(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });	
 		addAnnotation
 		  (getCustomer_Licenses(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "foo", "bar"
 		   });
 	}
@@ -902,15 +789,13 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "constraints", "consistentName"
 		   });	
 		addAnnotation
 		  (rentalEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "constraints", "startDateBeforeEndDate"
 		   });
 	}
@@ -927,50 +812,43 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "firstName,lastName"
 		   });	
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label.pattern", "{0}:{1}"
 		   });	
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "figure", "com.opcoach.training.rental.gef.figures"
 		   });	
 		addAnnotation
 		  (addressEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "city"
 		   });	
 		addAnnotation
 		  (rentalObjectEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "name"
 		   });	
 		addAnnotation
 		  (licenseEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "number"
 		   });	
 		addAnnotation
 		  (rentalEClass, 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "label", "startDate"
 		   });
 	}
@@ -987,16 +865,14 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (getRental_Customer(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "target.decoration", "arrow",
 			 "style", "dash"
 		   });	
 		addAnnotation
 		  (getRental_RentedObject(), 
 		   source, 
-		   new String[] 
-		   {
+		   new String[] {
 			 "target.decoration", "arrow",
 			 "style", "solid"
 		   });

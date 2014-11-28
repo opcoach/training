@@ -38,7 +38,7 @@ public interface Address extends EObject
 
 	/**
 	 * Returns the value of the '<em><b>Street Type</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
+	 * The default value is <code>"Street"</code>.
 	 * The literals are from the enumeration {@link com.opcoach.training.rental.StreetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -50,7 +50,7 @@ public interface Address extends EObject
 	 * @see com.opcoach.training.rental.StreetType
 	 * @see #setStreetType(StreetType)
 	 * @see com.opcoach.training.rental.RentalPackage#getAddress_StreetType()
-	 * @model default="0"
+	 * @model default="Street"
 	 * @generated
 	 */
 	StreetType getStreetType();

@@ -15,8 +15,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
  * <!-- end-user-doc -->
  * @generated
  */
-public final class RentalEditorPlugin extends EMFPlugin
-{
+public final class RentalEditorPlugin extends EMFPlugin {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,11 +45,9 @@ public final class RentalEditorPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RentalEditorPlugin()
-	{
+	public RentalEditorPlugin() {
 		super
-			(new ResourceLocator [] 
-			{
+			(new ResourceLocator [] {
 			});
 	}
 
@@ -62,8 +59,7 @@ public final class RentalEditorPlugin extends EMFPlugin
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getPluginResourceLocator()
-	{
+	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
 	
@@ -74,8 +70,7 @@ public final class RentalEditorPlugin extends EMFPlugin
 	 * @return the singleton instance.
 	 * @generated
 	 */
-	public static Implementation getPlugin()
-	{
+	public static Implementation getPlugin() {
 		return plugin;
 	}
 	
@@ -85,16 +80,14 @@ public final class RentalEditorPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipseUIPlugin
-	{
+	public static class Implementation extends EclipseUIPlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Implementation()
-		{
+		public Implementation() {
 			super();
 	
 			// Remember the static instance.

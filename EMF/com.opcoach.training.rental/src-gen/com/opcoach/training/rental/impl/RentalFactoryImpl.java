@@ -46,16 +46,13 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	 */
 	public static RentalFactory init()
 	{
-		try
-		{
+		try {
 			RentalFactory theRentalFactory = (RentalFactory)EPackage.Registry.INSTANCE.getEFactory(RentalPackage.eNS_URI);
-			if (theRentalFactory != null)
-			{
+			if (theRentalFactory != null) {
 				return theRentalFactory;
 			}
 		}
-		catch (Exception exception)
-		{
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RentalFactoryImpl();
@@ -80,16 +77,13 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public EObject create(EClass eClass)
 	{
-		switch (eClass.getClassifierID())
-		{
+		switch (eClass.getClassifierID()) {
 			case RentalPackage.RENTAL_AGENCY: return createRentalAgency();
 			case RentalPackage.CUSTOMER: return createCustomer();
 			case RentalPackage.ADDRESS: return createAddress();
 			case RentalPackage.RENTAL_OBJECT: return createRentalObject();
 			case RentalPackage.LICENSE: return createLicense();
 			case RentalPackage.RENTAL: return createRental();
-			case RentalPackage.CAR: return createCar();
-			case RentalPackage.DEVICE: return createDevice();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,8 +97,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue)
 	{
-		switch (eDataType.getClassifierID())
-		{
+		switch (eDataType.getClassifierID()) {
 			case RentalPackage.STREET_TYPE:
 				return createStreetTypeFromString(eDataType, initialValue);
 			default:
@@ -120,8 +113,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue)
 	{
-		switch (eDataType.getClassifierID())
-		{
+		switch (eDataType.getClassifierID()) {
 			case RentalPackage.STREET_TYPE:
 				return convertStreetTypeToString(eDataType, instanceValue);
 			default:
@@ -193,28 +185,6 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	{
 		RentalImpl rental = new RentalImpl();
 		return rental;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Car createCar()
-	{
-		CarImpl car = new CarImpl();
-		return car;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Device createDevice()
-	{
-		DeviceImpl device = new DeviceImpl();
-		return device;
 	}
 
 	/**

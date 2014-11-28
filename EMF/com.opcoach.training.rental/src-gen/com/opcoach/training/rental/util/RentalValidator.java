@@ -105,8 +105,7 @@ public class RentalValidator extends EObjectValidator
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context)
 	{
-		switch (classifierID)
-		{
+		switch (classifierID) {
 			case RentalPackage.RENTAL_AGENCY:
 				return validateRentalAgency((RentalAgency)value, diagnostics, context);
 			case RentalPackage.CUSTOMER:
@@ -119,10 +118,6 @@ public class RentalValidator extends EObjectValidator
 				return validateLicense((License)value, diagnostics, context);
 			case RentalPackage.RENTAL:
 				return validateRental((Rental)value, diagnostics, context);
-			case RentalPackage.CAR:
-				return validateCar((Car)value, diagnostics, context);
-			case RentalPackage.DEVICE:
-				return validateDevice((Device)value, diagnostics, context);
 			case RentalPackage.STREET_TYPE:
 				return validateStreetType((StreetType)value, diagnostics, context);
 			default:
@@ -172,10 +167,8 @@ public class RentalValidator extends EObjectValidator
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false)
-		{
-			if (diagnostics != null)
-			{
+		if (false) {
+			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
 						(Diagnostic.ERROR,
@@ -284,10 +277,8 @@ public class RentalValidator extends EObjectValidator
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false)
-		{
-			if (diagnostics != null)
-			{
+		if (false) {
+			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
 						(Diagnostic.ERROR,
@@ -301,26 +292,6 @@ public class RentalValidator extends EObjectValidator
 			return false;
 		}
 		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCar(Car car, DiagnosticChain diagnostics, Map<Object, Object> context)
-	{
-		return validate_EveryDefaultConstraint(car, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDevice(Device device, DiagnosticChain diagnostics, Map<Object, Object> context)
-	{
-		return validate_EveryDefaultConstraint(device, diagnostics, context);
 	}
 
 	/**

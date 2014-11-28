@@ -87,24 +87,6 @@ public interface RentalFactory extends EFactory
 	Rental createRental();
 
 	/**
-	 * Returns a new object of class '<em>Car</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Car</em>'.
-	 * @generated
-	 */
-	Car createCar();
-
-	/**
-	 * Returns a new object of class '<em>Device</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Device</em>'.
-	 * @generated
-	 */
-	Device createDevice();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

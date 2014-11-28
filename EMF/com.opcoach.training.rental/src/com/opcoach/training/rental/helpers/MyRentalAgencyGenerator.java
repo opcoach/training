@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009     http://www.opcoach.com
+// ï¿½ OPCoach 2009     http://www.opcoach.com
 // ------------------------------------------------ 
 
 package com.opcoach.training.rental.helpers;
@@ -83,21 +83,21 @@ public static MyRentalAgency createSampleAgency()
     agency.addCustomer(c3);
     agency.addCustomer(c4);
     
-    RentalObject o1 = f.createDevice();
+    RentalObject o1 = f.createRentalObject();
     o1.setID(IDGenerator.get());
     o1.setName("Perceuse Electrique");
-    RentalObject o2 = f.createDevice();
+    RentalObject o2 = f.createRentalObject();
     o2.setID(IDGenerator.get());
     o2.setName("Lave Moquette");
-    RentalObject o3 = f.createDevice();
+    RentalObject o3 = f.createRentalObject();
     o3.setID(IDGenerator.get());
     o3.setName("Monte Charge");
-    RentalObject o4 = f.createDevice();
+    RentalObject o4 = f.createRentalObject();
     o4.setID(IDGenerator.get());
     o4.setName("Motoculteur");
-    RentalObject o5 = f.createDevice();
+    RentalObject o5 = f.createRentalObject();
     o5.setID(IDGenerator.get());
-    o5.setName("Tondeuse ˆ gazon");
+    o5.setName("Tondeuse ï¿½ gazon");
     
     agency.addObject(o1);
     agency.addObject(o2);
@@ -119,7 +119,7 @@ public static MyRentalAgency createSampleAgency()
 
 public static void navigateInModel()
 {
-	// RŽcupŽration des objets du mŽtamodele
+	// Rï¿½cupï¿½ration des objets du mï¿½tamodele
 	RentalPackage pack = RentalPackage.eINSTANCE;
 	EClass rentalClass       = pack.getRental();
 	EAttribute startOfRental = pack.getRental_StartDate();
@@ -131,7 +131,7 @@ public static void navigateInModel()
 public static void main(String[] arg)
 {
 	MyRentalAgency agency = createSampleAgency();
-	System.out.println("agence crŽe... Nb de clients : " + agency.getCustomers().size());
+	System.out.println("agence crï¿½e... Nb de clients : " + agency.getCustomers().size());
 }
 
 

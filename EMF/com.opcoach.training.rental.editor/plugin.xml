@@ -2,14 +2,13 @@
 <?eclipse version="3.0"?>
 
 <!--
- OPCoach @ 2009
-
- $Id$
+ OPCoach @ 2012
 -->
 
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated rental -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -25,6 +24,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated rental -->
       <editor
             id="com.opcoach.training.rental.presentation.RentalEditorID"
             name="%_UI_RentalEditor_label"

@@ -284,8 +284,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				return getStreetType();
 			case RentalPackage.ADDRESS__NUMBER:
@@ -308,8 +307,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				setStreetType((StreetType)newValue);
 				return;
@@ -337,8 +335,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				setStreetType(STREET_TYPE_EDEFAULT);
 				return;
@@ -366,8 +363,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				return streetType != STREET_TYPE_EDEFAULT;
 			case RentalPackage.ADDRESS__NUMBER:

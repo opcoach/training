@@ -52,8 +52,7 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 	 */
 	public RentalAdapterFactory()
 	{
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = RentalPackage.eINSTANCE;
 		}
 	}
@@ -69,12 +68,10 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 	@Override
 	public boolean isFactoryForType(Object object)
 	{
-		if (object == modelPackage)
-		{
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
+		if (object instanceof EObject) {
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -87,51 +84,33 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	protected RentalSwitch<Adapter> modelSwitch =
-		new RentalSwitch<Adapter>()
-		{
+		new RentalSwitch<Adapter>() {
 			@Override
-			public Adapter caseRentalAgency(RentalAgency object)
-			{
+			public Adapter caseRentalAgency(RentalAgency object) {
 				return createRentalAgencyAdapter();
 			}
 			@Override
-			public Adapter caseCustomer(Customer object)
-			{
+			public Adapter caseCustomer(Customer object) {
 				return createCustomerAdapter();
 			}
 			@Override
-			public Adapter caseAddress(Address object)
-			{
+			public Adapter caseAddress(Address object) {
 				return createAddressAdapter();
 			}
 			@Override
-			public Adapter caseRentalObject(RentalObject object)
-			{
+			public Adapter caseRentalObject(RentalObject object) {
 				return createRentalObjectAdapter();
 			}
 			@Override
-			public Adapter caseLicense(License object)
-			{
+			public Adapter caseLicense(License object) {
 				return createLicenseAdapter();
 			}
 			@Override
-			public Adapter caseRental(Rental object)
-			{
+			public Adapter caseRental(Rental object) {
 				return createRentalAdapter();
 			}
 			@Override
-			public Adapter caseCar(Car object)
-			{
-				return createCarAdapter();
-			}
-			@Override
-			public Adapter caseDevice(Device object)
-			{
-				return createDeviceAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object)
-			{
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -237,36 +216,6 @@ public class RentalAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createRentalAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.training.rental.Car <em>Car</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.opcoach.training.rental.Car
-	 * @generated
-	 */
-	public Adapter createCarAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.training.rental.Device <em>Device</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.opcoach.training.rental.Device
-	 * @generated
-	 */
-	public Adapter createDeviceAdapter()
 	{
 		return null;
 	}

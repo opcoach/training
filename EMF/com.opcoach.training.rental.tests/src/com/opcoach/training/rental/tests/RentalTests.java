@@ -49,8 +49,6 @@ public class RentalTests extends TestSuite
 		suite.addTestSuite(RentalObjectTest.class);
 		suite.addTestSuite(LicenseTest.class);
 		suite.addTestSuite(RentalTest.class);
-		suite.addTestSuite(CarTest.class);
-		suite.addTestSuite(DeviceTest.class);
 		return suite;
 	}
 

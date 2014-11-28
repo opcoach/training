@@ -12,9 +12,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.gef,
  org.eclipse.emf.edit.ui,
- com.opcoach.training.rental.core,
  com.opcoach.training.rental.edit
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.gef,
  com.opcoach.training.rental.gef.figures,

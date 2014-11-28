@@ -71,8 +71,7 @@ public class RentalAgencyItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -114,8 +113,7 @@ public class RentalAgencyItemProvider
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
 	{
-		if (childrenFeatures == null)
-		{
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RentalPackage.Literals.RENTAL_AGENCY__ADDRESS);
 			childrenFeatures.add(RentalPackage.Literals.RENTAL_AGENCY__OBJECTS_TO_RENT);
@@ -178,8 +176,7 @@ public class RentalAgencyItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RentalAgency.class))
-		{
+		switch (notification.getFeatureID(RentalAgency.class)) {
 			case RentalPackage.RENTAL_AGENCY__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -214,16 +211,6 @@ public class RentalAgencyItemProvider
 			(createChildParameter
 				(RentalPackage.Literals.RENTAL_AGENCY__OBJECTS_TO_RENT,
 				 RentalFactory.eINSTANCE.createRentalObject()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RentalPackage.Literals.RENTAL_AGENCY__OBJECTS_TO_RENT,
-				 RentalFactory.eINSTANCE.createCar()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RentalPackage.Literals.RENTAL_AGENCY__OBJECTS_TO_RENT,
-				 RentalFactory.eINSTANCE.createDevice()));
 
 		newChildDescriptors.add
 			(createChildParameter
