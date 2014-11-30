@@ -739,10 +739,10 @@ public class InternalRentalDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1051:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1051:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1069:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1069:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1051:11: ( '^' )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1069:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -751,7 +751,7 @@ public class InternalRentalDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1051:11: '^'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1069:11: '^'
                     {
                     match('^'); 
 
@@ -769,7 +769,7 @@ public class InternalRentalDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1051:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1069:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -818,10 +818,10 @@ public class InternalRentalDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1053:10: ( ( '0' .. '9' )+ )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1053:12: ( '0' .. '9' )+
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1071:10: ( ( '0' .. '9' )+ )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1071:12: ( '0' .. '9' )+
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1053:12: ( '0' .. '9' )+
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1071:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -835,7 +835,7 @@ public class InternalRentalDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1053:13: '0' .. '9'
+            	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1071:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -867,10 +867,10 @@ public class InternalRentalDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -888,10 +888,10 @@ public class InternalRentalDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -907,7 +907,7 @@ public class InternalRentalDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:21: '\\\\' .
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -915,7 +915,7 @@ public class InternalRentalDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -940,10 +940,10 @@ public class InternalRentalDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -959,7 +959,7 @@ public class InternalRentalDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:54: '\\\\' .
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -967,7 +967,7 @@ public class InternalRentalDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1055:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1073:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1010,12 +1010,12 @@ public class InternalRentalDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1057:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1057:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1075:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1075:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1057:24: ( options {greedy=false; } : . )*
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1075:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1040,7 +1040,7 @@ public class InternalRentalDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1057:52: .
+            	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1075:52: .
             	    {
             	    matchAny(); 
 
@@ -1070,12 +1070,12 @@ public class InternalRentalDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1059:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1059:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1077:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1077:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1059:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1077:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1088,7 +1088,7 @@ public class InternalRentalDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1059:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1077:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1108,7 +1108,7 @@ public class InternalRentalDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1059:40: ( ( '\\r' )? '\\n' )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1077:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1117,9 +1117,9 @@ public class InternalRentalDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1059:41: ( '\\r' )? '\\n'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1077:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1059:41: ( '\\r' )?
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1077:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1128,7 +1128,7 @@ public class InternalRentalDslLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1059:41: '\\r'
+                            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1077:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1160,10 +1160,10 @@ public class InternalRentalDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1061:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1061:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1079:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1079:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1061:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1079:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1217,8 +1217,8 @@ public class InternalRentalDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1063:16: ( . )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1063:18: .
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1081:16: ( . )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1081:18: .
             {
             matchAny(); 
 

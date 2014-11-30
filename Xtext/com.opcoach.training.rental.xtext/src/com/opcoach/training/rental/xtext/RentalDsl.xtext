@@ -40,6 +40,7 @@ RentalObject returns RentalObject:
 
 Customer returns Customer:
 	'Customer'
+		ID=ELong
 	'{'
 		'firstName' firstName=EString
 		'lastName' lastName=EString
@@ -52,7 +53,7 @@ Rental returns Rental:
 	'{'
 		('startDate' startDate=EDate)?
 		('endDate' endDate=EDate)?
-		'customer' customer=[Customer|EString]
+		'customer' customer=[Customer]
 		('rentedObject' rentedObject=[RentalObject|EString])?
     '}';
 

@@ -372,98 +372,106 @@ public class RentalDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Customer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCustomerKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cFirstNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFirstNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFirstNameEStringParserRuleCall_3_0 = (RuleCall)cFirstNameAssignment_3.eContents().get(0);
-		private final Keyword cLastNameKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cLastNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cLastNameEStringParserRuleCall_5_0 = (RuleCall)cLastNameAssignment_5.eContents().get(0);
-		private final Assignment cAddressAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cAddressAddressParserRuleCall_6_0 = (RuleCall)cAddressAssignment_6.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cLicensesKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cLicensesAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cLicensesLicenseParserRuleCall_7_2_0 = (RuleCall)cLicensesAssignment_7_2.eContents().get(0);
-		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
-		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cLicensesAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cLicensesLicenseParserRuleCall_7_3_1_0 = (RuleCall)cLicensesAssignment_7_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIDELongParserRuleCall_1_0 = (RuleCall)cIDAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cFirstNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFirstNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFirstNameEStringParserRuleCall_4_0 = (RuleCall)cFirstNameAssignment_4.eContents().get(0);
+		private final Keyword cLastNameKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cLastNameAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cLastNameEStringParserRuleCall_6_0 = (RuleCall)cLastNameAssignment_6.eContents().get(0);
+		private final Assignment cAddressAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cAddressAddressParserRuleCall_7_0 = (RuleCall)cAddressAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cLicensesKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cLicensesAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cLicensesLicenseParserRuleCall_8_2_0 = (RuleCall)cLicensesAssignment_8_2.eContents().get(0);
+		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
+		private final Keyword cCommaKeyword_8_3_0 = (Keyword)cGroup_8_3.eContents().get(0);
+		private final Assignment cLicensesAssignment_8_3_1 = (Assignment)cGroup_8_3.eContents().get(1);
+		private final RuleCall cLicensesLicenseParserRuleCall_8_3_1_0 = (RuleCall)cLicensesAssignment_8_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Customer:
-		//	"Customer" "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
+		//	"Customer" ID=ELong "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
 		//	licenses+=License ("," licenses+=License)* "}")? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Customer" "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
+		//"Customer" ID=ELong "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
 		//licenses+=License ("," licenses+=License)* "}")? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Customer"
 		public Keyword getCustomerKeyword_0() { return cCustomerKeyword_0; }
 
+		//ID=ELong
+		public Assignment getIDAssignment_1() { return cIDAssignment_1; }
+
+		//ELong
+		public RuleCall getIDELongParserRuleCall_1_0() { return cIDELongParserRuleCall_1_0; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//"firstName"
-		public Keyword getFirstNameKeyword_2() { return cFirstNameKeyword_2; }
+		public Keyword getFirstNameKeyword_3() { return cFirstNameKeyword_3; }
 
 		//firstName=EString
-		public Assignment getFirstNameAssignment_3() { return cFirstNameAssignment_3; }
+		public Assignment getFirstNameAssignment_4() { return cFirstNameAssignment_4; }
 
 		//EString
-		public RuleCall getFirstNameEStringParserRuleCall_3_0() { return cFirstNameEStringParserRuleCall_3_0; }
+		public RuleCall getFirstNameEStringParserRuleCall_4_0() { return cFirstNameEStringParserRuleCall_4_0; }
 
 		//"lastName"
-		public Keyword getLastNameKeyword_4() { return cLastNameKeyword_4; }
+		public Keyword getLastNameKeyword_5() { return cLastNameKeyword_5; }
 
 		//lastName=EString
-		public Assignment getLastNameAssignment_5() { return cLastNameAssignment_5; }
+		public Assignment getLastNameAssignment_6() { return cLastNameAssignment_6; }
 
 		//EString
-		public RuleCall getLastNameEStringParserRuleCall_5_0() { return cLastNameEStringParserRuleCall_5_0; }
+		public RuleCall getLastNameEStringParserRuleCall_6_0() { return cLastNameEStringParserRuleCall_6_0; }
 
 		//address=Address?
-		public Assignment getAddressAssignment_6() { return cAddressAssignment_6; }
+		public Assignment getAddressAssignment_7() { return cAddressAssignment_7; }
 
 		//Address
-		public RuleCall getAddressAddressParserRuleCall_6_0() { return cAddressAddressParserRuleCall_6_0; }
+		public RuleCall getAddressAddressParserRuleCall_7_0() { return cAddressAddressParserRuleCall_7_0; }
 
 		//("licenses" "{" licenses+=License ("," licenses+=License)* "}")?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_8() { return cGroup_8; }
 
 		//"licenses"
-		public Keyword getLicensesKeyword_7_0() { return cLicensesKeyword_7_0; }
+		public Keyword getLicensesKeyword_8_0() { return cLicensesKeyword_8_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
+		public Keyword getLeftCurlyBracketKeyword_8_1() { return cLeftCurlyBracketKeyword_8_1; }
 
 		//licenses+=License
-		public Assignment getLicensesAssignment_7_2() { return cLicensesAssignment_7_2; }
+		public Assignment getLicensesAssignment_8_2() { return cLicensesAssignment_8_2; }
 
 		//License
-		public RuleCall getLicensesLicenseParserRuleCall_7_2_0() { return cLicensesLicenseParserRuleCall_7_2_0; }
+		public RuleCall getLicensesLicenseParserRuleCall_8_2_0() { return cLicensesLicenseParserRuleCall_8_2_0; }
 
 		//("," licenses+=License)*
-		public Group getGroup_7_3() { return cGroup_7_3; }
+		public Group getGroup_8_3() { return cGroup_8_3; }
 
 		//","
-		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
+		public Keyword getCommaKeyword_8_3_0() { return cCommaKeyword_8_3_0; }
 
 		//licenses+=License
-		public Assignment getLicensesAssignment_7_3_1() { return cLicensesAssignment_7_3_1; }
+		public Assignment getLicensesAssignment_8_3_1() { return cLicensesAssignment_8_3_1; }
 
 		//License
-		public RuleCall getLicensesLicenseParserRuleCall_7_3_1_0() { return cLicensesLicenseParserRuleCall_7_3_1_0; }
+		public RuleCall getLicensesLicenseParserRuleCall_8_3_1_0() { return cLicensesLicenseParserRuleCall_8_3_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
+		public Keyword getRightCurlyBracketKeyword_8_4() { return cRightCurlyBracketKeyword_8_4; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class RentalElements extends AbstractParserRuleElementFinder {
@@ -850,7 +858,7 @@ public class RentalDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Customer:
-	//	"Customer" "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
+	//	"Customer" ID=ELong "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
 	//	licenses+=License ("," licenses+=License)* "}")? "}";
 	public CustomerElements getCustomerAccess() {
 		return pCustomer;

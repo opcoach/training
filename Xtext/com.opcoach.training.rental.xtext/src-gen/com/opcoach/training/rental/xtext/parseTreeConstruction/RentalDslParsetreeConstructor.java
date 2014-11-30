@@ -1730,12 +1730,12 @@ protected class RentalObject_RightCurlyBracketKeyword_7 extends KeywordToken  {
 /************ begin Rule Customer ****************
  *
  * Customer:
- * 	"Customer" "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
+ * 	"Customer" ID=ELong "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
  * 	licenses+=License ("," licenses+=License)* "}")? "}";
  *
  **/
 
-// "Customer" "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
+// "Customer" ID=ELong "{" "firstName" firstName=EString "lastName" lastName=EString address=Address? ("licenses" "{"
 // licenses+=License ("," licenses+=License)* "}")? "}"
 protected class Customer_Group extends GroupToken {
 	
@@ -1751,7 +1751,7 @@ protected class Customer_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_RightCurlyBracketKeyword_8(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Customer_RightCurlyBracketKeyword_9(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1786,16 +1786,16 @@ protected class Customer_CustomerKeyword_0 extends KeywordToken  {
 
 }
 
-// "{"
-protected class Customer_LeftCurlyBracketKeyword_1 extends KeywordToken  {
+// ID=ELong
+protected class Customer_IDAssignment_1 extends AssignmentToken  {
 	
-	public Customer_LeftCurlyBracketKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_IDAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_1();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getCustomerAccess().getIDAssignment_1();
 	}
 
     @Override
@@ -1806,24 +1806,58 @@ protected class Customer_LeftCurlyBracketKeyword_1 extends KeywordToken  {
 		}	
 	}
 
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("ID",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("ID");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getCustomerAccess().getIDELongParserRuleCall_1_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getCustomerAccess().getIDELongParserRuleCall_1_0();
+			return obj;
+		}
+		return null;
+	}
+
 }
 
-// "firstName"
-protected class Customer_FirstNameKeyword_2 extends KeywordToken  {
+// "{"
+protected class Customer_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 	
-	public Customer_FirstNameKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getFirstNameKeyword_2();
+		return grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_2();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Customer_IDAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "firstName"
+protected class Customer_FirstNameKeyword_3 extends KeywordToken  {
+	
+	public Customer_FirstNameKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getCustomerAccess().getFirstNameKeyword_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Customer_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1831,21 +1865,21 @@ protected class Customer_FirstNameKeyword_2 extends KeywordToken  {
 }
 
 // firstName=EString
-protected class Customer_FirstNameAssignment_3 extends AssignmentToken  {
+protected class Customer_FirstNameAssignment_4 extends AssignmentToken  {
 	
-	public Customer_FirstNameAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_FirstNameAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getFirstNameAssignment_3();
+		return grammarAccess.getCustomerAccess().getFirstNameAssignment_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_FirstNameKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Customer_FirstNameKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1854,9 +1888,9 @@ protected class Customer_FirstNameAssignment_3 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("firstName",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("firstName");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getCustomerAccess().getFirstNameEStringParserRuleCall_3_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getCustomerAccess().getFirstNameEStringParserRuleCall_4_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getCustomerAccess().getFirstNameEStringParserRuleCall_3_0();
+			element = grammarAccess.getCustomerAccess().getFirstNameEStringParserRuleCall_4_0();
 			return obj;
 		}
 		return null;
@@ -1865,21 +1899,21 @@ protected class Customer_FirstNameAssignment_3 extends AssignmentToken  {
 }
 
 // "lastName"
-protected class Customer_LastNameKeyword_4 extends KeywordToken  {
+protected class Customer_LastNameKeyword_5 extends KeywordToken  {
 	
-	public Customer_LastNameKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_LastNameKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getLastNameKeyword_4();
+		return grammarAccess.getCustomerAccess().getLastNameKeyword_5();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_FirstNameAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Customer_FirstNameAssignment_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1887,21 +1921,21 @@ protected class Customer_LastNameKeyword_4 extends KeywordToken  {
 }
 
 // lastName=EString
-protected class Customer_LastNameAssignment_5 extends AssignmentToken  {
+protected class Customer_LastNameAssignment_6 extends AssignmentToken  {
 	
-	public Customer_LastNameAssignment_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_LastNameAssignment_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getLastNameAssignment_5();
+		return grammarAccess.getCustomerAccess().getLastNameAssignment_6();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_LastNameKeyword_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Customer_LastNameKeyword_5(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1910,9 +1944,9 @@ protected class Customer_LastNameAssignment_5 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("lastName",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("lastName");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getCustomerAccess().getLastNameEStringParserRuleCall_5_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getCustomerAccess().getLastNameEStringParserRuleCall_6_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getCustomerAccess().getLastNameEStringParserRuleCall_5_0();
+			element = grammarAccess.getCustomerAccess().getLastNameEStringParserRuleCall_6_0();
 			return obj;
 		}
 		return null;
@@ -1921,15 +1955,15 @@ protected class Customer_LastNameAssignment_5 extends AssignmentToken  {
 }
 
 // address=Address?
-protected class Customer_AddressAssignment_6 extends AssignmentToken  {
+protected class Customer_AddressAssignment_7 extends AssignmentToken  {
 	
-	public Customer_AddressAssignment_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_AddressAssignment_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getAddressAssignment_6();
+		return grammarAccess.getCustomerAccess().getAddressAssignment_7();
 	}
 
     @Override
@@ -1948,7 +1982,7 @@ protected class Customer_AddressAssignment_6 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getAddressRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getCustomerAccess().getAddressAddressParserRuleCall_6_0(); 
+				element = grammarAccess.getCustomerAccess().getAddressAddressParserRuleCall_7_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1960,28 +1994,28 @@ protected class Customer_AddressAssignment_6 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Customer_LastNameAssignment_5(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new Customer_LastNameAssignment_6(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // ("licenses" "{" licenses+=License ("," licenses+=License)* "}")?
-protected class Customer_Group_7 extends GroupToken {
+protected class Customer_Group_8 extends GroupToken {
 	
-	public Customer_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_Group_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getGroup_7();
+		return grammarAccess.getCustomerAccess().getGroup_8();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_RightCurlyBracketKeyword_7_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Customer_RightCurlyBracketKeyword_8_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1989,22 +2023,22 @@ protected class Customer_Group_7 extends GroupToken {
 }
 
 // "licenses"
-protected class Customer_LicensesKeyword_7_0 extends KeywordToken  {
+protected class Customer_LicensesKeyword_8_0 extends KeywordToken  {
 	
-	public Customer_LicensesKeyword_7_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_LicensesKeyword_8_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getLicensesKeyword_7_0();
+		return grammarAccess.getCustomerAccess().getLicensesKeyword_8_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_AddressAssignment_6(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Customer_LastNameAssignment_5(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Customer_AddressAssignment_7(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Customer_LastNameAssignment_6(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -2012,21 +2046,21 @@ protected class Customer_LicensesKeyword_7_0 extends KeywordToken  {
 }
 
 // "{"
-protected class Customer_LeftCurlyBracketKeyword_7_1 extends KeywordToken  {
+protected class Customer_LeftCurlyBracketKeyword_8_1 extends KeywordToken  {
 	
-	public Customer_LeftCurlyBracketKeyword_7_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_LeftCurlyBracketKeyword_8_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_7_1();
+		return grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_8_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_LicensesKeyword_7_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Customer_LicensesKeyword_8_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2034,15 +2068,15 @@ protected class Customer_LeftCurlyBracketKeyword_7_1 extends KeywordToken  {
 }
 
 // licenses+=License
-protected class Customer_LicensesAssignment_7_2 extends AssignmentToken  {
+protected class Customer_LicensesAssignment_8_2 extends AssignmentToken  {
 	
-	public Customer_LicensesAssignment_7_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_LicensesAssignment_8_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getLicensesAssignment_7_2();
+		return grammarAccess.getCustomerAccess().getLicensesAssignment_8_2();
 	}
 
     @Override
@@ -2061,7 +2095,7 @@ protected class Customer_LicensesAssignment_7_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getLicenseRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getCustomerAccess().getLicensesLicenseParserRuleCall_7_2_0(); 
+				element = grammarAccess.getCustomerAccess().getLicensesLicenseParserRuleCall_8_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2073,28 +2107,28 @@ protected class Customer_LicensesAssignment_7_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Customer_LeftCurlyBracketKeyword_7_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new Customer_LeftCurlyBracketKeyword_8_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // ("," licenses+=License)*
-protected class Customer_Group_7_3 extends GroupToken {
+protected class Customer_Group_8_3 extends GroupToken {
 	
-	public Customer_Group_7_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_Group_8_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getGroup_7_3();
+		return grammarAccess.getCustomerAccess().getGroup_8_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_LicensesAssignment_7_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Customer_LicensesAssignment_8_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2102,22 +2136,22 @@ protected class Customer_Group_7_3 extends GroupToken {
 }
 
 // ","
-protected class Customer_CommaKeyword_7_3_0 extends KeywordToken  {
+protected class Customer_CommaKeyword_8_3_0 extends KeywordToken  {
 	
-	public Customer_CommaKeyword_7_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_CommaKeyword_8_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getCommaKeyword_7_3_0();
+		return grammarAccess.getCustomerAccess().getCommaKeyword_8_3_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_Group_7_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Customer_LicensesAssignment_7_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Customer_Group_8_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Customer_LicensesAssignment_8_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -2125,15 +2159,15 @@ protected class Customer_CommaKeyword_7_3_0 extends KeywordToken  {
 }
 
 // licenses+=License
-protected class Customer_LicensesAssignment_7_3_1 extends AssignmentToken  {
+protected class Customer_LicensesAssignment_8_3_1 extends AssignmentToken  {
 	
-	public Customer_LicensesAssignment_7_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_LicensesAssignment_8_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getLicensesAssignment_7_3_1();
+		return grammarAccess.getCustomerAccess().getLicensesAssignment_8_3_1();
 	}
 
     @Override
@@ -2152,7 +2186,7 @@ protected class Customer_LicensesAssignment_7_3_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getLicenseRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getCustomerAccess().getLicensesLicenseParserRuleCall_7_3_1_0(); 
+				element = grammarAccess.getCustomerAccess().getLicensesLicenseParserRuleCall_8_3_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2164,7 +2198,7 @@ protected class Customer_LicensesAssignment_7_3_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Customer_CommaKeyword_7_3_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new Customer_CommaKeyword_8_3_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -2172,22 +2206,22 @@ protected class Customer_LicensesAssignment_7_3_1 extends AssignmentToken  {
 
 
 // "}"
-protected class Customer_RightCurlyBracketKeyword_7_4 extends KeywordToken  {
+protected class Customer_RightCurlyBracketKeyword_8_4 extends KeywordToken  {
 	
-	public Customer_RightCurlyBracketKeyword_7_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_RightCurlyBracketKeyword_8_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_7_4();
+		return grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_8_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_Group_7_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Customer_LicensesAssignment_7_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Customer_Group_8_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Customer_LicensesAssignment_8_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -2196,23 +2230,23 @@ protected class Customer_RightCurlyBracketKeyword_7_4 extends KeywordToken  {
 
 
 // "}"
-protected class Customer_RightCurlyBracketKeyword_8 extends KeywordToken  {
+protected class Customer_RightCurlyBracketKeyword_9 extends KeywordToken  {
 	
-	public Customer_RightCurlyBracketKeyword_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Customer_RightCurlyBracketKeyword_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_8();
+		return grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_9();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Customer_Group_7(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Customer_AddressAssignment_6(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Customer_LastNameAssignment_5(lastRuleCallOrigin, this, 2, inst);
+			case 0: return new Customer_Group_8(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Customer_AddressAssignment_7(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new Customer_LastNameAssignment_6(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}

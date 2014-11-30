@@ -1371,62 +1371,95 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCustomer"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:581:1: ruleCustomer returns [EObject current=null] : (otherlv_0= 'Customer' otherlv_1= '{' otherlv_2= 'firstName' ( (lv_firstName_3_0= ruleEString ) ) otherlv_4= 'lastName' ( (lv_lastName_5_0= ruleEString ) ) ( (lv_address_6_0= ruleAddress ) )? (otherlv_7= 'licenses' otherlv_8= '{' ( (lv_licenses_9_0= ruleLicense ) ) (otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) ) )* otherlv_12= '}' )? otherlv_13= '}' ) ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:581:1: ruleCustomer returns [EObject current=null] : (otherlv_0= 'Customer' ( (lv_ID_1_0= ruleELong ) ) otherlv_2= '{' otherlv_3= 'firstName' ( (lv_firstName_4_0= ruleEString ) ) otherlv_5= 'lastName' ( (lv_lastName_6_0= ruleEString ) ) ( (lv_address_7_0= ruleAddress ) )? (otherlv_8= 'licenses' otherlv_9= '{' ( (lv_licenses_10_0= ruleLicense ) ) (otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) ;
     public final EObject ruleCustomer() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_7=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
         Token otherlv_8=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
         Token otherlv_13=null;
-        AntlrDatatypeRuleToken lv_firstName_3_0 = null;
+        Token otherlv_14=null;
+        AntlrDatatypeRuleToken lv_ID_1_0 = null;
 
-        AntlrDatatypeRuleToken lv_lastName_5_0 = null;
+        AntlrDatatypeRuleToken lv_firstName_4_0 = null;
 
-        EObject lv_address_6_0 = null;
+        AntlrDatatypeRuleToken lv_lastName_6_0 = null;
 
-        EObject lv_licenses_9_0 = null;
+        EObject lv_address_7_0 = null;
 
-        EObject lv_licenses_11_0 = null;
+        EObject lv_licenses_10_0 = null;
+
+        EObject lv_licenses_12_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:584:28: ( (otherlv_0= 'Customer' otherlv_1= '{' otherlv_2= 'firstName' ( (lv_firstName_3_0= ruleEString ) ) otherlv_4= 'lastName' ( (lv_lastName_5_0= ruleEString ) ) ( (lv_address_6_0= ruleAddress ) )? (otherlv_7= 'licenses' otherlv_8= '{' ( (lv_licenses_9_0= ruleLicense ) ) (otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) ) )* otherlv_12= '}' )? otherlv_13= '}' ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:585:1: (otherlv_0= 'Customer' otherlv_1= '{' otherlv_2= 'firstName' ( (lv_firstName_3_0= ruleEString ) ) otherlv_4= 'lastName' ( (lv_lastName_5_0= ruleEString ) ) ( (lv_address_6_0= ruleAddress ) )? (otherlv_7= 'licenses' otherlv_8= '{' ( (lv_licenses_9_0= ruleLicense ) ) (otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) ) )* otherlv_12= '}' )? otherlv_13= '}' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:584:28: ( (otherlv_0= 'Customer' ( (lv_ID_1_0= ruleELong ) ) otherlv_2= '{' otherlv_3= 'firstName' ( (lv_firstName_4_0= ruleEString ) ) otherlv_5= 'lastName' ( (lv_lastName_6_0= ruleEString ) ) ( (lv_address_7_0= ruleAddress ) )? (otherlv_8= 'licenses' otherlv_9= '{' ( (lv_licenses_10_0= ruleLicense ) ) (otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:585:1: (otherlv_0= 'Customer' ( (lv_ID_1_0= ruleELong ) ) otherlv_2= '{' otherlv_3= 'firstName' ( (lv_firstName_4_0= ruleEString ) ) otherlv_5= 'lastName' ( (lv_lastName_6_0= ruleEString ) ) ( (lv_address_7_0= ruleAddress ) )? (otherlv_8= 'licenses' otherlv_9= '{' ( (lv_licenses_10_0= ruleLicense ) ) (otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) ) )* otherlv_13= '}' )? otherlv_14= '}' )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:585:1: (otherlv_0= 'Customer' otherlv_1= '{' otherlv_2= 'firstName' ( (lv_firstName_3_0= ruleEString ) ) otherlv_4= 'lastName' ( (lv_lastName_5_0= ruleEString ) ) ( (lv_address_6_0= ruleAddress ) )? (otherlv_7= 'licenses' otherlv_8= '{' ( (lv_licenses_9_0= ruleLicense ) ) (otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) ) )* otherlv_12= '}' )? otherlv_13= '}' )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:585:3: otherlv_0= 'Customer' otherlv_1= '{' otherlv_2= 'firstName' ( (lv_firstName_3_0= ruleEString ) ) otherlv_4= 'lastName' ( (lv_lastName_5_0= ruleEString ) ) ( (lv_address_6_0= ruleAddress ) )? (otherlv_7= 'licenses' otherlv_8= '{' ( (lv_licenses_9_0= ruleLicense ) ) (otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) ) )* otherlv_12= '}' )? otherlv_13= '}'
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:585:1: (otherlv_0= 'Customer' ( (lv_ID_1_0= ruleELong ) ) otherlv_2= '{' otherlv_3= 'firstName' ( (lv_firstName_4_0= ruleEString ) ) otherlv_5= 'lastName' ( (lv_lastName_6_0= ruleEString ) ) ( (lv_address_7_0= ruleAddress ) )? (otherlv_8= 'licenses' otherlv_9= '{' ( (lv_licenses_10_0= ruleLicense ) ) (otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) ) )* otherlv_13= '}' )? otherlv_14= '}' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:585:3: otherlv_0= 'Customer' ( (lv_ID_1_0= ruleELong ) ) otherlv_2= '{' otherlv_3= 'firstName' ( (lv_firstName_4_0= ruleEString ) ) otherlv_5= 'lastName' ( (lv_lastName_6_0= ruleEString ) ) ( (lv_address_7_0= ruleAddress ) )? (otherlv_8= 'licenses' otherlv_9= '{' ( (lv_licenses_10_0= ruleLicense ) ) (otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) ) )* otherlv_13= '}' )? otherlv_14= '}'
             {
             otherlv_0=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleCustomer1181); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCustomerAccess().getCustomerKeyword_0());
                 
-            otherlv_1=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleCustomer1193); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_1());
-                
-            otherlv_2=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleCustomer1205); 
-
-                	newLeafNode(otherlv_2, grammarAccess.getCustomerAccess().getFirstNameKeyword_2());
-                
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:597:1: ( (lv_firstName_3_0= ruleEString ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:598:1: (lv_firstName_3_0= ruleEString )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:589:1: ( (lv_ID_1_0= ruleELong ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:590:1: (lv_ID_1_0= ruleELong )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:598:1: (lv_firstName_3_0= ruleEString )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:599:3: lv_firstName_3_0= ruleEString
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:590:1: (lv_ID_1_0= ruleELong )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:591:3: lv_ID_1_0= ruleELong
             {
              
-            	        newCompositeNode(grammarAccess.getCustomerAccess().getFirstNameEStringParserRuleCall_3_0()); 
+            	        newCompositeNode(grammarAccess.getCustomerAccess().getIDELongParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCustomer1226);
-            lv_firstName_3_0=ruleEString();
+            pushFollow(FollowSets000.FOLLOW_ruleELong_in_ruleCustomer1202);
+            lv_ID_1_0=ruleELong();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getCustomerRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"ID",
+                    		lv_ID_1_0, 
+                    		"ELong");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleCustomer1214); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_2());
+                
+            otherlv_3=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleCustomer1226); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getCustomerAccess().getFirstNameKeyword_3());
+                
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:615:1: ( (lv_firstName_4_0= ruleEString ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:616:1: (lv_firstName_4_0= ruleEString )
+            {
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:616:1: (lv_firstName_4_0= ruleEString )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:617:3: lv_firstName_4_0= ruleEString
+            {
+             
+            	        newCompositeNode(grammarAccess.getCustomerAccess().getFirstNameEStringParserRuleCall_4_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCustomer1247);
+            lv_firstName_4_0=ruleEString();
 
             state._fsp--;
 
@@ -1437,7 +1470,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"firstName",
-                    		lv_firstName_3_0, 
+                    		lv_firstName_4_0, 
                     		"EString");
             	        afterParserOrEnumRuleCall();
             	    
@@ -1447,21 +1480,21 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleCustomer1238); 
+            otherlv_5=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleCustomer1259); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getCustomerAccess().getLastNameKeyword_4());
+                	newLeafNode(otherlv_5, grammarAccess.getCustomerAccess().getLastNameKeyword_5());
                 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:619:1: ( (lv_lastName_5_0= ruleEString ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:620:1: (lv_lastName_5_0= ruleEString )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:637:1: ( (lv_lastName_6_0= ruleEString ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:638:1: (lv_lastName_6_0= ruleEString )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:620:1: (lv_lastName_5_0= ruleEString )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:621:3: lv_lastName_5_0= ruleEString
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:638:1: (lv_lastName_6_0= ruleEString )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:639:3: lv_lastName_6_0= ruleEString
             {
              
-            	        newCompositeNode(grammarAccess.getCustomerAccess().getLastNameEStringParserRuleCall_5_0()); 
+            	        newCompositeNode(grammarAccess.getCustomerAccess().getLastNameEStringParserRuleCall_6_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCustomer1259);
-            lv_lastName_5_0=ruleEString();
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCustomer1280);
+            lv_lastName_6_0=ruleEString();
 
             state._fsp--;
 
@@ -1472,7 +1505,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"lastName",
-                    		lv_lastName_5_0, 
+                    		lv_lastName_6_0, 
                     		"EString");
             	        afterParserOrEnumRuleCall();
             	    
@@ -1482,7 +1515,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:637:2: ( (lv_address_6_0= ruleAddress ) )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:655:2: ( (lv_address_7_0= ruleAddress ) )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1491,16 +1524,16 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:638:1: (lv_address_6_0= ruleAddress )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:656:1: (lv_address_7_0= ruleAddress )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:638:1: (lv_address_6_0= ruleAddress )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:639:3: lv_address_6_0= ruleAddress
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:656:1: (lv_address_7_0= ruleAddress )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:657:3: lv_address_7_0= ruleAddress
                     {
                      
-                    	        newCompositeNode(grammarAccess.getCustomerAccess().getAddressAddressParserRuleCall_6_0()); 
+                    	        newCompositeNode(grammarAccess.getCustomerAccess().getAddressAddressParserRuleCall_7_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleAddress_in_ruleCustomer1280);
-                    lv_address_6_0=ruleAddress();
+                    pushFollow(FollowSets000.FOLLOW_ruleAddress_in_ruleCustomer1301);
+                    lv_address_7_0=ruleAddress();
 
                     state._fsp--;
 
@@ -1511,7 +1544,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"address",
-                            		lv_address_6_0, 
+                            		lv_address_7_0, 
                             		"Address");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -1524,7 +1557,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:655:3: (otherlv_7= 'licenses' otherlv_8= '{' ( (lv_licenses_9_0= ruleLicense ) ) (otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) ) )* otherlv_12= '}' )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:673:3: (otherlv_8= 'licenses' otherlv_9= '{' ( (lv_licenses_10_0= ruleLicense ) ) (otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) ) )* otherlv_13= '}' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -1533,27 +1566,27 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:655:5: otherlv_7= 'licenses' otherlv_8= '{' ( (lv_licenses_9_0= ruleLicense ) ) (otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) ) )* otherlv_12= '}'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:673:5: otherlv_8= 'licenses' otherlv_9= '{' ( (lv_licenses_10_0= ruleLicense ) ) (otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) ) )* otherlv_13= '}'
                     {
-                    otherlv_7=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleCustomer1294); 
+                    otherlv_8=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleCustomer1315); 
 
-                        	newLeafNode(otherlv_7, grammarAccess.getCustomerAccess().getLicensesKeyword_7_0());
+                        	newLeafNode(otherlv_8, grammarAccess.getCustomerAccess().getLicensesKeyword_8_0());
                         
-                    otherlv_8=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleCustomer1306); 
+                    otherlv_9=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleCustomer1327); 
 
-                        	newLeafNode(otherlv_8, grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_7_1());
+                        	newLeafNode(otherlv_9, grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_8_1());
                         
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:663:1: ( (lv_licenses_9_0= ruleLicense ) )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:664:1: (lv_licenses_9_0= ruleLicense )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:681:1: ( (lv_licenses_10_0= ruleLicense ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:682:1: (lv_licenses_10_0= ruleLicense )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:664:1: (lv_licenses_9_0= ruleLicense )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:665:3: lv_licenses_9_0= ruleLicense
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:682:1: (lv_licenses_10_0= ruleLicense )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:683:3: lv_licenses_10_0= ruleLicense
                     {
                      
-                    	        newCompositeNode(grammarAccess.getCustomerAccess().getLicensesLicenseParserRuleCall_7_2_0()); 
+                    	        newCompositeNode(grammarAccess.getCustomerAccess().getLicensesLicenseParserRuleCall_8_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleLicense_in_ruleCustomer1327);
-                    lv_licenses_9_0=ruleLicense();
+                    pushFollow(FollowSets000.FOLLOW_ruleLicense_in_ruleCustomer1348);
+                    lv_licenses_10_0=ruleLicense();
 
                     state._fsp--;
 
@@ -1564,7 +1597,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                            		add(
                            			current, 
                            			"licenses",
-                            		lv_licenses_9_0, 
+                            		lv_licenses_10_0, 
                             		"License");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -1574,7 +1607,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:681:2: (otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) ) )*
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:699:2: (otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) ) )*
                     loop16:
                     do {
                         int alt16=2;
@@ -1587,23 +1620,23 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt16) {
                     	case 1 :
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:681:4: otherlv_10= ',' ( (lv_licenses_11_0= ruleLicense ) )
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:699:4: otherlv_11= ',' ( (lv_licenses_12_0= ruleLicense ) )
                     	    {
-                    	    otherlv_10=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleCustomer1340); 
+                    	    otherlv_11=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleCustomer1361); 
 
-                    	        	newLeafNode(otherlv_10, grammarAccess.getCustomerAccess().getCommaKeyword_7_3_0());
+                    	        	newLeafNode(otherlv_11, grammarAccess.getCustomerAccess().getCommaKeyword_8_3_0());
                     	        
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:685:1: ( (lv_licenses_11_0= ruleLicense ) )
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:686:1: (lv_licenses_11_0= ruleLicense )
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:703:1: ( (lv_licenses_12_0= ruleLicense ) )
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:704:1: (lv_licenses_12_0= ruleLicense )
                     	    {
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:686:1: (lv_licenses_11_0= ruleLicense )
-                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:687:3: lv_licenses_11_0= ruleLicense
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:704:1: (lv_licenses_12_0= ruleLicense )
+                    	    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:705:3: lv_licenses_12_0= ruleLicense
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getCustomerAccess().getLicensesLicenseParserRuleCall_7_3_1_0()); 
+                    	    	        newCompositeNode(grammarAccess.getCustomerAccess().getLicensesLicenseParserRuleCall_8_3_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleLicense_in_ruleCustomer1361);
-                    	    lv_licenses_11_0=ruleLicense();
+                    	    pushFollow(FollowSets000.FOLLOW_ruleLicense_in_ruleCustomer1382);
+                    	    lv_licenses_12_0=ruleLicense();
 
                     	    state._fsp--;
 
@@ -1614,7 +1647,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                     	           		add(
                     	           			current, 
                     	           			"licenses",
-                    	            		lv_licenses_11_0, 
+                    	            		lv_licenses_12_0, 
                     	            		"License");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
@@ -1633,9 +1666,9 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_12=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleCustomer1375); 
+                    otherlv_13=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleCustomer1396); 
 
-                        	newLeafNode(otherlv_12, grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_7_4());
+                        	newLeafNode(otherlv_13, grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_8_4());
                         
 
                     }
@@ -1643,9 +1676,9 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_13=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleCustomer1389); 
+            otherlv_14=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleCustomer1410); 
 
-                	newLeafNode(otherlv_13, grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_8());
+                	newLeafNode(otherlv_14, grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_9());
                 
 
             }
@@ -1668,7 +1701,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRental"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:719:1: entryRuleRental returns [EObject current=null] : iv_ruleRental= ruleRental EOF ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:737:1: entryRuleRental returns [EObject current=null] : iv_ruleRental= ruleRental EOF ;
     public final EObject entryRuleRental() throws RecognitionException {
         EObject current = null;
 
@@ -1676,17 +1709,17 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:720:2: (iv_ruleRental= ruleRental EOF )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:721:2: iv_ruleRental= ruleRental EOF
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:738:2: (iv_ruleRental= ruleRental EOF )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:739:2: iv_ruleRental= ruleRental EOF
             {
              newCompositeNode(grammarAccess.getRentalRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRental_in_entryRuleRental1425);
+            pushFollow(FollowSets000.FOLLOW_ruleRental_in_entryRuleRental1446);
             iv_ruleRental=ruleRental();
 
             state._fsp--;
 
              current =iv_ruleRental; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRental1435); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRental1456); 
 
             }
 
@@ -1704,7 +1737,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRental"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:728:1: ruleRental returns [EObject current=null] : (otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}' ) ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:746:1: ruleRental returns [EObject current=null] : (otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}' ) ;
     public final EObject ruleRental() throws RecognitionException {
         EObject current = null;
 
@@ -1723,21 +1756,21 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:731:28: ( (otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}' ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:732:1: (otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:749:28: ( (otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}' ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:750:1: (otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}' )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:732:1: (otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}' )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:732:3: otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}'
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:750:1: (otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:750:3: otherlv_0= 'Rental' otherlv_1= '{' (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )? (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )? otherlv_6= 'customer' ( ( ruleEString ) ) (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )? otherlv_10= '}'
             {
-            otherlv_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleRental1472); 
+            otherlv_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleRental1493); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRentalAccess().getRentalKeyword_0());
                 
-            otherlv_1=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleRental1484); 
+            otherlv_1=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleRental1505); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRentalAccess().getLeftCurlyBracketKeyword_1());
                 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:740:1: (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:758:1: (otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) ) )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -1746,22 +1779,22 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt18) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:740:3: otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:758:3: otherlv_2= 'startDate' ( (lv_startDate_3_0= ruleEDate ) )
                     {
-                    otherlv_2=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleRental1497); 
+                    otherlv_2=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleRental1518); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getRentalAccess().getStartDateKeyword_2_0());
                         
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:744:1: ( (lv_startDate_3_0= ruleEDate ) )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:745:1: (lv_startDate_3_0= ruleEDate )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:762:1: ( (lv_startDate_3_0= ruleEDate ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:763:1: (lv_startDate_3_0= ruleEDate )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:745:1: (lv_startDate_3_0= ruleEDate )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:746:3: lv_startDate_3_0= ruleEDate
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:763:1: (lv_startDate_3_0= ruleEDate )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:764:3: lv_startDate_3_0= ruleEDate
                     {
                      
                     	        newCompositeNode(grammarAccess.getRentalAccess().getStartDateEDateParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEDate_in_ruleRental1518);
+                    pushFollow(FollowSets000.FOLLOW_ruleEDate_in_ruleRental1539);
                     lv_startDate_3_0=ruleEDate();
 
                     state._fsp--;
@@ -1789,7 +1822,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:762:4: (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:780:4: (otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) ) )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -1798,22 +1831,22 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt19) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:762:6: otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:780:6: otherlv_4= 'endDate' ( (lv_endDate_5_0= ruleEDate ) )
                     {
-                    otherlv_4=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleRental1533); 
+                    otherlv_4=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleRental1554); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getRentalAccess().getEndDateKeyword_3_0());
                         
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:766:1: ( (lv_endDate_5_0= ruleEDate ) )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:767:1: (lv_endDate_5_0= ruleEDate )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:784:1: ( (lv_endDate_5_0= ruleEDate ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:785:1: (lv_endDate_5_0= ruleEDate )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:767:1: (lv_endDate_5_0= ruleEDate )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:768:3: lv_endDate_5_0= ruleEDate
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:785:1: (lv_endDate_5_0= ruleEDate )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:786:3: lv_endDate_5_0= ruleEDate
                     {
                      
                     	        newCompositeNode(grammarAccess.getRentalAccess().getEndDateEDateParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEDate_in_ruleRental1554);
+                    pushFollow(FollowSets000.FOLLOW_ruleEDate_in_ruleRental1575);
                     lv_endDate_5_0=ruleEDate();
 
                     state._fsp--;
@@ -1841,15 +1874,15 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleRental1568); 
+            otherlv_6=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleRental1589); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getRentalAccess().getCustomerKeyword_4());
                 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:788:1: ( ( ruleEString ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:789:1: ( ruleEString )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:806:1: ( ( ruleEString ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:807:1: ( ruleEString )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:789:1: ( ruleEString )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:790:3: ruleEString
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:807:1: ( ruleEString )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:808:3: ruleEString
             {
 
             			if (current==null) {
@@ -1859,7 +1892,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getRentalAccess().getCustomerCustomerCrossReference_5_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRental1591);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRental1612);
             ruleEString();
 
             state._fsp--;
@@ -1873,7 +1906,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:803:2: (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:821:2: (otherlv_8= 'rentedObject' ( ( ruleEString ) ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -1882,17 +1915,17 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:803:4: otherlv_8= 'rentedObject' ( ( ruleEString ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:821:4: otherlv_8= 'rentedObject' ( ( ruleEString ) )
                     {
-                    otherlv_8=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleRental1604); 
+                    otherlv_8=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleRental1625); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getRentalAccess().getRentedObjectKeyword_6_0());
                         
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:807:1: ( ( ruleEString ) )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:808:1: ( ruleEString )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:825:1: ( ( ruleEString ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:826:1: ( ruleEString )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:808:1: ( ruleEString )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:809:3: ruleEString
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:826:1: ( ruleEString )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:827:3: ruleEString
                     {
 
                     			if (current==null) {
@@ -1902,7 +1935,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getRentalAccess().getRentedObjectRentalObjectCrossReference_6_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRental1627);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRental1648);
                     ruleEString();
 
                     state._fsp--;
@@ -1922,7 +1955,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRental1641); 
+            otherlv_10=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRental1662); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getRentalAccess().getRightCurlyBracketKeyword_7());
                 
@@ -1947,7 +1980,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:834:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:852:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -1955,17 +1988,17 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:835:2: (iv_ruleEInt= ruleEInt EOF )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:836:2: iv_ruleEInt= ruleEInt EOF
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:853:2: (iv_ruleEInt= ruleEInt EOF )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:854:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt1678);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt1699);
             iv_ruleEInt=ruleEInt();
 
             state._fsp--;
 
              current =iv_ruleEInt.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt1689); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt1710); 
 
             }
 
@@ -1983,7 +2016,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:843:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:861:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1993,13 +2026,13 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:846:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:847:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:864:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:865:1: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:847:1: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:847:2: (kw= '-' )? this_INT_1= RULE_INT
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:865:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:865:2: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:847:2: (kw= '-' )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:865:2: (kw= '-' )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -2008,9 +2041,9 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt21) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:848:2: kw= '-'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:866:2: kw= '-'
                     {
-                    kw=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleEInt1728); 
+                    kw=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleEInt1749); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
@@ -2021,7 +2054,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt1745); 
+            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt1766); 
 
             		current.merge(this_INT_1);
                 
@@ -2049,7 +2082,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleELong"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:868:1: entryRuleELong returns [String current=null] : iv_ruleELong= ruleELong EOF ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:886:1: entryRuleELong returns [String current=null] : iv_ruleELong= ruleELong EOF ;
     public final String entryRuleELong() throws RecognitionException {
         String current = null;
 
@@ -2057,17 +2090,17 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:869:2: (iv_ruleELong= ruleELong EOF )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:870:2: iv_ruleELong= ruleELong EOF
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:887:2: (iv_ruleELong= ruleELong EOF )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:888:2: iv_ruleELong= ruleELong EOF
             {
              newCompositeNode(grammarAccess.getELongRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleELong_in_entryRuleELong1791);
+            pushFollow(FollowSets000.FOLLOW_ruleELong_in_entryRuleELong1812);
             iv_ruleELong=ruleELong();
 
             state._fsp--;
 
              current =iv_ruleELong.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleELong1802); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleELong1823); 
 
             }
 
@@ -2085,7 +2118,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleELong"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:877:1: ruleELong returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:895:1: ruleELong returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleELong() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2095,13 +2128,13 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:880:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:881:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:898:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:899:1: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:881:1: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:881:2: (kw= '-' )? this_INT_1= RULE_INT
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:899:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:899:2: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:881:2: (kw= '-' )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:899:2: (kw= '-' )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -2110,9 +2143,9 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt22) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:882:2: kw= '-'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:900:2: kw= '-'
                     {
-                    kw=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleELong1841); 
+                    kw=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleELong1862); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getELongAccess().getHyphenMinusKeyword_0()); 
@@ -2123,7 +2156,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleELong1858); 
+            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleELong1879); 
 
             		current.merge(this_INT_1);
                 
@@ -2151,7 +2184,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLicense"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:904:1: entryRuleLicense returns [EObject current=null] : iv_ruleLicense= ruleLicense EOF ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:922:1: entryRuleLicense returns [EObject current=null] : iv_ruleLicense= ruleLicense EOF ;
     public final EObject entryRuleLicense() throws RecognitionException {
         EObject current = null;
 
@@ -2159,17 +2192,17 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:905:2: (iv_ruleLicense= ruleLicense EOF )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:906:2: iv_ruleLicense= ruleLicense EOF
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:923:2: (iv_ruleLicense= ruleLicense EOF )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:924:2: iv_ruleLicense= ruleLicense EOF
             {
              newCompositeNode(grammarAccess.getLicenseRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLicense_in_entryRuleLicense1905);
+            pushFollow(FollowSets000.FOLLOW_ruleLicense_in_entryRuleLicense1926);
             iv_ruleLicense=ruleLicense();
 
             state._fsp--;
 
              current =iv_ruleLicense; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLicense1915); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLicense1936); 
 
             }
 
@@ -2187,7 +2220,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLicense"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:913:1: ruleLicense returns [EObject current=null] : ( () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}' ) ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:931:1: ruleLicense returns [EObject current=null] : ( () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}' ) ;
     public final EObject ruleLicense() throws RecognitionException {
         EObject current = null;
 
@@ -2205,14 +2238,14 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:916:28: ( ( () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}' ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:917:1: ( () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:934:28: ( ( () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}' ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:935:1: ( () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}' )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:917:1: ( () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}' )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:917:2: () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}'
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:935:1: ( () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:935:2: () otherlv_1= 'License' otherlv_2= '{' (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )? (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )? (otherlv_7= 'EReference0' ( ( ruleEString ) ) )? otherlv_9= '}'
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:917:2: ()
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:918:5: 
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:935:2: ()
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:936:5: 
             {
 
                     current = forceCreateModelElement(
@@ -2222,15 +2255,15 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleLicense1961); 
+            otherlv_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleLicense1982); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getLicenseAccess().getLicenseKeyword_1());
                 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleLicense1973); 
+            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleLicense1994); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getLicenseAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:931:1: (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:949:1: (otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) ) )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -2239,22 +2272,22 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt23) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:931:3: otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:949:3: otherlv_3= 'number' ( (lv_number_4_0= ruleEInt ) )
                     {
-                    otherlv_3=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleLicense1986); 
+                    otherlv_3=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleLicense2007); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getLicenseAccess().getNumberKeyword_3_0());
                         
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:935:1: ( (lv_number_4_0= ruleEInt ) )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:936:1: (lv_number_4_0= ruleEInt )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:953:1: ( (lv_number_4_0= ruleEInt ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:954:1: (lv_number_4_0= ruleEInt )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:936:1: (lv_number_4_0= ruleEInt )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:937:3: lv_number_4_0= ruleEInt
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:954:1: (lv_number_4_0= ruleEInt )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:955:3: lv_number_4_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getLicenseAccess().getNumberEIntParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleLicense2007);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleLicense2028);
                     lv_number_4_0=ruleEInt();
 
                     state._fsp--;
@@ -2282,7 +2315,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:953:4: (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:971:4: (otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) ) )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -2291,22 +2324,22 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt24) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:953:6: otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:971:6: otherlv_5= 'validityDate' ( (lv_validityDate_6_0= ruleEDate ) )
                     {
-                    otherlv_5=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleLicense2022); 
+                    otherlv_5=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleLicense2043); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getLicenseAccess().getValidityDateKeyword_4_0());
                         
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:957:1: ( (lv_validityDate_6_0= ruleEDate ) )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:958:1: (lv_validityDate_6_0= ruleEDate )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:975:1: ( (lv_validityDate_6_0= ruleEDate ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:976:1: (lv_validityDate_6_0= ruleEDate )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:958:1: (lv_validityDate_6_0= ruleEDate )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:959:3: lv_validityDate_6_0= ruleEDate
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:976:1: (lv_validityDate_6_0= ruleEDate )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:977:3: lv_validityDate_6_0= ruleEDate
                     {
                      
                     	        newCompositeNode(grammarAccess.getLicenseAccess().getValidityDateEDateParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEDate_in_ruleLicense2043);
+                    pushFollow(FollowSets000.FOLLOW_ruleEDate_in_ruleLicense2064);
                     lv_validityDate_6_0=ruleEDate();
 
                     state._fsp--;
@@ -2334,7 +2367,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:975:4: (otherlv_7= 'EReference0' ( ( ruleEString ) ) )?
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:993:4: (otherlv_7= 'EReference0' ( ( ruleEString ) ) )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -2343,17 +2376,17 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt25) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:975:6: otherlv_7= 'EReference0' ( ( ruleEString ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:993:6: otherlv_7= 'EReference0' ( ( ruleEString ) )
                     {
-                    otherlv_7=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleLicense2058); 
+                    otherlv_7=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleLicense2079); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getLicenseAccess().getEReference0Keyword_5_0());
                         
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:979:1: ( ( ruleEString ) )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:980:1: ( ruleEString )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:997:1: ( ( ruleEString ) )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:998:1: ( ruleEString )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:980:1: ( ruleEString )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:981:3: ruleEString
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:998:1: ( ruleEString )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:999:3: ruleEString
                     {
 
                     			if (current==null) {
@@ -2363,7 +2396,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getLicenseAccess().getEReference0CustomerCrossReference_5_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleLicense2081);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleLicense2102);
                     ruleEString();
 
                     state._fsp--;
@@ -2383,7 +2416,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleLicense2095); 
+            otherlv_9=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleLicense2116); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getLicenseAccess().getRightCurlyBracketKeyword_6());
                 
@@ -2408,7 +2441,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEDate"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1006:1: entryRuleEDate returns [String current=null] : iv_ruleEDate= ruleEDate EOF ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1024:1: entryRuleEDate returns [String current=null] : iv_ruleEDate= ruleEDate EOF ;
     public final String entryRuleEDate() throws RecognitionException {
         String current = null;
 
@@ -2416,17 +2449,17 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1007:2: (iv_ruleEDate= ruleEDate EOF )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1008:2: iv_ruleEDate= ruleEDate EOF
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1025:2: (iv_ruleEDate= ruleEDate EOF )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1026:2: iv_ruleEDate= ruleEDate EOF
             {
              newCompositeNode(grammarAccess.getEDateRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEDate_in_entryRuleEDate2132);
+            pushFollow(FollowSets000.FOLLOW_ruleEDate_in_entryRuleEDate2153);
             iv_ruleEDate=ruleEDate();
 
             state._fsp--;
 
              current =iv_ruleEDate.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEDate2143); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEDate2164); 
 
             }
 
@@ -2444,7 +2477,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEDate"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1015:1: ruleEDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'EDate' ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1033:1: ruleEDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'EDate' ;
     public final AntlrDatatypeRuleToken ruleEDate() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2453,10 +2486,10 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1018:28: (kw= 'EDate' )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1020:2: kw= 'EDate'
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1036:28: (kw= 'EDate' )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1038:2: kw= 'EDate'
             {
-            kw=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleEDate2180); 
+            kw=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleEDate2201); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getEDateAccess().getEDateKeyword()); 
@@ -2479,7 +2512,7 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStreetType"
-    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1033:1: ruleStreetType returns [Enumerator current=null] : ( (enumLiteral_0= 'Street' ) | (enumLiteral_1= 'Road' ) ) ;
+    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1051:1: ruleStreetType returns [Enumerator current=null] : ( (enumLiteral_0= 'Street' ) | (enumLiteral_1= 'Road' ) ) ;
     public final Enumerator ruleStreetType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2488,10 +2521,10 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1035:28: ( ( (enumLiteral_0= 'Street' ) | (enumLiteral_1= 'Road' ) ) )
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1036:1: ( (enumLiteral_0= 'Street' ) | (enumLiteral_1= 'Road' ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1053:28: ( ( (enumLiteral_0= 'Street' ) | (enumLiteral_1= 'Road' ) ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1054:1: ( (enumLiteral_0= 'Street' ) | (enumLiteral_1= 'Road' ) )
             {
-            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1036:1: ( (enumLiteral_0= 'Street' ) | (enumLiteral_1= 'Road' ) )
+            // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1054:1: ( (enumLiteral_0= 'Street' ) | (enumLiteral_1= 'Road' ) )
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -2509,12 +2542,12 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt26) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1036:2: (enumLiteral_0= 'Street' )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1054:2: (enumLiteral_0= 'Street' )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1036:2: (enumLiteral_0= 'Street' )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1036:4: enumLiteral_0= 'Street'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1054:2: (enumLiteral_0= 'Street' )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1054:4: enumLiteral_0= 'Street'
                     {
-                    enumLiteral_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleStreetType2233); 
+                    enumLiteral_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleStreetType2254); 
 
                             current = grammarAccess.getStreetTypeAccess().getStreetEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getStreetTypeAccess().getStreetEnumLiteralDeclaration_0()); 
@@ -2526,12 +2559,12 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1042:6: (enumLiteral_1= 'Road' )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1060:6: (enumLiteral_1= 'Road' )
                     {
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1042:6: (enumLiteral_1= 'Road' )
-                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1042:8: enumLiteral_1= 'Road'
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1060:6: (enumLiteral_1= 'Road' )
+                    // ../com.opcoach.training.rental.xtext/src-gen/com/opcoach/training/rental/xtext/parser/antlr/internal/InternalRentalDsl.g:1060:8: enumLiteral_1= 'Road'
                     {
-                    enumLiteral_1=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleStreetType2250); 
+                    enumLiteral_1=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleStreetType2271); 
 
                             current = grammarAccess.getStreetTypeAccess().getRoadEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getStreetTypeAccess().getRoadEnumLiteralDeclaration_1()); 
@@ -2623,57 +2656,58 @@ public class InternalRentalDslParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_15_in_ruleRentalObject1098 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCustomer_in_entryRuleCustomer1134 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleCustomer1144 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_27_in_ruleCustomer1181 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleCustomer1193 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_28_in_ruleCustomer1205 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleCustomer1226 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_29_in_ruleCustomer1238 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleCustomer1259 = new BitSet(new long[]{0x0000000040048000L});
-        public static final BitSet FOLLOW_ruleAddress_in_ruleCustomer1280 = new BitSet(new long[]{0x0000000040008000L});
-        public static final BitSet FOLLOW_30_in_ruleCustomer1294 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleCustomer1306 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_ruleLicense_in_ruleCustomer1327 = new BitSet(new long[]{0x000000000000C000L});
-        public static final BitSet FOLLOW_14_in_ruleCustomer1340 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_ruleLicense_in_ruleCustomer1361 = new BitSet(new long[]{0x000000000000C000L});
-        public static final BitSet FOLLOW_15_in_ruleCustomer1375 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleCustomer1389 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRental_in_entryRuleRental1425 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRental1435 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_ruleRental1472 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleRental1484 = new BitSet(new long[]{0x0000000700000000L});
-        public static final BitSet FOLLOW_32_in_ruleRental1497 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_ruleEDate_in_ruleRental1518 = new BitSet(new long[]{0x0000000600000000L});
-        public static final BitSet FOLLOW_33_in_ruleRental1533 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_ruleEDate_in_ruleRental1554 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleRental1568 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleRental1591 = new BitSet(new long[]{0x0000000800008000L});
-        public static final BitSet FOLLOW_35_in_ruleRental1604 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleRental1627 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleRental1641 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt1678 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEInt1689 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_ruleEInt1728 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt1745 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleELong_in_entryRuleELong1791 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleELong1802 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_ruleELong1841 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleELong1858 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLicense_in_entryRuleLicense1905 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLicense1915 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_ruleLicense1961 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleLicense1973 = new BitSet(new long[]{0x000000C000108000L});
-        public static final BitSet FOLLOW_20_in_ruleLicense1986 = new BitSet(new long[]{0x0000001000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleLicense2007 = new BitSet(new long[]{0x000000C000008000L});
-        public static final BitSet FOLLOW_38_in_ruleLicense2022 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_ruleEDate_in_ruleLicense2043 = new BitSet(new long[]{0x0000008000008000L});
-        public static final BitSet FOLLOW_39_in_ruleLicense2058 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleLicense2081 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleLicense2095 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEDate_in_entryRuleEDate2132 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEDate2143 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleEDate2180 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_41_in_ruleStreetType2233 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_ruleStreetType2250 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_27_in_ruleCustomer1181 = new BitSet(new long[]{0x0000001000000040L});
+        public static final BitSet FOLLOW_ruleELong_in_ruleCustomer1202 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleCustomer1214 = new BitSet(new long[]{0x0000000010000000L});
+        public static final BitSet FOLLOW_28_in_ruleCustomer1226 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleCustomer1247 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_29_in_ruleCustomer1259 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleCustomer1280 = new BitSet(new long[]{0x0000000040048000L});
+        public static final BitSet FOLLOW_ruleAddress_in_ruleCustomer1301 = new BitSet(new long[]{0x0000000040008000L});
+        public static final BitSet FOLLOW_30_in_ruleCustomer1315 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleCustomer1327 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_ruleLicense_in_ruleCustomer1348 = new BitSet(new long[]{0x000000000000C000L});
+        public static final BitSet FOLLOW_14_in_ruleCustomer1361 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_ruleLicense_in_ruleCustomer1382 = new BitSet(new long[]{0x000000000000C000L});
+        public static final BitSet FOLLOW_15_in_ruleCustomer1396 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleCustomer1410 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRental_in_entryRuleRental1446 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleRental1456 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleRental1493 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleRental1505 = new BitSet(new long[]{0x0000000700000000L});
+        public static final BitSet FOLLOW_32_in_ruleRental1518 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_ruleEDate_in_ruleRental1539 = new BitSet(new long[]{0x0000000600000000L});
+        public static final BitSet FOLLOW_33_in_ruleRental1554 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_ruleEDate_in_ruleRental1575 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleRental1589 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleRental1612 = new BitSet(new long[]{0x0000000800008000L});
+        public static final BitSet FOLLOW_35_in_ruleRental1625 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleRental1648 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleRental1662 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt1699 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEInt1710 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_ruleEInt1749 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt1766 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleELong_in_entryRuleELong1812 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleELong1823 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_ruleELong1862 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleELong1879 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLicense_in_entryRuleLicense1926 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLicense1936 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_ruleLicense1982 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleLicense1994 = new BitSet(new long[]{0x000000C000108000L});
+        public static final BitSet FOLLOW_20_in_ruleLicense2007 = new BitSet(new long[]{0x0000001000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleLicense2028 = new BitSet(new long[]{0x000000C000008000L});
+        public static final BitSet FOLLOW_38_in_ruleLicense2043 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_ruleEDate_in_ruleLicense2064 = new BitSet(new long[]{0x0000008000008000L});
+        public static final BitSet FOLLOW_39_in_ruleLicense2079 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleLicense2102 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleLicense2116 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEDate_in_entryRuleEDate2153 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEDate2164 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleEDate2201 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_ruleStreetType2254 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_ruleStreetType2271 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 
