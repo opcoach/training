@@ -9,6 +9,6 @@ class SampleXtendCode {
   	val agency = RentalAgencyGenerator::createSampleAgency();
   	
   	for (cust : agency.customers)  
-  		println("Customer : " + cust.firstName + " " + cust.lastName )
+  		println("Customer : " + cust.firstName + " " + cust.name )
    } 
 }

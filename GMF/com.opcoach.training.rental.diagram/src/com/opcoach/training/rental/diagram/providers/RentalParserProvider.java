@@ -80,7 +80,7 @@ public class RentalParserProvider extends AbstractProvider implements IParserPro
 		if (customerFirstNameLastName_5005Parser == null)
 		{
 			EAttribute[] features = new EAttribute[] { RentalPackage.eINSTANCE.getCustomer_FirstName(),
-					RentalPackage.eINSTANCE.getCustomer_LastName() };
+					RentalPackage.eINSTANCE.getCustomer_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			customerFirstNameLastName_5005Parser = parser;
 		}

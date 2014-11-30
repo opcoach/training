@@ -1,9 +1,7 @@
 package com.opcoach.training.rental.xtend
 
-import com.opcoach.training.rental.Car
-import com.opcoach.training.rental.Device
-import com.opcoach.training.rental.RentalObject
 import com.opcoach.training.rental.Customer
+import com.opcoach.training.rental.RentalObject
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator
 
 class RentalAgencyDisplayer {
@@ -16,12 +14,12 @@ class RentalAgencyDisplayer {
   {
   	val agency = RentalAgencyGenerator::createSampleAgency();
   	
-  	println("---> Gnration avec du code xtend normal")
+  	println("---> Generate with xtend code")
   	for (cust : agency.customers)
-  		println("Customer : " + cust.firstName + " " + cust.lastName )
+  		println("Customer : " + cust.firstName + " " + cust.name )
     
   	
-  	println("---> Gnration avec un template")
+  	println("---> Generate with a template")
   	for (cust : agency.customers)
   	{
   		println(cust.displayCustomer);
@@ -35,14 +33,10 @@ class RentalAgencyDisplayer {
   }	
   
   def  String displayCustomer(Customer c) '''
-     Customer : Çc.firstNameÈ  Çc.lastName.toUpperCaseÈ'''
+     Customer : Â«c.firstNameÂ»  Â«c.name.toUpperCaseÂ»'''
      
      def String displayRentalObject(RentalObject o) '''
-     RentalObject : Ço.nameÈ'''
+     RentalObject : Â«o.nameÂ»'''
      
-     def String displayRentalObject(Car car) '''
-     Car : Çcar.licensePlateÈ'''
-     
-     def String displayRentalObject(Device d) '''
-     Device : Çd.nameÈ Dimension(Çd.widthÈ,Çd.lengthÈ,Çd.heightÈ)'''
+   
 }

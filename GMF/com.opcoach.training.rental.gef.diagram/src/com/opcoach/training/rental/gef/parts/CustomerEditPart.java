@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009 http://www.opcoach.com
+// ï¿½ OPCoach 2009 http://www.opcoach.com
 // ------------------------------------------------
 
 package com.opcoach.training.rental.gef.parts;
@@ -29,7 +29,7 @@ public class CustomerEditPart extends AbstractGraphicalEditPart
 	@Override
 	protected IFigure createFigure()
 	{
-		return new CustomerFigure(getCustomer().getDisplayName());
+		return new CustomerFigure(getCustomer().getName());
 		
 	}
 	
@@ -42,7 +42,7 @@ public class CustomerEditPart extends AbstractGraphicalEditPart
 	protected void refreshVisuals()
 	{
 		CustomerFigure fig = (CustomerFigure) getFigure();
-		fig.setName(getCustomer().getDisplayName());
+		fig.setName(getCustomer().getName());
 	}
 
 	@Override

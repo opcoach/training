@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009 http://www.opcoach.com
+// ï¿½ OPCoach 2009 http://www.opcoach.com
 // ------------------------------------------------
 
 package com.opcoach.training.rental.gef.parts;
@@ -32,7 +32,7 @@ public class CustomerEditPart extends AbstractRentalEditPart
 	@Override
 	protected IFigure createFigure()
 	{
-		IFigure result = new CustomerFigure(getCustomer().getDisplayName());
+		IFigure result = new CustomerFigure(getCustomer().getName());
 		result.setLocation(lastLocation);
 		Rectangle b = result.getBounds();
 		lastLocation = new Point(b.x + b.width + 2, b.y);
@@ -49,7 +49,7 @@ public class CustomerEditPart extends AbstractRentalEditPart
 	{
 		CustomerFigure fig = (CustomerFigure) getFigure();
 		Customer c = (Customer) getModel();
-		fig.setName(c.getDisplayName());
+		fig.setName(c.getName());
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public class RentalCreationFactory implements CreationFactory
 		if (clazz.equals(Customer.class))    
 		{    Customer c = f.createCustomer();
 		     c.setFirstName("Prenom");
-		     c.setLastName("Nom");
+		     c.setName("Nom");
 		     object = c;
 		}
 		else if (clazz.equals(Rental.class))       { object = f.createRental();   }
