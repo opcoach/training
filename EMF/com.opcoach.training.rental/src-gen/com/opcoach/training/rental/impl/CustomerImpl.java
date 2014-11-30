@@ -25,9 +25,8 @@ import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Customer</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Customer</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -45,16 +44,14 @@ import com.opcoach.training.rental.RentalPackage;
 public class CustomerImpl extends EObjectImpl implements Customer
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFirstName()
 	 * @generated
 	 * @ordered
@@ -63,8 +60,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 
 	/**
 	 * The cached value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFirstName()
 	 * @generated
 	 * @ordered
@@ -73,8 +69,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 
 	/**
 	 * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLastName()
 	 * @generated
 	 * @ordered
@@ -83,8 +78,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 
 	/**
 	 * The cached value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLastName()
 	 * @generated
 	 * @ordered
@@ -93,8 +87,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 
 	/**
 	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAddress()
 	 * @generated
 	 * @ordered
@@ -103,8 +96,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 
 	/**
 	 * The cached value of the '{@link #getLicenses() <em>Licenses</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLicenses()
 	 * @generated
 	 * @ordered
@@ -112,9 +104,9 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	protected EList<License> licenses;
 
 	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getID()
 	 * @generated
 	 * @ordered
@@ -122,9 +114,9 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	protected static final long ID_EDEFAULT = 0L;
 
 	/**
-	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getID()
 	 * @generated
 	 * @ordered
@@ -132,8 +124,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	protected long id = ID_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected CustomerImpl()
@@ -142,8 +133,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -153,8 +143,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getFirstName()
@@ -163,8 +152,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setFirstName(String newFirstName)
@@ -176,8 +164,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getLastName()
@@ -186,8 +173,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setLastName(String newLastName)
@@ -199,8 +185,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Address getAddress()
@@ -209,15 +194,15 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetAddress(Address newAddress, NotificationChain msgs)
 	{
 		Address oldAddress = address;
 		address = newAddress;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RentalPackage.CUSTOMER__ADDRESS, oldAddress, newAddress);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -225,13 +210,13 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setAddress(Address newAddress)
 	{
-		if (newAddress != address) {
+		if (newAddress != address)
+		{
 			NotificationChain msgs = null;
 			if (address != null)
 				msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RentalPackage.CUSTOMER__ADDRESS, null, msgs);
@@ -245,21 +230,20 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<License> getLicenses()
 	{
-		if (licenses == null) {
+		if (licenses == null)
+		{
 			licenses = new EObjectContainmentWithInverseEList<License>(License.class, this, RentalPackage.CUSTOMER__LICENSES, RentalPackage.LICENSE__OWNER);
 		}
 		return licenses;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RentalAgency getParentAgency()
@@ -269,8 +253,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetParentAgency(RentalAgency newParentAgency, NotificationChain msgs)
@@ -280,13 +263,13 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setParentAgency(RentalAgency newParentAgency)
 	{
-		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.CUSTOMER__PARENT_AGENCY && newParentAgency != null)) {
+		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.CUSTOMER__PARENT_AGENCY && newParentAgency != null))
+		{
 			if (EcoreUtil.isAncestor(this, newParentAgency))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -302,8 +285,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public long getID()
@@ -312,8 +294,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setID(long newID)
@@ -325,8 +306,8 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public String getDisplayName()
@@ -335,8 +316,8 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void addLicense(License license)
@@ -346,15 +327,15 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.CUSTOMER__LICENSES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLicenses()).basicAdd(otherEnd, msgs);
 			case RentalPackage.CUSTOMER__PARENT_AGENCY:
@@ -366,14 +347,14 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.CUSTOMER__ADDRESS:
 				return basicSetAddress(null, msgs);
 			case RentalPackage.CUSTOMER__LICENSES:
@@ -385,14 +366,14 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case RentalPackage.CUSTOMER__PARENT_AGENCY:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.RENTAL_AGENCY__CUSTOMERS, RentalAgency.class, msgs);
 		}
@@ -400,14 +381,14 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				return getFirstName();
 			case RentalPackage.CUSTOMER__LAST_NAME:
@@ -425,15 +406,15 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				setFirstName((String)newValue);
 				return;
@@ -458,14 +439,14 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				setFirstName(FIRST_NAME_EDEFAULT);
 				return;
@@ -489,14 +470,14 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
 			case RentalPackage.CUSTOMER__LAST_NAME:
@@ -514,8 +495,7 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -534,4 +514,4 @@ public class CustomerImpl extends EObjectImpl implements Customer
 		return result.toString();
 	}
 
-} //CustomerImpl
+} // CustomerImpl

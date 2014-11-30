@@ -8,9 +8,8 @@ package com.opcoach.training.rental;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Address</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>Address</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -30,22 +29,22 @@ import org.eclipse.emf.ecore.EObject;
 public interface Address extends EObject
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String copyright = "OPCoach @ 2012";
 
 	/**
-	 * Returns the value of the '<em><b>Street Type</b></em>' attribute.
-	 * The default value is <code>"Street"</code>.
-	 * The literals are from the enumeration {@link com.opcoach.training.rental.StreetType}.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Street Type</b></em>' attribute. The
+	 * default value is <code>"Street"</code>. The literals are from the
+	 * enumeration {@link com.opcoach.training.rental.StreetType}. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Street Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Street Type</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Street Type</em>' attribute.
 	 * @see com.opcoach.training.rental.StreetType
 	 * @see #setStreetType(StreetType)
@@ -57,8 +56,8 @@ public interface Address extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.Address#getStreetType <em>Street Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Street Type</em>' attribute.
 	 * @see com.opcoach.training.rental.StreetType
 	 * @see #getStreetType()
@@ -67,13 +66,14 @@ public interface Address extends EObject
 	void setStreetType(StreetType value);
 
 	/**
-	 * Returns the value of the '<em><b>Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Number</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Number</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Number</em>' attribute.
 	 * @see #setNumber(int)
 	 * @see com.opcoach.training.rental.RentalPackage#getAddress_Number()
@@ -84,8 +84,7 @@ public interface Address extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.Address#getNumber <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Number</em>' attribute.
 	 * @see #getNumber()
 	 * @generated
@@ -93,13 +92,14 @@ public interface Address extends EObject
 	void setNumber(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Zip Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Zip Code</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Zip Code</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Zip Code</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Zip Code</em>' attribute.
 	 * @see #setZipCode(String)
 	 * @see com.opcoach.training.rental.RentalPackage#getAddress_ZipCode()
@@ -110,8 +110,7 @@ public interface Address extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.Address#getZipCode <em>Zip Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Zip Code</em>' attribute.
 	 * @see #getZipCode()
 	 * @generated
@@ -119,13 +118,14 @@ public interface Address extends EObject
 	void setZipCode(String value);
 
 	/**
-	 * Returns the value of the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>City</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>City</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>City</em>' attribute isn't clear, there really
+	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>City</em>' attribute.
 	 * @see #setCity(String)
 	 * @see com.opcoach.training.rental.RentalPackage#getAddress_City()
@@ -136,8 +136,7 @@ public interface Address extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.Address#getCity <em>City</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>City</em>' attribute.
 	 * @see #getCity()
 	 * @generated
@@ -145,13 +144,14 @@ public interface Address extends EObject
 	void setCity(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Street Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Street Name</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Street Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Street Name</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Street Name</em>' attribute.
 	 * @see #setStreetName(String)
 	 * @see com.opcoach.training.rental.RentalPackage#getAddress_StreetName()
@@ -162,8 +162,8 @@ public interface Address extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.Address#getStreetName <em>Street Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Street Name</em>' attribute.
 	 * @see #getStreetName()
 	 * @generated

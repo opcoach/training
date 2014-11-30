@@ -26,79 +26,70 @@ import com.opcoach.training.rental.StreetType;
 import com.opcoach.training.rental.util.RentalValidator;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Package</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
+ * end-user-doc -->
  * @generated
  */
 public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass customerEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass rentalAgencyEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass addressEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass rentalObjectEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass licenseEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass rentalEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EEnum streetTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+	 * package package URI value.
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory
+	 * method {@link #init init()}, which also performs initialization of the
+	 * package, or returns the registered package, if one already exists. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see com.opcoach.training.rental.RentalPackage#eNS_URI
 	 * @see #init()
@@ -110,19 +101,21 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
-	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * Creates, registers, and initializes the <b>Package</b> for this model,
+	 * and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link RentalPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * This method is used to initialize {@link RentalPackage#eINSTANCE} when
+	 * that field is accessed. Clients should not invoke it directly. Instead,
+	 * they should simply access that field to obtain the package. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -146,8 +139,10 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
 			(theRentalPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
+			 new EValidator.Descriptor()
+			 {
+				 public EValidator getEValidator()
+				 {
 					 return RentalValidator.INSTANCE;
 				 }
 			 });
@@ -162,8 +157,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getCustomer()
@@ -172,8 +166,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getCustomer_FirstName()
@@ -182,8 +175,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getCustomer_LastName()
@@ -192,8 +184,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getCustomer_Address()
@@ -202,8 +193,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getCustomer_Licenses()
@@ -212,8 +202,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getCustomer_ParentAgency()
@@ -222,8 +211,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getCustomer_ID()
@@ -232,8 +220,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getRentalAgency()
@@ -242,8 +229,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getRentalAgency_Name()
@@ -252,8 +238,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getRentalAgency_Address()
@@ -262,8 +247,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getRentalAgency_ObjectsToRent()
@@ -272,8 +256,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getRentalAgency_Customers()
@@ -282,8 +265,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getRentalAgency_Rentals()
@@ -292,8 +274,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getAddress()
@@ -302,8 +283,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getAddress_StreetType()
@@ -312,8 +292,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getAddress_Number()
@@ -322,8 +301,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getAddress_ZipCode()
@@ -332,8 +310,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getAddress_City()
@@ -342,8 +319,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getAddress_StreetName()
@@ -352,8 +328,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getRentalObject()
@@ -362,8 +337,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getRentalObject_ID()
@@ -372,8 +346,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getRentalObject_Name()
@@ -382,8 +355,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getRentalObject_ParentAgency()
@@ -392,8 +364,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getRentalObject_Available()
@@ -402,8 +373,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getLicense()
@@ -412,8 +382,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getLicense_Number()
@@ -422,8 +391,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getLicense_ValidityDate()
@@ -432,8 +400,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getLicense_Owner()
@@ -442,8 +409,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getLicense_EReference0()
@@ -452,8 +418,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getRental()
@@ -462,8 +427,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getRental_Customer()
@@ -472,8 +436,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getRental_RentedObject()
@@ -482,8 +445,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getRental_StartDate()
@@ -492,8 +454,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EAttribute getRental_EndDate()
@@ -502,8 +463,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getRental_ParentAgency()
@@ -512,8 +472,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEnum getStreetType()
@@ -522,8 +481,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RentalFactory getRentalFactory()
@@ -532,8 +490,7 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -597,17 +554,16 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Complete the initialization of the package and its meta-model. This
+	 * method is guarded to have no affect on any invocation but its first. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents()
@@ -716,8 +672,8 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 
 	/**
 	 * Initializes the annotations for <b>gmf</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected void createGmfAnnotations()
@@ -726,15 +682,16 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (this, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "foo", "bar"
 		   });
 	}
 
 	/**
 	 * Initializes the annotations for <b>gmf.diagram</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void createGmf_1Annotations()
@@ -743,15 +700,16 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (rentalAgencyEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "foo", "bar"
 		   });
 	}
 
 	/**
-	 * Initializes the annotations for <b>gmf.compartment</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Initializes the annotations for <b>gmf.compartment</b>. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void createGmf_2Annotations()
@@ -760,19 +718,22 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (getRentalAgency_Address(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "foo", "bar"
 		   });	
 		addAnnotation
 		  (getCustomer_Address(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "foo", "bar"
 		   });	
 		addAnnotation
 		  (getCustomer_Licenses(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "foo", "bar"
 		   });
 	}
@@ -789,13 +750,15 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "constraints", "consistentName"
 		   });	
 		addAnnotation
 		  (rentalEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "constraints", "startDateBeforeEndDate"
 		   });
 	}
@@ -812,43 +775,50 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "label", "firstName,lastName"
 		   });	
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "label.pattern", "{0}:{1}"
 		   });	
 		addAnnotation
 		  (customerEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "figure", "com.opcoach.training.rental.gef.figures"
 		   });	
 		addAnnotation
 		  (addressEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "label", "city"
 		   });	
 		addAnnotation
 		  (rentalObjectEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "label", "name"
 		   });	
 		addAnnotation
 		  (licenseEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "label", "number"
 		   });	
 		addAnnotation
 		  (rentalEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "label", "startDate"
 		   });
 	}
@@ -865,17 +835,19 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		addAnnotation
 		  (getRental_Customer(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "target.decoration", "arrow",
 			 "style", "dash"
 		   });	
 		addAnnotation
 		  (getRental_RentedObject(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "target.decoration", "arrow",
 			 "style", "solid"
 		   });
 	}
 
-} //RentalPackageImpl
+} // RentalPackageImpl

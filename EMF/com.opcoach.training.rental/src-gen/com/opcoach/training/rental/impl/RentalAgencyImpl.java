@@ -25,7 +25,8 @@ import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Agency</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Agency</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -75,8 +76,10 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	protected Address address;
 
 	/**
-	 * The cached value of the '{@link #getObjectsToRent() <em>Objects To Rent</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getObjectsToRent()
+	 * <em>Objects To Rent</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getObjectsToRent()
 	 * @generated
 	 * @ordered
@@ -158,7 +161,8 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	{
 		Address oldAddress = address;
 		address = newAddress;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RentalPackage.RENTAL_AGENCY__ADDRESS, oldAddress, newAddress);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -171,7 +175,8 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	 */
 	public void setAddress(Address newAddress)
 	{
-		if (newAddress != address) {
+		if (newAddress != address)
+		{
 			NotificationChain msgs = null;
 			if (address != null)
 				msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RentalPackage.RENTAL_AGENCY__ADDRESS, null, msgs);
@@ -190,16 +195,18 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	 */
 	public EList<RentalObject> getObjectsToRentGen()
 	{
-		if (objectsToRent == null) {
+		if (objectsToRent == null)
+		{
 			objectsToRent = new EObjectContainmentWithInverseEList<RentalObject>(RentalObject.class, this, RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT, RentalPackage.RENTAL_OBJECT__PARENT_AGENCY);
 		}
 		return objectsToRent;
 	}
 
 	/**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated NOT
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
 	public EList<RentalObject> getObjectsToRent()
 	{
 		EList<RentalObject> result = getObjectsToRentGen();
@@ -216,18 +223,17 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	 */
 	public EList<Customer> getCustomers()
 	{
-		if (customers == null) {
+		if (customers == null)
+		{
 			customers = new EObjectContainmentWithInverseEList<Customer>(Customer.class, this, RentalPackage.RENTAL_AGENCY__CUSTOMERS, RentalPackage.CUSTOMER__PARENT_AGENCY);
 		}
 		return customers;
 	}
 
-	
 	public void addRental(Rental r)
 	{
 		getRentals().add(r);
 	}
-	
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -244,50 +250,51 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 		addRental(r);
 		return r;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<Rental> getRentals()
 	{
-		if (rentals == null) {
+		if (rentals == null)
+		{
 			rentals = new EObjectContainmentWithInverseEList<Rental>(Rental.class, this, RentalPackage.RENTAL_AGENCY__RENTALS, RentalPackage.RENTAL__PARENT_AGENCY);
 		}
 		return rentals;
 	}
-	
-	
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public boolean isAvailable(RentalObject rentedObject, Date startDate, Date endDate)
 	{
 		if (rentedObject == null)
 			return false;
-		
+
 		if (endDate.before(startDate))
 			throw new IllegalArgumentException("isAvailable : endDate before startDate");
-		
+
 		boolean result = true;
 		for (Rental r : getRentals())
 		{
-		   if (rentedObject.equals(r.getRentedObject()))
-		   {
-			   Date sd = r.getStartDate();
-			   Date ed = r.getEndDate();
-			   if  (! (isOutside(startDate,sd,ed)) && (isOutside(endDate,sd,ed)) )
-				   return false;
-			   
-		   }
+			if (rentedObject.equals(r.getRentedObject()))
+			{
+				Date sd = r.getStartDate();
+				Date ed = r.getEndDate();
+				if (!(isOutside(startDate, sd, ed)) && (isOutside(endDate, sd, ed)))
+					return false;
+
+			}
 		}
 		return result;
 	}
-	
-	/** Check if a date is outside bounds
+
+	/**
+	 * Check if a date is outside bounds
+	 * 
 	 * @return true if the date is outside the [start,end] bounds
 	 * @generated NOT
 	 */
@@ -304,7 +311,8 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getObjectsToRent()).basicAdd(otherEnd, msgs);
 			case RentalPackage.RENTAL_AGENCY__CUSTOMERS:
@@ -322,7 +330,8 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_AGENCY__ADDRESS:
 				return basicSetAddress(null, msgs);
 			case RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT:
@@ -342,7 +351,8 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_AGENCY__NAME:
 				return getName();
 			case RentalPackage.RENTAL_AGENCY__ADDRESS:
@@ -365,7 +375,8 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_AGENCY__NAME:
 				setName((String)newValue);
 				return;
@@ -395,7 +406,8 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_AGENCY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -422,7 +434,8 @@ public class RentalAgencyImpl extends EObjectImpl implements RentalAgency
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_AGENCY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RentalPackage.RENTAL_AGENCY__ADDRESS:

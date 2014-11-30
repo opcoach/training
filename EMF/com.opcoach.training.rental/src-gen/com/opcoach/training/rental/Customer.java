@@ -9,9 +9,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Customer</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>Customer</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -35,20 +34,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface Customer extends EObject
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String copyright = "OPCoach @ 2012";
 
 	/**
-	 * Returns the value of the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>First Name</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>First Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>First Name</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>First Name</em>' attribute.
 	 * @see #setFirstName(String)
 	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_FirstName()
@@ -59,8 +58,8 @@ public interface Customer extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.Customer#getFirstName <em>First Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>First Name</em>' attribute.
 	 * @see #getFirstName()
 	 * @generated
@@ -68,13 +67,14 @@ public interface Customer extends EObject
 	void setFirstName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Last Name</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Last Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Last Name</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Last Name</em>' attribute.
 	 * @see #setLastName(String)
 	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_LastName()
@@ -84,10 +84,13 @@ public interface Customer extends EObject
 	String getLastName();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.training.rental.Customer#getLastName <em>Last Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Last Name</em>' attribute.
+	 * Sets the value of the '
+	 * {@link com.opcoach.training.rental.Customer#getLastName
+	 * <em>Last Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Last Name</em>' attribute.
 	 * @see #getLastName()
 	 * @generated
 	 */
@@ -97,8 +100,8 @@ public interface Customer extends EObject
 	 * Returns the value of the '<em><b>Address</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Address</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Address</em>' containment reference isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' containment reference.
@@ -112,8 +115,7 @@ public interface Customer extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.Customer#getAddress <em>Address</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Address</em>' containment reference.
 	 * @see #getAddress()
 	 * @generated
@@ -126,8 +128,8 @@ public interface Customer extends EObject
 	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.License#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Licenses</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Licenses</em>' containment reference list
+	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Licenses</em>' containment reference list.
@@ -144,8 +146,8 @@ public interface Customer extends EObject
 	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.RentalAgency#getCustomers <em>Customers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parent Agency</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parent Agency</em>' container reference isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent Agency</em>' container reference.
@@ -168,13 +170,14 @@ public interface Customer extends EObject
 	void setParentAgency(RentalAgency value);
 
 	/**
-	 * Returns the value of the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>ID</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>ID</em>' attribute isn't clear, there really
+	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(long)
 	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_ID()
@@ -185,8 +188,7 @@ public interface Customer extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.Customer#getID <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>ID</em>' attribute.
 	 * @see #getID()
 	 * @generated
@@ -194,16 +196,14 @@ public interface Customer extends EObject
 	void setID(long value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
 	 */
 	String getDisplayName();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */

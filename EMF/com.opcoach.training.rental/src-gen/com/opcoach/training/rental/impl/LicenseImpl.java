@@ -20,9 +20,8 @@ import com.opcoach.training.rental.License;
 import com.opcoach.training.rental.RentalPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>License</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>License</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -38,16 +37,14 @@ import com.opcoach.training.rental.RentalPackage;
 public class LicenseImpl extends EObjectImpl implements License
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getNumber()
 	 * @generated
 	 * @ordered
@@ -56,8 +53,7 @@ public class LicenseImpl extends EObjectImpl implements License
 
 	/**
 	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getNumber()
 	 * @generated
 	 * @ordered
@@ -66,8 +62,8 @@ public class LicenseImpl extends EObjectImpl implements License
 
 	/**
 	 * The default value of the '{@link #getValidityDate() <em>Validity Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getValidityDate()
 	 * @generated
 	 * @ordered
@@ -76,8 +72,8 @@ public class LicenseImpl extends EObjectImpl implements License
 
 	/**
 	 * The cached value of the '{@link #getValidityDate() <em>Validity Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getValidityDate()
 	 * @generated
 	 * @ordered
@@ -86,8 +82,7 @@ public class LicenseImpl extends EObjectImpl implements License
 
 	/**
 	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEReference0()
 	 * @generated
 	 * @ordered
@@ -95,8 +90,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	protected Customer eReference0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected LicenseImpl()
@@ -105,8 +99,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -116,8 +109,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getNumber()
@@ -126,8 +118,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setNumber(int newNumber)
@@ -139,8 +130,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Date getValidityDate()
@@ -149,8 +139,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setValidityDate(Date newValidityDate)
@@ -162,8 +151,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Customer getOwner()
@@ -173,8 +161,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(Customer newOwner, NotificationChain msgs)
@@ -184,13 +171,13 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setOwner(Customer newOwner)
 	{
-		if (newOwner != eInternalContainer() || (eContainerFeatureID() != RentalPackage.LICENSE__OWNER && newOwner != null)) {
+		if (newOwner != eInternalContainer() || (eContainerFeatureID() != RentalPackage.LICENSE__OWNER && newOwner != null))
+		{
 			if (EcoreUtil.isAncestor(this, newOwner))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -206,16 +193,17 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Customer getEReference0()
 	{
-		if (eReference0 != null && eReference0.eIsProxy()) {
+		if (eReference0 != null && eReference0.eIsProxy())
+		{
 			InternalEObject oldEReference0 = (InternalEObject)eReference0;
 			eReference0 = (Customer)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+			if (eReference0 != oldEReference0)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RentalPackage.LICENSE__EREFERENCE0, oldEReference0, eReference0));
 			}
@@ -224,8 +212,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Customer basicGetEReference0()
@@ -234,8 +221,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setEReference0(Customer newEReference0)
@@ -247,8 +233,8 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public boolean isValid()
@@ -257,14 +243,14 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__OWNER:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -274,14 +260,14 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__OWNER:
 				return basicSetOwner(null, msgs);
 		}
@@ -289,14 +275,14 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case RentalPackage.LICENSE__OWNER:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.CUSTOMER__LICENSES, Customer.class, msgs);
 		}
@@ -304,14 +290,14 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__NUMBER:
 				return getNumber();
 			case RentalPackage.LICENSE__VALIDITY_DATE:
@@ -326,14 +312,14 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__NUMBER:
 				setNumber((Integer)newValue);
 				return;
@@ -351,14 +337,14 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
@@ -376,14 +362,14 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.LICENSE__NUMBER:
 				return number != NUMBER_EDEFAULT;
 			case RentalPackage.LICENSE__VALIDITY_DATE:
@@ -397,8 +383,7 @@ public class LicenseImpl extends EObjectImpl implements License
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -415,4 +400,4 @@ public class LicenseImpl extends EObjectImpl implements License
 		return result.toString();
 	}
 
-} //LicenseImpl
+} // LicenseImpl

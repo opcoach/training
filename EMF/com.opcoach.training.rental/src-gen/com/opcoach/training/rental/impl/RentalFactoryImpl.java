@@ -24,35 +24,36 @@ import com.opcoach.training.rental.RentalPackage;
 import com.opcoach.training.rental.StreetType;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
+ * end-user-doc -->
  * @generated
  */
 public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public static RentalFactory init()
 	{
-		try {
+		try
+		{
 			RentalFactory theRentalFactory = (RentalFactory)EPackage.Registry.INSTANCE.getEFactory(RentalPackage.eNS_URI);
-			if (theRentalFactory != null) {
+			if (theRentalFactory != null)
+			{
 				return theRentalFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RentalFactoryImpl();
@@ -60,8 +61,8 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public RentalFactoryImpl()
@@ -70,14 +71,14 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass)
 	{
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case RentalPackage.RENTAL_AGENCY: return createRentalAgency();
 			case RentalPackage.CUSTOMER: return createCustomer();
 			case RentalPackage.ADDRESS: return createAddress();
@@ -90,14 +91,14 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue)
 	{
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case RentalPackage.STREET_TYPE:
 				return createStreetTypeFromString(eDataType, initialValue);
 			default:
@@ -106,14 +107,14 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue)
 	{
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case RentalPackage.STREET_TYPE:
 				return convertStreetTypeToString(eDataType, instanceValue);
 			default:
@@ -122,8 +123,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Customer createCustomer()
@@ -133,8 +133,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RentalAgency createRentalAgency()
@@ -144,8 +143,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Address createAddress()
@@ -155,8 +153,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RentalObject createRentalObject()
@@ -166,8 +163,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public License createLicense()
@@ -177,8 +173,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Rental createRental()
@@ -188,8 +183,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StreetType createStreetTypeFromString(EDataType eDataType, String initialValue)
@@ -200,8 +194,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertStreetTypeToString(EDataType eDataType, Object instanceValue)
@@ -210,8 +203,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RentalPackage getRentalPackage()
@@ -220,8 +212,7 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -231,4 +222,4 @@ public class RentalFactoryImpl extends EFactoryImpl implements RentalFactory
 		return RentalPackage.eINSTANCE;
 	}
 
-} //RentalFactoryImpl
+} // RentalFactoryImpl

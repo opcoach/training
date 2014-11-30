@@ -10,9 +10,8 @@ import java.util.Date;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>License</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>License</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -31,20 +30,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface License extends EObject
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String copyright = "OPCoach @ 2012";
 
 	/**
-	 * Returns the value of the '<em><b>Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Number</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Number</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Number</em>' attribute.
 	 * @see #setNumber(int)
 	 * @see com.opcoach.training.rental.RentalPackage#getLicense_Number()
@@ -55,8 +54,7 @@ public interface License extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.License#getNumber <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Number</em>' attribute.
 	 * @see #getNumber()
 	 * @generated
@@ -64,13 +62,14 @@ public interface License extends EObject
 	void setNumber(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Validity Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Validity Date</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Validity Date</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Validity Date</em>' attribute.
 	 * @see #setValidityDate(Date)
 	 * @see com.opcoach.training.rental.RentalPackage#getLicense_ValidityDate()
@@ -81,8 +80,8 @@ public interface License extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.License#getValidityDate <em>Validity Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Validity Date</em>' attribute.
 	 * @see #getValidityDate()
 	 * @generated
@@ -109,8 +108,7 @@ public interface License extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.License#getOwner <em>Owner</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Owner</em>' container reference.
 	 * @see #getOwner()
 	 * @generated
@@ -118,13 +116,14 @@ public interface License extends EObject
 	void setOwner(Customer value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>EReference0</b></em>' reference. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>EReference0</em>' reference isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>EReference0</em>' reference.
 	 * @see #setEReference0(Customer)
 	 * @see com.opcoach.training.rental.RentalPackage#getLicense_EReference0()
@@ -135,8 +134,8 @@ public interface License extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.License#getEReference0 <em>EReference0</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>EReference0</em>' reference.
 	 * @see #getEReference0()
 	 * @generated
@@ -144,8 +143,7 @@ public interface License extends EObject
 	void setEReference0(Customer value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
 	 */

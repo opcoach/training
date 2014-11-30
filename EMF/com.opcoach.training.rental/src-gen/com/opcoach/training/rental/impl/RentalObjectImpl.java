@@ -20,9 +20,8 @@ import com.opcoach.training.rental.RentalObject;
 import com.opcoach.training.rental.RentalPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Object</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Object</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -38,16 +37,15 @@ import com.opcoach.training.rental.RentalPackage;
 public class RentalObjectImpl extends EObjectImpl implements RentalObject
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getID()
 	 * @generated
 	 * @ordered
@@ -55,9 +53,9 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	protected static final long ID_EDEFAULT = 0L;
 
 	/**
-	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getID()
 	 * @generated
 	 * @ordered
@@ -66,8 +64,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -76,8 +73,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -86,8 +82,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 
 	/**
 	 * The default value of the '{@link #isAvailable() <em>Available</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isAvailable()
 	 * @generated
 	 * @ordered
@@ -96,8 +91,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 
 	/**
 	 * The cached value of the '{@link #isAvailable() <em>Available</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isAvailable()
 	 * @generated
 	 * @ordered
@@ -105,8 +99,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	protected boolean available = AVAILABLE_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected RentalObjectImpl()
@@ -115,8 +108,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -126,8 +118,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public long getID()
@@ -136,8 +127,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setID(long newID)
@@ -149,8 +139,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getName()
@@ -159,8 +148,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setName(String newName)
@@ -172,8 +160,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RentalAgency getParentAgency()
@@ -183,8 +170,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetParentAgency(RentalAgency newParentAgency, NotificationChain msgs)
@@ -194,13 +180,13 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setParentAgency(RentalAgency newParentAgency)
 	{
-		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL_OBJECT__PARENT_AGENCY && newParentAgency != null)) {
+		if (newParentAgency != eInternalContainer() || (eContainerFeatureID() != RentalPackage.RENTAL_OBJECT__PARENT_AGENCY && newParentAgency != null))
+		{
 			if (EcoreUtil.isAncestor(this, newParentAgency))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -216,8 +202,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isAvailable()
@@ -226,8 +211,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setAvailable(boolean newAvailable)
@@ -239,8 +223,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Rental rent(Customer customer)
@@ -251,14 +234,14 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -268,14 +251,14 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				return basicSetParentAgency(null, msgs);
 		}
@@ -283,14 +266,14 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case RentalPackage.RENTAL_OBJECT__PARENT_AGENCY:
 				return eInternalContainer().eInverseRemove(this, RentalPackage.RENTAL_AGENCY__OBJECTS_TO_RENT, RentalAgency.class, msgs);
 		}
@@ -298,14 +281,14 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 				return getID();
 			case RentalPackage.RENTAL_OBJECT__NAME:
@@ -319,14 +302,14 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 				setID((Long)newValue);
 				return;
@@ -344,14 +327,14 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 				setID(ID_EDEFAULT);
 				return;
@@ -369,14 +352,14 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.RENTAL_OBJECT__ID:
 				return id != ID_EDEFAULT;
 			case RentalPackage.RENTAL_OBJECT__NAME:
@@ -390,8 +373,7 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -411,20 +393,18 @@ public class RentalObjectImpl extends EObjectImpl implements RentalObject
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
-	 */ 
+	 */
 	@Override
 	public boolean equals(Object obj)
 	{
 		if (obj == null)
 			return false;
-		
-		return (obj instanceof RentalObject) ? getID() == ((RentalObject) obj).getID() : false;
-		
-	}
-	
-	
 
-} //RentalObjectImpl
+		return (obj instanceof RentalObject) ? getID() == ((RentalObject) obj).getID() : false;
+
+	}
+
+} // RentalObjectImpl

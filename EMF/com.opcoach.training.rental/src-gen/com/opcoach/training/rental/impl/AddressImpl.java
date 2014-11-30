@@ -15,9 +15,8 @@ import com.opcoach.training.rental.RentalPackage;
 import com.opcoach.training.rental.StreetType;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Address</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Address</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -34,16 +33,14 @@ import com.opcoach.training.rental.StreetType;
 public class AddressImpl extends EObjectImpl implements Address
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The default value of the '{@link #getStreetType() <em>Street Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStreetType()
 	 * @generated
 	 * @ordered
@@ -52,8 +49,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The cached value of the '{@link #getStreetType() <em>Street Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStreetType()
 	 * @generated
 	 * @ordered
@@ -62,8 +58,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getNumber()
 	 * @generated
 	 * @ordered
@@ -72,8 +67,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getNumber()
 	 * @generated
 	 * @ordered
@@ -82,8 +76,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The default value of the '{@link #getZipCode() <em>Zip Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getZipCode()
 	 * @generated
 	 * @ordered
@@ -92,8 +85,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The cached value of the '{@link #getZipCode() <em>Zip Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getZipCode()
 	 * @generated
 	 * @ordered
@@ -102,8 +94,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The default value of the '{@link #getCity() <em>City</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCity()
 	 * @generated
 	 * @ordered
@@ -112,8 +103,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The cached value of the '{@link #getCity() <em>City</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCity()
 	 * @generated
 	 * @ordered
@@ -122,8 +112,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The default value of the '{@link #getStreetName() <em>Street Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStreetName()
 	 * @generated
 	 * @ordered
@@ -132,8 +121,7 @@ public class AddressImpl extends EObjectImpl implements Address
 
 	/**
 	 * The cached value of the '{@link #getStreetName() <em>Street Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStreetName()
 	 * @generated
 	 * @ordered
@@ -141,8 +129,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	protected String streetName = STREET_NAME_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected AddressImpl()
@@ -151,8 +138,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -162,8 +148,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StreetType getStreetType()
@@ -172,8 +157,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setStreetType(StreetType newStreetType)
@@ -185,8 +169,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getNumber()
@@ -195,8 +178,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setNumber(int newNumber)
@@ -208,8 +190,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getZipCode()
@@ -218,8 +199,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setZipCode(String newZipCode)
@@ -231,8 +211,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getCity()
@@ -241,8 +220,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setCity(String newCity)
@@ -254,8 +232,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getStreetName()
@@ -264,8 +241,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setStreetName(String newStreetName)
@@ -277,14 +253,14 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				return getStreetType();
 			case RentalPackage.ADDRESS__NUMBER:
@@ -300,14 +276,14 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				setStreetType((StreetType)newValue);
 				return;
@@ -328,14 +304,14 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				setStreetType(STREET_TYPE_EDEFAULT);
 				return;
@@ -356,14 +332,14 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case RentalPackage.ADDRESS__STREET_TYPE:
 				return streetType != STREET_TYPE_EDEFAULT;
 			case RentalPackage.ADDRESS__NUMBER:
@@ -379,8 +355,7 @@ public class AddressImpl extends EObjectImpl implements Address
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -403,4 +378,4 @@ public class AddressImpl extends EObjectImpl implements Address
 		return result.toString();
 	}
 
-} //AddressImpl
+} // AddressImpl

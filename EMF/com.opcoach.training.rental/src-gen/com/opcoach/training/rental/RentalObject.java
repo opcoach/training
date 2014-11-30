@@ -8,9 +8,8 @@ package com.opcoach.training.rental;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Object</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>Object</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -29,20 +28,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface RentalObject extends EObject
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String copyright = "OPCoach @ 2012";
 
 	/**
-	 * Returns the value of the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>ID</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>ID</em>' attribute isn't clear, there really
+	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(long)
 	 * @see com.opcoach.training.rental.RentalPackage#getRentalObject_ID()
@@ -53,8 +52,7 @@ public interface RentalObject extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.RentalObject#getID <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>ID</em>' attribute.
 	 * @see #getID()
 	 * @generated
@@ -62,13 +60,14 @@ public interface RentalObject extends EObject
 	void setID(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really
+	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see com.opcoach.training.rental.RentalPackage#getRentalObject_Name()
@@ -79,8 +78,7 @@ public interface RentalObject extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.RentalObject#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
@@ -92,8 +90,8 @@ public interface RentalObject extends EObject
 	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.RentalAgency#getObjectsToRent <em>Objects To Rent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parent Agency</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parent Agency</em>' container reference isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent Agency</em>' container reference.
@@ -116,13 +114,14 @@ public interface RentalObject extends EObject
 	void setParentAgency(RentalAgency value);
 
 	/**
-	 * Returns the value of the '<em><b>Available</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Available</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Available</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Available</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Available</em>' attribute.
 	 * @see #setAvailable(boolean)
 	 * @see com.opcoach.training.rental.RentalPackage#getRentalObject_Available()
@@ -132,18 +131,20 @@ public interface RentalObject extends EObject
 	boolean isAvailable();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.training.rental.RentalObject#isAvailable <em>Available</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Available</em>' attribute.
+	 * Sets the value of the '
+	 * {@link com.opcoach.training.rental.RentalObject#isAvailable
+	 * <em>Available</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Available</em>' attribute.
 	 * @see #isAvailable()
 	 * @generated
 	 */
 	void setAvailable(boolean value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */

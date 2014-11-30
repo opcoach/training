@@ -11,9 +11,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Agency</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>Agency</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -33,20 +32,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface RentalAgency extends EObject
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String copyright = "OPCoach @ 2012";
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really
+	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see com.opcoach.training.rental.RentalPackage#getRentalAgency_Name()
@@ -57,8 +56,7 @@ public interface RentalAgency extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.RentalAgency#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
@@ -69,8 +67,8 @@ public interface RentalAgency extends EObject
 	 * Returns the value of the '<em><b>Address</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Address</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Address</em>' containment reference isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' containment reference.
@@ -84,8 +82,8 @@ public interface RentalAgency extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.training.rental.RentalAgency#getAddress <em>Address</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Address</em>' containment reference.
 	 * @see #getAddress()
 	 * @generated
@@ -98,8 +96,8 @@ public interface RentalAgency extends EObject
 	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.RentalObject#getParentAgency <em>Parent Agency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Objects To Rent</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Objects To Rent</em>' containment reference
+	 * list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Objects To Rent</em>' containment reference list.
@@ -116,8 +114,8 @@ public interface RentalAgency extends EObject
 	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.Customer#getParentAgency <em>Parent Agency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Customers</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Customers</em>' containment reference list
+	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Customers</em>' containment reference list.
@@ -134,8 +132,8 @@ public interface RentalAgency extends EObject
 	 * It is bidirectional and its opposite is '{@link com.opcoach.training.rental.Rental#getParentAgency <em>Parent Agency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rentals</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Rentals</em>' containment reference list isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Rentals</em>' containment reference list.
@@ -147,17 +145,14 @@ public interface RentalAgency extends EObject
 	EList<Rental> getRentals();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
 	Rental book(Customer customer, RentalObject rentedObject, Date from, Date to);
 
-	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */

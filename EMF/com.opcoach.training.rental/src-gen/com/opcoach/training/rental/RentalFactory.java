@@ -8,34 +8,31 @@ package com.opcoach.training.rental;
 import org.eclipse.emf.ecore.EFactory;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Factory</b> for the model.
- * It provides a create method for each non-abstract class of the model.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a
+ * create method for each non-abstract class of the model. <!-- end-user-doc -->
  * @see com.opcoach.training.rental.RentalPackage
  * @generated
  */
 public interface RentalFactory extends EFactory
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String copyright = "OPCoach @ 2012";
 
 	/**
 	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	RentalFactory eINSTANCE = com.opcoach.training.rental.impl.RentalFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Customer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>Customer</em>'.
 	 * @generated
 	 */
@@ -95,4 +92,4 @@ public interface RentalFactory extends EFactory
 	 */
 	RentalPackage getRentalPackage();
 
-} //RentalFactory
+} // RentalFactory
