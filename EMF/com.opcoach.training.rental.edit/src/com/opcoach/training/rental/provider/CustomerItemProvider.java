@@ -71,12 +71,12 @@ public class CustomerItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addFirstNamePropertyDescriptor(object);
-			addLastNamePropertyDescriptor(object);
-			addIDPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -105,47 +105,24 @@ public class CustomerItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Last Name feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLastNamePropertyDescriptor(Object object)
+	protected void addNamePropertyDescriptor(Object object)
 	{
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Customer_lastName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Customer_lastName_feature", "_UI_Customer_type"),
-				 RentalPackage.Literals.CUSTOMER__LAST_NAME,
+				 getString("_UI_Customer_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Customer_name_feature", "_UI_Customer_type"),
+				 RentalPackage.Literals.CUSTOMER__NAME,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the ID feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIDPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Customer_ID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Customer_ID_feature", "_UI_Customer_type"),
-				 RentalPackage.Literals.CUSTOMER__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -161,7 +138,8 @@ public class CustomerItemProvider
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
 	{
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RentalPackage.Literals.CUSTOMER__ADDRESS);
 			childrenFeatures.add(RentalPackage.Literals.CUSTOMER__LICENSES);
@@ -204,7 +182,7 @@ public class CustomerItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		String label = ((Customer)object).getFirstName();
+		String label = ((Customer)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Customer_type") :
 			getString("_UI_Customer_type") + " " + label;
@@ -222,10 +200,10 @@ public class CustomerItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Customer.class)) {
+		switch (notification.getFeatureID(Customer.class))
+		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
-			case RentalPackage.CUSTOMER__LAST_NAME:
-			case RentalPackage.CUSTOMER__ID:
+			case RentalPackage.CUSTOMER__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RentalPackage.CUSTOMER__ADDRESS:

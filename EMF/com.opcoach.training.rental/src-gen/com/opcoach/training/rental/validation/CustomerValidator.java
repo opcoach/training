@@ -32,4 +32,6 @@ public interface CustomerValidator
 	boolean validateParentAgency(RentalAgency value);
 
 	boolean validateID(long value);
+
+	boolean validateName(String value);
 }

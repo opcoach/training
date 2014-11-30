@@ -16,11 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.opcoach.training.rental.Customer#getFirstName <em>First Name</em>}</li>
- *   <li>{@link com.opcoach.training.rental.Customer#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.Customer#getName <em>Name</em>}</li>
  *   <li>{@link com.opcoach.training.rental.Customer#getAddress <em>Address</em>}</li>
  *   <li>{@link com.opcoach.training.rental.Customer#getLicenses <em>Licenses</em>}</li>
  *   <li>{@link com.opcoach.training.rental.Customer#getParentAgency <em>Parent Agency</em>}</li>
- *   <li>{@link com.opcoach.training.rental.Customer#getID <em>ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,35 +65,35 @@ public interface Customer extends EObject
 	 */
 	void setFirstName(String value);
 
+	
+
+	
+
 	/**
-	 * Returns the value of the '<em><b>Last Name</b></em>' attribute. <!--
-	 * begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Last Name</em>' attribute isn't clear, there
-	 * really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Last Name</em>' attribute.
-	 * @see #setLastName(String)
-	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_LastName()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_Name()
 	 * @model
 	 * @generated
 	 */
-	String getLastName();
+	String getName();
 
 	/**
-	 * Sets the value of the '
-	 * {@link com.opcoach.training.rental.Customer#getLastName
-	 * <em>Last Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Last Name</em>' attribute.
-	 * @see #getLastName()
+	 * Sets the value of the '{@link com.opcoach.training.rental.Customer#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setLastName(String value);
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Address</b></em>' containment reference.
@@ -169,44 +168,5 @@ public interface Customer extends EObject
 	 */
 	void setParentAgency(RentalAgency value);
 
-	/**
-	 * Returns the value of the '<em><b>ID</b></em>' attribute. <!--
-	 * begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>ID</em>' attribute isn't clear, there really
-	 * should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>ID</em>' attribute.
-	 * @see #setID(long)
-	 * @see com.opcoach.training.rental.RentalPackage#getCustomer_ID()
-	 * @model id="true"
-	 * @generated
-	 */
-	long getID();
-
-	/**
-	 * Sets the value of the '{@link com.opcoach.training.rental.Customer#getID <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>ID</em>' attribute.
-	 * @see #getID()
-	 * @generated
-	 */
-	void setID(long value);
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	String getDisplayName();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void addLicense(License license);
-
+	
 } // Customer

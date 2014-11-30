@@ -1,6 +1,6 @@
 // ------------------------------------------------
 // OPCoach Training Projects
-// © OPCoach 2009 http://www.opcoach.com
+// ï¿½ OPCoach 2009 http://www.opcoach.com
 // ------------------------------------------------
 
 package com.opcoach.training.rental.helpers;
@@ -30,7 +30,7 @@ public class LoadSampleAgency
 		MyRentalAgency agency = (MyRentalAgency) res.getContents().get(0);
 		for (Rental r : agency.getRentals())
 		{
-			System.out.println("Location de " + r.getRentedObject().getName() + " ˆ " + r.getCustomer().getDisplayName());
+			System.out.println("Location de " + r.getRentedObject().getName() + " ï¿½ " + r.getCustomer().getName());
 		}
 	}
 }

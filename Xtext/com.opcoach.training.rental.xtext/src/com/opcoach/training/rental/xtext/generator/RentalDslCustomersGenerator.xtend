@@ -11,16 +11,16 @@ import com.opcoach.training.rental.Customer
 class RentalDslCustomersGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa)
-	{
+	{ 
 		println("********* On genere les fichiers customer avec XTEND *************")
 		for (cust : resource.allContents.toList().filter(typeof(Customer)))
 			{
-				fsa.generateFile(cust.lastName  +"_" + cust.firstName +".cust",cust.generateCustomer())
+				fsa.generateFile(cust.name  +"_" + cust.firstName +".cust",cust.generateCustomer())
 			}
 	}
 
 	def  generateCustomer(Customer c) '''
-	Çc.firstNameÈ Çc.lastNameÈ is a customer of the Çc.parentAgency.nameÈ Agency.
+	Â«c.firstNameÂ» Â«c.nameÂ» is a customer of the Â«c.parentAgency.nameÂ» Agency.
 	'''
 	
 }

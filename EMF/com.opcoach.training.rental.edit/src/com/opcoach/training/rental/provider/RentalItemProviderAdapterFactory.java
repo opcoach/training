@@ -109,7 +109,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	@Override
 	public Adapter createCustomerAdapter()
 	{
-		if (customerItemProvider == null) {
+		if (customerItemProvider == null)
+		{
 			customerItemProvider = new CustomerItemProvider(this);
 		}
 
@@ -133,7 +134,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	@Override
 	public Adapter createRentalAgencyAdapter()
 	{
-		if (rentalAgencyItemProvider == null) {
+		if (rentalAgencyItemProvider == null)
+		{
 			rentalAgencyItemProvider = new RentalAgencyItemProvider(this);
 		}
 
@@ -157,7 +159,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	@Override
 	public Adapter createAddressAdapter()
 	{
-		if (addressItemProvider == null) {
+		if (addressItemProvider == null)
+		{
 			addressItemProvider = new AddressItemProvider(this);
 		}
 
@@ -181,7 +184,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	@Override
 	public Adapter createRentalObjectAdapter()
 	{
-		if (rentalObjectItemProvider == null) {
+		if (rentalObjectItemProvider == null)
+		{
 			rentalObjectItemProvider = new RentalObjectItemProvider(this);
 		}
 
@@ -205,7 +209,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	@Override
 	public Adapter createLicenseAdapter()
 	{
-		if (licenseItemProvider == null) {
+		if (licenseItemProvider == null)
+		{
 			licenseItemProvider = new LicenseItemProvider(this);
 		}
 
@@ -229,7 +234,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	@Override
 	public Adapter createRentalAdapter()
 	{
-		if (rentalItemProvider == null) {
+		if (rentalItemProvider == null)
+		{
 			rentalItemProvider = new RentalItemProvider(this);
 		}
 
@@ -289,9 +295,11 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	@Override
 	public Object adapt(Object object, Object type)
 	{
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -331,7 +339,8 @@ public class RentalItemProviderAdapterFactory extends RentalAdapterFactory imple
 	{
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

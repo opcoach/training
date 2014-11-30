@@ -59,22 +59,22 @@ public static RentalAgency createSampleAgency()
     // Create some customers
     Customer c1 = f.createCustomer();
     c1.setFirstName("John");
-    c1.setLastName("Wayne");
+    c1.setName("Wayne");
     c1.setAddress(ad1);
     
     Customer c2 = f.createCustomer();
     c2.setFirstName("Tom");
-    c2.setLastName("Cruise");
+    c2.setName("Cruise");
     c2.setAddress(ad2);
     
     Customer c3 = f.createCustomer();
     c3.setFirstName("Jean");
-    c3.setLastName("Gabin");
+    c3.setName("Gabin");
     c3.setAddress(ad3);
     
     Customer c4 = f.createCustomer();
     c4.setFirstName("Alain");
-    c4.setLastName("Delon");
+    c4.setName("Delon");
     c4.setAddress(ad1);
     
     agency.getCustomers().add(c1);

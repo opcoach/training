@@ -26,9 +26,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.opcoach.training.rental.xtext,
  com.opcoach.training.rental.xtext.formatting,
  com.opcoach.training.rental.xtext.generator,
- com.opcoach.training.rental.xtext.parseTreeConstruction,
  com.opcoach.training.rental.xtext.parser.antlr,
  com.opcoach.training.rental.xtext.parser.antlr.internal,
  com.opcoach.training.rental.xtext.scoping,
  com.opcoach.training.rental.xtext.services,
- com.opcoach.training.rental.xtext.validation
+ com.opcoach.training.rental.xtext.validation,
+ com.opcoach.training.rental.xtext.serializer

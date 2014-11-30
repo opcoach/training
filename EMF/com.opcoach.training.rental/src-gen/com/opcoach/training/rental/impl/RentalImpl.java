@@ -460,8 +460,8 @@ public class RentalImpl extends EObjectImpl implements Rental
 		RentalObject o = getRentedObject();
 		StringBuffer buf = new StringBuffer((o == null) ? "?" : o.getName());
 		Customer c = getCustomer();
-		buf.append(" lou� par ").append((c == null) ? "?" : c.getLastName());
-		buf.append(" du ").append((getStartDate() == null) ? " ?" : df.format(getStartDate())).append(" au ");
+		buf.append(" rented by ").append((c == null) ? "?" : c.getName());
+		buf.append(" from ").append((getStartDate() == null) ? " ?" : df.format(getStartDate())).append(" to ");
 		buf.append((getEndDate() == null) ? " ? " : df.format(getEndDate()));
 		return buf.toString();
 	}

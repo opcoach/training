@@ -18,13 +18,10 @@ Package rental <http://com.opcoach.training/rental/1.0>
 
   Class Customer
     Attribute firstName : EString
-    Attribute lastName : EString
+    Attribute name : EString
     Reference address : Address<<1..1>>
     Reference licenses : License<<0..*>>
     Reference parentAgency : RentalAgency<<1..1>>
-    Attribute ID : ELong
-    Operation getDisplayName() : EString
-    Operation addLicense(License) : void
 
   Class Address
     Attribute streetType : StreetType

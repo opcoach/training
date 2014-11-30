@@ -31,11 +31,10 @@ import com.opcoach.training.rental.RentalPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getFirstName <em>First Name</em>}</li>
- *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getLicenses <em>Licenses</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getParentAgency <em>Parent Agency</em>}</li>
- *   <li>{@link com.opcoach.training.rental.impl.CustomerImpl#getID <em>ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,22 +67,24 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	protected String firstName = FIRST_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getLastName()
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LAST_NAME_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getLastName()
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String lastName = LAST_NAME_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
@@ -102,26 +103,6 @@ public class CustomerImpl extends EObjectImpl implements Customer
 	 * @ordered
 	 */
 	protected EList<License> licenses;
-
-	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getID()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long ID_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getID()
-	 * @generated
-	 * @ordered
-	 */
-	protected long id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -163,25 +144,30 @@ public class CustomerImpl extends EObjectImpl implements Customer
 			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.CUSTOMER__FIRST_NAME, oldFirstName, firstName));
 	}
 
+
+
+
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLastName()
+	public String getName()
 	{
-		return lastName;
+		return name;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLastName(String newLastName)
+	public void setName(String newName)
 	{
-		String oldLastName = lastName;
-		lastName = newLastName;
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.CUSTOMER__LAST_NAME, oldLastName, lastName));
+			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.CUSTOMER__NAME, oldName, name));
 	}
 
 	/**
@@ -284,47 +270,9 @@ public class CustomerImpl extends EObjectImpl implements Customer
 			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.CUSTOMER__PARENT_AGENCY, newParentAgency, newParentAgency));
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public long getID()
-	{
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setID(long newID)
-	{
-		long oldID = id;
-		id = newID;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.CUSTOMER__ID, oldID, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public String getDisplayName()
-	{
-		return getFirstName() + " " + getLastName();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public void addLicense(License license)
-	{
-		getLicenses().add(license);
-		license.setOwner(this);
-	}
+	
+	
+	
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -391,16 +339,14 @@ public class CustomerImpl extends EObjectImpl implements Customer
 		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				return getFirstName();
-			case RentalPackage.CUSTOMER__LAST_NAME:
-				return getLastName();
+			case RentalPackage.CUSTOMER__NAME:
+				return getName();
 			case RentalPackage.CUSTOMER__ADDRESS:
 				return getAddress();
 			case RentalPackage.CUSTOMER__LICENSES:
 				return getLicenses();
 			case RentalPackage.CUSTOMER__PARENT_AGENCY:
 				return getParentAgency();
-			case RentalPackage.CUSTOMER__ID:
-				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -418,8 +364,8 @@ public class CustomerImpl extends EObjectImpl implements Customer
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				setFirstName((String)newValue);
 				return;
-			case RentalPackage.CUSTOMER__LAST_NAME:
-				setLastName((String)newValue);
+			case RentalPackage.CUSTOMER__NAME:
+				setName((String)newValue);
 				return;
 			case RentalPackage.CUSTOMER__ADDRESS:
 				setAddress((Address)newValue);
@@ -430,9 +376,6 @@ public class CustomerImpl extends EObjectImpl implements Customer
 				return;
 			case RentalPackage.CUSTOMER__PARENT_AGENCY:
 				setParentAgency((RentalAgency)newValue);
-				return;
-			case RentalPackage.CUSTOMER__ID:
-				setID((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -450,8 +393,8 @@ public class CustomerImpl extends EObjectImpl implements Customer
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				setFirstName(FIRST_NAME_EDEFAULT);
 				return;
-			case RentalPackage.CUSTOMER__LAST_NAME:
-				setLastName(LAST_NAME_EDEFAULT);
+			case RentalPackage.CUSTOMER__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case RentalPackage.CUSTOMER__ADDRESS:
 				setAddress((Address)null);
@@ -461,9 +404,6 @@ public class CustomerImpl extends EObjectImpl implements Customer
 				return;
 			case RentalPackage.CUSTOMER__PARENT_AGENCY:
 				setParentAgency((RentalAgency)null);
-				return;
-			case RentalPackage.CUSTOMER__ID:
-				setID(ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -480,16 +420,14 @@ public class CustomerImpl extends EObjectImpl implements Customer
 		{
 			case RentalPackage.CUSTOMER__FIRST_NAME:
 				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
-			case RentalPackage.CUSTOMER__LAST_NAME:
-				return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
+			case RentalPackage.CUSTOMER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RentalPackage.CUSTOMER__ADDRESS:
 				return address != null;
 			case RentalPackage.CUSTOMER__LICENSES:
 				return licenses != null && !licenses.isEmpty();
 			case RentalPackage.CUSTOMER__PARENT_AGENCY:
 				return getParentAgency() != null;
-			case RentalPackage.CUSTOMER__ID:
-				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -506,10 +444,8 @@ public class CustomerImpl extends EObjectImpl implements Customer
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (firstName: ");
 		result.append(firstName);
-		result.append(", lastName: ");
-		result.append(lastName);
-		result.append(", ID: ");
-		result.append(id);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

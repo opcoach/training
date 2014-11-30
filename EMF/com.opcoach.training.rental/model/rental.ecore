@@ -46,12 +46,8 @@
     <eAnnotations source="gmf.node">
       <details key="figure" value="com.opcoach.training.rental.gef.figures"/>
     </eAnnotations>
-    <eOperations name="getDisplayName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="addLicense">
-      <eParameters name="license" eType="#//License"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
         eType="#//Address" containment="true">
       <eAnnotations source="gmf.compartment">
@@ -66,8 +62,6 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentAgency" lowerBound="1"
         eType="#//RentalAgency" eOpposite="#//RentalAgency/customers"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
-        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Address">
     <eAnnotations source="gmf.node">

@@ -197,7 +197,7 @@ public class RentalValidator extends EObjectValidator
 		// -> verify the diagnostic details, including severity, code, and
 		// message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (customer.getLastName().length() <= 2)
+		if (customer.getName().length() <= 2)
 		{
 			if (diagnostics != null)
 			{

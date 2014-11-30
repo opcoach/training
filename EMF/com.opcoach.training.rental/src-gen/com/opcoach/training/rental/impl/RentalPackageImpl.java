@@ -178,15 +178,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCustomer_LastName()
-	{
-		return (EAttribute)customerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getCustomer_Address()
 	{
 		return (EReference)customerEClass.getEStructuralFeatures().get(2);
@@ -211,12 +202,13 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCustomer_ID()
+	public EAttribute getCustomer_Name()
 	{
-		return (EAttribute)customerEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)customerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -517,11 +509,10 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 
 		customerEClass = createEClass(CUSTOMER);
 		createEAttribute(customerEClass, CUSTOMER__FIRST_NAME);
-		createEAttribute(customerEClass, CUSTOMER__LAST_NAME);
+		createEAttribute(customerEClass, CUSTOMER__NAME);
 		createEReference(customerEClass, CUSTOMER__ADDRESS);
 		createEReference(customerEClass, CUSTOMER__LICENSES);
 		createEReference(customerEClass, CUSTOMER__PARENT_AGENCY);
-		createEAttribute(customerEClass, CUSTOMER__ID);
 
 		addressEClass = createEClass(ADDRESS);
 		createEAttribute(addressEClass, ADDRESS__STREET_TYPE);
@@ -603,16 +594,10 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 
 		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomer_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomer_LastName(), ecorePackage.getEString(), "lastName", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomer_Name(), ecorePackage.getEString(), "name", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCustomer_Address(), this.getAddress(), null, "address", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCustomer_Licenses(), this.getLicense(), this.getLicense_Owner(), "licenses", null, 0, -1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCustomer_ParentAgency(), this.getRentalAgency(), this.getRentalAgency_Customers(), "parentAgency", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomer_ID(), ecorePackage.getELong(), "ID", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(customerEClass, ecorePackage.getEString(), "getDisplayName", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(customerEClass, null, "addLicense", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getLicense(), "license", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddress_StreetType(), this.getStreetType(), "streetType", "Street", 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

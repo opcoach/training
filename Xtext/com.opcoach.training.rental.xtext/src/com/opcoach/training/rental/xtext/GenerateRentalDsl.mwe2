@@ -14,7 +14,7 @@ Workflow {
 		platformUri = "${runtimeProject}/.."
 		registerGeneratedEPackage = "com.opcoach.training.rental.RentalPackage"
 	
-		// registerGenModelFile = "platform:/resource/com.opcoach.training.rental/model/rental.genmodel"
+	   registerGenModelFile = "/Users/olivier/git/training/EMF/com.opcoach.training.rental/model/rental.genmodel"
 	
 	}
 
@@ -42,7 +42,7 @@ Workflow {
 			// fragment = ecore.EcoreGeneratorFragment {}
 
 			// the serialization component
-			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+			fragment = serializer.SerializerFragment {} 
 
 			// a custom ResourceFactory for use with EMF 
 			fragment = resourceFactory.ResourceFactoryFragment {

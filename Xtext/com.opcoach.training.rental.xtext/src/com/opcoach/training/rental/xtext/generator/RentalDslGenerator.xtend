@@ -5,15 +5,15 @@ package com.opcoach.training.rental.xtext.generator
 
 import com.opcoach.training.rental.Customer
 import com.opcoach.training.rental.RentalAgency
+import java.util.Collection
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import java.util.Collection
 
 class RentalDslGenerator implements IGenerator {
-	
+	 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa)
-	{
+	{ 
 		// Get the edited root object
 		var  agency = resource.contents.head as RentalAgency
 		// Get a collection of model object in the root object
@@ -29,5 +29,5 @@ class RentalDslGenerator implements IGenerator {
 	}
 	
 	def getText(RentalAgency a, Collection<Customer> cl) '''
-	Agency name is Ça.nameÈ and contains Çcl.sizeÈ Filtered Customers'''
+	Agency name is Â«a.nameÂ» and contains Â«cl.sizeÂ» Filtered Customers'''
 }

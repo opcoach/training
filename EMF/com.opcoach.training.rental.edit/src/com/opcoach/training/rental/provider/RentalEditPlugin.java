@@ -48,7 +48,8 @@ public final class RentalEditPlugin extends EMFPlugin
 	public RentalEditPlugin()
 	{
 		super
-		  (new ResourceLocator [] {
+		  (new ResourceLocator [] 
+		   {
 		   });
 	}
 

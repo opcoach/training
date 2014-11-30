@@ -141,13 +141,13 @@ public interface RentalPackage extends EPackage
 	int CUSTOMER__FIRST_NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER__LAST_NAME = 1;
+	int CUSTOMER__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' containment reference.
@@ -174,22 +174,13 @@ public interface RentalPackage extends EPackage
 	int CUSTOMER__PARENT_AGENCY = 4;
 
 	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__ID = 5;
-
-	/**
 	 * The number of structural features of the '<em>Customer</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_FEATURE_COUNT = 6;
+	int CUSTOMER_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.training.rental.impl.AddressImpl <em>Address</em>}' class.
@@ -454,16 +445,6 @@ public interface RentalPackage extends EPackage
 	EAttribute getCustomer_FirstName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.opcoach.training.rental.Customer#getLastName <em>Last Name</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Last Name</em>'.
-	 * @see com.opcoach.training.rental.Customer#getLastName()
-	 * @see #getCustomer()
-	 * @generated
-	 */
-	EAttribute getCustomer_LastName();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link com.opcoach.training.rental.Customer#getAddress <em>Address</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Address</em>'.
@@ -494,16 +475,15 @@ public interface RentalPackage extends EPackage
 	EReference getCustomer_ParentAgency();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link com.opcoach.training.rental.Customer#getID <em>ID</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>ID</em>'.
-	 * @see com.opcoach.training.rental.Customer#getID()
+	 * Returns the meta object for the attribute '{@link com.opcoach.training.rental.Customer#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.opcoach.training.rental.Customer#getName()
 	 * @see #getCustomer()
 	 * @generated
 	 */
-	EAttribute getCustomer_ID();
+	EAttribute getCustomer_Name();
 
 	/**
 	 * Returns the meta object for class '
@@ -846,13 +826,6 @@ public interface RentalPackage extends EPackage
 		EAttribute CUSTOMER__FIRST_NAME = eINSTANCE.getCustomer_FirstName();
 
 		/**
-		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CUSTOMER__LAST_NAME = eINSTANCE.getCustomer_LastName();
-
-		/**
 		 * The meta object literal for the '<em><b>Address</b></em>' containment reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
@@ -876,11 +849,12 @@ public interface RentalPackage extends EPackage
 		EReference CUSTOMER__PARENT_AGENCY = eINSTANCE.getCustomer_ParentAgency();
 
 		/**
-		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUSTOMER__ID = eINSTANCE.getCustomer_ID();
+		EAttribute CUSTOMER__NAME = eINSTANCE.getCustomer_Name();
 
 		/**
 		 * The meta object literal for the '
