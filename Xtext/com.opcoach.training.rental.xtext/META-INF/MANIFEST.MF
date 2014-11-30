@@ -17,7 +17,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext.builder,
  org.eclipse.emf.ecore,
  org.eclipse.core.resources,
- com.opcoach.training.rental
+ com.opcoach.training.rental,
+ org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.apache.commons.logging,
  org.eclipse.xtext.xbase.lib

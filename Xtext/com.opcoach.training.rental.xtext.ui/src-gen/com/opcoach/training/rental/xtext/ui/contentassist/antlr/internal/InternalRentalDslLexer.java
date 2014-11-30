@@ -867,10 +867,10 @@ public class InternalRentalDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -888,10 +888,10 @@ public class InternalRentalDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -907,23 +907,15 @@ public class InternalRentalDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -948,10 +940,10 @@ public class InternalRentalDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -967,23 +959,15 @@ public class InternalRentalDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.opcoach.training.rental.xtext.ui/src-gen/com/opcoach/training/rental/xtext/ui/contentassist/antlr/internal/InternalRentalDsl.g:4132:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1534,78 +1518,19 @@ public class InternalRentalDslLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\3\40\2\uffff\1\40\1\uffff\12\40\1\uffff\3\40\1\35\2\uffff"+
-        "\3\35\2\uffff\2\40\1\uffff\3\40\2\uffff\1\40\1\uffff\15\40\1\uffff"+
-        "\3\40\5\uffff\32\40\1\157\3\40\1\163\5\40\1\172\11\40\1\u0084\2"+
-        "\40\1\uffff\3\40\1\uffff\6\40\1\uffff\11\40\1\uffff\1\40\1\u009a"+
-        "\1\u009d\7\40\1\u00a6\12\40\1\uffff\2\40\1\uffff\2\40\1\u00b5\1"+
-        "\40\1\u00b7\3\40\1\uffff\1\u00bb\4\40\1\u00c0\1\u00c1\6\40\1\u00c9"+
-        "\1\uffff\1\40\1\uffff\3\40\1\uffff\1\u00ce\1\40\1\u00d0\1\u00d1"+
-        "\2\uffff\6\40\1\u00d8\1\uffff\3\40\1\u00dc\1\uffff\1\u00dd\2\uffff"+
-        "\1\40\1\u00df\4\40\1\uffff\1\40\1\u00e5\1\u00e6\2\uffff\1\40\1\uffff"+
-        "\1\u00e8\4\40\2\uffff\1\40\1\uffff\1\u00ee\1\u00ef\1\40\1\u00f1"+
-        "\1\u00f2\2\uffff\1\u00f3\3\uffff";
+        "\1\uffff\3\40\2\uffff\1\40\1\uffff\12\40\1\uffff\3\40\1\35\2\uffff\3\35\2\uffff\2\40\1\uffff\3\40\2\uffff\1\40\1\uffff\15\40\1\uffff\3\40\5\uffff\32\40\1\157\3\40\1\163\5\40\1\172\11\40\1\u0084\2\40\1\uffff\3\40\1\uffff\6\40\1\uffff\11\40\1\uffff\1\40\1\u009a\1\u009d\7\40\1\u00a6\12\40\1\uffff\2\40\1\uffff\2\40\1\u00b5\1\40\1\u00b7\3\40\1\uffff\1\u00bb\4\40\1\u00c0\1\u00c1\6\40\1\u00c9\1\uffff\1\40\1\uffff\3\40\1\uffff\1\u00ce\1\40\1\u00d0\1\u00d1\2\uffff\6\40\1\u00d8\1\uffff\3\40\1\u00dc\1\uffff\1\u00dd\2\uffff\1\40\1\u00df\4\40\1\uffff\1\40\1\u00e5\1\u00e6\2\uffff\1\40\1\uffff\1\u00e8\4\40\2\uffff\1\40\1\uffff\1\u00ee\1\u00ef\1\40\1\u00f1\1\u00f2\2\uffff\1\u00f3\3\uffff";
     static final String DFA12_eofS =
         "\u00f4\uffff";
     static final String DFA12_minS =
-        "\1\0\1\104\1\164\1\145\2\uffff\1\142\1\uffff\1\151\1\145\1\144\1"+
-        "\164\1\141\1\151\1\165\1\151\1\141\1\156\1\uffff\1\151\1\141\1\166"+
-        "\1\101\2\uffff\2\0\1\52\2\uffff\1\141\1\145\1\uffff\1\162\1\141"+
-        "\1\156\2\uffff\1\152\1\uffff\1\163\1\164\1\156\1\144\1\141\2\155"+
-        "\1\160\1\163\1\162\1\163\1\143\1\144\1\uffff\1\143\1\154\1\141\5"+
-        "\uffff\1\164\1\146\1\145\1\144\1\164\1\145\1\164\1\171\1\164\1\162"+
-        "\1\145\1\162\1\142\1\145\1\103\1\164\1\163\1\164\1\145\1\104\1\145"+
-        "\2\151\3\145\1\60\1\141\1\143\1\157\1\60\1\141\2\145\1\164\1\145"+
-        "\1\60\2\157\1\164\1\116\1\156\1\141\1\156\1\144\1\154\1\60\1\162"+
-        "\1\164\1\uffff\1\154\1\164\1\155\1\uffff\1\154\1\144\1\163\1\164"+
-        "\1\104\1\162\1\uffff\1\144\1\155\1\116\1\141\1\163\1\164\1\163\1"+
-        "\151\1\141\1\uffff\1\145\2\60\1\163\1\145\1\163\1\117\1\163\1\116"+
-        "\1\141\1\60\2\145\1\141\1\155\3\145\1\164\1\142\1\156\1\uffff\1"+
-        "\147\1\142\1\uffff\1\124\1\162\1\60\1\142\1\60\1\171\1\141\1\164"+
-        "\1\uffff\1\60\1\162\1\155\1\145\1\163\2\60\1\171\1\154\1\143\1\145"+
-        "\1\152\1\157\1\60\1\uffff\1\152\1\uffff\1\160\1\155\1\145\1\uffff"+
-        "\1\60\1\145\2\60\2\uffff\1\104\2\145\1\156\1\145\1\122\1\60\1\uffff"+
-        "\3\145\1\60\1\uffff\1\60\2\uffff\1\141\2\60\2\143\1\145\1\uffff"+
-        "\1\143\2\60\2\uffff\1\164\1\uffff\1\60\1\171\1\164\1\156\1\164\2"+
-        "\uffff\1\145\1\uffff\2\60\1\164\2\60\2\uffff\1\60\3\uffff";
+        "\1\0\1\104\1\164\1\145\2\uffff\1\142\1\uffff\1\151\1\145\1\144\1\164\1\141\1\151\1\165\1\151\1\141\1\156\1\uffff\1\151\1\141\1\166\1\101\2\uffff\2\0\1\52\2\uffff\1\141\1\145\1\uffff\1\162\1\141\1\156\2\uffff\1\152\1\uffff\1\163\1\164\1\156\1\144\1\141\2\155\1\160\1\163\1\162\1\163\1\143\1\144\1\uffff\1\143\1\154\1\141\5\uffff\1\164\1\146\1\145\1\144\1\164\1\145\1\164\1\171\1\164\1\162\1\145\1\162\1\142\1\145\1\103\1\164\1\163\1\164\1\145\1\104\1\145\2\151\3\145\1\60\1\141\1\143\1\157\1\60\1\141\2\145\1\164\1\145\1\60\2\157\1\164\1\116\1\156\1\141\1\156\1\144\1\154\1\60\1\162\1\164\1\uffff\1\154\1\164\1\155\1\uffff\1\154\1\144\1\163\1\164\1\104\1\162\1\uffff\1\144\1\155\1\116\1\141\1\163\1\164\1\163\1\151\1\141\1\uffff\1\145\2\60\1\163\1\145\1\163\1\117\1\163\1\116\1\141\1\60\2\145\1\141\1\155\3\145\1\164\1\142\1\156\1\uffff\1\147\1\142\1\uffff\1\124\1\162\1\60\1\142\1\60\1\171\1\141\1\164\1\uffff\1\60\1\162\1\155\1\145\1\163\2\60\1\171\1\154\1\143\1\145\1\152\1\157\1\60\1\uffff\1\152\1\uffff\1\160\1\155\1\145\1\uffff\1\60\1\145\2\60\2\uffff\1\104\2\145\1\156\1\145\1\122\1\60\1\uffff\3\145\1\60\1\uffff\1\60\2\uffff\1\141\2\60\2\143\1\145\1\uffff\1\143\2\60\2\uffff\1\164\1\uffff\1\60\1\171\1\164\1\156\1\164\2\uffff\1\145\1\uffff\2\60\1\164\2\60\2\uffff\1\60\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\122\1\164\1\157\2\uffff\1\142\1\uffff\1\165\1\145\1\144"+
-        "\1\164\1\165\1\151\1\165\2\151\1\156\1\uffff\1\151\1\141\1\166\1"+
-        "\172\2\uffff\2\uffff\1\57\2\uffff\1\141\1\145\1\uffff\1\162\1\141"+
-        "\1\156\2\uffff\1\152\1\uffff\1\163\1\164\1\156\1\144\1\162\2\155"+
-        "\1\160\1\163\1\162\1\163\1\143\1\144\1\uffff\1\143\1\154\1\141\5"+
-        "\uffff\1\164\1\146\1\145\1\144\1\164\1\145\1\164\1\171\1\164\1\162"+
-        "\1\145\1\162\1\142\1\145\1\103\1\164\1\163\1\164\1\145\1\104\1\145"+
-        "\2\151\3\145\1\172\1\141\1\143\1\157\1\172\3\145\1\164\1\145\1\172"+
-        "\2\157\1\164\1\116\1\156\1\141\1\156\1\144\1\154\1\172\1\162\1\164"+
-        "\1\uffff\1\154\1\164\1\155\1\uffff\1\154\1\144\1\163\1\164\1\104"+
-        "\1\162\1\uffff\1\144\1\155\1\116\1\141\1\163\1\164\1\163\1\151\1"+
-        "\141\1\uffff\1\145\2\172\1\163\1\145\1\163\1\117\1\163\1\124\1\141"+
-        "\1\172\2\145\1\141\1\155\3\145\1\164\1\142\1\156\1\uffff\1\147\1"+
-        "\142\1\uffff\1\124\1\162\1\172\1\142\1\172\1\171\1\141\1\164\1\uffff"+
-        "\1\172\1\162\1\155\1\145\1\163\2\172\1\171\1\154\1\143\1\145\1\152"+
-        "\1\157\1\172\1\uffff\1\152\1\uffff\1\160\1\155\1\145\1\uffff\1\172"+
-        "\1\145\2\172\2\uffff\1\104\2\145\1\156\1\145\1\122\1\172\1\uffff"+
-        "\3\145\1\172\1\uffff\1\172\2\uffff\1\141\1\172\1\60\2\143\1\145"+
-        "\1\uffff\1\143\2\172\2\uffff\1\164\1\uffff\1\172\1\171\1\164\1\156"+
-        "\1\164\2\uffff\1\145\1\uffff\2\172\1\164\2\172\2\uffff\1\172\3\uffff";
+        "\1\uffff\1\122\1\164\1\157\2\uffff\1\142\1\uffff\1\165\1\145\1\144\1\164\1\165\1\151\1\165\2\151\1\156\1\uffff\1\151\1\141\1\166\1\172\2\uffff\2\uffff\1\57\2\uffff\1\141\1\145\1\uffff\1\162\1\141\1\156\2\uffff\1\152\1\uffff\1\163\1\164\1\156\1\144\1\162\2\155\1\160\1\163\1\162\1\163\1\143\1\144\1\uffff\1\143\1\154\1\141\5\uffff\1\164\1\146\1\145\1\144\1\164\1\145\1\164\1\171\1\164\1\162\1\145\1\162\1\142\1\145\1\103\1\164\1\163\1\164\1\145\1\104\1\145\2\151\3\145\1\172\1\141\1\143\1\157\1\172\3\145\1\164\1\145\1\172\2\157\1\164\1\116\1\156\1\141\1\156\1\144\1\154\1\172\1\162\1\164\1\uffff\1\154\1\164\1\155\1\uffff\1\154\1\144\1\163\1\164\1\104\1\162\1\uffff\1\144\1\155\1\116\1\141\1\163\1\164\1\163\1\151\1\141\1\uffff\1\145\2\172\1\163\1\145\1\163\1\117\1\163\1\124\1\141\1\172\2\145\1\141\1\155\3\145\1\164\1\142\1\156\1\uffff\1\147\1\142\1\uffff\1\124\1\162\1\172\1\142\1\172\1\171\1\141\1\164\1\uffff\1\172\1\162\1\155\1\145\1\163\2\172\1\171\1\154\1\143\1\145\1\152\1\157\1\172\1\uffff\1\152\1\uffff\1\160\1\155\1\145\1\uffff\1\172\1\145\2\172\2\uffff\1\104\2\145\1\156\1\145\1\122\1\172\1\uffff\3\145\1\172\1\uffff\1\172\2\uffff\1\141\1\172\1\60\2\143\1\145\1\uffff\1\143\2\172\2\uffff\1\164\1\uffff\1\172\1\171\1\164\1\156\1\164\2\uffff\1\145\1\uffff\2\172\1\164\2\172\2\uffff\1\172\3\uffff";
     static final String DFA12_acceptS =
-        "\4\uffff\1\5\1\6\1\uffff\1\10\12\uffff\1\34\4\uffff\1\41\1\42\3"+
-        "\uffff\1\46\1\47\2\uffff\1\41\3\uffff\1\5\1\6\1\uffff\1\10\15\uffff"+
-        "\1\34\3\uffff\1\42\1\43\1\44\1\45\1\46\61\uffff\1\3\3\uffff\1\17"+
-        "\6\uffff\1\22\11\uffff\1\1\25\uffff\1\2\2\uffff\1\27\10\uffff\1"+
-        "\15\16\uffff\1\12\1\uffff\1\13\3\uffff\1\16\4\uffff\1\32\1\35\7"+
-        "\uffff\1\30\4\uffff\1\23\1\uffff\1\25\1\26\6\uffff\1\11\3\uffff"+
-        "\1\31\1\24\1\uffff\1\40\5\uffff\1\14\1\20\1\uffff\1\37\5\uffff\1"+
-        "\4\1\21\1\uffff\1\33\1\36\1\7";
+        "\4\uffff\1\5\1\6\1\uffff\1\10\12\uffff\1\34\4\uffff\1\41\1\42\3\uffff\1\46\1\47\2\uffff\1\41\3\uffff\1\5\1\6\1\uffff\1\10\15\uffff\1\34\3\uffff\1\42\1\43\1\44\1\45\1\46\61\uffff\1\3\3\uffff\1\17\6\uffff\1\22\11\uffff\1\1\25\uffff\1\2\2\uffff\1\27\10\uffff\1\15\16\uffff\1\12\1\uffff\1\13\3\uffff\1\16\4\uffff\1\32\1\35\7\uffff\1\30\4\uffff\1\23\1\uffff\1\25\1\26\6\uffff\1\11\3\uffff\1\31\1\24\1\uffff\1\40\5\uffff\1\14\1\20\1\uffff\1\37\5\uffff\1\4\1\21\1\uffff\1\33\1\36\1\7";
     static final String DFA12_specialS =
         "\1\1\30\uffff\1\0\1\2\u00d9\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\35\2\34\2\35\1\34\22\35\1\34\1\35\1\31\4\35\1\32\4\35\1"+
-            "\7\1\22\1\35\1\33\12\30\7\35\1\12\1\27\1\16\1\27\1\1\6\27\1"+
-            "\23\5\27\1\3\1\2\7\27\3\35\1\26\1\27\1\35\1\25\1\27\1\10\1\27"+
-            "\1\21\1\17\5\27\1\20\1\27\1\14\1\6\2\27\1\11\1\13\2\27\1\24"+
-            "\3\27\1\15\1\4\1\35\1\5\uff82\35",
+            "\11\35\2\34\2\35\1\34\22\35\1\34\1\35\1\31\4\35\1\32\4\35\1\7\1\22\1\35\1\33\12\30\7\35\1\12\1\27\1\16\1\27\1\1\6\27\1\23\5\27\1\3\1\2\7\27\3\35\1\26\1\27\1\35\1\25\1\27\1\10\1\27\1\21\1\17\5\27\1\20\1\27\1\14\1\6\2\27\1\11\1\13\2\27\1\24\3\27\1\15\1\4\1\35\1\5\uff82\35",
             "\1\36\15\uffff\1\37",
             "\1\41",
             "\1\43\11\uffff\1\42",
@@ -1740,8 +1665,7 @@ public class InternalRentalDslLexer extends Lexer {
             "",
             "\1\u0099",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\1\u009b\15\40\1\u009c\13\40\4\uffff\1\40\1\uffff"+
-            "\32\40",
+            "\12\40\7\uffff\1\u009b\15\40\1\u009c\13\40\4\uffff\1\40\1\uffff\32\40",
             "\1\u009e",
             "\1\u009f",
             "\1\u00a0",

@@ -6,14 +6,13 @@ package com.opcoach.training.rental.xtext.parseTreeConstruction;
 import org.eclipse.emf.ecore.*;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
-import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor;
 
 import com.opcoach.training.rental.xtext.services.RentalDslGrammarAccess;
 
 import com.google.inject.Inject;
 
 @SuppressWarnings("all")
-public class RentalDslParsetreeConstructor extends AbstractParseTreeConstructor {
+public class RentalDslParsetreeConstructor extends org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor {
 		
 	@Inject
 	private RentalDslGrammarAccess grammarAccess;

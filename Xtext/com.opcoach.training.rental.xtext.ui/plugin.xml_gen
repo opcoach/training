@@ -331,7 +331,9 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="com.opcoach.training.rental.xtext.ui.RentalDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="com.opcoach.training.rental.xtext.ui.RentalDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="agency"
+            >
       </participant>
    </extension>
    <extension
