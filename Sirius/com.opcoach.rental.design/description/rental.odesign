@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="rental" version="8.1.0">
+  <ownedViewpoints name="RentalDiag" label="RentalDiag" modelFileExtension="rental">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="agencyDiag" domainClass="RentalAgency" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="Customer" semanticCandidatesExpression="feature:customers" domainClass="Customer">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelFormat="bold" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[firstName.startsWith(&quot;J&quot;)/]">
+            <style xsi:type="style:CustomStyleDescription" labelFormat="bold" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="RentalObject" label="Rental Object" semanticCandidatesExpression="[objectsToRent/]" domainClass="RentalObject">
+          <style xsi:type="style:LozengeNodeDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Rental" semanticCandidatesExpression="feature:rentals" domainClass="Rental">
+          <style xsi:type="style:SquareDescription" labelExpression="Rental" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="customerRelation" sourceMapping="//@ownedViewpoints[name='RentalDiag']/@ownedRepresentations[name='agencyDiag']/@defaultLayer/@nodeMappings[name='Rental']" targetMapping="//@ownedViewpoints[name='RentalDiag']/@ownedRepresentations[name='agencyDiag']/@defaultLayer/@nodeMappings[name='Customer']" targetFinderExpression="[customer/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="rentedObject" sourceMapping="//@ownedViewpoints[name='RentalDiag']/@ownedRepresentations[name='agencyDiag']/@defaultLayer/@nodeMappings[name='Rental']" targetMapping="//@ownedViewpoints[name='RentalDiag']/@ownedRepresentations[name='agencyDiag']/@defaultLayer/@nodeMappings[name='RentalObject']" targetFinderExpression="[rentedObject/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
