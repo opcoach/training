@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model" xmlns:org.eclipse.emf.ecp.view.table.model="http://org/eclipse/emf/ecp/view/table/model" ecorePath="/com.opcoach.training.rental/model/rental.ecore">
+  <rootEClass href="http://com.opcoach.training/rental/1.0#//RentalAgency"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control name">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//RentalAgency/name"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.table.model:TableControl" name="Customers" detailEditing="WithDialog">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.table.model:TableDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.opcoach.training/rental/1.0#//RentalAgency/customers"/>
+      <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Customer/firstName"/>
+      </columnDomainModelReferences>
+      <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Customer/name"/>
+      </columnDomainModelReferences>
+    </domainModelReference>
+    <detailView>
+      <rootEClass href="http://com.opcoach.training/rental/1.0#//Customer"/>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control firstName">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Customer/firstName"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control name">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Customer/name"/>
+        </domainModelReference>
+      </children>
+    </detailView>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control address">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.opcoach.training/rental/1.0#//RentalAgency/address"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control objectsToRent">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.opcoach.training/rental/1.0#//RentalAgency/objectsToRent"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control customers">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.opcoach.training/rental/1.0#//RentalAgency/customers"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control rentals">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.opcoach.training/rental/1.0#//RentalAgency/rentals"/>
+    </domainModelReference>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>

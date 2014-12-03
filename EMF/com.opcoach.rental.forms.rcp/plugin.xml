@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.opcoach.rental.forms.rcp.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.opcoach.rental.forms.rcp.Perspective"
+            id="com.opcoach.rental.forms.rcp.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.opcoach.rental.forms.rcp.application"
+            name="Hello RCP">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.opcoach.rental.forms.rcp.PropertiesWithForms"
+            icon="icons/Customers.png"
+            id="com.opcoach.rental.forms.rcp.emfformView"
+            name="Properties View With Forms"
+            restorable="true">
+      </view>
+      <view
+            class="com.opcoach.rental.forms.rcp.views.RentalAgencyView"
+            icon="icons/Agency.png"
+            id="com.opcoach.rental.forms.rcp.agencyView"
+            name="Agencies"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecp.view.context.viewServices">
+      <viewService
+            class="org.eclipse.emf.ecp.spi.ui.ECPReferenceServiceImpl">
+      </viewService>
+   </extension>
+
+</plugin>

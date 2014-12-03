@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.horizontal.model="http://org/eclipse/emf/ecp/view/horizontal/model" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model" ecorePath="/com.opcoach.training.rental/model/rental.ecore">
+  <rootEClass href="http://com.opcoach.training/rental/1.0#//Address"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.horizontal.model:HorizontalLayout">
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control number">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Address/number"/>
+      </domainModelReference>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control streetType" labelAlignment="None">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Address/streetType"/>
+      </domainModelReference>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control streetName">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Address/streetName"/>
+      </domainModelReference>
+    </children>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.horizontal.model:HorizontalLayout">
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control zipCode">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Address/zipCode"/>
+      </domainModelReference>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control city">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Address/city"/>
+      </domainModelReference>
+    </children>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>

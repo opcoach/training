@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model" ecorePath="/com.opcoach.training.rental/model/rental.ecore">
+  <rootEClass href="http://com.opcoach.training/rental/1.0#//Customer"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control firstName">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Customer/firstName"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control name">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.opcoach.training/rental/1.0#//Customer/name"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control address">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.opcoach.training/rental/1.0#//Customer/address"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control licenses">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.opcoach.training/rental/1.0#//Customer/licenses"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" name="Control parentAgency">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.opcoach.training/rental/1.0#//Customer/parentAgency"/>
+    </domainModelReference>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>
