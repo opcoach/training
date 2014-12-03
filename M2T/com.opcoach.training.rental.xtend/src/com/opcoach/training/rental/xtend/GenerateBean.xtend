@@ -7,30 +7,30 @@ import org.eclipse.emf.ecore.EClass;
 class GenerateBean {
 	
 	def generateCode(EClass c,  String packName) '''
-		package ÇpackNameÈ;
-		public class Çc.nameÈ
+		package Â«packNameÂ»;
+		public class Â«c.nameÂ»
 		{
-			ÇFOR f : c.EAllStructuralFeaturesÈ
-			private Çf.typeÈ _Çf.nameÈ;
-			ÇENDFORÈ
+			Â«FOR f : c.EAllStructuralFeaturesÂ»
+			private Â«f.typeÂ» _Â«f.nameÂ»;
+			Â«ENDFORÂ»
 			
-			ÇFOR f : c.EAllStructuralFeaturesÈ
-			Çf.generateGetterÈ
-			ÇENDFORÈ
+			Â«FOR f : c.EAllStructuralFeaturesÂ»
+			Â«f.generateGetterÂ»
+			Â«ENDFORÂ»
 			
 		}
 	'''
 
 	def dispatch generateGetter(EAttribute att) '''
-	public Çatt.typeÈ getÇatt.name.toFirstUpperÈ()
+	public ï¿½att.typeï¿½ getï¿½att.name.toFirstUpperï¿½()
 	{
-		return _Çatt.nameÈ
+		return _ï¿½att.nameï¿½
 	}
 	'''
 	def dispatch generateGetter(EReference ref) '''
-	public Collection<Çref.typeÈ> getÇref.name.toFirstUpperÈ()
+	public Collection<ï¿½ref.typeï¿½> getï¿½ref.name.toFirstUpperï¿½()
 	{
-		return _Çref.nameÈ
+		return _ï¿½ref.nameï¿½
 	}
 	'''
 	
