@@ -54,5 +54,14 @@
             class="org.eclipse.emf.ecp.spi.ui.ECPReferenceServiceImpl">
       </viewService>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.opcoach.rental.forms.rcp.editors.EObjectEditorPart"
+            default="false"
+            id="com.opcoach.rental.forms.rcp.eObjectEditor"
+            name="EObject editor">
+      </editor>
+   </extension>
 
 </plugin>

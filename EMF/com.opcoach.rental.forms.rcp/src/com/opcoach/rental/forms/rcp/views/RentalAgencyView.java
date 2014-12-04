@@ -3,19 +3,17 @@ package com.opcoach.rental.forms.rcp.views;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.dnd.DND;
-import org.eclipse.swt.dnd.DragSource;
-import org.eclipse.swt.dnd.RTFTransfer;
-import org.eclipse.swt.dnd.TextTransfer;
-import org.eclipse.swt.dnd.Transfer;
-import org.eclipse.swt.dnd.URLTransfer;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
@@ -24,7 +22,9 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
@@ -32,10 +32,13 @@ import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.rental.forms.rcp.RentalUIActivator;
 import com.opcoach.rental.forms.rcp.RentalUIConstants;
+import com.opcoach.rental.forms.rcp.editors.EObjectEditorInput;
+import com.opcoach.rental.forms.rcp.editors.EObjectEditorPart;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 
-public class RentalAgencyView extends ViewPart implements IPropertyChangeListener, ISelectionListener, RentalUIConstants
+public class RentalAgencyView extends ViewPart implements IPropertyChangeListener, ISelectionListener,
+		RentalUIConstants
 {
 	public static final String VIEW_ID = "com.opcoach.rental.ui.rentalagencyview";
 
@@ -91,7 +94,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 			});
 
 		agencyViewer = new TreeViewer(parent);
-		agencyViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,true));
+		agencyViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		agencyViewer.setContentProvider(new AgencyContentProvider());
 		labelProvider = new AgencyLabelProvider();
 		agencyViewer.setLabelProvider(labelProvider);
@@ -115,13 +118,46 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		agencyViewer.getControl().setMenu(menu);
 		getSite().registerContextMenu(menuManager, agencyViewer);
 
-	/*	// L'arbre est draggable
-		DragSource ds = new DragSource(agencyViewer.getControl(), DND.DROP_COPY);
-		Transfer[] ts = new Transfer[] { TextTransfer.getInstance(), RTFTransfer.getInstance(), URLTransfer.getInstance() };
-		ds.setTransfer(ts);
-		ds.addDragListener(new AgencyTreeDragSourceListener(agencyViewer));
-*/
+		/*
+		 * // L'arbre est draggable DragSource ds = new
+		 * DragSource(agencyViewer.getControl(), DND.DROP_COPY); Transfer[] ts =
+		 * new Transfer[] { TextTransfer.getInstance(),
+		 * RTFTransfer.getInstance(), URLTransfer.getInstance() };
+		 * ds.setTransfer(ts); ds.addDragListener(new
+		 * AgencyTreeDragSourceListener(agencyViewer));
+		 */
 		getSite().setSelectionProvider(agencyViewer);
+
+		agencyViewer.addDoubleClickListener(new IDoubleClickListener()
+			{
+
+				@Override
+				public void doubleClick(DoubleClickEvent event)
+				{
+					EObject obj = null;
+
+					// ISelectionService service = (ISelectionService)
+					// PlatformUI.getWorkbench().getService(ISelectionService.class);
+					ISelection isel = event.getSelection();
+					if (isel instanceof IStructuredSelection)
+					{
+						IStructuredSelection iss = (IStructuredSelection) isel;
+						if (iss.getFirstElement() instanceof EObject)
+							obj = (EObject) iss.getFirstElement();
+					}
+
+					IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+					try
+					{
+						if (obj != null)
+							page.openEditor(new EObjectEditorInput(obj), EObjectEditorPart.ID);
+					} catch (PartInitException e)
+					{
+						// No editor available
+					}
+
+				}
+			});
 
 	}
 

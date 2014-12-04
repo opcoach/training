@@ -3,6 +3,12 @@
 <plugin>
    <extension
          point="org.eclipse.emf.ecp.view.model.provider.xmi.file">
+<file filePath="viewmodels/License.view"/>
+
+<file filePath="viewmodels/Rental.view"/>
+
+<file filePath="viewmodels/RentalObject.view"/>
+
 <file filePath="viewmodels/Customer.view"/>
 
 <file filePath="viewmodels/Address.view"/>
