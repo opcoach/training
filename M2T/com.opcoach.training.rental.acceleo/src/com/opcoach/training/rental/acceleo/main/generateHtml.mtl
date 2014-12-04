@@ -31,7 +31,7 @@
 [template public generateLineForCustomer(c : Customer)]
 	<tr>
         <td> [c.firstName/]  </td>
-        <td> [c.lastName/]  </td>
+        <td> [c.name/]  </td>
     </tr>
 [/template]
 
