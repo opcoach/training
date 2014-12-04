@@ -18,6 +18,7 @@
   <models xmi:type="gmftool:ToolRegistry" href="model/rental.gmftool#/"/>
   <models xmi:type="trace:TraceModel" href="model/rental.trace#/"/>
   <models xmi:type="ecore:EPackage" href="model/rentalSansGmfAnnot.ecore#/"/>
+  <models xmi:type="rental:RentalAgency" href="model/RentalAgency4.xmi#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_npYjgHZIEeSZrvk1bWw6_w" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_nxJYYHZIEeSZrvk1bWw6_w" name="rental class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_nxv1UHZIEeSZrvk1bWw6_w" source="GMF_DIAGRAMS">

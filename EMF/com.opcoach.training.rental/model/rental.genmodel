@@ -14,7 +14,7 @@
     </genEnums>
     <genClasses ecoreClass="rental.ecore#//RentalAgency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//RentalAgency/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/address"/>
+      <genFeatures children="true" createChild="true" propertyDescription="" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/address"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/objectsToRent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/customers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rental.ecore#//RentalAgency/rentals"/>
@@ -57,7 +57,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//License/number"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rental.ecore#//License/validityDate"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rental.ecore#//License/owner"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rental.ecore#//License/EReference0"/>
       <genOperations ecoreOperation="rental.ecore#//License/isValid"/>
     </genClasses>
     <genClasses ecoreClass="rental.ecore#//Rental">

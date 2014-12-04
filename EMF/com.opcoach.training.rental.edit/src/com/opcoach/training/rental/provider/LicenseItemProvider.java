@@ -75,7 +75,6 @@ public class LicenseItemProvider
 
 			addNumberPropertyDescriptor(object);
 			addValidityDatePropertyDescriptor(object);
-			addEReference0PropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -122,29 +121,6 @@ public class LicenseItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the EReference0 feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEReference0PropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_License_EReference0_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_License_EReference0_feature", "_UI_License_type"),
-				 RentalPackage.Literals.LICENSE__EREFERENCE0,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

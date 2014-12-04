@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.opcoach.training.rental.License#getNumber <em>Number</em>}</li>
  *   <li>{@link com.opcoach.training.rental.License#getValidityDate <em>Validity Date</em>}</li>
  *   <li>{@link com.opcoach.training.rental.License#getOwner <em>Owner</em>}</li>
- *   <li>{@link com.opcoach.training.rental.License#getEReference0 <em>EReference0</em>}</li>
  * </ul>
  * </p>
  *
@@ -114,33 +113,6 @@ public interface License extends EObject
 	 * @generated
 	 */
 	void setOwner(Customer value);
-
-	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference. <!--
-	 * begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear, there
-	 * really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(Customer)
-	 * @see com.opcoach.training.rental.RentalPackage#getLicense_EReference0()
-	 * @model
-	 * @generated
-	 */
-	Customer getEReference0();
-
-	/**
-	 * Sets the value of the '{@link com.opcoach.training.rental.License#getEReference0 <em>EReference0</em>}' reference.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
-	 * @generated
-	 */
-	void setEReference0(Customer value);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

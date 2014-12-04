@@ -2,10 +2,10 @@
 <rental:RentalAgency xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rental="http://com.opcoach.training/rental/1.0" xsi:schemaLocation="http://com.opcoach.training/rental/1.0 rental.ecore" name="Toulouse">
   <address zipCode="31100" city="Toulouse"/>
   <objectsToRent name="Velo"/>
-  <customers firstName="John" lastName="Wayne">
+  <customers firstName="John">
     <address zipCode="31100" city="Toulouse"/>
   </customers>
-  <customers firstName="Tom" lastName="Cruise">
+  <customers firstName="Tom">
     <address zipCode="31100" city="Toulouse"/>
   </customers>
   <rentals customer="//@customers.1" rentedObject="//@objectsToRent.0" startDate="2011-11-30T00:00:00.000+0100" endDate="2011-12-02T00:00:00.000+0100"/>

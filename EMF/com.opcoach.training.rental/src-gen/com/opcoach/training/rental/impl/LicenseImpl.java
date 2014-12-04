@@ -28,7 +28,6 @@ import com.opcoach.training.rental.RentalPackage;
  *   <li>{@link com.opcoach.training.rental.impl.LicenseImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.LicenseImpl#getValidityDate <em>Validity Date</em>}</li>
  *   <li>{@link com.opcoach.training.rental.impl.LicenseImpl#getOwner <em>Owner</em>}</li>
- *   <li>{@link com.opcoach.training.rental.impl.LicenseImpl#getEReference0 <em>EReference0</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,15 +78,6 @@ public class LicenseImpl extends EObjectImpl implements License
 	 * @ordered
 	 */
 	protected Date validityDate = VALIDITY_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getEReference0()
-	 * @generated
-	 * @ordered
-	 */
-	protected Customer eReference0;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -194,46 +184,6 @@ public class LicenseImpl extends EObjectImpl implements License
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Customer getEReference0()
-	{
-		if (eReference0 != null && eReference0.eIsProxy())
-		{
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (Customer)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0)
-			{
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RentalPackage.LICENSE__EREFERENCE0, oldEReference0, eReference0));
-			}
-		}
-		return eReference0;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Customer basicGetEReference0()
-	{
-		return eReference0;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEReference0(Customer newEReference0)
-	{
-		Customer oldEReference0 = eReference0;
-		eReference0 = newEReference0;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RentalPackage.LICENSE__EREFERENCE0, oldEReference0, eReference0));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */
@@ -304,9 +254,6 @@ public class LicenseImpl extends EObjectImpl implements License
 				return getValidityDate();
 			case RentalPackage.LICENSE__OWNER:
 				return getOwner();
-			case RentalPackage.LICENSE__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -328,9 +275,6 @@ public class LicenseImpl extends EObjectImpl implements License
 				return;
 			case RentalPackage.LICENSE__OWNER:
 				setOwner((Customer)newValue);
-				return;
-			case RentalPackage.LICENSE__EREFERENCE0:
-				setEReference0((Customer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -354,9 +298,6 @@ public class LicenseImpl extends EObjectImpl implements License
 			case RentalPackage.LICENSE__OWNER:
 				setOwner((Customer)null);
 				return;
-			case RentalPackage.LICENSE__EREFERENCE0:
-				setEReference0((Customer)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -376,8 +317,6 @@ public class LicenseImpl extends EObjectImpl implements License
 				return VALIDITY_DATE_EDEFAULT == null ? validityDate != null : !VALIDITY_DATE_EDEFAULT.equals(validityDate);
 			case RentalPackage.LICENSE__OWNER:
 				return getOwner() != null;
-			case RentalPackage.LICENSE__EREFERENCE0:
-				return eReference0 != null;
 		}
 		return super.eIsSet(featureID);
 	}

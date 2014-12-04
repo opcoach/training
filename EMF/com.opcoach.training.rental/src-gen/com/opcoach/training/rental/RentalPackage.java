@@ -335,22 +335,13 @@ public interface RentalPackage extends EPackage
 	int LICENSE__OWNER = 2;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int LICENSE__EREFERENCE0 = 3;
-
-	/**
 	 * The number of structural features of the '<em>License</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LICENSE_FEATURE_COUNT = 4;
+	int LICENSE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.training.rental.impl.RentalImpl <em>Rental</em>}' class.
@@ -704,16 +695,6 @@ public interface RentalPackage extends EPackage
 	EReference getLicense_Owner();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.opcoach.training.rental.License#getEReference0 <em>EReference0</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see com.opcoach.training.rental.License#getEReference0()
-	 * @see #getLicense()
-	 * @generated
-	 */
-	EReference getLicense_EReference0();
-
-	/**
 	 * Returns the meta object for class '
 	 * {@link com.opcoach.training.rental.Rental <em>Rental</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -1019,13 +1000,6 @@ public interface RentalPackage extends EPackage
 		 * @generated
 		 */
 		EReference LICENSE__OWNER = eINSTANCE.getLicense_Owner();
-
-		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LICENSE__EREFERENCE0 = eINSTANCE.getLicense_EReference0();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.training.rental.impl.RentalImpl <em>Rental</em>}' class.

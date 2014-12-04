@@ -404,15 +404,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLicense_EReference0()
-	{
-		return (EReference)licenseEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRental()
 	{
 		return rentalEClass;
@@ -531,7 +522,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		createEAttribute(licenseEClass, LICENSE__NUMBER);
 		createEAttribute(licenseEClass, LICENSE__VALIDITY_DATE);
 		createEReference(licenseEClass, LICENSE__OWNER);
-		createEReference(licenseEClass, LICENSE__EREFERENCE0);
 
 		rentalEClass = createEClass(RENTAL);
 		createEReference(rentalEClass, RENTAL__CUSTOMER);
@@ -619,7 +609,6 @@ public class RentalPackageImpl extends EPackageImpl implements RentalPackage
 		initEAttribute(getLicense_Number(), ecorePackage.getEInt(), "number", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLicense_ValidityDate(), ecorePackage.getEDate(), "validityDate", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLicense_Owner(), this.getCustomer(), this.getCustomer_Licenses(), "owner", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLicense_EReference0(), this.getCustomer(), null, "EReference0", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(licenseEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED);
 

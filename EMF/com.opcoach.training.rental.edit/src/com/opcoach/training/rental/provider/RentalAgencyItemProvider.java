@@ -76,6 +76,7 @@ public class RentalAgencyItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addAddressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -99,6 +100,29 @@ public class RentalAgencyItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Address feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAddressPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RentalAgency_address_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RentalAgency_address_feature", "_UI_RentalAgency_type"),
+				 RentalPackage.Literals.RENTAL_AGENCY__ADDRESS,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
