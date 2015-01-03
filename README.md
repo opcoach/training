@@ -1,0 +1,4 @@
+training
+========
+
+Eclipse OPCoach Trainings
