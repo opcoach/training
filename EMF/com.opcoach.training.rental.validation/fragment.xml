@@ -18,22 +18,41 @@
                   lang="Java"
                   mode="Batch"
                   name="Rental must last at least 1 hour"
-                  severity="WARNING"
+                  severity="ERROR"
                   statusCode="1">
                <message>
                   The {0} has a to short duration.
                </message>
+               <description>
+                  This constraint checks if the rental last at least 1 hour.
+               </description>
                <target
                      class="Rental">
                </target>
             </constraint>
          </constraints>
+         <description>
+            Constraint group for business category
+         </description>
       </constraintProvider>
       <category
             id="com.opcoach.training.rental.validation.business"
             mandatory="true"
             name="Business Validation">
       </category>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            id="com.opcoach.training.rental.validation.clientContext2">
+         <selector
+               class="com.opcoach.training.rental.validation.ValidationSelector">
+         </selector>
+      </clientContext>
+      <binding
+            category="com.opcoach.training.rental.validation.business"
+            context="com.opcoach.training.rental.validation.clientContext2">
+      </binding>
    </extension>
 
 </plugin>
