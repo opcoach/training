@@ -41,7 +41,6 @@ Package rental <http://com.opcoach.training/rental/1.0>
     Attribute number : EInt
     Attribute validityDate : EDate
     Reference owner : Customer
-    Reference EReference0 : Customer
     Operation isValid() : EBoolean
 
   Class Rental
