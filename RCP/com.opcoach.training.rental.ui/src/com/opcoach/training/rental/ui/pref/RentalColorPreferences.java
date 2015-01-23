@@ -39,14 +39,13 @@ public class RentalColorPreferences extends FieldEditorPreferencePage implements
 			i++;
 		}
 
-		addField(new ComboFieldEditor(PREF_PALETTE, "Palette couleur :", comboValues, getFieldEditorParent()));
+		addField(new ComboFieldEditor(PREF_PALETTE, "Palette :", comboValues, getFieldEditorParent()));
 
 	}
 
 	@Override
 	public void init(IWorkbench workbench)
 	{
-		// TODO Auto-generated method stub
 
 	}
 

@@ -8,7 +8,7 @@
             category="com.opcoach.training.rental.preferences"
             class="com.opcoach.training.rental.ui.pref.RentalColorPreferences"
             id="com.opcoach.rental.ui.colorprefpage"
-            name="Colors">
+            name="Palettes">
       </page>
       <page
             class="com.opcoach.training.rental.ui.pref.RentalPrefHomePage"
