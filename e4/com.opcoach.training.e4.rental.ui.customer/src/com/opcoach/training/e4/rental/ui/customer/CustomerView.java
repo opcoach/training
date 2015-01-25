@@ -92,6 +92,9 @@ public class CustomerView
 
 	public void setCustomer(Customer c)
 	{
+		if (txtAName == null)
+			return;
+		
 		if (c != null)
 		{
 			txtAName.setText(c.getLastName());
