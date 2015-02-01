@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<fragment
+>
+   <extension
+         point="org.eclipse.ui.views">
+      <e4view
+            class="com.opcoach.training.e4.rental.ui.parts.RentalAgencyPart"
+            icon="icons/Agency.png"
+            id="com.opcoach.training.e4.rental.ui.e3bridge.e4view1"
+            name="Rental Agency"
+            restorable="true">
+      </e4view>
+   </extension>
+   <extension
+         id="id1"
+         point="org.eclipse.e4.workbench.model">
+      <processor
+            apply="always"
+            beforefragment="true"
+            class="com.opcoach.training.e4.rental.ui.e3bridge.RentalProcessor">
+      </processor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.opcoach.training.e4.rental.ui.e3bridge.RentalColorPreferenceE3"
+            id="com.opcoach.training.e4.rental.ui.e3bridge.rentalColorPrefE3"
+            name="Rental Color">
+      </page>
+   </extension>
+</fragment>
