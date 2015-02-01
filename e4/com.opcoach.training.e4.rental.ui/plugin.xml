@@ -9,19 +9,6 @@
       </initializer>
    </extension>
    
-    <extension point="org.eclipse.ui.preferencePages">
-       <page
-             class="com.opcoach.training.e4.rental.ui.pref.RentalPrefHomePage"
-             id="com.opcoach.training.rental.preferences"
-             name="Rental">
-       </page>
-      <page
-            category="com.opcoach.training.rental.preferences"
-            class="com.opcoach.training.e4.rental.ui.pref.RentalColorPreferences"
-            id="com.opcoach.rental.ui.colorprefpage"
-            name="Colors">
-      </page>
-   </extension>
    
     <extension point="org.eclipse.core.expressions.definitions">
      <definition  id="com.opcoach.training.e4.rental.ui.oneCustomerSelected">
@@ -43,6 +30,7 @@
         id="id1"
         point="org.eclipse.e4.workbench.model">
      <fragment
+           apply="always"
            uri="fragment.e4xmi">
      </fragment>
   </extension>
