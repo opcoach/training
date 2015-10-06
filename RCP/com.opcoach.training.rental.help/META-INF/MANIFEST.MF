@@ -7,5 +7,4 @@ Bundle-Vendor: OPCOACH
 Require-Bundle: org.eclipse.help.webapp;resolution:=optional,
  org.eclipse.help,
  org.eclipse.ui.cheatsheets,
- org.eclipse.help.ui,
- org.eclipse.help.appserver
+ org.eclipse.help.ui
