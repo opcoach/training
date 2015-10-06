@@ -14,8 +14,6 @@ import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerComparator;
-import org.eclipse.jface.viewers.ViewerSorter;
-import org.eclipse.jface.window.ToolTip;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
@@ -35,6 +33,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.ToolTip;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPart;
@@ -134,7 +133,7 @@ public class RentalAgencyDashBoard extends ViewPart implements IPropertyChangeLi
 					return "Information about : " + ((Customer) element).getDisplayName();
 				}
 			});
-		ColumnViewerToolTipSupport.enableFor(viewer, ToolTip.NO_RECREATE);
+		//ColumnViewerToolTipSupport.enableFor(viewer, ToolTip.NO_RECREATE);
 		firstNameCol.getColumn().setImage(RentalUIActivator.getDefault().getImageRegistry().get(RentalUIConstants.IMG_CUSTOMER));
 		firstNameCol.getColumn().addSelectionListener(getHeaderSelectionAdapter(viewer, firstNameCol.getColumn(), 0));
 		// Add the sort stuff to manage clic on header and the customerComparator
