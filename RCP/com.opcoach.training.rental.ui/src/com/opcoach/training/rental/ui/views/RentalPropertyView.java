@@ -66,6 +66,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		parent.setLayout(new GridLayout(1, false));
 
 		Group infoGroup = new Group(parent, SWT.NONE);
+		infoGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		infoGroup.setText(Messages.RentalPropertyView_Information);
 		infoGroup.setLayout(new GridLayout(2, false));
 
@@ -100,6 +101,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		customerNameLabel = new Label(infoGroup, SWT.NONE);
 
 		Group dateGroup = new Group(parent, SWT.NONE);
+		dateGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		dateGroup.setText(Messages.RentalPropertyView_RentalDateTitle);
 		dateGroup.setLayout(new GridLayout(2, false));
 
