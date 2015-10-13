@@ -6,6 +6,7 @@ import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.di.UIEventTopic;
+import org.eclipse.e4.ui.workbench.UIEvents;
 
 public class EventBrokerUsage
 {
@@ -36,5 +37,14 @@ public class EventBrokerUsage
 			// Use the rental to update it in a view for instance
 		}
 		
+	}
+	
+	
+	public void refreshAllWorkbench()
+	{
+		
+		
+		broker.send(UIEvents.REQUEST_ENABLEMENT_UPDATE_TOPIC, UIEvents.ALL_ELEMENT_ID); 
+
 	}
 }

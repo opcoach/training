@@ -56,6 +56,8 @@ public class CodeSamplesActivator implements BundleActivator
 		System.out.println("Enter in start of CodeSampleActivator");
 		plugin = this;
 
+		// Call some tests...
+		InjectionSample.testInjectionSample();
 	}
 
 	/*
@@ -197,13 +199,13 @@ public class CodeSamplesActivator implements BundleActivator
 	{
 		// Utilise le Registry global de JfaceResources
 		ColorRegistry reg = JFaceResources.getColorRegistry();
-		// Essai de rcuperer l'image peut tre djˆ prsente
+		// Essai de rï¿½cuperer l'image peut ï¿½tre dï¿½jï¿½ prï¿½sente
 		Color col = reg.get(key);
 		if (col == null)
 		{
-			// L'image n'est pas encore stocke dans le registry, on l'ajoute
+			// L'image n'est pas encore stockï¿½e dans le registry, on l'ajoute
 			RGB rgb = StringConverter.asRGB(key);
-			// Le path sert de cl
+			// Le path sert de clï¿½
 			reg.put(key, rgb);
 			col = reg.get(key);
 		}
