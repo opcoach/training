@@ -7,3 +7,4 @@ Bundle-Vendor: OPCOACH
 Require-Bundle: org.eclipse.core.runtime,
  com.opcoach.training.rental.core;bundle-version="1.0.0"
 Export-Package: com.opcoach.training.rental.adapters
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

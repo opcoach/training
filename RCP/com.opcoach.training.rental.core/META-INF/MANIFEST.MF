@@ -16,3 +16,4 @@ Export-Package: com.opcoach.training.rental,
  com.opcoach.training.rental.util
 Bundle-ClassPath: .,
  lib/rental.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

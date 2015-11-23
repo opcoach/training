@@ -32,6 +32,23 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 		ps.setDefault(PREF_DISPLAY_COUNT, StringConverter.asString(false));
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		// Init the default palette with its ID
 		ps.setDefault(PREF_PALETTE, "com.opcoach.training.rental.ui.nonePalette");
 
