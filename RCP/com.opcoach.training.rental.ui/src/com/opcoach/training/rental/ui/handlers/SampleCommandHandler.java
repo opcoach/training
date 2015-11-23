@@ -10,6 +10,8 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
+import com.opcoach.training.rental.ui.Messages;
+
 
 
 public class SampleCommandHandler extends AbstractHandler
