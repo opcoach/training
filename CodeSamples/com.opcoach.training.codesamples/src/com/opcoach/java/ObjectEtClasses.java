@@ -7,11 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.opcoach.java.SampleGenericClass.Bike;
-import com.opcoach.java.SampleGenericClass.Car;
-import com.opcoach.java.SampleGenericClass.Customer;
-import com.opcoach.java.SampleGenericClass.RentalObject;
-
 @SuppressWarnings("rawtypes")
 
 public class ObjectEtClasses

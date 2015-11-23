@@ -1,9 +1,9 @@
 package com.opcoach.training;
 
-import junit.framework.TestCase;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import junit.framework.TestCase;
 
 public class MyTest extends TestCase {
 	
