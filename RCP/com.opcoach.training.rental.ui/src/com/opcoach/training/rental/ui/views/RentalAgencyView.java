@@ -42,7 +42,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 
 	private TreeViewer agencyViewer;
 
-	private AgencyLabelProvider labelProvider;
+	private RentalProvider provider;
 
 	public RentalAgencyView()
 	{
@@ -93,9 +93,9 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,true));
-		agencyViewer.setContentProvider(new AgencyContentProvider());
-		labelProvider = new AgencyLabelProvider();
-		agencyViewer.setLabelProvider(labelProvider);
+		provider = new RentalProvider();
+		agencyViewer.setContentProvider(provider);
+		agencyViewer.setLabelProvider(provider);
 
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
 		agencies.add(RentalCoreActivator.getAgency());
@@ -153,7 +153,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 	@Override
 	public void propertyChange(PropertyChangeEvent event)
 	{
-		labelProvider.initPalette();
+		provider.initPalette();
 		agencyViewer.refresh();
 	}
 

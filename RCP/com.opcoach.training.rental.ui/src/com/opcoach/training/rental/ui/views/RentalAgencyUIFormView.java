@@ -43,8 +43,9 @@ public class RentalAgencyUIFormView extends ViewPart implements IPropertyChangeL
        t.setLayoutData(new TableWrapData(TableWrapData.FILL));
        
        agencyViewer = new TreeViewer(t);
-		agencyViewer.setContentProvider(new AgencyContentProvider());
-		agencyViewer.setLabelProvider(new AgencyLabelProvider());
+		RentalProvider provider = new RentalProvider();
+		agencyViewer.setContentProvider(provider);
+		agencyViewer.setLabelProvider(provider);
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
 		agencies.add(RentalCoreActivator.getAgency());
 		agencyViewer.setInput(agencies);
