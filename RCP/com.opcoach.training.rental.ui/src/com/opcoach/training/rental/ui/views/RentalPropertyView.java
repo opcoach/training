@@ -1,8 +1,15 @@
 package com.opcoach.training.rental.ui.views;
 
-import java.text.SimpleDateFormat;
-
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.UpdateValueStrategy;
+import org.eclipse.core.databinding.beans.PojoProperties;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.core.internal.databinding.conversion.DateToStringConverter;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.databinding.EMFObservables;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.FeaturePath;
+import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
@@ -23,25 +30,13 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 
-import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.RentalPackage.Literals;
 import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.Messages;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
-import org.eclipse.core.databinding.DataBindingContext;
-import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.jface.databinding.swt.WidgetProperties;
-import org.eclipse.emf.databinding.EMFProperties;
-import org.eclipse.emf.databinding.FeaturePath;
-import com.opcoach.training.rental.RentalPackage.Literals;
-import org.eclipse.emf.databinding.EMFObservables;
-import org.eclipse.core.databinding.UpdateValueStrategy;
-import org.eclipse.core.internal.databinding.conversion.DateToStringConverter;
-import org.eclipse.core.internal.databinding.conversion.StringToDateConverter;
-import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
-import org.eclipse.core.databinding.beans.PojoProperties;
 
 public class RentalPropertyView extends ViewPart implements ISelectionListener
 {

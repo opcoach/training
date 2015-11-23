@@ -4,6 +4,7 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.databinding.EMFObservables;
+import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -26,7 +27,6 @@ import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalPackage.Literals;
-import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 
 public class CustomerViewPart extends ViewPart implements ISelectionListener
 {

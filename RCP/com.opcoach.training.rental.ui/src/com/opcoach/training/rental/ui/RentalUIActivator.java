@@ -11,14 +11,9 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.jface.resource.FontRegistry;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.IColorProvider;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.FontData;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
@@ -65,7 +60,7 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	}
 
 
-	private void initializeFontRegistry()
+/*	private void initializeFontRegistry()
 	{
 		FontData[] fdc = new FontData[] { new FontData("times",12,SWT.NORMAL), new FontData("times",12,SWT.ITALIC), new FontData("times",14,SWT.BOLD)};
 		FontData[] fdr = new FontData[] { new FontData("courier",12,SWT.NORMAL), new FontData("courier",12,SWT.ITALIC), new FontData("courier",14,SWT.BOLD)};
@@ -75,7 +70,8 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 		
 		
 	}
-
+*/
+	
 	public void readColorProviderExtensions()
 	{
 		IExtensionRegistry reg = Platform.getExtensionRegistry();

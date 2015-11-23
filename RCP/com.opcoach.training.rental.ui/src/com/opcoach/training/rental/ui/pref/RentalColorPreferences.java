@@ -2,10 +2,8 @@ package com.opcoach.training.rental.ui.pref;
 
 import java.util.Map;
 
-import org.eclipse.jface.preference.ColorFieldEditor;
 import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
