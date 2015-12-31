@@ -12,24 +12,33 @@ public class AdaptableIntoResource implements IAdaptable
 {
 	private String name;
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public Object getAdapter(Class adapter)
+	public <T> T getAdapter(Class<T> adapter)
 	{
-		Object result = null;
-		if (IResource.class.equals(adapter))
+		T result = null;
+		if (adapter == IResource.class)
 		{
-			IWorkspace ws = ResourcesPlugin.getWorkspace();
-			IWorkspaceRoot wsroot = ws.getRoot();
-			Path path = new Path("myProject/dossier" + name);
-			result = wsroot.getFile(path);
+			IWorkspaceRoot wsroot = ResourcesPlugin.getWorkspace().getRoot();
+			Path path = new Path("myProject/folder/" + name);
+			result = (T) wsroot.getFile(path);
 		}
 		return result;
 	}
+}
 
+class OtherClass{
 	public IFile createAFile()
 	{
 		IWorkspaceRoot wsroot = ResourcesPlugin.getWorkspace().getRoot();
 		Path path = new Path("myProject/folder1/folder2/filename.txt");
 		return wsroot.getFile(path);
 	}
+	
+	public void useAdapter()
+	{
+		AdaptableIntoResource air = new AdaptableIntoResource();
+		IResource r = air.getAdapter(IResource.class);
+	}
+
 }

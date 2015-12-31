@@ -7,7 +7,7 @@ public class AdaptableUsage
 {
 	 public void reactOnAdaptableResource(Object o)
 	 {
-		 IResource r = (IResource) Platform.getAdapterManager().getAdapter(o, IResource.class);
+		 IResource r = Platform.getAdapterManager().getAdapter(o, IResource.class);
 		 if (r != null)
 		 {
 			 // Work with the resource

@@ -7,18 +7,19 @@ import com.opcoach.training.rental.Rental;
 
 public class RentalAdapterFactory implements IAdapterFactory
 {
-	/** Transform an IFile into a Rental object if extension is .rental */
-	public Object getAdapter(Object adaptableObject, Class adapterType)
+	/** Transform a Rental instance into a Customer instance */
+	@SuppressWarnings("unchecked")
+	public <T> T getAdapter(Object adaptableObject, Class<T> adapterType)
 	{
-		Object result = null;
+		T result = null;
 		if ((adaptableObject instanceof Rental) && (adapterType == Customer.class))
 		{
-			result =  ((Rental)adaptableObject).getCustomer();
+			result =  (T) ((Rental)adaptableObject).getCustomer();
 		}
 		return result;
 	}
 
-	public Class[] getAdapterList()
+	public Class<?>[] getAdapterList()
 	{
 		// Result returned types
 		return new Class[] { Customer.class };
