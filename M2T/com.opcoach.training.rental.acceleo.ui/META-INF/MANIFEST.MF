@@ -4,10 +4,13 @@ Bundle-Name: Ui
 Bundle-SymbolicName: com.opcoach.training.rental.acceleo.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
-Require-Bundle: org.eclipse.ui,
+Require-Bundle: com.opcoach.training.rental;bundle-version="1.0.1",
  com.opcoach.training.rental.acceleo;bundle-version="1.0.0",
- com.opcoach.training.rental;bundle-version="1.0.1",
- org.eclipse.core.runtime;bundle-version="3.9.100",
  org.eclipse.acceleo.engine;bundle-version="3.4.1",
- org.eclipse.core.expressions
+ org.eclipse.core.runtime;bundle-version="3.9.100",
+ org.eclipse.core.expressions,
+ org.eclipse.e4.core.di.annotations,
+ org.eclipse.e4.ui.services,
+ org.eclipse.jface,
+ org.eclipse.e4.ui.model.workbench;bundle-version="1.1.100.v20150407-1430"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

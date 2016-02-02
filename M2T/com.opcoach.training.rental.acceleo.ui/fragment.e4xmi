@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_NCjsgMm8EeWWjb0vUaIt6g">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Oz6VYMm8EeWWjb0vUaIt6g" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_Ssja4Mm8EeWWjb0vUaIt6g" elementId="com.opcoach.training.rental.acceleo.ui.commands.sampleCommand" commandName="Generate Html"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ae7yEMm8EeWWjb0vUaIt6g" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_ceGNcMm8EeWWjb0vUaIt6g" elementId="com.opcoach.training.rental.acceleo.ui.handler.0" contributionURI="bundleclass://com.opcoach.training.rental.acceleo.ui/com.opcoach.training.rental.acceleo.ui.handlers.GenerateHtmlHandler" command="_Ssja4Mm8EeWWjb0vUaIt6g"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_etL7MMm8EeWWjb0vUaIt6g" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_hDOlgMm8EeWWjb0vUaIt6g" elementId="com.opcoach.training.rental.acceleo.ui.menucontribution.0" positionInParent="after=additions" parentId="com.opcoach.training.rental.presentation.RentalEditorID">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_pkATwMm8EeWWjb0vUaIt6g" elementId="com.opcoach.training.rental.acceleo.ui.handledmenuitem.generatehtml" label="Generate Html" iconURI="platform:/plugin/com.opcoach.training.rental.acceleo.ui/icons/opcoach.png" command="_Ssja4Mm8EeWWjb0vUaIt6g">
+        <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_CnipsMm9EeWWjb0vUaIt6g" coreExpressionId="com.opcoach.training.rental.acceleo.ui.agencySelected"/>
+      </children>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>
