@@ -11,10 +11,6 @@ public class Messages extends NLS
 	public static String RentalPropertyView_RentalDateTitle;
 	public static String RentalPropertyView_RentedBy;
 	public static String RentalPropertyView_To;
-	public static String CopyCustomer_0;
-	public static String CopyCustomer_1;
-	public static String CopyCustomer_2;
-	public static String CopyCustomer_3;
 	public static String SampleCommandHandler_0;
 	public static String SampleCommandHandler_1;
 	public static String SampleCommandHandler_2;

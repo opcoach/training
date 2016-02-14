@@ -34,17 +34,15 @@ public class CopyCustomer extends AbstractHandler implements IHandler
 				Customer c = (Customer) selectedObject;
 				IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 				MessageDialog.openInformation(window.getShell(),
-						Messages.CopyCustomer_0,
-						Messages.CopyCustomer_1 + (c.getDisplayName()));
+						"Copy Client",
+						"Copying this customer : " + (c.getDisplayName()));
 				
 				
 				Clipboard clipboard = new Clipboard(Display.getCurrent());
 				String textData = c.getDisplayName();
-				String rtfData = Messages.CopyCustomer_2 + textData + Messages.CopyCustomer_3;
-				TextTransfer textTransfer = TextTransfer.getInstance();
-				RTFTransfer rtfTransfer = RTFTransfer.getInstance();
-				Transfer[] transfers = new Transfer[]{textTransfer, rtfTransfer};
-				Object[] data = new Object[]{textData, rtfData};
+				String rtfData = "{\\rtf1\\b\\i " + textData + "}";
+				Transfer[] transfers = new Transfer[]{TextTransfer.getInstance(), RTFTransfer.getInstance()};
+				Object[] data = new Object[] {textData, rtfData};
 				clipboard.setContents(data, transfers);
 				clipboard.dispose();
 			}		
