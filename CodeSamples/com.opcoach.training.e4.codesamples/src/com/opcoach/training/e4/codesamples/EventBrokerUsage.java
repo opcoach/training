@@ -12,16 +12,13 @@ public class EventBrokerUsage
 {
 
 	
-	@Inject
-	IEventBroker broker;
-	
 	@Execute
-	void execute()
+	void execute(IEventBroker broker)
 	{
 		// Create a new rental using factory
 		Rental r = RentalFactory.eInstance.createRental();
 		
-		// broadcast the rental creation in broker
+		// broadcast the rental creation in broker using a specific ID
 		broker.send("rental/new", r);
 	}
 	
@@ -40,10 +37,8 @@ public class EventBrokerUsage
 	}
 	
 	
-	public void refreshAllWorkbench()
+	public void refreshAllWorkbench(IEventBroker broker)
 	{
-		
-		
 		broker.send(UIEvents.REQUEST_ENABLEMENT_UPDATE_TOPIC, UIEvents.ALL_ELEMENT_ID); 
 
 	}
