@@ -6,4 +6,4 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
 Fragment-Host: com.opcoach.training.rental.rcp;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.eclipse.equinox.http.jetty;bundle-version="3.1.1"
+Require-Bundle: org.eclipse.equinox.http.jetty

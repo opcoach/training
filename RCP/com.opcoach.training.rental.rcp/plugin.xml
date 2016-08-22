@@ -16,10 +16,10 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="com.opcoach.training.rental.rcp.application"
-            name="Rental RCP">
+            name="rental">
          <property
                name="appName"
-               value="Rental RCP">
+               value="rental">
          </property>
       </product>
    </extension>
