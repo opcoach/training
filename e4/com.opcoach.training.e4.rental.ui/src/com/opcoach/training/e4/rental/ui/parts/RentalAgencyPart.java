@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
@@ -166,6 +167,19 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	 */
 	@Inject
 	public void refreshTree(@Preference(value = PREF_PALETTE) String pal)
+	{
+		if ((agencyViewer != null) && (!agencyViewer.getControl().isDisposed()))
+		{
+			agencyViewer.refresh();
+		}
+	}
+	
+	/**
+	 * We can receive any value of the preferences store... This method will be
+	 * called each time a value has changed in the preferenceStore.
+	 */
+	@Inject
+	public void refreshTreeForAnyPreference(@Preference IEclipsePreferences pref)
 	{
 		if ((agencyViewer != null) && (!agencyViewer.getControl().isDisposed()))
 		{

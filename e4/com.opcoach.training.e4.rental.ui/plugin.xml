@@ -2,6 +2,15 @@
 <plugin>
    <extension-point id="Palette" name="Palette" schema="schema/Palette.exsd"/>
 
+
+  <extension
+        id="id1"
+        point="org.eclipse.e4.workbench.model">
+     <fragment
+           apply="always"
+           uri="fragment.e4xmi">
+     </fragment>
+  </extension>
      
    <extension point="org.eclipse.core.runtime.preferences">
       <initializer
@@ -26,14 +35,7 @@
            paletteClass="com.opcoach.training.e4.rental.ui.parts.NonePalette">
      </palette>
   </extension>
-  <extension
-        id="id1"
-        point="org.eclipse.e4.workbench.model">
-     <fragment
-           apply="always"
-           uri="fragment.e4xmi">
-     </fragment>
-  </extension>
+
   <extension
         point="com.opcoach.e4.preferences.e4PreferencePages">
      <page
