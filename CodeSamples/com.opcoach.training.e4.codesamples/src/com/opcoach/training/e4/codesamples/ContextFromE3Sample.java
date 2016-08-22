@@ -14,7 +14,9 @@ public class ContextFromE3Sample
 	public void getContextFromE3Code()
 	{
 
-		// Get the OSGI global context :
+		//.........................................
+		// Get the OSGI global E4 context :
+		//.........................................
 		Bundle e4Bundle = Platform.getBundle("org.eclipse.e4.ui.workbench");
 		if (e4Bundle != null)
 		{
@@ -23,20 +25,17 @@ public class ContextFromE3Sample
 			osgiCtx.set("myKeyInOsgi1", "value");
 		}
 
-
-		// Get the application context
-		IEclipseContext appliCtx = PlatformUI.getWorkbench().getService(IEclipseContext.class);
+		//.........................................
+		// Get the application E4 context
+		//.........................................
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IEclipseContext appliCtx = workbench.getService(IEclipseContext.class);
 		appliCtx.set("myKeyInAppli", "value");
 		
-		// Can also get the OSGI context using parent access 
-		appliCtx.getParent().set("myKeyInOSgi2", "value");
-		
-		
-		
-
-		// Get the workbench window context :
-		IWorkbench wb = PlatformUI.getWorkbench();
-		IEclipseContext windowCtx = wb.getActiveWorkbenchWindow().getService(IEclipseContext.class);
+		//.........................................
+		// Get the main window E4 context
+		//.........................................
+		IEclipseContext windowCtx = workbench.getActiveWorkbenchWindow().getService(IEclipseContext.class);
 		windowCtx.set("myKeyInWindow", "value");
 
 	}
