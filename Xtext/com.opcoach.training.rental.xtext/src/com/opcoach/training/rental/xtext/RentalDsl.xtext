@@ -74,7 +74,6 @@ License returns License:
 	'{'
 		('number' number=EInt)?
 		('validityDate' validityDate=EDate)?
-		('EReference0' EReference0=[Customer|EString])?
     '}';
 
 EDate returns ecore::EDate:
