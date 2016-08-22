@@ -27,7 +27,7 @@
                   This constraint checks if the rental last at least 1 hour.
                </description>
                <target
-                     class="Rental">
+                     class="Rental:http://com.opcoach.training/rental/1.0">
                </target>
             </constraint>
          </constraints>

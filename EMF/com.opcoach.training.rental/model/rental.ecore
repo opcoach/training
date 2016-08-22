@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rental" nsURI="http://com.opcoach.training/rental/1.0" nsPrefix="rental">
-  <eAnnotations source="gmf">
-    <details key="foo" value="bar"/>
-  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="RentalAgency">
-    <eAnnotations source="gmf.diagram">
-      <details key="foo" value="bar"/>
-    </eAnnotations>
     <eOperations name="book" eType="#//Rental">
       <eParameters name="customer" eType="#//Customer"/>
       <eParameters name="rentedObject" eType="#//RentalObject"/>
@@ -34,18 +28,6 @@
         eType="#//Rental" containment="true" eOpposite="#//Rental/parentAgency"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Customer">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="consistentName"/>
-    </eAnnotations>
-    <eAnnotations source="gmf.node">
-      <details key="label" value="firstName,lastName"/>
-    </eAnnotations>
-    <eAnnotations source="gmf.node">
-      <details key="label.pattern" value="{0}:{1}"/>
-    </eAnnotations>
-    <eAnnotations source="gmf.node">
-      <details key="figure" value="com.opcoach.training.rental.gef.figures"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
