@@ -1,8 +1,13 @@
-package com.opcoach.training.rental.ui.views;
+package com.opcoach.training.rental.ui.perspective;
 
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
+
+import com.opcoach.training.rental.ui.views.agency.RentalAgencyView;
+import com.opcoach.training.rental.ui.views.customer.CustomerViewPart;
+import com.opcoach.training.rental.ui.views.dashboard.RentalAgencyDashBoard;
+import com.opcoach.training.rental.ui.views.rental.RentalPropertyView;
 
 public class RentalPerspective implements IPerspectiveFactory
 {

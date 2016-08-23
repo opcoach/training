@@ -15,9 +15,9 @@ import org.junit.Test;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
-import com.opcoach.training.rental.ui.views.RentalAgencyView;
-import com.opcoach.training.rental.ui.views.RentalPerspective;
-import com.opcoach.training.rental.ui.views.RentalPropertyView;
+import com.opcoach.training.rental.ui.perspective.RentalPerspective;
+import com.opcoach.training.rental.ui.views.agency.RentalAgencyView;
+import com.opcoach.training.rental.ui.views.rental.RentalPropertyView;
 
 public class TestRentalAgencyView implements RentalUIConstants {
 

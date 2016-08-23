@@ -1,4 +1,4 @@
-package com.opcoach.training.rental.ui.views;
+package com.opcoach.training.rental.ui.views.agency;
 
 import java.util.Collection;
 

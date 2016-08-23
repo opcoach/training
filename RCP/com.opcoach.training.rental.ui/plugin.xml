@@ -29,7 +29,7 @@
             name="Rental Property view"
             icon="icons/Rentals.png"
             category="com.opcoach.rental.ui"
-            class="com.opcoach.training.rental.ui.views.RentalPropertyView"
+            class="com.opcoach.training.rental.ui.views.rental.RentalPropertyView"
             id="com.opcoach.rental.ui.views.rentalView">
          <description>
             Vue de propriété de la location.
@@ -40,7 +40,7 @@
       
       <view
             category="com.opcoach.rental.ui"
-            class="com.opcoach.training.rental.ui.views.RentalAgencyView"
+            class="com.opcoach.training.rental.ui.views.agency.RentalAgencyView"
             icon="icons/Agency.png"
             id="com.opcoach.rental.ui.rentalagencyview"
             name="Rental Agency View"
@@ -56,14 +56,14 @@
       </view>
       <view
             category="com.opcoach.rental.ui"
-            class="com.opcoach.training.rental.ui.views.CustomerViewPart"
+            class="com.opcoach.training.rental.ui.views.customer.CustomerViewPart"
             icon="icons/Customers.png"
             id="com.opcoach.training.rental.ui.views.CustomerViewPart"
             name="Customer Propertie">
       </view>
       <view
             category="com.opcoach.rental.ui"
-            class="com.opcoach.training.rental.ui.views.RentalAgencyDashBoard"
+            class="com.opcoach.training.rental.ui.views.dashboard.RentalAgencyDashBoard"
             icon="icons/Agency.png"
             id="com.opcoach.rental.ui.agencyDashboard"
             name="Agency Dashboard"
@@ -79,43 +79,15 @@
    
  
    <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.eclipse.ui.resourcePerspective">
-         <view
-               id="com.opcoach.rental.ui.rentalagencyview"
-               minimized="false"
-               relationship="stack"
-               relative="org.eclipse.ui.views.ResourceNavigator"
-               visible="true">
-         </view>
-         <view
-               id="com.opcoach.rental.ui.views.rentalView"
-               minimized="false"
-               relationship="stack"
-               relative="org.eclipse.ui.views.ResourceNavigator">
-         </view>
-         <perspectiveShortcut
-               id="com.opcoach.training.rental.ui.rentalperspective">
-         </perspectiveShortcut>
-         <viewShortcut
-               id="com.opcoach.rental.ui.rentalagencyview">
-         </viewShortcut>
-         <viewShortcut
-               id="com.opcoach.rental.ui.views.rentalView">
-         </viewShortcut>
-      </perspectiveExtension>
-   </extension>
-   <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="com.opcoach.training.rental.ui.views.RentalPerspective"
+            class="com.opcoach.training.rental.ui.perspective.RentalPerspective"
             icon="icons/Agency.png"
             id="com.opcoach.training.rental.ui.rentalperspective"
             name="Rental">
       </perspective>
       <perspective
-            class="com.opcoach.training.rental.ui.views.RentalStandalonePerspective"
+            class="com.opcoach.training.rental.ui.perspective.RentalStandalonePerspective"
             icon="icons/Customers.png"
             id="com.opcoach.training.rental.ui.rentalStandalonePerspective"
             name="Rental StandAlone">
@@ -124,29 +96,35 @@
    
    
       <extension
-         point="org.eclipse.ui.commands">
-      <command
-            id="com.opcoach.training.rental.ui.commands.MaCommande"
-            name="My Command">
-         <state
-               class="org.eclipse.ui.handlers.RegistryToggleState:true"
-               id="org.eclipse.ui.commands.toggleState">
-         </state>
-      </command>
-      <command
-            id="com.opcoach.training.rental.ui.sampleJobCommand"
-            name="Launch Sample Job">
-      </command>
-   </extension>
+            point="org.eclipse.ui.commands">
+         <command
+               id="com.opcoach.training.rental.ui.commands.MyCommande"
+               name="My Command">
+            <state
+                  class="org.eclipse.ui.handlers.RegistryToggleState:true"
+                  id="org.eclipse.ui.commands.toggleState">
+            </state>
+         </command>
+      </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
             class="com.opcoach.training.rental.ui.handlers.SampleCommandHandler"
-            commandId="com.opcoach.training.rental.ui.commands.MaCommande">
+            commandId="com.opcoach.training.rental.ui.commands.MyCommande">
       </handler>
       <handler
-            class="com.opcoach.training.rental.ui.handlers.JobLauncherHandler"
-            commandId="com.opcoach.training.rental.ui.sampleJobCommand">
+            class="com.opcoach.training.rental.ui.handlers.CopyCustomer"
+            commandId="org.eclipse.ui.edit.copy">
+         <enabledWhen>
+            <reference
+                  definitionId="com.opcoach.training.rental.ui.customerSelected">
+            </reference>
+         </enabledWhen>
+         <activeWhen>
+            <reference
+                  definitionId="com.opcoach.training.rental.ui.customerSelected">
+            </reference>
+         </activeWhen>
       </handler>
    </extension>
    <extension
@@ -202,14 +180,6 @@
       </definition>
    </extension>
    <extension
-         point="org.eclipse.ui.activities">
-      <activity
-            id="com.opcoach.training.rental.ui.commands.activity1"
-            name="%activity.name">
-         <enabledWhen></enabledWhen>
-      </activity>
-   </extension>
-   <extension
          point="com.opcoach.training.rental.ui.Palette">
       <palette
             id="com.opcoach.training.rental.ui.nonePalette"
@@ -218,10 +188,33 @@
       </palette>
       <palette
             id="com.opcoach.training.rental.ui.paletteJaune"
-            name="Jaune"
+            name="Yellow"
             paletteClass="com.opcoach.training.rental.ui.palette.PaletteJaune">
       </palette>
    </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:com.opcoach.rental.ui.rentalagencyview?after=additions">
+         <command
+               commandId="org.eclipse.ui.edit.copy"
+               icon="icons/RentalCommand.png"
+               label="Copy Customer"
+               style="push"
+               tooltip="Copie d&apos;un customer">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="com.opcoach.training.rental.ui.customerSelected">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
    
 
 </plugin>

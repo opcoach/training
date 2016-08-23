@@ -9,7 +9,7 @@ import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
-import com.opcoach.training.rental.ui.views.RentalPerspective;
+import com.opcoach.training.rental.ui.perspective.RentalPerspective;
 
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor
 {

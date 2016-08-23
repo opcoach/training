@@ -20,6 +20,7 @@ import org.eclipse.ui.part.ViewPart;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.RentalUIActivator;
+import com.opcoach.training.rental.ui.views.agency.RentalProvider;
 
 public class RentalAgencyUIFormView extends ViewPart implements IPropertyChangeListener
 {

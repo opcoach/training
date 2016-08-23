@@ -1,4 +1,4 @@
-package com.opcoach.training.rental.ui.views;
+package com.opcoach.training.rental.ui.views.customer;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.observable.value.IObservableValue;

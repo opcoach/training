@@ -1,4 +1,4 @@
-package com.opcoach.training.rental.ui.views;
+package com.opcoach.training.rental.ui.views.agency;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionProvider;
