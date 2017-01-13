@@ -156,7 +156,7 @@ public class CustomerViewPart extends ViewPart implements ISelectionListener
 			Object sel = ((IStructuredSelection) selection).getFirstElement();
 
 			// Is current selection a customer or adaptable into a Customer ? 
-			Customer c = Platform.getAdapterManager().getAdapter(sel, Customer.class);
+			Customer c = (Customer) Platform.getAdapterManager().getAdapter(sel, Customer.class);
 			setCustomer(c);
 
 		}
