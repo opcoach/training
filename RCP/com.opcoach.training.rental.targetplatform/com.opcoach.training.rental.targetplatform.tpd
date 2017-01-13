@@ -1,0 +1,41 @@
+target "Training RCP 3"
+
+with source requirements 
+
+location "http://download.eclipse.org/technology/swtbot/releases/latest/" {
+
+	org.eclipse.swtbot.eclipse.gef.feature.group
+	org.eclipse.swtbot.eclipse.feature.group
+	org.eclipse.swtbot.forms.feature.group
+	org.eclipse.swtbot.eclipse.test.junit.feature.group
+	org.eclipse.swtbot.feature.group
+	org.eclipse.swtbot.go
+	org.eclipse.swtbot.eclipse.core
+	org.hamcrest.library
+	org.hamcrest.core
+
+} 
+
+location "http://download.eclipse.org/releases/neon" {
+	org.eclipse.rcp.feature.group
+	org.eclipse.ui.workbench
+	org.eclipse.emf.databinding.feature.group
+	org.eclipse.ui.cheatsheets
+	org.eclipse.help.ui
+	org.eclipse.compare
+	//org.eclipse.emf.common.feature.group
+	//org.eclipse.emf.ecore.feature.group
+	org.eclipse.jdt.junit.runtime
+	org.eclipse.equinox.executable.feature.group
+	
+	// Dependencies to launch swtbot tests 
+	/*org.eclipse.pde.junit.runtime
+	org.eclipse.jdt.junit4.runtime
+	org.eclipse.pde.core */
+}
+
+ // Ajout du delta pack
+location "http://download.eclipse.org/eclipse/updates/4.6" {
+	org.eclipse.equinox.sdk.feature.group
+}
+
