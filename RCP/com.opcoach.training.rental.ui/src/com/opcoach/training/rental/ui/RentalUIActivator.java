@@ -115,7 +115,6 @@ public class RentalUIActivator extends AbstractUIPlugin implements  RentalUICons
 	
 			for (IConfigurationElement elt : reg.getConfigurationElementsFor("org.eclipse.ui.views"))
 			{
-				if (elt.getName().equals("view"))
 					System.out.println("Plugin : " + elt.getNamespaceIdentifier() + "\t\t\tVue : " + elt.getAttribute("name"));
 			}
 

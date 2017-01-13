@@ -7,6 +7,6 @@ Bundle-Vendor: OPCOACH
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.expressions,
- org.eclipse.compare;bundle-version="3.5.200",
+ org.eclipse.compare,
  com.opcoach.training.rental.ui;bundle-version="1.0.1"
 Bundle-ActivationPolicy: lazy

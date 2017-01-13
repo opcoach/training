@@ -6,3 +6,4 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
 Fragment-Host: com.opcoach.training.rental.ui;bundle-version="1.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.eclipse.jface.dialogs
