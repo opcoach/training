@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>0.21.0</tycho-version>
+		<tycho-version>0.26.0</tycho-version>
 	</properties>
 
 	<!-- <repositories> configure p2 repository to resolve against <repository> 
@@ -24,24 +24,34 @@
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			
+			<plugin>
+              <groupId>org.eclipse.tycho</groupId>
+              <artifactId>tycho-compiler-plugin</artifactId>
+              <version>${tycho-version}</version>
+            <configuration>
+                <compilerArgument>-warn:none</compilerArgument>     
+                <compilerArgument>-err:none</compilerArgument>      
+            </configuration>
+       		 </plugin>
 
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<dependency-resolution>
-						<optionalDependencies>ignore</optionalDependencies>
-					</dependency-resolution>
+				 	<dependency-resolution>
+					 	<optionalDependencies>ignore</optionalDependencies>
+					</dependency-resolution> 
 					<target>
 						<artifact>
 							<groupId>tychoRental</groupId>
 							<artifactId>com.opcoach.training.rental.targetplatform</artifactId>
-							<version>3.7.2-SNAPSHOT</version>
+							<version>4.6.1-SNAPSHOT</version>
 						</artifact>
 					</target>
-					<environments>
-						
+				  	<environments>
+
 						<environment>
 							<os>macosx</os>
 							<ws>cocoa</ws>
@@ -57,6 +67,11 @@
 				</configuration>
 			</plugin>
 
+ <plugin>
+        <groupId>org.eclipse.tycho.extras</groupId>
+        <artifactId>target-platform-validation-plugin</artifactId>
+        <version>0.26.0</version>
+      </plugin>
 		</plugins>
 	</build>
 
@@ -70,7 +85,7 @@
 		<module>../com.opcoach.training.rental.help</module>
 		<module>../com.opcoach.training.rental.core</module>
 		<module>../com.opcoach.training.rental.core.test</module>
-		<module>../com.opcoach.training.rental.ui.test</module>
+		<!--  <module>../com.opcoach.training.rental.ui.test</module> -->
 		<module>../com.opcoach.training.rental.repository</module>
 	</modules>
 
