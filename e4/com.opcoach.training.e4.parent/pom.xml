@@ -31,21 +31,30 @@
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<dependency-resolution>
+					<!--  <dependency-resolution>
 						<optionalDependencies>ignore</optionalDependencies>
-					</dependency-resolution>
+					</dependency-resolution>   -->
 					<target>
 						<artifact>
 							<groupId>com.opcoach.training.e4</groupId>
 							<artifactId>com.opcoach.training.e4.targetplatform</artifactId>
-							<version>1.0.0-SNAPSHOT</version>
+							<version>4.6.2-SNAPSHOT</version>
 						</artifact>
 					</target>
 					<environments>
-						<!-- <environment> <os>win32</os> <ws>win32</ws> <arch>x86</arch> </environment> -->
 						<environment>
 							<os>macosx</os>
 							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
 							<arch>x86_64</arch>
 						</environment>
 					</environments>
@@ -58,8 +67,8 @@
 
 	<!-- the modules that should be built together -->
 	<modules>
-		<module>../com.opcoach.training.e4.repository</module>
 		<module>../com.opcoach.training.e4.targetplatform</module>
+		<module>../com.opcoach.training.e4.repository</module>
 		<module>../com.opcoach.training.e4.rental.eap</module>
 		<module>../com.opcoach.training.e4.rental.feature</module>
 		<module>../com.opcoach.training.e4.rental.ui</module>
