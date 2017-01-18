@@ -40,6 +40,9 @@
 					<products>
 						<product>
 							<id>rentalE4.product</id>
+							<attachId>rentalE4.product</attachId>
+							<archiveFileName>rentalE4-${project.version}</archiveFileName>
+							<rootFolder>rentalE4</rootFolder>
 							<!-- optional parameters (with default values) -->
 							<!-- <rootFolder></rootFolder>
 							<rootFolders>
