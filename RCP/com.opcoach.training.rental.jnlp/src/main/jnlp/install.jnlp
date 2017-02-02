@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.5+" version="${unqualifiedVersion}.${buildQualifier}"
+codebase="https://www.example.com./path-to-jnlp-files/">
+	<information>
+		<title>Rental RCP Application</title>
+		<vendor>OPCoach</vendor>
+		<offline-allowed />
+	</information>
+	<security>
+		<all-permissions />
+	</security>
+
+	<application-desc main-class="org.eclipse.equinox.launcher.WebStartMain">
+		<argument>-nosplash</argument>
+	</application-desc>
+
+	<component-desc />
+	<resources>
+		<j2se version="1.6+" />
+		<property name="eclipse.product" value="my.product" />
+		<property name="eclipse.application" value="my.application" />
+
+		<property name="osgi.framework.extensions"
+value="=org.eclipse.equinox.weaving.hook" />
+		<property name="osgi.framework" value="org.eclipse.osgi" />
+
+		<property name="osgi.bundles"
+			value="org.eclipse.core.runtime@start,org.eclipse.equinox.ds@start" />
+		<property name="osgi.bundles.defaultStartLevel" value="4" />
+
+		<property name="org.eclipse.update.install.features" value="true" />
+
+		<property name="equinox.use.ds" value="true" />
+
+		<property name="eclipse.p2.profile" value="DefaultProfile" />
+		<property name="osgi.instance.area.default"
+value="@user.home/.MyAppName/workspace" />
+		<property name="osgi.configuration.area"
+value="@user.home/.MyAppName/configuration/" />
+		<property name="eclipse.p2.data.area" value="@user.home/.MyAppName/p2" />
+
+
+	</resources>
+
+</jnlp>
