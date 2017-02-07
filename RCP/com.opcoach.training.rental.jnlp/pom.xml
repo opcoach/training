@@ -9,8 +9,23 @@
 		<artifactId>com.opcoach.training.rental.parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../com.opcoach.training.rental.parent/pom.xml</relativePath>
-
 	</parent>
+
+
+	<properties>
+		<jarsigner.keystore>keystore.jks</jarsigner.keystore>
+		<jarsigner.storepass>mortimer</jarsigner.storepass>
+		<jarsigner.alias>opcoachsigner</jarsigner.alias>
+		<!-- Set the removeExistingSignature but it seems not to work :( must call 
+			an ant for that ! -->
+		<jarsigner.removeExistingSignatures>true</jarsigner.removeExistingSignatures>
+		<jarsigner.verbose>true</jarsigner.verbose>
+		<!-- The jarsigner excludes does not work also.. anyway all jar files must 
+			have the same signature -->
+		<!-- <jarsigner.processAttachedArtifacts>true</jarsigner.processAttachedArtifacts> -->
+		<!-- <jarsigner.excludes>**/org.*.jar</jarsigner.excludes> -->
+
+	</properties>
 
 	<groupId>tychoRental</groupId>
 	<artifactId>com.opcoach.training.rental.jnlp</artifactId>
@@ -40,22 +55,48 @@
 				<configuration>
 					<products>
 						<product>
-							<id>rentalRcp.product</id>
+							<id>rentalRcpJnlp.product</id>
 							<rootFolder>rental</rootFolder>
 						</product>
 					</products>
 				</configuration>
 			</plugin>
 
+
+			<!-- Add a ant task to remove the Eclipse signature before signing it 
+				twice ! -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unsignedExistingJars</id>
+						<phase>package</phase>  <!-- Must set package to be executed before jnlp ! -->
+						<configuration>
+							<tasks>
+								<echo
+									message="runnig this ant : ${project.build.directory}/../unsignJar.xml" />
+								<ant antfile="${project.build.directory}/../unsignJar.xml">
+									<property name="project.build.directory" value="${project.build.directory}" />
+								</ant>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
 			<plugin>
 				<groupId>org.sonatype.tycho</groupId>
 				<artifactId>tycho-jnlp-plugin</artifactId>
 				<version>1.0.1-SNAPSHOT</version>
 				<configuration>
-					<!-- <jnlpFile>${project.build.directory}/repository/OutputJNLPFileName.jnlp</jnlpFile> -->
 					<jnlpFile>${project.build.directory}/repository/install.jnlp</jnlpFile>
 					<target>${project.build.directory}/repository/</target>
 					<skip>false</skip>
+
 				</configuration>
 				<executions>
 					<execution>
@@ -78,5 +119,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
+
 
 </project>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="unsignAll">
+
+	<!-- This antFile iterates on each jar file contained in the plugins repository, 
+	    it unzip it and then it repack it without the Eclipse signature
+	    With Jnlp all files must be signed with the same signature and once
+	    
+	    This ant file must be called because the jarsigner.removeExistingSignatures does not work :(
+	    
+	    It must receive the project.build.directory property set to the ...target/ directory path
+	 -->
+
+
+	<!-- must refer to a local jar file to get the for-each task !!! -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="${basedir}/lib/ant-contrib-0.6.jar" />
+		</classpath>
+	</taskdef>
+
+	<property name="tmpDir" value="${project.build.directory}/tmp" />
+
+	<!-- This target takes a jar, unzip it, and jar it again without ECLIPSE signature files -->
+	<target name="unsignAJar">
+		<echo>Updating file: ${file}</echo>
+		<delete dir="${tmpDir}" />
+		<mkdir dir="${tmpDir}" />
+		<unzip src="${file}/" dest="${tmpDir}" />
+		<jar destfile="${file}" basedir="${tmpDir}" excludes="**/META-INF/ECLIPSE*" />
+	</target>
+
+
+	<target name="unsignAll">
+		<echo message="project build dir = ${project.build.directory}" />
+
+		<foreach target="unsignAJar" param="file">
+			<fileset id="jarToUnsigned" dir="${project.build.directory}/repository/plugins">
+				<include name="*.jar" />
+			</fileset>
+		</foreach>
+
+	</target>
+</project>

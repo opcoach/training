@@ -67,11 +67,6 @@
 				</configuration>
 			</plugin>
 
- <plugin>
-        <groupId>org.eclipse.tycho.extras</groupId>
-        <artifactId>target-platform-validation-plugin</artifactId>
-        <version>0.26.0</version>
-      </plugin>
 		</plugins>
 	</build>
 
@@ -87,6 +82,7 @@
 		<module>../com.opcoach.training.rental.core.test</module>
 		<!--  <module>../com.opcoach.training.rental.ui.test</module> -->
 		<module>../com.opcoach.training.rental.repository</module>
+		<module>../com.opcoach.training.rental.jnlp</module>
 	</modules>
 
 </project>
