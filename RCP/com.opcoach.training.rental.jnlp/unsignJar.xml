@@ -26,7 +26,7 @@
 		<delete dir="${tmpDir}" />
 		<mkdir dir="${tmpDir}" />
 		<unzip src="${file}/" dest="${tmpDir}" />
-		<jar destfile="${file}" basedir="${tmpDir}" excludes="**/META-INF/ECLIPSE*" />
+		<jar destfile="${file}" basedir="${tmpDir}" excludes="**/META-INF/ECLIPSE*" manifest="${tmpDir}/META-INF/MANIFEST.MF" />
 	</target>
 
 
