@@ -22,11 +22,29 @@
 
 	<!-- This target takes a jar, unzip it, and jar it again without ECLIPSE signature files -->
 	<target name="unsignAJar">
-		<echo>Updating file: ${file}</echo>
+		<echo>Unsignin file: ${file}</echo>
+        <property name="manifest" value="${tmpDir}/META-INF/MANIFEST.MF"/>
+        <property name="newManifest" value="${manifest}.new"/>
 		<delete dir="${tmpDir}" />
 		<mkdir dir="${tmpDir}" />
-		<unzip src="${file}/" dest="${tmpDir}" />
-		<jar destfile="${file}" basedir="${tmpDir}" excludes="**/META-INF/ECLIPSE*" manifest="${tmpDir}/META-INF/MANIFEST.MF" />
+		<!-- First unjar without signature files -->
+		<unjar src="${file}/" dest="${tmpDir}">
+			<patternset>
+				<include name="**" />
+				<exclude name="META-INF/*.SF" />
+				<exclude name="META-INF/*.DSA" />
+				<exclude name="META-INF/*.RSA" />
+			</patternset>
+		</unjar>
+		<!-- Copy manifest without SHA1 or Name entries -->
+		<copy file="${manifest}" tofile="${newManifest}">
+		    <filterchain>
+		        <replaceregex pattern="\nName:(.+?)\nSH" replace="SH" flags="gis" byline="false"/>
+		        <replaceregex pattern="SHA1-Digest:.*" replace="" flags="gis" byline="false"/>
+		    </filterchain>
+		</copy>
+		<!-- Can jar again with new manifest and without signature files -->
+		<jar destfile="${file}" basedir="${tmpDir}" excludes="${newManifest}" manifest="${newManifest}" />
 	</target>
 
 
