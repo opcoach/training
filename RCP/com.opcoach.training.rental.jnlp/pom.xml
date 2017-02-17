@@ -85,6 +85,13 @@
 						</goals>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-apache-regexp</artifactId>
+						<version>1.10.1</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 
 
@@ -119,6 +126,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
 
 
 
