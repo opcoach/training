@@ -1,0 +1,4 @@
+language: java
+jdk: oraclejdk8
+mvn clean install RCP/pom.xml
+mvn clean install e4/pom.xml
