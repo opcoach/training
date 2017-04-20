@@ -1,5 +1,4 @@
 language: java
 jdk: oraclejdk8
-script:
-- mvn install -B RCP/pom.xml
-- mvn install -B e4/pom.xml
+before_install: cd e4
+script: mvn install 
