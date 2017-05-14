@@ -9,7 +9,6 @@ import org.eclipse.jface.wizard.Wizard;
 public class SampleWizard extends Wizard
 {
 	private SampleWizardPage firstPage = null;
-		
 	private IEclipseContext context; 
 	
     @Inject 
@@ -25,12 +24,20 @@ public class SampleWizard extends Wizard
 		firstPage = ContextInjectionFactory.make(SampleWizardPage.class, context);
 		addPage(firstPage);
 	}
+	
+	@Override
+	public void dispose()
+	{
+		// Don't forget to uninject pages created with make ! 
+		ContextInjectionFactory.uninject(firstPage, context);
+		super.dispose();
+	}
 
 	@Override
 	public boolean performFinish()
 	{
 		// Do your stuff here by asking the pages...
+		// Use an AntRunner to create projects structures or to manipulate files !
 		return true;
 	}
-
 }
