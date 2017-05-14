@@ -135,13 +135,17 @@ public class RentalAddon implements RentalUIConstants
 	}
 
 	@Inject
-	public void readAdapterExtensions(IExtensionRegistry reg)
+	public void readModelFragmentsExtensions(IExtensionRegistry reg)
 	{
 		// IExtensionRegistry reg = Platform.getExtensionRegistry();
-		System.out.println("Enter in read Adapters Extensions");
-		for (IConfigurationElement elt : reg.getConfigurationElementsFor("org.eclipse.core.runtime.adapters"))
+		System.out.println("Enter in read model Extensions");
+		for (IConfigurationElement elt : reg.getConfigurationElementsFor("org.eclipse.e4.workbench.model"))
 		{
-			System.out.println("Plugin : " + elt.getNamespaceIdentifier() + "\t\tAdapter : " + elt.getAttribute("class"));
+			if (elt.getName().equals("fragment"))
+			     System.out.println("Model Fragment : "+ elt.getAttribute("uri") + " found in "+ elt.getNamespaceIdentifier());
+			else if (elt.getName().equals("processor"))
+			     System.out.println("Model processor class : "+ elt.getAttribute("class") + " found in "+ elt.getNamespaceIdentifier());
+
 		}
 
 	}
