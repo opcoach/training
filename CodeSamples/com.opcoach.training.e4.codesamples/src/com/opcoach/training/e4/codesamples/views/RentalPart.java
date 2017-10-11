@@ -20,6 +20,7 @@ public class RentalPart {
 	
 	@PostConstruct
 	public void createContent(Composite parent) {
+		parent.setLayout(new GridLayout(1,false));
 		
 		Group infoGroup = new Group(parent, SWT.NONE);
 		infoGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
