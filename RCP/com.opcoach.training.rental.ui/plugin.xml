@@ -120,6 +120,12 @@
             id="com.opcoach.training.rental.ui.rentalStandalonePerspective"
             name="Rental StandAlone">
       </perspective>
+      <perspective
+            class="com.opcoach.training.rental.ui.perspective.RentalPerspective"
+            icon="icons/Agency.png"
+            id="com.opcoach.training.rental.ui.perspective.RentalPerspective"
+            name="Renta">
+      </perspective>
    </extension>
    
    

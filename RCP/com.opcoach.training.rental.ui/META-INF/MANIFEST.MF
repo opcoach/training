@@ -15,7 +15,7 @@ Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.ui,
  com.opcoach.training.rental.ui.pref,
  com.opcoach.training.rental.ui.views
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.eclipse.core.commands,
  org.eclipse.jface.action,
  org.eclipse.jface.databinding.swt,
