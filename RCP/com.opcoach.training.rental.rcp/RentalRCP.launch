@@ -21,13 +21,13 @@
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.JAVA_COMMAND" value="java"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -clean"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -clean -clearPersistedState"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.requiredJavaVersion=1.5 -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m -Xms40m -Xmx512m -Xdock:icon=../Resources/Eclipse.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.requiredJavaVersion=1.5 -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Xms40m -Xmx512m -Xdock:icon=../Resources/Eclipse.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts"/>
 <stringAttribute key="pde.version" value="3.3"/>
 <stringAttribute key="product" value="com.opcoach.training.rental.rcp.product"/>
-<stringAttribute key="selected_target_plugins" value="com.ibm.icu@default:default,javax.annotation@default:default,javax.inject@default:default,javax.xml@default:default,org.apache.batik.css*1.6.0.v201011041432@default:default,org.apache.batik.css*1.7.0.v201011041433@default:default,org.apache.batik.util*1.6.0.v201011041432@default:default,org.apache.batik.util*1.7.0.v201011041433@default:default,org.apache.batik.util.gui*1.6.0.v201011041432@default:default,org.apache.batik.util.gui*1.7.0.v200903091627@default:default,org.apache.commons.jxpath@default:default,org.apache.felix.gogo.command@default:default,org.apache.felix.gogo.runtime@default:default,org.apache.felix.scr@default:default,org.apache.log4j@default:default,org.apache.lucene.analyzers-common@default:default,org.apache.lucene.analyzers-smartcn@default:default,org.apache.lucene.core*3.5.0.v20120725-1805@default:default,org.apache.lucene.core*6.1.0.v20161115-1612@default:default,org.apache.lucene.misc@default:default,org.eclipse.ant.core@default:default,org.eclipse.compare.core@default:default,org.eclipse.core.commands@default:default,org.eclipse.core.contenttype@default:default,org.eclipse.core.databinding.beans@default:default,org.eclipse.core.databinding.observable@default:default,org.eclipse.core.databinding.property@default:default,org.eclipse.core.databinding@default:default,org.eclipse.core.expressions@default:default,org.eclipse.core.filebuffers@default:default,org.eclipse.core.filesystem.macosx@default:false,org.eclipse.core.filesystem@default:default,org.eclipse.core.jobs@default:default,org.eclipse.core.net@default:default,org.eclipse.core.resources@default:default,org.eclipse.core.runtime@default:true,org.eclipse.core.variables@default:default,org.eclipse.e4.core.commands@default:default,org.eclipse.e4.core.contexts@default:default,org.eclipse.e4.core.di.annotations@default:default,org.eclipse.e4.core.di.extensions@default:default,org.eclipse.e4.core.di@default:default,org.eclipse.e4.core.services@default:default,org.eclipse.e4.emf.xpath@default:default,org.eclipse.e4.ui.bindings@default:default,org.eclipse.e4.ui.css.core@default:default,org.eclipse.e4.ui.css.swt.theme@default:default,org.eclipse.e4.ui.css.swt@default:default,org.eclipse.e4.ui.di@default:default,org.eclipse.e4.ui.model.workbench@default:default,org.eclipse.e4.ui.services@default:default,org.eclipse.e4.ui.widgets@default:default,org.eclipse.e4.ui.workbench.addons.swt@default:default,org.eclipse.e4.ui.workbench.renderers.swt.cocoa@default:false,org.eclipse.e4.ui.workbench.renderers.swt@default:default,org.eclipse.e4.ui.workbench.swt@default:default,org.eclipse.e4.ui.workbench3@default:default,org.eclipse.e4.ui.workbench@default:default,org.eclipse.emf.cdo.ecore.retrofit@default:false,org.eclipse.emf.common.ui@default:default,org.eclipse.emf.common@default:default,org.eclipse.emf.databinding.edit@default:default,org.eclipse.emf.databinding@default:default,org.eclipse.emf.ecore.change@default:default,org.eclipse.emf.ecore.xmi@default:default,org.eclipse.emf.ecore@default:default,org.eclipse.emf.ecp.common.ui@default:default,org.eclipse.emf.ecp.common@default:default,org.eclipse.emf.ecp.edit.swt@default:default,org.eclipse.emf.ecp.edit@default:default,org.eclipse.emf.ecp.ui.view.swt@default:default,org.eclipse.emf.ecp.ui.view@default:default,org.eclipse.emf.ecp.view.context@default:default,org.eclipse.emf.ecp.view.migrator@default:default,org.eclipse.emf.ecp.view.model.common@default:default,org.eclipse.emf.ecp.view.model.provider.xmi@default:default,org.eclipse.emf.ecp.view.model@default:default,org.eclipse.emf.ecp.view.template.model@default:default,org.eclipse.emf.ecp.view.util.swt@default:default,org.eclipse.emf.edit.ui@default:default,org.eclipse.emf.edit@default:default,org.eclipse.emfforms.common@default:default,org.eclipse.emfforms.core.services.editsupport@default:default,org.eclipse.emfforms.core.services.emf@default:default,org.eclipse.emfforms.core.services.emfspecificservice@default:default,org.eclipse.emfforms.core.services@default:default,org.eclipse.emfforms.localization@default:default,org.eclipse.emfforms.swt.core@default:default,org.eclipse.equinox.app@default:default,org.eclipse.equinox.bidi@default:default,org.eclipse.equinox.common@2:true,org.eclipse.equinox.ds@1:true,org.eclipse.equinox.event@default:default,org.eclipse.equinox.p2.core@default:default,org.eclipse.equinox.p2.engine@default:default,org.eclipse.equinox.p2.metadata.repository@default:default,org.eclipse.equinox.p2.metadata@default:default,org.eclipse.equinox.p2.repository@default:default,org.eclipse.equinox.preferences@default:default,org.eclipse.equinox.registry@default:default,org.eclipse.equinox.security.macosx@default:false,org.eclipse.equinox.security@default:default,org.eclipse.equinox.util@default:default,org.eclipse.help.base@default:default,org.eclipse.help@default:default,org.eclipse.jdt.junit.runtime@default:default,org.eclipse.jface.databinding@default:default,org.eclipse.jface.text@default:default,org.eclipse.jface@default:default,org.eclipse.osgi.compatibility.state@default:false,org.eclipse.osgi.services@default:default,org.eclipse.osgi.util@default:default,org.eclipse.osgi@-1:true,org.eclipse.swt.cocoa.macosx.x86_64@default:false,org.eclipse.swt@default:default,org.eclipse.team.core@default:default,org.eclipse.text@default:default,org.eclipse.ui.cheatsheets@default:default,org.eclipse.ui.cocoa@default:false,org.eclipse.ui.editors@default:default,org.eclipse.ui.forms@default:default,org.eclipse.ui.ide@default:default,org.eclipse.ui.trace@default:default,org.eclipse.ui.views@default:default,org.eclipse.ui.workbench.texteditor@default:default,org.eclipse.ui.workbench@default:default,org.eclipse.ui@default:default,org.eclipse.xtext.logging@default:false,org.hamcrest.core@default:default,org.hamcrest.library@default:default,org.junit@default:default,org.tukaani.xz@default:default,org.w3c.css.sac@default:default,org.w3c.dom.events@default:default,org.w3c.dom.smil@default:default,org.w3c.dom.svg@default:default"/>
-<stringAttribute key="selected_workspace_plugins" value="com.opcoach.rental.forms@default:default,com.opcoach.rental.ui.forms@default:false,com.opcoach.training.rental.core@default:default,com.opcoach.training.rental.rcp@default:default,com.opcoach.training.rental.ui.commands@default:false,com.opcoach.training.rental.ui.lang_de@default:false,com.opcoach.training.rental.ui.rcp.ext@default:false,com.opcoach.training.rental.ui@default:default,com.sogeti.rental.ui.es@default:false"/>
+<stringAttribute key="selected_target_plugins" value="com.ibm.icu@default:default,javax.annotation@default:default,javax.inject@default:default,javax.xml@default:default,org.apache.batik.css*1.8.0.v20170214-1941@default:default,org.apache.batik.util*1.8.0.v20170214-1941@default:default,org.apache.commons.jxpath@default:default,org.apache.felix.gogo.command@default:default,org.apache.felix.gogo.runtime@default:default,org.apache.felix.scr@default:default,org.apache.log4j@default:default,org.apache.lucene.analyzers-common@default:default,org.apache.lucene.analyzers-smartcn@default:default,org.apache.lucene.core@default:default,org.apache.lucene.misc@default:default,org.eclipse.ant.core@default:default,org.eclipse.compare.core@default:default,org.eclipse.core.commands@default:default,org.eclipse.core.contenttype@default:default,org.eclipse.core.databinding.beans@default:default,org.eclipse.core.databinding.observable@default:default,org.eclipse.core.databinding.property@default:default,org.eclipse.core.databinding@default:default,org.eclipse.core.expressions@default:default,org.eclipse.core.filebuffers@default:default,org.eclipse.core.filesystem.macosx@default:false,org.eclipse.core.filesystem@default:default,org.eclipse.core.jobs@default:default,org.eclipse.core.net@default:default,org.eclipse.core.resources@default:default,org.eclipse.core.runtime@default:true,org.eclipse.core.variables@default:default,org.eclipse.e4.core.commands@default:default,org.eclipse.e4.core.contexts@default:default,org.eclipse.e4.core.di.annotations@default:default,org.eclipse.e4.core.di.extensions.supplier@default:default,org.eclipse.e4.core.di.extensions@default:default,org.eclipse.e4.core.di@default:default,org.eclipse.e4.core.services@default:default,org.eclipse.e4.emf.xpath@default:default,org.eclipse.e4.ui.bindings@default:default,org.eclipse.e4.ui.css.core@default:default,org.eclipse.e4.ui.css.swt.theme@default:default,org.eclipse.e4.ui.css.swt@default:default,org.eclipse.e4.ui.di@default:default,org.eclipse.e4.ui.model.workbench@default:default,org.eclipse.e4.ui.services@default:default,org.eclipse.e4.ui.widgets@default:default,org.eclipse.e4.ui.workbench.addons.swt@default:default,org.eclipse.e4.ui.workbench.renderers.swt.cocoa@default:false,org.eclipse.e4.ui.workbench.renderers.swt@default:default,org.eclipse.e4.ui.workbench.swt@default:default,org.eclipse.e4.ui.workbench3@default:default,org.eclipse.e4.ui.workbench@default:default,org.eclipse.emf.common.ui@default:default,org.eclipse.emf.common@default:default,org.eclipse.emf.databinding.edit@default:default,org.eclipse.emf.databinding@default:default,org.eclipse.emf.ecore.change@default:default,org.eclipse.emf.ecore.xmi@default:default,org.eclipse.emf.ecore@default:default,org.eclipse.emf.ecp.common.ui@default:default,org.eclipse.emf.ecp.common@default:default,org.eclipse.emf.ecp.edit.swt@default:default,org.eclipse.emf.ecp.edit@default:default,org.eclipse.emf.ecp.ui.view.swt@default:default,org.eclipse.emf.ecp.ui.view@default:default,org.eclipse.emf.ecp.view.context@default:default,org.eclipse.emf.ecp.view.migrator@default:default,org.eclipse.emf.ecp.view.model.common@default:default,org.eclipse.emf.ecp.view.model.provider.xmi@default:default,org.eclipse.emf.ecp.view.model@default:default,org.eclipse.emf.ecp.view.template.model@default:default,org.eclipse.emf.ecp.view.util.swt@default:default,org.eclipse.emf.edit.ui@default:default,org.eclipse.emf.edit@default:default,org.eclipse.emfforms.common@default:default,org.eclipse.emfforms.core.services.editsupport@default:default,org.eclipse.emfforms.core.services.emf@default:default,org.eclipse.emfforms.core.services.emfspecificservice@default:default,org.eclipse.emfforms.core.services@default:default,org.eclipse.emfforms.localization@default:default,org.eclipse.emfforms.swt.core@default:default,org.eclipse.equinox.app@default:default,org.eclipse.equinox.bidi@default:default,org.eclipse.equinox.common@2:true,org.eclipse.equinox.ds@1:true,org.eclipse.equinox.event@default:default,org.eclipse.equinox.p2.core@default:default,org.eclipse.equinox.p2.engine@default:default,org.eclipse.equinox.p2.metadata.repository@default:default,org.eclipse.equinox.p2.metadata@default:default,org.eclipse.equinox.p2.repository@default:default,org.eclipse.equinox.preferences@default:default,org.eclipse.equinox.registry@default:default,org.eclipse.equinox.security.macosx@default:false,org.eclipse.equinox.security@default:default,org.eclipse.equinox.util@default:default,org.eclipse.help.base@default:default,org.eclipse.help@default:default,org.eclipse.jdt.junit.runtime@default:default,org.eclipse.jface.databinding@default:default,org.eclipse.jface.text@default:default,org.eclipse.jface@default:default,org.eclipse.osgi.compatibility.state@default:false,org.eclipse.osgi.services@default:default,org.eclipse.osgi.util@default:default,org.eclipse.osgi@-1:true,org.eclipse.swt.cocoa.macosx.x86_64@default:false,org.eclipse.swt@default:default,org.eclipse.team.core@default:default,org.eclipse.text@default:default,org.eclipse.ui.cheatsheets@default:default,org.eclipse.ui.cocoa@default:false,org.eclipse.ui.editors@default:default,org.eclipse.ui.forms@default:default,org.eclipse.ui.ide@default:default,org.eclipse.ui.trace@default:default,org.eclipse.ui.views@default:default,org.eclipse.ui.workbench.texteditor@default:default,org.eclipse.ui.workbench@default:default,org.eclipse.ui@default:default,org.eclipse.xtext.logging@default:false,org.hamcrest.core@default:default,org.junit@default:default,org.tukaani.xz@default:default,org.w3c.css.sac@default:default,org.w3c.dom.events@default:default,org.w3c.dom.smil@default:default,org.w3c.dom.svg@default:default"/>
+<stringAttribute key="selected_workspace_plugins" value="com.opcoach.training.rental.core@default:default,com.opcoach.training.rental.rcp@default:default,com.opcoach.training.rental.ui@default:default"/>
 <booleanAttribute key="show_selected_only" value="false"/>
 <stringAttribute key="templateConfig" value="${target_home}/configuration/config.ini"/>
 <booleanAttribute key="tracing" value="true"/>
@@ -107,7 +107,6 @@
 <mapEntry key="org.eclipse.e4.core.contexts/debug/listeners" value="false"/>
 <mapEntry key="org.eclipse.e4.core.contexts/debug/names" value="false"/>
 <mapEntry key="org.eclipse.e4.core.di/debug" value="false"/>
-<mapEntry key="org.eclipse.e4.core.di/debug/injector" value="false"/>
 <mapEntry key="org.eclipse.e4.core.services/debug" value="false"/>
 <mapEntry key="org.eclipse.e4.core.services/debug/injector" value="false"/>
 <mapEntry key="org.eclipse.e4.ui.workbench.swt/debug" value="false"/>
@@ -159,6 +158,8 @@
 <mapEntry key="org.eclipse.emf.cdo.server.admin/debug" value="true"/>
 <mapEntry key="org.eclipse.emf.cdo.server.admin/debug.protocol" value="true"/>
 <mapEntry key="org.eclipse.emf.cdo.server.db/debug" value="true"/>
+<mapEntry key="org.eclipse.emf.cdo.server.db/debug.units" value="true"/>
+<mapEntry key="org.eclipse.emf.cdo.server.db/debug.units.perf" value="false"/>
 <mapEntry key="org.eclipse.emf.cdo.server.net4j/debug" value="true"/>
 <mapEntry key="org.eclipse.emf.cdo.server.net4j/debug.protocol" value="true"/>
 <mapEntry key="org.eclipse.emf.cdo.server.net4j/debug.repository" value="true"/>
@@ -200,9 +201,6 @@
 <mapEntry key="org.eclipse.emf.cdo/debug.view.audit" value="true"/>
 <mapEntry key="org.eclipse.emf.cdo/debug.view.transaction" value="true"/>
 <mapEntry key="org.eclipse.emf.cdo/load.resource.before.notification" value="false"/>
-<mapEntry key="org.eclipse.emf.mint/debug" value="false"/>
-<mapEntry key="org.eclipse.emf.mint/debug/MemberAnnotationManager" value="false"/>
-<mapEntry key="org.eclipse.emf.mint/debug/MemberAnnotationManager/CacheCleaner" value="false"/>
 <mapEntry key="org.eclipse.emf.query.ocl/debug" value="true"/>
 <mapEntry key="org.eclipse.emf.query.ocl/debug/exceptions/catching" value="false"/>
 <mapEntry key="org.eclipse.emf.query.ocl/debug/exceptions/throwing" value="false"/>
@@ -238,13 +236,12 @@
 <mapEntry key="org.eclipse.emf.workspace/debug/exceptions/throwing" value="false"/>
 <mapEntry key="org.eclipse.emf.workspace/debug/methods/entering" value="false"/>
 <mapEntry key="org.eclipse.emf.workspace/debug/methods/exiting" value="false"/>
+<mapEntry key="org.eclipse.epp.logging.aeri.core/debug" value="false"/>
+<mapEntry key="org.eclipse.epp.mpc.ui/debug" value="false"/>
+<mapEntry key="org.eclipse.epp.mpc.ui/debug/dnd" value="false"/>
 <mapEntry key="org.eclipse.epp.mpc.ui/news/debug" value="false"/>
 <mapEntry key="org.eclipse.epp.mpc.ui/news/title" value=""/>
 <mapEntry key="org.eclipse.epp.mpc.ui/news/url" value=""/>
-<mapEntry key="org.eclipse.equinox.ds/debug" value="false"/>
-<mapEntry key="org.eclipse.equinox.ds/instantiate_all" value="false"/>
-<mapEntry key="org.eclipse.equinox.ds/performance" value="false"/>
-<mapEntry key="org.eclipse.equinox.ds/print_on_console" value="false"/>
 <mapEntry key="org.eclipse.equinox.p2.engine/certificatechecker/unsigned" value="false"/>
 <mapEntry key="org.eclipse.equinox.p2.engine/certificatechecker/untrusted" value="false"/>
 <mapEntry key="org.eclipse.equinox.p2.engine/engine/debug" value="false"/>
@@ -419,12 +416,25 @@
 <mapEntry key="org.eclipse.jdt.core/debug/dom/rewrite" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/formatter" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/hierarchy" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/freespacetest" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/indexer" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/insertions" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/locks" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/logsizemegs" value="0"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/pagecache" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/scheduling" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/selftest" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/space" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/index/timing" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/indexmanager" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/indexmanager/advanced" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/javadelta" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/javadelta/verbose" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/javamodel" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/javamodel/cache" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/javamodel/classpath" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/javamodel/insertions" value="false"/>
+<mapEntry key="org.eclipse.jdt.core/debug/javamodel/invalid_archives" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/postaction" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/resolution" value="false"/>
 <mapEntry key="org.eclipse.jdt.core/debug/search" value="false"/>
@@ -464,6 +474,19 @@
 <mapEntry key="org.eclipse.jface.text/debug/AnnotationPainter" value="false"/>
 <mapEntry key="org.eclipse.jface.text/debug/ContentAssistSubjectAdapters" value="false"/>
 <mapEntry key="org.eclipse.jface.text/debug/FastPartitioner/PositionCache" value="false"/>
+<mapEntry key="org.eclipse.jface/debug" value="true"/>
+<mapEntry key="org.eclipse.jface/debug/bidiUtils" value="false"/>
+<mapEntry key="org.eclipse.jface/debug/dialog/noparent" value="false"/>
+<mapEntry key="org.eclipse.jface/debug/loadURLImageDescriptor2x" value="true"/>
+<mapEntry key="org.eclipse.jface/debug/loadURLImageDescriptor2xPngForGif" value="false"/>
+<mapEntry key="org.eclipse.jface/debug/loadURLImageDescriptorDirectly" value="false"/>
+<mapEntry key="org.eclipse.jface/debug/logURLImageDescriptorMissing2x" value="false"/>
+<mapEntry key="org.eclipse.jface/debug/trace/URLImageDescriptor" value="false"/>
+<mapEntry key="org.eclipse.jface/debug/viewers/equalElements" value="false"/>
+<mapEntry key="org.eclipse.jface/debug/viewers/reentrantViewerCalls" value="false"/>
+<mapEntry key="org.eclipse.jface/newlook/preferences/showNewLook" value="false"/>
+<mapEntry key="org.eclipse.jface/trace/actions" value="false"/>
+<mapEntry key="org.eclipse.jface/trace/toolbarDisposal" value="false"/>
 <mapEntry key="org.eclipse.ltk.core.refactoring/perf/participants/checkConditions" value="300"/>
 <mapEntry key="org.eclipse.ltk.core.refactoring/perf/participants/createChanges" value="300"/>
 <mapEntry key="org.eclipse.m2e/actions" value="false"/>
@@ -525,6 +548,7 @@
 <mapEntry key="org.eclipse.osgi/debug/security" value="false"/>
 <mapEntry key="org.eclipse.osgi/debug/services" value="false"/>
 <mapEntry key="org.eclipse.osgi/debug/startlevel" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/systemBundle" value="false"/>
 <mapEntry key="org.eclipse.osgi/eclipseadaptor/converter/debug" value="false"/>
 <mapEntry key="org.eclipse.osgi/eclipseadaptor/debug" value="false"/>
 <mapEntry key="org.eclipse.osgi/eclipseadaptor/debug/platformadmin" value="false"/>
@@ -559,6 +583,9 @@
 <mapEntry key="org.eclipse.pde.core/model" value="false"/>
 <mapEntry key="org.eclipse.pde.core/target/profile" value="false"/>
 <mapEntry key="org.eclipse.pde.core/validation" value="false"/>
+<mapEntry key="org.eclipse.pde.ds.annotations/debug" value="false"/>
+<mapEntry key="org.eclipse.pde.ds.annotations/ds-annotation-builder" value="false"/>
+<mapEntry key="org.eclipse.pde.ds.annotations/ds-annotation-builder/processor" value="false"/>
 <mapEntry key="org.eclipse.search/perf" value="false"/>
 <mapEntry key="org.eclipse.sirius.diagram.ui/debug" value="false"/>
 <mapEntry key="org.eclipse.sirius.diagram.ui/debug/visualID" value="false"/>
@@ -579,11 +606,16 @@
 <mapEntry key="org.eclipse.team.cvs.ui/consolebuffering" value="false"/>
 <mapEntry key="org.eclipse.team.cvs.ui/debug" value="false"/>
 <mapEntry key="org.eclipse.team.cvs.ui/history" value="false"/>
+<mapEntry key="org.eclipse.team.ui/compare_editor_input" value="false"/>
 <mapEntry key="org.eclipse.team.ui/debug" value="false"/>
 <mapEntry key="org.eclipse.team.ui/dnd" value="false"/>
 <mapEntry key="org.eclipse.team.ui/history" value="false"/>
 <mapEntry key="org.eclipse.team.ui/syncmodels" value="false"/>
 <mapEntry key="org.eclipse.ui.browser/debug" value="false"/>
+<mapEntry key="org.eclipse.ui.forms/debug" value="true"/>
+<mapEntry key="org.eclipse.ui.forms/debug/focus" value="true"/>
+<mapEntry key="org.eclipse.ui.forms/debug/text" value="true"/>
+<mapEntry key="org.eclipse.ui.forms/debug/textsize" value="true"/>
 <mapEntry key="org.eclipse.ui.ide/debug" value="false"/>
 <mapEntry key="org.eclipse.ui.ide/debug/gc" value="false"/>
 <mapEntry key="org.eclipse.ui.ide/debug/internalerror/openDialog" value="false"/>
@@ -598,6 +630,7 @@
 <mapEntry key="org.eclipse.ui.intro/trace/logInfo" value="true"/>
 <mapEntry key="org.eclipse.ui.intro/trace/logPerformance" value="false"/>
 <mapEntry key="org.eclipse.ui.intro/trace/printHTML" value="false"/>
+<mapEntry key="org.eclipse.ui.monitoring/debug/event_monitor" value="false"/>
 <mapEntry key="org.eclipse.ui.navigator/debug" value="false"/>
 <mapEntry key="org.eclipse.ui.navigator/debug/dnd" value="false"/>
 <mapEntry key="org.eclipse.ui.navigator/debug/resolution" value="false"/>
