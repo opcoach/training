@@ -13,7 +13,7 @@
 
 	<artifactId>com.opcoach.training.e4.targetplatform</artifactId>
 	<groupId>com.opcoach.training.e4</groupId>
-	<version>4.6.2-SNAPSHOT</version>
+	<version>4.7.1-SNAPSHOT</version>
 
 	<packaging>eclipse-target-definition</packaging>
 	

@@ -1,4 +1,4 @@
 language: java
 jdk: oraclejdk8
-before_install: cd e4
+before_install: cd e4/com.opcoach.training.e4.parent
 script: mvn install 

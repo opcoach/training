@@ -2,7 +2,7 @@ target "Training RCP 4"
 
 with source requirements 
 
-location "http://download.eclipse.org/releases/neon" {
+location "http://download.eclipse.org/releases/oxygen" {
 	// org.eclipse.rcp.feature.group
 	org.eclipse.platform.feature.group
 	org.eclipse.e4.rcp.feature.group
@@ -35,7 +35,7 @@ location "http://eclipseguru.github.io/missing-swt-fragments/" {
 }
   
  // Ajout du delta pack
-location "http://download.eclipse.org/eclipse/updates/4.6" {
+location "http://download.eclipse.org/eclipse/updates/4.7" {
 	org.eclipse.equinox.sdk.feature.group
 }
 

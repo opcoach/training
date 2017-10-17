@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Training RCP 4" sequenceNumber="1484682916">
+<target name="Training RCP 4" sequenceNumber="1508244602">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.platform.feature.group" version="4.6.2.v20161124-1529"/>
-      <unit id="org.eclipse.e4.rcp.feature.group" version="1.5.2.v20161122-1740"/>
-      <unit id="org.eclipse.emf.databinding.feature.group" version="1.4.0.v20160526-0356"/>
-      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.600.v20160505-0715"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20161122-1740"/>
-      <repository location="http://download.eclipse.org/releases/neon"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.7.1.v20171009-0410"/>
+      <unit id="org.eclipse.e4.rcp.feature.group" version="1.6.1.v20170928-1359"/>
+      <unit id="org.eclipse.emf.databinding.feature.group" version="1.4.0.v20170609-0928"/>
+      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.650.v20170920-1015"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.7.1.v20170928-1359"/>
+      <repository location="http://download.eclipse.org/releases/oxygen"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.e4.tools.spies.feature.feature.group" version="0.17.0.v20170110-2157"/>
+      <unit id="org.eclipse.e4.tools.spies.feature.feature.group" version="0.17.0.v20170601-1400"/>
       <repository location="http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="com.opcoach.e4.preferences.feature.feature.group" version="1.0.0.201603310905"/>
+      <unit id="com.opcoach.e4.preferences.feature.feature.group" version="1.1.0.201710152105"/>
       <repository location="https://dl.bintray.com/opcoach/e4Preferences"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.swt.dummyfragments.feature.group" version="1.0.0.v20161122-0613"/>
+      <unit id="org.eclipse.swt.dummyfragments.feature.group" version="1.0.0.v20170228-0512"/>
       <repository location="http://eclipseguru.github.io/missing-swt-fragments/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.12.0.v20161122-1740"/>
-      <repository location="http://download.eclipse.org/eclipse/updates/4.6"/>
+      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.13.1.v20170928-1405"/>
+      <repository location="http://download.eclipse.org/eclipse/updates/4.7"/>
     </location>
   </locations>
 </target>
