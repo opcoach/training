@@ -11,6 +11,6 @@
 
 	<artifactId>com.opcoach.training.rental.targetplatform</artifactId>
 	<packaging>eclipse-target-definition</packaging>
-	<version>4.6.1-SNAPSHOT</version>
+	<version>4.7.1-SNAPSHOT</version>
 	
 </project>

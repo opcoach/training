@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>0.26.0</tycho-version>
+		<tycho-version>1.0.0</tycho-version>
 	</properties>
 
 	<!-- <repositories> configure p2 repository to resolve against <repository> 
@@ -47,7 +47,7 @@
 						<artifact>
 							<groupId>tychoRental</groupId>
 							<artifactId>com.opcoach.training.rental.targetplatform</artifactId>
-							<version>4.6.1-SNAPSHOT</version>
+							<version>4.7.1-SNAPSHOT</version>
 						</artifact>
 					</target>
 				  	<environments>
