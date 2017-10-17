@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.opcoach.training</groupId>
+	<artifactId>com.opcoach.training.aggregator</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<description>Parent project for all training e4, RCP</description>
+
+	<!-- the modules that should be built together -->
+	<modules>
+		<module>e4/com.opcoach.training.e4.parent</module>
+		<module>RCP/com.opcoach.training.rental.parent</module>
+	</modules>
+
+
+
+</project>
