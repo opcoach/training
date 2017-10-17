@@ -26,12 +26,12 @@ public interface RentalUIConstants
 	public static final String OBJECTS_NODE = "Objets à louer";
 
 	// Preferences constants
-	public static final String PALETTE_MANAGER = "com.opcoach.training.e4.rental.ui.paletteManager";
+	public static final String PALETTE_MANAGER = PLUGIN_ID + ".paletteManager";
 	public static final String PREF_PALETTE = "prefPalette";
 	public static final String PREF_CUSTOMER_COLOR = "CustomerColor";
 	public static final String PREF_RENTAL_COLOR = "RentalColor";
 	public static final String PREF_RENTAL_OBJECT_COLOR = "RentalObjectColor";
-	public static final String NONE_PALETTE = "com.opcoach.training.e4.rental.ui.NonePalette";
+	public static final String NONE_PALETTE = PLUGIN_ID + ".NonePalette";
 
 	public static final String PREF_DISPLAY_COUNT = "displayCounterPref";
 
