@@ -1,0 +1,33 @@
+<class-diagram version="1.0.7" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" 
+    name="com.opcoach.training.rental.graphiti.features.CreateCustomerFeature" 
+    project="com.opcoach.training.rental.graphiti" 
+    file="/com.opcoach.training.rental.graphiti/src/com/opcoach/training/rental/graphiti/features/CreateCustomerFeature.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="349" y="264"/>    
+    <display autosize="true" package="false" initial-value="false" signature="true" visibility="false">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="org.eclipse.graphiti.features.impl.AbstractCreateFeature" 
+    project="com.opcoach.training.rental.graphiti" 
+    file="/Users/olivier/Documents/OPCoach/tools/eclipse_Indigo/plugins/org.eclipse.graphiti_0.8.2.v20120215-0845.jar" 
+    binary="true">    
+    <position height="-1" width="-1" x="682" y="138"/>    
+    <display autosize="true" package="false" initial-value="false" signature="true" visibility="false">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <generalization id="3">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <classifier-display autosize="true" package="false" initial-value="false" signature="true" visibility="false">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="false" private="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

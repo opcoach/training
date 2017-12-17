@@ -1,0 +1,7 @@
+*.class
+bin/
+target/
+
+# generated source code
+**/xtend-gen/**/.*.java._trace
+**/xtend-gen/**/.*.xtendbin

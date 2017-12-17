@@ -1,0 +1,7 @@
+# Tracing options for the com.opcoach.training.rental.diagram plug-in
+
+# Common issues
+com.opcoach.training.rental.diagram/debug=false
+
+# Visual IDs
+com.opcoach.training.rental.diagram/debug/visualID=false

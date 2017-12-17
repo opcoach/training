@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            description="Rental Agency Diagram"
+            id="com.opcoach.training.rental.graphiti.rentalDiagramType"
+            name="Rental Agency Diagram"
+            type="rental">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            class="com.opcoach.training.rental.graphiti.RentalDiagramTypeProvider"
+            id="com.opcoach.training.rental.graphiti.rentalDiagramTypeProvider"
+            name="Rental Editor">
+         <diagramType
+               id="com.opcoach.training.rental.graphiti.rentalDiagramType">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.graphiti.ui.internal.parts.IShapeEditPart"
+            class="com.opcoach.training.rental.graphiti.properties.ShapeEditPartToPropertySheetPage">
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySheetPage">
+         </adapter>
+      </factory>
+   </extension>
+
+</plugin>
