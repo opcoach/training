@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generateHtml" name="com.opcoach.training.rental.acceleo">
     <property name="ECLIPSE_HOME" value="../../../../../Documents/OPCoach/oomph/modeling-neon/Eclipse.app/Contents/Eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../Documents/OPCoach/workspaces/OPCoach_Training_e3"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../Documents/OPCoach/workspaces/OPCoach_Training_Modeling"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="com.opcoach.training.rental.acceleo.libraryclasspath">
