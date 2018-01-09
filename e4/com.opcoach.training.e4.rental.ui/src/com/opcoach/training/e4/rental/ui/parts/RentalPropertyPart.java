@@ -41,9 +41,9 @@ public class RentalPropertyPart
 	private DataBindingContext m_bindingContext;
 	public static final String VIEW_ID = "com.opcoach.rental.e4.ui.views.rentalView"; //$NON-NLS-1$
 
-	private Label rentedObjectLabel, customerNameLabel, startDateLabel, endDateLabel;
-	private Rental currentRental;
-	private Label customerTitle;
+	protected Label rentedObjectLabel, customerNameLabel, startDateLabel, endDateLabel;
+	protected Rental currentRental;
+	protected Label customerTitle;
 	@Inject @Named(RentalUIConstants.RENTAL_UI_IMG_REGISTRY)
 	ImageRegistry reg;
 

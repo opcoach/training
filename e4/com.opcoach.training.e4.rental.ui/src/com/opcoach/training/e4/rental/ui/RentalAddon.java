@@ -57,7 +57,7 @@ public class RentalAddon implements RentalUIConstants
 
 	}
 
-	@Inject
+	@Inject @Optional
 	private Logger logger;
 
 	/** The map of possible color providers (read in extensions) */
@@ -121,9 +121,11 @@ public class RentalAddon implements RentalUIConstants
 					// delegatedICP);
 				} catch (InvalidRegistryObjectException e)
 				{
+					if (logger != null)
 					logger.error(e, "Unable to create palette class : " + elt.getAttribute("colorProviderClass"));
 				} catch (ClassNotFoundException e)
 				{
+					if (logger != null)
 					logger.error(e, "Unable to create palette class : " + elt.getAttribute("colorProviderClass"));
 
 				}
