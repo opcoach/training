@@ -3,6 +3,10 @@ package com.opcoach.training.e4.rental.ui.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
@@ -68,6 +72,7 @@ public class RentalPropertyTest implements RentalUIConstants {
 		
 		initDataBindingRealm();
 		
+		//  _____>  IL FAUDRAIT CREER UNE APPLI PARTICULIERE POUR AVOIR LES SPIES 
 		MApplication appli = ms.createModelElement(MApplication.class);
 		appli.setContext(ctx);
 		ctx.set(MApplication.class, appli);
@@ -84,14 +89,14 @@ public class RentalPropertyTest implements RentalUIConstants {
 		
 		
 		// Create a part
-		RentalPropertyPartForTest part = ContextInjectionFactory.make(RentalPropertyPartForTest.class, ctx);
+		RentalPropertyPart part = ContextInjectionFactory.make(RentalPropertyPart.class, ctx);
 		ctx.set(RentalPropertyPart.class, part);
 		
 		
 	}
 	
 	
-	/** Databinding needs a realm... which can not be overriden due to private construcdtor...
+	/** Databinding needs a realm... which can not be overriden due to private constructor...
 	 *  We create here on local realm which is a copy of the jface.DisplayRealm
 	 *  This is needed only if databinding is used in your application.
 	 */
@@ -145,11 +150,11 @@ public class RentalPropertyTest implements RentalUIConstants {
 		wait1second();
 
 		// Check widget in UI
-		RentalPropertyPartForTest p = (RentalPropertyPartForTest) ctx.get(RentalPropertyPart.class);
+		RentalPropertyPart p =  ctx.get(RentalPropertyPart.class);
 		
 		
 		
-		assertEquals("Customer Name is correct", r.getCustomer().getDisplayName(), p.getCustomerNameDisplayed());
+		assertEquals("Customer Name is correct", r.getCustomer().getDisplayName(), getTextWidgetValue(p, "customerNameLabel"));
 	}
 
 
@@ -162,4 +167,37 @@ public class RentalPropertyTest implements RentalUIConstants {
 		}
 	}
 
+	
+	
+		/** Get the text value of the clazz widget, null if no field found or no getText method */
+	public String getTextWidgetValue(Object pojo, String widgetFieldName)
+	{
+		// Get the field in the pojo object
+		Class<?> c = pojo.getClass();
+		String result = null; 
+		try {
+			Field f = c.getDeclaredField(widgetFieldName);
+			
+			f.setAccessible(true);
+
+			// Get the instance value .
+			Object o = f.get(pojo);
+			// Look for the getText method in the field instance
+			Class<?> wclass = o.getClass(); // Class for this widget
+			// Is there a getText method ? 
+			Method  m = wclass.getMethod("getText");
+			if (m != null)
+				result = (String) m.invoke(o);
+			
+			
+		} catch (NoSuchFieldException | SecurityException e) {
+			System.out.println("The widget field name " + widgetFieldName  + " does not exist in the class " + c.getCanonicalName());
+		}catch ( NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+			System.out.println("The method getText was not found or could not be called on widget " + widgetFieldName + " of class : " + c.getCanonicalName());
+		}
+		
+		
+		return result; 
+		
+	}
 }
