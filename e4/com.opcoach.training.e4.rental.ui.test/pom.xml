@@ -40,6 +40,9 @@
 					<family>!mac</family>
 				</os>
 			</activation>
+			<properties>
+				<ui.test.vmargs></ui.test.vmargs>
+			</properties>
 		</profile>
 	</profiles>
 	<build>
@@ -50,7 +53,7 @@
 				<configuration>
 					<useUIHarness>true</useUIHarness>
 					<useUIThread>true</useUIThread>
-					<argLine>-XstartOnFirstThread</argLine>
+					<argLine>${ui.test.vmargs}</argLine>
 				</configuration>
 			</plugin>
 		</plugins>
