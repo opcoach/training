@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Training RCP 4" sequenceNumber="1513706481">
+<target name="Training RCP 4" sequenceNumber="1517066830">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.platform.feature.group" version="4.7.1.v20171009-0410"/>
-      <unit id="org.eclipse.e4.rcp.feature.group" version="1.6.1.v20170928-1359"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.7.2.v20171130-0510"/>
+      <unit id="org.eclipse.e4.rcp.feature.group" version="1.6.2.v20171129-0543"/>
       <unit id="org.eclipse.emf.databinding.feature.group" version="1.4.0.v20170609-0928"/>
-      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.650.v20170920-1015"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.7.1.v20170928-1359"/>
+      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.651.v20171130-0906"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.7.2.v20171108-1834"/>
       <repository location="http://download.eclipse.org/releases/oxygen"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -20,12 +20,12 @@
       <repository location="https://dl.bintray.com/opcoach/e4Preferences"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.swt.dummyfragments.feature.group" version="1.0.0.v20170228-0512"/>
-      <repository location="http://eclipseguru.github.io/missing-swt-fragments/"/>
+      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.13.2.v20171108-1834"/>
+      <repository location="http://download.eclipse.org/eclipse/updates/4.7"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.13.1.v20170928-1405"/>
-      <repository location="http://download.eclipse.org/eclipse/updates/4.7"/>
+      <unit id="com.opcoach.e4tester.feature.feature.group" version="0.1.0.201801271412"/>
+      <repository location="https://dl.bintray.com/opcoach/E4Tester/"/>
     </location>
   </locations>
 </target>

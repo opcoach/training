@@ -72,6 +72,7 @@
 		<module>../com.opcoach.training.e4.rental.eap</module>
 		<module>../com.opcoach.training.e4.rental.feature</module>
 		<module>../com.opcoach.training.e4.rental.ui</module>
+		<module>../com.opcoach.training.e4.rental.ui.test</module>
 		<module>../com.opcoach.training.e4.rental.ui.customer</module>
 		<module>../com.opcoach.training.e4.rental.ui.palettes</module>
 		<module>../com.opcoach.training.e4.rental.core</module>
