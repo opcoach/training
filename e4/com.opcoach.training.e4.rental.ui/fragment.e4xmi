@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_Wek5YMuCEeKigKG4FVOirQ">
-  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ZROnMMuCEeKigKG4FVOirQ" featurename="addons" parentElementId="com.opcoach.training.e4.rental.eap.application">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ZROnMMuCEeKigKG4FVOirQ" featurename="addons" parentElementId="xpath:/">
     <elements xsi:type="application:Addon" xmi:id="_gYpV0MuCEeKigKG4FVOirQ" elementId="com.opcoach.training.e4.rental.ui.addon.0" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.RentalAddon"/>
   </fragments>
 </fragment:ModelFragments>

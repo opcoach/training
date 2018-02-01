@@ -24,9 +24,9 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 	{
 		IPreferenceStore ps = new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID);
 
-		Color c = Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
+		//Color c = Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
 
-		ps.setDefault(PREF_CUSTOMER_COLOR, StringConverter.asString(c.getRGB()));
+		ps.setDefault(PREF_CUSTOMER_COLOR, StringConverter.asString(new RGB(0, 0, 255)));
 		ps.setDefault(PREF_RENTAL_COLOR, StringConverter.asString(new RGB(255, 0, 0)));
 		ps.setDefault(PREF_RENTAL_OBJECT_COLOR, StringConverter.asString(new RGB(0, 255, 0)));
 		ps.setDefault(PREF_PALETTE, NONE_PALETTE);
