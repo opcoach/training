@@ -12,6 +12,7 @@ location "http://download.eclipse.org/releases/oxygen" {
 	//org.eclipse.emf.common.feature.group
 	//org.eclipse.emf.ecore.feature.group
 	org.eclipse.jdt.junit.runtime
+	org.eclipse.pde.junit.runtime
 	org.eclipse.equinox.executable.feature.group
 
 	// Dependencies to launch swtbot tests 
