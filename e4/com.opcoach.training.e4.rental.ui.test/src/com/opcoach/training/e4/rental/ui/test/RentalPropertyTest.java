@@ -43,7 +43,7 @@ public class RentalPropertyTest extends E4BaseTester {
 		assertNotNull("The rentalPropertyPart must be created", part);
 		// Test it must contains the expected value of the default rental object
 		
-		String objectLabel = getTextWidgetValue(part.getObject(), "rentedObjectLabel");
+		String objectLabel = getTextWidgetValue(part, "rentedObjectLabel");
 
 		// JUnit 5 : assertEquals(objectLabel, "Perceuse Electrique", "La location par
 		// défaut doit afficher perceuse electrique");

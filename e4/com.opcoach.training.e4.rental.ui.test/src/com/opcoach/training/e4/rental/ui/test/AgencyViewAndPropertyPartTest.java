@@ -4,11 +4,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.jface.viewers.TreePath;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.opcoach.e4tester.core.E4BaseTester;
+import com.opcoach.training.e4.rental.ui.RentalUIConstants;
+import com.opcoach.training.e4.rental.ui.parts.AgencyContentProvider;
 import com.opcoach.training.e4.rental.ui.parts.RentalAgencyPart;
 import com.opcoach.training.e4.rental.ui.parts.RentalPropertyPart;
 import com.opcoach.training.rental.Rental;
@@ -27,6 +31,10 @@ public class AgencyViewAndPropertyPartTest extends E4BaseTester {
 		try {
 			propertyPart = createTestPart("Rental Property", RentalPropertyPart.VIEW_ID, RentalPropertyPart.class);
 			agencyPart = createTestPart("Rental Agency", RentalAgencyPart.VIEW_ID, RentalAgencyPart.class);
+
+			// Must expand all nodes for selection ! 
+			TreeViewer tv = getTreeViewer(agencyPart.getObject(), "agencyViewer");
+			tv.expandAll();
 
 		} catch (Throwable ex) {
 			ex.printStackTrace();
@@ -60,16 +68,15 @@ public class AgencyViewAndPropertyPartTest extends E4BaseTester {
 	// selected")
 	public void testRentalSelection() throws InterruptedException {
 
-		RentalAgency a = propertyPart.getContext().get(RentalAgency.class);
+		RentalAgency a = getContext().get(RentalAgency.class);
 		
 		Rental rental = a.getRentals().get(1);
-		selectObjectInTreeViewer(agencyPart.getObject(), "agencyViewer", rental);
+		selectObjectInTreeViewer(agencyPart, "agencyViewer", rental);
 		
 		wait1second();
-
 		
 		assertEquals("Customer Name displayed is not correct", rental.getCustomer().getDisplayName(),
-				getTextWidgetValue(propertyPart.getObject(), "customerNameLabel"));
+				getTextWidgetValue(propertyPart, "customerNameLabel"));
 	}
 
 
