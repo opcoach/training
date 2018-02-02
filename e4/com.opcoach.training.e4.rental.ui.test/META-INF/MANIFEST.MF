@@ -10,4 +10,5 @@ Require-Bundle: com.opcoach.e4tester.core,
  org.hamcrest.core,
  org.eclipse.e4.tools.context.spy;bundle-version="0.17.0",
  org.junit;bundle-version="4.12.0",
- org.eclipse.jface
+ org.eclipse.jface,
+ org.eclipse.equinox.ds

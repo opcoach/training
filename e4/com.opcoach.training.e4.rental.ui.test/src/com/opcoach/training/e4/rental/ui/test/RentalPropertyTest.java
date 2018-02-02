@@ -8,10 +8,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.opcoach.e4tester.core.E4BaseTester;
+import com.opcoach.e4tester.core.E4TestCase;
 import com.opcoach.training.e4.rental.ui.parts.RentalPropertyPart;
 
-public class RentalPropertyTest extends E4BaseTester { 
+public class RentalPropertyTest extends E4TestCase { 
 
 	MPart part;
 

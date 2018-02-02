@@ -11,14 +11,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.opcoach.e4tester.core.E4BaseTester;
+import com.opcoach.e4tester.core.E4TestCase;
 import com.opcoach.training.e4.rental.ui.parts.RentalAgencyPart;
 import com.opcoach.training.e4.rental.ui.parts.RentalPropertyPart;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 
 /** This test case is a simple test with only the agency part */
-public class AgencyViewTest extends E4BaseTester {
+public class AgencyViewTest extends E4TestCase {
 
 	MPart part;
 
