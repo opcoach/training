@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
-<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Training RCP 4" sequenceNumber="1517480515">
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
+<target name="Training RCP 4" sequenceNumber="1540144098">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.platform.feature.group" version="4.7.2.v20171130-0510"/>
-      <unit id="org.eclipse.e4.rcp.feature.group" version="1.6.2.v20171129-0543"/>
-      <unit id="org.eclipse.emf.databinding.feature.group" version="1.4.0.v20170609-0928"/>
-      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.651.v20171130-0906"/>
-      <unit id="org.eclipse.pde.junit.runtime" version="3.5.50.v20170923-0844"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.7.2.v20171108-1834"/>
-      <repository location="http://download.eclipse.org/releases/oxygen"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.8.0.v20180611-0656"/>
+      <unit id="org.eclipse.e4.rcp.feature.group" version="1.6.100.v20180611-0422"/>
+      <unit id="org.eclipse.emf.databinding.feature.group" version="1.5.0.v20180130-1145"/>
+      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.700.v20171124-1029"/>
+      <unit id="org.eclipse.pde.junit.runtime" version="3.5.100.v20180528-1302"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.0.v20180518-2029"/>
+      <repository location="http://download.eclipse.org/releases/photon"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.e4.tools.spies.feature.feature.group" version="0.18.0.v20171217-2215"/>
       <repository location="http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="com.opcoach.e4.preferences.feature.feature.group" version="1.1.0.201710152105"/>
-      <repository location="https://dl.bintray.com/opcoach/e4Preferences"/>
+      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.14.0.v20180518-2029"/>
+      <repository location="http://download.eclipse.org/eclipse/updates/4.8"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.13.2.v20171108-1834"/>
-      <repository location="http://download.eclipse.org/eclipse/updates/4.7"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="com.opcoach.e4tester.feature.feature.group" version="0.1.0.201801271412"/>
-      <repository location="https://dl.bintray.com/opcoach/E4Tester/"/>
+      <unit id="com.opcoach.e4tester.feature.feature.group" version="0.1.0.201810211727"/>
+      <unit id="com.opcoach.e4.preferences.feature.feature.group" version="1.1.0.201810211740"/>
+      <repository location="https://www.opcoach.com/repository/photon"/>
     </location>
   </locations>
 </target>

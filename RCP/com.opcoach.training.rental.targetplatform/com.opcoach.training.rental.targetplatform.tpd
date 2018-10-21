@@ -16,7 +16,7 @@ location "http://download.eclipse.org/technology/swtbot/releases/latest/" {
 
 } 
 
-location "http://download.eclipse.org/releases/oxygen" {
+location "http://download.eclipse.org/releases/photon" {
 	org.eclipse.rcp.feature.group
 	org.eclipse.ui.workbench
 	org.eclipse.emf.databinding.feature.group
@@ -35,7 +35,7 @@ location "http://download.eclipse.org/releases/oxygen" {
 }
 
  // Ajout du delta pack
-location "http://download.eclipse.org/eclipse/updates/4.7" {
+location "http://download.eclipse.org/eclipse/updates/4.8" {
 	org.eclipse.equinox.sdk.feature.group
 }
 

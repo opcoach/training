@@ -1,6 +1,6 @@
 target "Training RCP 4" with source requirements
 
-location "http://download.eclipse.org/releases/oxygen" {
+location "http://download.eclipse.org/releases/photon" {
 // org.eclipse.rcp.feature.group
 	org.eclipse.platform.feature.group
 	org.eclipse.e4.rcp.feature.group
@@ -25,9 +25,6 @@ location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"
 	org.eclipse.e4.tools.spies.feature.feature.group
 }
 
-location "https://dl.bintray.com/opcoach/e4Preferences" {
-	com.opcoach.e4.preferences.feature.feature.group
-}
 
 // missing fragment only for neon...
 /* 
@@ -37,13 +34,14 @@ location "http://eclipseguru.github.io/missing-swt-fragments/" {
 
 // Add delta pack
 
-location "http://download.eclipse.org/eclipse/updates/4.7" {
+location "http://download.eclipse.org/eclipse/updates/4.8" {
 	org.eclipse.equinox.sdk.feature.group
 }
 
-// Add the new E4 test platform
-
-location "https://dl.bintray.com/opcoach/E4Tester/" {
-	com.opcoach.e4tester.feature.feature.group
+// Add the new E4 test platform from opcoach website
+//location "https://dl.bintray.com/opcoach/E4Tester/" {
+location "https://www.opcoach.com/repository/photon" {
+   com.opcoach.e4tester.feature.feature.group
+   com.opcoach.e4.preferences.feature.feature.group
 } 
 
