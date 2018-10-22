@@ -1,24 +1,14 @@
 target "Training RCP 4" with source requirements
 
 location "http://download.eclipse.org/releases/photon" {
-// org.eclipse.rcp.feature.group
 	org.eclipse.platform.feature.group
 	org.eclipse.e4.rcp.feature.group
-	// org.eclipse.ui.workbench
 	org.eclipse.emf.databinding.feature.group
-	//org.eclipse.ui.cheatsheets
-	//org.eclipse.help.ui
-	//org.eclipse.compare
-	//org.eclipse.emf.common.feature.group
-	//org.eclipse.emf.ecore.feature.group
+	org.eclipse.equinox.executable.feature.group
+	
+	// Used for tests
 	org.eclipse.jdt.junit.runtime
 	org.eclipse.pde.junit.runtime
-	org.eclipse.equinox.executable.feature.group
-
-	// Dependencies to launch swtbot tests 
-	/*org.eclipse.pde.junit.runtime
-	org.eclipse.jdt.junit4.runtime
-	org.eclipse.pde.core */
 }
 
 location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
@@ -26,14 +16,7 @@ location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"
 }
 
 
-// missing fragment only for neon...
-/* 
-location "http://eclipseguru.github.io/missing-swt-fragments/" {
-	org.eclipse.swt.dummyfragments.feature.group
-} */
-
 // Add delta pack
-
 location "http://download.eclipse.org/eclipse/updates/4.8" {
 	org.eclipse.equinox.sdk.feature.group
 }
