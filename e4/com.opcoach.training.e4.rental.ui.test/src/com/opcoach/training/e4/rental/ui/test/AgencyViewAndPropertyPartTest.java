@@ -1,18 +1,17 @@
 package com.opcoach.training.e4.rental.ui.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
-import org.eclipse.jface.viewers.TreePath;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import com.opcoach.e4tester.core.E4TestCase;
-import com.opcoach.training.e4.rental.ui.RentalUIConstants;
-import com.opcoach.training.e4.rental.ui.parts.AgencyContentProvider;
 import com.opcoach.training.e4.rental.ui.parts.RentalAgencyPart;
 import com.opcoach.training.e4.rental.ui.parts.RentalPropertyPart;
 import com.opcoach.training.rental.Rental;
@@ -22,8 +21,7 @@ public class AgencyViewAndPropertyPartTest extends E4TestCase {
 
 	MPart propertyPart, agencyPart;
 
-	@Before // See issue #3 (https://github.com/opcoach/E4Tester/issues/3), replace with
-			// BeforeEach later
+	@BeforeEach 
 	public void setUp() throws Exception {
 		
 		System.out.println("Testing AgencyViewAndPropertyPartTest... ");
@@ -43,8 +41,7 @@ public class AgencyViewAndPropertyPartTest extends E4TestCase {
 
 	}
 
-	@After // See issue #3 (https://github.com/opcoach/E4Tester/issues/3), replace with
-			// AfterEach later
+	@AfterEach 
 	public void release() {
 		
 		// ContextInjectionFactory.uninject(part, ctx);
@@ -58,14 +55,13 @@ public class AgencyViewAndPropertyPartTest extends E4TestCase {
 	@Test
 	public void testCreateParts() throws InterruptedException {
 
-		assertNotNull( "The rentalPropertyPart must be created", propertyPart);
-		assertNotNull( "The agencyPart must be created", agencyPart);
+		assertNotNull( propertyPart, "The rentalPropertyPart must be created" );
+		assertNotNull( agencyPart, "The agencyPart must be created" );
 		
 	}
 
 	@Test
-	// For junit5 when available in tycho : @DisplayName("Test if a rental is
-	// selected")
+    @DisplayName("Test if a rental is  selected")
 	public void testRentalSelection() throws InterruptedException {
 
 		RentalAgency a = getContext().get(RentalAgency.class);
@@ -75,8 +71,8 @@ public class AgencyViewAndPropertyPartTest extends E4TestCase {
 		
 		wait1second();
 		
-		assertEquals("Customer Name displayed is not correct", rental.getCustomer().getDisplayName(),
-				getTextWidgetValue(propertyPart, "customerNameLabel"));
+		assertEquals(rental.getCustomer().getDisplayName(),
+				getTextWidgetValue(propertyPart, "customerNameLabel"), "Customer Name displayed is not correct");
 	}
 
 

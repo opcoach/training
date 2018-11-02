@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Training RCP 4" sequenceNumber="1540422392">
+<target name="Training RCP 4" sequenceNumber="1541166000">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.platform.feature.group" version="4.8.0.v20180611-0656"/>
       <unit id="org.eclipse.e4.rcp.feature.group" version="1.6.100.v20180611-0422"/>
       <unit id="org.eclipse.emf.databinding.feature.group" version="1.5.0.v20180130-1145"/>
       <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.0.v20180518-2029"/>
-      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.700.v20171124-1029"/>
       <unit id="org.eclipse.pde.junit.runtime" version="3.5.100.v20180528-1302"/>
+      <unit id="org.eclipse.jdt.junit5.runtime" version="1.0.100.v20171124-1029"/>
+      <unit id="org.junit.jupiter.api" version="5.1.0.v20180327-1502"/>
+      <unit id="org.junit.jupiter.engine" version="5.1.0.v20180327-1502"/>
+      <unit id="org.junit.jupiter.migrationsupport" version="5.1.0.v20180327-1502"/>
+      <unit id="org.junit.jupiter.params" version="5.1.0.v20180327-1502"/>
+      <unit id="org.junit.platform.commons" version="1.1.0.v20180327-1502"/>
       <repository location="http://download.eclipse.org/releases/photon"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -21,8 +26,8 @@
       <repository location="http://download.eclipse.org/eclipse/updates/4.8"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="com.opcoach.e4tester.feature.feature.group" version="0.1.0.201810241043"/>
-      <unit id="com.opcoach.e4.preferences.feature.feature.group" version="1.1.0.201810242256"/>
+      <unit id="com.opcoach.e4tester.feature.feature.group" version="1.0.0.201811021335"/>
+      <unit id="com.opcoach.e4.preferences.feature.feature.group" version="1.1.0.201811021335"/>
       <repository location="https://www.opcoach.com/repository/photon"/>
     </location>
   </locations>
