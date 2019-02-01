@@ -16,7 +16,7 @@ location "http://download.eclipse.org/technology/swtbot/releases/latest/" {
 
 } 
 
-location "http://download.eclipse.org/releases/photon" {
+location "http://download.eclipse.org/releases/2018-12" {
 	org.eclipse.rcp.feature.group
 	org.eclipse.ui.workbench
 	org.eclipse.emf.databinding.feature.group
@@ -35,7 +35,11 @@ location "http://download.eclipse.org/releases/photon" {
 }
 
  // Ajout du delta pack
-location "http://download.eclipse.org/eclipse/updates/4.8" {
+location "http://download.eclipse.org/eclipse/updates/4.10" {
 	org.eclipse.equinox.sdk.feature.group
 }
 
+location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"{
+    org.eclipse.e4.tools.spies.feature.feature.group
+
+}
