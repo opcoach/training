@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
@@ -51,8 +52,6 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 	private TreeViewer agencyViewer;
 
-	@Inject
-	private AgencyLabelProvider labelProvider;
 
 	@Inject
 	@Named(RENTAL_UI_IMG_REGISTRY)
@@ -101,12 +100,9 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 		agencyViewer = new TreeViewer(parent);
 		agencyViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		agencyViewer.setContentProvider(new AgencyContentProvider());
-		// labelProvider is now Creatable, so it is useless to call
-		// ContextInjectionFactory
-		// labelProvider =
-		// ContextInjectionFactory.make(AgencyLabelProvider.class, ctx);
-		agencyViewer.setLabelProvider(labelProvider);
+		RentalProvider provider = ContextInjectionFactory.make(RentalProvider.class, ctx);
+		agencyViewer.setContentProvider(provider);
+		agencyViewer.setLabelProvider(provider);
 
 		Collection<RentalAgency> agencies = new ArrayList<RentalAgency>();
 		agencies.add(agency);
@@ -150,9 +146,8 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 			@Override
 			public void preferenceChange(PreferenceChangeEvent event)
 			{
-				System.out.println("Refresh for any preference chagge. Here : " + event.getKey());
+				System.out.println("Refresh for any preference change. Here : " + event.getKey());
 				agencyViewer.refresh();
-				
 			}
 		});
 

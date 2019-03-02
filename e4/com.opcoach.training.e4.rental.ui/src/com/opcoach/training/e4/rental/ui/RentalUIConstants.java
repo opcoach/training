@@ -31,7 +31,9 @@ public interface RentalUIConstants
 	public static final String PREF_CUSTOMER_COLOR = "CustomerColor";
 	public static final String PREF_RENTAL_COLOR = "RentalColor";
 	public static final String PREF_RENTAL_OBJECT_COLOR = "RentalObjectColor";
-	public static final String NONE_PALETTE = PLUGIN_ID + ".NonePalette";
+	
+	// See this value in the plugin.xml palette extension
+	public static final String DEFAULT_PALETTE = PLUGIN_ID + ".DefaultPalette";
 
 	public static final String PREF_DISPLAY_COUNT = "displayCounterPref";
 

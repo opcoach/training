@@ -1,25 +1,109 @@
-// ------------------------------------------------
-// OPCoach Training Projects
-// © OPCoach 2009 http://www.opcoach.com
-// ------------------------------------------------
-
 package com.opcoach.training.e4.rental.ui.parts;
 
 import java.util.Collection;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 
+import com.opcoach.training.e4.rental.ui.Palette;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
+import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
+import com.opcoach.training.rental.RentalObject;
 
-/**
- * ElectriqueMonte
- * 
- * @author olivier
- */
-public class AgencyContentProvider implements ITreeContentProvider, RentalUIConstants
+public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider,  RentalUIConstants
 {
+	@Inject
+	private Palette currentPalette;
+	
+	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
+	private ImageRegistry registry;	
+	
+	@Inject @Named(RENTAL_UI_PREF_STORE)
+	private IPreferenceStore prefStore;
+		
+
+	@Override
+	public String getText(Object element)
+	{
+		String result = null;
+		boolean displayCount = prefStore.getBoolean(PREF_DISPLAY_COUNT);
+
+		if (element instanceof RentalAgency)
+		{
+			result = ((RentalAgency) element).getName();
+		} else if (element instanceof TNode)
+		{
+			return ((TNode) element).getText(displayCount);
+		}
+
+		else if (element instanceof Customer)
+		{
+			result = ((Customer) element).getDisplayName();
+		} else if (element instanceof RentalObject)
+		{
+			result = ((RentalObject) element).getName();
+		} else if (element instanceof Rental)
+		{
+			result = element.toString();
+		}
+
+		return result;
+	}
+
+
+	@Override
+	public Color getForeground(Object element)
+	{
+		return currentPalette.getForeground(element);
+		
+	}
+	
+
+	
+	@Override
+	public Color getBackground(Object element)
+	{
+		return  currentPalette.getBackground(element);
+
+	}
+
+	@Override
+	public Image getImage(Object element)
+	{
+		Image result = null;
+
+
+		if (element instanceof RentalAgency)
+		{
+			result = registry.get(IMG_AGENCY);
+		} else if (element instanceof Rental)
+		{
+			result = registry.get(IMG_RENTAL);
+		} else if (element instanceof Customer)
+		{
+			result = registry.get(IMG_CUSTOMER);
+		} else if (element instanceof RentalObject)
+		{
+			result = registry.get(IMG_RENTAL_OBJECT);
+		}
+
+		return result;
+	}
+	
+	
+
+
 
 	private static final Object[] EMPTY_RESULT = new Object[0];
 
@@ -170,7 +254,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 		{
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + getOuterType().hashCode();
+			result = prime * result + getEnclosingInstance().hashCode();
 			result = prime * result + ((agency == null) ? 0 : agency.hashCode());
 			result = prime * result + ((name == null) ? 0 : name.hashCode());
 			return result;
@@ -186,7 +270,7 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 			if (getClass() != obj.getClass())
 				return false;
 			TNode other = (TNode) obj;
-			if (!getOuterType().equals(other.getOuterType()))
+			if (!getEnclosingInstance().equals(other.getEnclosingInstance()))
 				return false;
 			if (agency == null)
 			{
@@ -203,12 +287,19 @@ public class AgencyContentProvider implements ITreeContentProvider, RentalUICons
 			return true;
 		}
 
-		private AgencyContentProvider getOuterType()
+		private RentalProvider getEnclosingInstance()
 		{
-			return AgencyContentProvider.this;
+			return RentalProvider.this;
 		}
-		
+
 		
 
 	}
+
+
+
+
+
+
+
 }

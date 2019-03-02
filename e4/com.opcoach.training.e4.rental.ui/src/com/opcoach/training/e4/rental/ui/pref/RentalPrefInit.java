@@ -33,7 +33,7 @@ public class RentalPrefInit extends AbstractPreferenceInitializer implements Ren
 			node.put(PREF_CUSTOMER_COLOR, StringConverter.asString(new RGB(0, 0, 255)));
 			node.put(PREF_RENTAL_COLOR, StringConverter.asString(new RGB(255, 0, 0)));
 			node.put(PREF_RENTAL_OBJECT_COLOR, StringConverter.asString(new RGB(0, 255, 0)));
-			node.put(PREF_PALETTE, NONE_PALETTE);
+			node.put(PREF_PALETTE, DEFAULT_PALETTE);
 			
 			node.put(PREF_DISPLAY_COUNT, StringConverter.asString(false));
 			
