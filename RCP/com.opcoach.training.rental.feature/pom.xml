@@ -8,11 +8,8 @@
 		<groupId>tychoRental</groupId>
 		<artifactId>com.opcoach.training.rental.parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../com.opcoach.training.rental.parent/pom.xml</relativePath>
-
 	</parent>
 
-	<groupId>tychoRental</groupId>
 	<artifactId>com.opcoach.training.rental.feature</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>eclipse-feature</packaging>

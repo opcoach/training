@@ -11,9 +11,6 @@
 		<tycho-version>1.3.0</tycho-version>
 	</properties>
 
-	<!-- <repositories> configure p2 repository to resolve against <repository> 
-		<id>indigo</id> <layout>p2</layout> <url>http://download.eclipse.org/releases/indigo/</url> 
-		</repository> </repositories> -->
 
 	<build>
 		<plugins>
@@ -47,7 +44,7 @@
 						<artifact>
 							<groupId>tychoRental</groupId>
 							<artifactId>com.opcoach.training.rental.targetplatform</artifactId>
-							<version>4.7.1-SNAPSHOT</version>
+							<version>4.10.0-SNAPSHOT</version>
 						</artifact>
 					</target>
 				  	<environments>
@@ -72,17 +69,17 @@
 
 	<!-- the modules that should be built together -->
 	<modules>
-		<module>../com.opcoach.training.rental.targetplatform</module>
-		<module>../com.opcoach.training.rental.rcp</module>
-		<module>../com.opcoach.training.rental.feature</module>
-		<module>../com.opcoach.training.rental.ui</module>
-		<module>../com.opcoach.training.rental.ui.colorprovider</module>
-		<module>../com.opcoach.training.rental.help</module>
-		<module>../com.opcoach.training.rental.core</module>
-		<module>../com.opcoach.training.rental.core.test</module>
-		<!--  <module>../com.opcoach.training.rental.ui.test</module> -->
-		<module>../com.opcoach.training.rental.repository</module>
-		<module>../com.opcoach.training.rental.jnlp</module>
+		<module>com.opcoach.training.rental.targetplatform</module>
+		<module>com.opcoach.training.rental.rcp</module>
+		<module>com.opcoach.training.rental.feature</module>
+		<module>com.opcoach.training.rental.ui</module>
+		<module>com.opcoach.training.rental.ui.colorprovider</module>
+		<module>com.opcoach.training.rental.help</module>
+		<module>com.opcoach.training.rental.core</module>
+		<module>com.opcoach.training.rental.core.test</module>
+		<!--  <module>com.opcoach.training.rental.ui.test</module> -->
+		<module>com.opcoach.training.rental.repository</module>
+		<module>com.opcoach.training.rental.jnlp</module>
 	</modules>
 
 </project>

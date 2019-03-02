@@ -6,14 +6,11 @@
 		<groupId>com.opcoach.training.e4</groupId>
 		<artifactId>com.opcoach.training.e4.parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../com.opcoach.training.e4.parent/pom.xml</relativePath>
-
 	</parent>
 
 
 	<artifactId>com.opcoach.training.e4.targetplatform</artifactId>
-	<version>4.7.1-SNAPSHOT</version>
-
+	<version>4.10.0-SNAPSHOT</version>
 	<packaging>eclipse-target-definition</packaging>
 	
 </project>

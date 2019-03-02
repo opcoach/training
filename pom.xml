@@ -9,8 +9,8 @@
 
 	<!-- the modules that should be built together -->
 	<modules>
-		<module>e4/com.opcoach.training.e4.parent</module>
-		<module>RCP/com.opcoach.training.rental.parent</module>
+		<module>e4</module>
+		<module>RCP</module>
 	</modules>
 
 

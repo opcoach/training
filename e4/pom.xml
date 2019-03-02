@@ -12,10 +12,6 @@
 		<tycho-version>1.3.0</tycho-version>
 	</properties>
 
-	<!-- configure p2 repository to resolve against -->
-	<!-- <repositories> <repository> <id>indigo</id> <layout>p2</layout> <url>http://download.eclipse.org/releases/kepler/</url> 
-		</repository> </repositories> -->
-
 	<build>
 		<plugins>
 			<plugin>
@@ -38,7 +34,7 @@
 						<artifact>
 							<groupId>com.opcoach.training.e4</groupId>
 							<artifactId>com.opcoach.training.e4.targetplatform</artifactId>
-							<version>4.7.1-SNAPSHOT</version>
+							<version>4.10.0-SNAPSHOT</version>
 						</artifact>
 					</target>
 					<environments>
@@ -67,16 +63,16 @@
 
 	<!-- the modules that should be built together -->
 	<modules>
-		<module>../com.opcoach.training.e4.targetplatform</module>
-		<module>../com.opcoach.training.e4.repository</module>
-		<module>../com.opcoach.training.e4.rental.eap</module>
-		<module>../com.opcoach.training.e4.rental.feature</module>
-		<module>../com.opcoach.training.e4.rental.ui</module>
-		<module>../com.opcoach.training.e4.rental.ui.test</module>
-		<module>../com.opcoach.training.e4.rental.ui.customer</module>
-		<module>../com.opcoach.training.e4.rental.ui.palettes</module>
-		<module>../com.opcoach.training.e4.rental.core</module>
-		<module>../com.opcoach.training.e4.rental.core.test</module>
+		<module>com.opcoach.training.e4.targetplatform</module>
+		<module>com.opcoach.training.e4.repository</module>
+		<module>com.opcoach.training.e4.rental.eap</module>
+		<module>com.opcoach.training.e4.rental.feature</module>
+		<module>com.opcoach.training.e4.rental.ui</module>
+		<module>com.opcoach.training.e4.rental.ui.test</module>
+		<module>com.opcoach.training.e4.rental.ui.customer</module>
+		<module>com.opcoach.training.e4.rental.ui.palettes</module>
+		<module>com.opcoach.training.e4.rental.core</module>
+		<module>com.opcoach.training.e4.rental.core.test</module>
 	</modules>
 
 
