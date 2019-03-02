@@ -30,9 +30,9 @@
   <extension
         point="com.opcoach.training.e4.rental.ui.Palette">
      <palette
-           id="com.opcoach.training.e4.rental.ui.NonePalette"
+           id="com.opcoach.training.e4.rental.ui.DefaultPalette"
            name="Default Palette"
-           paletteClass="com.opcoach.training.e4.rental.ui.parts.NonePalette">
+           paletteClass="com.opcoach.training.e4.rental.ui.palettes.DefaultPalette">
      </palette>
   </extension>
 

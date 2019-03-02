@@ -1,4 +1,4 @@
-package com.opcoach.training.e4.rental.ui.parts;
+package com.opcoach.training.e4.rental.ui.palettes;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -14,7 +14,7 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalObject;
 
-public class NonePalette implements IColorProvider, RentalUIConstants
+public class DefaultPalette implements IColorProvider, RentalUIConstants
 {
 
 	/** A local color registry to store the node colors */
