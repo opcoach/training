@@ -1,6 +1,6 @@
 target "Training RCP 4" with source requirements
 
-location "http://download.eclipse.org/releases/2018-09" {
+location "http://download.eclipse.org/releases/2018-12" {
 	org.eclipse.platform.feature.group
 	org.eclipse.e4.rcp.feature.group
 	org.eclipse.emf.databinding.feature.group
@@ -25,13 +25,13 @@ location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"
 
 
 // Add delta pack
-location "http://download.eclipse.org/eclipse/updates/4.8" {
+location "http://download.eclipse.org/eclipse/updates/4.10" {
 	org.eclipse.equinox.sdk.feature.group
 }
 
 // Add the new E4 test platform from opcoach website
 //location "https://dl.bintray.com/opcoach/E4Tester/" {
-location "https://www.opcoach.com/repository/photon" {
+location "https://www.opcoach.com/repository/2018-12" {
    com.opcoach.e4tester.feature.feature.group
    com.opcoach.e4.preferences.feature.feature.group
 } 

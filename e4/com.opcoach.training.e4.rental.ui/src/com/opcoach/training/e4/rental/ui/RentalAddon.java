@@ -35,15 +35,15 @@ public class RentalAddon implements RentalUIConstants
 {
 
 	@PostConstruct
-	void startRentalFeature(IEclipseContext ctx, IExtensionRegistry reg, @Optional IEclipsePreferences prefs)
+	void startRentalFeature(IEclipseContext ctx, IExtensionRegistry reg)
 	{
 
 		System.out.println("---->  Enter in the RentalAddon ");
-		System.out.println("IEclipsePreferences is : " + prefs);
 		// Put objects in context
 		ctx.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
 		ctx.set(RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
 
+		// Preference Store combines preferences and default preferences.
 		IPreferenceStore prefStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID);
 		ctx.set(RENTAL_UI_PREF_STORE, prefStore);
 

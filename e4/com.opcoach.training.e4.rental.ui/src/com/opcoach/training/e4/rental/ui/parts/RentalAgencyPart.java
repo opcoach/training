@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
@@ -54,14 +55,12 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	private AgencyLabelProvider labelProvider;
 
 	@Inject
-	private EMenuService menuService;
-	
-	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
-	private ImageRegistry imgReg;	
-
+	@Named(RENTAL_UI_IMG_REGISTRY)
+	private ImageRegistry imgReg;
 
 	@PostConstruct
-	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency, IEclipseContext ctx)
+	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency, IEclipseContext ctx, EMenuService menuService,
+			@Preference IEclipsePreferences prefs)
 	{
 		parent.setLayout(new GridLayout(1, false));
 
@@ -71,39 +70,37 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 		Button expandAll = new Button(comp, SWT.FLAT);
 		expandAll.setImage(imgReg.get(IMG_EXPAND_ALL));
 		expandAll.setToolTipText("Expand agency tree");
-		expandAll.addSelectionListener(new SelectionListener()
+		expandAll.addSelectionListener(new SelectionListener() {
+			@Override
+			public void widgetSelected(SelectionEvent e)
 			{
-				@Override
-				public void widgetSelected(SelectionEvent e)
-				{
-					agencyViewer.expandAll();
-				}
+				agencyViewer.expandAll();
+			}
 
-				@Override
-				public void widgetDefaultSelected(SelectionEvent e)
-				{
-				}
-			});
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e)
+			{
+			}
+		});
 		Button collapseAll = new Button(comp, SWT.FLAT);
 		collapseAll.setImage(imgReg.get(IMG_COLLAPSE_ALL));
 		collapseAll.setToolTipText("Collapse context nodes");
-		collapseAll.addSelectionListener(new SelectionListener()
+		collapseAll.addSelectionListener(new SelectionListener() {
+
+			@Override
+			public void widgetSelected(SelectionEvent e)
 			{
+				agencyViewer.collapseAll();
+			}
 
-				@Override
-				public void widgetSelected(SelectionEvent e)
-				{
-					agencyViewer.collapseAll();
-				}
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e)
+			{
+			}
+		});
 
-				@Override
-				public void widgetDefaultSelected(SelectionEvent e)
-				{
-				}
-			});
-		
 		agencyViewer = new TreeViewer(parent);
-		agencyViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,true));
+		agencyViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		agencyViewer.setContentProvider(new AgencyContentProvider());
 		// labelProvider is now Creatable, so it is useless to call
 		// ContextInjectionFactory
@@ -145,6 +142,20 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 				selectionService.setSelection(sel.size() == 1 ? sel.getFirstElement() : sel.toArray());
 			}
 		});
+
+		// To refresh the part whatever the preference changed, use a listener
+		// on IEclipsePreferences
+		prefs.addPreferenceChangeListener(new IEclipsePreferences.IPreferenceChangeListener() {
+			
+			@Override
+			public void preferenceChange(PreferenceChangeEvent event)
+			{
+				System.out.println("Refresh for any preference chagge. Here : " + event.getKey());
+				agencyViewer.refresh();
+				
+			}
+		});
+
 	}
 
 	@Inject
@@ -153,54 +164,39 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	@Focus
 	public void setFocus(EPartService ps)
 	{
-		// System.out.println("Affichage de l'agency viewer et mont�e de la vue navigateur");
 		agencyViewer.getControl().setFocus();
-		/*
-		 * MPart p = ps.showPart("org.eclipse.ui.views.ResourceNavigator",
-		 * PartState.ACTIVATE); System.out.println("Part navigateur = " + p);
-		 */
 	}
 
 	/**
 	 * We can receive any value of the preferences store... This method will be
-	 * called each time a value has changed in the preferenceStore.
+	 * called each time the specific palette is changed.
 	 */
 	@Inject
 	public void refreshTree(@Preference(value = PREF_PALETTE) String pal)
 	{
 		if ((agencyViewer != null) && (!agencyViewer.getControl().isDisposed()))
 		{
+			System.out.println("Refresh for palette preference change.");
 			agencyViewer.refresh();
 		}
 	}
+
 	
 	/**
-	 * We can receive any value of the preferences store... This method will be
-	 * called each time a value has changed in the preferenceStore.
+	 * With the dashboard part, we can now receive selection from outside of
+	 * this view
 	 */
 	@Inject
-	public void refreshTreeForAnyPreference(@Preference IEclipsePreferences pref)
-	{
-		if ((agencyViewer != null) && (!agencyViewer.getControl().isDisposed()))
-		{
-			agencyViewer.refresh();
-		}
-	}
-	
-	
-	/** With the dashboard part, we can now receive selection from outside of this view */
-	@Inject
 	@Optional
-	public void selectionChanged(@Named(IServiceConstants.ACTIVE_SELECTION) Object selection, 
-			                     @Named(IServiceConstants.ACTIVE_PART) MPart currentPart)
+	public void selectionChanged(@Named(IServiceConstants.ACTIVE_SELECTION) Object selection, @Named(IServiceConstants.ACTIVE_PART) MPart currentPart)
 	{
 		// Nothing to do if nothing available.
 		if (currentPart == null || selection == null || agencyViewer == null)
 			return;
-		
-		// Is this selection coming from outside of this part ? 
+
+		// Is this selection coming from outside of this part ?
 		// In this case must set it on the viewer if created
-		if ( ! VIEW_ID.equals(currentPart.getElementId()))
+		if (!VIEW_ID.equals(currentPart.getElementId()))
 		{
 			// Must recreate a structuredSelection ! :)
 			IStructuredSelection ss = new StructuredSelection(selection);

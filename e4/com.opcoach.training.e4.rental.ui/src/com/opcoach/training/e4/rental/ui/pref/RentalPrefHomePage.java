@@ -1,11 +1,7 @@
 package com.opcoach.training.e4.rental.ui.pref;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -15,20 +11,13 @@ import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 
 public class RentalPrefHomePage extends FieldEditorPreferencePage implements  RentalUIConstants
 
-{
-
-	@Inject @Named(RENTAL_UI_PREF_STORE)
-	IPreferenceStore prefStore;
-
-	
+{	
 	public RentalPrefHomePage()
 	{
 		super(GRID);
 		// Init of preference store delegated in init (pstore not initialized else)
 	}
 	
-
-
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#createFieldEditors()
@@ -51,10 +40,5 @@ public class RentalPrefHomePage extends FieldEditorPreferencePage implements  Re
 		// TODO Auto-generated method stub
 		return super.createContents(parent);
 	}
-	
-	
-	
-	
-
 
 }

@@ -19,10 +19,10 @@ public class NonePalette implements IColorProvider, RentalUIConstants
 
 	/** A local color registry to store the node colors */
 	private ColorRegistry colorRegistry = new ColorRegistry();
-	
+
+	// @Inject @Named(RENTAL_UI_PREF_STORE)
 	@Inject @Named(RENTAL_UI_PREF_STORE)
 	private IPreferenceStore prefStore;
-
 
 	@Override
 	public Color getForeground(Object element)
@@ -47,7 +47,7 @@ public class NonePalette implements IColorProvider, RentalUIConstants
 	private Color getPrefColor(String key)
 	{
 		String rgbKey = prefStore.getString(key);
-
+	
 		Color result = colorRegistry.get(rgbKey);
 		if (result == null)
 		{
