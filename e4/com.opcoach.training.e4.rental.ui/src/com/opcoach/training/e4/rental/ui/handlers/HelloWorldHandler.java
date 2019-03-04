@@ -8,17 +8,15 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
-public class MessageHandler
+public class HelloWorldHandler
 {
 
 	@Execute
-	public void execute(@Named("com.opcoach.training.e4.rental.ui.messageParam") String title,
-			            @Named(IServiceConstants.ACTIVE_SHELL) Shell shell) 
+	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) 
 	{
-		MessageDialog.openInformation(shell, "Message", "Title :" + title);
+		MessageDialog.openInformation(shell, "Hello World", "hello");
 	}
 	
-	@CanExecute
-	public boolean canExecute() { return true; 	} 
+	
 
 }

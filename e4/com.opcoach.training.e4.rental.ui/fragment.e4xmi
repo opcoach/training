@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_Wek5YMuCEeKigKG4FVOirQ">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_Wek5YMuCEeKigKG4FVOirQ">
+  <imports xsi:type="commands:Command" xmi:id="_8daJMD53Eem6ZZMhURDZPw" elementId="org.eclipse.ui.edit.copy"/>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ZROnMMuCEeKigKG4FVOirQ" featurename="addons" parentElementId="xpath:/">
     <elements xsi:type="application:Addon" xmi:id="_gYpV0MuCEeKigKG4FVOirQ" elementId="com.opcoach.training.e4.rental.ui.addon.0" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.RentalAddon"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_YR794D5pEem6ZZMhURDZPw" featurename="descriptors" parentElementId="xpath:/">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_ZwOg0D5pEem6ZZMhURDZPw" elementId="com.opcoach.rental.e4.ui.rentalagencyview" label="Rental Agency" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.parts.RentalAgencyPart">
+      <tags>categoryTag:Rental</tags>
+      <tags>View</tags>
+      <handlers xmi:id="_AXk4sD54Eem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.handler.1" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.handlers.CopyCustomerHandler" command="_8daJMD53Eem6ZZMhURDZPw"/>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_8a3B8D5rEem6ZZMhURDZPw" elementId="com.opcoach.rental.e4.ui.rentalagencyview.menu">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_b48ZcD5sEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.handledmenuitem." label="" command="_OwtX4D5sEem6ZZMhURDZPw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_GPrUgD54Eem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.handledmenuitem.copycustomerdirect" label="Copy Customer Direct" command="_8daJMD53Eem6ZZMhURDZPw">
+          <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="_lf_VwD54Eem6ZZMhURDZPw" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.handlers.CopyCustomerHandler"/>
+        </children>
+      </menus>
+      <menus xmi:id="_EKDFwD5tEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.menu.0">
+        <tags>ViewMenu</tags>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_EftzwD5tEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.handledmenuitem.0" command="_OwtX4D5sEem6ZZMhURDZPw"/>
+      </menus>
+    </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_s7XgAD5pEem6ZZMhURDZPw" elementId="com.opcoach.rental.e4.ui.views.rentalView" label="Rental Property" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Rentals.png" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.parts.RentalPropertyPart">
+      <tags>View</tags>
+      <tags>categoryTag:Rental</tags>
+    </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_MOquYD5rEem6ZZMhURDZPw" elementId="com.opcoach.rental.e4.ui.agencyDashboard" label="Dashboard" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.parts.RentalAgencyDashBoard">
+      <tags>View</tags>
+      <tags>categoryTag:Rental</tags>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_1iZx0D5qEem6ZZMhURDZPw" featurename="snippets" parentElementId="xpath:/">
+    <elements xsi:type="advanced:Perspective" xmi:id="_7B9KwD5qEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.perspective" selectedElement="_7B9KwT5qEem6ZZMhURDZPw" label="Rental" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Agency.png" tooltip="Rental Perspective">
+      <children xsi:type="basic_1:PartSashContainer" xmi:id="_7B9KwT5qEem6ZZMhURDZPw" selectedElement="_7B9Kwj5qEem6ZZMhURDZPw" horizontal="true">
+        <children xsi:type="basic_1:PartStack" xmi:id="_7B9Kwj5qEem6ZZMhURDZPw">
+          <children xsi:type="advanced:Placeholder" xmi:id="_EEC2UD5rEem6ZZMhURDZPw" elementId="com.opcoach.rental.e4.ui.rentalagencyview"/>
+        </children>
+        <children xsi:type="basic_1:PartSashContainer" xmi:id="_7B9Kyj5qEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.extendProperties">
+          <children xsi:type="advanced:Placeholder" xmi:id="_H4IL8D5rEem6ZZMhURDZPw" elementId="com.opcoach.rental.e4.ui.views.rentalView"/>
+          <children xsi:type="basic_1:PartStack" xmi:id="_7B9KzD5qEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.eap.partstack.0">
+            <children xsi:type="advanced:Placeholder" xmi:id="_TAfAcD5rEem6ZZMhURDZPw" elementId="com.opcoach.rental.e4.ui.agencyDashboard"/>
+          </children>
+        </children>
+      </children>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_M8vf4D5sEem6ZZMhURDZPw" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_OwtX4D5sEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.command.helloworld" commandName="Hello World"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Q9QH8D5sEem6ZZMhURDZPw" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_Sksm4D5sEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.handler.0" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.handlers.HelloWorldHandler" command="_OwtX4D5sEem6ZZMhURDZPw"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_7kYQcD5sEem6ZZMhURDZPw" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_9F1cID5sEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.menucontribution.0" positionInParent="after=additions" parentId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_SXgqAD5tEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.menu.mymenu" label="My menu">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_AEry4D5tEem6ZZMhURDZPw" command="_OwtX4D5sEem6ZZMhURDZPw"/>
+      </children>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_B3xhID5tEem6ZZMhURDZPw" elementId="com.opcoach.training.e4.rental.ui.menucontribution.1" positionInParent="after=additions" parentId="popup">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_GnhNwD5tEem6ZZMhURDZPw" elementId="id.hellowithpopupmenucontribution" label="Hello (with popup menuContribution)" command="_OwtX4D5sEem6ZZMhURDZPw"/>
+    </elements>
   </fragments>
 </fragment:ModelFragments>
