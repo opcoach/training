@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_wryl8J3_EeGjZMSURtjBGw" elementId="com.opcoach.training.e4.rental.eap.application" bindingContexts="_wryl8Z3_EeGjZMSURtjBGw">
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_wryl8J3_EeGjZMSURtjBGw" elementId="com.opcoach.training.e4.rental.eap.application" bindingContexts="_wryl8Z3_EeGjZMSURtjBGw">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_wrymB53_EeGjZMSURtjBGw" selectedElement="_hjyYgKDSEeGSZcJc4hEsWA" label="Rental e4 UI" iconURI="platform:/plugin/com.opcoach.training.e4.rental.ui/icons/Agency.png" tooltip="Gestion de location" x="0" y="0" width="800" height="600">
-    <children xsi:type="advanced:PerspectiveStack" xmi:id="_hjyYgKDSEeGSZcJc4hEsWA"/>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_hjyYgKDSEeGSZcJc4hEsWA" elementId="com.opcoach.training.e4.rental.eap.perspectiveStack" selectedElement="_Ak7gwD6PEemxVKXvTKkCQA">
+      <children xsi:type="advanced:Perspective" xmi:id="_Ak7gwD6PEemxVKXvTKkCQA" elementId="com.opcoach.training.e4.empty.perspective" selectedElement="_vOxaUD6bEemxVKXvTKkCQA">
+        <children xsi:type="basic:Part" xmi:id="_vOxaUD6bEemxVKXvTKkCQA" elementId="com.opcoach.training.e4.rental.eap.part.perspectiveswitcher" visible="false" contributionURI="bundleclass://com.opcoach.training.e4.rental.eap/com.opcoach.training.e4.rental.parts.SwitchPerspectivePart" label="PerspectiveSwitcher"/>
+      </children>
+    </children>
     <mainMenu xmi:id="_wrymCJ3_EeGjZMSURtjBGw" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_wrymCZ3_EeGjZMSURtjBGw" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_wrzNAp3_EeGjZMSURtjBGw" label="Quit" command="_wryl-p3_EeGjZMSURtjBGw"/>
         <children xsi:type="menu:DirectMenuItem" xmi:id="_LvDlsJ4FEeGjZMSURtjBGw" label="My E4 Handler" tooltip="Do a sys.out.println" contributionURI="bundleclass://com.opcoach.training.e4.rental.ui/com.opcoach.training.e4.rental.ui.handlers.MyE4Handler"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_rVJUMKy4EeK7v4dZrk51_A" elementId="edit" label="Edit">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_vzr8EKy4EeK7v4dZrk51_A" elementId="com.opcoach.training.e4.rental.eap.handledmenuitem.0" command="_ruEsYKA8EeG1-fMS8F9koA">
-          <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_wiH8IKzIEeK7v4dZrk51_A" coreExpressionId="com.opcoach.training.e4.rental.ui.customerSelected"/>
-        </children>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_vzr8EKy4EeK7v4dZrk51_A" elementId="com.opcoach.training.e4.rental.eap.handledmenuitem.0" command="_ruEsYKA8EeG1-fMS8F9koA"/>
         <children xsi:type="menu:DynamicMenuContribution" xmi:id="_qtlkQKlIEeOCVabVRaNMTg" elementId="com.opcoach.training.e4.rental.eap.dynamicmenucontribution.0" label="Dynamic" contributionURI="bundleclass://com.opcoach.training.e4.rental.eap/com.opcoach.training.e4.rental.eap.RentalMenuContribution"/>
       </children>
-      <children xsi:type="menu:Menu" xmi:id="_tS3YcFSyEeSw4_p3sWm7tg" elementId="com.opcoach.training.e4.rental.eap.menu.window" label="Window">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_HmfJMMXvEeK7H5w4kJH7Wg" label="Preferences" command="_ewXMsKAkEeGDHcz5E_KmhQ"/>
-      </children>
+      <children xsi:type="menu:Menu" xmi:id="_Zba5MD6PEemxVKXvTKkCQA" elementId="window" label="&amp;Window"/>
       <children xsi:type="menu:Menu" xmi:id="_wrzNA53_EeGjZMSURtjBGw" label="Help">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_dul8MAPFEeKMQdl0OWNdOw" elementId="com.opcoach.training.e4.rental.ui.handledmenuitem.0" label="Help" command="_IRoEUAPFEeKMQdl0OWNdOw"/>
       </children>
@@ -26,7 +26,6 @@
   </children>
   <handlers xmi:id="_wryl-53_EeGjZMSURtjBGw" contributionURI="bundleclass://com.opcoach.training.e4.rental.eap/com.opcoach.training.e4.rental.eap.handlers.QuitHandler" command="_wryl-p3_EeGjZMSURtjBGw"/>
   <handlers xmi:id="_wrymBZ3_EeGjZMSURtjBGw" contributionURI="bundleclass://com.opcoach.training.e4.rental.eap/com.opcoach.training.e4.rental.eap.handlers.AboutHandler" command="_wrymBJ3_EeGjZMSURtjBGw"/>
-  <handlers xmi:id="_ER07cANYEeKMQdl0OWNdOw" elementId="com.opcoach.training.e4.rental.ui.handler.0" contributionURI="bundleclass://com.opcoach.e4.preferences/com.opcoach.e4.preferences.handlers.E4PreferencesHandler" command="_ewXMsKAkEeGDHcz5E_KmhQ"/>
   <handlers xmi:id="_exlyAAQMEeKwlMNql7AR_w" elementId="com.opcoach.training.e4.rental.ui.handler.message" contributionURI="bundleclass://com.opcoach.training.e4.rental.eap/com.opcoach.training.e4.rental.eap.handlers.MessageHandler" command="_y1MfsAQLEeKwlMNql7AR_w"/>
   <bindingTables xmi:id="_wryl_J3_EeGjZMSURtjBGw" bindingContext="_wryl8Z3_EeGjZMSURtjBGw">
     <bindings xmi:id="_wryl_Z3_EeGjZMSURtjBGw" keySequence="M1+Q" command="_wryl-p3_EeGjZMSURtjBGw"/>
@@ -42,7 +41,6 @@
   </rootContext>
   <commands xmi:id="_wryl-p3_EeGjZMSURtjBGw" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
   <commands xmi:id="_wrymBJ3_EeGjZMSURtjBGw" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
-  <commands xmi:id="_ewXMsKAkEeGDHcz5E_KmhQ" elementId="org.eclipse.ui.window.preferences" commandName="Preferences" description="Call the preferences"/>
   <commands xmi:id="_ruEsYKA8EeG1-fMS8F9koA" elementId="org.eclipse.ui.edit.copy" commandName="Copy" description="Generic copy command"/>
   <commands xmi:id="_Koh4UKC_EeGSZcJc4hEsWA" elementId="org.eclipse.ui.edit.paste" commandName="Paste"/>
   <commands xmi:id="_IRoEUAPFEeKMQdl0OWNdOw" elementId="org.eclipse.ui.help.helpContents" commandName="Help"/>
