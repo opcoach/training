@@ -7,7 +7,6 @@ import javax.inject.Named;
 
 import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.IPreferenceStore;
 
 import com.opcoach.training.e4.rental.ui.Palette;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
