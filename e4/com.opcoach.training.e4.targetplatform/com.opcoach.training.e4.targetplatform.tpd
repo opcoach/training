@@ -1,6 +1,7 @@
 target "Training RCP 4" with source requirements
 
-location "http://download.eclipse.org/releases/2018-12" {
+// Update release to 2019-03
+location "http://download.eclipse.org/releases/2019-03" {
 	org.eclipse.platform.feature.group
 	org.eclipse.e4.rcp.feature.group
 	org.eclipse.emf.databinding.feature.group
@@ -19,15 +20,20 @@ location "http://download.eclipse.org/releases/2018-12" {
 	
 }
 
+// Add support for java 11 (removed javax.annotation)...
+location "http://download.eclipse.org/tools/orbit/downloads/drops/R20190226160451/repository" {
+	javax.annotation
+}
+
 location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
 	org.eclipse.e4.tools.spies.feature.feature.group
 }
 
 
 // Add delta pack
-location "http://download.eclipse.org/eclipse/updates/4.10" {
-	org.eclipse.equinox.sdk.feature.group
-}
+//location "http://download.eclipse.org/eclipse/updates/4.11" {
+//	org.eclipse.equinox.sdk.feature.group
+//}
 
 // Add the new E4 test platform from opcoach website
 //location "https://dl.bintray.com/opcoach/E4Tester/" {

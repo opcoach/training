@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Training RCP 4" sequenceNumber="1551806722">
+<target name="Training RCP 4" sequenceNumber="1552240452">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.platform.feature.group" version="4.10.0.v20181206-0815"/>
-      <unit id="org.eclipse.e4.rcp.feature.group" version="1.6.300.v20181204-1801"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.11.0.v20190301-0040"/>
+      <unit id="org.eclipse.e4.rcp.feature.group" version="1.6.400.v20190227-0603"/>
       <unit id="org.eclipse.emf.databinding.feature.group" version="1.6.0.v20180706-1146"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.200.v20180922-1751"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.300.v20190213-1655"/>
       <unit id="org.eclipse.pde.junit.runtime" version="3.5.300.v20180827-1331"/>
-      <unit id="org.eclipse.jdt.junit5.runtime" version="1.0.300.v20181003-1407"/>
-      <unit id="org.junit.jupiter.api" version="5.3.1.v20181005-1442"/>
-      <unit id="org.junit.jupiter.engine" version="5.3.1.v20181005-1442"/>
-      <unit id="org.junit.jupiter.migrationsupport" version="5.3.1.v20181005-1442"/>
-      <unit id="org.junit.jupiter.params" version="5.3.1.v20181005-1442"/>
-      <unit id="org.junit.platform.commons" version="1.3.1.v20181005-1442"/>
-      <repository location="http://download.eclipse.org/releases/2018-12"/>
+      <unit id="org.eclipse.jdt.junit5.runtime" version="1.0.400.v20190215-1312"/>
+      <unit id="org.junit.jupiter.api" version="5.4.0.v20190212-2109"/>
+      <unit id="org.junit.jupiter.engine" version="5.4.0.v20190212-2109"/>
+      <unit id="org.junit.jupiter.migrationsupport" version="5.4.0.v20190212-2109"/>
+      <unit id="org.junit.jupiter.params" version="5.4.0.v20190212-2109"/>
+      <unit id="org.junit.platform.commons" version="1.4.0.v20190212-2109"/>
+      <repository location="http://download.eclipse.org/releases/2019-03"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="javax.annotation" version="1.2.0.v201602091430"/>
+      <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20190226160451/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.e4.tools.spies.feature.feature.group" version="0.18.0.v20181211-1535"/>
       <repository location="http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.16.0.v20181130-2106"/>
-      <repository location="http://download.eclipse.org/eclipse/updates/4.10"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="com.opcoach.e4tester.feature.feature.group" version="1.0.0.201903051719"/>
