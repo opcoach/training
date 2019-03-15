@@ -9,7 +9,6 @@ Export-Package: com.opcoach.training.e4.rental.ui,
  com.opcoach.training.e4.rental.ui.handlers
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.core.databinding.beans;bundle-version="1.2.100",
- org.eclipse.jface.databinding;bundle-version="1.6.0",
  org.eclipse.e4.ui.services;bundle-version="0.10.0",
  org.eclipse.e4.ui.workbench;bundle-version="0.10.1",
  org.eclipse.e4.core.services;bundle-version="1.0.0",
@@ -18,11 +17,21 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.e4.core.di.extensions;bundle-version="0.10.0",
  org.eclipse.e4.ui.di;bundle-version="0.10.0",
  com.opcoach.training.e4.rental.core;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.emf.databinding,
  org.eclipse.core.databinding.beans;bundle-version="1.2.100",
  org.eclipse.e4.ui.model.workbench;bundle-version="0.10.1",
- org.eclipse.jface;bundle-version="3.10.1",
  org.eclipse.core.databinding.property;bundle-version="1.4.200",
- com.opcoach.e4.preferences;bundle-version="1.0.0"
+ com.opcoach.e4.preferences;bundle-version="1.0.0",
+ org.eclipse.core.commands;bundle-version="3.9.300"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.jface,
+ org.eclipse.jface.dialogs,
+ org.eclipse.jface.preference,
+ org.eclipse.jface.resource,
+ org.eclipse.jface.viewers,
+ org.eclipse.swt,
+ org.eclipse.swt.dnd,
+ org.eclipse.swt.events,
+ org.eclipse.swt.graphics,
+ org.eclipse.swt.layout,
+ org.eclipse.swt.widgets

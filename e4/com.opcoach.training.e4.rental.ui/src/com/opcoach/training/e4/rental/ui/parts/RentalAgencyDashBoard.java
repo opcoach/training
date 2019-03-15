@@ -15,7 +15,6 @@ import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
-import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -24,7 +23,6 @@ import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerComparator;
-import org.eclipse.jface.window.ToolTip;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -136,7 +134,7 @@ public class RentalAgencyDashBoard implements RentalUIConstants
 				return "Information about : " + ((Customer) element).getDisplayName();
 			}
 		});
-		ColumnViewerToolTipSupport.enableFor(viewer, ToolTip.NO_RECREATE);
+		//ColumnViewerToolTipSupport.enableFor(viewer, ToolTip.NO_RECREATE);
 		firstNameCol.getColumn().setImage(imageRegistry.get(IMG_CUSTOMER));
 		firstNameCol.getColumn().addSelectionListener(getHeaderSelectionAdapter(viewer, firstNameCol.getColumn(), 0));
 		// Add the sort stuff to manage clic on header and the

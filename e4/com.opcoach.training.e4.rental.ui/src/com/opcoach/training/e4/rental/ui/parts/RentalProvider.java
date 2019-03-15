@@ -8,6 +8,8 @@ import javax.inject.Named;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.Viewer;
@@ -21,7 +23,7 @@ import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
-public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider,  RentalUIConstants
+public class RentalProvider  implements ITreeContentProvider, ILabelProvider, IColorProvider,  RentalUIConstants
 {
 	@Inject
 	private Palette currentPalette;
@@ -294,6 +296,26 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 
 		
 
+	}
+
+	@Override
+	public void addListener(ILabelProviderListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public boolean isLabelProperty(Object element, String property) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public void removeListener(ILabelProviderListener listener) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
