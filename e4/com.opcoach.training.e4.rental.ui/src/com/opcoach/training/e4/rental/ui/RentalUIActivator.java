@@ -24,12 +24,12 @@ public class RentalUIActivator implements BundleActivator
 	 */
 	public void start(BundleContext bcontext) throws Exception
 	{
-		Bundle e4Bundle = Platform.getBundle("org.eclipse.e4.ui.workbench");
+	/*	Bundle e4Bundle = Platform.getBundle("org.eclipse.e4.ui.workbench");
 		if (e4Bundle != null)
 		{
 		   IEclipseContext ct = EclipseContextFactory.getServiceContext(e4Bundle.getBundleContext());
 		   ct.set(RentalUIConstants.PLUGIN_ID + ".context", "My value");
-		}
+		}*/
 	}
 
 	/*

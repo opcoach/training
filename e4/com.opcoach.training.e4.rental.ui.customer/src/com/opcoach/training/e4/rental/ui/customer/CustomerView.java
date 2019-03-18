@@ -1,6 +1,5 @@
 package com.opcoach.training.e4.rental.ui.customer;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 
