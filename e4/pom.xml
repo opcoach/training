@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.opcoach.training.e4</groupId>
@@ -27,9 +28,8 @@
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<!--  <dependency-resolution>
-						<optionalDependencies>ignore</optionalDependencies>
-					</dependency-resolution>   -->
+					<!-- <dependency-resolution> <optionalDependencies>ignore</optionalDependencies> 
+						</dependency-resolution> -->
 					<target>
 						<artifact>
 							<groupId>com.opcoach.training.e4</groupId>
@@ -63,9 +63,6 @@
 
 	<!-- the modules that should be built together -->
 	<modules>
-		<module>com.opcoach.training.e4.targetplatform</module>
-		<module>com.opcoach.training.e4.repository</module>
-		<module>com.opcoach.training.e4.rental.eap</module>
 		<module>com.opcoach.training.e4.rental.feature</module>
 		<module>com.opcoach.training.e4.rental.ui</module>
 		<module>com.opcoach.training.e4.rental.ui.test</module>
@@ -75,6 +72,39 @@
 		<module>com.opcoach.training.e4.rental.core.test</module>
 	</modules>
 
+	<!-- A profile part to separate target platform for RAP and EAP -->
+	<profiles>
+		<!-- DO NOT CHANGE THE *ORDER* IN WHICH THESE PROFILES ARE DEFINED! -->
+		<profile>
+			<!-- This profile is for the E4 application running on rap -->
+			<!-- To launch it use : mvn clean install -P rap -->
+			<id>rap</id>
+			<properties>
+				<targetArtifact>com.opcoach.training.e4.rental.rap.tp</targetArtifact>
+				<targetVersion>3.8.0-SNAPSHOT</targetVersion>
+			</properties>
+			<modules>
+				<module>com.opcoach.training.e4.rental.rap</module>
+				<module>com.opcoach.training.e4.rental.rap.tp</module>
+			</modules>
+		</profile>
+		<profile>
+			<!-- This profile is for the pure E4 application -->
+			<id>pureE4</id>
+			<properties>
+				<targetArtifact>com.opcoach.training.e4.targetplatform</targetArtifact>
+				<targetVersion>4.10.0-SNAPSHOT</targetVersion>
+			</properties>
 
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>com.opcoach.training.e4.targetplatform</module>
+				<module>com.opcoach.training.e4.repository</module>
+				<module>com.opcoach.training.e4.rental.eap</module>
+			</modules>
+		</profile>
+	</profiles>
 
 </project>

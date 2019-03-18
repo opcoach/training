@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde?><!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl --><target name="Training E4 with RAP" sequenceNumber="1552933173">
+  <locations>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <unit id="org.eclipse.rap.e4.equinox.target.feature.feature.group" version="3.8.0.20190307-1036"/>
+      <unit id="org.eclipse.rap.e4.sdk.feature.feature.group" version="3.8.0.20190225-1059"/>
+      <unit id="org.eclipse.rap.e4.feature.feature.group" version="3.8.0.20190225-1059"/>
+      <unit id="org.eclipse.rap.rwt" version="3.8.0.20190225-1059"/>
+      <unit id="org.eclipse.rap.rwt.osgi" version="3.8.0.20190103-0942"/>
+      <unit id="org.eclipse.e4.ui.workbench.renderers.swt" version="0.13.0.rap-20180803-1205"/>
+      <repository location="http://download.eclipse.org/rt/rap/3.8/e4"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <unit id="javax.annotation" version="1.2.0.v201602091430"/>
+      <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20190226160451/repository"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <unit id="com.opcoach.e4.preferences.feature.feature.group" version="1.3.0.201903181741"/>
+      <repository location="https://www.opcoach.com/repository/2018-12"/>
+    </location>
+  </locations>
+</target>
