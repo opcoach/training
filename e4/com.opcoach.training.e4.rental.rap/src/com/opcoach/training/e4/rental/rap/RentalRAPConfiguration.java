@@ -16,6 +16,7 @@ public class RentalRAPConfiguration implements ApplicationConfiguration {
     private final static String E4XMI = "platform:/plugin/com.opcoach.training.e4.rental.rap/Application.e4xmi";
 
     public void configure(Application application) {
+    	System.out.println("_____*****_____ Configuring RentalRAPConfiguration   _____*****_____ ");
         Map<String, String> properties = new HashMap<String, String>();
         properties.put(WebClient.PAGE_TITLE, "Rental E4 RAP");
         E4ApplicationConfig config = E4ApplicationConfig.create(E4XMI);

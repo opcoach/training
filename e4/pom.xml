@@ -33,8 +33,8 @@
 					<target>
 						<artifact>
 							<groupId>com.opcoach.training.e4</groupId>
-							<artifactId>com.opcoach.training.e4.targetplatform</artifactId>
-							<version>4.10.0-SNAPSHOT</version>
+							<artifactId>${targetArtifact}</artifactId>
+							<version>${targetVersion}</version>
 						</artifact>
 					</target>
 					<environments>
@@ -65,11 +65,9 @@
 	<modules>
 		<module>com.opcoach.training.e4.rental.feature</module>
 		<module>com.opcoach.training.e4.rental.ui</module>
-		<module>com.opcoach.training.e4.rental.ui.test</module>
 		<module>com.opcoach.training.e4.rental.ui.customer</module>
 		<module>com.opcoach.training.e4.rental.ui.palettes</module>
 		<module>com.opcoach.training.e4.rental.core</module>
-		<module>com.opcoach.training.e4.rental.core.test</module>
 	</modules>
 
 	<!-- A profile part to separate target platform for RAP and EAP -->
@@ -82,10 +80,22 @@
 			<properties>
 				<targetArtifact>com.opcoach.training.e4.rental.rap.tp</targetArtifact>
 				<targetVersion>3.8.0-SNAPSHOT</targetVersion>
+
+				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+				<tycho.showEclipseLog>true</tycho.showEclipseLog>
+				<assembly.version>2.4</assembly.version>
+				<replacer.version>1.4.1</replacer.version>
+				<!-- <rap-repo.url>http://download.eclipse.org/rt/rap/nightly/runtime/</rap-repo.url> 
+					<rap-incubator-repo.url>http://download.eclipse.org/rt/rap/incubator/nightly/</rap-incubator-repo.url> -->
+
+
+
+
 			</properties>
 			<modules>
-				<module>com.opcoach.training.e4.rental.rap</module>
 				<module>com.opcoach.training.e4.rental.rap.tp</module>
+				<module>com.opcoach.training.e4.rental.rap</module>
+				<module>com.opcoach.training.e4.rental.rap.repository</module>
 			</modules>
 		</profile>
 		<profile>
@@ -101,6 +111,8 @@
 			</activation>
 			<modules>
 				<module>com.opcoach.training.e4.targetplatform</module>
+				<module>com.opcoach.training.e4.rental.core.test</module>
+				<module>com.opcoach.training.e4.rental.ui.test</module>			
 				<module>com.opcoach.training.e4.repository</module>
 				<module>com.opcoach.training.e4.rental.eap</module>
 			</modules>
