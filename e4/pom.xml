@@ -10,7 +10,7 @@
 
 
 	<properties>
-		<tycho-version>1.3.0</tycho-version>
+		<tycho-version>1.4.0</tycho-version>
 	</properties>
 
 	<build>
@@ -103,7 +103,7 @@
 			<id>pureE4</id>
 			<properties>
 				<targetArtifact>com.opcoach.training.e4.targetplatform</targetArtifact>
-				<targetVersion>4.10.0-SNAPSHOT</targetVersion>
+				<targetVersion>4.11.0-SNAPSHOT</targetVersion>
 			</properties>
 
 			<activation>
