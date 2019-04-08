@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Training RCP 3" sequenceNumber="1540145063">
+<target name="Training RCP 3" sequenceNumber="1554745690">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.swtbot.eclipse.gef.feature.group" version="2.7.0.201806111355"/>
@@ -16,19 +16,23 @@
       <repository location="http://download.eclipse.org/technology/swtbot/releases/latest/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.rcp.feature.group" version="4.8.0.v20180611-0656"/>
-      <unit id="org.eclipse.ui.workbench" version="3.111.0.v20180524-1156"/>
-      <unit id="org.eclipse.emf.databinding.feature.group" version="1.5.0.v20180130-1145"/>
-      <unit id="org.eclipse.ui.cheatsheets" version="3.5.200.v20180418-0908"/>
-      <unit id="org.eclipse.help.ui" version="4.1.100.v20180418-0908"/>
-      <unit id="org.eclipse.compare" version="3.7.200.v20180418-1233"/>
-      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.700.v20171124-1029"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.0.v20180518-2029"/>
-      <repository location="http://download.eclipse.org/releases/photon"/>
+      <unit id="org.eclipse.rcp.feature.group" version="4.11.0.v20190307-0500"/>
+      <unit id="org.eclipse.ui.workbench" version="3.113.0.v20190219-1432"/>
+      <unit id="org.eclipse.emf.databinding.feature.group" version="1.6.0.v20180706-1146"/>
+      <unit id="org.eclipse.ui.cheatsheets" version="3.5.400.v20190218-1039"/>
+      <unit id="org.eclipse.help.ui" version="4.1.400.v20190218-1039"/>
+      <unit id="org.eclipse.compare" version="3.7.500.v20190218-1850"/>
+      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.900.v20181012-1045"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.300.v20190213-1655"/>
+      <repository location="http://download.eclipse.org/releases/2019-03"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.14.0.v20180518-2029"/>
-      <repository location="http://download.eclipse.org/eclipse/updates/4.8"/>
+      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.17.0.v20190305-2225"/>
+      <repository location="http://download.eclipse.org/eclipse/updates/4.11"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.e4.tools.spies.feature.feature.group" version="0.18.0.v20190227-1016"/>
+      <repository location="http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"/>
     </location>
   </locations>
 </target>
