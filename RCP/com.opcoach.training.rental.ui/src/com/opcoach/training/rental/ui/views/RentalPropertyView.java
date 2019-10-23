@@ -96,7 +96,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		customerNameLabel = new Label(infoGroup, SWT.NONE);
 
 		Group dateGroup = new Group(parent, SWT.NONE);
-		dateGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		dateGroup.setLayoutData(new GridData(SWT.FILL, SWT.BOTTOM, true, false, 1, 1));
 		dateGroup.setText(Messages.RentalPropertyView_RentalDateTitle);
 		dateGroup.setLayout(new GridLayout(2, false));
 
@@ -107,6 +107,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener
 		Label endDateTitle = new Label(dateGroup, SWT.NONE);
 		endDateTitle.setText(Messages.RentalPropertyView_To);
 		endDateLabel = new Label(dateGroup, SWT.NONE);
+		endDateLabel.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, true, false, 1, 1));
 
 		// Fill with sample
 		RentalAgency agency = RentalCoreActivator.getAgency();
