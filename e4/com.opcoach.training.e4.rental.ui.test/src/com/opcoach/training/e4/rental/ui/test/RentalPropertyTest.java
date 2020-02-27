@@ -21,7 +21,6 @@ public class RentalPropertyTest extends E4TestCase {
 
 	@BeforeEach 
 	public void setUp() throws Exception {
-		System.out.println("execute RentalPropertyTest");
 		// Create the property part for the test...
 		part = createTestPart("Rental Property", RentalPropertyPart.VIEW_ID, RentalPropertyPart.class);
 	}
