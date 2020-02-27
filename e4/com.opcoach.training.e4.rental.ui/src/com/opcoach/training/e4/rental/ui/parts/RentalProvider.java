@@ -67,7 +67,7 @@ public class RentalProvider  implements ITreeContentProvider, ILabelProvider, IC
 	@Override
 	public Color getForeground(Object element)
 	{
-		return currentPalette.getForeground(element);
+		return currentPalette == null ? null : currentPalette.getForeground(element);
 		
 	}
 	
@@ -76,7 +76,7 @@ public class RentalProvider  implements ITreeContentProvider, ILabelProvider, IC
 	@Override
 	public Color getBackground(Object element)
 	{
-		return  currentPalette.getBackground(element);
+		return  currentPalette == null ? null :currentPalette.getBackground(element);
 
 	}
 

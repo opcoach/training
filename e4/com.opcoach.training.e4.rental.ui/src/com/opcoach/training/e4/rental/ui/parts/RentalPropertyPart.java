@@ -83,7 +83,7 @@ public class RentalPropertyPart {
 		Label startDateTitle = new Label(dateGroup, SWT.NONE);
 		startDateTitle.setText("Start date :");
 		startDateLabel = new Label(dateGroup, SWT.NONE);
-		startDateLabel.setText("         ");
+		startDateLabel.setText(" default start date  ");
 
 		Label endDateTitle = new Label(dateGroup, SWT.NONE);
 		endDateTitle.setText("End date");
@@ -121,7 +121,7 @@ public class RentalPropertyPart {
 		if (rentedObjectLabel == null)
 			return; // ui not created yet
 		if (r == null) {
-			rentedObjectLabel.setText("                               ");
+			rentedObjectLabel.setText("        NO RENTED OBJECT               ");
 			customerNameLabel.setText(" ");
 			startDateLabel.setText(" ");
 			endDateLabel.setText("                                    ");

@@ -31,7 +31,7 @@ public class RentalPropertyTest extends E4TestCase {
 		Rental r = getContext().get(RentalAgency.class).getRentals().get(i);
 		System.out.println("Current selected rental is : " + r);
 
-		getSelectionService().setSelection(r);
+		getSync().syncExec(()->getSelectionService().setSelection(r));
 		wait1second();
 		return r;
 	}
@@ -44,7 +44,7 @@ public class RentalPropertyTest extends E4TestCase {
 		// Test it must contains the expected value of the default rental object
 		String objectLabel = getTextWidgetValue(part, "rentedObjectLabel");
 
-		assertEquals(objectLabel, "Perceuse Electrique", "The default rental must display 'Perceuse Electrique'");
+		assertEquals("Perceuse Electrique", objectLabel, "The default rental must display 'Perceuse Electrique'");
 
 	}
 

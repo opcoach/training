@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,7 +31,7 @@ public class AgencyViewAndPropertyPartTest extends E4TestCase {
 
 			// Must expand all nodes for selection ! 
 			TreeViewer tv = getTreeViewer(agencyPart.getObject(), "agencyViewer");
-			tv.expandAll();
+			expandAll(tv);
 
 		} catch (Throwable ex) {
 			ex.printStackTrace();
@@ -41,16 +40,6 @@ public class AgencyViewAndPropertyPartTest extends E4TestCase {
 
 	}
 
-	@AfterEach 
-	public void release() {
-		
-		// ContextInjectionFactory.uninject(part, ctx);
-				wait1second();
-				cleanTestWindow();
-				propertyPart = null;
-				agencyPart = null;
-
-	}
 
 	@Test
 	public void testCreateParts() throws InterruptedException {

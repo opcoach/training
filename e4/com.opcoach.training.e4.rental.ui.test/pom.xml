@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -14,9 +15,9 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>eclipse-test-plugin</packaging>
 
-
 	<!-- For mac os, must use a specific configuration to manage the SWT Thread 
-		! -->
+		in UI Tests ! -->
+
 	<profiles>
 		<profile>
 			<id>macosx</id>
@@ -43,17 +44,21 @@
 			</properties>
 		</profile>
 	</profiles>
+
 	<build>
 		<plugins>
+			<!-- Copy exactly this build block in each plugin test pom (in build/plugins) 
+				or once in your parent pom if there are no other tests -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-surefire-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-				   <!--  See https://www.eclipse.org/tycho/sitedocs/tycho-surefire/tycho-surefire-plugin/test-mojo.html -->
+					<!-- See https://www.eclipse.org/tycho/sitedocs/tycho-surefire-plugin/test-mojo.html -->
 					<useUIHarness>true</useUIHarness>
-					 <useUIThread>true</useUIThread>
-		 			<application>com.opcoach.e4tester.core.application</application> 
+					<useUIThread>false</useUIThread>
+					<application>com.opcoach.e4tester.core.tychoRunnerApplication
+					</application>
 					<product>com.opcoach.e4tester.core.product</product>
 					<argLine>${ui.test.vmargs}</argLine>
 				</configuration>

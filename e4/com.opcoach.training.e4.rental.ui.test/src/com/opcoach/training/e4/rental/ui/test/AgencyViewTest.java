@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -25,12 +24,6 @@ public class AgencyViewTest extends E4TestCase {
 
 	}
 
-	@AfterEach 
-	public void release() {
-		wait1second();
-		cleanTestWindow();
-		part = null;
-	}
 
 	@Test
 	public void testCreateContent() throws InterruptedException {
@@ -42,9 +35,9 @@ public class AgencyViewTest extends E4TestCase {
 	public void testExpand() {
 
 		TreeViewer tv = getTreeViewer(part, "agencyViewer");
-		tv.expandAll();
+		Object[] expanded = getExpandElements(tv);
 
-		Object[] expanded = tv.getExpandedElements();
+		
 		RentalAgency a = part.getContext().get(RentalAgency.class);
 		// There are 2 agencies with nodes in this application
 		int nbExpectedNodes = 1 + 3 + a.getCustomers().size() + a.getRentals().size() + a.getObjectsToRent().size();
