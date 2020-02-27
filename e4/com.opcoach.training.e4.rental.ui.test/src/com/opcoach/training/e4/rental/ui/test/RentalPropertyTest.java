@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import com.opcoach.e4tester.core.E4TestCase;
@@ -20,7 +21,7 @@ public class RentalPropertyTest extends E4TestCase {
 
 	@BeforeEach 
 	public void setUp() throws Exception {
-		
+		System.out.println("execute RentalPropertyTest");
 		// Create the property part for the test...
 		part = createTestPart("Rental Property", RentalPropertyPart.VIEW_ID, RentalPropertyPart.class);
 	}
@@ -38,8 +39,11 @@ public class RentalPropertyTest extends E4TestCase {
 
 
 	@Test
+	@Order(1)
 	public void testCreatePart() throws InterruptedException {
 
+		Rental r = selectRental(0);
+		
 		assertNotNull(part, "The rentalPropertyPart must be created");
 		// Test it must contains the expected value of the default rental object
 		String objectLabel = getTextWidgetValue(part, "rentedObjectLabel");
@@ -49,6 +53,7 @@ public class RentalPropertyTest extends E4TestCase {
 	}
 
 	@Test
+	@Order(2)
 	public void testSetSelection()  {
 
 		Rental r = selectRental(1);
@@ -61,6 +66,7 @@ public class RentalPropertyTest extends E4TestCase {
 	
 
 	@Test
+	@Order(3)
 	@DisplayName("Test if a rental is  selected, and then a customer")
 	public void testSetTwoSelections() {
 
