@@ -24,7 +24,8 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.core.commands;bundle-version="3.9.300"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Import-Package: javax.inject,
+Import-Package: javax.annotation;version="1.2.0",
+ javax.inject,
  org.eclipse.jface,
  org.eclipse.jface.dialogs,
  org.eclipse.jface.preference,
