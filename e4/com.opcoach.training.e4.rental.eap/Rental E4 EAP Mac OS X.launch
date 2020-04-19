@@ -29,6 +29,7 @@
         <setEntry value="com.ibm.icu@default:default"/>
         <setEntry value="com.opcoach.e4.preferences.mainmenu@default:default"/>
         <setEntry value="com.opcoach.e4.preferences@default:default"/>
+        <setEntry value="com.opcoach.e4tester.core@default:default"/>
         <setEntry value="javax.annotation@default:default"/>
         <setEntry value="javax.inject@default:default"/>
         <setEntry value="javax.servlet@default:default"/>
@@ -155,10 +156,12 @@
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="com.opcoach.training.e4.rental.core.test@default:false"/>
         <setEntry value="com.opcoach.training.e4.rental.core@default:default"/>
         <setEntry value="com.opcoach.training.e4.rental.eap@default:default"/>
         <setEntry value="com.opcoach.training.e4.rental.ui.customer@default:default"/>
         <setEntry value="com.opcoach.training.e4.rental.ui.palettes@default:default"/>
+        <setEntry value="com.opcoach.training.e4.rental.ui.test@default:false"/>
         <setEntry value="com.opcoach.training.e4.rental.ui@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
