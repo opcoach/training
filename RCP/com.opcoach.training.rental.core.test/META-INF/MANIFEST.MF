@@ -7,3 +7,4 @@ Bundle-Vendor: OPCOACH
 Fragment-Host: com.opcoach.training.rental.core;bundle-version="1.0.0"
 Require-Bundle: org.junit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: javax.annotation

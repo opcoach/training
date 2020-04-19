@@ -20,25 +20,25 @@
     </listAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
     <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -clean"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -clean -console"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
     <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.requiredJavaVersion=1.5 -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Xms40m -Xmx512m -Xdock:icon=../Resources/Eclipse.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts"/>
     <stringAttribute key="pde.version" value="3.3"/>
     <stringAttribute key="product" value="com.opcoach.training.e4.rental.eap.product"/>
     <setAttribute key="selected_target_bundles">
         <setEntry value="com.ibm.icu@default:default"/>
-        <setEntry value="com.opcoach.e4.preferences.mainmenu@default:default"/>
-        <setEntry value="com.opcoach.e4.preferences@default:default"/>
         <setEntry value="javax.annotation@default:default"/>
         <setEntry value="javax.inject@default:default"/>
         <setEntry value="org.apache.batik.constants@default:default"/>
         <setEntry value="org.apache.batik.css@default:default"/>
         <setEntry value="org.apache.batik.i18n@default:default"/>
         <setEntry value="org.apache.batik.util@default:default"/>
-        <setEntry value="org.apache.commons.codec@default:default"/>
+        <setEntry value="org.apache.commons.codec*1.10.0.v20180409-1845@default:default"/>
+        <setEntry value="org.apache.commons.codec*1.6.0.v201305230611@default:default"/>
         <setEntry value="org.apache.commons.io@default:default"/>
         <setEntry value="org.apache.commons.jxpath@default:default"/>
-        <setEntry value="org.apache.commons.logging@default:default"/>
+        <setEntry value="org.apache.commons.logging*1.1.1.v201101211721@default:default"/>
+        <setEntry value="org.apache.commons.logging*1.2.0.v20180409-1502@default:default"/>
         <setEntry value="org.apache.felix.scr@1:true"/>
         <setEntry value="org.apache.xmlgraphics@default:default"/>
         <setEntry value="org.apiguardian@default:default"/>

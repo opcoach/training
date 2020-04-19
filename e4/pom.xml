@@ -43,7 +43,7 @@
 			<id>pureE4</id>
 			<properties>
 				<targetArtifact>com.opcoach.training.e4.targetplatform</targetArtifact>
-				<targetVersion>4.14.0-SNAPSHOT</targetVersion>
+				<targetVersion>4.15.0-SNAPSHOT</targetVersion>
 			</properties>
 
 			<activation>

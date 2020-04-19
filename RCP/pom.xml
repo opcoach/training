@@ -76,10 +76,10 @@
 		<module>com.opcoach.training.rental.ui.colorprovider</module>
 		<module>com.opcoach.training.rental.help</module>
 		<module>com.opcoach.training.rental.core</module>
-		<module>com.opcoach.training.rental.core.test</module>
+		<module>com.opcoach.training.rental.core.test</module> 
 		<!--  <module>com.opcoach.training.rental.ui.test</module> -->
 		<module>com.opcoach.training.rental.repository</module>
-		<module>com.opcoach.training.rental.jnlp</module>
+<!--		<module>com.opcoach.training.rental.jnlp</module> -->
 	</modules>
 
 </project>
