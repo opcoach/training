@@ -16,7 +16,7 @@ location "http://download.eclipse.org/technology/swtbot/releases/latest/" {
 
 } 
 
-location "http://download.eclipse.org/releases/2020-03" {
+location "http://download.eclipse.org/releases/2020-09" {
 	org.eclipse.rcp.feature.group
 	org.eclipse.ui.workbench
 	org.eclipse.emf.databinding.feature.group
@@ -36,7 +36,7 @@ location "http://download.eclipse.org/releases/2020-03" {
 }
   
  // Ajout du delta pack
-location "http://download.eclipse.org/eclipse/updates/4.15" {
+location "http://download.eclipse.org/eclipse/updates/4.17" {
 	org.eclipse.equinox.sdk.feature.group
 }
 
