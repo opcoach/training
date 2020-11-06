@@ -1,7 +1,7 @@
 target "Training RCP 4" with source requirements
 
-// Update release to 2019-12
-location "http://download.eclipse.org/releases/2020-03" {
+// Update release to 2020-09
+location "http://download.eclipse.org/releases/2020-09" {
 	org.eclipse.platform.feature.group
 	org.eclipse.e4.rcp.feature.group
 	org.eclipse.emf.databinding.feature.group
@@ -21,9 +21,9 @@ location "http://download.eclipse.org/releases/2020-03" {
 }
 
 // Add support for java 11 (removed javax.annotation)...
-//location "https://download.eclipse.org/tools/orbit/downloads/drops/R20191126223242/repository" {
-//	javax.annotation
-//}
+location "https://download.eclipse.org/tools/orbit/downloads/drops/R20191126223242/repository" {
+	javax.annotation
+}
 
 location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
 	org.eclipse.e4.tools.spies.feature.feature.group
@@ -37,7 +37,7 @@ location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"
 
 // Add the new E4 test platform from opcoach website
 //location "https://dl.bintray.com/opcoach/E4Tester/" {
-location "https://www.opcoach.com/repository/2020-03" {
+location "https://www.opcoach.com/repository/2020-09" {
    com.opcoach.e4tester.feature.feature.group
    com.opcoach.e4.preferences.feature.feature.group
 } 
