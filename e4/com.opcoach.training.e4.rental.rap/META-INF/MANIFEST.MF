@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.rap.rwt;bundle-version="[3.0.0,4.0.0)",
  com.opcoach.training.e4.rental.ui;bundle-version="1.0.0",
  com.opcoach.e4.preferences.mainmenu;bundle-version="1.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Import-Package: javax.inject,
+Import-Package: javax.annotation,
+ javax.inject,
  org.osgi.framework,
  org.osgi.service.event;version="1.4.0"
 Service-Component: OSGI-INF/contribution.xml
