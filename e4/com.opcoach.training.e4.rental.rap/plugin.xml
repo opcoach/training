@@ -25,21 +25,5 @@
          </property>
       </product>
    </extension>
-   <extension
-         point="org.eclipse.rap.ui.entrypoint">
-      <entrypoint
-            applicationId="org.eclipse.e4.ui.workbench.swt.E4Application"
-            brandingId="com.opcoach.training.e4.rental.rap.branding1"
-            id="com.opcoach.training.e4.rental.rap.entrypoint"
-            path="/rental">
-      </entrypoint>
-   </extension>
-   <extension
-         point="org.eclipse.rap.ui.branding">
-      <branding
-            id="com.opcoach.training.e4.rental.rap.branding1"
-            title="rental">
-      </branding>
-   </extension>
 
 </plugin>

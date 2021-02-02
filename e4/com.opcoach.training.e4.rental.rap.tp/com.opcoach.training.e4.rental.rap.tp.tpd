@@ -2,13 +2,14 @@ target "Training E4 with RAP" with source requirements
 
 
 
-location "http://download.eclipse.org/rt/rap/3.8/e4" {
+location "https://download.eclipse.org/rt/rap/3.15/e4" {
 	org.eclipse.rap.e4.equinox.target.feature.feature.group
 	org.eclipse.rap.e4.sdk.feature.feature.group
 	org.eclipse.rap.e4.feature.feature.group
 	org.eclipse.rap.rwt
 	org.eclipse.rap.rwt.osgi
-	org.eclipse.e4.ui.workbench.renderers.swt
+	org.eclipse.e4.ui.workbench.swt
+	org.eclipse.e4.ui.workbench.renderers.swt	
 }
 // Update release to 2019-03
 /*location "http://download.eclipse.org/releases/2019-03" {
@@ -31,13 +32,15 @@ location "http://download.eclipse.org/rt/rap/3.8/e4" {
 } */
 
 // Add support for java 11 (removed javax.annotation)...
-location "http://download.eclipse.org/tools/orbit/downloads/drops/R20190226160451/repository" {
+location "https://download.eclipse.org/tools/orbit/downloads/drops/R20201130205003/repository" {
 	javax.annotation
 }
 
-/* location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
-	org.eclipse.e4.tools.spies.feature.feature.group
-} */
+// Unfortunately spies are not really compliant with rap (must be investigated)
+/*  location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
+	// org.eclipse.e4.tools.spies.feature.feature.group
+	org.eclipse.e4.tools.model.spy.feature.feature.group
+}  */
 
 
 // Add delta pack
@@ -46,7 +49,7 @@ location "http://download.eclipse.org/tools/orbit/downloads/drops/R2019022616045
 //}
 
 // Add the new E4 test platform from opcoach website
-location "https://www.opcoach.com/repository/2018-12" {
+location "https://www.opcoach.com/repository/2020-12" {
    com.opcoach.e4.preferences.feature.feature.group
 } 
 
