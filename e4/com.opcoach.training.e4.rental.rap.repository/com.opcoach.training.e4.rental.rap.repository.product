@@ -3,19 +3,26 @@
 
 <product name="RentalRap" uid="com.opcoach.training.e4.rental.rap.repository" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="false">
 
+
    <configIni use="default">
    </configIni>
 
    <launcherArgs>
+      <programArgs>-consoleLog
+      </programArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
+
+   <windowImages/>
+
 
    <launcher>
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>
@@ -25,8 +32,12 @@
       <plugin id="com.opcoach.e4.preferences"/>
       <plugin id="com.opcoach.e4.preferences.mainmenu"/>
       <plugin id="com.opcoach.training.e4.rental.core"/>
+      <plugin id="com.opcoach.training.e4.rental.core.test" fragment="true"/>
       <plugin id="com.opcoach.training.e4.rental.rap"/>
       <plugin id="com.opcoach.training.e4.rental.ui"/>
+      <plugin id="javax.annotation"/>
+      <plugin id="javax.inject"/>
+      <plugin id="javax.servlet"/>
       <plugin id="org.apache.commons.fileupload"/>
       <plugin id="org.apache.commons.io"/>
       <plugin id="org.apache.commons.jxpath"/>
@@ -83,20 +94,23 @@
       <plugin id="org.eclipse.rap.jface.databinding"/>
       <plugin id="org.eclipse.rap.rwt"/>
       <plugin id="org.eclipse.rap.rwt.osgi"/>
+      <plugin id="org.eclipse.rap.rwt.testfixture"/>
+      <plugin id="org.hamcrest.core"/>
+      <plugin id="org.junit"/>
    </plugins>
 
    <configurations>
+      <plugin id="com.opcoach.training.e4.rental.rap" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.http.registry" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.http.servletbridge" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
       <plugin id="org.eclipse.osgi.services" autoStart="true" startLevel="1" />
-      
-      <plugin id="com.opcoach.training.e4.rental.rap" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.rap.rwt" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.rap.rwt.osgi" autoStart="true" startLevel="0" />
-      
    </configurations>
-   
 
 </product>
