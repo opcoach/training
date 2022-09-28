@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- A sample toochain file to copy in your ~/.m2 folder -->
+<!-- Don't forget to update the jdkHome values for each version --> 
+
+<toolchains>
+  <!-- JDK toolchains -->
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <id>JavaSE-18</id>
+      <version>JavaSE-18</version>
+      <vendor>openjdk</vendor>
+    </provides>
+    <configuration>
+      <jdkHome>/Library/Java/JavaVirtualMachines/jdk-18.jdk/Contents/Home</jdkHome>
+    </configuration>
+  </toolchain>
+
+
+
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <id>JavaSE-17</id>
+      <version>JavaSE-17</version>
+      <vendor>openjdk</vendor>
+    </provides>
+    <configuration>
+      <jdkHome>/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home</jdkHome>
+    </configuration>
+  </toolchain>
+
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <id>JavaSE-15.0.2</id>
+      <version>JavaSE-15</version>
+      <vendor>openjdk</vendor>
+    </provides>
+    <configuration>
+      <jdkHome>/Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home</jdkHome>
+    </configuration>
+  </toolchain>
+  <toolchain>
+       <type>jdk</type>
+       <provides>
+         <id>JavaSE-11</id>
+         <version>JavaSE-11</version>
+         <vendor>openjdk</vendor>
+      </provides>
+      <configuration>
+        <jdkHome>/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home</jdkHome>
+      </configuration>
+    </toolchain>
+ 
+</toolchains>

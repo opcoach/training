@@ -10,7 +10,7 @@
 
 
 	<artifactId>com.opcoach.training.e4.targetplatform</artifactId>
-	<version>4.19.0-SNAPSHOT</version>
+	<version>4.25.0</version>
 	<packaging>eclipse-target-definition</packaging>
 	
 </project>
