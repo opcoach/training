@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>2.2.0</tycho-version>
+		<tycho-version>3.0.4</tycho-version>
 	</properties>
 
 
@@ -44,7 +44,7 @@
 						<artifact>
 							<groupId>tychoRental</groupId>
 							<artifactId>com.opcoach.training.rental.targetplatform</artifactId>
-							<version>4.17.0-SNAPSHOT</version>
+							<version>4.27.0</version>
 						</artifact>
 					</target>
 				  	<environments>
@@ -78,7 +78,7 @@
 				<configuration>
 					<toolchains>
 						<jdk>
-							<version>JavaSE-14</version>
+							<version>JavaSE-17</version>
 							<vendor>openjdk</vendor>
 						</jdk>
 					</toolchains>

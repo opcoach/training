@@ -7,9 +7,9 @@
 	<description>Parent project for the E4 build</description>
 
 	<properties>
-		<tycho-version>2.7.5</tycho-version>
+		<tycho-version>3.0.4</tycho-version>
 		<targetArtifact>com.opcoach.training.e4.targetplatform</targetArtifact>
-		<targetVersion>4.25.0</targetVersion>
+		<targetVersion>4.27.0</targetVersion>
 	</properties>
 
 	<build>

@@ -9,9 +9,10 @@ Require-Bundle: com.opcoach.training.rental.core;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.emf.databinding,
  org.eclipse.core.databinding.beans,
- org.eclipse.core.databinding.property;bundle-version="1.6.0",
+ org.eclipse.core.databinding.property,
  org.eclipse.ui.workbench;resolution:=optional,
- org.eclipse.rap.ui.workbench;bundle-version="3.9.0";resolution:=optional
+ org.eclipse.rap.ui.workbench;resolution:=optional,
+ org.eclipse.jface.databinding
 Bundle-ActivationPolicy: lazy
 Export-Package: com.opcoach.training.rental.ui,
  com.opcoach.training.rental.ui.pref,
