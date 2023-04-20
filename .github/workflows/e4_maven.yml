@@ -22,10 +22,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
+      id: setupJava
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - uses: cactuslab/maven-toolchains-xml-action@v1
+      with:
+       toolchains: |
+        [
+          {"jdkVersion": "JavaSE-17", "jdkHome": "${{steps.setupJava.outputs.path}}"}
+        ]
     - name: Build with Maven
-      run: mvn -Dtoolchain.skip -B package --file e4/pom.xml
+      run: mvn -B package --file e4/pom.xml
