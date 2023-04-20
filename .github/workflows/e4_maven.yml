@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Build E4
+name: Build pure E4
 
 on:
   push:
@@ -28,11 +28,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - uses: cactuslab/maven-toolchains-xml-action@v1
-      with:
-       toolchains: |
-        [
-          {"jdkVersion": "JavaSE-17", "jdkHome": "${{steps.setupJava.outputs.path}}"}
-        ]
-    - name: Build with Maven
-      run: mvn -B package --file e4/pom.xml
+    - name: Build e4 with Maven
+      run: mvn -Dtoolchain.skip -B package --file e4/pom.xml
+

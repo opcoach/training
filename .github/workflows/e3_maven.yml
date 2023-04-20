@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Build RCP 3 
 
 on:
   push:
@@ -22,13 +22,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
+      id: setupJava
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build e4 with Maven
-      run: mvn -Dtoolchain.skip -B package --file e4/pom.xml
     - name: Build RCP with Maven
       run: mvn -Dtoolchain.skip -B package --file RCP/pom.xml
-      
+
