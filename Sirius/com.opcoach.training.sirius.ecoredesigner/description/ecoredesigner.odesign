@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="ecoredesigner" version="12.0.0.2017041100">
+  <ownedViewpoints name="EcoreDesignerViewpoint" modelFileExtension="*.ecore">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="NewDiagramForEcore2024" label="NewDiagramForEcore2024" domainClass="EPackage" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="eclassnode" semanticCandidatesExpression="[eClassifiers->filter(EClass)/]" domainClass="EClass">
+          <style xsi:type="style:SquareDescription" labelSize="14" sizeComputationExpression="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="compostionEdge" label="compostionEdgecompostionEdge" sourceMapping="//@ownedViewpoints[name='EcoreDesignerViewpoint']/@ownedRepresentations[name='NewDiagramForEcore2024']/@defaultLayer/@nodeMappings[name='eclassnode']" targetMapping="//@ownedViewpoints[name='EcoreDesignerViewpoint']/@ownedRepresentations[name='NewDiagramForEcore2024']/@defaultLayer/@nodeMappings[name='eclassnode']" targetFinderExpression="[eType->select(containment)/]" sourceFinderExpression="feature:eContainer" domainClass="EReference" useDomainElement="true">
+          <style sourceArrow="FillDiamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="associationEdge" label="associationEdge" sourceMapping="//@ownedViewpoints[name='EcoreDesignerViewpoint']/@ownedRepresentations[name='NewDiagramForEcore2024']/@defaultLayer/@nodeMappings[name='eclassnode']" targetMapping="//@ownedViewpoints[name='EcoreDesignerViewpoint']/@ownedRepresentations[name='NewDiagramForEcore2024']/@defaultLayer/@nodeMappings[name='eclassnode']" targetFinderExpression="[eType->select(not(containment))/]" sourceFinderExpression="feature:eContainer" domainClass="EReference" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+      <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="com.cea.ecoredesigner.Services"/>
+  </ownedViewpoints>
+</description:Group>
