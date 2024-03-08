@@ -1,8 +1,5 @@
 package com.opcoach.training.e4.rental.ui.customer;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.services.adapter.Adapter;
 import org.eclipse.e4.ui.services.IServiceConstants;
@@ -19,6 +16,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import com.opcoach.training.rental.Customer;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 public class CustomerView
 {

@@ -2,10 +2,6 @@ package com.opcoach.training.e4.rental.ui.parts;
 
 import java.text.SimpleDateFormat;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.services.adapter.Adapter;
 import org.eclipse.e4.ui.di.Focus;
@@ -28,6 +24,10 @@ import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 public class RentalPropertyPart {
 	// private DataBindingContext m_bindingContext;

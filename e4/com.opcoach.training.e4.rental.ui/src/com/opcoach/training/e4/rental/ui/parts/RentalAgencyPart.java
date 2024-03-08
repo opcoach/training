@@ -3,10 +3,6 @@ package com.opcoach.training.e4.rental.ui.parts;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
@@ -43,6 +39,10 @@ import org.eclipse.swt.widgets.Composite;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 public class RentalAgencyPart implements RentalUIConstants // implements
 // IPropertyChangeListener

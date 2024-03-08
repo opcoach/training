@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Training RCP 4" sequenceNumber="1680432066">
+<target name="Training RCP 4 - 2024-03" sequenceNumber="1709918586">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.platform.feature.group" version="4.27.0.v20230302-0300"/>
-      <unit id="org.eclipse.e4.rcp.feature.group" version="4.27.0.v20230220-1431"/>
-      <unit id="org.eclipse.emf.databinding.feature.group" version="1.10.0.v20230211-1150"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.2000.v20221201-0912"/>
-      <unit id="org.eclipse.pde.feature.group" version="3.14.1500.v20230302-0300"/>
-      <unit id="org.eclipse.pde.junit.runtime" version="3.6.200.v20220523-1051"/>
-      <unit id="org.eclipse.jdt.junit5.runtime" version="1.1.100.v20220907-0450"/>
-      <unit id="junit-jupiter-api" version="5.9.2"/>
-      <unit id="junit-jupiter-engine" version="5.9.2"/>
-      <unit id="junit-jupiter-migrationsupport" version="5.9.2"/>
-      <unit id="junit-jupiter-params" version="5.9.2"/>
-      <unit id="junit-platform-commons" version="1.9.2"/>
-      <unit id="javax.annotation" version="1.3.5.v20221203-1659"/>
-      <repository location="http://download.eclipse.org/releases/2023-03"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.31.0.v20240221-2107"/>
+      <unit id="org.eclipse.e4.rcp.feature.group" version="4.31.0.v20240217-1555"/>
+      <unit id="org.eclipse.emf.databinding.feature.group" version="1.11.0.v20231208-1346"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.2400.v20240213-1244"/>
+      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.23.1100.v20240218-1855"/>
+      <unit id="org.eclipse.pde.feature.group" version="3.15.300.v20240221-1800"/>
+      <unit id="org.eclipse.pde.junit.runtime" version="3.8.100.v20240130-1723"/>
+      <unit id="org.eclipse.jdt.junit5.runtime" version="1.1.300.v20231214-1952"/>
+      <unit id="junit-jupiter-api" version="5.10.2"/>
+      <unit id="junit-jupiter-engine" version="5.10.2"/>
+      <unit id="junit-jupiter-migrationsupport" version="5.10.2"/>
+      <unit id="junit-jupiter-params" version="5.10.2"/>
+      <unit id="junit-platform-commons" version="1.10.2"/>
+      <unit id="org.hamcrest" version="2.2.0"/>
+      <unit id="org.hamcrest.core" version="2.2.0.v20230809-1000"/>
+      <unit id="org.hamcrest.library" version="1.3.0.v20180524-2246"/>
+      <unit id="jakarta.annotation-api" version="2.1.1"/>
+      <unit id="jakarta.inject.jakarta.inject-api" version="2.0.1"/>
+      <repository location="http://download.eclipse.org/releases/2024-03"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.23.700.v20230220-1352"/>
-      <repository location="http://download.eclipse.org/eclipse/updates/4.27"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="com.opcoach.e4tester.feature.feature.group" version="1.1.0.202212211842"/>
+      <unit id="com.opcoach.e4tester.feature.feature.group" version="1.1.0.202403081719"/>
       <unit id="com.opcoach.e4.preferences.feature.feature.group" version="1.3.2"/>
-      <repository location="https://www.opcoach.com/repository/2022-12"/>
+      <repository location="https://www.opcoach.com/repository/2023-12"/>
     </location>
   </locations>
 </target>

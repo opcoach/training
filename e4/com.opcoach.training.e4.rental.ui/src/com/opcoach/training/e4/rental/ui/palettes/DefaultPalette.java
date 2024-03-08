@@ -1,8 +1,5 @@
 package com.opcoach.training.e4.rental.ui.palettes;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.StringConverter;
@@ -13,6 +10,9 @@ import com.opcoach.training.e4.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalObject;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 public class DefaultPalette implements IColorProvider, RentalUIConstants
 {

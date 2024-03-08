@@ -1,8 +1,6 @@
 
 package com.opcoach.training.e4.rental.parts;
 
-import javax.inject.Inject;
-
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.model.application.MApplication;
@@ -15,6 +13,8 @@ import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.osgi.service.event.Event;
 
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
+
+import jakarta.inject.Inject;
 
 /**
  * This part is only used to directly switch to the snippet perspective provided

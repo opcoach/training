@@ -2,8 +2,6 @@ package com.opcoach.training.e4.rental.ui.handlers;
 
 import java.util.concurrent.ExecutionException;
 
-import javax.inject.Named;
-
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Evaluate;
 import org.eclipse.e4.core.di.annotations.Execute;
@@ -13,6 +11,8 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
 import com.opcoach.training.rental.Customer;
+
+import jakarta.inject.Named;
 
 public class CopyCustomerHandler
 {

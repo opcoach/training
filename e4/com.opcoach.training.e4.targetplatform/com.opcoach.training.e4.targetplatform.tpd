@@ -1,11 +1,12 @@
-target "Training RCP 4" with source requirements
+target "Training RCP 4 - 2024-03" with source requirements
 
-// Update release to 2022-09
-location "http://download.eclipse.org/releases/2023-03" {
+location "http://download.eclipse.org/releases/2024-03" {
 	org.eclipse.platform.feature.group
 	org.eclipse.e4.rcp.feature.group
 	org.eclipse.emf.databinding.feature.group
 	org.eclipse.equinox.executable.feature.group
+	org.eclipse.equinox.sdk.feature.group
+	
 	org.eclipse.pde.feature.group
 	
 	// Used for tests
@@ -19,19 +20,19 @@ location "http://download.eclipse.org/releases/2023-03" {
    	junit-jupiter-params
    	junit-platform-commons
    	
-   	javax.annotation
+   	org.hamcrest
+   	org.hamcrest.core
+   	org.hamcrest.library
+   	
+   	jakarta.annotation-api
+   	jakarta.inject.jakarta.inject-api
 		
 }
 
 
-// Add delta pack
-location "http://download.eclipse.org/eclipse/updates/4.27" {
-	org.eclipse.equinox.sdk.feature.group
-}
-
 // Add the new E4 test platform from opcoach website
 //location "https://dl.bintray.com/opcoach/E4Tester/" {
-location "https://www.opcoach.com/repository/2022-12" {
+location "https://www.opcoach.com/repository/2023-12" {
    com.opcoach.e4tester.feature.feature.group
    com.opcoach.e4.preferences.feature.feature.group
 } 

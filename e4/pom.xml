@@ -7,9 +7,9 @@
 	<description>Parent project for the E4 build</description>
 
 	<properties>
-		<tycho-version>3.0.4</tycho-version>
+		<tycho-version>4.0.6</tycho-version>
 		<targetArtifact>com.opcoach.training.e4.targetplatform</targetArtifact>
-		<targetVersion>4.27.0</targetVersion>
+		<targetVersion>4.31.0</targetVersion>
 	</properties>
 
 	<build>
@@ -40,7 +40,7 @@
 						<environment>
 							<os>macosx</os>
 							<ws>cocoa</ws>
-							<arch>x86_64</arch>
+							<arch>aarch64</arch>
 						</environment>
 						<environment>
 							<os>win32</os>

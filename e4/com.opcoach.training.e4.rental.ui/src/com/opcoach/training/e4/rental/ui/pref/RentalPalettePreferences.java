@@ -2,14 +2,14 @@ package com.opcoach.training.e4.rental.ui.pref;
 
 import java.util.Map;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 
 import com.opcoach.training.e4.rental.ui.Palette;
 import com.opcoach.training.e4.rental.ui.RentalUIConstants;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /** This preference page manage the palette value */
 public class RentalPalettePreferences extends FieldEditorPreferencePage implements RentalUIConstants

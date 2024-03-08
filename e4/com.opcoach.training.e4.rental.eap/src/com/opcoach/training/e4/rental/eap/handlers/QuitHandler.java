@@ -12,14 +12,14 @@ package com.opcoach.training.e4.rental.eap.handlers;
 
 import java.lang.reflect.InvocationTargetException;
 
-import javax.inject.Named;
-
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.workbench.IWorkbench;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
+
+import jakarta.inject.Named;
 
 public class QuitHandler {
 	@Execute

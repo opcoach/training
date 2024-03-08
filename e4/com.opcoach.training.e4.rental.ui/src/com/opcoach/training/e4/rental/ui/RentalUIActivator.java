@@ -1,9 +1,5 @@
 package com.opcoach.training.e4.rental.ui;
 
-import org.eclipse.core.runtime.Platform;
-import org.eclipse.e4.core.contexts.EclipseContextFactory;
-import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 

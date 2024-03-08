@@ -2,16 +2,12 @@ package com.opcoach.training.e4.rental.ui.parts;
 
 import java.util.Collection;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
@@ -22,6 +18,9 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 public class RentalProvider  implements ITreeContentProvider, ILabelProvider, IColorProvider,  RentalUIConstants
 {
