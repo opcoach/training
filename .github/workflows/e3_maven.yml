@@ -27,7 +27,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
+        cache: maven:3.9
     - name: Build RCP with Maven
       run: mvn -Dtoolchain.skip -B package --file RCP/pom.xml
 
