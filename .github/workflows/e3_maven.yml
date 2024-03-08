@@ -27,7 +27,10 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven:3.9
+    - name: Set up Maven
+      uses: stCarolas/setup-maven@v5
+      with:
+        maven-version: 3.9.4
     - name: Build RCP with Maven
       run: mvn -Dtoolchain.skip -B package --file RCP/pom.xml
 
